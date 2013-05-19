@@ -56,9 +56,9 @@ app.post("/", function(req, res){
   var date = new Date();
   var udid = req.body.udid;
   var json = JSON.parse(req.body.json);
-  var spec = json.spec.split(",");
-  var specDec = [];
-  for (var i = 0; i < spec.length; i++) { specDec[i] = parseInt(spec[i], 16); }
+  var specHex = json.spec.split(",");
+  var spec = [];
+  for (var i = 0; i < specHex.length; i++) { spec[i] = parseInt(specHex[i], 16); }
 
 
   var body = ""+date.valueOf();

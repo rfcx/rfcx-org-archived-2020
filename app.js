@@ -10,8 +10,10 @@ var nodefly = require("./config/nodefly.js").nodefly;
 require('nodefly').profile( process.env.NODEFLY_ID, nodefly.app, nodefly.options);
 
 // Segment.io Analytics Initialization
-var analytics = require("analytics-node");
-analytics.init({secret:process.env.SEGMENT_IO_SECRET});
+if (process.env.NODE_ENV !== "test") {
+  var analytics = require("analytics-node");
+  analytics.init({secret:process.env.SEGMENT_IO_SECRET});
+}
 
 // Sequelize Database ORM Initialization
 var Sequelize = require("sequelize");

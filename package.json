@@ -1,0 +1,25 @@
+{
+  "name": "rfcx-api-express",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type" : "git",
+    "url": "http://github.com/rfcx/rfcx-api-express.git"
+  },
+  "scripts": {
+    "start": "node app",
+    "test": "./node_modules/.bin/mocha -u tdd"
+  },
+  "dependencies": {
+    "express": "3.0.3",
+    "mysql": "*",
+    "sequelize": "*",
+    "nodefly": "stable",
+    "analytics-node": "*",
+    "jade": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "sinon": "*"
+  }
+}

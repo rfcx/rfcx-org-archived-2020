@@ -1,0 +1,15 @@
+exports.env = {
+
+  NODE_ENV: "development",
+
+  NODEFLY_ID: "",
+
+  SEGMENT_IO_SECRET: "",
+
+  RDS_HOSTNAME: "",
+  RDS_DB_NAME: "",
+  RDS_USERNAME: "",
+  RDS_PASSWORD: "",
+  RDS_PORT: 3306
+
+}

@@ -10,9 +10,7 @@ var nodefly = require("./config/nodefly.js").nodefly;
 require('nodefly').profile( process.env.NODEFLY_ID, nodefly.app, nodefly.options);
 
 // Segment.io Analytics Initialization
-console.log(process.env.TRAVIS +" - ");
-console.log(process.env);
-if (process.env.SEGMENT_IO_SECRET !== null) {
+if (process.env.NODE_ENV !== "test") {
   var analytics = require("analytics-node");
   analytics.init({secret:process.env.SEGMENT_IO_SECRET});
 }

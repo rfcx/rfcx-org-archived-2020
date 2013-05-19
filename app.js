@@ -42,10 +42,14 @@ app.configure("development", function(){
   app.use(express.errorHandler());
 });
 
+// API Initialization
+var apiCb_ = require("./routes/api/callbacks.js"), apiEp = require("./routes/api/endpoints.js").endpoints;
+function apiCb(req, res, next) { apiCb_.run(req, res, next, apiEp, Model); }
+for (i in apiEp.get) { app.get(apiEp.get[i].path, apiCb); }
+for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
+
 // Define Endpoints
 app.get("/", routes.index);
-
-// app.post("/api/1/checkin",);
 
 app.post("/", function(req, res){
 

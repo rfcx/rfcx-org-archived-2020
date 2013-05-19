@@ -1,4 +1,6 @@
-lib-cov
+.DS_Store
+
+ib-cov
 *.seed
 *.log
 *.csv
@@ -11,4 +13,9 @@ pids
 logs
 results
 
-npm-debug.log
+node_modules/
+.gitignore
+.elasticbeanstalk/
+
+.ebextensions/env_vars.config
+config/env_vars.js

@@ -48,13 +48,13 @@ function apiCb(req, res, next) { apiCb_.run(req, res, next, apiEp, Model); }
 for (i in apiEp.get) { app.get(apiEp.get[i].path, apiCb); }
 for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 
-// Define Endpoints
+// Web Initialization
 app.get("/", function(req, res){
-  fs.readFile("./public/_old_site/index.html", function (err, data) {
-    if (err) throw err;
+  fs.readFile("./public/_old_site/index.html", function (e, d) {
+    if (e) throw e;
     res.setHeader("Content-Type", "text/html");
-    res.setHeader("Content-Length", data.length);
-    res.send(data);
+    res.setHeader("Content-Length", d.length);
+    res.send(d);
   });
 });
 

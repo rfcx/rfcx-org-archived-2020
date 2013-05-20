@@ -1,13 +1,16 @@
 exports.run = function(req, res, next, Endpoints, Model) {
   var method = req.method.toLowerCase();
   var path = req.url.toLowerCase();
+  var passNext = true;
   for (i in Endpoints[method]) {
     if (Endpoints[method][i].path === path) {
+      passNext = false;
       res.setHeader("Content-Type", Endpoints[method][i].contentType);
       callbacks[method][Endpoints[method][i].callback](req, res, Model);
+      break;
     }
   }
-  // return next();
+  if (passNext) { return next(); }
 };
 
 var parsers = require("./parsers.js").parsers;

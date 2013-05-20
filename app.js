@@ -51,22 +51,6 @@ for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 // Define Endpoints
 app.get("/", routes.index);
 
-app.post("/", function(req, res){
-
-  var date = new Date();
-  var udid = req.body.udid;
-  var json = JSON.parse(req.body.json);
-  var specHex = json.spec.split(",");
-  var spec = [];
-  for (var i = 0; i < specHex.length; i++) { spec[i] = parseInt(specHex[i], 16); }
-
-
-  var body = ""+date.valueOf();
-  res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Content-Length', body.length);
-  res.end(body);
-});
-
 http.createServer(app).listen(app.get("port"), function(){
   console.log(app.get("title")+" (port "+app.get("port")+") ("+process.env.NODE_ENV+")");
 });

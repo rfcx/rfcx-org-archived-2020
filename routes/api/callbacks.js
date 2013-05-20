@@ -20,6 +20,7 @@ var callbacks = {
 
     getSource: function(req, res, Model) {
       res.send([{name:'wine1'}, {name:'wine2'}]);
+      res.end();
     }
 
   },

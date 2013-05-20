@@ -17,9 +17,6 @@ var callbacks = {
 
     getSource: function(req, res, Model) {
       res.send([{name:'wine1'}, {name:'wine2'}]);
-    },
-    getEnv: function(req, res, Model) {
-      res.send(process.env);
     }
 
   },

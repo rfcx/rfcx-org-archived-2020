@@ -29,7 +29,9 @@ var callbacks = {
 
     postCheckIn: function(req, res, Model) {
       var d = parsers.parseCheckIn(req);
-      var rtrn = ""+d.date.valueOf();
+      var rtrn = {
+        time: d.date.valueOf()
+      };
       Model.Source.findOrCreate({
           device_id: d.udid
         }).success(function(Src){
@@ -48,7 +50,7 @@ var callbacks = {
                 spectrum: d.spec.join(",")
               }).success(function(Spec){
                 console.log("Successfully completed Check-In chain...");
-                res.send(rtrn, 202);
+                res.send(JSON.stringify(rtrn), 202);
               }).error(function(e){
                 console.log("Failure: Sequelize create Spectrum...");
                 res.send(rtrn, 500);

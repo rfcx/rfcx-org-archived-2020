@@ -48,6 +48,14 @@ exports.defineModel = function(sequelize, DataTypes) {
           max: 300
         }
       },
+      internal_luminosity: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isInt: true,
+          min: 0,
+          max: 65536
+        }
+      },
     },{
       // column naming customization
     });

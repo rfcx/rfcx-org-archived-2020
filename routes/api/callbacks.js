@@ -46,18 +46,17 @@ var callbacks = {
               spectra_count: d.specCount,
               internal_luminosity: d.lumAvg
             }).success(function(Diag){
-              // for (var g = 0; g < d.spec.length; g++) {
-                // Model.Spectrum.create({
-                //   source_id: Src.id,
-                //   diagnostic_id: Diag.id,
-                //   spectrum: d.spec
-                // }).success(function(Spec){
-                //   console.log("Successfully completed Check-In chain...");
-                // })/*.error(function(e){
-                //   console.log("Failure: Sequelize create Spectrum...");
-                //   res.send(rtrn, 500);
-                // })*/;
-              // }
+              for (var g = 0; g < d.spec.length; g++) {
+                Model.Spectrum.create({
+                  source_id: Src.id,
+                  diagnostic_id: Diag.id,
+                  spectrum: d.spec[g].join(",")
+                }).success(function(Spec){
+                }).error(function(e){
+                  console.log("Failure: Spectrum could not be saved...");
+                  res.send(rtrn, 500);
+                });
+              }
               res.send(JSON.stringify(rtrn), 202);
             }).error(function(e){
               console.log("Failure: Sequelize create Diagnostic...");

@@ -28,8 +28,13 @@ exports.parsers = {
     for (var i = 0; i < d.cpuC.length; i++) { d.cpuCAvg = d.cpuCAvg + d.cpuC[i]; }
       if (d.cpuCAvg > 0) { d.cpuCAvg = Math.round(d.cpuCAvg / d.cpuC.length); }
     
-    var specHex = json.spec.split(",");
-    for (var i = 0; i < specHex.length; i++) { d.spec[i] = parseInt(specHex[i], 16); }
+    var specGroup = json.spec.split("*");
+    d.specCount = specGroup.length;
+    for (var g = 0; g < specGroup.length; g++) {
+      d.spec[g] = [];
+      var specHex = json.spec.split(",");
+      for (var i = 0; i < specHex.length; i++) { d.spec[g][i] = parseInt(specHex[i], 16); }
+    }
 
     return d;
   }

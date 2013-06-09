@@ -56,6 +56,14 @@ exports.defineModel = function(sequelize, DataTypes) {
           max: 65536
         }
       },
+      spectra_count: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isInt: true,
+          min: 0,
+          max: 256
+        }
+      }
     },{
       // column naming customization
     });

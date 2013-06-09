@@ -32,7 +32,7 @@ exports.parsers = {
     d.specCount = specGroup.length;
     for (var g = 0; g < specGroup.length; g++) {
       d.spec[g] = [];
-      var specHex = json.spec.split(",");
+      var specHex = specGroup[g].split(",");
       for (var i = 0; i < specHex.length; i++) { d.spec[g][i] = parseInt(specHex[i], 16); }
     }
 

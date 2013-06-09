@@ -33,7 +33,8 @@ exports.parsers = {
     for (var g = 0; g < specGroup.length; g++) {
       d.spec[g] = [];
       var specHex = specGroup[g].split(",");
-      for (var i = 0; i < specHex.length; i++) { d.spec[g][i] = parseInt(specHex[i], 16); }
+      // for (var i = 0; i < specHex.length; i++) { d.spec[g][i] = parseInt(specHex[i], 16); }
+      d.spec[g] = specHex;
     }
 
     return d;

@@ -4,7 +4,9 @@ exports.parsers = {
     var d = {
       date: new Date(),
       udid: req.body.udid,
-      spec: []
+      specC: 0,
+      specT: [],
+      specV: []
     };
     
     var json = JSON.parse(req.body.json);
@@ -28,13 +30,24 @@ exports.parsers = {
     for (var i = 0; i < d.cpuC.length; i++) { d.cpuCAvg = d.cpuCAvg + parseInt(d.cpuC[i]); }
       if (d.cpuCAvg > 0) { d.cpuCAvg = Math.round(d.cpuCAvg / d.cpuC.length); }
   
-
-    var specGroup = json.spec.split("*");
-    d.specCount = specGroup.length;
-    for (var g = 0; g < specGroup.length; g++) {
-      d.spec[g] = [];
+    d.date = Date.parse(json.sent);
+    var dateMs = parseInt(d.date.valueOf());
+    
+    var specTimes = json.specT.split(",");
+    for (var i = 0; i < specTimes.length; i++) {
+      d.specT[i] = new Date(dateMs-(parseInt(specTimes[i],16)*1000));
+    }
+    d.specC = specTimes.length;
+    
+    var specGroup = json.specV.split("*");
+    for (var g = 0; g < d.specC; g++) {
+      d.specV[g] = [];
       var specHex = specGroup[g].split(",");
-      for (var i = 0; i < specHex.length; i++) { d.spec[g][i] = parseInt(specHex[i], 16); }
+      for (var i = 0; i < specHex.length; i++) { d.specV[g][i] = parseInt(specHex[i], 16); }
+    }
+
+    for (var i = 0; i < d.specC; i++) {
+      console.log(d.specT[i].toString());
     }
 
     return d;

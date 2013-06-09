@@ -46,11 +46,12 @@ var callbacks = {
               spectra_count: d.specCount,
               internal_luminosity: d.lumAvg
             }).success(function(Diag){
-              for (var g = 0; g < d.spec.length; g++) {
+              for (var g = 0; g < d.specC; g++) {
                 Model.Spectrum.create({
                   source_id: Src.id,
                   diagnostic_id: Diag.id,
-                  spectrum: d.spec[g].join(",")
+                  measured_at: d.specT[g],
+                  spectrum: d.specV[g].join(",")
                 }).success(function(Spec){
                 }).error(function(e){
                   console.log("Failure: Spectrum could not be saved...");

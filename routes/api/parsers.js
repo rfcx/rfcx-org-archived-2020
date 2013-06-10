@@ -1,8 +1,10 @@
+// var zlib = require("zlib");
+
 exports.parsers = {
 
   parseCheckIn: function(req) {
     var d = {
-      date: new Date(),
+      sent: new Date(),
       udid: req.body.udid,
       specC: 0,
       specT: [],
@@ -10,6 +12,16 @@ exports.parsers = {
     };
     
     var json = JSON.parse(req.body.json);
+
+    // console.log(unescape(req.body.blob));
+    // var jsonDeflated = new Buffer(unescape(req.body.blob), "base64");
+    // zlib.inflate(jsonDeflated, function(err, buffer) {
+    //   if (!err) {
+    //     console.log(buffer.toString());
+    //   } else {
+    //     console.log(err);
+    //   }
+    // });
     
     d.isCharging = json.powr;
     d.isCharged = json.chrg;
@@ -30,8 +42,8 @@ exports.parsers = {
     for (var i = 0; i < d.cpuC.length; i++) { d.cpuCAvg = d.cpuCAvg + parseInt(d.cpuC[i]); }
       if (d.cpuCAvg > 0) { d.cpuCAvg = Math.round(d.cpuCAvg / d.cpuC.length); }
   
-    d.date = Date.parse(json.sent);
-    var dateMs = parseInt(d.date.valueOf());
+    d.sent = Date.parse(json.sent);
+    var dateMs = parseInt(d.sent.valueOf());
     
     var specTimes = json.specT.split(",");
     for (var i = 0; i < specTimes.length; i++) {
@@ -44,10 +56,6 @@ exports.parsers = {
       d.specV[g] = [];
       var specHex = specGroup[g].split(",");
       for (var i = 0; i < specHex.length; i++) { d.specV[g][i] = parseInt(specHex[i], 16); }
-    }
-
-    for (var i = 0; i < d.specC; i++) {
-      console.log(d.specT[i].toString());
     }
 
     return d;

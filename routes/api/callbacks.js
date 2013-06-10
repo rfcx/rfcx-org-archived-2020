@@ -30,14 +30,14 @@ var callbacks = {
     postCheckIn: function(req, res, Model) {
       var d = parsers.parseCheckIn(req);
       var rtrn = {
-        time: d.date.valueOf()
+        time: d.sent.valueOf()
       };
       Model.Source.findOrCreate({
           device_id: d.udid
         }).success(function(Src){
           Model.Diagnostic.create({
               source_id: Src.id,
-              measured_at: d.date,
+              measured_at: new Date(d.sent.valueOf()),
               cpu_percent: d.cpuPAvg,
               cpu_clock: d.cpuCAvg,
               battery_level: d.batteryLevel,

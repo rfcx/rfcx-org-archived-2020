@@ -13,17 +13,7 @@ exports.parsers = {
           console.log("Failed to open unzipped JSON file: "+unZippedPath);
         } else {
           
-          var json = JSON.parse(unZippedJSON);
-
-          var d = {
-            sent: new Date(),
-            udid: req.body.udid,
-            specC: 0,
-            specT: [],
-            specV: []
-          };
-
-          callback(req,res,parseCheckInJSON(d,json));
+          callback(req,res,parseCheckInJSON(JSON.parse(unZippedJSON)));
 
           fs.unlink(unZippedPath, function(err){
             if (err) { console.log("Failed to delete unzipped JSON file after usage..."); }
@@ -38,13 +28,21 @@ exports.parsers = {
 
 }
 
-function parseCheckInJSON(d, json) {
+function parseCheckInJSON(json) {
 
-  d.isCharging = json.powr;
-  d.isCharged = json.chrg;
-  d.batteryLevel = json.batt;
-  d.batteryTemp = json.temp;
-  d.networkSearch = json.srch;
+  var d = {
+    udid: json.udid,
+    appVersion: json.appV,
+    isCharging: json.powr,
+    isCharged: json.chrg,
+    batteryLevel: json.batt,
+    batteryTemp: json.temp,
+    networkSearch: json.srch,
+    specT: [],
+    specV: [],
+    specC: [],
+    sent: Date.parse(json.sent)
+  }; 
 
   d.lum = (json.lumn !== null) ? json.lumn.split(",") : [];
   d.lumAvg = 0;
@@ -59,7 +57,6 @@ function parseCheckInJSON(d, json) {
   for (var i = 0; i < d.cpuC.length; i++) { d.cpuCAvg = d.cpuCAvg + parseInt(d.cpuC[i]); }
     if (d.cpuCAvg > 0) { d.cpuCAvg = Math.round(d.cpuCAvg / d.cpuC.length); }
 
-  d.sent = Date.parse(json.sent);
   var dateMs = parseInt(d.sent.valueOf());
   
   var specTimes = json.specT.split(",");

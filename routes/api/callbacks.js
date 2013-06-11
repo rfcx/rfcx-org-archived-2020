@@ -32,7 +32,8 @@ var callbacks = {
       parsers.processCheckIn(req,res,function(req, res, d){
 
         var rtrn = {
-          time: d.sent.valueOf()
+          time: Math.round(d.sent.valueOf()/1000),
+          diagId: null
         };
         Model.Source.findOrCreate({
             device_id: d.udid
@@ -49,6 +50,7 @@ var callbacks = {
                 internal_luminosity: d.lumAvg,
                 blob_size: req.files.blob.size
               }).success(function(Diag){
+                rtrn.diagId = Diag.id;
                 for (var g = 0; g < d.specC; g++) {
                   Model.Spectrum.create({
                     source_id: Src.id,

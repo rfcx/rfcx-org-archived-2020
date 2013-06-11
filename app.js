@@ -30,9 +30,9 @@ app.configure(function(){
   app.set("port", process.env.PORT || 8080);
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");
+  app.use(express.bodyParser());
   app.use(express.favicon("./public/img/favicon.ico"));
   app.use(express.logger("dev"));
-  app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, "public")));

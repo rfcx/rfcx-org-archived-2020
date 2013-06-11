@@ -63,6 +63,13 @@ exports.defineModel = function(sequelize, DataTypes) {
           min: 0,
           max: 256
         }
+      },
+      blob_size: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isInt: true,
+          min: 0
+        }
       }
     },{
       // column naming customization

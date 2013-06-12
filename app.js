@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== "test") {
 
 // Sequelize Database ORM Initialization
 var Sequelize = require("sequelize");
-var modelNames = [ "source" , "spectrum", "diagnostic"];
+var modelNames = [ "source" , "spectrum", "diagnostic", "version"];
 var db = require("./config/sequelize.js").createConnection(Sequelize,process.env);
 var Model = require("./model/_all.js").createModel(db,Sequelize,modelNames);
 
@@ -28,9 +28,9 @@ var app = express();
 app.configure(function(){
   app.set("title", "Rainforest Connection API");
   app.set("port", process.env.PORT || 8080);
+  app.use(express.bodyParser());
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");
-  app.use(express.bodyParser());
   app.use(express.favicon("./public/img/favicon.ico"));
   app.use(express.logger("dev"));
   app.use(express.methodOverride());

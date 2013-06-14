@@ -84,7 +84,7 @@ var callbacks = {
           currAppCheckSum: null,
           prevAppVersion: null
         };
-      Model.Version.findAll({ order: "version_id DESC", limit: 2, where: { available: true } }).success(function(versions){
+      Model.Version.findAll({ where: { available: true }, order: "version_id DESC", limit: 2 }).success(function(versions){
         rtrn.currAppVersion = versions[0].version_id;
         rtrn.currAppLocation = "http://release.rfcx.org/src-android/"+versions[0].version_id+".apk";
         rtrn.currAppCheckSum = versions[0].checksum;

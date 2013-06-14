@@ -79,7 +79,7 @@ var callbacks = {
     postSourceVersion: function(req, res, Model) {
       console.log("postSourceVersion");
       var rtrn = {
-          time: Math.round(new Date()).valueOf()/1000),
+          time: Math.round((new Date()).valueOf()/1000),
           currAppVersion: "0.1.1",
           currAppLocation: "http://release.rfcx.org/src-android/0.1.1.apk"
           currAppCheckSum: "",

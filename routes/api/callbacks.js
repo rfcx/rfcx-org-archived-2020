@@ -84,10 +84,11 @@ var callbacks = {
           currAppCheckSum: null,
           prevAppVersion: null
         };
-      Model.Version.find({where:{version_id:"0.1.1"}}).success(function(Vers){
-        rtrn.currAppVersion = Vers.version_id;
-        rtrn.currAppLocation = "http://release.rfcx.org/src-android/"+Vers.version_id+".apk";
-        rtrn.currAppCheckSum = Vers.checksum;
+      Model.Version.findAll({ order: "version_id DESC", limit: 2, where: { available: true } }).success(function(versions){
+        rtrn.currAppVersion = versions[0].version_id;
+        rtrn.currAppLocation = "http://release.rfcx.org/src-android/"+versions[0].version_id+".apk";
+        rtrn.currAppCheckSum = versions[0].checksum;
+        if (versions.length > 1) { rtrn.prevAppVersion = versions[1].version_id; }
         res.send(rtrn,200);
       }).error(function(e){
         res.send(rtrn,500);

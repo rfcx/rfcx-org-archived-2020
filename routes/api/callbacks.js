@@ -80,9 +80,9 @@ var callbacks = {
       console.log("postSourceVersion");
       var rtrn = {
           time: (new Date()).valueOf(),
-          currentAppVersion: "0.1.0",
-          currentAppFilename: "rfcx-src-android-0.1.0.apk",
-          currentAppLocation: "http://rfcx-static.s3.amazonaws.com/src-android/rfcx-src-android-0.1.0.apk"
+          currentAppVersion: "0.1.1",
+          currentAppFilename: "rfcx-src-android-0.1.1.apk",
+          currentAppLocation: "http://rfcx-static.s3.amazonaws.com/src-android/rfcx-src-android-0.1.1.apk"
         };
       res.send(JSON.stringify(rtrn), 200);
     }

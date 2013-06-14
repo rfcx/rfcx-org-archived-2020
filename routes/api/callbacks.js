@@ -74,6 +74,17 @@ var callbacks = {
         });
 
       });
+    },
+
+    postSourceVersion: function(req, res, Model) {
+      console.log("postSourceVersion");
+      var rtrn = {
+          time: (new Date()).valueOf(),
+          currentAppVersion: null,
+          currentAppFilename: "rfcx-src-android-0.1.0.apk",
+          currentAppLocation: "http://172.20.10.3:80/lib/rfcx-src-android-0.1.0.apk"
+        };
+      res.send(JSON.stringify(rtrn), 200);
     }
 
   }

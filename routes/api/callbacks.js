@@ -63,7 +63,7 @@ var callbacks = {
                     res.send(rtrn, 500);
                   });
                 }
-                res.send(JSON.stringify(rtrn), 202);
+                res.send(rtrn, 202);
               }).error(function(e){
                 console.log("Failure: Sequelize create Diagnostic...");
                 res.send(rtrn, 500);
@@ -77,15 +77,21 @@ var callbacks = {
     },
 
     postSourceVersion: function(req, res, Model) {
-      console.log("postSourceVersion");
       var rtrn = {
           time: Math.round((new Date()).valueOf()/1000),
-          currAppVersion: "0.1.1",
-          currAppLocation: "http://release.rfcx.org/src-android/0.1.1.apk",
-          currAppCheckSum: "",
-          prevAppVersion: "0.1.0"
+          currAppVersion: null,
+          currAppLocation: null,
+          currAppCheckSum: null,
+          prevAppVersion: null
         };
-      res.send(JSON.stringify(rtrn), 200);
+      Model.Version.find({where:{version_id:"0.1.1"}}).success(function(Vers){
+        rtrn.currAppVersion = Vers.version_id;
+        rtrn.currAppLocation = "http://release.rfcx.org/src-android/"+Vers.version_id+".apk";
+        rtrn.currAppCheckSum = Vers.checksum;
+        res.send(rtrn,200);
+      }).error(function(e){
+        res.send(rtrn,500);
+      });
     }
 
   }

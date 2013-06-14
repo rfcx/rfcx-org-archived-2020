@@ -23,7 +23,7 @@ exports.parsers = {
       });
     });
 
-  } // end of processCheckIn
+  }
 
 
 }

@@ -20,6 +20,12 @@ exports.defineModel = function(sequelize, DataTypes) {
         validate: {
           isBoolean: true
         }
+      },
+      checksum: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        validate: {
+        }
       }
     },{
       // column naming customization

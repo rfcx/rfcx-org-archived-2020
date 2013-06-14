@@ -82,6 +82,7 @@ var callbacks = {
           time: Math.round(new Date()).valueOf()/1000),
           currAppVersion: "0.1.1",
           currAppLocation: "http://release.rfcx.org/src-android/0.1.1.apk"
+          currAppCheckSum: "",
           prevAppVersion: "0.1.0"
         };
       res.send(JSON.stringify(rtrn), 200);

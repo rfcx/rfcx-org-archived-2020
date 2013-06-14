@@ -80,8 +80,9 @@ var callbacks = {
       console.log("postSourceVersion");
       var rtrn = {
           time: Math.round(new Date()).valueOf()/1000),
-          appVersion: "0.1.1",
-          appLocation: "http://release.rfcx.org/src-android/0.1.1.apk"
+          currAppVersion: "0.1.1",
+          currAppLocation: "http://release.rfcx.org/src-android/0.1.1.apk"
+          prevAppVersion: "0.1.0"
         };
       res.send(JSON.stringify(rtrn), 200);
     }

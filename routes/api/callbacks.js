@@ -48,7 +48,8 @@ var callbacks = {
                 network_search_time: d.networkSearch,
                 spectra_count: d.specC,
                 internal_luminosity: d.lumAvg,
-                blob_size: req.files.blob.size
+                blob_size: req.files.blob.size,
+                app_version: d.appV
               }).success(function(Diag){
                 rtrn.diagId = Diag.id;
                 for (var g = 0; g < d.specC; g++) {

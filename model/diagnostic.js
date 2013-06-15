@@ -70,6 +70,12 @@ exports.defineModel = function(sequelize, DataTypes) {
           isInt: true,
           min: 0
         }
+      },
+      app_version: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        validate: {
+        }
       }
     },{
       // column naming customization

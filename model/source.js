@@ -23,6 +23,12 @@ exports.defineModel = function(sequelize, DataTypes) {
           min: -180,
           max: 180
         }
+      },
+      phone_number: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        validate: {
+        }
       }
     },{
       // column naming customization

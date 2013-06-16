@@ -61,16 +61,19 @@ var callbacks = {
                   }).success(function(Spec){
                   }).error(function(e){
                     console.log("Failure: Spectrum could not be saved...");
+                    console.log(d);
                     res.send(rtrn, 500);
                   });
                 }
                 res.send(rtrn, 202);
               }).error(function(e){
                 console.log("Failure: Sequelize create Diagnostic...");
+            console.log(d);
                 res.send(rtrn, 500);
               });
           }).error(function(e){
             console.log("Failure: Sequelize findOrCreate Source...");
+            console.log(d);
             res.send(rtrn, 500);
         });
 

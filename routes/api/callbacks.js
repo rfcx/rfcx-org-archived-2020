@@ -49,7 +49,7 @@ var callbacks = {
                 spectra_count: d.specC,
                 internal_luminosity: d.lumAvg,
                 blob_size: req.files.blob.size,
-                app_version: d.appV
+                app_version: d.appVersion
               }).success(function(Diag){
                 rtrn.diagId = Diag.id;
                 for (var g = 0; g < d.specC; g++) {

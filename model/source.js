@@ -10,6 +10,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       latitude: {
         type: DataTypes.FLOAT,
+        allowNull: true,
         validate: {
           isFloat: true,
           min: -90,
@@ -18,6 +19,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       longitude: {
         type: DataTypes.FLOAT,
+        allowNull: true,
         validate: {
           isFloat: true,
           min: -180,

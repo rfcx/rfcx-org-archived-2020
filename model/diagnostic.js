@@ -10,6 +10,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       cpu_percent: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: 0,
@@ -18,6 +19,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       cpu_clock: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: 0,
@@ -26,6 +28,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       battery_level: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: 0,
@@ -34,6 +37,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       battery_temperature: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: -20,
@@ -42,6 +46,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       network_search_time: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: 0,
@@ -50,6 +55,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       internal_luminosity: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: 0,
@@ -58,6 +64,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       spectra_count: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: 0,
@@ -66,6 +73,7 @@ exports.defineModel = function(sequelize, DataTypes) {
       },
       blob_size: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         validate: {
           isInt: true,
           min: 0

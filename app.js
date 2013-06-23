@@ -42,11 +42,19 @@ app.configure("development", function(){
   app.use(express.errorHandler());
 });
 
+app.param("source_id",function(req,res,next,source_id){
+  req.urlParams = {};
+  req.urlParams.source_id = parseInt(source_id);
+  next();
+});
+
 // API Initialization
 var apiCb_ = require("./routes/api/callbacks.js"), apiEp = require("./routes/api/endpoints.js").endpoints;
 function apiCb(req, res, next) { apiCb_.run(req, res, next, apiEp, Model); }
 for (i in apiEp.get) { app.get(apiEp.get[i].path, apiCb); }
 for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
+
+
 
 // Web Initialization
 app.get("/", function(req, res){

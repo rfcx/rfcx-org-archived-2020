@@ -5,7 +5,7 @@ exports.run = function(req, res, next, Endpoints, Model) {
   for (i in Endpoints[method]) {
     if (Endpoints[method][i].path === path) {
       passNext = false;
-      res.setHeader("Content-Type", Endpoints[method][i].contentType);
+      // res.setHeader("Content-Type", Endpoints[method][i].contentType);
       callbacks[method][Endpoints[method][i].callback](req, res, Model);
       break;
     }
@@ -19,8 +19,18 @@ var callbacks = {
   get: {
 
     getSource: function(req, res, Model) {
-      res.send([{name:'wine1'}, {name:'wine2'}]);
-      res.end();
+
+      console.log(req);
+
+      // Model.Source.find({
+      //   source_id: res.urlParams.sourceId
+      // }).success(function(Src){
+      //   res.json(Src);
+      // }).error(function(e){
+      //   console.log(e);
+      // });
+      // res.json([{name:'wine1'}, {name:'wine2'}]);
+      // res.end();
     }
 
   },
@@ -32,12 +42,14 @@ var callbacks = {
       parsers.processCheckIn(req,res,function(req, res, d){
 
         var rtrn = {
-          time: Math.round((new Date()).valueOf()/1000),
-          diagId: null
+          srcId: null,
+          diagId: null,
+          time: Math.round((new Date()).valueOf()/1000)
         };
         Model.Source.findOrCreate({
             device_id: d.udid
           }).success(function(Src){
+            rtrn.srcId = Src.id;
             Model.Diagnostic.create({
                 source_id: Src.id,
                 measured_at: new Date(d.sent.valueOf()),
@@ -65,7 +77,8 @@ var callbacks = {
                     res.send(rtrn, 500);
                   });
                 }
-                res.send(rtrn, 202);
+                console.log("Check-In: Source ID: "+Src.id);
+                res.json(rtrn);
               }).error(function(e){
                 console.log("Failure: Sequelize create Diagnostic...");
                 console.log(e);
@@ -84,15 +97,18 @@ var callbacks = {
       var rtrn = {
           time: Math.round((new Date()).valueOf()/1000),
           currAppVersion: null,
-          currAppLocation: null,
+          currAppLocation: (process.env.NODE_ENV == "production") ? "http://release.rfcx.org/" : "http://localhost:8080/" ,
           currAppCheckSum: null,
           prevAppVersion: null
         };
       Model.Version.findAll({ where: { available: true }, order: "version_id DESC", limit: 2 }).success(function(versions){
         rtrn.currAppVersion = versions[0].version_id;
-        rtrn.currAppLocation = "http://release.rfcx.org/src-android/"+versions[0].version_id+".apk";
+        rtrn.currAppLocation += "src-android/"+versions[0].version_id+".apk";
         rtrn.currAppCheckSum = versions[0].checksum;
         if (versions.length > 1) { rtrn.prevAppVersion = versions[1].version_id; }
+
+        console.log(req.body);
+
         res.send(rtrn,200);
       }).error(function(e){
         res.send(rtrn,500);

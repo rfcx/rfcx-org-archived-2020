@@ -108,7 +108,7 @@ var callbacks = {
         if (versions.length > 1) { rtrn.prevAppVersion = versions[1].version_id; }
 console.log(req.body);
          Model.Source.findOrCreate({
-            device_id: req.body.udid
+            device_id: req.body.deviceId
           }).success(function(Src){
             Model.Diagnostic.create({
                 source_id: Src.id,

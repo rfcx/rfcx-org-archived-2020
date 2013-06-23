@@ -106,8 +106,32 @@ var callbacks = {
         rtrn.currAppLocation += "src-android/"+versions[0].version_id+".apk";
         rtrn.currAppCheckSum = versions[0].checksum;
         if (versions.length > 1) { rtrn.prevAppVersion = versions[1].version_id; }
+console.log(req.body);
+         Model.Source.findOrCreate({
+            device_id: req.body.udid
+          }).success(function(Src){
+            Model.Diagnostic.create({
+                source_id: Src.id,
+                measured_at: new Date(),
+                cpu_percent: 0,
+                cpu_clock: 0,
+                battery_level: 0,
+                battery_temperature: 0,
+                network_search_time: 0,
+                spectra_count: 0,
+                internal_luminosity: 0,
+                blob_size: 0,
+                app_version: "0.0.0"
+              }).success(function(Diag){
 
-        console.log(req.body);
+                console.log(req.body);
+              
+              }).error(function(e){
+                console.log(e);
+              });
+          }).error(function(e){
+            console.log(e);
+        });
 
         res.send(rtrn,200);
       }).error(function(e){

@@ -151,7 +151,7 @@ var callbacks = {
                 internal_luminosity: 0,
                 blob_size: 0
               }).success(function(Diag){
-                Vers[0].addCheckin(Diag).success(function(){}).error(function(e){console.log(e);});
+//                Vers[0].addCheckin(Diag).success(function(){}).error(function(e){console.log(e);});
                 console.log(req.body);
               
               }).error(function(e){

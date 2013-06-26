@@ -71,5 +71,9 @@ function parseCheckInJSON(json) {
     var specHex = specGroup[g].split(",");
     for (var i = 0; i < specHex.length; i++) { d.specV[g][i] = parseInt(specHex[i], 16); }
   }
+  
+  if (json.lastId != null) { d.lastCheckInId = parseInt(json.lastId); }
+  if (json.lastLen != null) { d.lastCheckInDuration = parseInt(json.lastLen); }
+
   return d;
 }

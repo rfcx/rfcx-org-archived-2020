@@ -50,7 +50,7 @@ exports.defineModel = function(sequelize, DataTypes) {
         validate: {
           isInt: true,
           min: 0,
-          max: 300
+          max: 300000
         }
       },
       internal_luminosity: {
@@ -77,6 +77,15 @@ exports.defineModel = function(sequelize, DataTypes) {
         validate: {
           isInt: true,
           min: 0
+        }
+      },
+      network_transmit_time: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        validate: {
+          isInt: true,
+          min: 0,
+          max: 300000
         }
       },
       app_version: {

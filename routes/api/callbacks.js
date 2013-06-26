@@ -43,7 +43,7 @@ var callbacks = {
 
         var rtrn = {
           srcId: null,
-          diagId: null,
+          checkInId: null,
           time: Math.round((new Date()).valueOf()/1000)
         };
         Model.Source.findOrCreate({
@@ -63,7 +63,7 @@ var callbacks = {
                 blob_size: req.files.blob.size,
                 app_version: d.appVersion
               }).success(function(Diag){
-                rtrn.diagId = Diag.id;
+                rtrn.checkInId = Diag.id;
                 for (var g = 0; g < d.specC; g++) {
                   Model.Spectrum.create({
                     source_id: Src.id,
@@ -77,7 +77,21 @@ var callbacks = {
                     res.send(rtrn, 500);
                   });
                 }
-                console.log("Check-In: Source ID: "+Src.id);
+
+                if (d.lastCheckInId != null) {
+                  Model.Diagnostic.find(d.lastCheckInId).success(function(lastDiag){
+                    lastDiag.updateAttributes({
+                      network_transmit_time: d.lastCheckInDuration
+                    }).success(function(){
+                    }).error(function(e){
+                      console.log("Failure: Last Check In transfer time could not be saved...");
+                      console.log(e);
+                    });
+                  }).error(function(e){
+                    console.log(e);
+                  });
+                }
+
                 res.json(rtrn);
               }).error(function(e){
                 console.log("Failure: Sequelize create Diagnostic...");
@@ -106,7 +120,7 @@ var callbacks = {
         rtrn.currAppLocation += "src-android/"+versions[0].version_id+".apk";
         rtrn.currAppCheckSum = versions[0].checksum;
         if (versions.length > 1) { rtrn.prevAppVersion = versions[1].version_id; }
-console.log(req.body);
+        
          Model.Source.findOrCreate({
             device_id: req.body.deviceId
           }).success(function(Src){

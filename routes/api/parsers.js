@@ -31,7 +31,7 @@ exports.parsers = {
 function parseCheckInJSON(json) {
 
   var d = {
-    udid: json.udid,
+    uuid: json.uuid,
     appVersion: json.appV,
     isCharging: json.powr,
     isCharged: json.chrg,

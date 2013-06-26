@@ -47,7 +47,7 @@ var callbacks = {
           time: Math.round((new Date()).valueOf()/1000)
         };
         Model.Source.findOrCreate({
-            device_id: d.udid
+            device_id: d.uuid
           }).success(function(Src){
             rtrn.srcId = Src.id;
             Model.Diagnostic.create({

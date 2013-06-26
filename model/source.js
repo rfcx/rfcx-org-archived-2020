@@ -1,11 +1,18 @@
 exports.defineModel = function(sequelize, DataTypes) {
   return sequelize.define(
     "Source", {
-      device_id: {
+      device_uuid: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
         validate: {
+        }
+      },
+      last_check_in_time: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        validate: {
+          isDate: true
         }
       },
       latitude: {
@@ -34,5 +41,8 @@ exports.defineModel = function(sequelize, DataTypes) {
       }
     },{
       // column naming customization
+      instanceMethods: {
+        // customized instance methods
+      }
     });
 };

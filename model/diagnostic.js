@@ -87,14 +87,11 @@ exports.defineModel = function(sequelize, DataTypes) {
           min: 0,
           max: 300000
         }
-      },
-      app_version: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-        }
       }
     },{
       // column naming customization
+      instanceMethods: {
+        // customized instance methods
+      }
     });
 };

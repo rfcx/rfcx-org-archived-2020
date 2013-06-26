@@ -4,7 +4,6 @@ exports.endpoints = {
   ],
   post: [
     { path: "/api/1/checkin", callback: "postCheckIn" },
-    { path: "/api/1/source/version", callback: "postSourceVersion" },
-    { path: "/api/1/source/register", callback: "postSourceVersion" }
+    { path: "/api/1/source/version", callback: "postSourceVersion" }
   ]
 };

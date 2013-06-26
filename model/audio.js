@@ -1,17 +1,11 @@
 exports.defineModel = function(sequelize, DataTypes) {
   return sequelize.define(
-    "Sound", {
+    "Audio", {
       measured_at: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,
         validate: {
           isDate: true
-        }
-      },
-      guid: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
         }
       },
       size: {
@@ -32,4 +26,9 @@ exports.defineModel = function(sequelize, DataTypes) {
       }
     },{
       // column naming customization
-    });};
+      instanceMethods: {
+        // customized instance methods
+      },
+      tableName: "AudioMeta"
+    });
+};

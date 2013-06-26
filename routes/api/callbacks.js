@@ -42,68 +42,83 @@ var callbacks = {
       parsers.processCheckIn(req,res,function(req, res, d){
 
         var rtrn = {
-          srcId: null,
+          sourceId: null,
           checkInId: null,
           time: Math.round((new Date()).valueOf()/1000)
         };
-        Model.Source.findOrCreate({
-            device_id: d.uuid
-          }).success(function(Src){
-            rtrn.srcId = Src.id;
-            Model.Diagnostic.create({
-                source_id: Src.id,
-                measured_at: new Date(d.sent.valueOf()),
-                cpu_percent: d.cpuPAvg,
-                cpu_clock: d.cpuCAvg,
-                battery_level: d.batteryLevel,
-                battery_temperature: d.batteryTemp,
-                network_search_time: d.networkSearch,
-                spectra_count: d.specC,
-                internal_luminosity: d.lumAvg,
-                blob_size: req.files.blob.size,
-                app_version: d.appVersion
-              }).success(function(Diag){
-                rtrn.checkInId = Diag.id;
-                for (var g = 0; g < d.specC; g++) {
-                  Model.Spectrum.create({
-                    source_id: Src.id,
-                    diagnostic_id: Diag.id,
-                    measured_at: d.specT[g],
-                    spectrum: d.specV[g].join(",")
-                  }).success(function(Spec){
-                  }).error(function(e){
-                    console.log("Failure: Spectrum could not be saved...");
-                    console.log(e);
-                    res.send(rtrn, 500);
-                  });
-                }
 
-                if (d.lastCheckInId != null) {
-                  Model.Diagnostic.find(d.lastCheckInId).success(function(lastDiag){
-                    lastDiag.updateAttributes({
-                      network_transmit_time: d.lastCheckInDuration
-                    }).success(function(){
+        Model.Version.count({ where: { name: d.appVersion } }).success(function(versionCount){
+          if (versionCount > 0) {
+            Model.Version.find({ where: { name: d.appVersion } }).success(function(Ver){
+              Model.Source.findOrCreate({
+                  device_uuid: d.uuid
+                }).success(function(Src){
+                  Ver.addSource(Src).success(function(){}).error(function(e){console.log(e);});
+                  rtrn.sourceId = Src.id;
+                  Model.Diagnostic.create({
+                      source_id: Src.id,
+                      measured_at: new Date(d.sent.valueOf()),
+                      cpu_percent: d.cpuPAvg,
+                      cpu_clock: d.cpuCAvg,
+                      battery_level: d.batteryLevel,
+                      battery_temperature: d.batteryTemp,
+                      network_search_time: d.networkSearch,
+                      spectra_count: d.specC,
+                      internal_luminosity: d.lumAvg,
+                      blob_size: req.files.blob.size
+                    }).success(function(Diag){
+                      Ver.addCheckin(Diag).success(function(){}).error(function(e){console.log(e);});
+                      rtrn.checkInId = Diag.id;
+                      for (var g = 0; g < d.specC; g++) {
+                        Model.Spectrum.create({
+                          source_id: Src.id,
+                          diagnostic_id: Diag.id,
+                          measured_at: d.specT[g],
+                          spectrum: d.specV[g].join(",")
+                        }).success(function(Spec){
+                        }).error(function(e){
+                          console.log("Failure: Spectrum could not be saved...");
+                          console.log(e);
+                          res.send(rtrn, 500);
+                        });
+                      }
+
+                      if (d.lastCheckInId != null) {
+                        Model.Diagnostic.find(d.lastCheckInId).success(function(lastDiag){
+                          lastDiag.updateAttributes({
+                            network_transmit_time: d.lastCheckInDuration
+                          }).success(function(){
+                          }).error(function(e){
+                            console.log("Failure: Last Check In transfer time could not be saved...");
+                            console.log(e);
+                          });
+                        }).error(function(e){
+                          console.log(e);
+                        });
+                      }
+
+
+
+                      res.json(rtrn);
                     }).error(function(e){
-                      console.log("Failure: Last Check In transfer time could not be saved...");
+                      console.log("Failure: Sequelize create Diagnostic...");
                       console.log(e);
+                      res.send(rtrn, 500);
                     });
-                  }).error(function(e){
-                    console.log(e);
-                  });
-                }
-
-                res.json(rtrn);
-              }).error(function(e){
-                console.log("Failure: Sequelize create Diagnostic...");
-                console.log(e);
-                res.send(rtrn, 500);
+                }).error(function(e){
+                  console.log("Failure: Sequelize findOrCreate Source...");
+                  console.log(e);
+                  res.send(rtrn, 500);
               });
-          }).error(function(e){
-            console.log("Failure: Sequelize findOrCreate Source...");
-            console.log(e);
+            }).error(function(e){
+              console.log("Failure: Sequelize find version Source...");
+              console.log(e);
+            });
+          } else {
+            console.log("Stated app version NOT found in database...");
             res.send(rtrn, 500);
+          }
         });
-
       });
     },
 
@@ -115,14 +130,14 @@ var callbacks = {
           currAppCheckSum: null,
           prevAppVersion: null
         };
-      Model.Version.findAll({ where: { available: true }, order: "version_id DESC", limit: 2 }).success(function(versions){
-        rtrn.currAppVersion = versions[0].version_id;
-        rtrn.currAppLocation += "src-android/"+versions[0].version_id+".apk";
-        rtrn.currAppCheckSum = versions[0].checksum;
-        if (versions.length > 1) { rtrn.prevAppVersion = versions[1].version_id; }
+      Model.Version.findAll({ where: { available: true }, order: "name DESC", limit: 2 }).success(function(Vers){
+        rtrn.currAppVersion = Vers[0].name;
+        rtrn.currAppLocation += "src-android/"+Vers[0].name+".apk";
+        rtrn.currAppCheckSum = Vers[0].checksum;
+        if (Vers.length > 1) { rtrn.prevAppVersion = Vers[1].name; }
         
          Model.Source.findOrCreate({
-            device_id: req.body.deviceId
+            device_uuid: req.body.deviceId
           }).success(function(Src){
             Model.Diagnostic.create({
                 source_id: Src.id,
@@ -134,10 +149,9 @@ var callbacks = {
                 network_search_time: 0,
                 spectra_count: 0,
                 internal_luminosity: 0,
-                blob_size: 0,
-                app_version: "0.0.0"
+                blob_size: 0
               }).success(function(Diag){
-
+                Vers[0].addCheckin(Diag).success(function(){}).error(function(e){console.log(e);});
                 console.log(req.body);
               
               }).error(function(e){
@@ -156,3 +170,31 @@ var callbacks = {
   }
 
 };
+
+
+// function updateSourceMeta(Model,Src,versionId) {
+
+//   Model.Version.find({ where: { name: versionId } }).success(function(Ver){
+//     console.log(Ver.id);
+//   }).error(function(e){
+//     console.log(e);
+//   });
+
+
+//     // Src.updateAttributes({
+//     //     last_check_in_time: new Date()
+//     //   }).success(function(){
+//     //   }).error(function(e){
+//     //     console.log(e);
+//     //   });
+
+// }
+
+// function getVersionByName(Model, versionName, callback) {
+//   Model.Version.find({ where: { name: versionId } }).success(function(Ver){
+//     console.log(Ver.id);
+//   }).error(function(e){
+//     console.log(e);
+//   });
+// }
+

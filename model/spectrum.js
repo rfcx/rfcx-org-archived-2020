@@ -15,4 +15,9 @@ exports.defineModel = function(sequelize, DataTypes) {
       }
     },{
       // column naming customization
-    });};
+      instanceMethods: {
+        // customized instance methods
+      },
+      tableName: "Spectra"
+    });
+};

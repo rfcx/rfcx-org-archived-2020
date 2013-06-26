@@ -1,7 +1,7 @@
 exports.defineModel = function(sequelize, DataTypes) {
   return sequelize.define(
     "Version", {
-      version_id: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -29,5 +29,8 @@ exports.defineModel = function(sequelize, DataTypes) {
       }
     },{
       // column naming customization
+      instanceMethods: {
+        // customized instance methods
+      }
     });
 };

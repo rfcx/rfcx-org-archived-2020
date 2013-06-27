@@ -60,7 +60,7 @@ var callbacks = {
                       measured_at: new Date(d.sent.valueOf()),
                       cpu_percent: d.cpuPAvg,
                       cpu_clock: d.cpuCAvg,
-                      battery_level: d.batteryLevel,
+                      battery_percent: d.batteryPercent,
                       battery_temperature: d.batteryTemp,
                       network_search_time: d.networkSearch,
                       spectra_count: d.specC,
@@ -97,14 +97,24 @@ var callbacks = {
                         });
                       }
 
-
+                      for (var m = 0; m < d.sms.length; m++) {
+                        Model.Message.create({
+                          received_at: new Date(d.sms[m][0]),
+                          origin: d.sms[m][1],
+                          body: d.sms[m][2],
+                          source_id: Src.id,
+                          diagnostic_id: Diag.id
+                        }).success(function(Msg){}).error(function(e){console.log(e);});
+                      }
 
                       res.json(rtrn);
+
                     }).error(function(e){
                       console.log("Failure: Sequelize create Diagnostic...");
                       console.log(e);
                       res.send(rtrn, 500);
                     });
+
                 }).error(function(e){
                   console.log("Failure: Sequelize findOrCreate Source...");
                   console.log(e);
@@ -141,19 +151,9 @@ var callbacks = {
           }).success(function(Src){
             Model.Diagnostic.create({
                 source_id: Src.id,
-                measured_at: new Date(),
-                cpu_percent: 0,
-                cpu_clock: 0,
-                battery_level: 0,
-                battery_temperature: 0,
-                network_search_time: 0,
-                spectra_count: 0,
-                internal_luminosity: 0,
-                blob_size: 0
+                measured_at: new Date()
               }).success(function(Diag){
 //                Vers[0].addCheckin(Diag).success(function(){}).error(function(e){console.log(e);});
-                console.log(req.body);
-              
               }).error(function(e){
                 console.log(e);
               });
@@ -165,6 +165,13 @@ var callbacks = {
       }).error(function(e){
         res.send(rtrn,500);
       });
+    },
+
+    postSourceAlert: function(req, res, Model) {
+      var rtrn = {
+          time: Math.round((new Date()).valueOf()/1000)
+        };
+      res.json(rtrn);
     }
 
   }

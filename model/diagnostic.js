@@ -26,7 +26,7 @@ exports.defineModel = function(sequelize, DataTypes) {
           max: 800
         }
       },
-      battery_level: {
+      battery_percent: {
         type: DataTypes.INTEGER,
         allowNull: true,
         validate: {

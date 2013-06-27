@@ -29,18 +29,18 @@ exports.parsers = {
 }
 
 function parseCheckInJSON(json) {
-
   var d = {
     uuid: json.uuid,
     appVersion: json.appV,
     isCharging: json.powr,
     isCharged: json.chrg,
-    batteryLevel: json.batt,
+    batteryPercent: json.batt,
     batteryTemp: json.temp,
     networkSearch: json.srch,
     specT: [],
     specV: [],
     specC: [],
+    sms: [],
     sent: Date.parse(json.sent)
   }; 
 
@@ -72,6 +72,9 @@ function parseCheckInJSON(json) {
     for (var i = 0; i < specHex.length; i++) { d.specV[g][i] = parseInt(specHex[i], 16); }
   }
   
+  var smsMsgs = json.sms.split("$");
+  for (var i = 0; i < smsMsgs.length; i++) { d.sms[i] = smsMsgs[i].split("|"); }
+
   if (json.lastId != null) { d.lastCheckInId = parseInt(json.lastId); }
   if (json.lastLen != null) { d.lastCheckInDuration = parseInt(json.lastLen); }
 

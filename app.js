@@ -58,12 +58,22 @@ for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 
 // Web Initialization
 app.get("/", function(req, res){
-  fs.readFile("./public/_old_site/index.html", function (e, d) {
-    if (e) throw e;
-    res.setHeader("Content-Type", "text/html");
-    res.setHeader("Content-Length", d.length);
-    res.send(d);
-  });
+  if  ( (process.env.NODE_ENV === "production")
+      &&  ((req.host === "rainforestconnection.org")
+      ||  (req.host === "www.rainforestconnection.org")
+      ||  (req.host === "www.rfcx.org"))
+      ) {
+      console.log("Received request at '"+req.host+"'. Redirecting to https://rfcx.org/.");
+      res.writeHead(302, { "Location": "https://rfcx.org/" } );
+      res.end();
+  } else {
+    fs.readFile("./public/_old_site/index.html", function (e, d) {
+      if (e) throw e;
+      res.setHeader("Content-Type", "text/html");
+      res.setHeader("Content-Length", d.length);
+      res.send(d);
+    });
+  }
 });
 
 http.createServer(app).listen(app.get("port"), function(){

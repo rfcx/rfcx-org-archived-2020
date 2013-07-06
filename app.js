@@ -26,7 +26,7 @@ var express = require("express"), routes = require("./routes"),
   http = require("http"), path = require("path");
 var app = express();
 app.configure(function(){
-  app.set("title", "Rainforest Connection API");
+  app.set("title", "Rainforest Connection");
   app.set("port", process.env.PORT || 8080);
   app.use(express.bodyParser());
   app.set("views", __dirname + "/views");
@@ -58,11 +58,7 @@ for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 
 // Web Initialization
 app.get("/", function(req, res){
-  if  ( (process.env.NODE_ENV === "production")
-      &&  ((req.host === "rainforestconnection.org")
-      ||  (req.host === "www.rainforestconnection.org")
-      ||  (req.host === "www.rfcx.org"))
-      ) {
+  if  ( (process.env.NODE_ENV === "production") && (req.host !== "rfcx.org") ) {
       console.log("Received request at '"+req.host+"'. Redirecting to https://rfcx.org/.");
       res.writeHead(302, { "Location": "https://rfcx.org/" } );
       res.end();
@@ -75,6 +71,11 @@ app.get("/", function(req, res){
     });
   }
 });
+
+app.get("/index", function(req, res){
+  routes.index(req, res, process, Model);
+});
+
 
 http.createServer(app).listen(app.get("port"), function(){
   console.log(app.get("title")+" (port "+app.get("port")+") ("+process.env.NODE_ENV+")");

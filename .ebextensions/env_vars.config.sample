@@ -8,3 +8,6 @@ option_settings:
 
   - option_name: SEGMENT_IO_SECRET
     value: 
+
+  - option_name: SEGMENT_IO_CLIENT_ID
+    value: 

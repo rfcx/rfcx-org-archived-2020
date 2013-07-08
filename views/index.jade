@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}, Rainforest Connection
+  div.navbar.navbar-inverse.navbar-fixed-top
+    div.navbar-inner
+      div.container
+        button.btn.btn-navbar(type="button", data-toggle="collapse", data-target=".nav-collapse")
+          span.icon-bar
+        a.brand(href="#")= title
+        div.nav-collapse.collapse
+          ul.nav
+            li.active
+              a(href="#")= "Home"
+            li
+              a(href="#about")= "About"
+            li
+              a(href="#contact")= "Contact"
+
+  div.container
+    h1= "Bootstrap starter template"
+    p
+      Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.
+
+
+
+
+
+

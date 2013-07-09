@@ -72,9 +72,11 @@ app.get("/", function(req, res){
   }
 });
 
-app.get("/index", function(req, res){
-  routes.index(req, res, process, Model);
-});
+var navItems = ["home", "about", "contact"];
+app.get("/home", function(req, res){ routes.home(req, res, process, navItems, Model); });
+app.get("/about", function(req, res){ routes.about(req, res, process, navItems, Model); });
+app.get("/contact", function(req, res){ routes.contact(req, res, process, navItems, Model); });
+
 
 
 http.createServer(app).listen(app.get("port"), function(){

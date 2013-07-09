@@ -1,0 +1,27 @@
+body { padding-top: 0px; padding-bottom: 40px; font-family:'roadgeek_2005_engschrift',Sans-Serif; color:#494848; }
+
+.container-narrow { margin: 0 auto; max-width: 900px; }
+.masthead .logo { width:280px; height:51px; }
+.masthead { margin-bottom:5px; margin-top:22px; border-bottom:solid 1px gray; }
+
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+}
+.jumbotron h1 {
+	font-family:'roadgeek_2005_engschrift',Sans-Serif;
+	color:#494848;
+  font-size: 36px;
+  line-height: 1;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+.marketing {
+  margin: 60px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}

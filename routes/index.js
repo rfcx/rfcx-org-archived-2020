@@ -7,6 +7,7 @@ function setJadeVars(process, navItems, jV) {
   var inProd = (process.env.NODE_ENV === "production");
   jV.title += (inProd ? "" : (" ("+process.env.NODE_ENV+")"));
   jV.segment_io_client_id =  process.env.SEGMENT_IO_CLIENT_ID;
+  jV.addthis_pubid = process.env.ADDTHIS_PUBID;
   jV.bootstrap_cdn = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
   jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";

@@ -10,11 +10,11 @@ html(lang="en")
     link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome.min.css')
     // if lt IE 9
       script(type='text/javascript', src='#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js')
-      link(rel='stylesheet', href='#{rfcx_cdn}/css/gradient-ie9.css?v=1')
+      link(rel='stylesheet', href='#{rfcx_cdn}/css/gradient-ie9.css?v=#{app_version}')
     // if IE 7
       link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
-    link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css?v=1')
-    link(rel='stylesheet', href='/css/rfcx-main.css?v=1')
+    link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
+    link(rel='stylesheet', href='/css/rfcx-main.css?v=#{app_version}')
   body
     div.container-narrow
 
@@ -32,7 +32,7 @@ html(lang="en")
               li
                 a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
         a(href="/home")
-          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo.560.png")
+          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo.560.png?v=#{app_version}")
 
       block content
       

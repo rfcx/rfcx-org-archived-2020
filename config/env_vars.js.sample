@@ -5,6 +5,9 @@ exports.env = {
   NODEFLY_ID: "",
 
   SEGMENT_IO_SECRET: "",
+  SEGMENT_IO_CLIENT_ID: "",
+
+  ADDTHIS_PUBID = ""
 
   RDS_HOSTNAME: "",
   RDS_DB_NAME: "",

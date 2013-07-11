@@ -11,3 +11,6 @@ option_settings:
 
   - option_name: SEGMENT_IO_CLIENT_ID
     value: 
+
+  - option_name: ADDTHIS_PUBID
+  	value: 

@@ -10,10 +10,11 @@ html(lang="en")
     link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome.min.css')
     // if lt IE 9
       script(type='text/javascript', src='#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js')
+      link(rel='stylesheet', href='#{rfcx_cdn}/css/gradient-ie9.css?v=1')
     // if IE 7
       link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
-    link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css')
-    link(rel='stylesheet', href='/css/rfcx-main.css')
+    link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css?v=1')
+    link(rel='stylesheet', href='/css/rfcx-main.css?v=1')
   body
     div.container-narrow
 
@@ -30,9 +31,8 @@ html(lang="en")
             else
               li
                 a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
-        h3.muted
-          a(href="/home")
-            img.logo(src="/img/masthead/logo-title.png")
+        a(href="/home")
+          img.logo(src="/img/masthead/logo-title.png")
 
       block content
       
@@ -62,5 +62,23 @@ html(lang="en")
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
+    script(type='text/javascript', src='#{cdnjs_cdn}/parsley.js/1.1.16/parsley.min.js')
     script(type='text/javascript')
       var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])}; analytics.load("#{segment_io_client_id}");
+    script(type='text/javascript')
+      var addthis_config = {"data_track_addressbar":true};
+    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51def56e4e11925c')
+
+
+
+
+      <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_pinterest_pinit"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51def56e4e11925c"></script>
+<!-- AddThis Button END -->

@@ -9,6 +9,7 @@ function setJadeVars(process, navItems, jV) {
   jV.segment_io_client_id =  process.env.SEGMENT_IO_CLIENT_ID;
   jV.bootstrap_cdn = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
+  jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";
   jV.rfcx_cdn = inProd ? "//d1b38lwmn11w1.cloudfront.net/www" : "/cdn";
   jV.nav_items = navItems;
   return jV;

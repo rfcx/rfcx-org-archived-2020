@@ -4,16 +4,17 @@ block content
   
   div.container-narrow.banner-video
     img.banner-bg(src="/img/video-forest.jpg")
-    div.video-box
+    div.rfcx-trans-linear.video-box.rfcx-launch-video
       i.icon-play-circle
     span.rfcx-unselectable.slogan
       p.roadgeek= "HELP SAVE RAINFORESTS"
       p.roadgeek= "USING REAL-TIME DATA"
-      p.rfcx-trans-linear.video-link= "Watch the video of how it works"
+      p.rfcx-trans-linear.video-link.rfcx-launch-video(onclick="javascript:alert();")
+        span= "Watch the video of how it works"
         i.icon-arrow-right
 
 
-  div.row-fluid.rfcx-row
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-home-1
     div.span6
     div.span6
       p.roadgeek.rfcx-header= "TURNING OLD PHONES"
@@ -28,5 +29,33 @@ block content
         span= "We can tell in milliseconds which trees are"
         br
         span= "in danger — and then we alert local authorities."
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-home-2
+    div.span12
+      p.roadgeek.rfcx-header= "HOW FAST ARE THE RAINFORESTS DISAPPEARING?"
+      p.rfcx-body
+        span= "We take old mobile phones,"
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-home-3
+    div.span6
+      p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS"
+      p.rfcx-body
+        span= "Please get involved by signing up for our newsletter."
+        br
+        span= "We have some big things in the works, and we want to make sure you will always be amongst the first to know."
+        br
+        span= "We will never sell or disclose your address to anyone else."
+
+        form(data-validate='parsley')
+          div.control-group
+            div.controls
+              div.input-append
+                input.input-large(type='text', data-type='email', id='email', name='email', placeholder='Your E-mail')
+                span.add-on.btn.btn-success= "Sign-up"
+
+
+
+    div.span6
+      img.stopsign(src="/cdn/img/home/stopsign.358.png")
 
 

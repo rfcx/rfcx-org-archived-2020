@@ -20,19 +20,29 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .masthead a:hover .masthead-social { color:#888888; }
 
 .banner-video { height:365px; }
-.banner-video .slogan { position:absolute; margin-top:130px; margin-left:10px; color:#ffffff; z-index:1; }
+.banner-video .slogan { position:absolute; margin-top:140px; margin-left:10px; color:#ffffff; z-index:1; }
 .banner-video .banner-bg { position:absolute; z-index:0; width:120%; height:100%; left:-10%; max-width:120%; }
-.banner-video .video-link { font-size:16px; cursor:pointer; padding-top:5px; font-weight:600; }
+.banner-video .video-link { font-size:16px; cursor:pointer; padding-top:5px; font-weight:600; margin-left:0px; }
 .banner-video .video-link .icon-arrow-right { margin-left:10px; }
-.banner-video .video-link:hover .icon-arrow-right { margin-left:14px; }
-.banner-video .video-link:hover { color:gray; }
-.banner-video .video-box { position:absolute; z-index:1; margin-top:40px; margin-left:425px; height:252px; width:448px; border:solid 8px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
-.banner-video .video-box:hover { color:green; border-color:green; }
+.banner-video .video-link:hover { color:orange; margin-left:4px; }
+.banner-video .video-box { position:absolute; z-index:1; margin-top:45px; margin-left:433px; height:252px; width:448px; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
+.banner-video .video-box:hover { color:orange; border-color:orange; }
 .banner-video .video-box .icon-play-circle { position:relative; font-size:144px; margin-left:152px; top:54px; }
 
-.rfcx-row { border-top:solid 1px #e5ebed; padding-top:20px; margin-top:10px; }
+.rfcx-row { border-top:solid 1px rgba(234,235,236,1); padding-top:20px; margin-top:10px; position:relative; overflow:hidden; } 
 .rfcx-row .rfcx-header { color:#494848; }
 .rfcx-row .rfcx-body { color:#939393; font-weight:600; }
+.rfcx-row-gradient { background: -moz-radial-gradient(center top, ellipse cover,  rgba(234,235,236,1) 0%, rgba(234,235,236,1) 25%, rgba(255,255,255,1) 72%, rgba(255,255,255,1) 100%); background: -webkit-gradient(radial, center top, 0px, center center, 100%, color-stop(0%,rgba(234,235,236,1)), color-stop(25%,rgba(234,235,236,1)), color-stop(72%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); background: -webkit-radial-gradient(center top, ellipse cover,  rgba(234,235,236,1) 0%,rgba(234,235,236,1) 25%,rgba(255,255,255,1) 72%,rgba(255,255,255,1) 100%); background: -o-radial-gradient(center top, ellipse cover,  rgba(234,235,236,1) 0%,rgba(234,235,236,1) 25%,rgba(255,255,255,1) 72%,rgba(255,255,255,1) 100%); background: -ms-radial-gradient(center top, ellipse cover,  rgba(234,235,236,1) 0%,rgba(234,235,236,1) 25%,rgba(255,255,255,1) 72%,rgba(255,255,255,1) 100%); background: radial-gradient(ellipse at center top,  rgba(234,235,236,1) 0%,rgba(234,235,236,1) 25%,rgba(255,255,255,1) 72%,rgba(255,255,255,1) 100%); }
+
+.rfcx-row-home-1 {  }
+
+.rfcx-row-home-3 .rfcx-header { margin-top:70px; margin-left:0px; }
+.rfcx-row-home-3 .rfcx-body { margin-top:25px; margin-left:15px; }
+.rfcx-row-home-3 .control-group { margin-top:25px; margin-left:15px; }
+.rfcx-row-home-3 .stopsign { position:relative; }
+
+.control-group .input-append input { font-size:22px; padding:12px 19px 12px 19px; font-size:18px; }
+.control-group .input-append span { font-size:22px; padding:10px 19px 14px 19px; font-size:18px; width:70px; }
 
 .footer { background-color:#898989; color:#ffffff; font-size:14px; height:50px; }
 .footer ul { margin-top:15px; }

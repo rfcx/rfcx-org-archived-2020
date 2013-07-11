@@ -7,7 +7,9 @@ function setJadeVars(process, navItems, jV) {
   var inProd = (process.env.NODE_ENV === "production");
   jV.title += (inProd ? "" : (" ("+process.env.NODE_ENV+")"));
   jV.segment_io_client_id =  process.env.SEGMENT_IO_CLIENT_ID;
-  jV.bootstrap_location = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
+  jV.bootstrap_cdn = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
+  jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
+  jV.rfcx_cdn = inProd ? "//d1b38lwmn11w1.cloudfront.net/www" : "/cdn";
   jV.nav_items = navItems;
   return jV;
 }

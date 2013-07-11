@@ -72,7 +72,7 @@ app.get("/", function(req, res){
   }
 });
 
-var navItems = ["home", "about", "contact"];
+var navItems = [ ["home","Home"], ["about","About"], ["get_involved","Get Involved"], ["contact","Contact"] ];
 app.get("/home", function(req, res){ routes.home(req, res, process, navItems, Model); });
 app.get("/about", function(req, res){ routes.about(req, res, process, navItems, Model); });
 app.get("/contact", function(req, res){ routes.contact(req, res, process, navItems, Model); });

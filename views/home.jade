@@ -2,8 +2,31 @@ extends layout
 
 block content
   
-  div.jumbotron
-    h1= "FINALLY, TREES THAT CAN TALK"
+  div.container-narrow.banner-video
+    img.banner-bg(src="/img/video-forest.jpg")
+    div.video-box
+      i.icon-play-circle
+    span.rfcx-unselectable.slogan
+      p.roadgeek= "HELP SAVE RAINFORESTS"
+      p.roadgeek= "USING REAL-TIME DATA"
+      p.rfcx-trans-linear.video-link= "Watch the video of how it works"
+        i.icon-arrow-right
 
+
+  div.row-fluid.rfcx-row
+    div.span6
+    div.span6
+      p.roadgeek.rfcx-header= "TURNING OLD PHONES"
+      p.roadgeek.rfcx-header= "INTO SECURITY GUARDS"
+      p.rfcx-body
+        span= "We take old mobile phones,"
+        br
+        span= "fit them in a metal box, attach them to trees"
+        br
+        span= "and then listen for the noise of chainsaws."
+        br
+        span= "We can tell in milliseconds which trees are"
+        br
+        span= "in danger — and then we alert local authorities."
 
 

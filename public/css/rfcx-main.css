@@ -40,6 +40,7 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .rfcx-row-home-3 .rfcx-body { margin-top:25px; margin-left:15px; }
 .rfcx-row-home-3 .control-group { margin-top:25px; margin-left:15px; }
 .rfcx-row-home-3 .stopsign { position:relative; }
+.rfcx-row-home-3 .addthis_toolbox { margin-left:18px; }
 
 .control-group .input-append input { font-size:22px; padding:12px 19px 12px 19px; font-size:18px; }
 .control-group .input-append span { font-size:22px; padding:10px 19px 14px 19px; font-size:18px; width:70px; }

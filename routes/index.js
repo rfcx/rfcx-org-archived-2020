@@ -14,6 +14,7 @@ function setJadeVars(process, navItems, jV) {
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
   jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";
   jV.rfcx_cdn = inProd ? "//d1b38lwmn11w1.cloudfront.net/www" : "/cdn";
+  jV.rfcx_vendor_cdn = inProd ? "//d1b38lwmn11w1.cloudfront.net/vendor" : "/vendor";
   jV.nav_items = navItems;
   return jV;
 }

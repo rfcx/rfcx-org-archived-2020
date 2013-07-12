@@ -6,6 +6,7 @@
 function setJadeVars(process, navItems, jV) {
   var inProd = (process.env.NODE_ENV === "production");
   jV.app_version = "1";
+  jV.node_env = process.env.NODE_ENV;
   jV.title += (inProd ? "" : (" ("+process.env.NODE_ENV+")"));
   jV.segment_io_client_id =  process.env.SEGMENT_IO_CLIENT_ID;
   jV.addthis_pubid = process.env.ADDTHIS_PUBID;

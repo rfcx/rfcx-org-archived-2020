@@ -6,6 +6,8 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(name="description", content="")
+    link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
+    link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='stylesheet', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
     link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome.min.css')
     // if lt IE 9
@@ -14,15 +16,15 @@ html(lang="en")
     // if IE 7
       link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
     link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
-    link(rel='stylesheet', href='/css/rfcx-main.css?v=#{app_version}')
+    link(rel='stylesheet', href='/cdn/css/rfcx-main.css?v=#{app_version}')
   body
     div.container-narrow
 
       div.rfcx-unselectable.masthead
         a(target='_blank',href='https://www.facebook.com/RainforestCx')
-          i.pull-right.masthead-social.rfcx-trans-linear.icon-facebook-sign
+          i.pull-right.masthead-social.rfcx-trans-linear.icon-facebook-sign(data-original-title='Check us out on Facebook!')
         a(target='_blank',href='https://twitter.com/RainforestCx')
-          i.pull-right.masthead-social.rfcx-trans-linear.icon-twitter-sign
+          i.pull-right.masthead-social.rfcx-trans-linear.icon-twitter-sign(data-original-title='Check us out on Twitter!')
         ul.nav.nav-pills.pull-right
           for item in nav_items
             if (item[0] == current_page)
@@ -49,21 +51,28 @@ html(lang="en")
                   a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
               li= "|"
         a(target='_blank',href='https://www.facebook.com/RainforestCx')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-facebook-sign
+          i.pull-right.footer-social.rfcx-trans-linear.icon-facebook-sign(data-original-title='Check us out on Facebook!')
         a(target='_blank',href='https://twitter.com/RainforestCx')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-twitter-sign
+          i.pull-right.footer-social.rfcx-trans-linear.icon-twitter-sign(data-original-title='Check us out on Twitter!')
         a(target='_blank',href='http://rainforest.cx/18bTInN')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-google-plus-sign
-        a(target='_blank',href='https://www.linkedin.com/company/rainforest-connection')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-linkedin-sign
+          i.pull-right.footer-social.rfcx-trans-linear.icon-google-plus-sign(data-original-title='Check us out on Google+!')
+        a(target='_blank',href='http://www.linkedin.com/company/rainforest-connection')
+          i.pull-right.footer-social.rfcx-trans-linear.icon-linkedin-sign(data-original-title='Check us out on LinkedIn!')
+        a(target='_blank',href='http://instagram.com/rainforestcx/')
+          i.pull-right.footer-social.rfcx-trans-linear.icon-instagram(data-original-title='Check us out on Instagram!')
+        a(target='_blank',href='http://www.flickr.com/photos/rainforestcx/')
+          i.pull-right.footer-social.rfcx-trans-linear.icon-flickr(data-original-title='Check us out on Flickr!')
         a(target='_blank',href='https://github.com/rfcx')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-github-sign
+          i.pull-right.footer-social.rfcx-trans-linear.icon-github-sign(data-original-title='Check us out on Github!')
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/parsley.js/1.1.16/parsley.min.js')
+    script(type='text/javascript', src='/cdn/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript')
       var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])}; analytics.load("#{segment_io_client_id}");
-    script(type='text/javascript')
-      var addthis_config = {"data_track_addressbar":false};
-    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=#{addthis_pubid}')
+    if (node_env == "production")
+      script(type='text/javascript')= "var addthis_config = {data_track_addressbar:false};"
+      script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=#{addthis_pubid}')
+    else
+      script(type='text/javascript')= "$('div.addthis_toolbox').css({border:'solid 1px #aaaaaa',padding:'3px'}).html('\\'AddThis\\' buttons appear here when in production.');"

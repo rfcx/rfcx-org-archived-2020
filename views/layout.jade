@@ -16,15 +16,16 @@ html(lang="en")
     // if IE 7
       link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
     link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
+    link(rel='stylesheet', href='/vendor/hint.css/1.2.2/hint.min.css')
     link(rel='stylesheet', href='/cdn/css/rfcx-main.css?v=#{app_version}')
   body
     div.container-narrow
 
       div.rfcx-unselectable.masthead
         a(target='_blank',href='https://www.facebook.com/RainforestCx')
-          i.pull-right.masthead-social.rfcx-trans-linear.icon-facebook-sign(data-original-title='Check us out on Facebook!')
+          i.pull-right.masthead-social.rfcx-trans-linear.icon-facebook-sign(title='Check us out on Facebook!')
         a(target='_blank',href='https://twitter.com/RainforestCx')
-          i.pull-right.masthead-social.rfcx-trans-linear.icon-twitter-sign(data-original-title='Check us out on Twitter!')
+          i.pull-right.masthead-social.rfcx-trans-linear.icon-twitter-sign(title='Check us out on Twitter!')
         ul.nav.nav-pills.pull-right
           for item in nav_items
             if (item[0] == current_page)
@@ -50,20 +51,20 @@ html(lang="en")
                 else
                   a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
               li= "|"
-        a(target='_blank',href='https://www.facebook.com/RainforestCx')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-facebook-sign(data-original-title='Check us out on Facebook!')
-        a(target='_blank',href='https://twitter.com/RainforestCx')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-twitter-sign(data-original-title='Check us out on Twitter!')
-        a(target='_blank',href='http://rainforest.cx/18bTInN')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-google-plus-sign(data-original-title='Check us out on Google+!')
-        a(target='_blank',href='http://www.linkedin.com/company/rainforest-connection')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-linkedin-sign(data-original-title='Check us out on LinkedIn!')
-        a(target='_blank',href='http://instagram.com/rainforestcx/')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-instagram(data-original-title='Check us out on Instagram!')
-        a(target='_blank',href='http://www.flickr.com/photos/rainforestcx/')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-flickr(data-original-title='Check us out on Flickr!')
-        a(target='_blank',href='https://github.com/rfcx')
-          i.pull-right.footer-social.rfcx-trans-linear.icon-github-sign(data-original-title='Check us out on Github!')
+        a.pull-right.hint--top(target='_blank',href='https://www.facebook.com/RainforestCx', data-hint='Check us out on Facebook!')
+          i.footer-social.rfcx-trans-linear.icon-facebook-sign
+        a.pull-right.hint--bottom(target='_blank',href='https://twitter.com/RainforestCx', data-hint='Check us out on Twitter!')
+          i.footer-social.rfcx-trans-linear.icon-twitter-sign
+        a.pull-right.hint--top(target='_blank',href='http://rainforest.cx/18bTInN', data-hint='Check us out on Google+!')
+          i.footer-social.rfcx-trans-linear.icon-google-plus-sign
+        a.pull-right.hint--bottom(target='_blank',href='http://www.linkedin.com/company/rainforest-connection', data-hint='Check us out on LinkedIn!')
+          i.footer-social.rfcx-trans-linear.icon-linkedin-sign
+        a.pull-right.hint--top(target='_blank',href='http://instagram.com/rainforestcx/', data-hint='Check us out on Instagram!')
+          i.footer-social.rfcx-trans-linear.icon-instagram
+        a.pull-right.hint--bottom(target='_blank',href='http://www.flickr.com/photos/rainforestcx/', data-hint='Check us out on Flickr!')
+          i.footer-social.rfcx-trans-linear.icon-flickr
+        a.pull-right.hint--top(target='_blank',href='https://github.com/rfcx', data-hint='Check us out on Github!')
+          i.footer-social.rfcx-trans-linear.icon-github-sign
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/js/bootstrap.min.js')

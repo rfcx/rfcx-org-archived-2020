@@ -60,5 +60,5 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .footer li { margin-right:8px; }
 .footer .nav-pills>li>a, .footer .nav-pills>li>a:hover { padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:20px;  color:#ffffff; padding-left:0px; padding-right:0px; }
 .footer .nav-pills>li>a:hover { background-color:#898989; text-decoration:none; color:black; }
-.footer .footer-social { font-size:2em; margin-top:10px; vertical-align:top; text-decoration:none; color:#ffffff; }
+.footer .footer-social { font-size:2em; margin:0px 4px; position:relative; top:10px; vertical-align:top; text-decoration:none; color:#ffffff; }
 .footer a:hover .footer-social { color:#000000; }

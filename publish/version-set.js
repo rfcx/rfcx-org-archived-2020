@@ -18,6 +18,9 @@ require('crypto').randomBytes(6, function(ex, buf) {
  //             +"git checkout master; "
               ,function(err,stdout,stderr){
           console.log(stdout);
+          exec("git status",function(err,stdout,stderr){
+            
+          });
         });
       }
     });

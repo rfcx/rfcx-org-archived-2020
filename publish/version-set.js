@@ -21,6 +21,8 @@ require('crypto').randomBytes(6, function(ex, buf) {
           exec("git status | grep clean;",function(err,stdout,stderr){
             if (stdout==="nothing to commit, working directory clean") {
               console.log("OK to push to prod...");
+            } else {
+              console.log("Not OK to push to prod: "+stdout);
             }
           });
         });

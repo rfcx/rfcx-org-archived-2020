@@ -19,7 +19,9 @@ require('crypto').randomBytes(6, function(ex, buf) {
               ,function(err,stdout,stderr){
           console.log(stdout);
           exec("git status | grep clean;",function(err,stdout,stderr){
-            console.log(stdout);
+            if (stdout==="nothing to commit, working directory clean") {
+              console.log("OK to push to prod...");
+            }
           });
         });
       }

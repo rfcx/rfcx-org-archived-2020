@@ -47,6 +47,15 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .rfcx-row-home-1 .infographic-box:hover .expand-button-rear { color:#c7c7c7; right:-31px; top:-38px; font-size:106px; }
 .rfcx-row-home-1 .infographic-box .infographic-thmb { width:100%; }
 
+.rfcx-row-home-2 .rfcx-header {  }
+.rfcx-row-home-2 .rfcx-body {  }
+.rfcx-row-home-2 .slider-container { position:relative; border:solid 6px #dddddd; width:98%; height:295px; margin-right:auto; margin-left:auto; overflow:visible; margin-bottom:10px; }
+.rfcx-row-home-2 .slider-container div { position:absolute; top:0%; left:0%; height:100%; overflow:hidden; border:solid 0px black; }
+.rfcx-row-home-2 .slider-container .slider-left { width:80%; z-index:1; background-color:gray; }
+.rfcx-row-home-2 .slider-container .slider-middle { left:80%; width:6px; height:105%; background-color:black; z-index:1; }
+.rfcx-row-home-2 .slider-container .slider-right { width:100%; z-index:0; background-color:green; }
+.rfcx-row-home-2 .slider-container .slider-percent { left:0%; top:0%; vertical-align:bottom; height:auto; line-height:295px; width:auto; font-size:110px; z-index:2; color:#ffffff; width:100%; text-align:center; }
+
 .rfcx-row-home-3 .rfcx-header { margin-top:55px; margin-left:0px; }
 .rfcx-row-home-3 .rfcx-body { margin-top:25px; margin-left:15px; }
 .rfcx-row-home-3 .control-group { margin-top:25px; margin-left:15px; }

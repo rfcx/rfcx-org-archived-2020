@@ -5,6 +5,9 @@ if (fs.existsSync("./config/env_vars.js")) {
   for (i in env) { process.env[i] = env[i]; }
 }
 
+// Load Production Version ID
+process.env["productionVersionId"] = require("./config/version.js").productionVersionId;
+
 // NodeFly Monitoring Initialization
 var nodefly = require("./config/nodefly.js").nodefly;
 require('nodefly').profile( process.env.NODEFLY_ID, nodefly.app, nodefly.options);
@@ -80,5 +83,9 @@ app.get("/contact", function(req, res){ routes.contact(req, res, process, navIte
 
 
 http.createServer(app).listen(app.get("port"), function(){
-  console.log(app.get("title")+" (port "+app.get("port")+") ("+process.env.NODE_ENV+")");
+  console.log(  app.get("title")
+                +" (port "+app.get("port")+")"
+                +" ("+process.env.NODE_ENV+")"
+                +((process.env.NODE_ENV=== "production") ? (" ("+process.env.productionVersionId+")") : "")
+                );
 });

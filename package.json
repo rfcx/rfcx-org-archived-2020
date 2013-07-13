@@ -16,6 +16,7 @@
     "sequelize": "*",
     "nodefly": "stable",
     "analytics-node": "*",
+    "crypto": "*",
     "jade": "*"
   },
   "devDependencies": {

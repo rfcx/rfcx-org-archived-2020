@@ -1,2 +1,6 @@
 #!/bin/bash
-echo "Publish";
+git checkout aws_push;
+git merge master -m "Merge with master";
+git aws.push;
+git checkout master;
+eb status;

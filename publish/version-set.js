@@ -18,8 +18,8 @@ require('crypto').randomBytes(6, function(ex, buf) {
  //             +"git checkout master; "
               ,function(err,stdout,stderr){
           console.log(stdout);
-          exec("git status | grep clean;",function(err,stdout,stderr){
-            if (stdout==="nothing to commit, working directory clean") {
+          exec("git status | grep \"nothing to commit\";",function(err,stdout,stderr){
+            if (stdout.indexOf("nothing to commit, working directory clean") != -1) {
               console.log("OK to push to prod...");
             } else {
               console.log("Not OK to push to prod: "+stdout);

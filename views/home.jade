@@ -14,12 +14,13 @@ block content
         span= "Watch the video of how it works"
         i.icon-arrow-right
 
-
   div.row-fluid.rfcx-row.rfcx-row-home-1
     div.span7
-      div.rfcx-trans-linear.infographic-box
-        i.rfcx-trans-linear.icon-plus-sign.expand-button.expand-button-front
-        i.rfcx-trans-linear.icon-circle.expand-button.expand-button-rear
+      a(href='#infoGraphic', role='button', data-toggle='modal')
+        div.rfcx-trans-linear.infographic-box
+          i.rfcx-trans-linear.icon-plus-sign.expand-button.expand-button-front
+          i.rfcx-trans-linear.icon-circle.expand-button.expand-button-rear
+          img.infographic-thmb(src='/cdn/img/home/infographic.png')
     div.span5
       p.roadgeek.rfcx-header= "TURNING OLD PHONES"
       p.roadgeek.rfcx-header= "INTO SECURITY GUARDS"
@@ -65,5 +66,15 @@ block content
 
     div.span6
       img.stopsign(src="#{rfcx_cdn}/img/home/stopsign.358.png?v=#{app_version}")
+
+
+  div.modal.hide.fade(id='infoGraphic', tabindex='-1', role='dialog', aria-labelledby='infoGraphicLabel', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')= "x"
+      h3#infoGraphicLabel= "Info Graphic"
+    div.modal-body
+      p= "Info Graphic"
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
 

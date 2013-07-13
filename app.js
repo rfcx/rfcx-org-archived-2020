@@ -31,7 +31,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");
-  app.use(express.favicon("./public/cdn/img/favicon.ico"));
+  app.use(express.favicon("./public/cdn/img/logo/favicon.ico"));
   app.use(express.logger("dev"));
   app.use(express.methodOverride());
   app.use(app.router);

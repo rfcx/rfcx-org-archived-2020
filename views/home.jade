@@ -3,7 +3,7 @@ extends layout
 block content
   
   div.container-narrow.banner-video
-    img.banner-bg(src="#{rfcx_cdn}/img/home/banner-forest.1080.jpg?v=#{app_version}")
+    div.banner-bg(style="background-image:url(#{rfcx_cdn}/img/home/banner-forest.1080.jpg?v=#{app_version});")
     div.rfcx-trans-linear.video-box.rfcx-launch-video
       div.rfcx-trans-50.video-box-bg
       i.icon-play-circle
@@ -41,7 +41,7 @@ block content
       p.rfcx-body
         span= "We take old mobile phones,"
       div.slider-container
-        div.slider-left(style="background-image:url(/cdn/img/home/forest-slider-cut.630.jpg);")
+        div.slider-left(style="background-image:url(/cdn/img/home/forest-slider-cut.800.jpg);")
           div.roadgeek.slider-percent= "81.3%"
         div.slider-middle
         div.slider-right

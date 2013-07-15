@@ -33,9 +33,16 @@ exports.about = function(req, res, process, navItems, Model){
   }));
 };
 
-exports.contact = function(req, res, process, navItems, Model){
-  res.render("home", setJadeVars(process, navItems, {
-    current_page: "home",
+exports.get_involved = function(req, res, process, navItems, Model){
+  res.render("get_involved", setJadeVars(process, navItems, {
+    current_page: "get_involved",
+    title: "Rainforest Connection"
+  }));
+};
+
+exports.media = function(req, res, process, navItems, Model){
+  res.render("media", setJadeVars(process, navItems, {
+    current_page: "media",
     title: "Rainforest Connection"
   }));
 };

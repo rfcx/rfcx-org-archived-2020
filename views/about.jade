@@ -3,13 +3,45 @@ extends layout
 block content
   
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1
-    div.span6
-    div.span6
+    div.span12
+      p.roadgeek.rfcx-header= "FINALLY, TREES THAT CAN TALK"
+      p.rfcx-body
+        span= "Rainforest Connection uses mobile technology and existing, ubiquitous telecommunication infrastructure"
+        br
+        span= "to monitor and protect forests in real-time. "
+      div.screen-container(onClick="showHelpBubbles();")
+        img.screen-img(src="#{rfcx_cdn}/img/about/screen-forest.800.png")
+        div.roadgeek.hint--rounded.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:157px;top:123px;")
+        div.roadgeek.hint--rounded.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:171px;top:268px;")
+        div.roadgeek.hint--rounded.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:353px;top:146px;")
+        div.roadgeek.hint--rounded.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:672px;top:160px;")
+        div.roadgeek.hint--rounded.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:494px;top:126px;")
+        div.roadgeek.hint--rounded.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:472px;top:268px;")
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-2
     div.span6
+      img.trash-img(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png")
     div.span6
+      p.roadgeek.rfcx-header= "TURNING OLD PHONES"
+      p.roadgeek.rfcx-header= "INTO SECURITY GUARDS"
+      p.rfcx-body
+        span= "We take old mobile phones,"
+        br
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
+    div.span5
+      p.roadgeek.rfcx-header= "SO, WHERE DO WE START?"
+      p.rfcx-body
+        span= "We take old mobile phones,"
+        br
+    div.span7
+      div.map-container
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-4
+    div.span5.offset1
+      img.frog-img(src="#{rfcx_cdn}/img/about/azureus.290.png")
     div.span6
-    div.span6
+      p.roadgeek.rfcx-header= "WHY FROGS > LOGS"
+      p.rfcx-body
+        span= "We take old mobile phones,"
+        br

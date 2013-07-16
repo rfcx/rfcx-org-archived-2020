@@ -1,9 +1,11 @@
 #!/bin/bash
 node _publish-prep.js;
-read -p "Are you sure? " -n 1 -r
+read -p "Are you sure you would like to push this version to prod? (y/n): " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo -e "\nPushing to prod.\n"
 else
   echo -e "\nNOT pushed to prod.\n"
 fi
+git checkout master
+eb status

@@ -6,6 +6,7 @@ read -p "Are you sure you would like to push this version to prod? (y/n): " -n 1
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo -e "\nPushing to prod.\n"
+  git aws.push;
   git checkout master;
   eb status;
 else

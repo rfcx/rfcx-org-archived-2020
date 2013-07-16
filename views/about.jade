@@ -28,6 +28,9 @@ block content
         span= "We take old mobile phones,"
         br
 
+  link(rel="stylesheet",href="//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css")
+  script(type="text/javascript",src="//libs.cartocdn.com/cartodb.js/v3/cartodb.js")
+
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
     div.span5
       p.roadgeek.rfcx-header= "SO, WHERE DO WE START?"
@@ -35,13 +38,17 @@ block content
         span= "We take old mobile phones,"
         br
     div.span7
-      div.map-container
-
+      div.rfcx-crnr-5.map-cropper
+        div#map-container
+        div.map-cover
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-4
     div.span5.offset1
       img.frog-img(src="#{rfcx_cdn}/img/about/azureus.290.png")
     div.span6
-      p.roadgeek.rfcx-header= "WHY FROGS > LOGS"
+      p.roadgeek.rfcx-header
+        | WHY FROGS
+        i.icon-angle-right(style="margin:0px 10px;")
+        | LOGS
       p.rfcx-body
         span= "We take old mobile phones,"
         br

@@ -22,28 +22,28 @@ function setJadeVars(process, navItems, jV) {
 exports.home = function(req, res, process, navItems, Model){
   res.render("home", setJadeVars(process, navItems, {
     current_page: "home",
-    title: "Rainforest Connection"
+    title: "Rainforest Connection | Real-time data to fight deforestation"
   }));
 };
 
 exports.about = function(req, res, process, navItems, Model){
   res.render("about", setJadeVars(process, navItems, {
     current_page: "about",
-    title: "What is Rainforest Connection?"
+    title: "Rainforest Connection | What is Rainforest Connection?"
   }));
 };
 
 exports.get_involved = function(req, res, process, navItems, Model){
   res.render("get_involved", setJadeVars(process, navItems, {
     current_page: "get_involved",
-    title: "Rainforest Connection"
+    title: "Rainforest Connection | Get Involved"
   }));
 };
 
 exports.media = function(req, res, process, navItems, Model){
   res.render("media", setJadeVars(process, navItems, {
     current_page: "media",
-    title: "Rainforest Connection"
+    title: "Rainforest Connection | Media"
   }));
 };
 

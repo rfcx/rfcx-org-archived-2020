@@ -1,25 +1,75 @@
+var RFCX = {
+  "currentPage": null
+};
 
 $(function(){
+  
+  if (RFCX.currentPage === "about") {
+    setTimeout("animateAlertsInForest();",1000);
+    initMap();
+  }
 
 });
 
-function showHelpBubbles() {
-
+function animateAlertsInForest() {
 	$("div.screen-container div.alert-help").each(function(i){
 		$(this).delay(500*i).fadeIn(function(){
 			$(this).addClass("hint--always");
 		});
 	});
-
-	// for (var i = 0; i < divs; i++) {
-	// 	setTimeout(function(){
-//			$("div.hint--rounded").addClass("hint--always");
-	// 	},((i+1)*500));
-	// }
-	// $("div.hint--rounded").each(function(){
-	// 	setTimeout(function(){
-	// 		$(this).addClass("hint--always");
-	// 	},(500*i));
-	// });
-	// i++;
 }
+
+var rfcxMap;
+
+function initMap() {
+  rfcxMap = new L.Map('map-container', {
+    center:[10,-120],
+    zoom: 1
+  });
+  
+  L.tileLayer('http://tiles.mapbox.com/v3/base.live-land-tr/{z}/{x}/{y}.png', {
+    attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+  }).addTo(rfcxMap);
+  
+  var layerUrl = 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json';
+  cartodb.createLayer(rfcxMap, layerUrl)
+    .addTo(rfcxMap).on('done', function(layer) {
+        //do stuff
+    }).on('error', function(err) {
+      alert("some error occurred: " + err);
+    });
+
+}
+
+    // var map;
+    // function init(){
+    //   // initiate leaflet map
+    //   map = new L.Map('map-container', { 
+    //     center: [10,-120],
+    //     zoom: 1
+    //   })
+
+      
+    //  L.tileLayer('http://tiles.mapbox.com/v3/base.live-land-tr/{z}/{x}/{y}.png', {
+    //  // L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
+    //     attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    //   }).addTo(map);
+
+
+    //   var layerUrl = 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json';
+
+
+    //   cartodb.createLayer(map, layerUrl)
+    //    .addTo(map)
+    //    .on('done', function(layer) {
+    //     // change the query for the first layer
+    //     var subLayerOptions = {
+    //       sql: "SELECT * FROM example_cartodbjs_1 where adm0_a3 = 'USA'",
+    //       cartocss: "#example_cartodbjs_1{marker-fill: #109DCD; marker-width: 5; marker-line-color: white; marker-line-width: 0;}"
+    //     }
+
+    //     layer.getSubLayer(0).set(subLayerOptions);
+    //   }).on('error', function() {
+    //     //log the error
+    //   });
+    // }  

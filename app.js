@@ -76,8 +76,8 @@ app.get("/", function(req, res){
 });
 
 var navItems = [ ["home","Home"], ["about","About"], ["get_involved","Get Involved"], ["media","Media"] ];
-app.get("/home", function(req, res){  res.setHeader("Access-Control-Allow-Origin","*"); routes[navItems[0][0]](req, res, process, navItems, Model); });
-app.get("/about", function(req, res){ routes.about(req, res, process, navItems, Model); });
+app.get("/home", function(req, res){ res.setHeader("Access-Control-Allow-Origin","*"); routes[navItems[0][0]](req, res, process, navItems, Model); });
+app.get("/about", function(req, res){ res.setHeader("Access-Control-Allow-Origin","*"); routes.about(req, res, process, navItems, Model); });
 app.get("/get_involved", function(req, res){ routes.get_involved(req, res, process, navItems, Model); });
 app.get("/media", function(req, res){ routes.media(req, res, process, navItems, Model); });
 

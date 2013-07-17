@@ -13,8 +13,8 @@ function setJadeVars(process, navItems, jV) {
   jV.bootstrap_cdn = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
   jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";
-  jV.rfcx_cdn = inProd ? "//d1b38lwmn11w1.cloudfront.net/www" : "/cdn";
-  jV.rfcx_vendor_cdn = inProd ? "//d1b38lwmn11w1.cloudfront.net/vendor" : "/vendor";
+  jV.rfcx_cdn = inProd ? "//d3gq709nndn9uy.cloudfront.net/cdn" : "/cdn";
+  jV.rfcx_vendor_cdn = inProd ? "//d3gq709nndn9uy.cloudfront.net/vendor" : "/vendor";
   jV.nav_items = navItems;
   return jV;
 }

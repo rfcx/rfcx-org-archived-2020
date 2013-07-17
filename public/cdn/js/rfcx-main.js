@@ -22,17 +22,22 @@ function animateAlertsInForest() {
 var rfcxMap;
 
 function initMap() {
+
   rfcxMap = new L.Map('map-container', {
     center:[10,-120],
     zoom: 1
   });
   
-  L.tileLayer('http://tiles.mapbox.com/v3/base.live-land-tr/{z}/{x}/{y}.png', {
+  var mapUrls = {
+    tiles: 'http://a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png',
+    json: 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json'
+  };
+
+  L.tileLayer(mapUrls.tiles, {
     attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
   }).addTo(rfcxMap);
   
-  var layerUrl = 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json';
-  cartodb.createLayer(rfcxMap, layerUrl)
+  cartodb.createLayer(rfcxMap, mapUrls.json)
     .addTo(rfcxMap).on('done', function(layer) {
         //do stuff
     }).on('error', function(err) {

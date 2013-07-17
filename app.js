@@ -24,6 +24,12 @@ var modelNames = [ "source" , "spectrum", "diagnostic", "version", "audio", "mes
 var db = require("./config/sequelize.js").createConnection(Sequelize,process.env);
 var Model = require("./model/_all.js").createModel(db,Sequelize,modelNames);
 
+var allowCrossDomain = function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+}
+
 // Express Initialization
 var express = require("express"), routes = require("./routes"),
   http = require("http"), path = require("path");
@@ -37,6 +43,7 @@ app.configure(function(){
   app.use(express.favicon("./public/cdn/img/logo/favicon.ico"));
   app.use(express.logger("dev"));
   app.use(express.methodOverride());
+  app.use(allowCrossDomain);
   app.use(app.router);
   app.use(express.static(path.join(__dirname, "public")));
 });

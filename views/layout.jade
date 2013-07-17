@@ -17,7 +17,7 @@ html(lang="en")
       link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
     link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
     link(rel='stylesheet', href='#{rfcx_vendor_cdn}/hint.css/1.2.2/hint.min.css')
-    link(rel='stylesheet', href='/cdn/css/rfcx-main.css?v=#{app_version}')
+    link(rel='stylesheet', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
   body
     div.container-narrow
 
@@ -69,7 +69,7 @@ html(lang="en")
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/parsley.js/1.1.16/parsley.min.js')
-    script(type='text/javascript', src='/cdn/js/rfcx-main.js?v=#{app_version}')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript').
       RFCX.currentPage = "#{current_page}";
     if (node_env == "production")

@@ -3,7 +3,15 @@
  * GET home page.
  */
 
-function setJadeVars(process, navItems, jV) {
+var navItems = [
+    [ "home", "Home", "Rainforest Connection | Saving rainforest with real-time data" ],
+    [ "about", "About", "About" ],
+    [ "get_involved", "Get Involved", "Get Involved" ],
+    [ "media", "Media", "Media" ],
+    [ "blog", "Blog", "Blog" ]
+  ];
+
+function setJadeVars(process, jV) {
   var inProd = (process.env.NODE_ENV === "production");
   jV.app_version = process.env.productionVersionId;
   jV.node_env = process.env.NODE_ENV;
@@ -19,31 +27,18 @@ function setJadeVars(process, navItems, jV) {
   return jV;
 }
 
-exports.home = function(req, res, process, navItems, Model){
-  res.render("home", setJadeVars(process, navItems, {
-    current_page: "home",
-    title: "Rainforest Connection | Real-time data to fight deforestation"
+exports.navItems = navItems;
+
+exports.page = function(req, res, process, Model){
+  var navItem = [];
+  for (var i = 0; i < navItems.length; i++) {
+    if (req.route.path.substr(1) === navItems[i][0]) {
+      navItem = navItems[i]; break;
+    }
+  }
+  res.setHeader("Access-Control-Allow-Origin","*");
+  res.render(navItem[0], setJadeVars(process, {
+    current_page: navItem[0],
+    title: navItem[1]
   }));
 };
-
-exports.about = function(req, res, process, navItems, Model){
-  res.render("about", setJadeVars(process, navItems, {
-    current_page: "about",
-    title: "Rainforest Connection | What is Rainforest Connection?"
-  }));
-};
-
-exports.get_involved = function(req, res, process, navItems, Model){
-  res.render("get_involved", setJadeVars(process, navItems, {
-    current_page: "get_involved",
-    title: "Rainforest Connection | Get Involved"
-  }));
-};
-
-exports.media = function(req, res, process, navItems, Model){
-  res.render("media", setJadeVars(process, navItems, {
-    current_page: "media",
-    title: "Rainforest Connection | Media"
-  }));
-};
-

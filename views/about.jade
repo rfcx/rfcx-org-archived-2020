@@ -6,9 +6,11 @@ block content
     div.span12
       p.roadgeek.rfcx-header= "FINALLY, TREES THAT CAN TALK"
       p.rfcx-body
-        span= "Rainforest Connection uses mobile technology and existing, ubiquitous telecommunication infrastructure"
+        span= "Rainforest Connection uses mobile technology and"
         br
-        span= "to monitor and protect forests in real-time. "
+        span= "existing telecommunication infrastructure to"
+        br
+        span= "monitor and protect forests in real-time. "
       div.screen-container(onClick="showHelpBubbles();")
         img.screen-img(src="#{rfcx_cdn}/img/about/screen-forest.800.png")
         div.roadgeek.hint--rounded.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:157px;top:123px;")
@@ -25,22 +27,26 @@ block content
       p.roadgeek.rfcx-header= "TURNING OLD PHONES"
       p.roadgeek.rfcx-header= "INTO SECURITY GUARDS"
       p.rfcx-body
-        span= "We take old mobile phones,"
+        span= "Explanation text goes here"
         br
 
   link(rel="stylesheet",href="//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css")
   script(type="text/javascript",src="//libs.cartocdn.com/cartodb.js/v3/cartodb.js")
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
-    div.span5
-      p.roadgeek.rfcx-header= "SO, WHERE DO WE START?"
+    div.span4
+      p.roadgeek.rfcx-header= "WHERE DO WE START?"
       p.rfcx-body
-        span= "We take old mobile phones,"
+        span= "Explanation text goes here"
         br
-    div.span7
+    div.span8
       div.rfcx-crnr-5.map-cropper
-        div#map-container
-        div.map-cover
+        img.map-frame(src="#{rfcx_cdn}/img/about/iphone5-bg.690.png")
+        div.map-cropper-internal
+          div#map-container
+          div.map-cover.map-cover-1
+          div.map-cover.map-cover-2
+          div.map-cover.map-cover-3
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-4
     div.span5.offset1
       img.frog-img(src="#{rfcx_cdn}/img/about/azureus.290.png")
@@ -50,5 +56,5 @@ block content
         i.icon-angle-right(style="margin:0px 10px;")
         | LOGS
       p.rfcx-body
-        span= "We take old mobile phones,"
+        span= "Explanation text goes here"
         br

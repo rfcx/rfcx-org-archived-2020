@@ -11,6 +11,7 @@ var navItems = [
     [ "blog", "Blog", "Blog" ]
   ];
 
+
 function setJadeVars(process, jV) {
   var inProd = (process.env.NODE_ENV === "production");
   jV.app_version = process.env.productionVersionId;
@@ -41,4 +42,9 @@ exports.page = function(req, res, process, Model){
     current_page: navItem[0],
     title: navItem[1]
   }));
+};
+
+exports.redirectToHomePage = function(req,res) {
+  res.writeHead(302, { "Location": "http://rfcx.org/" } );
+  res.end();
 };

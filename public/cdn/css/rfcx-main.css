@@ -52,8 +52,8 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .rfcx-row-home-2 .rfcx-body {  }
 .rfcx-row-home-2 .slider-container { position:relative; border:solid 6px #dddddd; width:98%; height:295px; margin-right:auto; margin-left:auto; overflow:visible; margin-bottom:10px; }
 .rfcx-row-home-2 .slider-container div { position:absolute; top:0%; left:0%; height:100%; overflow:hidden; border:solid 0px black; }
-.rfcx-row-home-2 .slider-container .slider-left { width:80%; z-index:1; background-color:gray; }
-.rfcx-row-home-2 .slider-container .slider-middle { left:80%; width:6px; height:105%; background-color:black; z-index:1; }
+.rfcx-row-home-2 .slider-container .slider-left { width:72%; z-index:1; background-color:gray; }
+.rfcx-row-home-2 .slider-container .slider-middle { left:72%; width:6px; height:105%; background-color:black; z-index:1; }
 .rfcx-row-home-2 .slider-container .slider-right { width:100%; z-index:0; background-color:green; }
 .rfcx-row-home-2 .slider-container .slider-percent { left:0%; top:0%; vertical-align:bottom; height:auto; line-height:295px; width:auto; font-size:110px; z-index:2; color:#ffffff; width:100%; text-align:center; }
 
@@ -80,10 +80,15 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .rfcx-row-about-2 .rfcx-header { margin-top:20px; }
 .rfcx-row-about-2 .rfcx-body {  }
 
-.rfcx-row-about-3 { margin-top:0px; }
-.rfcx-row-about-3 .map-cropper { position:relative; float:right; width:500px; height:240px; background-color:gray; overflow:hidden; border:solid 4px #dddddd; }
-.rfcx-row-about-3 #map-container, .rfcx-row-about-3 .map-cover { position:absolute; top:0%; left:0%; width:100%; height:115%; z-index:0; }
-.rfcx-row-about-3 .map-cover { display:none; z-index:1; height:100%; }
+.rfcx-row-about-3 { margin-top:0px; overflow:visible; }
+.rfcx-row-about-3 .map-cropper { position:relative; float:right; width:446px; height:251px; background-color:gray; border:solid 4px #dddddd; margin:10px 35px 20px 0px; }
+.rfcx-row-about-3 .map-cropper .map-frame { position:absolute; left:-87px; top:-25px; width:630px; max-width:630px; }
+.rfcx-row-about-3 #map-container, .rfcx-row-about-3 .map-cover, .rfcx-row-about-3 .map-cropper-internal { position:absolute; top:0%; left:0%; width:100%; height:115%; z-index:0; }
+.rfcx-row-about-3 .map-cropper-internal { height:100%; overflow:hidden; }
+.rfcx-row-about-3 .map-cover { background-color:transparent; z-index:1; height:100%; }
+.rfcx-row-about-3 .map-cover-1 { left:8.5%; }
+.rfcx-row-about-3 .map-cover-2 { top:24.5%; }
+.rfcx-row-about-3 .map-cover-3 { left:-97.5%; }
 .rfcx-row-about-3 .rfcx-header { margin-top:20px; }
 .rfcx-row-about-3 .rfcx-body {  }
 

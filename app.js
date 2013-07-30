@@ -64,8 +64,8 @@ for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 // Web Initialization
 app.get("/", function(req, res){
   if  ( (process.env.NODE_ENV === "production") && (req.host !== "rfcx.org") ) {
-      console.log("Received request at '"+req.host+"'. Redirecting to https://rfcx.org/.");
-      res.writeHead(302, { "Location": "https://rfcx.org/" } );
+      console.log("Received request at '"+req.host+"'. Redirecting to http://rfcx.org/.");
+      res.writeHead(302, { "Location": "http://rfcx.org/" } );
       res.end();
   } else {
     fs.readFile("./public/_old_site/index.html", function (e, d) {
@@ -75,6 +75,11 @@ app.get("/", function(req, res){
       res.send(d);
     });
   }
+});
+
+app.get("/referral/bonne_app", function(req, res){
+  res.writeHead(302, { "Location": "http://rfcx.org/" } );
+  res.end();
 });
 
 for (var i = 0; i < routes.navItems.length; i++) {

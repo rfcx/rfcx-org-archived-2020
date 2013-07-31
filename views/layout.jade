@@ -24,19 +24,18 @@ html(lang="en")
       div.rfcx-unselectable.masthead
         div.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
         a(target='_blank',href='https://www.facebook.com/RainforestCx')
-          i.pull-right.masthead-social.rfcx-trans-linear.icon-facebook-sign(title='Check us out on Facebook!')
-        a(target='_blank',href='https://twitter.com/RainforestCx')
-          i.pull-right.masthead-social.rfcx-trans-linear.icon-twitter-sign(title='Check us out on Twitter!')
+          i.pull-right.masthead-social.rfcx-trans-linear.icon-share(title='Check us out on Facebook!')
         ul.nav.nav-pills.pull-right
           for item in nav_items
             if (item[0] == current_page)
               li.active
                 a(href="#")= item[1]
+                i.icon-chevron-up
             else
               li
                 a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
         a(href="/home")
-          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo.560.png?v=#{app_version}")
+          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.280.png?v=#{app_version}")
 
       block content
       
@@ -70,6 +69,7 @@ html(lang="en")
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/parsley.js/1.1.16/parsley.min.js')
+    script(type='text/javascript', src='https://checkout.stripe.com/v2/checkout.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript').
       RFCX.currentPage = "#{current_page}";

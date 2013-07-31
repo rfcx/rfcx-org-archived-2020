@@ -8,7 +8,7 @@ block content
       p.rfcx-body
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-2(style="text-align:center;")
-    div.span6
+    div.span4
       p.roadgeek.rfcx-header= "STAY INFORMED"
       p.rfcx-body
         span= "Get involved by signing up for our newsletter."
@@ -23,7 +23,7 @@ block content
                 span.add-on.btn.btn-success= "Sign-up"
 
 
-    div.span6
+    div.span4
       p.roadgeek.rfcx-header= "DONATE MONEY"
       p.rfcx-body
         span= "We recognize that not everybody can do so, but"
@@ -32,13 +32,19 @@ block content
         br
         span= "the greatest gift you can give us."
 
-        form(action="", method="POST")
-          script.stripe-button(src="https://checkout.stripe.com/v2/checkout.js", data-key="pk_test_t9ZzGqE7SlzQzSyGVmLaDj8K", data-amount="", data-name="Rainforest Connection", data-description="Make a financial donation", data-image="/128x128.png")
+      button#stripe-donate-button= "Donate via Credit Card"
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-3(style="text-align:center;")
-    div.span6
-      p.roadgeek.rfcx-header= "DONATE PHONES"
+    div.span4
+      p.roadgeek.rfcx-header= "DONATE A PHONE"
       p.rfcx-body
-        span= "Send your old Android phone to the forest"   
-    div.span6
-      p.roadgeek.rfcx-header= "LEND A HAND"
+        span= "We recognize that not everybody can do so, but"
+        br
+        span= "as a small start-up, financial contributions are"
+        br
+        span= "the greatest gift you can give us."
+
+      button#stripe-donate-button= "Donate via Credit Card"
+
+  div.container-narrow.footer-forest
+    div.footer-bg(style="background-image:url(#{rfcx_cdn}/img/get_involved/forest-footer.1400.jpg?v=#{app_version});")
+

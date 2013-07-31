@@ -46,35 +46,25 @@ function initMap() {
 
 }
 
-    // var map;
-    // function init(){
-    //   // initiate leaflet map
-    //   map = new L.Map('map-container', { 
-    //     center: [10,-120],
-    //     zoom: 1
-    //   })
+$(function(){
+    $('#stripe-donate-button').click(function(){
+      var token = function(res){
+        var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+        $('form').append($input).submit();
+      };
 
-      
-    //  L.tileLayer('http://tiles.mapbox.com/v3/base.live-land-tr/{z}/{x}/{y}.png', {
-    //  // L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
-    //     attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    //   }).addTo(map);
+      StripeCheckout.open({
+        key: 'pk_test_t9ZzGqE7SlzQzSyGVmLaDj8K',
+        address: false,
+        amount: 5000,
+        currency: 'usd',
+        name: 'Rainforest Connection',
+        description: 'Make a kind donation',
+        image: '/img/logo/logo-square-stripe.128.png',
+        panelLabel: 'Donate',
+        token: token
+      });
 
-
-    //   var layerUrl = 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json';
-
-
-    //   cartodb.createLayer(map, layerUrl)
-    //    .addTo(map)
-    //    .on('done', function(layer) {
-    //     // change the query for the first layer
-    //     var subLayerOptions = {
-    //       sql: "SELECT * FROM example_cartodbjs_1 where adm0_a3 = 'USA'",
-    //       cartocss: "#example_cartodbjs_1{marker-fill: #109DCD; marker-width: 5; marker-line-color: white; marker-line-width: 0;}"
-    //     }
-
-    //     layer.getSubLayer(0).set(subLayerOptions);
-    //   }).on('error', function() {
-    //     //log the error
-    //   });
-    // }  
+      return false;
+    });
+});

@@ -6,3 +6,11 @@
 	font-style: normal;
 }
 
+@font-face {
+  font-family: 'helvetica_neue_lt_std';
+  src: url('helvetica_neue_lt_std/helvetica_neue_lt_std.eot');
+  src: local('☺'), url('helvetica_neue_lt_std/helvetica_neue_lt_std.woff') format('woff'), url('helvetica_neue_lt_std/helvetica_neue_lt_std.ttf') format('truetype'), url('helvetica_neue_lt_std/helvetica_neue_lt_std.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -6,17 +6,22 @@ block content
     div.span12
       p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS"
       p.rfcx-body
+        | We need you. The trees need you. The world needs you.
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-2(style="text-align:center;")
     div.span4
       p.roadgeek.rfcx-header= "STAY INFORMED"
       p.rfcx-body
-        span= "Get involved by signing up for our newsletter."
+        | Sign up for our newsletter.
         br
-        span= "We will never sell or disclose your address to anyone else."
+        | Big things are in the works, and
+        br
+        | we want you to be first to know.
+        br 
+        | We will never sell or disclose your address to anyone else.
 
         form(data-validate='parsley')
-          div.control-group
+          div.control-group.email-sign-up
             div.controls
               div.input-append
                 input.input-large(type='text', data-type='email', id='email', name='email', placeholder='Your E-mail')
@@ -26,24 +31,32 @@ block content
     div.span4
       p.roadgeek.rfcx-header= "DONATE MONEY"
       p.rfcx-body
-        span= "We recognize that not everybody can do so, but"
+        | We recognize that not everybody can make financial donations, but as a small start-up, financial contributions are the
+        br 
+        | single greatest gift you can give.
         br
-        span= "as a small start-up, financial contributions are"
-        br
-        span= "the greatest gift you can give us."
+        | Make an impact. Help us grow.
 
-      button#stripe-donate-button= "Donate via Credit Card"
+      div.control-group.stripe-donate
+        div.controls
+          button.btn.btn-primary#stripe-donate-button= "Donate via Credit Card"
 
     div.span4
       p.roadgeek.rfcx-header= "DONATE A PHONE"
       p.rfcx-body
-        span= "We recognize that not everybody can do so, but"
+        | Mail us your old smartphone.
         br
-        span= "as a small start-up, financial contributions are"
+        | We'll wipe it, retrofit it and send it
         br
-        span= "the greatest gift you can give us."
+        | into the jungle for its second life
+        br
+        | as a tireless forest guardian.
+        br
+        | .
 
-      button#stripe-donate-button= "Donate via Credit Card"
+      div.control-group.phone-donate
+        div.controls
+          button.btn.btn-gray#phone-donate-button= "Donate a Smartphone"
 
   div.container-narrow.footer-forest
     div.footer-bg(style="background-image:url(#{rfcx_cdn}/img/get_involved/forest-footer.1400.jpg?v=#{app_version});")

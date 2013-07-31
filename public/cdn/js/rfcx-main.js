@@ -60,7 +60,7 @@ $(function(){
         currency: 'usd',
         name: 'Rainforest Connection',
         description: 'Make a kind donation',
-        image: '/img/logo/logo-square-stripe.128.png',
+        image: RFCX.cdnDomain+'/img/logo/logo-square-stripe.128.png',
         panelLabel: 'Donate',
         token: token
       });

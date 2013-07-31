@@ -23,6 +23,8 @@ html(lang="en")
 
       div.rfcx-unselectable.masthead
         div.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
+        a.pull-right(href="#")
+          img.share-icon(src="#{rfcx_cdn}/img/masthead/masthead-share.80.png")
         ul.nav.nav-pills.pull-right
           for item in nav_items
             if (item[0] == current_page)

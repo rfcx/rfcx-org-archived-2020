@@ -27,6 +27,7 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .masthead li.active:hover i { font-size:14px; }
 .masthead .masthead-social { position:relative; font-size:2.5em; margin-top:5px; vertical-align:top; text-decoration:none; z-index:1; }
 .masthead a:hover .masthead-social { color:#888888; }
+.masthead .share-icon { position:relative; width:34px; margin:18px 7px 0px 20px; }
 
 .banner-video { height:380px; }
 .banner-video .slogan { position:absolute; margin-top:140px; margin-left:10px; color:#ffffff; z-index:1; }

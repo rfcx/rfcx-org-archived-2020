@@ -108,8 +108,8 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .rfcx-row-get_involved-1 .rfcx-body { width:98%; text-align:center; }
 
 .rfcx-row-get_involved-2 { padding-top:30px; padding-bottom:10px; }
-.rfcx-row-get_involved-2 .input-append .input-large { width:140px; padding-left:7px; padding-right:7px; padding-top:11px; padding-bottom:11px; font-size:14px; }
-.rfcx-row-get_involved-2 .input-append .add-on { padding-left:4px; padding-right:4px; padding-top:11px; padding-bottom:11px; font-size:18px; }
+.rfcx-row-get_involved-2 .input-append .input-large { width:140px; padding-left:7px; padding-right:7px; padding-top:10px; padding-bottom:10px; font-size:14px; }
+.rfcx-row-get_involved-2 .input-append .add-on { padding-left:4px; padding-right:4px; padding-top:11px; padding-bottom:11px; font-size:18px; border-width:0px; }
 .rfcx-row-get_involved-2 .stripe-donate .btn { font-size:18px; padding:10px 15px; }
 .rfcx-row-get_involved-2 .phone-donate .btn { font-size:18px; padding:10px 15px; }
 

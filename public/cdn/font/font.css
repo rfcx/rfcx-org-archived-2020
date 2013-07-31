@@ -1,16 +1,12 @@
 @font-face {
-	font-family: 'roadgeek_2005_engschrift';
+	font-family: 'roadgeek_2005_engschrift'; font-weight: normal; font-style: normal;
 	src: url('roadgeek_2005_engschrift/roadgeek_2005_engschrift.eot');
 	src: local('☺'), url('roadgeek_2005_engschrift/roadgeek_2005_engschrift.woff') format('woff'), url('roadgeek_2005_engschrift/roadgeek_2005_engschrift.ttf') format('truetype'), url('roadgeek_2005_engschrift/roadgeek_2005_engschrift.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
 }
-
+/*
 @font-face {
-  font-family: 'helvetica_neue_lt_std';
+  font-family: 'helvetica_neue_lt_std'; font-weight: normal; font-style: normal;
   src: url('helvetica_neue_lt_std/helvetica_neue_lt_std.eot');
   src: local('☺'), url('helvetica_neue_lt_std/helvetica_neue_lt_std.woff') format('woff'), url('helvetica_neue_lt_std/helvetica_neue_lt_std.ttf') format('truetype'), url('helvetica_neue_lt_std/helvetica_neue_lt_std.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
-
+*/

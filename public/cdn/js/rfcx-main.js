@@ -24,8 +24,8 @@ var rfcxMap;
 function initMap() {
 
   rfcxMap = new L.Map('map-container', {
-    center:[10,-120],
-    zoom: 1
+    center:[2,60],
+    zoom: 2
   });
   
   var mapUrls = {

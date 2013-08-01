@@ -1,6 +1,15 @@
 var RFCX = {
-  "currentPage": null
+  currentPage: null,
+  windowResizeTimer: null,
+  bodyWidth: $('.container-narrow').innerWidth(),
+  overflowMarginWidth: 250
 };
+
+RFCX.setMastheadWidth = function() {
+  var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
+  $(".dynamic-crop-right").css("width",newWidth);
+  console.log("Width: "+newWidth);
+}
 
 $(function(){
   
@@ -8,6 +17,8 @@ $(function(){
     setTimeout("animateAlertsInForest();",1000);
     initMap();
   }
+
+  RFCX.setMastheadWidth();
 
 });
 
@@ -68,3 +79,11 @@ $(function(){
       return false;
     });
 });
+
+
+$(window).resize(function() {
+    clearTimeout(RFCX.windowResizeTimer);
+    RFCX.windowResizeTimer = setTimeout("RFCX.setMastheadWidth();",100);
+});
+
+

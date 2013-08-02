@@ -1,7 +1,8 @@
-body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; min-width:900px; }
+body { padding-top: 0px; padding-bottom: 40px; font-weight:300; -webkit-font-smoothing:antialiased; min-width:900px; }
 
 .roadgeek { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:42px; margin-bottom:15px; }
 .lucida { font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; }
+.helvetica { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 .rfcx-unselectable { user-select:none; -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-user-select:none; }
 .rfcx-selectable { user-select:text; -webkit-touch-callout:text; -webkit-user-select:text; -khtml-user-select:text; -moz-user-select:text; -ms-user-select:text; -o-user-select:text; }
@@ -9,13 +10,14 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .rfcx-trans-50 { filter:alpha(opacity=50); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; -moz-opacity:0.5; -khtml-opacity:0.5; opacity:0.5; }
 .rfcx-crnr-5 { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
 
-.hover-trans-67:hover { filter:alpha(opacity=67); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=67)"; -moz-opacity:0.67; -khtml-opacity:0.67; opacity:0.67; }
+.hover-trans-67:hover { }
 
 
 .icon-facebook-sign { color:#3b5998; }
 .icon-twitter-sign { color:#4099ff; }
 
-.input-append .add-on { border-width:0px; }
+.input-append .btn { border-width:1px; font-size:18px; font-weight:bold; }
+input::-webkit-input-placeholder { color:#cccccc; }
 
 .container-narrow { margin:0 auto; width:900px; max-width:900px; position:relative; }
 .masthead .logo { position:absolute; width:280px; top:21.1%; margin-top:2px; left:4px; z-index:1; }
@@ -39,13 +41,13 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .banner-video .slogan { position:absolute; margin-top:140px; margin-left:10px; color:#ffffff; z-index:1; }
 .banner-video .slogan p.roadgeek { font-size:48px; margin-bottom:20px; }
 .banner-video .banner-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; }
-.banner-video .video-link { font-size:16px; cursor:pointer; padding-top:5px; font-weight:600; margin-left:0px; }
+.banner-video .video-link { font-size:16px; padding-top:5px; font-weight:600; margin-left:0px; }
 .banner-video .video-link .icon-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
-.banner-video .video-link:hover { opacity:0.5; }
 .banner-video .video-box { /*display:none;*/ position:absolute; z-index:1; margin-top:45px; margin-left:433px; height:252px; width:448px; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
-.banner-video .video-box:hover .icon-play-circle { opacity:0.67; }
 .banner-video .video-box .icon-play-circle { position:relative; font-size:144px; margin-left:152px; top:54px; }
-.banner-video .video-box .video-box-bg { position:absolute; z-index:0; width:100%; height:100%; background-color:#00ff00; border:none; }
+.banner-video .video-box .video-box-bg { position:absolute; z-index:0; width:100%; height:100%; background-color:#00bb00; border:none; }
+.banner-video .video-box:hover .video-box-bg { filter:alpha(opacity=75); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; -moz-opacity:0.75; -khtml-opacity:0.75; opacity:0.75; }
+.banner-video .video-box:hover .icon-play-circle { filter:alpha(opacity=80); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; -moz-opacity:0.80; -khtml-opacity:0.80; opacity:0.80; }
 
 .rfcx-row { padding-top:20px; margin-top:10px; position:relative; overflow:hidden; } 
 .rfcx-row .rfcx-header { color:#494848;  margin-bottom:15px; }
@@ -79,7 +81,7 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 .rfcx-row-home-3 .stopsign { position:relative; margin-left:30px; }
 .rfcx-row-home-3 .addthis_toolbox { margin-left:18px; }
 .rfcx-row-home-3 .input-append .input-large { padding:13px 19px 11px 19px; }
-.rfcx-row-home-3 .input-append .add-on { padding:12px 19px 14px 19px; }
+.rfcx-row-home-3 .input-append .btn { padding:11px 19px 13px 19px; }
 
 
 .rfcx-row-about-1 { padding-top:30px; margin-top:0px; }
@@ -123,7 +125,7 @@ body { padding-top: 0px; padding-bottom: 40px; font-family: "HelveticaNeue-Light
 
 .rfcx-row-get_involved-2 { padding:30px 0px 10px 0px;  }
 .rfcx-row-get_involved-2 .input-append .input-large { width:156px; padding-left:10px; padding-right:7px; padding-top:10px; padding-bottom:10px; font-size:14px; }
-.rfcx-row-get_involved-2 .input-append .add-on { padding:11px 6px 11px 6px; font-size:18px; }
+.rfcx-row-get_involved-2 .input-append .btn { padding:9px 9px 11px 9px; font-size:18px; }
 .rfcx-row-get_involved-2 .stripe-donate .btn { font-size:18px; padding:10px 15px; }
 .rfcx-row-get_involved-2 .phone-donate .btn { font-size:18px; padding:10px 15px; }
 

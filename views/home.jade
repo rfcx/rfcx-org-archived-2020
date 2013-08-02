@@ -4,13 +4,13 @@ block content
   
   div.container-narrow.banner-video
     div.dynamic-crop-right.banner-bg(style="background-image:url(#{rfcx_cdn}/img/home/banner-forest.1400.jpg?v=#{app_version});")
-    div.rfcx-trans-linear.video-box.rfcx-launch-video
-      div.rfcx-trans-50.video-box-bg
-      i.icon-play-circle
+    div.video-box.rfcx-launch-video
+      div.rfcx-trans-linear.rfcx-trans-50.video-box-bg
+      i.rfcx-trans-linear.icon-play-circle
     span.rfcx-unselectable.slogan
       p.roadgeek= "PROTECT RAINFORESTS"
       p.roadgeek= "USING REAL-TIME DATA"
-      p.rfcx-trans-linear.video-link.rfcx-launch-video(onclick="javascript:alert();")
+      p.video-link.rfcx-launch-video(onclick="")
         | Watch the video of how it works
         i.icon-play
 
@@ -76,7 +76,7 @@ block content
             div.controls
               div.input-append
                 input.input-large(type='text', data-type='email', id='email', name='email', placeholder='Your email')
-                span.add-on.btn.btn-success= "Sign up"
+                span.btn.btn-success= "Sign up"
 
         div.addthis_toolbox.addthis_default_style
           a.addthis_button_facebook_like('fb:like:layout'='button_count')

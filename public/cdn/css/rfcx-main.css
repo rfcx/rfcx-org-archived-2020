@@ -10,7 +10,7 @@ body { padding-top: 0px; padding-bottom: 40px; font-weight:300; -webkit-font-smo
 .rfcx-trans-50 { filter:alpha(opacity=50); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; -moz-opacity:0.5; -khtml-opacity:0.5; opacity:0.5; }
 .rfcx-crnr-5 { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
 
-.hover-trans-67:hover { }
+.hover-trans-67:hover { filter:alpha(opacity=67); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=67)"; -moz-opacity:0.67; -khtml-opacity:0.67; opacity:0.67; }
 
 
 .icon-facebook-sign { color:#3b5998; }

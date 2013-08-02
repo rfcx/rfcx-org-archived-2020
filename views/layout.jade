@@ -29,7 +29,7 @@ html(lang="en")
           for item in nav_items
             if (item[0] == current_page)
               li.active
-                a.hover-trans-67(href="#")= item[1]
+                a= item[1]
                 i.icon-sort-up(id="masthead-notch-#{item[0]}")
             else
               li

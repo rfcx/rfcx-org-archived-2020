@@ -45,7 +45,7 @@ block content
 
       div.control-group.stripe-donate
         div.controls
-          button.btn.btn-primary#stripe-donate-button= "Donate via credit card"
+          a.btn.btn-primary#stripe-donate-button= "Donate via credit card"
 
     div.span4
       p.roadgeek.rfcx-header= "DONATE A PHONE"
@@ -62,8 +62,28 @@ block content
 
       div.control-group.phone-donate
         div.controls
-          button.btn.btn-gray#phone-donate-button= "Donate a smartphone"
+          a.btn.btn-gray#phone-donate-button(href="#rfcx_donate_phone", role="button", data-toggle="modal")= "Donate a smartphone"
 
   div.container-narrow.footer-forest
     div.footer-bg(style="background-image:url(#{rfcx_cdn}/img/get_involved/forest-footer.1400.jpg?v=#{app_version});")
+
+  div.modal.hide.fade(id='rfcx_donate_phone', tabindex='-1', role='dialog', aria-labelledby='rfcx_donate_phone_label', aria-hidden='true', style="width:500px;")
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')= "x"
+      h3.roadgeek#rfcx_donate_phone_label= "DONATE AN OLD SMARTPHONE"
+    div.modal-body
+      | Explanation of why it's so awesome to send your phone in...
+      br
+      br 
+      | Send phones to this address:
+      br
+      | Rainforest Connection
+      br
+      | 77 Van Ness Ave
+      br
+      | Suite 101-1717
+      br
+      | San Francisco, CA, 94102
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 

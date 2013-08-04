@@ -45,6 +45,7 @@ html(lang="en")
           a.addthis_button_facebook_like('fb:like:layout'='button_count')
           a.addthis_button_tweet
           a.addthis_button_pinterest_pinit
+          a.addthis_button_google_plusone
           a.addthis_counter.addthis_pill_style
     
     div.footer.lucida
@@ -84,6 +85,7 @@ html(lang="en")
     if (node_env == "production")
       script(type='text/javascript').
         var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])}; analytics.load("#{segment_io_client_id}");
+
     if (node_env == "production")
       script(type='text/javascript')= "var addthis_config = {data_track_addressbar:false};"
       script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=#{addthis_pubid}')

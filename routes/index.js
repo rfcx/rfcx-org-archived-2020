@@ -8,7 +8,7 @@ var navItems = [
     [ "about", "About", "About" ],
     [ "get_involved", "Get Involved", "Get Involved" ],
     [ "media", "Media", "Media" ],
-    [ "blog", "Blog", "Blog" ]
+    [ "blog", "Blog", "Blog" , "//rainforestcx.tumblr.com" ]
   ];
 
 

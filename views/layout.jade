@@ -4,26 +4,31 @@ html(lang="en")
   head
     title= title
     meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="viewport", content="width=device-width, minimum-scale=0.67, maximum-scale=4.0, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
     meta(name="description", content="")
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
-    link(rel='stylesheet', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
-    link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome.min.css')
     // if lt IE 9
       script(type='text/javascript', src='#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js')
-      link(rel='stylesheet', href='#{rfcx_cdn}/css/gradient-ie9.css?v=#{app_version}')
+      link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/gradient-ie9.css?v=#{app_version}')
     // if IE 7
-      link(rel='stylesheet', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
-    link(rel='stylesheet', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
-    link(rel='stylesheet', href='#{rfcx_vendor_cdn}/hint.css/1.2.2/hint.min.css')
-    link(rel='stylesheet', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
+      link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_vendor_cdn}/hint.css/1.2.2/hint.min.css', media='only screen and (min-width: 1088px)')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='only screen and (max-device-width: 480px)')
   body.helvetica
     div.container-narrow
 
-      div.rfcx-unselectable.masthead
+      div.rfcx-unselectable.rfcx-trans-linear.masthead
         div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
-        ul.nav.nav-pills.pull-right
+        a.menu-toggle
+          i.icon-reorder
+          i.icon-chevron-up
+        ul.rfcx-trans-linear.nav.nav-pills.pull-right
           for item in nav_items
             if (item[0] == current_page)
               li.active
@@ -40,16 +45,16 @@ html(lang="en")
     div.footer.lucida
       div.container-narrow
         ul.nav.nav-pills.pull-left
-          li
+          li.cp
             span.copyright= "©2013 Rainforest Connection"
-          li= "|"
+          li.ft= "|"
             for item in nav_items
-              li
+              li.ft
                 if (item[0] == current_page)
                   a.rfcx-trans-linear(href="#")= item[1]
                 else
                   a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
-              li= "|"
+              li.ft= "|"
         a.pull-right.hint--rounded.hint--top(target='_blank',href='https://www.facebook.com/RainforestCx', data-hint='Check us out on Facebook!')
           i.footer-social.rfcx-trans-linear.icon-facebook-sign
         a.pull-right.hint--rounded.hint--bottom(target='_blank',href='https://twitter.com/RainforestCx', data-hint='Check us out on Twitter!')

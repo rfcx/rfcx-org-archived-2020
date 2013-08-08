@@ -2,12 +2,14 @@ var RFCX = {
   currentPage: null,
   load: {},
   cdn: { rfcx: null, bootstrap: null },
-  ui: { home: {}, about: {}, get_involved: {}, media: {} },
+  ui: { all: {}, home: {}, about: {}, get_involved: {}, media: {} },
   reactiveUi: {},
+  initializeUi: {},
   mapObj: null,
   timer: { windowResize: null, windowScroll: null },
   bodyWidth: $('.container-narrow').innerWidth(),
   overflowMarginWidth: 250,
+  renderForMobile: false,
   transitionAt: { home: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   donateAmount: 50,
@@ -16,39 +18,78 @@ var RFCX = {
 
 
 
-RFCX.emailSubscribeSubmit = function() {
-  $("#mc-embedded-subscribe-form").each(function(){
-    $(this).submit();
-  });
-}
-
-
-
 $(function(){
+
+  RFCX.renderForMobile = (parseInt($("body").css("min-width")) < 512);
 
   for (i in RFCX.load) { RFCX.load[i](); }
   for (i in RFCX.ui[RFCX.currentPage]) { RFCX.ui[RFCX.currentPage][i](); }
 
-  RFCX.reactiveUi.modifyMastheadWidth();
+  RFCX.initializeUi.hideMobileHeader();
+  RFCX.initializeUi.setupMobileMenu();
+
+  RFCX.initializeUi.onResize();
+  RFCX.initializeUi.onScroll();
 
 });
 
-
-$(window).resize(function(){
-  clearTimeout(RFCX.timer.windowResize);
-  RFCX.timer.windowResize = setTimeout(function(){
+RFCX.initializeUi.onResize = function() {
+  if (!RFCX.renderForMobile) {
     RFCX.reactiveUi.modifyMastheadWidth();
-  },100);
-});
+    $(window).resize(function(){
+      clearTimeout(RFCX.timer.windowResize);
+      RFCX.timer.windowResize = setTimeout(function(){
+        RFCX.reactiveUi.modifyMastheadWidth();
+      },100);
+    });
+  }
+}
 
-$(window).scroll(function(){
-  clearTimeout(RFCX.timer.windowScroll);
-  RFCX.timer.windowScroll = setTimeout(function(){
-    RFCX.reactiveUi.modifyFollowButtons();
-  },5);
-});
+RFCX.initializeUi.onScroll = function() {
+  if (!RFCX.renderForMobile) {
+    $(window).scroll(function(){
+      clearTimeout(RFCX.timer.windowScroll);
+      RFCX.timer.windowScroll = setTimeout(function(){
+        RFCX.reactiveUi.modifyFollowButtons();
+      },5);
+    });
+  }
+}
 
+RFCX.initializeUi.hideMobileHeader = function() {
+  setTimeout(function(){
+    window.scrollTo(0, 1);
+   }, 0);
+}
 
+setTimeout(function(){
+    // Hide the address bar!
+    window.scrollTo(0, 1);
+  }, 0);
+
+RFCX.initializeUi.setupMobileMenu = function() {
+  if (RFCX.renderForMobile) {
+    $(".masthead .menu-toggle").click(function(){
+      RFCX.reactiveUi.toggleMobileMenu();
+    });
+  }
+}
+
+RFCX.reactiveUi.toggleMobileMenu = function() {
+  
+  var bttnIcon = ["block","none"];
+  var menuHeight = 200;
+  if (parseInt($(".masthead ul").css("height")) > 0) {
+    bttnIcon = ["none","block"];
+    menuHeight = 0;
+  }
+  $(".masthead ul").css({height:menuHeight+"px"});
+  $(".masthead").css({marginBottom:menuHeight+"px"});
+//  $(".banner-video").css({marginTop:menuHeight+"px"});
+
+  $(".masthead .menu-toggle .icon-chevron-up").css({display:bttnIcon[0]});
+  $(".masthead .menu-toggle .icon-reorder").css({display:bttnIcon[1]});
+};
 
 RFCX.reactiveUi.modifyFollowButtons = function() {
   var scrollPosition = $(window).scrollTop();
@@ -153,4 +194,20 @@ RFCX.ui.about.animateHelpCalls = function() {
   }, 1000);
 }
 
+
+RFCX.ui.all.emailSubscribeFormSetup = function() {
+  
+  $("#mc-embedded-subscribe-form").submit(function(){
+    return true;
+  });
+
+  $("div.email-sign-up a.btn-success").click(function(){
+    $("#mc-embedded-subscribe-form").each(function(){
+      $(this).submit();
+    });
+  });
+}
+
+RFCX.ui.home.emailSubscribeFormSetup = function() { RFCX.ui.all.emailSubscribeFormSetup(); }
+RFCX.ui.get_involved.emailSubscribeFormSetup = function() { RFCX.ui.all.emailSubscribeFormSetup(); }
 

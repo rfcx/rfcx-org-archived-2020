@@ -30,9 +30,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead li.active a:hover { top:0px; }
 .masthead li.active a, .masthead li.active a:hover { color:#ffffff; background-color:transparent; }
 .masthead li.active i { position:absolute; font-size:42px; width:100%; text-align:center; top:43px; }
-.masthead .social-share { position:relative; font-size:30px; width:30px; color:transparent; margin:23px 4px 0px 20px; vertical-align:top; text-decoration:none; z-index:2; }
-.masthead li.active i.icon-sort-up { height:14px; overflow:hidden; }
-.masthead #masthead-notch-home { display:block; color:rgb(107,127,104); }
+/*.masthead .social-share { position:relative; font-size:30px; width:30px; color:transparent; margin:23px 4px 0px 20px; vertical-align:top; text-decoration:none; z-index:2; }*/
+.masthead li.active i.icon-sort-up { height:15px; overflow:hidden; }
+.masthead #masthead-notch-home { display:block; color:rgb(16,141,16); }
 .masthead #masthead-notch-about { color:rgb(239,240,241); }
 .masthead #masthead-notch-get_involved { color:rgb(244,245,246); }
 .masthead #masthead-notch-media { color:rgb(249,250,251); }
@@ -162,6 +162,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .btn-primary { font-weight:bold; }
 
 
+/* AddThis style overrides */
 .aticon-facebook, .aticon-twitter, .aticon-google_follow { background-image:none !important; background:none !important; font-family:FontAwesome; font-weight:normal; font-style:normal; display:inline-block; text-decoration:inherit; text-indent:0; font-size:24px; color:#ffffff; }
 .at-follow-btn { text-decoration:none; -webkit-transition:all .2s linear; -moz-transition:all .2s linear; transition:all .2s linear; }
 .at-follow-btn:hover{ text-decoration:none; filter:alpha(opacity=67); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=67)"; -moz-opacity:0.67; -khtml-opacity:0.67; opacity:0.67; }

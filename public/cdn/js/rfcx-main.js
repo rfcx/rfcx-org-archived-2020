@@ -45,7 +45,7 @@ $(window).scroll(function(){
   clearTimeout(RFCX.timer.windowScroll);
   RFCX.timer.windowScroll = setTimeout(function(){
     RFCX.reactiveUi.modifyFollowButtons();
-  },50);
+  },5);
 });
 
 

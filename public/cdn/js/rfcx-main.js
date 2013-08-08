@@ -112,7 +112,10 @@ RFCX.load.stripePayments = function(){
 }
 
 RFCX.load.bootstrapJs = function(){
-  $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js");
+  $.ajaxSetup({ cache:true });
+  $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js",function(){
+    $.ajaxSetup({ cache:false });
+  });
 }
 
 

@@ -4,7 +4,7 @@
  */
 
 var navItems = [
-    [ "home", "Home", "Rainforest Connection | Saving rainforest with real-time data" ],
+    [ "home", "Home", "Rainforest Connection | Protecting rainforests with real-time data" ],
     [ "about", "About", "About" ],
     [ "get_involved", "Get Involved", "Get Involved" ],
     [ "media", "Media", "Media" ],
@@ -40,7 +40,7 @@ exports.page = function(req, res, process, Model){
   res.setHeader("Access-Control-Allow-Origin","*");
   res.render(navItem[0], setJadeVars(process, {
     current_page: navItem[0],
-    title: navItem[1]
+    title: navItem[2]
   }));
 };
 

@@ -28,7 +28,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead li a { position:relative; color:#ffffff; font-weight:600; }
 .masthead li a:hover { color:#ffffff; background-color:transparent; }
 .masthead li.active a:hover { top:0px; }
-.masthead li.active a, .masthead li.active a:hover { color:#ffffff; background-color:transparent; }
+.masthead li.active a, .masthead li.active a:hover { color:#ffffff; background-color:transparent; cursor:default; }
 .masthead li.active i { position:absolute; font-size:42px; width:100%; text-align:center; top:43px; }
 /*.masthead .social-share { position:relative; font-size:30px; width:30px; color:transparent; margin:23px 4px 0px 20px; vertical-align:top; text-decoration:none; z-index:2; }*/
 .masthead li.active i.icon-sort-up { height:15px; overflow:hidden; }
@@ -40,9 +40,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .banner-video { height:380px; }
 .banner-video .slogan { position:absolute; margin-top:140px; margin-left:10px; color:#ffffff; z-index:1; }
-.banner-video .slogan p.roadgeek { font-size:48px; margin-bottom:20px; }
+.banner-video .slogan p.roadgeek { font-size:48px; margin-bottom:20px; cursor:default; }
 .banner-video .banner-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; }
-.banner-video .video-link { font-size:16px; padding-top:5px; font-weight:600; margin-left:0px; }
+.banner-video .video-link { font-size:16px; padding-top:5px; font-weight:600; margin-left:0px; cursor:default; }
 .banner-video .video-link .icon-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
 .banner-video .video-box { /*display:none;*/ position:absolute; z-index:1; margin-top:45px; margin-left:433px; height:252px; width:448px; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
 .banner-video .video-box .icon-play-circle { position:relative; font-size:144px; margin-left:152px; top:54px; }

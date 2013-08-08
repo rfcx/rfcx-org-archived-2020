@@ -1,8 +1,13 @@
 var RFCX = {
   currentPage: null,
+  cdn: { rfcx: null, bootstrap: null },
   windowResizeTimer: null,
   bodyWidth: $('.container-narrow').innerWidth(),
-  overflowMarginWidth: 250
+  overflowMarginWidth: 250,
+  transitionAt: { home: 418, about: 30, get_involved: 30, media: 30 },
+  nodeEnv: null,
+  donateAmount: 50,
+  addThisPubId: ''
 };
 
 RFCX.setMastheadWidth = function() {
@@ -11,6 +16,14 @@ RFCX.setMastheadWidth = function() {
   console.log("Width: "+newWidth);
 }
 
+RFCX.emailSubscribeSubmit = function() {
+  $("#mc-embedded-subscribe-form").each(function(){
+    $(this).submit();
+  });
+}
+
+
+
 $(function(){
   
   if (RFCX.currentPage === "about") {
@@ -18,9 +31,17 @@ $(function(){
     initMap();
   }
 
+  RFCX.loadScripts();
   RFCX.setMastheadWidth();
 
 });
+
+RFCX.loadScripts = function() {
+
+  $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js");  
+  RFCX.stripeSetup();
+  RFCX.loadAddThis();
+}
 
 function animateAlertsInForest() {
 	$("div.screen-container div.alert-help").each(function(i){
@@ -57,33 +78,66 @@ function initMap() {
 
 }
 
-$(function(){
-    $('#stripe-donate-button').click(function(){
-      var token = function(res){
-        var $input = $('<input type=hidden name=stripeToken />').val(res.id);
-        $('form').append($input).submit();
-      };
 
-      StripeCheckout.open({
-        key: 'pk_test_t9ZzGqE7SlzQzSyGVmLaDj8K',
-        address: false,
-        amount: 5000,
-        currency: 'usd',
-        name: 'Rainforest Connection',
-        description: 'Make a kind donation',
-        image: RFCX.cdnDomain+'/img/logo/logo-square-stripe.128.png',
-        panelLabel: 'Donate',
-        token: token
-      });
-
-      return false;
-    });
-});
-
-
-$(window).resize(function() {
+$(window).resize(function(){
     clearTimeout(RFCX.windowResizeTimer);
     RFCX.windowResizeTimer = setTimeout("RFCX.setMastheadWidth();",100);
 });
+
+$(window).scroll(function(){
+  var scrollPosition = $(window).scrollTop();
+  var socialButtonColor = "000000";
+  if (scrollPosition <= RFCX.transitionAt[RFCX.currentPage]) {
+    socialButtonColor = "ffffff";
+  } else if (scrollPosition < (RFCX.transitionAt[RFCX.currentPage]+10)) {
+    socialButtonColor = "888888";
+  }
+  $(".aticon-facebook, .aticon-twitter, .aticon-google_follow").css({color:"#"+socialButtonColor});
+});
+
+RFCX.loadAddThis = function() {
+  if (RFCX.nodeEnv === "production") {
+    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.addThisPubId, function(){
+        addthis.layers({
+          'theme':'transparent', 'share':{ 'position':'left', 'numPreferredServices':4 },
+          'follow' : { 'services':[
+            { 'service':'facebook', 'id':'RainforestCx' },
+            { 'service':'twitter', 'id':'RainforestCx' },
+            { 'service': 'google_follow', 'id': 'u/0/b/110790947035627675960/110790947035627675960'}
+          ]
+        }
+      });
+    });
+  }
+}
+
+
+
+RFCX.stripeSetup = function(){
+
+  if ($("#stripe-payment-button").length > 0) {
+
+    $.getScript("https://checkout.stripe.com/v2/checkout.js", function(){
+      $("#stripe-payment-button").click(function(){
+        var token = function(res){
+          var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+          $('form').append($input).submit();
+        };
+        StripeCheckout.open({
+          key: 'pk_test_t9ZzGqE7SlzQzSyGVmLaDj8K',
+          address: false,
+          amount: (100*RFCX.donateAmount),
+          currency: 'usd',
+          name: 'Rainforest Connection',
+          description: 'Make a kind donation',
+          image: RFCX.cdn.rfcx+'/img/logo/logo-square-stripe.128.png',
+          panelLabel: 'Donate',
+          token: token
+        });
+        return false;
+      });
+    });
+  }
+}
 
 

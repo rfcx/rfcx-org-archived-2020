@@ -8,8 +8,8 @@ block content
       div.rfcx-trans-linear.rfcx-trans-50.video-box-bg
       i.rfcx-trans-linear.icon-play-circle
     span.rfcx-unselectable.slogan
-      p.roadgeek= "PROTECT RAINFORESTS"
-      p.roadgeek= "USING REAL-TIME DATA"
+      p.roadgeek= "PROTECTING RAINFORESTS"
+      p.roadgeek= "WITH REAL-TIME DATA"
       p.video-link.rfcx-launch-video(onclick="")
         | Watch the video of how it works
         i.icon-play
@@ -22,8 +22,9 @@ block content
           i.rfcx-trans-linear.icon-circle.expand-button.expand-button-rear
           img.infographic-thmb(src='/cdn/img/home/infographic.png')
     div.span5
-      p.roadgeek.rfcx-header= "TURNING OLD PHONES"
-      p.roadgeek.rfcx-header= "INTO SECURITY GUARDS"
+      p.roadgeek.rfcx-header= "EVERY MINUTE COUNTS."
+      p.roadgeek.rfcx-header= "REAL-TIME DATA MAKES"
+      p.roadgeek.rfcx-header= "ALL THE DIFFERENCE"
       p.rfcx-body
         | We take old mobile phones, retrofit them
         br
@@ -71,12 +72,12 @@ block content
         br
         span= "We will never sell or disclose your address to anyone else."
 
-        form(data-validate='parsley')
+        form.validate#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
           div.control-group
             div.controls
               div.input-append
-                input.input-large(type='text', data-type='email', id='email', name='email', placeholder='Your email')
-                span.btn.btn-success= "Sign up"
+                input.input-large.email#mce-EMAIL(type='text', data-type='email', data-required='true', id='email', name='EMAIL', placeholder='Your email', required)
+                a.btn.btn-success(href="javascript:RFCX.emailSubscribeSubmit();")= "Sign up"
 
 
 

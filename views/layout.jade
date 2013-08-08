@@ -23,8 +23,7 @@ html(lang="en")
 
       div.rfcx-unselectable.masthead
         div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
-        a.hover-trans-67.rfcx-trans-linear.pull-right.social-share(href="#")
-          i.icon-share
+        a.hover-trans-67.rfcx-trans-linear.pull-right.social-share(href="#")= "_"
         ul.nav.nav-pills.pull-right
           for item in nav_items
             if (item[0] == current_page)
@@ -35,23 +34,15 @@ html(lang="en")
               li
                 a.hover-trans-67.rfcx-trans-linear(href="/#{item[0]}")= item[1]
         a(href="/home")
-          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.280.png?v=#{app_version}")
+          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
 
       block content
-    
-    div.footer.footer-share.lucida
-      div.container-narrow
-        div.addthis_toolbox.addthis_default_style
-          a.addthis_button_facebook_like('fb:like:layout'='button_count')
-          a.addthis_button_tweet
-          a.addthis_button_pinterest_pinit
-          a.addthis_button_google_plusone
-          a.addthis_counter.addthis_pill_style
     
     div.footer.lucida
       div.container-narrow
         ul.nav.nav-pills.pull-left
-          li= "©2013 Rainforest Connection"
+          li
+            span.copyright= "©2013 Rainforest Connection"
           li= "|"
             for item in nav_items
               li
@@ -64,7 +55,7 @@ html(lang="en")
           i.footer-social.rfcx-trans-linear.icon-facebook-sign
         a.pull-right.hint--rounded.hint--bottom(target='_blank',href='https://twitter.com/RainforestCx', data-hint='Check us out on Twitter!')
           i.footer-social.rfcx-trans-linear.icon-twitter-sign
-        a.pull-right.hint--rounded.hint--top(target='_blank',href='http://rainforest.cx/18bTInN', data-hint='Check us out on Google+!')
+        a.pull-right.hint--rounded.hint--top(target='_blank',href='https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts', data-hint='Check us out on Google+!')
           i.footer-social.rfcx-trans-linear.icon-google-plus-sign
         a.pull-right.hint--rounded.hint--bottom(target='_blank',href='http://www.linkedin.com/company/rainforest-connection', data-hint='Check us out on LinkedIn!')
           i.footer-social.rfcx-trans-linear.icon-linkedin-sign
@@ -76,18 +67,9 @@ html(lang="en")
           i.footer-social.rfcx-trans-linear.icon-github-sign
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
-    script(type='text/javascript', src='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/js/bootstrap.min.js')
-    script(type='text/javascript', src='#{cdnjs_cdn}/parsley.js/1.1.16/parsley.min.js')
-    script(type='text/javascript', src='https://checkout.stripe.com/v2/checkout.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript').
-      RFCX.currentPage = "#{current_page}"; RFCX.cdnDomain = "#{rfcx_cdn}";
+      RFCX.currentPage = "#{current_page}"; RFCX.cdn.rfcx = "#{rfcx_cdn}"; RFCX.cdn.bootstrap = "#{bootstrap_cdn}"; RFCX.addThisPubId = "#{addthis_pubid}"; RFCX.nodeEnv = "#{node_env}";
     if (node_env == "production")
       script(type='text/javascript').
         var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])}; analytics.load("#{segment_io_client_id}");
-
-    if (node_env == "production")
-      script(type='text/javascript')= "var addthis_config = {data_track_addressbar:false};"
-      script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=#{addthis_pubid}')
-    else
-      script(type='text/javascript')= "$('div.addthis_toolbox').css({border:'solid 1px #aaaaaa',padding:'3px'}).html('\\'AddThis\\' buttons appear here when in production.');"

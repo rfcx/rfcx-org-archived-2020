@@ -22,12 +22,12 @@ block content
         br
         | your address to anyone else.
 
-        form(data-validate='parsley')
+        form.validate#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
           div.control-group.email-sign-up
             div.controls
               div.input-append
-                input.input-large(type='text', data-type='email', id='email', name='email', placeholder='Your email')
-                span.btn.btn-success= "Sign up"
+                input.input-large.email#mce-EMAIL(type='text', data-type='email', data-required='true', id='email', name='EMAIL', placeholder='Your email', required)
+                a.btn.btn-success(href="javascript:RFCX.emailSubscribeSubmit();")= "Sign up"
 
 
     div.span4
@@ -45,7 +45,7 @@ block content
 
       div.control-group.stripe-donate
         div.controls
-          a.btn.btn-primary#stripe-donate-button= "Donate via credit card"
+          a.btn.btn-primary#stripe-payment-button= "Donate via credit card"
 
     div.span4
       p.roadgeek.rfcx-header= "DONATE A PHONE"

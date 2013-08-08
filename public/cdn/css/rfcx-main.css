@@ -171,9 +171,9 @@ div.at-follow-open-control div.at4-arrow { margin-top:16px; }
 .aticon-twitter:before { content:'\f081  '; }
 .aticon-google_follow:before { content:'\f0d4  '; }
 
-.at-vertical-menu a { min-width:154px; width:154px; left:30px; }
+.at-vertical-menu a { min-width:132px; width:132px; left:52px;  }
 .at-vertical-menu a:hover { background:#aaaaaa; }
-
+.at-vertical-menu label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
 
 
 

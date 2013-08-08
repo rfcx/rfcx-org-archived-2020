@@ -11,7 +11,7 @@ var RFCX = {
   transitionAt: { home: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   donateAmount: 50,
-  addThisPubId: ''
+  addThis: { pubId: "", env: [ "production", "development" ] }
 };
 
 
@@ -69,19 +69,19 @@ RFCX.reactiveUi.modifyMastheadWidth = function() {
 
 
 RFCX.load.addThis = function() {
-  if (RFCX.nodeEnv === "development") {
-    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.addThisPubId, function(){
-        addthis.layers({
-          'theme':'transparent', 'share':{ 'position':'left', 'numPreferredServices':4 },
-          'follow' : { 'services':[
-            { 'service':'facebook', 'id':'RainforestCx' },
-            { 'service':'twitter', 'id':'RainforestCx' },
-            { 'service': 'google_follow', 'id': 'u/0/b/110790947035627675960/110790947035627675960'}
-          ]
-        }
-      });
-    });
-  }
+  for (var i = 0; i < RFCX.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.addThis.env[i]) {
+    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.addThis.pubId, function(){
+      addthis.layers({
+        'theme':'transparent', 'share':{ 'position':'left', 'numPreferredServices':4 },
+        'follow' : { 'services':[
+          { 'service':'facebook', 'id':'RainforestCx' },
+          { 'service':'twitter', 'id':'RainforestCx' },
+          { 'service': 'google_follow', 'id': 'u/0/b/110790947035627675960/110790947035627675960'}
+        ]
+      }
+    }); });
+    break;
+  } }
 }
 
 RFCX.load.stripePayments = function(){

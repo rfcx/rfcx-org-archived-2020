@@ -2,7 +2,7 @@ var RFCX = {
   currentPage: null,
   load: {},
   cdn: { rfcx: null, bootstrap: null },
-  ui: { all: {}, home: {}, about: {}, get_involved: {}, media: {} },
+  ui: { all: {}, intro: {}, about: {}, get_involved: {}, media: {} },
   reactiveUi: {},
   initializeUi: {},
   mapObj: null,
@@ -10,7 +10,7 @@ var RFCX = {
   bodyWidth: $('.container-narrow').innerWidth(),
   overflowMarginWidth: 250,
   renderForMobile: false,
-  transitionAt: { home: 418, about: 30, get_involved: 30, media: 30 },
+  transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   donateAmount: 50,
   addThis: { pubId: "", env: [ "production", "development" ] },
@@ -113,13 +113,8 @@ RFCX.load.addThis = function() {
   for (var i = 0; i < RFCX.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.addThis.env[i]) {
     $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.addThis.pubId, function(){
       addthis.layers({
-        'theme':'transparent', 'share':{ 'position':'left', 'numPreferredServices':4 },
-        'follow' : { 'services':[
-          { 'service':'facebook', 'id':'RainforestCx' },
-          { 'service':'twitter', 'id':'RainforestCx' },
-          { 'service': 'google_follow', 'id': 'u/0/b/110790947035627675960/110790947035627675960'}
-        ]
-      }
+        'theme':'transparent', 'share':{ 'position':'right', 'numPreferredServices':4 }
+        // , 'follow' : { 'services':[ { 'service':'facebook', 'id':'RainforestCx' }, { 'service':'twitter', 'id':'RainforestCx' }, { 'service': 'google_follow', 'id': 'u/0/b/110790947035627675960/110790947035627675960'} ] }
     }); });
     break;
   } }

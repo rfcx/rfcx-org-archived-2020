@@ -4,7 +4,7 @@
  */
 
 var navItems = [
-    [ "home", "Home", "Rainforest Connection | Protecting rainforests with real-time data" ],
+    [ "intro", "Intro", "Rainforest Connection | Protecting rainforests with real-time data" ],
     [ "about", "About", "About" ],
     [ "get_involved", "Get Involved", "Get Involved" ],
     [ "media", "Media", "Media" ],

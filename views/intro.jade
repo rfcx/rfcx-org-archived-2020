@@ -3,7 +3,7 @@ extends layout
 block content
   
   div.container-narrow.banner-video
-    div.dynamic-crop-right.banner-bg(style="background-image:url(#{rfcx_cdn}/img/home/banner-forest.1400.jpg?v=#{app_version});")
+    div.dynamic-crop-right.banner-bg(style="background-image:url(#{rfcx_cdn}/img/intro/banner-forest.1400.jpg?v=#{app_version});")
     div.video-box.rfcx-launch-video
       div.rfcx-trans-linear.rfcx-trans-50.video-box-bg
       i.rfcx-trans-linear.icon-play-circle
@@ -16,13 +16,13 @@ block content
         | Watch the video to learn how
         i.icon-play
 
-  div.row-fluid.rfcx-row.rfcx-row-home-1
+  div.row-fluid.rfcx-row.rfcx-row-intro-1
     div.span7
       a(href='#infoGraphic', role='button', data-toggle='modal')
         div.rfcx-trans-linear.infographic-box
           i.rfcx-trans-linear.icon-plus-sign.expand-button.expand-button-front
           i.rfcx-trans-linear.icon-circle.expand-button.expand-button-rear
-          img.infographic-thmb(src='/cdn/img/home/infographic.png')
+          img.infographic-thmb(src='/cdn/img/intro/infographic.png')
     div.span5
       p.roadgeek.rfcx-header
         | EVERY MINUTE COUNTS.
@@ -55,23 +55,23 @@ block content
         br
         | to intervene before the damage is done.
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-home-2
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-2
     div.span12
       p.roadgeek.rfcx-header= "HOW FAST ARE THE RAINFORESTS DISAPPEARING?"
       p.rfcx-body
         span= "Explanation text goes here"
       div.slider-container
-        div.slider-left(style="background-image:url(/cdn/img/home/forest-slider-cut.800.jpg);")
+        div.slider-left(style="background-image:url(/cdn/img/intro/forest-slider-cut.800.jpg);")
           div.roadgeek.slider-percent= "72%"
         div.slider-middle
-        div.slider-right(style="background:url(/cdn/img/home/forest-slider-ok.247.jpg) right;")
+        div.slider-right(style="background:url(/cdn/img/intro/forest-slider-ok.247.jpg) right;")
 
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-home-3
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-3
     div.span7
       p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS"
       p.rfcx-body
-        img.stopsign-mobile(src="#{rfcx_cdn}/img/home/stopsign.358.png?v=#{app_version}")
+        img.stopsign-mobile(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
         | Get involved by signing up for our newsletter.
         br
         | We have some big things in the works, and we
@@ -88,14 +88,14 @@ block content
               span= "For even more info, follow us on "
               span.social-names= "Facebook, Twitter and Google+."
             div.social-follow-container
-              div.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
+              div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
             div.social-follow-container(style="top:11px;")
-              a.twitter-follow-button(data-show-count="true", data-size="", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
+              a.social-follow-item.twitter-follow-button(data-show-count="true", data-size="", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
             div.social-follow-container
-              div.g-follow(data-annotation="bubble", data-height="24", data-href="//plus.google.com/110790947035627675960", data-rel="publisher")
+              div.social-follow-item.g-follow(data-annotation="bubble", data-height="24", data-href="//plus.google.com/110790947035627675960", data-rel="publisher")
 
     div.span5
-      img.stopsign(src="#{rfcx_cdn}/img/home/stopsign.358.png?v=#{app_version}")
+      img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
 
 
   div.modal.hide.fade(id='infoGraphic', tabindex='-1', role='dialog', aria-labelledby='infoGraphicLabel', aria-hidden='true')

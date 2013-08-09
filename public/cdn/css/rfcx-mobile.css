@@ -1,36 +1,70 @@
 
-body { min-width:440px; max-width:440px; overflow-x:hidden; padding:0px 0px 0px 0px; }
+body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 0px; }
 
-.container-narrow, .footer { margin-left:0px; margin-right:0px; width:100%; }
+.container-narrow, .footer, .masthead { margin-left:0px; margin-right:0px; width:100%; }
 
-.masthead .masthead-bg { width:127.8%; max-width:127.8%; }
-.masthead .logo { position:absolute; width:67%; left:6%; top:21.1%; }
-.masthead .menu-toggle { display:block; position:absolute; top:24%; right:5%; font-size:40px; color:white; text-decoration:none; }
+.masthead { top:-26px; }
+.masthead .masthead-bg { left:-63%; width:163%; max-width:163%;  }
+.masthead .logo { position:absolute; width:67%; left:4%; top:45%; }
+.masthead .menu-toggle { display:block; position:absolute; top:48%; right:5%; font-size:28px; color:white; text-decoration:none; }
 .masthead .menu-toggle .icon-chevron-up { display:none; }
 .masthead .menu-toggle .icon-reorder { display:block; }
 
 .masthead ul { position:absolute; top:100%; left:0%; margin-top:0%; width:100%; height:0px; background-color:#111111; overflow:hidden; }
 
-.banner-video { width:100%; height:250px; margin-top:0px; }
+.banner-video { height:250px; margin-top:0px; top:-26px; }
+.banner-video .banner-bg { left:-63%; width:163%; max-width:163%; }
 .banner-video .video-box { width:160px; height:90px; margin-left:3%; border-width:1px; }
 .banner-video .video-box .icon-play-circle { font-size:60px; margin-left:52px; top:12px; }
 .banner-video .slogan { margin-top:50px; }
-.banner-video .slogan p.roadgeek { font-size:40px;}
+.banner-video .slogan p.roadgeek { font-size:40px; }
 
-.banner-video .banner-bg { width:127.8%; max-width:127.8%; }
+.rfcx-row {  } 
+.rfcx-row .rfcx-header, .rfcx-row .rfcx-body { text-align:center; width:100%; margin-left:none; margin-right:none; }
+.rfcx-row .rfcx-header {  }
+.rfcx-row .rfcx-body {  }
 
+.rfcx-row-home-1 .rfcx-header { margin:20px 0px 0px 0px; }
+.rfcx-row-home-1 .rfcx-body { margin:0px 0px 0px 0px; }
+.rfcx-row-home-2 .rfcx-header { margin:20px 0px 0px 0px; line-height:42px; }
+.rfcx-row-home-2 .rfcx-body { margin:0px 0px 0px 0px; }
+.rfcx-row-home-3 .rfcx-header { margin:20px 0px 0px 0px; line-height:42px; }
+.rfcx-row-home-3 .rfcx-body { margin:0px 0px 0px 0px; }
+
+.rfcx-row-about-1 .rfcx-header { margin:10px 0px 0px 0px; line-height:42px; font-size:42px; }
+.rfcx-row-about-1 .rfcx-body { margin:0px 0px 0px 0px; }
+.rfcx-row-about-2 .rfcx-header { margin:20px 0px 0px 0px; }
+.rfcx-row-about-2 .rfcx-body { margin:0px 0px 0px 0px; }
+.rfcx-row-about-3 .rfcx-header { margin:0px 0px 0px 0px; }
+.rfcx-row-about-3 .rfcx-body { margin:0px 0px 0px 0px; }
+
+.rfcx-row-home-3 .stopsign { width:50%; margin-left:0px; }
+
+.rfcx-row-about-1 { top:-26px; padding-top:0px; }
+.rfcx-row-about-1 .screen-container { width:300px; height:181px; }
+.rfcx-row-about-2 { top:-26px; padding-top:0px; }
+.rfcx-row-about-2 .trash-img { margin-top:10px; width:50%; /*display:none;*/ }
+.rfcx-row-about-3 .map-cropper { width:225px; height:126px; float:none; margin-right:auto; margin-left:auto; margin-bottom:10px; }
+.rfcx-row-about-3 #map-container { height:126%; }
+.rfcx-row-about-4 {  }
+.rfcx-row-about-4 .frog-img { margin-bottom:40px; width:50%; }
+
+.rfcx-row-get_involved-2 .span4 { clear:both; }
 
 .footer ul li.ft { display:none; }
 .footer ul li.cp { width:100%; font-size:60%; }
-.footer ul { position:absolute; width:100%; top:18px; }
+.footer ul { position:absolute; width:100%; top:28px; }
+.footer .footer-social { font-size:3em; margin:0px 4px; }
 
-.footer { margin-bottom:40px; height:56px; text-align:center; }
-.footer a.pull-right { position:relative; float:none; top:10px; }
+.footer { margin-bottom:40px; height:64px; text-align:center; }
+.footer a.pull-right { position:relative; float:none; top:6px; }
 .footer ul {  }
+
+.footer-forest { height:151px; overflow:hidden; }
+.footer-forest .footer-bg {  }
+
 
 .span6 { clear:both; }
 
 
-.rfcx-row-about-1 .screen-container { width:400px; height:241px; }
 
-.rfcx-row-about-3 .map-cropper { width:225px; height:126px; }

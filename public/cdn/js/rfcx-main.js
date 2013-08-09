@@ -99,7 +99,7 @@ RFCX.reactiveUi.modifyFollowButtons = function() {
   } else if (scrollPosition < (RFCX.transitionAt[RFCX.currentPage]+10)) {
     socialButtonColor = "888888";
   }
-  $(".aticon-facebook, .aticon-twitter, .aticon-google_follow").css({color:"#"+socialButtonColor});
+  $(".aticon-facebook, .aticon-twitter, .aticon-google_follow, .at4-show .at4-arrow, .at4-hide .at4-arrow").css({color:"#"+socialButtonColor});
 }
 
 RFCX.reactiveUi.modifyMastheadWidth = function() {
@@ -124,6 +124,22 @@ RFCX.load.addThis = function() {
     break;
   } }
 }
+
+RFCX.load.followButtons = function(){
+  if ($("a.twitter-follow-button").length > 0) {
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  }
+  if ($("div.fb-follow").length > 0) {
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }
+}
+
 
 RFCX.load.stripePayments = function(){
 
@@ -164,7 +180,8 @@ RFCX.ui.about.initMap = function(){
 
   RFCX.mapObj = new L.Map('map-container', {
     center:[2,60],
-    zoom: 2
+    zoom: (!RFCX.renderForMobile) ? 2 : 1,
+    zoomControl: false
   });
   
   var mapUrls = {

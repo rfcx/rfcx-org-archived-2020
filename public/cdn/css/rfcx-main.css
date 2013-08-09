@@ -133,7 +133,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-get_involved-2 .input-append .btn { padding:9px 9px 11px 9px; font-size:18px; }
 .rfcx-row-get_involved-2 .stripe-donate .btn { font-size:18px; padding:10px 15px; }
 .rfcx-row-get_involved-2 .phone-donate .btn { font-size:18px; padding:10px 15px; }
-
+.rfcx-row-get_involved-2 .control-group .parsley-error-list { display:none !important; }
 
 .rfcx-row-media-1 { padding:30px 0px 10px 0px; margin-top:0px; }
 

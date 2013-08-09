@@ -172,35 +172,41 @@ RFCX.load.stripePayments = function(){
 }
 
 RFCX.load.bootstrapJs = function(){
-  $.ajaxSetup({ cache:true });
+//  $.ajaxSetup({ cache:true });
   $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js",function(){
-    $.ajaxSetup({ cache:false });
+//    $.ajaxSetup({ cache:false });
   });
 }
 
 
 RFCX.ui.about.initMap = function(){
 
-  RFCX.mapObj = new L.Map('map-container', {
-    center:[2,60],
-    zoom: (!RFCX.renderForMobile) ? 2 : 1,
-    zoomControl: false
-  });
-  
-  var mapUrls = {
-    tiles: 'http://a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
-    json: 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json'
-  };
+  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", "//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css") );
 
-  L.tileLayer(mapUrls.tiles, {
-    attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-  }).addTo(RFCX.mapObj);
-  
-  cartodb.createLayer(RFCX.mapObj, mapUrls.json).addTo(RFCX.mapObj)
-    .on('done', function(layer){
+  $.getScript("//libs.cartocdn.com/cartodb.js/v3/cartodb.js",function(){
 
-    }).on('error', function(err){
-      console.log("an error occurred: " + err);
+    RFCX.mapObj = new L.Map('map-container', {
+      center:[2,60],
+      zoom: (!RFCX.renderForMobile) ? 2 : 1,
+      zoomControl: false
+    });
+    
+    var mapUrls = {
+      tiles: 'http://a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
+      json: 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json'
+    };
+
+    L.tileLayer(mapUrls.tiles, {
+      attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    }).addTo(RFCX.mapObj);
+    
+    cartodb.createLayer(RFCX.mapObj, mapUrls.json).addTo(RFCX.mapObj)
+      .on('done', function(layer){
+
+      }).on('error', function(err){
+        console.log("an error occurred: " + err);
+      }); 
+      
     });
 }
 

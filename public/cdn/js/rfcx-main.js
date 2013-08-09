@@ -13,17 +13,21 @@ var RFCX = {
   transitionAt: { home: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   donateAmount: 50,
-  addThis: { pubId: "", env: [ "production", "development" ] }
+  addThis: { pubId: "", env: [ "production", "development" ] },
+  followButtons: { env: [ "production", "development" ] }
 };
 
 
 
 $(function(){
+  
+  $.ajaxSetup({ cache:true });
 
   RFCX.renderForMobile = (parseInt($("body").css("min-width")) < 512);
 
   for (i in RFCX.load) { RFCX.load[i](); }
   for (i in RFCX.ui[RFCX.currentPage]) { RFCX.ui[RFCX.currentPage][i](); }
+  for (i in RFCX.ui.all) { RFCX.ui.all[i](); };
 
 //  RFCX.initializeUi.hideMobileHeader();
   RFCX.initializeUi.setupMobileMenu();
@@ -122,25 +126,31 @@ RFCX.load.addThis = function() {
 }
 
 RFCX.load.followButtons = function(){
-  if ($("a.twitter-follow-button").length > 0) {
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-  }
-  if ($("div.fb-follow").length > 0) {
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  }
-  if ($("div.g-follow").length > 0) {
-    (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
-  }
+  for (var i = 0; i < RFCX.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.followButtons.env[i]) {
+    setTimeout(function(){
+      if ($("a.twitter-follow-button").length > 0) {
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      }
+      if ($("div.fb-follow").length > 0) {
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      }
+      if ($("div.g-follow").length > 0) {
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      }
+    }, 50);
+  } }
+//    $("a.twitter-follow-button, div.fb-follow, div.g-follow").css({border:"solid 1px black",height:"24px",width:"300px"})
+
 }
 
 
@@ -172,9 +182,7 @@ RFCX.load.stripePayments = function(){
 }
 
 RFCX.load.bootstrapJs = function(){
-//  $.ajaxSetup({ cache:true });
   $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js",function(){
-//    $.ajaxSetup({ cache:false });
   });
 }
 
@@ -222,18 +230,28 @@ RFCX.ui.about.animateHelpCalls = function() {
 
 
 RFCX.ui.all.emailSubscribeFormSetup = function() {
-  
-  $("#mc-embedded-subscribe-form").submit(function(){
-    return true;
-  });
 
-  $("div.email-sign-up a.btn-success").click(function(){
-    $("#mc-embedded-subscribe-form").each(function(){
-      $(this).submit();
+  if ($("form.rfcx-form").length > 0) {
+    $.getScript(RFCX.cdn.cdnJs+"/parsley.js/1.1.16/parsley.min.js",function(){
+      $("#mc-embedded-subscribe-form").submit(function(){
+        var isEmailValid = $("input.input-large.email").parsley("validate");
+        if (!isEmailValid) {
+          alert("Please enter a valid e-mail.");
+        }
+        return isEmailValid;
+      });
+      $("div.email-sign-up a.btn-success").click(function(){
+        $("#mc-embedded-subscribe-form").submit();
+      });
     });
-  });
+  }
+
 }
 
-RFCX.ui.home.emailSubscribeFormSetup = function() { RFCX.ui.all.emailSubscribeFormSetup(); }
-RFCX.ui.get_involved.emailSubscribeFormSetup = function() { RFCX.ui.all.emailSubscribeFormSetup(); }
+RFCX.ui.all.alertifySetup = function() {
+  // $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.core.css") );
+  // $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.default.css") );
+  // $.getScript(RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.min.js",function(){
+  // });
+}
 

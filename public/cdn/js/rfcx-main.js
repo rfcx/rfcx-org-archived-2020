@@ -25,13 +25,14 @@ $(function(){
   for (i in RFCX.load) { RFCX.load[i](); }
   for (i in RFCX.ui[RFCX.currentPage]) { RFCX.ui[RFCX.currentPage][i](); }
 
-  RFCX.initializeUi.hideMobileHeader();
+//  RFCX.initializeUi.hideMobileHeader();
   RFCX.initializeUi.setupMobileMenu();
 
   RFCX.initializeUi.onResize();
   RFCX.initializeUi.onScroll();
 
 });
+
 
 RFCX.initializeUi.onResize = function() {
   if (!RFCX.renderForMobile) {
@@ -62,11 +63,6 @@ RFCX.initializeUi.hideMobileHeader = function() {
    }, 0);
 }
 
-setTimeout(function(){
-    // Hide the address bar!
-    window.scrollTo(0, 1);
-  }, 0);
-
 RFCX.initializeUi.setupMobileMenu = function() {
   if (RFCX.renderForMobile) {
     $(".masthead .menu-toggle").click(function(){
@@ -78,7 +74,7 @@ RFCX.initializeUi.setupMobileMenu = function() {
 RFCX.reactiveUi.toggleMobileMenu = function() {
   
   var bttnIcon = ["block","none"];
-  var menuHeight = 200;
+  var menuHeight = 174;
   if (parseInt($(".masthead ul").css("height")) > 0) {
     bttnIcon = ["none","block"];
     menuHeight = 0;
@@ -137,6 +133,13 @@ RFCX.load.followButtons = function(){
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+  }
+  if ($("div.g-follow").length > 0) {
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
   }
 }
 

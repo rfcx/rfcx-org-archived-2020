@@ -1,8 +1,9 @@
 body { padding-top: 0px; padding-bottom: 40px; min-width:900px; font-weight:300; -webkit-font-smoothing:antialiased; }
 
-.roadgeek { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:42px; margin-bottom:15px; }
+.roadgeek { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:42px; line-height:40px; margin-bottom:15px; }
 .lucida { font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; }
 .helvetica { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+.italic { font-style:italic; }
 
 .rfcx-unselectable { user-select:none; -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-user-select:none; }
 .rfcx-selectable { user-select:text; -webkit-touch-callout:text; -webkit-user-select:text; -khtml-user-select:text; -moz-user-select:text; -ms-user-select:text; -o-user-select:text; }
@@ -33,17 +34,17 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead li.active i { position:absolute; font-size:42px; width:100%; text-align:center; top:43px; }
 /*.masthead .social-share { position:relative; font-size:30px; width:30px; color:transparent; margin:23px 4px 0px 20px; vertical-align:top; text-decoration:none; z-index:2; }*/
 .masthead li.active i.icon-sort-up { height:15px; overflow:hidden; }
-.masthead #masthead-notch-home { display:block; color:rgb(16,141,16); }
+.masthead #masthead-notch-home { color:rgb(16,141,16); height:13px; }
 .masthead #masthead-notch-about { color:rgb(239,240,241); }
 .masthead #masthead-notch-get_involved { color:rgb(244,245,246); }
 .masthead #masthead-notch-media { color:rgb(249,250,251); }
 .masthead #masthead-notch-blog { color:rgb(255,255,255); }
 
 .banner-video { height:380px; }
-.banner-video .slogan { position:absolute; margin-top:140px; margin-left:10px; color:#ffffff; z-index:1; }
-.banner-video .slogan p.roadgeek { font-size:48px; margin-bottom:20px; cursor:default; }
+.banner-video .slogan { position:absolute; margin-top:140px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; }
+.banner-video .slogan p.roadgeek { font-size:48px; margin-bottom:0px; cursor:default; }
 .banner-video .banner-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; }
-.banner-video .video-link { font-size:16px; padding-top:5px; font-weight:600; margin-left:0px; cursor:default; }
+.banner-video .video-link { font-size:16px; padding-top:0px; font-weight:600; margin-left:0px; cursor:default; }
 .banner-video .video-link .icon-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
 .banner-video .video-box { /*display:none;*/ position:absolute; z-index:1; margin-top:45px; margin-left:433px; height:252px; width:448px; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
 .banner-video .video-box .icon-play-circle { position:relative; font-size:144px; margin-left:152px; top:54px; }
@@ -77,12 +78,15 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-home-2 .slider-container .slider-right { width:100%; z-index:0; background-color:green; }
 .rfcx-row-home-2 .slider-container .slider-percent { left:0%; top:0%; vertical-align:bottom; height:auto; line-height:295px; width:auto; font-size:110px; z-index:2; color:#ffffff; width:100%; text-align:center; }
 
-.rfcx-row-home-3 .rfcx-header { margin-top:55px; margin-left:15px; }
-.rfcx-row-home-3 .rfcx-body { margin-top:25px; margin-left:15px; }
-.rfcx-row-home-3 .control-group { margin-top:25px; margin-left:15px; }
-.rfcx-row-home-3 .stopsign { position:relative; margin-left:30px; }
+.rfcx-row-home-3 .rfcx-header { margin:10px 0px 0px 15px; }
+.rfcx-row-home-3 .rfcx-body { margin:0px 0px 0px 15px; width:80%; }
+.rfcx-row-home-3 .control-group { margin-top:5px; margin-left:15px; }
+.rfcx-row-home-3 .stopsign { position:relative; margin-left:0px; }
+.rfcx-row-home-3 .stopsign-mobile { position:relative; float:right; display:none; }
 .rfcx-row-home-3 .input-append .input-large { padding:13px 19px 11px 19px; }
 .rfcx-row-home-3 .input-append .btn { padding:11px 19px 13px 19px; }
+.rfcx-row-home-3 .social-follow-container { position:relative; margin:5px 0px 10px 20px; border:0; clear:both; top:10px; }
+.rfcx-row-home-3 .control-group .rfcx-body { margin-left:0px; margin-top:15px; width:200%; }
 
 
 .rfcx-row-about-1 { padding-top:30px; margin-top:0px; }
@@ -100,6 +104,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .rfcx-row-about-2 { margin-top:0px; }
 .rfcx-row-about-2 .trash-img { margin-top:20px; }
+.rfcx-row-about-2 .trash-img-mobile { display:none; }
 .rfcx-row-about-2 .rfcx-header { margin-top:20px; }
 .rfcx-row-about-2 .rfcx-body {  }
 
@@ -114,6 +119,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .rfcx-row-about-4 {  }
 .rfcx-row-about-4 .frog-img { margin-bottom:40px; }
+.rfcx-row-about-4 .frog-img-mobile { display:none; }
 .rfcx-row-about-4 .rfcx-header { margin-top:20px; }
 .rfcx-row-about-4 .rfcx-body {  }
 

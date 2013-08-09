@@ -8,10 +8,12 @@ block content
       div.rfcx-trans-linear.rfcx-trans-50.video-box-bg
       i.rfcx-trans-linear.icon-play-circle
     span.rfcx-unselectable.slogan
-      p.roadgeek= "PROTECTING RAINFORESTS"
-      p.roadgeek= "WITH REAL-TIME DATA"
+      p.roadgeek
+        | PROTECTING RAINFORESTS
+        br
+        | WITH REAL-TIME DATA
       p.video-link.rfcx-launch-video(onclick="")
-        | Watch the video of how it works
+        | Watch the video to learn how
         i.icon-play
 
   div.row-fluid.rfcx-row.rfcx-row-home-1
@@ -22,9 +24,12 @@ block content
           i.rfcx-trans-linear.icon-circle.expand-button.expand-button-rear
           img.infographic-thmb(src='/cdn/img/home/infographic.png')
     div.span5
-      p.roadgeek.rfcx-header= "EVERY MINUTE COUNTS."
-      p.roadgeek.rfcx-header= "REAL-TIME DATA MAKES"
-      p.roadgeek.rfcx-header= "ALL THE DIFFERENCE"
+      p.roadgeek.rfcx-header
+        | EVERY MINUTE COUNTS.
+        br
+        | REAL-TIME DATA MAKES
+        br
+        | ALL THE DIFFERENCE
       p.rfcx-body
         | We take old mobile phones, retrofit them
         br
@@ -63,26 +68,33 @@ block content
 
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-home-3
-    div.span6
+    div.span7
       p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS"
       p.rfcx-body
-        span= "Get involved by signing up for our newsletter."
+        img.stopsign-mobile(src="#{rfcx_cdn}/img/home/stopsign.358.png?v=#{app_version}")
+        | Get involved by signing up for our newsletter.
         br
-        span= "We have some big things in the works, and we want to make sure you will always be amongst the first to know."
-        br
-        span= "We will never sell or disclose your address to anyone else."
+        | We have some big things in the works, and we
+        |  want you to always be amongst the first to know.
+        | We will never sell or disclose your address to anyone else.
 
         form.validate#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
           div.control-group
             div.controls
               div.input-append
-                input.input-large.email#mce-EMAIL(type='text', data-type='email', data-required='true', id='email', name='EMAIL', placeholder='Your email', required)
+                input.input-large.email#mce-EMAIL(type='text', data-type='email', id='email', name='EMAIL', placeholder='Your email', required)
                 a.btn.btn-success= "Sign up"
-        a.twitter-follow-button(data-show-count="true", data-size="", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
-        br
-        div.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
+            span.rfcx-body
+              span= "For the best info, follow us on "
+              span.social-names= "Facebook, Twitter and Google+."
+            div.social-follow-container
+              div.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
+            div.social-follow-container(style="top:11px;")
+              a.twitter-follow-button(data-show-count="true", data-size="", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
+            div.social-follow-container
+              div.g-follow(data-annotation="bubble", data-height="24", data-href="//plus.google.com/110790947035627675960", data-rel="publisher")
 
-    div.span6
+    div.span5
       img.stopsign(src="#{rfcx_cdn}/img/home/stopsign.358.png?v=#{app_version}")
 
 
@@ -94,5 +106,4 @@ block content
       p= "Currently using Bootstrap popup... will use more stylish fade-in YWC popup and interactive features"
     div.modal-footer
       button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
-
 

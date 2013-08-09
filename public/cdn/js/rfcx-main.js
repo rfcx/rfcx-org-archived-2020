@@ -186,6 +186,10 @@ RFCX.load.bootstrapJs = function(){
   });
 }
 
+RFCX.load.hintCss = function() {
+  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" media=\"only screen and (min-width: 1088px)\" />").attr("href", RFCX.cdn.rfcxVendor+"/hint.css/1.2.2/hint.min.css") );
+}
+
 
 RFCX.ui.about.initMap = function(){
 

@@ -46,11 +46,14 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .banner-video .banner-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; }
 .banner-video .video-link { font-size:16px; padding-top:0px; font-weight:600; margin-left:0px; cursor:default; }
 .banner-video .video-link .icon-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
-.banner-video .video-box { /*display:none;*/ position:absolute; z-index:1; margin-top:45px; margin-left:433px; height:252px; width:448px; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
-.banner-video .video-box .icon-play-circle { position:relative; font-size:144px; margin-left:152px; top:54px; }
-.banner-video .video-box .video-box-bg { position:absolute; z-index:0; width:100%; height:100%; background-color:#00bb00; border:none; }
-.banner-video .video-box:hover .video-box-bg { filter:alpha(opacity=75); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; -moz-opacity:0.75; -khtml-opacity:0.75; opacity:0.75; }
-.banner-video .video-box:hover .icon-play-circle { filter:alpha(opacity=80); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; -moz-opacity:0.80; -khtml-opacity:0.80; opacity:0.80; }
+
+.video-box { position:absolute; z-index:1; margin-top:45px; width:448px; margin-left:433px; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
+.video-box .icon-play-circle { position:absolute; font-size:144px; top:54px; width:100%; left:0%; text-align:center; }
+.video-box .video-box-bg { position:relative; z-index:0; width:100%; background-color:#00bb00; border:none; }
+.video-box:hover .video-box-bg { filter:alpha(opacity=75); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; -moz-opacity:0.75; -khtml-opacity:0.75; opacity:0.75; }
+.video-box:hover .icon-play-circle { filter:alpha(opacity=80); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; -moz-opacity:0.80; -khtml-opacity:0.80; opacity:0.80; }
+.video-box-outer { z-index:1000; }
+.video-box-outer-backdrop { z-index:999; background-color:black; position:fixed; top:0%; left:0%; width:100%; height:100%; filter:alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity:0; -khtml-opacity:0; opacity:0; }
 
 .rfcx-row { padding-top:20px; margin-top:10px; position:relative; overflow:hidden; } 
 .rfcx-row .rfcx-header { color:#494848;  margin-bottom:15px; }

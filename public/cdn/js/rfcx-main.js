@@ -254,3 +254,38 @@ RFCX.ui.all.alertifySetup = function() {
   // });
 }
 
+
+RFCX.setupVideo = function(videoBox) {
+  var jqVideoBoxOrig = $(videoBox);
+  var gPos = jqVideoBoxOrig.offset();
+  $("body").append(
+      "<div class=\"video-box video-box-outer\""
+      +" style=\"margin-left:0px;margin-top:0px;top:"+gPos.top+"px;left:"+gPos.left+"px;\">"
+      +jqVideoBoxOrig.html()+"</div>"
+      +"<div class=\"video-box-outer-backdrop\"></div>");
+  jqVideoBoxOrig.css({display:"none"});
+
+  $("div.video-box-outer").animate({
+    top: "0%", left: "0%", width: "100%", borderWidth: "0px"
+  },function(){
+    $(".addthis-smartlayers").fadeOut();
+    $(".video-box-outer-backdrop").animate({opacity:1});
+    $(this).html("<iframe src=\""
+      +"http://player.vimeo.com/video/72226953"
+      +"?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1&amp;api=1"
+      +"\" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
+      +" frameborder=\"0\" style=\"width:100%;\""
+      +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
+
+    $(document).keyup(function(e) {
+      if (e.keyCode == 27) { RFCX.closeVideo(); }
+    });
+
+  });
+}
+
+RFCX.closeVideo = function() {
+  $("div.video-box").css({display:"block"});
+  $("div.video-box-outer, div.video-box-outer-backdrop").remove();
+}
+

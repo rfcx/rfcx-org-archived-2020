@@ -35,10 +35,11 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead li.active i { position:absolute; font-size:42px; width:100%; text-align:center; top:43px; }
 /*.masthead .social-share { position:relative; font-size:30px; width:30px; color:transparent; margin:23px 4px 0px 20px; vertical-align:top; text-decoration:none; z-index:2; }*/
 .masthead li.active i.icon-sort-up { height:15px; overflow:hidden; }
-.masthead #masthead-notch-intro { color:rgb(16,141,16); height:13px; }
+.masthead #masthead-notch-intro { color:rgb(15,42,14); height:13px; }
 .masthead #masthead-notch-about { color:rgb(239,240,241); }
 .masthead #masthead-notch-get_involved { color:rgb(244,245,246); }
-.masthead #masthead-notch-media { color:rgb(249,250,251); }
+.masthead #masthead-notch-team { color:rgb(249,250,251); }
+.masthead #masthead-notch-media { color:rgb(251,252,253); }
 .masthead #masthead-notch-blog { color:rgb(255,255,255); }
 
 .banner-video { height:380px; }
@@ -53,7 +54,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .video-box .video-box-bg { position:relative; z-index:0; width:100%; background-color:#00bb00; border:none; }
 .video-box-page:hover .video-box-bg { filter:alpha(opacity=75); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; -moz-opacity:0.75; -khtml-opacity:0.75; opacity:0.75; }
 .video-box-page:hover .icon-play-circle { filter:alpha(opacity=80); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; -moz-opacity:0.80; -khtml-opacity:0.80; opacity:0.80; }
-.video-box-outer { z-index:1000; display:none; margin-left:0px; margin-top:0px;}
+.video-box-outer { z-index:1000; display:none; margin-left:0px; margin-top:0px; border:solid 4px #ffffff; }
 .video-box-outer-backdrop { z-index:999; background-color:black; display:none; position:fixed; top:0%; left:0%; width:100%; height:100%; filter:alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity:0; -khtml-opacity:0; opacity:0; }
 
 .rfcx-row { padding-top:20px; margin-top:10px; position:relative; overflow:hidden; } 

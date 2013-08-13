@@ -14,6 +14,7 @@ var RFCX = {
   nodeEnv: null,
   donateAmount: 50,
   videoOffset: [0, 0, 0],
+  scrollQueues: { socialLoad: [false, 100] },
   addThis: { pubId: "", env: [ "production", "development" ] },
   followButtons: { env: [ "production", "development" ] }
 };
@@ -56,6 +57,7 @@ RFCX.initializeUi.onScroll = function() {
     $(window).scroll(function(){
       clearTimeout(RFCX.timer.windowScroll);
       RFCX.timer.windowScroll = setTimeout(function(){
+        RFCX.reactiveUi.scrollQueues();
 //        RFCX.reactiveUi.modifyFollowButtons();
       },5);
     });
@@ -103,6 +105,16 @@ RFCX.reactiveUi.toggleMobileMenu = function() {
 //   $(".aticon-facebook, .aticon-twitter, .aticon-google_follow, .at4-show .at4-arrow, .at4-hide .at4-arrow").css({color:"#"+socialButtonColor});
 // }
 
+
+RFCX.reactiveUi.scrollQueues = function() {
+  var scrollPosition = $(window).scrollTop();
+  console.log(scrollPosition);
+  if (!RFCX.scrollQueues.socialLoad[0] && (scrollPosition >= RFCX.scrollQueues.socialLoad[1])) {
+    RFCX.reactiveUi.loadFollowButtons();
+    RFCX.scrollQueues.socialLoad[0] = true;
+  }
+}
+
 RFCX.reactiveUi.modifyMastheadWidth = function() {
   var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
   $(".dynamic-crop-right").css("width",newWidth);
@@ -121,7 +133,7 @@ RFCX.load.addThis = function() {
   } }
 }
 
-RFCX.load.followButtons = function(){
+RFCX.reactiveUi.loadFollowButtons = function(){
   for (var i = 0; i < RFCX.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.followButtons.env[i]) {
     setTimeout(function(){
       if ($("a.twitter-follow-button").length > 0) {
@@ -183,7 +195,7 @@ RFCX.load.bootstrapJs = function(){
 }
 
 RFCX.load.hintCss = function() {
-  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" media=\"only screen and (min-width: 1088px)\" />").attr("href", RFCX.cdn.rfcxVendor+"/hint.css/1.2.2/hint.min.css") );
+  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" media=\"only screen and (min-width: 900px)\" />").attr("href", RFCX.cdn.rfcxVendor+"/hint.css/1.2.2/hint.min.css") );
 }
 
 
@@ -307,7 +319,7 @@ RFCX.setupVideo = function(videoBox) {
           +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
           +" frameborder=\"0\" style=\"width:100%;\""
           +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
-
+        $(window).scrollTop(0);
         $(document).keyup(function(e) {
           if (e.keyCode == 27) { RFCX.closeVideo(); }
         });
@@ -324,7 +336,7 @@ RFCX.closeVideo = function() {
   $("div.video-box-outer")
     .html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\"><i class=\"icon-play-circle\"></i>")
     .animate({
-    top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width: RFCX.videoOffset[2]+"px"
+    top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width: RFCX.videoOffset[2]+"px", borderWidth: "4px"
   },function(){
     $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
     RFCX.toggleAddThis(true);

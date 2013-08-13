@@ -4,11 +4,12 @@
  */
 
 var navItems = [
-    [ "intro", "Intro", "Rainforest Connection | Protecting rainforests with real-time data" ],
-    [ "about", "About", "About" ],
-    [ "get_involved", "Get Involved", "Get Involved" ],
-    [ "media", "Media", "Media" ],
-    [ "blog", "Blog", "Blog" , "//rainforestcx.tumblr.com" ]
+    [ "intro", "Intro", "/intro", "Rainforest Connection | Protecting rainforests with real-time data" ],
+    [ "about", "About", "/about", "About" ],
+    [ "get_involved", "Get Involved", "/get_involved", "Get Involved" ],
+    [ "team", "Team", "/team", "Team" ],
+    [ "media", "Media", "/media", "Media" ],
+    [ "blog", "Blog", "//rainforestcx.tumblr.com", "Blog" ]
   ];
 
 
@@ -33,14 +34,14 @@ exports.navItems = navItems;
 exports.page = function(req, res, process, Model){
   var navItem = [];
   for (var i = 0; i < navItems.length; i++) {
-    if (req.route.path.substr(1) === navItems[i][0]) {
+    if (req.route.path === navItems[i][2]) {
       navItem = navItems[i]; break;
     }
   }
   res.setHeader("Access-Control-Allow-Origin","*");
   res.render(navItem[0], setJadeVars(process, {
     current_page: navItem[0],
-    title: navItem[2]
+    title: navItem[3]
   }));
 };
 

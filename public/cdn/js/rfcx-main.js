@@ -257,7 +257,7 @@ RFCX.ui.all.emailSubscribeFormSetup = function() {
         }
         return isEmailValid;
       });
-      $("div.email-sign-up a.btn-success").click(function(){
+      $("#mc-embedded-subscribe-form a.btn-success").click(function(){
         $("#mc-embedded-subscribe-form").submit();
       });
     });

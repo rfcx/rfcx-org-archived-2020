@@ -13,6 +13,7 @@ var RFCX = {
   transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   donateAmount: 50,
+  videoOffset: [0, 0, 0],
   addThis: { pubId: "", env: [ "production", "development" ] },
   followButtons: { env: [ "production", "development" ] }
 };
@@ -55,7 +56,7 @@ RFCX.initializeUi.onScroll = function() {
     $(window).scroll(function(){
       clearTimeout(RFCX.timer.windowScroll);
       RFCX.timer.windowScroll = setTimeout(function(){
-        RFCX.reactiveUi.modifyFollowButtons();
+//        RFCX.reactiveUi.modifyFollowButtons();
       },5);
     });
   }
@@ -91,16 +92,16 @@ RFCX.reactiveUi.toggleMobileMenu = function() {
   $(".masthead .menu-toggle .icon-reorder").css({display:bttnIcon[1]});
 };
 
-RFCX.reactiveUi.modifyFollowButtons = function() {
-  var scrollPosition = $(window).scrollTop();
-  var socialButtonColor = "000000";
-  if (scrollPosition <= RFCX.transitionAt[RFCX.currentPage]) {
-    socialButtonColor = "ffffff";
-  } else if (scrollPosition < (RFCX.transitionAt[RFCX.currentPage]+10)) {
-    socialButtonColor = "888888";
-  }
-  $(".aticon-facebook, .aticon-twitter, .aticon-google_follow, .at4-show .at4-arrow, .at4-hide .at4-arrow").css({color:"#"+socialButtonColor});
-}
+// RFCX.reactiveUi.modifyFollowButtons = function() {
+//   var scrollPosition = $(window).scrollTop();
+//   var socialButtonColor = "000000";
+//   if (scrollPosition <= RFCX.transitionAt[RFCX.currentPage]) {
+//     socialButtonColor = "ffffff";
+//   } else if (scrollPosition < (RFCX.transitionAt[RFCX.currentPage]+10)) {
+//     socialButtonColor = "888888";
+//   }
+//   $(".aticon-facebook, .aticon-twitter, .aticon-google_follow, .at4-show .at4-arrow, .at4-hide .at4-arrow").css({color:"#"+socialButtonColor});
+// }
 
 RFCX.reactiveUi.modifyMastheadWidth = function() {
   var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
@@ -228,6 +229,23 @@ RFCX.ui.about.animateHelpCalls = function() {
 }
 
 
+RFCX.ui.intro.prepareVideo = function() {
+
+    var refBox = $("div.video-box-page");
+    var gPos = refBox.offset();
+    RFCX.videoOffset = [gPos.top, gPos.left, parseInt(refBox.width())];
+    
+    $("body").append(
+        "<div class=\"video-box video-box-outer\">"
+        +"<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\">"
+        +"<i class=\"icon-play-circle\"></i>"
+        +"</div>"
+        +"<div class=\"video-box-outer-backdrop\"></div>");
+}
+
+
+
+
 RFCX.ui.all.emailSubscribeFormSetup = function() {
 
   if ($("form.rfcx-form").length > 0) {
@@ -256,36 +274,66 @@ RFCX.ui.all.alertifySetup = function() {
 
 
 RFCX.setupVideo = function(videoBox) {
-  var jqVideoBoxOrig = $(videoBox);
-  var gPos = jqVideoBoxOrig.offset();
-  $("body").append(
-      "<div class=\"video-box video-box-outer\""
-      +" style=\"margin-left:0px;margin-top:0px;top:"+gPos.top+"px;left:"+gPos.left+"px;\">"
-      +jqVideoBoxOrig.html()+"</div>"
-      +"<div class=\"video-box-outer-backdrop\"></div>");
-  jqVideoBoxOrig.css({display:"none"});
 
-  $("div.video-box-outer").animate({
-    top: "0%", left: "0%", width: "100%", borderWidth: "0px"
-  },function(){
-    $(".addthis-smartlayers").fadeOut();
-    $(".video-box-outer-backdrop").animate({opacity:1});
-    $(this).html("<iframe src=\""
-      +"http://player.vimeo.com/video/72226953"
-      +"?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1&amp;api=1"
-      +"\" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
-      +" frameborder=\"0\" style=\"width:100%;\""
-      +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
+  var videoLink = "http://player.vimeo.com/video/72226953"
+        +"?title=0"
+        +"&byline=0"
+        +"&portrait=1"
+        +"&color=c9ff23"
+        +"&autoplay=1"
+        +"&api=1";
 
-    $(document).keyup(function(e) {
-      if (e.keyCode == 27) { RFCX.closeVideo(); }
+  if (RFCX.renderForMobile) {
+    window.open(videoLink);
+  } else {
+    // var jqVideoBoxOrig = $(videoBox);
+    // var gPos = jqVideoBoxOrig.offset();
+    // RFCX.videoOffset = [gPos.top, gPos.left, parseInt(jqVideoBoxOrig.width())];
+    var jqVideoBoxOuter = $("div.video-box-outer");
+
+    jqVideoBoxOuter.css({ top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width:RFCX.videoOffset[2]+"px", display:"block" });
+//    jqVideoBoxOrig.css({display:"none"});
+
+    RFCX.toggleAddThis(false);
+
+    $(".video-box-outer-backdrop").css({display:"block",opacity:0}).animate({
+      opacity:1
+    },function(){
+
+      jqVideoBoxOuter.animate({
+        top: "24px", left: "0%", width: "100%", borderWidth: "0px"
+      },function(){
+        $(this).html("<iframe src=\""+videoLink.replace(/&/g,"&amp;")+"\""
+          +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
+          +" frameborder=\"0\" style=\"width:100%;\""
+          +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
+
+        $(document).keyup(function(e) {
+          if (e.keyCode == 27) { RFCX.closeVideo(); }
+        });
+
+      });
+
     });
 
-  });
+
+  }
 }
 
 RFCX.closeVideo = function() {
-  $("div.video-box").css({display:"block"});
-  $("div.video-box-outer, div.video-box-outer-backdrop").remove();
+  $("div.video-box-outer")
+    .html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\"><i class=\"icon-play-circle\"></i>")
+    .animate({
+    top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width: RFCX.videoOffset[2]+"px"
+  },function(){
+    $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
+    RFCX.toggleAddThis(true);
+  });
+}
+
+RFCX.toggleAddThis = function(onOff) {
+  var newDisplay = "none";
+  if (onOff) { newDisplay = "block"; }
+  $(".at4-share-outer-right").css("display",newDisplay);
 }
 

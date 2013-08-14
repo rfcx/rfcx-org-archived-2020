@@ -16,7 +16,11 @@ var RFCX = {
   nodeEnv: null,
   donateAmount: 50,
   videoOffset: [0, 0, 0],
-  scrollQueues: { socialLoad: [false, 100] },
+  scrollQueues: {
+    loadFollowButtons: {
+      whenVisible: { intro: ".rfcx-row-intro-3" },
+      position: 1000, mobilePosition: 1000, isLoaded: false }
+  },
   social: {
     addThis: { pubId: "", env: [ "production", "development" ] },
     followButtons: { env: [ "production", "development" ] }
@@ -57,14 +61,12 @@ RFCX.fn.initializeUi.onResize = function() {
 }
 
 RFCX.fn.initializeUi.onScroll = function() {
-  if (!RFCX.renderForMobile) {
     $(window).scroll(function(){
       clearTimeout(RFCX.timer.windowScroll);
       RFCX.timer.windowScroll = setTimeout(function(){
         RFCX.fn.reactiveUi.scrollQueues();
-      },5);
+      },20);
     });
-  }
 }
 
 RFCX.fn.initializeUi.hideMobileHeader = function() {
@@ -98,10 +100,15 @@ RFCX.fn.reactiveUi.toggleMobileMenu = function() {
 
 
 RFCX.fn.reactiveUi.scrollQueues = function() {
-  var scrollPosition = $(window).scrollTop();
-  if (!RFCX.scrollQueues.socialLoad[0] && (scrollPosition >= RFCX.scrollQueues.socialLoad[1])) {
-    RFCX.fn.reactiveUi.loadFollowButtons();
-    RFCX.scrollQueues.socialLoad[0] = true;
+  var scrollPosition = $(window).scrollTop() + $(window).height();
+  for (func in RFCX.scrollQueues) {
+    if  (!RFCX.scrollQueues[func].isLoaded) {
+      var runAtPosition = (RFCX.scrollQueues[func].whenVisible[RFCX.currentPage]!=null) ? $(RFCX.scrollQueues[func].whenVisible[RFCX.currentPage]).offset().top : ((RFCX.renderForMobile) ? RFCX.scrollQueues[func].position : RFCX.scrollQueues[func].mobilePosition);
+      if (scrollPosition >= runAtPosition) {
+        RFCX.fn.reactiveUi[func]();
+        RFCX.scrollQueues[func].isLoaded = true;
+      }
+    }
   }
 }
 
@@ -115,7 +122,9 @@ RFCX.fn.reactiveUi.modifyMastheadWidth = function() {
 RFCX.fn.load.addThis = function() {
   for (var i = 0; i < RFCX.social.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.addThis.env[i]) {
     $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.social.addThis.pubId, function(){
-      addthis.layers({ theme: "transparent", share: { position: "right", numPreferredServices: 4 } });
+      addthis.layers({ theme: "transparent",
+        share: { position: "right", numPreferredServices: 4 }/*, whatsnext: { recommendedTitle: "Hello" }*/
+      });
     });
     break;
   } }
@@ -216,6 +225,17 @@ RFCX.fn.ui.about.initMap = function(){
     });
 }
 
+RFCX.fn.ui.intro.initVideo = function(){
+
+  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.videoJs+"/4.1/video-js.css") );
+
+  $.getScript(RFCX.cdn.videoJs+"/4.1/video.js",function(){
+    if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/4.1/video-js.swf"; }
+    console.log("video.js has been loaded");
+
+  });
+}
+
 RFCX.fn.ui.about.animateHelpCalls = function() {
   setTimeout(function(){
     $("div.screen-container div.alert-help").each(function(i){
@@ -282,16 +302,10 @@ RFCX.setupVideo = function(videoBox) {
         +"&api=1";
 
   if (RFCX.renderForMobile) {
-    window.open(videoLink);
+    window.open("http://player.vimeo.com/external/72226953.sd.mp4?s=d05a9d0492dc5b6b77758c612016cbb5");
   } else {
-    // var jqVideoBoxOrig = $(videoBox);
-    // var gPos = jqVideoBoxOrig.offset();
-    // RFCX.videoOffset = [gPos.top, gPos.left, parseInt(jqVideoBoxOrig.width())];
     var jqVideoBoxOuter = $("div.video-box-outer");
-
     jqVideoBoxOuter.css({ top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width:RFCX.videoOffset[2]+"px", display:"block" });
-//    jqVideoBoxOrig.css({display:"none"});
-
     RFCX.toggleAddThis(false);
 
     $(".video-box-outer-backdrop").css({display:"block",opacity:0}).animate({
@@ -332,6 +346,6 @@ RFCX.closeVideo = function() {
 RFCX.toggleAddThis = function(onOff) {
   var newDisplay = "none";
   if (onOff) { newDisplay = "block"; }
-  $(".at4-share-outer-right").css("display",newDisplay);
+  $(".addthis-smartlayers-desktop-right").css("display",newDisplay);
 }
 

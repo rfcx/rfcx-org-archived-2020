@@ -150,7 +150,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .control-group .input-append span { font-size:22px; padding:10px 19px 14px 19px; font-size:18px; width:70px; }
 
 
-.footer { background-color:#898989; color:#ffffff; font-size:12px; height:50px; }
+.footer { background-color:#898989; color:#ffffff; font-size:12px; height:50px; margin-bottom:81px; }
 .footer ul { margin-top:15px; }
 .footer li { margin-right:8px; }
 .footer .nav-pills>li>a, .footer .nav-pills>li>a:hover { padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:20px;  color:#ffffff; padding-left:0px; padding-right:0px; }

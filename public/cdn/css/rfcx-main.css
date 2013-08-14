@@ -50,7 +50,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .banner-video .video-link .icon-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
 
 .video-box { position:absolute; z-index:1; margin-top:45px; width:448px; margin-left:433px; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
-.video-box .icon-play-circle { position:absolute; font-size:144px; margin:auto; top:0; left:0; bottom:0; right:0; width:100%; height:144px; text-align:center; }
+.video-box .icon-play-circle { position:absolute; font-size:144px; margin:auto; top:0; left:0; bottom:0; right:0; width:100%; height:144px; text-align:center; padding:none; }
 .video-box .video-box-bg { position:relative; z-index:0; width:100%; background-color:#00bb00; border:none; }
 .video-box-page:hover .video-box-bg { filter:alpha(opacity=75); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; -moz-opacity:0.75; -khtml-opacity:0.75; opacity:0.75; }
 .video-box-page:hover .icon-play-circle { filter:alpha(opacity=80); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; -moz-opacity:0.80; -khtml-opacity:0.80; opacity:0.80; }
@@ -186,7 +186,7 @@ div.at-follow-open-control div.at4-arrow { margin-top:16px; }
 
 .at-vertical-menu.at-vertical-menu-right a { min-width:132px; width:132px; }
 .at-vertical-menu.at-vertical-menu-right a:hover { background:rgba(144,144,144,0.8); right:75px; }
-.at-vertical-menu label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
+.at-vertical-menu label, .at-vertical-menu .at-share-label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
 
 
 

@@ -1,10 +1,12 @@
 var RFCX = {
   currentPage: null,
-  load: {},
+  fn: {
+    load: {},
+    reactiveUi: {},
+    initializeUi: {},
+    ui: { all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {} }
+  },
   cdn: { rfcx: null, bootstrap: null },
-  ui: { all: {}, intro: {}, about: {}, get_involved: {}, media: {} },
-  reactiveUi: {},
-  initializeUi: {},
   mapObj: null,
   timer: { windowResize: null, windowScroll: null },
   bodyWidth: $('.container-narrow').innerWidth(),
@@ -15,8 +17,10 @@ var RFCX = {
   donateAmount: 50,
   videoOffset: [0, 0, 0],
   scrollQueues: { socialLoad: [false, 100] },
-  addThis: { pubId: "", env: [ "production", "development" ] },
-  followButtons: { env: [ "production", "development" ] }
+  social: {
+    addThis: { pubId: "", env: [ "production", "development" ] },
+    followButtons: { env: [ "production", "development" ] }
+  }
 };
 
 
@@ -27,58 +31,57 @@ $(function(){
 
   RFCX.renderForMobile = (parseInt($("body").css("min-width")) < 512);
 
-  for (i in RFCX.load) { RFCX.load[i](); }
-  for (i in RFCX.ui[RFCX.currentPage]) { RFCX.ui[RFCX.currentPage][i](); }
-  for (i in RFCX.ui.all) { RFCX.ui.all[i](); };
+  for (i in RFCX.fn.load) { RFCX.fn.load[i](); }
+  for (i in RFCX.fn.ui[RFCX.currentPage]) { RFCX.fn.ui[RFCX.currentPage][i](); }
+  for (i in RFCX.fn.ui.all) { RFCX.fn.ui.all[i](); };
 
-//  RFCX.initializeUi.hideMobileHeader();
-  RFCX.initializeUi.setupMobileMenu();
+//  RFCX.fn.initializeUi.hideMobileHeader();
+  RFCX.fn.initializeUi.setupMobileMenu();
 
-  RFCX.initializeUi.onResize();
-  RFCX.initializeUi.onScroll();
+  RFCX.fn.initializeUi.onResize();
+  RFCX.fn.initializeUi.onScroll();
 
 });
 
 
-RFCX.initializeUi.onResize = function() {
+RFCX.fn.initializeUi.onResize = function() {
   if (!RFCX.renderForMobile) {
-    RFCX.reactiveUi.modifyMastheadWidth();
+    RFCX.fn.reactiveUi.modifyMastheadWidth();
     $(window).resize(function(){
       clearTimeout(RFCX.timer.windowResize);
       RFCX.timer.windowResize = setTimeout(function(){
-        RFCX.reactiveUi.modifyMastheadWidth();
+        RFCX.fn.reactiveUi.modifyMastheadWidth();
       },100);
     });
   }
 }
 
-RFCX.initializeUi.onScroll = function() {
+RFCX.fn.initializeUi.onScroll = function() {
   if (!RFCX.renderForMobile) {
     $(window).scroll(function(){
       clearTimeout(RFCX.timer.windowScroll);
       RFCX.timer.windowScroll = setTimeout(function(){
-        RFCX.reactiveUi.scrollQueues();
-//        RFCX.reactiveUi.modifyFollowButtons();
+        RFCX.fn.reactiveUi.scrollQueues();
       },5);
     });
   }
 }
 
-RFCX.initializeUi.hideMobileHeader = function() {
+RFCX.fn.initializeUi.hideMobileHeader = function() {
   setTimeout(function(){
     window.scrollTo(0, 1);
    }, 0);
 }
 
-RFCX.initializeUi.setupMobileMenu = function() {
+RFCX.fn.initializeUi.setupMobileMenu = function() {
   if (RFCX.renderForMobile) {
     $(".masthead .menu-toggle").click(function(){
-      RFCX.reactiveUi.toggleMobileMenu();
+      RFCX.fn.reactiveUi.toggleMobileMenu();
     });
   }
 }
 
-RFCX.reactiveUi.toggleMobileMenu = function() {
+RFCX.fn.reactiveUi.toggleMobileMenu = function() {
   
   var bttnIcon = ["block","none"];
   var menuHeight = 174;
@@ -88,53 +91,38 @@ RFCX.reactiveUi.toggleMobileMenu = function() {
   }
   $(".masthead ul").css({height:menuHeight+"px"});
   $(".masthead").css({marginBottom:menuHeight+"px"});
-//  $(".banner-video").css({marginTop:menuHeight+"px"});
 
   $(".masthead .menu-toggle .icon-chevron-up").css({display:bttnIcon[0]});
   $(".masthead .menu-toggle .icon-reorder").css({display:bttnIcon[1]});
 };
 
-// RFCX.reactiveUi.modifyFollowButtons = function() {
-//   var scrollPosition = $(window).scrollTop();
-//   var socialButtonColor = "000000";
-//   if (scrollPosition <= RFCX.transitionAt[RFCX.currentPage]) {
-//     socialButtonColor = "ffffff";
-//   } else if (scrollPosition < (RFCX.transitionAt[RFCX.currentPage]+10)) {
-//     socialButtonColor = "888888";
-//   }
-//   $(".aticon-facebook, .aticon-twitter, .aticon-google_follow, .at4-show .at4-arrow, .at4-hide .at4-arrow").css({color:"#"+socialButtonColor});
-// }
 
-
-RFCX.reactiveUi.scrollQueues = function() {
+RFCX.fn.reactiveUi.scrollQueues = function() {
   var scrollPosition = $(window).scrollTop();
-  console.log(scrollPosition);
   if (!RFCX.scrollQueues.socialLoad[0] && (scrollPosition >= RFCX.scrollQueues.socialLoad[1])) {
-    RFCX.reactiveUi.loadFollowButtons();
+    RFCX.fn.reactiveUi.loadFollowButtons();
     RFCX.scrollQueues.socialLoad[0] = true;
   }
 }
 
-RFCX.reactiveUi.modifyMastheadWidth = function() {
+RFCX.fn.reactiveUi.modifyMastheadWidth = function() {
   var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
   $(".dynamic-crop-right").css("width",newWidth);
 }
 
 
 
-RFCX.load.addThis = function() {
-  for (var i = 0; i < RFCX.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.addThis.env[i]) {
-    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.addThis.pubId, function(){
-      addthis.layers({
-        'theme':'transparent', 'share':{ 'position':'right', 'numPreferredServices':4 }
-        // , 'follow' : { 'services':[ { 'service':'facebook', 'id':'RainforestCx' }, { 'service':'twitter', 'id':'RainforestCx' }, { 'service': 'google_follow', 'id': 'u/0/b/110790947035627675960/110790947035627675960'} ] }
-    }); });
+RFCX.fn.load.addThis = function() {
+  for (var i = 0; i < RFCX.social.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.addThis.env[i]) {
+    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.social.addThis.pubId, function(){
+      addthis.layers({ theme: "transparent", share: { position: "right", numPreferredServices: 4 } });
+    });
     break;
   } }
 }
 
-RFCX.reactiveUi.loadFollowButtons = function(){
-  for (var i = 0; i < RFCX.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.followButtons.env[i]) {
+RFCX.fn.reactiveUi.loadFollowButtons = function(){
+  for (var i = 0; i < RFCX.social.followButtons.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.followButtons.env[i]) {
     setTimeout(function(){
       if ($("a.twitter-follow-button").length > 0) {
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
@@ -157,12 +145,10 @@ RFCX.reactiveUi.loadFollowButtons = function(){
       }
     }, 50);
   } }
-//    $("a.twitter-follow-button, div.fb-follow, div.g-follow").css({border:"solid 1px black",height:"24px",width:"300px"})
-
 }
 
 
-RFCX.load.stripePayments = function(){
+RFCX.fn.load.stripePayments = function(){
 
   if ($("#stripe-payment-button").length > 0) {
 
@@ -189,17 +175,17 @@ RFCX.load.stripePayments = function(){
   }
 }
 
-RFCX.load.bootstrapJs = function(){
+RFCX.fn.load.bootstrapJs = function(){
   $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js",function(){
   });
 }
 
-RFCX.load.hintCss = function() {
+RFCX.fn.load.hintCss = function() {
   $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" media=\"only screen and (min-width: 900px)\" />").attr("href", RFCX.cdn.rfcxVendor+"/hint.css/1.2.2/hint.min.css") );
 }
 
 
-RFCX.ui.about.initMap = function(){
+RFCX.fn.ui.about.initMap = function(){
 
   $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", "//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css") );
 
@@ -230,7 +216,7 @@ RFCX.ui.about.initMap = function(){
     });
 }
 
-RFCX.ui.about.animateHelpCalls = function() {
+RFCX.fn.ui.about.animateHelpCalls = function() {
   setTimeout(function(){
     $("div.screen-container div.alert-help").each(function(i){
       $(this).delay(500*i).fadeIn(function(){
@@ -241,7 +227,7 @@ RFCX.ui.about.animateHelpCalls = function() {
 }
 
 
-RFCX.ui.intro.prepareVideo = function() {
+RFCX.fn.ui.intro.prepareVideo = function() {
 
     var refBox = $("div.video-box-page");
     var gPos = refBox.offset();
@@ -258,7 +244,7 @@ RFCX.ui.intro.prepareVideo = function() {
 
 
 
-RFCX.ui.all.emailSubscribeFormSetup = function() {
+RFCX.fn.ui.all.emailSubscribeFormSetup = function() {
 
   if ($("form.rfcx-form").length > 0) {
     $.getScript(RFCX.cdn.cdnJs+"/parsley.js/1.1.16/parsley.min.js",function(){
@@ -277,7 +263,7 @@ RFCX.ui.all.emailSubscribeFormSetup = function() {
 
 }
 
-RFCX.ui.all.alertifySetup = function() {
+RFCX.fn.ui.all.alertifySetup = function() {
   // $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.core.css") );
   // $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.default.css") );
   // $.getScript(RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.min.js",function(){

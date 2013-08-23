@@ -190,7 +190,7 @@ RFCX.fn.load.bootstrapJs = function(){
 }
 
 RFCX.fn.load.hintCss = function() {
-  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" media=\"only screen and (min-width: 900px)\" />").attr("href", RFCX.cdn.rfcxVendor+"/hint.css/1.2.2/hint.min.css") );
+  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" media=\"only screen and (min-width: 900px)\" />").attr("href", RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css") );
 }
 
 

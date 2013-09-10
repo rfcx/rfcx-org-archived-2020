@@ -123,7 +123,7 @@ RFCX.fn.load.addThis = function() {
   for (var i = 0; i < RFCX.social.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.addThis.env[i]) {
     $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.social.addThis.pubId, function(){
       addthis.layers({ theme: "transparent",
-        share: { position: "right", numPreferredServices: 4 }/*, whatsnext: { recommendedTitle: "Hello" }*/
+        share: { position: "right", numPreferredServices: 5 }/*, whatsnext: { recommendedTitle: "Hello" }*/
       });
     });
     break;

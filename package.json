@@ -17,6 +17,7 @@
     "nodefly": "stable",
     "analytics-node": "*",
     "crypto": "*",
+    "toobusy": "*",
     "jade": "*"
   },
   "devDependencies": {

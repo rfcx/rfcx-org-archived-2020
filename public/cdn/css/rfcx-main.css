@@ -35,7 +35,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead li.active i { position:absolute; font-size:42px; width:100%; text-align:center; top:43px; }
 /*.masthead .social-share { position:relative; font-size:30px; width:30px; color:transparent; margin:23px 4px 0px 20px; vertical-align:top; text-decoration:none; z-index:2; }*/
 .masthead li.active i.icon-sort-up { height:15px; overflow:hidden; }
-.masthead #masthead-notch-intro { color:rgb(15,42,14); height:13px; }
+.masthead #masthead-notch-intro { /*color:rgb(15,42,14);*/color:rgb(239,240,241); height:13px; }
 .masthead #masthead-notch-about { color:rgb(239,240,241); }
 .masthead #masthead-notch-get_involved { color:rgb(244,245,246); }
 .masthead #masthead-notch-team { color:rgb(249,250,251); }
@@ -184,10 +184,8 @@ div.at-follow-open-control div.at4-arrow { margin-top:16px; }
 .at4-show .at4-arrow:before { content:'\f0d9  '; }
 .at4-follow-close-control div.at4-arrow:before { content:'\f0da  '; }*/
 
+.at-vertical-menu.at-vertical-menu-right { top:130px; }
 .at-vertical-menu.at-vertical-menu-right a { min-width:132px; width:132px; }
 .at-vertical-menu.at-vertical-menu-right a:hover { background:rgba(144,144,144,0.8); right:75px; }
 .at-vertical-menu label, .at-vertical-menu .at-share-label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
-
-
-
 

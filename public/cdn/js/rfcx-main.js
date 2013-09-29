@@ -293,7 +293,7 @@ RFCX.fn.ui.all.alertifySetup = function() {
 
 RFCX.setupVideo = function(videoBox) {
 
-  var videoLink = "http://player.vimeo.com/video/72226953"
+  var videoLink = "http://player.vimeo.com/video/75713955"
         +"?title=0"
         +"&byline=0"
         +"&portrait=1"

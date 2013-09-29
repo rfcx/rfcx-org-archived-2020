@@ -18,17 +18,23 @@ if (process.env.NODE_ENV !== "test") {
   analytics.init({secret:process.env.SEGMENT_IO_SECRET});
 }
 
+// Express Initialization
+var express = require("express"), routes = require("./routes"),
+  http = require("http"), path = require("path"), toobusy = require('toobusy'),
+  middlewares = require("./middlewares/all.js").middlewares;
+var app = express();
+
+// TooBusy checks if we are overloaded
+app.use(function(req, res, next) {
+  if (toobusy()){ res.send(503, "We are currently experiencing such high load that we can't serve your request right now. Try reloading!"); } else { next(); }
+});
+
 // Sequelize Database ORM Initialization
 var Sequelize = require("sequelize");
 var modelNames = [ "source" , "spectrum", "diagnostic", "version", "audio", "message", "alert"];
 var db = require("./config/sequelize.js").createConnection(Sequelize,process.env);
 var Model = require("./model/_all.js").createModel(db,Sequelize,modelNames);
 
-// Express Initialization
-var express = require("express"), routes = require("./routes"),
-  http = require("http"), path = require("path"),
-  middlewares = require("./middlewares/all.js").middlewares;
-var app = express();
 app.configure(function(){
   app.set("title", "Rainforest Connection");
   app.set("port", process.env.PORT || 8080);
@@ -84,10 +90,15 @@ for (var i = 0; i < routes.navItems.length; i++) {
 
 
 
-http.createServer(app).listen(app.get("port"), function(){
-  console.log(  app.get("title")
-                +" (port "+app.get("port")+")"
-                +" ("+process.env.NODE_ENV+")"
-                +((process.env.NODE_ENV=== "production") ? (" ("+process.env.productionVersionId+")") : "")
-                );
+var server = http.createServer(app).listen(app.get("port"), function(){
+  console.log(
+    app.get("title")+" (port "+app.get("port")+") ("+process.env.NODE_ENV+")"
+    +((process.env.NODE_ENV=== "production") ? (" ("+process.env.productionVersionId+")") : "")
+  );
+});
+
+process.on('SIGINT', function(){
+  server.close();
+  toobusy.shutdown();
+  process.exit();
 });

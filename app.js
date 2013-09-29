@@ -25,9 +25,9 @@ var express = require("express"), routes = require("./routes"),
 var app = express();
 
 // TooBusy checks if we are overloaded
-app.use(function(req, res, next) {
-  if (toobusy()){ res.send(503, "We are currently experiencing such high load that we can't serve your request right now. Try reloading!"); } else { next(); }
-});
+// app.use(function(req, res, next) {
+//   if (toobusy()){ res.send(503, "We are currently experiencing such high load that we can't serve your request right now. Try reloading!"); } else { next(); }
+// });
 
 // Sequelize Database ORM Initialization
 var Sequelize = require("sequelize");
@@ -99,6 +99,6 @@ var server = http.createServer(app).listen(app.get("port"), function(){
 
 process.on('SIGINT', function(){
   server.close();
-  toobusy.shutdown();
+//  toobusy.shutdown();
   process.exit();
 });

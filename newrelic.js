@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name : ['Rainforest Connection'],
+  app_name : ['rfcx.org'],
   /**
    * Your New Relic license key.
    */

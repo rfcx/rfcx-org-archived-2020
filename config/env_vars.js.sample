@@ -2,7 +2,7 @@ exports.env = {
 
   NODE_ENV: "development",
 
-  NODEFLY_ID: "",
+  NEW_RELIC_KEY: "",
 
   SEGMENT_IO_SECRET: "",
   SEGMENT_IO_CLIENT_ID: "",

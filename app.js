@@ -1,5 +1,3 @@
-if (process.env.NODE_ENV === "production") { require('newrelic'); }
-
 // check for environmental variable file and load if present
 var fs = require("fs");
 if (fs.existsSync("./config/env_vars.js")) {
@@ -7,25 +5,28 @@ if (fs.existsSync("./config/env_vars.js")) {
   for (i in env) { process.env[i] = env[i]; }
 }
 
-// Load Production Version ID
-process.env["productionVersionId"] = require("./config/version.js").productionVersionId;
-
-// Segment.io Analytics Initialization
-if (process.env.NODE_ENV !== "test") {
-  var analytics = require("analytics-node");
-  analytics.init({secret:process.env.SEGMENT_IO_SECRET});
+// Segment.io & New Relic Initialization
+if (process.env.NODE_ENV === "production") {
+  process.env.NEW_RELIC_HOME = __dirname+"/config"; require('newrelic');
+  var analytics = require("analytics-node"); analytics.init({secret:process.env.SEGMENT_IO_SECRET});
 }
+
+// Load Production Version ID
+process.env.productionVersionId = require("./config/version.js").productionVersionId;
 
 // Express Initialization
 var express = require("express"), routes = require("./routes"),
-  http = require("http"), path = require("path"), toobusy = require('toobusy'),
+  http = require("http"), path = require("path"),
   middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
 
 // TooBusy checks if we are overloaded
-// app.use(function(req, res, next) {
-//   if (toobusy()){ res.send(503, "We are currently experiencing such high load that we can't serve your request right now. Try reloading!"); } else { next(); }
-// });
+if (process.env.NODE_ENV === "production") {
+  var toobusy = require('toobusy');
+  app.use(function(req,res,next) {
+    if (toobusy()){ res.send(503, require("./config/toobusy.js").config.message); } else { next(); }
+  });
+}
 
 // Sequelize Database ORM Initialization
 var Sequelize = require("sequelize");
@@ -97,6 +98,6 @@ var server = http.createServer(app).listen(app.get("port"), function(){
 
 process.on('SIGINT', function(){
   server.close();
-//  toobusy.shutdown();
+  if (typeof(toobusy) !== "undefined") { toobusy.shutdown(); }
   process.exit();
 });

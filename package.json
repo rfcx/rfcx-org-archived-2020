@@ -14,11 +14,11 @@
     "express": "3.0.3",
     "mysql": "*",
     "sequelize": "*",
-    "nodefly": "stable",
     "analytics-node": "*",
     "crypto": "*",
     "toobusy": "*",
-    "jade": "*"
+    "jade": "*",
+    "newrelic": "*"
   },
   "devDependencies": {
     "mocha": "*",

@@ -7,8 +7,8 @@ var navItems = [
     [ "intro", "Intro", "/intro", "Rainforest Connection | Protecting rainforests with real-time data" ],
     [ "about", "About", "/about", "About" ],
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved" ],
-//    [ "team", "Team", "/team", "Team" ],
-//    [ "media", "Media", "/media", "Media" ],
+    [ "team", "Team", "/team", "Team" ],
+    // [ "media", "Media", "/media", "Media" ],
     [ "blog", "Blog", "//rainforestcx.tumblr.com", "Blog" ]
   ];
 

@@ -307,7 +307,7 @@ RFCX.setupVideo = function(videoBox) {
     var jqVideoBoxOuter = $("div.video-box-outer");
     jqVideoBoxOuter.css({ top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width:RFCX.videoOffset[2]+"px", display:"block" });
     RFCX.toggleAddThis(false);
-
+    $(window).scrollTop(0);
     $(".video-box-outer-backdrop").css({display:"block",opacity:0}).animate({
       opacity:1
     },function(){
@@ -319,7 +319,7 @@ RFCX.setupVideo = function(videoBox) {
           +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
           +" frameborder=\"0\" style=\"width:100%;\""
           +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
-        $(window).scrollTop(0);
+        
         $(document).keyup(function(e) {
           if (e.keyCode == 27) { RFCX.closeVideo(); }
         });

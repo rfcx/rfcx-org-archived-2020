@@ -1,3 +1,5 @@
+if (process.env.NODE_ENV !== "test") { require('newrelic'); }
+
 // check for environmental variable file and load if present
 var fs = require("fs");
 if (fs.existsSync("./config/env_vars.js")) {
@@ -9,8 +11,8 @@ if (fs.existsSync("./config/env_vars.js")) {
 process.env["productionVersionId"] = require("./config/version.js").productionVersionId;
 
 // NodeFly Monitoring Initialization
-var nodefly = require("./config/nodefly.js").nodefly;
-require('nodefly').profile( process.env.NODEFLY_ID, nodefly.app, nodefly.options);
+// var nodefly = require("./config/nodefly.js").nodefly;
+// require('nodefly').profile( process.env.NODEFLY_ID, nodefly.app, nodefly.options);
 
 // Segment.io Analytics Initialization
 if (process.env.NODE_ENV !== "test") {

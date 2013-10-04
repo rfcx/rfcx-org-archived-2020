@@ -10,10 +10,6 @@ if (fs.existsSync("./config/env_vars.js")) {
 // Load Production Version ID
 process.env["productionVersionId"] = require("./config/version.js").productionVersionId;
 
-// NodeFly Monitoring Initialization
-// var nodefly = require("./config/nodefly.js").nodefly;
-// require('nodefly').profile( process.env.NODEFLY_ID, nodefly.app, nodefly.options);
-
 // Segment.io Analytics Initialization
 if (process.env.NODE_ENV !== "test") {
   var analytics = require("analytics-node");

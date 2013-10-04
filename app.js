@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV !== "test") { require('newrelic'); }
+if (process.env.NODE_ENV === "production") { require('newrelic'); }
 
 // check for environmental variable file and load if present
 var fs = require("fs");

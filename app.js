@@ -87,9 +87,7 @@ for (var i = 0; i < routes.navItems.length; i++) {
   app.get("/"+routes.navItems[i][0], function(req, res){ routes.page(req, res, process, Model); });
 }
 
-app.get("/tumblr", function(req,res){
-  require("./routes/tumblr.js").refreshTumblrCache(req,res,fs);
-});
+app.get("/tumblr", require("./routes/tumblr.js").refreshTumblrCache );
 
 var server = http.createServer(app).listen(app.get("port"), function(){
   console.log(

@@ -21,5 +21,5 @@ exports.refreshTumblrCache = function(req,res) {
       });
     }).on('error', function(e) { console.error(e); }
   );
-  res.send("asdf");
+  res.send("Tumblr cache request complete.");
 };

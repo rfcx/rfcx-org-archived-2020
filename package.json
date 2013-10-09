@@ -18,8 +18,7 @@
     "crypto": "*",
     "toobusy": "*",
     "jade": "*",
-    "newrelic": "*",
-    "passport-tumblr": "*"
+    "newrelic": "*"
   },
   "devDependencies": {
     "mocha": "*",

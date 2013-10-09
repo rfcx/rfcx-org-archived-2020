@@ -13,6 +13,7 @@ pids
 logs
 results
 
+cache/
 node_modules/
 .gitignore
 .elasticbeanstalk/

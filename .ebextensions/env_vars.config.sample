@@ -15,6 +15,9 @@ option_settings:
   - option_name: ADDTHIS_PUBID
     value: 
 
+  - option_name: TUMBLR_SUBDOMAIN
+    value: 
+
   - option_name: TUMBLR_OAUTH_CONSUMER_KEY
     value: 
 

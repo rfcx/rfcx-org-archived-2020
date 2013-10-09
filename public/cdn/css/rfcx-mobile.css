@@ -39,17 +39,17 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .rfcx-row .rfcx-header { margin:0px 0px 0px 0px; line-height:42px; font-size:42px; }
 .rfcx-row .rfcx-body { margin:0px 0px 0px 0px; }
 
-.rfcx-row-intro-1 .rfcx-header { margin:20px 0px 0px 0px; }
+.rfcx-row-intro-what .rfcx-header { margin:20px 0px 0px 0px; }
 
 .rfcx-row-about-1 .rfcx-header { margin:10px 0px 0px 0px; }
 .rfcx-row-about-2 .rfcx-header { margin:20px 0px 0px 0px; }
 
-.rfcx-row-intro-3 .rfcx-body { text-align:left; padding-left:15px; }
-.rfcx-row-intro-3 .stopsign { display:none;}
-.rfcx-row-intro-3 .stopsign-mobile { width:50%; margin-left:5px; margin-right:5px; display:block; }
-.rfcx-row-intro-3 .input-append .input-large { width:194px; padding:23px 7px 21px 10px; font-size:18px; }
-.rfcx-row-intro-3 .control-group .rfcx-body { padding-left:0px; text-align:center; width:100%; font-size:120%; }
-.rfcx-row-intro-3 .control-group .rfcx-body span { position:relative; left:-7px; width:100%; float:left; clear:left; }
+.rfcx-row-intro-join .rfcx-body { text-align:left; padding-left:15px; }
+.rfcx-row-intro-join .stopsign { display:none;}
+.rfcx-row-intro-join .stopsign-mobile { width:50%; margin-left:5px; margin-right:5px; display:block; }
+.rfcx-row-intro-join .input-append .input-large { width:194px; padding:23px 7px 21px 10px; font-size:18px; }
+.rfcx-row-intro-join .control-group .rfcx-body { padding-left:0px; text-align:center; width:100%; font-size:120%; }
+.rfcx-row-intro-join .control-group .rfcx-body span { position:relative; left:-7px; width:100%; float:left; clear:left; }
 
 .rfcx-row-about-1 { top:-26px; padding-top:0px; }
 .rfcx-row-about-2 { top:-26px; padding-top:0px; }

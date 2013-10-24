@@ -20,7 +20,7 @@
                 });
                 $("#popular li.article").each(function(){
                     var imgurl = $(this).find('.rte.content img:eq(0)').attr('src');
-                    $(this).prepend('<div class="popimg"><img src="'+ imgurl +'"></a>');
+                    $(this).prepend('<a href="'+$(this).find("a.title").attr("href")+'"><div class="popimg"><img src="'+ imgurl +'" /></div></a>');
                 });
             }
         });

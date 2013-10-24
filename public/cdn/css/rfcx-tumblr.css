@@ -7,17 +7,19 @@ html, body{
         line-height: 1.5em;
     }
     
-    a, a:active, a:visited{
+    a, a:active, a:visited {
         color: #7fdd7f;
         transition-duration: 0.5s;
         -o-transition-duration: 0.5s;
         -moz-transition-duration: 0.5s;
         -webkit-transition-duration: 0.5s;
     }
-    
+
     a:hover{
         color: black;
+
     }
+
     .row{
         min-width:900px;
     }
@@ -98,23 +100,30 @@ html, body{
         padding-bottom: 15px;
         padding-top: 15px;
         margin-right: 20px;
-        border: 1px solid rgba(76, 187, 102, 1);
+        border: 1px solid #ccc;
         border-top:0;
         border-right:0;
         height:240px;
         overflow: hidden;
     }
     
-    .sticky .authorname a{
+    .sticky .authorname a {
         color: #444;
+    }
+    .sticky .authorname a:hover {
+        color: #888;
     }
     
     .sticky .text-body{
         color: #666;
     }
     
-    .sticky h2 a{
+    .sticky h2 a {
         color: #222;
+    }
+
+    .sticky h2 a:hover {
+        color: #666;
     }
     
     .sticky .post-image, .sticky .post-text{
@@ -177,7 +186,7 @@ html, body{
         max-height: 270px;
         overflow: hidden;
     }
-    .th:hover, .th:focus, .post-image:hover, .post-image:focus , .popimg:hover, .popimg:focus {
+    .th:hover, .th:focus, .post-image:hover, .post-image:focus , .popimg:hover, .popimg:focus, #popular .article:hover .popimg {
         box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.5);
     }
     
@@ -212,6 +221,11 @@ html, body{
     
     #popular .article{
         width: 100%;
+        color:#222;
+    }
+
+    #popular .article:hover .title {
+        color:#666;
     }
     
     #popular, .subscribe, .info{
@@ -237,16 +251,24 @@ html, body{
         color: #fff;
     }
     
-    .social-media a{
+    .social-media a {
         padding: 5px;
         display:inline-block;
         background: #000;
         opacity: 0.8;
         border-radius: 100px;
         margin: 4px;
+        width:50px;
+        height:50px;
+        padding-top:12px;
         -o-border-radius: 100px;
         -moz-border-radius: 100px;
         -webkit-border-radius: 100px;
+        text-align:center;
+    }
+    .social-media a i {
+        font-size:28px;
+        color:white;
     }
     
     #popular{

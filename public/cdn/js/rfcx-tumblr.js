@@ -15,7 +15,9 @@
                     var content = $item.children('description').text();
                     var date = $item.children('pubDate').text();
                     if (link || title) {
-                        $list.append($('<li class="article"><a class="title" href="'+  link +'">'+ strLimitLength(title,28) +'</a><div class="rte content">'+ content + '</div></li>'));
+                        $list.append($('<li class="article"><a class="title" href="'+  link +'">'+ strLimitLength(title,28) +'</a>'
+                                      +'<a class="author-name" href="'+  link +'">Author Name</a>'
+                                      +'<div class="rte content">'+ content + '</div></li>'));
                     } 
                 });
                 $("#popular li.article").each(function(){

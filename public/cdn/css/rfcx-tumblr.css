@@ -222,12 +222,31 @@ html, body{
     #popular .article{
         width: 100%;
         color:#222;
+        border:solid 1px white;
+        border-radius: 3px 3px 3px 3px;
+        -o-border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
     }
 
-    #popular .article:hover .title {
+     #popular .article .title {
+        line-height: 110%;
+    }
+
+    #popular .article:hover .title, #popular .article:hover .author-name {
         color:#666;
     }
     
+     #popular .article .author-name {
+        font-size:75%;
+        position:relative;
+        top:-4px;
+        margin-left:7px;
+        color:#222;
+    }
+
+    #popular .article:hover { border:solid 1px #ccc; }
+
     #popular, .subscribe, .info{
         margin-bottom: 30px;
     }
@@ -296,6 +315,9 @@ html, body{
     }
     
     .popimg{
+        margin-left:5px;
+        margin-top:5px;
+        margin-right:5px;
         width: 50px;
         height: 50px;
         overflow:hidden;

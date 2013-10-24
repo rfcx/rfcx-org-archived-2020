@@ -85,6 +85,8 @@ app.get("/", function(req, res){
 
 app.get("/referral/bonne_app", routes.redirectToHomePage );
 
+app.get("/health_check", routes.returnHealthCheck );
+
 for (var i = 0; i < routes.navItems.length; i++) {
   app.get("/"+routes.navItems[i][0], function(req, res){ routes.page(req, res, process, Model); });
 }

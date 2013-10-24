@@ -50,3 +50,7 @@ exports.redirectToHomePage = function(req,res) {
   res.writeHead(302, { "Location": "http://rfcx.org/" } );
   res.end();
 };
+
+exports.returnHealthCheck = function(req,res) {
+  res.send("Success");
+};

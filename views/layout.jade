@@ -10,12 +10,10 @@ html(lang="en")
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
-    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.0.0/css/font-awesome.min.css')
     // if lt IE 9
       script(type='text/javascript', src='#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js')
       link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/gradient-ie9.css?v=#{app_version}')
-    // if IE 7
-      link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/3.2.1/css/font-awesome-ie7.min.css')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='only screen and (max-device-width: 480px) and (orientation : portrait)')
@@ -25,14 +23,14 @@ html(lang="en")
       div.rfcx-unselectable.rfcx-trans-linear.masthead
         div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
         a.menu-toggle
-          i.icon-reorder
-          i.icon-chevron-up
+          i.fa.fa-reorder
+          i.fa.fa-chevron-up
         ul.rfcx-trans-linear.nav.nav-pills.pull-right
           for item in nav_items
             if (item[0] == current_page)
               li.active
                 a= item[1]
-                i.icon-sort-up(id="masthead-notch-#{item[0]}")
+                i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
             else
               li
                 a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
@@ -55,19 +53,19 @@ html(lang="en")
                   a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
               li.ft= "|"
         a.pull-right.hint--rounded.hint--top(target='_blank',href='https://www.facebook.com/RainforestCx', data-hint='Check us out on Facebook!')
-          i.footer-social.rfcx-trans-linear.icon-facebook-sign
+          i.footer-social.rfcx-trans-linear.fa.fa-facebook-square
         a.pull-right.hint--rounded.hint--bottom(target='_blank',href='https://twitter.com/RainforestCx', data-hint='Check us out on Twitter!')
-          i.footer-social.rfcx-trans-linear.icon-twitter-sign
+          i.footer-social.rfcx-trans-linear.fa.fa-twitter-square
         a.pull-right.hint--rounded.hint--top(target='_blank',href='https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts', data-hint='Check us out on Google+!')
-          i.footer-social.rfcx-trans-linear.icon-google-plus-sign
+          i.footer-social.rfcx-trans-linear.fa.fa-google-plus-square
         a.pull-right.hint--rounded.hint--bottom(target='_blank',href='http://www.linkedin.com/company/rainforest-connection', data-hint='Check us out on LinkedIn!')
-          i.footer-social.rfcx-trans-linear.icon-linkedin-sign
+          i.footer-social.rfcx-trans-linear.fa.fa-linkedin-square
         a.pull-right.hint--rounded.hint--top(target='_blank',href='http://instagram.com/rainforestcx/', data-hint='Check us out on Instagram!')
-          i.footer-social.rfcx-trans-linear.icon-instagram
+          i.footer-social.rfcx-trans-linear.fa.fa-instagram
         a.pull-right.hint--rounded.hint--bottom(target='_blank',href='http://www.flickr.com/photos/rainforestcx/', data-hint='Check us out on Flickr!')
-          i.footer-social.rfcx-trans-linear.icon-flickr
+          i.footer-social.rfcx-trans-linear.fa.fa-flickr
         a.pull-right.hint--rounded.hint--top(target='_blank',href='https://github.com/rfcx', data-hint='Check us out on Github!')
-          i.footer-social.rfcx-trans-linear.icon-github-sign
+          i.footer-social.rfcx-trans-linear.fa.fa-github-square
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')

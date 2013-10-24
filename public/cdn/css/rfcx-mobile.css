@@ -12,8 +12,8 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .masthead .masthead-bg { left:-63%; width:163%; max-width:163%;  }
 .masthead .logo { position:absolute; width:67%; left:4%; top:45%; }
 .masthead .menu-toggle { display:block; position:absolute; top:48%; right:5%; font-size:28px; color:white; text-decoration:none; }
-.masthead .menu-toggle .icon-chevron-up { display:none; }
-.masthead .menu-toggle .icon-reorder { display:block; }
+.masthead .menu-toggle .fa-chevron-up { display:none; }
+.masthead .menu-toggle .fa-reorder { display:block; }
 
 .masthead ul { position:absolute; top:100%; left:0%; margin-top:0%; width:100%; height:0px; background-color:#111111; overflow:hidden; }
 .masthead ul li { width:50%; border-width:0px; float:left; padding:12px 0px; text-align:center; }
@@ -25,9 +25,9 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .banner-video { height:265px; margin-top:0px; top:-26px; }
 .banner-video .banner-bg { left:-63%; width:163%; max-width:163%; }
 .video-box { width:60%; margin-left:20%; margin-top:130px; border-width:1px; }
-.video-box .icon-play-circle { font-size:70px; height:70px; }
+.video-box .fa-play-circle-o { font-size:70px; height:70px; }
 .banner-video .video-link { position:relative; top:-12px; font-size:12px; }
-.banner-video .video-link .icon-play { font-size:8px; }
+.banner-video .video-link .fa-play { font-size:8px; }
 .banner-video .slogan { margin-top:20px; margin-left:8px; text-align:center; }
 .banner-video .slogan p.roadgeek { font-size:38px; }
 

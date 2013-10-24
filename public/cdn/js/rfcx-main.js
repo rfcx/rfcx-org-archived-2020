@@ -94,8 +94,8 @@ RFCX.fn.reactiveUi.toggleMobileMenu = function() {
   $(".masthead ul").css({height:menuHeight+"px"});
   $(".masthead").css({marginBottom:menuHeight+"px"});
 
-  $(".masthead .menu-toggle .icon-chevron-up").css({display:bttnIcon[0]});
-  $(".masthead .menu-toggle .icon-reorder").css({display:bttnIcon[1]});
+  $(".masthead .menu-toggle .fa-chevron-up").css({display:bttnIcon[0]});
+  $(".masthead .menu-toggle .fa-reorder").css({display:bttnIcon[1]});
 };
 
 
@@ -256,7 +256,7 @@ RFCX.fn.ui.intro.prepareVideo = function() {
     $("body").append(
         "<div class=\"video-box video-box-outer\">"
         +"<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\">"
-        +"<i class=\"icon-play-circle\"></i>"
+        +"<i class=\"fa fa-play-circle-o\"></i>"
         +"</div>"
         +"<div class=\"video-box-outer-backdrop\"></div>");
 }
@@ -334,7 +334,7 @@ RFCX.setupVideo = function(videoBox) {
 
 RFCX.closeVideo = function() {
   $("div.video-box-outer")
-    .html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\"><i class=\"icon-play-circle\"></i>")
+    .html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\"><i class=\"fa fa-play-circle-o\"></i>")
     .animate({
     top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width: RFCX.videoOffset[2]+"px", borderWidth: "4px"
   },function(){

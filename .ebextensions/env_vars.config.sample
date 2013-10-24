@@ -3,6 +3,9 @@ option_settings:
   - option_name: NODE_ENV
     value: production
 
+  - option_name: TOOBUSY_ENABLED
+    value: false
+
   - option_name: NEW_RELIC_KEY
     value: 
 

@@ -2,6 +2,8 @@ exports.env = {
 
   NODE_ENV: "development",
 
+  TOOBUSY_ENABLED: false,
+
   NEW_RELIC_KEY: "",
 
   SEGMENT_IO_SECRET: "",

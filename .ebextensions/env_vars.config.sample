@@ -4,7 +4,7 @@ option_settings:
     value: production
 
   - option_name: TOOBUSY_ENABLED
-    value: false
+    value: 0
 
   - option_name: NEW_RELIC_KEY
     value: 

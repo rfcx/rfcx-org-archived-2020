@@ -21,9 +21,10 @@ var express = require("express"), routes = require("./routes"),
 var app = express();
 
 // TooBusy checks if we are overloaded
-if ((process.env.NODE_ENV === "production") && (process.env.TOOBUSY_ENABLED === true)) {
+if (parseInt(process.env.TOOBUSY_ENABLED)===1) {
   var toobusyConfig = require("./config/toobusy.js").config;
   var toobusy = require('toobusy');
+  console.log("Enabling 'toobusy' overload handler");
   app.use(function(req,res,next) {
     if (toobusy()){ res.send(503, toobusyConfig.message); } else { next(); }
   });

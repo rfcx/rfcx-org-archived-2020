@@ -52,5 +52,5 @@ exports.redirectToHomePage = function(req,res) {
 };
 
 exports.returnHealthCheck = function(req,res) {
-  res.send("Success");
+  res.send("rfcx");
 };

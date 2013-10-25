@@ -52,7 +52,19 @@
 $(function(){
     
     var pathname = window.location.pathname;
-    $("#masonry-container .post-image").remove();
+
+    if (pathname === "/") {
+        $("div.article div.post-text").css({height:"13em"});
+        var latest = $('#masonry-container .article:first-child');
+        var sticky = latest.addClass("sticky");
+        $("#container").prepend(sticky);
+        $("#container").prepend("<div class=\"section-header section-header-featured\"><h2>"
+            +"FEATURED"
+            +"</h2>"
+            +"</div>");
+    }
+
+//    $("#masonry-container .post-image").remove();
     $("#masonry-container .large-6")
       .removeClass("large-6").removeClass("six")
       .addClass("large-12").addClass("twelve");

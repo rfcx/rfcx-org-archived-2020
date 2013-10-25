@@ -38,9 +38,10 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead #masthead-notch-intro { /*color:rgb(15,42,14);*/color:rgb(239,240,241); height:13px; }
 .masthead #masthead-notch-about { color:rgb(239,240,241); }
 .masthead #masthead-notch-get_involved { color:rgb(244,245,246); }
-.masthead #masthead-notch-team { color:rgb(249,250,251); }
-.masthead #masthead-notch-media { color:rgb(251,252,253); }
 .masthead #masthead-notch-blog { color:rgb(255,255,255); }
+.masthead #masthead-notch-team { color:rgb(249,250,251); }
+.masthead #masthead-notch-forum { color:rgb(251,252,253); }
+.masthead #masthead-notch-media { color:rgb(251,252,253); }
 
 .banner-video { height:380px; }
 .banner-video .slogan { position:absolute; margin-top:140px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; }

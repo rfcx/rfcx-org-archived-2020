@@ -7,6 +7,8 @@ html, body{
         line-height: 1.5em;
     }
     
+
+
     a, a:active, a:visited {
         color: #7fdd7f;
         transition-duration: 0.5s;
@@ -41,8 +43,8 @@ html, body{
         left: 50%;
         margin-left: -700px;
         width: 1400px;
-        height: 149px;
-        /*background: url('http://d3gq709nndn9uy.cloudfront.net/cdn/img/masthead/masthead-bg.1400.jpg');*/
+        height: 77px;
+        background: url('http://d3gq709nndn9uy.cloudfront.net/cdn/img/masthead/masthead-bg.1400.jpg');
     }
 
     #header{
@@ -54,10 +56,6 @@ html, body{
         padding-left: 0px;
     }
 
-    #logo{
-        width: 280px;
-        height: 50px;
-    }
     
     nav.navbar{
         padding-top: 10px;
@@ -94,16 +92,16 @@ html, body{
 
    .sticky{
         width: 100% !important;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         /*background: rgba(76, 187, 102, 0.8);*/
         border-radius: 5px;
         padding-bottom: 15px;
-        padding-top: 15px;
+        padding-top: 5px;
         margin-right: 20px;
         border: 1px solid #ccc;
         border-top:0;
         border-right:0;
-        height:240px;
+    /*    height:240px; */
         overflow: hidden;
     }
     
@@ -153,7 +151,7 @@ html, body{
         color: rgb(73, 72, 72);
         font-family: 'roadgeek_2005_engschrift',Sans-Serif;
         font-size: 42px;
-        line-height: 40px;
+        line-height: 38px;
         margin-bottom: 5px;   
         margin-top: 0px;   
         font-weight: normal;
@@ -450,4 +448,57 @@ html, body{
         border-radius: 5px;
         text-align: center;
         margin-top: -10px;
+    }
+
+
+    div.article div.post-text {
+        overflow:hidden;
+        border:none;
+        margin-top:5px;
+    }
+
+    div.sticky div.article div.post-text {
+        margin-top:0px;
+    }
+
+    div.sticky div.post-text .text-body {
+        margin-top:6px;
+        line-height: 1.33em;
+    }
+
+    div.sticky div.post-image img {
+        width:303px;
+        height:202px;
+    }
+
+    div.article {
+        padding-top: 5px;
+        border: 1px solid #ccc;
+        border-top:0;
+        border-right:0;
+        border-radius: 3px 3px 3px 3px;
+        -o-border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        margin-top:0px;
+    }
+
+    #masonry-container div.post-image {
+        max-width:303px;
+        width:303px;
+        height:202px;
+    }
+
+    #masonry-container div.post-image img {
+        max-width:303px;
+        width:303px;
+        height:202px;
+    }
+
+    div.section-header { margin-bottom:0px; }
+    div.section-header h2 { line-height: 1; }
+
+    .rfcx-logo {
+        width:185px;
+        height:33px;
     }

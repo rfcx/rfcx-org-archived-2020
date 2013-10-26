@@ -10,7 +10,7 @@ html, body{
 
 
     a, a:active, a:visited {
-        color: #7fdd7f;
+        color: #2FB04A;
         transition-duration: 0.5s;
         -o-transition-duration: 0.5s;
         -moz-transition-duration: 0.5s;
@@ -49,7 +49,7 @@ html, body{
 
     #header{
         height: 100px;
-        padding: 15px 10px 10px 10px;
+        padding: 10px 10px 10px 10px;
         margin-bottom: 0px;
     }
     .logo-cont{
@@ -81,7 +81,7 @@ html, body{
     
     #container, #sidebar{
         margin-bottom: 50px;
-        padding-top:15px;
+        padding-top:0px;
     }
 
 
@@ -105,11 +105,11 @@ html, body{
         overflow: hidden;
     }
     
-    .sticky .authorname a {
+    .article .authorname a {
         color: #444;
     }
-    .sticky .authorname a:hover {
-        color: #888;
+    .article .authorname a:hover {
+        color: #2FB04A;
     }
     
     .sticky .text-body{
@@ -210,7 +210,7 @@ html, body{
         font-family: 'roadgeek_2005_engschrift',Sans-Serif;
         font-size: 30px;
         line-height: 28px;
-        margin-bottom: 15px;   
+        margin-bottom: 5px;   
         font-weight: normal;
         text-transform: uppercase;
         padding-bottom: 5px;
@@ -246,7 +246,7 @@ html, body{
     #popular .article:hover { border:solid 1px #ccc; }
 
     #popular, .subscribe, .info{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     
     .info a{
@@ -287,16 +287,22 @@ html, body{
         font-size:28px;
         color:white;
     }
+
+    .social-media {
+        margin-bottom:20px;
+    }
+
     
     #popular{
-        margin: 0 0 30px 0;
+        margin: 0 0 20px 0;
         padding: 0 0 0 0;
+        border-bottom: 1px solid #ccc;
     }
     
     #popular li{
         position: relative;
         list-style-type: none;
-        margin: 0 0 10px 0;
+        margin: 0 0 2px 0;
         padding: 0px;
     }
     
@@ -405,6 +411,7 @@ html, body{
     }
     
     .search{
+        margin-top:20px;
         float: right;
     }
     
@@ -428,8 +435,12 @@ html, body{
     
     .subscribe form{
         margin-bottom: 0px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         border-bottom: 1px solid #ccc;
+    }
+
+    #sidebar h3 {
+        border-bottom:0;
     }
     
     .subscribe input{
@@ -455,6 +466,7 @@ html, body{
         overflow:hidden;
         border:none;
         margin-top:5px;
+        margin-bottom:8px;
     }
 
     div.sticky div.article div.post-text {
@@ -501,4 +513,15 @@ html, body{
     .rfcx-logo {
         width:185px;
         height:33px;
+    }
+
+    .logo-cont {
+
+    }
+
+    #container { visibility:none; }
+
+    h2 { 
+        margin-bottom:0.2em;
+        margin-top:0.2em;
     }

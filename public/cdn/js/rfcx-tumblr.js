@@ -104,6 +104,6 @@ $(function(){
     $("#masonry-container .large-6").removeClass("large-6").removeClass("six").addClass("large-12").addClass("twelve");
   }
 
-  container.css({visibility:"block"});
+  container.css({visibility:"visible"});
   
 });

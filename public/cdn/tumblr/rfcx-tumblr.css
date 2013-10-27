@@ -107,7 +107,6 @@ html, body{
         border: 1px solid #ccc;
         border-top:0;
         border-right:0;
-    /*    height:240px; */
         overflow: hidden;
     }
     
@@ -484,7 +483,7 @@ html, body{
         line-height: 1.33em;
     }
 
-    div.sticky div.post-image img {
+    div.article div.post-image img {
         width:303px;
         height:202px;
     }
@@ -568,4 +567,12 @@ html, body{
 
     #post-comments {
         margin-top:15px;
+    }
+
+    .container-search div.section-header {
+        display:none;
+    }
+
+    .container-search h3.search-message {
+        margin-left:25px;
     }

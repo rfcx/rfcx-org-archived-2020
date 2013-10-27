@@ -39,7 +39,6 @@ $(function(){
   for (i in RFCX.fn.ui[RFCX.currentPage]) { RFCX.fn.ui[RFCX.currentPage][i](); }
   for (i in RFCX.fn.ui.all) { RFCX.fn.ui.all[i](); };
 
-//  RFCX.fn.initializeUi.hideMobileHeader();
   RFCX.fn.initializeUi.setupMobileMenu();
 
   RFCX.fn.initializeUi.onResize();
@@ -65,14 +64,14 @@ RFCX.fn.initializeUi.onScroll = function() {
       clearTimeout(RFCX.timer.windowScroll);
       RFCX.timer.windowScroll = setTimeout(function(){
         RFCX.fn.reactiveUi.scrollQueues();
-      },20);
+      },50);
     });
 }
 
 RFCX.fn.initializeUi.hideMobileHeader = function() {
   setTimeout(function(){
     window.scrollTo(0, 1);
-   }, 0);
+   }, 50);
 }
 
 RFCX.fn.initializeUi.setupMobileMenu = function() {
@@ -117,7 +116,13 @@ RFCX.fn.reactiveUi.modifyMastheadWidth = function() {
   $(".dynamic-crop-right").css("width",newWidth);
 }
 
-
+RFCX.fn.insertCss = function(url) {
+  var s = document.createElement("link");
+  s.rel = "stylesheet"; s.type = "text/css"; s.async = true;
+  var id = "css-"+Math.round(Math.random()*100000); s.id = id;
+  s.href = url;
+  var x = document.getElementsByTagName("head")[0]; x.appendChild(s);
+}
 
 RFCX.fn.load.addThis = function() {
   for (var i = 0; i < RFCX.social.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.addThis.env[i]) {
@@ -189,14 +194,15 @@ RFCX.fn.load.bootstrapJs = function(){
   });
 }
 
-RFCX.fn.load.hintCss = function() {
-  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" media=\"only screen and (min-width: 900px)\" />").attr("href", RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css") );
+ RFCX.fn.load.hintCss = function() {
+  if (!RFCX.renderForMobile) {
+    RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css");
+  }
 }
-
 
 RFCX.fn.ui.about.initMap = function(){
 
-  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", "//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css") );
+  RFCX.fn.insertCss("//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css");
 
   $.getScript("//libs.cartocdn.com/cartodb.js/v3/cartodb.js",function(){
 
@@ -227,7 +233,7 @@ RFCX.fn.ui.about.initMap = function(){
 
 RFCX.fn.ui.intro.initVideo = function(){
 
-  $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.videoJs+"/4.1/video-js.css") );
+  RFCX.fn.insertCss(RFCX.cdn.videoJs+"/4.1/video-js.css");
 
   $.getScript(RFCX.cdn.videoJs+"/4.1/video.js",function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/4.1/video-js.swf"; }

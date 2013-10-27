@@ -30,6 +30,25 @@
     }});
   }
 
+function emailSubscribeFormSetup() {
+
+  if ($("form.rfcx-form").length > 0) {
+    $.getScript("http://cdn.rfcx.org/vendor/parsley.js/1.1.16/parsley.min.js",function(){
+      $("#mc-embedded-subscribe-form").submit(function(){
+        var isEmailValid = $("input.input-large.email").parsley("validate");
+        if (!isEmailValid) {
+          alert("Please enter a valid e-mail.");
+        }
+        return isEmailValid;
+      });
+      $("#mc-embedded-subscribe-form a.btn-success").click(function(){
+        $("#mc-embedded-subscribe-form").submit();
+      });
+    });
+  }
+
+}
+
   
   // //Photoset grid
   // $('.photoset-container').imagesLoaded(function(){
@@ -57,9 +76,10 @@ $(function(){
   var container = $("#container");
   var masonryContainer = $("#masonry-container");
   var featured = masonryContainer.find('.article:first-child');
-  var sticky = featured.addClass("sticky");
 
   if (pathname === "/") {
+
+    var sticky = featured.addClass("sticky");
 
     $('.article.text').each(function(){
         var firstImage = $(this).find('.text-body img:eq(0)');
@@ -74,13 +94,13 @@ $(function(){
       $(this).find(".text-body").text($.trim($(this).find(".text-body").text()).substring(0, 300) + "[...]");
     });
 
-    masonryContainer.imagesLoaded(function(){
+    masonryContainer.addClass("masonry-container-index").imagesLoaded(function(){
         masonryContainer.masonry({ itemSelector: '.article' });
     });
 
     $("div.article").each(function(){
       var permaLink = $(this).find("h2 .permalink").attr("href");
-      $(this).find("div.post-text").css({height:"13em"});
+      $(this).find("div.post-text").css({height:"13em"}).after("<a class=\"read-more\">read more &raquo;</a>");
       $(this).find("div.text-body").each(function(){
         $(this).css({cursor:"pointer"});
         $(this).attr("onClick","location='"+permaLink+"';");
@@ -94,4 +114,6 @@ $(function(){
 
   container.css({visibility:"visible"});
   
+  emailSubscribeFormSetup();
+
 });

@@ -56,7 +56,8 @@ $(function(){
   var pathname = window.location.pathname;
   var container = $("#container");
   var masonryContainer = $("#masonry-container");
-  var featured = $('#masonry-container .article:first-child');
+  var featured = masonryContainer.find('.article:first-child');
+  var sticky = featured.addClass("sticky");
 
   if (pathname === "/") {
 
@@ -68,33 +69,24 @@ $(function(){
             $(this).find('.post-image img').css('width', '100%').wrap('<a href="'+perms+'"></a>');
         }
     });
-    //Truuncate text in .text-body after images have been appended
-    $(".sticky, .article.text, .article.link").each(function(){
-        var title = $(this).find(".text-body").text();
-        if(title){
-            var excerpt = jQuery.trim(title).substring(0, 300) + "[...]";
-            title = $(this).find(".text-body").text(excerpt);
-        }
-    });
-    //Truuncate text in other post types
-    $(".article.photo, .article.photoset, .article.video").each(function(){
-        var title = $(this).find(".post-text").text();
-        if (title){
-            var excerpt = jQuery.trim(title).substring(0, 300) + "[...]";
-            title = $(this).find(".post-text").text(excerpt);
-        }
-    });
     
-    $(".text-body").attr('style', '');
+    $(".sticky, .article.text, .article.link").each(function(){
+      $(this).find(".text-body").text($.trim($(this).find(".text-body").text()).substring(0, 300) + "[...]");
+    });
 
     masonryContainer.imagesLoaded(function(){
-        //Masonize this babeh!
         masonryContainer.masonry({ itemSelector: '.article' });
     });
 
+    $("div.article").each(function(){
+      var permaLink = $(this).find("h2 .permalink").attr("href");
+      $(this).find("div.post-text").css({height:"13em"});
+      $(this).find("div.text-body").each(function(){
+        $(this).css({cursor:"pointer"});
+        $(this).attr("onClick","location='"+permaLink+"';");
+      });
+    });
 
-    $("div.article div.post-text").css({height:"13em"});
-    var sticky = featured.addClass("sticky");
     container.prepend(sticky);
     container.prepend("<div class=\"section-header section-header-featured\"><h2>FEATURED POST</h2></div>");
     $("#masonry-container .large-6").removeClass("large-6").removeClass("six").addClass("large-12").addClass("twelve");

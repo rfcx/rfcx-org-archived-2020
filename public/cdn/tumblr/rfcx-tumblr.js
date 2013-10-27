@@ -102,14 +102,13 @@ $(function(){
       var permaLink = $(this).find("h2 .permalink").attr("href");
       $(this).find("div.post-text").css({height:"13em"}).after("<a class=\"read-more\">read more &raquo;</a>");
       $(this).find("div.text-body").each(function(){
-        $(this).css({cursor:"pointer"});
-        $(this).attr("onClick","location='"+permaLink+"';");
+        $(this).css({cursor:"pointer", fontStyle:"italic", color:"rgb(131, 131, 131)"}).attr("onClick","location='"+permaLink+"';");
       });
+      $(this).css({width:"49.9%"});
     });
 
-    container.prepend(sticky);
-    container.prepend("<div class=\"section-header section-header-featured\"><h2>FEATURED POST</h2></div>");
-    $("#masonry-container .large-6").removeClass("large-6").removeClass("six").addClass("large-12").addClass("twelve");
+    container.find(".section-header-featured").after(sticky);
+    masonryContainer.find(".large-6").removeClass("large-6").removeClass("six").addClass("large-12").addClass("twelve");
   }
 
   container.css({visibility:"visible"});

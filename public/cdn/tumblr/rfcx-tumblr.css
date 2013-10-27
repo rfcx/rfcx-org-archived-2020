@@ -547,9 +547,25 @@ html, body{
     }
 
     a.read-more {
+        font-weight:bold;
         float:right;
         position:relative;
         top:-3px;
         margin-right:22px;
         margin-bottom: 5px;
+    }
+
+    a.menu-link {
+        font-weight:bold;
+        position:relative;
+        top:0px;
+        margin-left:25px;
+    }
+
+    a.menu-link:hover {
+        color:black;
+    }
+
+    #post-comments {
+        margin-top:15px;
     }

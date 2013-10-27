@@ -233,12 +233,16 @@ RFCX.fn.ui.about.initMap = function(){
 
 RFCX.fn.ui.intro.initVideo = function(){
 
-  RFCX.fn.insertCss(RFCX.cdn.videoJs+"/4.1/video-js.css");
+  var videoJsVersion = "4.2.2";
+  RFCX.fn.insertCss(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.css");
 
-  $.getScript(RFCX.cdn.videoJs+"/4.1/video.js",function(){
-    if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/4.1/video-js.swf"; }
-    console.log("video.js has been loaded");
-
+  $.getScript(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video.js",function(){
+    if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }
+    $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js",function(){
+      $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js",function(){
+        console.log("video.js has been loaded");
+       });
+     });
   });
 }
 
@@ -317,15 +321,32 @@ RFCX.setupVideo = function(videoBox) {
     $(".video-box-outer-backdrop").css({display:"block",opacity:0}).animate({
       opacity:1
     },function(){
-
+      
       jqVideoBoxOuter.animate({
         top: "24px", left: "0%", width: "100%", borderWidth: "0px"
       },function(){
-        $(this).html("<iframe src=\""+videoLink.replace(/&/g,"&amp;")+"\""
-          +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
-          +" frameborder=\"0\" style=\"width:100%;\""
-          +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
+        // $(this).html("<iframe src=\""+videoLink.replace(/&/g,"&amp;")+"\""
+        //   +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
+        //   +" frameborder=\"0\" style=\"width:100%;\""
+        //   +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
+        $(this).html(
+            "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
+                +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
+                +" style=\"width:100%;\">"
+            +"<source src=\"http://www.youtube.com/watch?v=D6sn6b97zs4\" type=\"video/youtube\" />"
+            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.720.mp4\" type=\"video/mp4\" />"
+            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.240.flv\" type=\"video/flv\" />"
+            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.360.webm\" type=\"video/webm\" />"
+            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.240.3gp\" type=\"video/3gp\" />"
+            +"</video>");
         
+        videojs("rfcx-video-player", { "techOrder": ["html5","flash","youtube"], "preload": "auto", "autoplay":true, "controls":true }).ready(function(){
+          var vPlayer = this;
+          vPlayer.on("pause", function(){
+            console.log("paused");
+          });
+        });
+
         $(document).keyup(function(e) {
           if (e.keyCode == 27) { RFCX.closeVideo(); }
         });

@@ -109,6 +109,12 @@ $(function(){
 
     container.find(".section-header-featured").after(sticky);
     masonryContainer.find(".large-6").removeClass("large-6").removeClass("six").addClass("large-12").addClass("twelve");
+  
+  } else if (pathname.substr(0,6) === "/post/") {
+
+      $('.text-body img, #post-notes img').each(function(){
+         $(this).addClass('th');
+      });
   }
 
   container.css({visibility:"visible"});

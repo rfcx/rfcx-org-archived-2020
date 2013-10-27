@@ -49,6 +49,11 @@ function emailSubscribeFormSetup() {
 
 }
 
+function loadDisqus() {
+  window.disqus_shortname = 'rfcx-tumblr';
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}
+
   
   // //Photoset grid
   // $('.photoset-container').imagesLoaded(function(){
@@ -115,6 +120,8 @@ $(function(){
       $('.text-body img, #post-notes img').each(function(){
          $(this).addClass('th');
       });
+
+      loadDisqus();
   }
 
   container.css({visibility:"visible"});

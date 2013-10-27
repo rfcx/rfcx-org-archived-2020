@@ -105,7 +105,7 @@ $(function(){
 
     $("div.article").each(function(){
       var permaLink = $(this).find("h2 .permalink").attr("href");
-      $(this).find("div.post-text").css({height:"13em"}).after("<a class=\"read-more\">read more &raquo;</a>");
+      $(this).find("div.post-text").css({height:"13em"}).after("<a class=\"read-more\" href=\""+permaLink+"\">read more &raquo;</a>");
       $(this).find("div.text-body").each(function(){
         $(this).css({cursor:"pointer", fontStyle:"italic", color:"rgb(131, 131, 131)"}).attr("onClick","location='"+permaLink+"';");
       });

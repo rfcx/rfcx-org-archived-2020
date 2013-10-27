@@ -17,8 +17,12 @@ html, body{
         -webkit-transition-duration: 0.5s;
     }
 
-    a:hover{
-        color: black;
+    .article a:hover {
+        color:black;
+    }
+
+    .article .authorname a:hover {
+        color: #2FB04A;
 
     }
 
@@ -110,9 +114,9 @@ html, body{
     .article .authorname a {
         color: #444;
     }
-    .article .authorname a:hover {
+/*    .article .authorname a:hover {
         color: #2FB04A;
-    }
+    }*/
     
     .sticky .text-body{
         color: #666;
@@ -122,9 +126,9 @@ html, body{
         color: #222;
     }
 
-    .sticky h2 a:hover {
+/*    .sticky h2 a:hover {
         color: #666;
-    }
+    }*/
     
     .sticky .post-image, .sticky .post-text{
         width:50%;

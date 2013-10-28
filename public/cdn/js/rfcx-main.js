@@ -15,7 +15,7 @@ var RFCX = {
   transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   donateAmount: 50,
-  video: { offset: [0, 0, 0], obj: null, id: null, youtubeId: null, version: null },
+  video: { offset: [0, 0, 0], obj: null, id: null, version: null },
   snapJsObj: null,
   scrollQueues: {
     loadFollowButtons: {
@@ -334,18 +334,18 @@ RFCX.setupVideo = function(videoBox) {
 }
 
 RFCX.placeVideo = function(containerObj) {
-  var videoLocation = "http://rfcx-static.s3.amazonaws.com/video";
-  RFCX.video.version = $(containerObj).attr("data-video-version");;
-  RFCX.video.youtube = $(containerObj).attr("data-video-youtube");
   RFCX.video.id = $(containerObj).attr("data-video-id");
+  RFCX.video.version = $(containerObj).attr("data-video-version");
+  var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"
+    +"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version;
   var playerHtml =  "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
           +" width=\""+parseInt($(containerObj).width())+"\" height=\""+parseInt($(containerObj).height())+"\""
           +" style=\"width:100%;\">"
-      +"<source src=\"http://www.youtube.com/watch?v="+RFCX.video.youtube+"\" type=\"video/youtube\" />"
-      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".720.mp4\" type=\"video/mp4\" />"
-      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".240.flv\" type=\"video/flv\" />"
-      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".720.webm\" type=\"video/webm\" />"
-      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".240.3gp\" type=\"video/3gp\" />"
+      +"<source src=\"http://www.youtube.com/watch?v="+$(containerObj).attr("data-video-youtube")+"\" type=\"video/youtube\" />"
+      +"<source src=\""+videoLocation+".720.mp4\" type=\"video/mp4\" />"
+      +"<source src=\""+videoLocation+".240.flv\" type=\"video/flv\" />"
+      +"<source src=\""+videoLocation+".720.webm\" type=\"video/webm\" />"
+      +"<source src=\""+videoLocation+".240.3gp\" type=\"video/3gp\" />"
       +"</video>";
   if (!RFCX.renderForMobile) { playerHtml +=
     "<a href=\"javascript:RFCX.closeVideo()\" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-25\"><i class=\"fa fa-times\"></i></a>"; }
@@ -354,10 +354,13 @@ RFCX.placeVideo = function(containerObj) {
     RFCX.video.obj = this;
     RFCX.video.obj.on("pause", function(){ console.log("video paused"); });
     RFCX.video.obj.on("ended", function(){ RFCX.closeVideo(); });
+    analytics.track("video_play", { label: RFCX.video.id });
   });
 }
 
 RFCX.closeVideo = function() {
+  var percentComplete = Math.round(100*RFCX.video.obj.currentTime()/RFCX.video.obj.duration());
+  analytics.track("video_stop", { label: RFCX.video.id, value: percentComplete });
   RFCX.video.obj.dispose();
   RFCX.video.obj = null;
   $(document).off("keyup");

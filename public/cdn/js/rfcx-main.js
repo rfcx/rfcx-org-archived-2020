@@ -15,7 +15,8 @@ var RFCX = {
   transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   donateAmount: 50,
-  videoOffset: [0, 0, 0],
+  video: { offset: [0, 0, 0], obj: null, id: null, youtubeId: null, version: null },
+  snapJsObj: null,
   scrollQueues: {
     loadFollowButtons: {
       whenVisible: { intro: ".rfcx-row-intro-join" },
@@ -76,8 +77,15 @@ RFCX.fn.initializeUi.hideMobileHeader = function() {
 
 RFCX.fn.initializeUi.setupMobileMenu = function() {
   if (RFCX.renderForMobile) {
+    RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/snap.js/1.9.2/snap.css");
+    $.getScript(RFCX.cdn.rfcxVendor+"/snap.js/1.9.2/snap.min.js",function(){
+      RFCX.snapJsObj = new Snap({
+        element: document.getElementById("rfcx-container"),
+        disable: "left"
+      });
+    });
     $(".masthead .menu-toggle").click(function(){
-      RFCX.fn.reactiveUi.toggleMobileMenu();
+        RFCX.snapJsObj.open("right");
     });
   }
 }
@@ -240,10 +248,11 @@ RFCX.fn.ui.intro.initVideo = function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }
     $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js",function(){
       $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js",function(){
-        console.log("video.js has been loaded");
-       });
-     });
-  });
+        $(".video-box-page").each(function(){
+          if (RFCX.renderForMobile) { RFCX.placeVideo(this);
+          } else { $(this).click(function(){ RFCX.setupVideo(this); });
+          } 
+  });});});});
 }
 
 RFCX.fn.ui.about.animateHelpCalls = function() {
@@ -261,10 +270,12 @@ RFCX.fn.ui.intro.prepareVideo = function() {
 
     var refBox = $("div.video-box-page");
     var gPos = refBox.offset();
-    RFCX.videoOffset = [gPos.top, gPos.left, parseInt(refBox.width())];
-    
+    RFCX.video.offset = [gPos.top, gPos.left, parseInt(refBox.width())];
     $("body").append(
-        "<div class=\"video-box video-box-outer\">"
+        "<div class=\"video-box video-box-outer\""
+          +" data-video-id=\""+refBox.attr("data-video-id")+"\""
+          +" data-video-version=\""+refBox.attr("data-video-version")+"\""
+          +" data-video-youtube=\""+refBox.attr("data-video-youtube")+"\">"
         +"<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\">"
         +"<i class=\"fa fa-play-circle-o\"></i>"
         +"</div>"
@@ -303,70 +314,61 @@ RFCX.fn.ui.all.alertifySetup = function() {
 
 RFCX.setupVideo = function(videoBox) {
 
-  var videoLink = "http://player.vimeo.com/video/75713955"
-        +"?title=0"
-        +"&byline=0"
-        +"&portrait=1"
-        +"&color=c9ff23"
-        +"&autoplay=1"
-        +"&api=1";
-
-  if (RFCX.renderForMobile) {
-    window.open("http://player.vimeo.com/external/72226953.sd.mp4?s=d05a9d0492dc5b6b77758c612016cbb5");
-  } else {
     var jqVideoBoxOuter = $("div.video-box-outer");
-    jqVideoBoxOuter.css({ top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width:RFCX.videoOffset[2]+"px", display:"block" });
+    jqVideoBoxOuter.css({ top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width:RFCX.video.offset[2]+"px", display:"block" });
     RFCX.toggleAddThis(false);
     $(window).scrollTop(0);
     $(".video-box-outer-backdrop").css({display:"block",opacity:0}).animate({
       opacity:1
     },function(){
-      
+      if (typeof olark != "undefined") { olark('api.box.hide'); }
       jqVideoBoxOuter.animate({
-        top: "24px", left: "0%", width: "100%", borderWidth: "0px"
+        top: "0px", left: "0%", width: "100%", borderWidth: "0px"
       },function(){
-        // $(this).html("<iframe src=\""+videoLink.replace(/&/g,"&amp;")+"\""
-        //   +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
-        //   +" frameborder=\"0\" style=\"width:100%;\""
-        //   +" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>");
-        $(this).html(
-            "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
-                +" width=\""+parseInt($(this).width())+"\" height=\""+parseInt($(this).height())+"\""
-                +" style=\"width:100%;\">"
-            +"<source src=\"http://www.youtube.com/watch?v=D6sn6b97zs4\" type=\"video/youtube\" />"
-            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.720.mp4\" type=\"video/mp4\" />"
-            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.240.flv\" type=\"video/flv\" />"
-            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.360.webm\" type=\"video/webm\" />"
-            +"<source src=\"http://rfcx-static.s3.amazonaws.com/video/vid01/vid01-v3.240.3gp\" type=\"video/3gp\" />"
-            +"</video>");
-        
-        videojs("rfcx-video-player", { "techOrder": ["html5","flash","youtube"], "preload": "auto", "autoplay":true, "controls":true }).ready(function(){
-          var vPlayer = this;
-          vPlayer.on("pause", function(){
-            console.log("paused");
-          });
-        });
-
+        RFCX.placeVideo(this);  
         $(document).keyup(function(e) {
           if (e.keyCode == 27) { RFCX.closeVideo(); }
         });
-
       });
-
     });
+}
 
-
-  }
+RFCX.placeVideo = function(containerObj) {
+  var videoLocation = "http://rfcx-static.s3.amazonaws.com/video";
+  RFCX.video.version = $(containerObj).attr("data-video-version");;
+  RFCX.video.youtube = $(containerObj).attr("data-video-youtube");
+  RFCX.video.id = $(containerObj).attr("data-video-id");
+  var playerHtml =  "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
+          +" width=\""+parseInt($(containerObj).width())+"\" height=\""+parseInt($(containerObj).height())+"\""
+          +" style=\"width:100%;\">"
+      +"<source src=\"http://www.youtube.com/watch?v="+RFCX.video.youtube+"\" type=\"video/youtube\" />"
+      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".720.mp4\" type=\"video/mp4\" />"
+      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".240.flv\" type=\"video/flv\" />"
+      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".720.webm\" type=\"video/webm\" />"
+      +"<source src=\""+videoLocation+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".240.3gp\" type=\"video/3gp\" />"
+      +"</video>";
+  if (!RFCX.renderForMobile) { playerHtml +=
+    "<a href=\"javascript:RFCX.closeVideo()\" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-25\"><i class=\"fa fa-times\"></i></a>"; }
+  $(containerObj).html(playerHtml);
+  videojs("rfcx-video-player", { "techOrder": ["html5","flash","youtube"], "preload": "auto", "autoplay":true, "controls":true }).ready(function(){
+    RFCX.video.obj = this;
+    RFCX.video.obj.on("pause", function(){ console.log("video paused"); });
+    RFCX.video.obj.on("ended", function(){ RFCX.closeVideo(); });
+  });
 }
 
 RFCX.closeVideo = function() {
+  RFCX.video.obj.dispose();
+  RFCX.video.obj = null;
+  $(document).off("keyup");
   $("div.video-box-outer")
     .html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\"><i class=\"fa fa-play-circle-o\"></i>")
     .animate({
-    top: RFCX.videoOffset[0]+"px", left: RFCX.videoOffset[1]+"px", width: RFCX.videoOffset[2]+"px", borderWidth: "4px"
+    top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", borderWidth: "4px"
   },function(){
     $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
     RFCX.toggleAddThis(true);
+    if (typeof olark != "undefined") { olark('api.box.show'); }
   });
 }
 

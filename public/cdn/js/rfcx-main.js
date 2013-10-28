@@ -14,6 +14,7 @@ var RFCX = {
   renderForMobile: false,
   transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
+  appVersion: null,
   donateAmount: 50,
   video: { offset: [0, 0, 0], obj: null, id: null, version: null },
   snapJsObj: null,
@@ -44,6 +45,10 @@ $(function(){
 
   RFCX.fn.initializeUi.onResize();
   RFCX.fn.initializeUi.onScroll();
+
+  if (typeof window.analytics === "undefined") {
+    window.analytics = { track: function(name,opt){ console.log("analytics: "+name); console.log(opt); } }
+  }
 
 });
 

@@ -194,3 +194,6 @@ div.at-follow-open-control div.at4-arrow { margin-top:16px; }
 .at-vertical-menu.at-vertical-menu-right a:hover { background:rgba(144,144,144,0.8); right:75px; }
 .at-vertical-menu label, .at-vertical-menu .at-share-label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
 .at-vertical-menu .aticon { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+
+
+.vjs-default-skin .vjs-volume-level, .vjs-default-skin .vjs-play-progress { background: #338833 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat; }

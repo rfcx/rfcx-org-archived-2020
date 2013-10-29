@@ -51,11 +51,11 @@ $(function(){
 
 RFCX.fn.initializeUi.onResize = function() {
   if (!RFCX.renderForMobile) {
-    RFCX.fn.reactiveUi.modifyMastheadWidth();
+    RFCX.fn.reactiveUi.modifyOverWidthElements();
     $(window).resize(function(){
       clearTimeout(RFCX.timer.windowResize);
       RFCX.timer.windowResize = setTimeout(function(){
-        RFCX.fn.reactiveUi.modifyMastheadWidth();
+        RFCX.fn.reactiveUi.modifyOverWidthElements();
       },100);
     });
   }
@@ -120,7 +120,7 @@ RFCX.fn.reactiveUi.scrollQueues = function() {
   }
 }
 
-RFCX.fn.reactiveUi.modifyMastheadWidth = function() {
+RFCX.fn.reactiveUi.modifyOverWidthElements = function() {
   var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
   $(".dynamic-crop-right").css("width",newWidth);
 }
@@ -202,6 +202,10 @@ RFCX.fn.load.bootstrapJs = function(){
   $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js",function(){});
 }
 
+RFCX.fn.load.jqueryAnimateScroll = function(){
+  $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js",function(){});
+}
+
  RFCX.fn.load.hintCss = function() {
   if (!RFCX.renderForMobile) {
     RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css");
@@ -279,8 +283,6 @@ RFCX.fn.ui.about.animateHelpCalls = function() {
 RFCX.fn.ui.intro.prepareVideo = function() {
 
     var refBox = $("div.video-box-page");
-    var gPos = refBox.offset();
-    RFCX.video.offset = [gPos.top, gPos.left, parseInt(refBox.width())];
     $("body").append(
         "<div class=\"video-box video-box-outer\""
           +" data-video-id=\""+refBox.attr("data-video-id")+"\""
@@ -324,10 +326,15 @@ RFCX.fn.ui.all.alertifySetup = function() {
 
 RFCX.setupVideo = function(videoBox) {
 
+    $("div.video-box-page").each(function(){
+      var gPos = $(this).offset();
+      RFCX.video.offset = [gPos.top, gPos.left, parseInt($(this).width())];
+    });
+
     var jqVideoBoxOuter = $("div.video-box-outer");
     jqVideoBoxOuter.css({ top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width:RFCX.video.offset[2]+"px", display:"block" });
     RFCX.toggleAddThis(false);
-    $(window).scrollTop(0);
+    $("body").animatescroll({scrollSpeed:500});
     $(".video-box-outer-backdrop").css({display:"block",opacity:0}).animate({
       opacity:1
     },function(){
@@ -414,6 +421,28 @@ RFCX.toggleAddThis = function(onOff) {
   var newDisplay = "none";
   if (onOff) { newDisplay = "block"; }
   $(".addthis-smartlayers-desktop-right").css("display",newDisplay);
+}
+
+RFCX.toggleBanner = function(onOff,type,pos,msg,href) {
+  var bannerContainer = $(".rfcx-banner-alert-container");
+  if (onOff && (bannerContainer.length==0)) {
+    RFCX.toggleBanner(false);
+    var type_ = (type==null) ? "primary" : type;
+    var pos_ = (pos==null) ? 0 : parseInt(pos);
+    var msg_ = (msg==null) ? "Enter a message..." : msg;
+    var href_ = (href==null) ? "#" : href;
+    var wd = Math.round(1.556*$("#rfcx-container").width());
+    $("#rfcx-container").append("<div class=\"dynamic-crop-right rfcx-banner-alert-container\" style=\"top:"+pos_+"px;\">"
+        +"<a class=\"btn btn-"+type_+" rfcx-crnr-all-off rfcx-trans-linear rfcx-banner-alert\""
+        +" style=\"width:"+wd+"px;max-width:"+wd+"px;\" href=\""+href_+"\">"+msg_+"</a>"
+      +"</div>");
+    RFCX.fn.reactiveUi.modifyOverWidthElements();
+    $(".rfcx-banner-alert-container").animate({height:$(".rfcx-banner-alert").outerHeight()+"px"});
+  } else if (onOff && (bannerContainer.length > 0)) {
+    bannerContainer.animate({height:"0px"},function(){ $(this).remove(); RFCX.toggleBanner(onOff,type,pos,msg,href); });
+  } else if (!onOff) {
+    bannerContainer.animate({height:"0px"},function(){ $(this).remove(); });
+  }
 }
 
 RFCX.setDevMode = function() {

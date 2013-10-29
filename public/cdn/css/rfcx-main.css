@@ -12,6 +12,8 @@ body { padding-top: 0px; padding-bottom: 40px; min-width:900px; font-weight:300;
 .rfcx-trans-50 { filter:alpha(opacity=50); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; -moz-opacity:0.5; -khtml-opacity:0.5; opacity:0.5; }
 .rfcx-trans-25 { filter:alpha(opacity=25); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; -moz-opacity:0.25; -khtml-opacity:0.25; opacity:0.25; }
 .rfcx-crnr-5 { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+.rfcx-crnr-all-off { -moz-border-radius-topleft:0px !important; -webkit-border-top-left-radius:0px !important; -khtml-border-top-left-radius:0px !important; border-top-left-radius:0px !important; -moz-border-radius-topright:0px !important; -webkit-border-top-right-radius:0px !important; -khtml-border-top-right-radius:0px !important; border-top-right-radius:0px !important; -moz-border-radius-bottomleft:0px !important; -webkit-border-bottom-left-radius:0px !important; -khtml-border-bottom-left-radius:0px !important; border-bottom-left-radius:0px !important; -moz-border-radius-bottomright:0px !important; -webkit-border-bottom-right-radius:0px !important; -khtml-border-bottom-right-radius:0px !important; border-bottom-right-radius:0px !important; }
+
 
 .hover-trans-67:hover { filter:alpha(opacity=67); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=67)"; -moz-opacity:0.67; -khtml-opacity:0.67; opacity:0.67; }
 
@@ -175,6 +177,8 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .btn-primary { font-weight:bold; }
 
+.rfcx-banner-alert-container { position:absolute; top:0%; left:-27.8%; width:155.6%; max-width:155.6%; height:0px; overflow:hidden; }
+.rfcx-banner-alert { font-size:24px; position:absolute; height:auto; left:0%; top:0%; border-left:0; border-right:0; padding:12px 0px 14px 0px; font-weight:bold; }
 
 /* AddThis style overrides */
 /*.aticon-facebook, .aticon-twitter, .aticon-google_follow, .at4-show .at4-arrow, .at4-follow.at4-follow-24 .at4-follow-inner .at4-follow-close-control div { background-image:none !important; background:none !important; font-family:FontAwesome; font-weight:normal; font-style:normal; display:inline-block; text-decoration:inherit; text-indent:0; font-size:24px; color:#ffffff; }
@@ -194,6 +198,5 @@ div.at-follow-open-control div.at4-arrow { margin-top:16px; }
 .at-vertical-menu.at-vertical-menu-right a:hover { background:rgba(144,144,144,0.8); right:75px; }
 .at-vertical-menu label, .at-vertical-menu .at-share-label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
 .at-vertical-menu .aticon { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
-
 
 .vjs-default-skin .vjs-volume-level, .vjs-default-skin .vjs-play-progress { background: #338833 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat; }

@@ -203,7 +203,9 @@ RFCX.fn.load.bootstrapJs = function(){
 }
 
 RFCX.fn.load.jqueryAnimateScroll = function(){
-  $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js",function(){});
+  if (!RFCX.renderForMobile) {
+    $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js",function(){});
+  }
 }
 
  RFCX.fn.load.hintCss = function() {
@@ -213,13 +215,14 @@ RFCX.fn.load.jqueryAnimateScroll = function(){
 }
 
 RFCX.fn.load.browserDetect = function() {
-  $.getScript(RFCX.cdn.rfcxVendor+"/browser-detect/browser-detect.min.js",function(){
-    
-    if (    (BrowserDetect.browser==="Netscape")
-      ||  ((BrowserDetect.browser==="Explorer") && (BrowserDetect.version <= 8))
-    ){ RFCX.video.forceYouTube = true; }
-
-  });
+  if (!RFCX.renderForMobile) {
+    $.getScript(RFCX.cdn.rfcxVendor+"/browser-detect/browser-detect.min.js",function(){
+      if (BrowserDetect.browser==="Explorer") {
+        if (BrowserDetect.version <= 8) { RFCX.video.forceYouTube = true; }
+        if (BrowserDetect.version <= 7) { RFCX.regressFontAwesome(); }
+      }
+    });
+  }
 }
 
 RFCX.fn.ui.about.initMap = function(){
@@ -316,13 +319,6 @@ RFCX.fn.ui.all.emailSubscribeFormSetup = function() {
 
 }
 
-RFCX.fn.ui.all.alertifySetup = function() {
-  // $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.core.css") );
-  // $("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href", RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.default.css") );
-  // $.getScript(RFCX.cdn.cdnJs+"/alertify.js/0.3.10/alertify.min.js",function(){
-  // });
-}
-
 
 RFCX.setupVideo = function(videoBox) {
 
@@ -356,16 +352,18 @@ RFCX.placeVideo = function(containerObj) {
   RFCX.video.id = jqCont.attr("data-video-id");
   RFCX.video.version = jqCont.attr("data-video-version");
   if (!RFCX.video.forceYouTube) {
-    var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"
-      +"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version;
+    var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".";
+    videoLocation += (RFCX.renderForMobile) ? "477" : "720";
       var playerHtml =  "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
               +" width=\""+parseInt(jqCont.width())+"\" height=\""+parseInt(jqCont.height())+"\""
               +" style=\"width:100%;\">"
           +"<source src=\"http://www.youtube.com/watch?v="+jqCont.attr("data-video-youtube")+"\" type=\"video/youtube\" />"
-          +"<source src=\""+videoLocation+".720.mp4\" type=\"video/mp4\" />"
-          +"<source src=\""+videoLocation+".240.flv\" type=\"video/flv\" />"
-          +"<source src=\""+videoLocation+".720.webm\" type=\"video/webm\" />"
-          +"<source src=\""+videoLocation+".240.3gp\" type=\"video/3gp\" />"
+          +"<source src=\""+videoLocation+".mp4\" type=\"video/mp4\" />"
+          +"<source src=\""+videoLocation+".flv\" type=\"video/flv\" />"
+          +"<source src=\""+videoLocation+".webm\" type=\"video/webm\" />"
+      //    +"<source src=\""+videoLocation+"."+size+".3gp\" type=\"video/3gp\" />"
+          +"<track kind=\"captions\" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+".en.vtt?v="+Math.random()+"\""
+              +" srclang=\"en\" label=\"English\" default />"
           +"</video>";
       jqCont.html(playerHtml);
       videojs("rfcx-video-player", { "techOrder": ["html5","flash","youtube"], "preload": "auto", "autoplay":true, "controls":true }).ready(function(){
@@ -453,5 +451,21 @@ RFCX.setDevMode = function() {
   if (typeof window.analytics === "undefined") {
     window.analytics = { track: function(name,opt){ console.log("analytics: "+name); console.log(opt); } }
   }
+}
+
+RFCX.regressFontAwesome = function() {
+  $("#font-awesome-4").remove();
+  RFCX.fn.insertCss(RFCX.cdn.bootstrap+"/font-awesome/3.2.1/css/font-awesome.min.css");
+  RFCX.fn.insertCss(RFCX.cdn.bootstrap+"/font-awesome/3.2.1/css/font-awesome-ie7.min.css");
+  $(".fa-play-circle-o").addClass("icon-play-circle").removeClass("fa");
+  $(".fa-play").addClass("icon-play").removeClass("fa");
+  $(".fa-facebook-square").addClass("icon-facebook-sign").removeClass("fa");
+  $(".fa-twitter-square").addClass("icon-twitter-sign").removeClass("fa");
+  $(".fa-google-plus-square").addClass("icon-google-plus-sign").removeClass("fa");
+  $(".fa-instagram").addClass("icon-instagram").removeClass("fa");
+  $(".fa-linkedin-square").addClass("icon-linkedin-sign").removeClass("fa");
+  $(".fa-flickr").addClass("icon-flickr").removeClass("fa");
+  $(".fa-github-square").addClass("icon-github-sign").removeClass("fa");
+  $(".fa-sort-up").addClass("icon-sort-up").removeClass("fa");
 }
 

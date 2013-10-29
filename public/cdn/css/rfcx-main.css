@@ -55,7 +55,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead li.active i { position:absolute; font-size:42px; width:100%; text-align:center; top:43px; }
 /*.masthead .social-share { position:relative; font-size:30px; width:30px; color:transparent; margin:23px 4px 0px 20px; vertical-align:top; text-decoration:none; z-index:2; }*/
 .masthead li.active i.fa-sort-up { height:15px; overflow:hidden; }
-.masthead #masthead-notch-intro { /*color:rgb(15,42,14);*/color:rgb(239,240,241); height:13px; }
+.masthead #masthead-notch-intro { /*color:rgb(15,42,14);*/color:rgb(64,96,64); height:13px; }
 .masthead #masthead-notch-about { color:rgb(239,240,241); }
 .masthead #masthead-notch-get_involved { color:rgb(244,245,246); }
 .masthead #masthead-notch-blog { color:rgb(255,255,255); }
@@ -216,4 +216,5 @@ div.at-follow-open-control div.at4-arrow { margin-top:16px; }
 .at-vertical-menu label, .at-vertical-menu .at-share-label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
 .at-vertical-menu .aticon { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
 
-.vjs-default-skin .vjs-volume-level, .vjs-default-skin .vjs-play-progress { background: #338833 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat; }
+.vjs-default-skin .vjs-volume-level, .vjs-default-skin .vjs-play-progress { background: #338833 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat !important; }
+.video-js .vjs-text-track { font-size:1.8em !important; }

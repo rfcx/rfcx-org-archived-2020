@@ -291,7 +291,7 @@ RFCX.fn.ui.intro.prepareVideo = function() {
         +"<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\">"
         +"<i class=\"fa fa-play-circle-o\"></i>"
         +"</div>"
-        +"<div class=\"video-box-outer-backdrop\"></div>");
+        +"<div class=\"video-box-outer-backdrop rfcx-trans-0\"></div>");
 }
 
 
@@ -339,9 +339,10 @@ RFCX.setupVideo = function(videoBox) {
       opacity:1
     },function(){
       if (typeof olark != "undefined") { olark('api.box.hide'); }
+      $("div.video-box-outer .video-box-bg").animate({opacity:0},1000);
       jqVideoBoxOuter.animate({
         top: "0px", left: "0%", width: "100%", borderWidth: "0px"
-      },function(){
+      },500,function(){
         RFCX.placeVideo(this);
         $(document).keyup(function(e) {
           if (e.keyCode == 27) { RFCX.closeVideo(); }
@@ -398,11 +399,12 @@ RFCX.closeVideo = function() {
     analytics.track("video_stop", { label: RFCX.video.id, value: null });
   }
   $(document).off("keyup");
-  $("div.video-box-outer")
-    .html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\"><i class=\"fa fa-play-circle-o\"></i>")
-    .animate({
+  var jqVideoBoxOuter = $("div.video-box-outer");
+  jqVideoBoxOuter.html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-0 video-box-bg\" /><i class=\"fa fa-play-circle-o\"></i>");
+  $("div.video-box-outer .video-box-bg").animate({opacity:0.5},1000);
+  jqVideoBoxOuter.animate({
     top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", borderWidth: "4px"
-  },function(){
+  },500,function(){
     $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
     RFCX.toggleAddThis(true);
     if (typeof olark != "undefined") { olark('api.box.show'); }
@@ -412,7 +414,7 @@ RFCX.closeVideo = function() {
 RFCX.closeVideoHtml = function(jqCont) {
   if (!RFCX.renderForMobile) {
     jqCont.append("<a href=\"javascript:RFCX.closeVideo()\""
-          +" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-25\">"
+          +" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-33 rfcx-crnr-10 rfcx-crnr-t-off rfcx-crnr-r-off\">"
           +"<i class=\"fa fa-times\"></i></a>");
   }
 }

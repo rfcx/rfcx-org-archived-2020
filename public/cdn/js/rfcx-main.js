@@ -17,6 +17,7 @@ var RFCX = {
   appVersion: null,
   donateAmount: 50,
   video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false },
+  speedTest: { kB: 100, expireMinutes: 2 },
   snapJsObj: null,
   scrollQueues: {
     loadFollowButtons: {

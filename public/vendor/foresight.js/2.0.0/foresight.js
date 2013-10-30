@@ -14,9 +14,9 @@
 	var opts = foresight.options,
 	testConn = opts.testConn || true,
 	minKbpsForHighBandwidth = opts.minKbpsForHighBandwidth || 300,
-	speedTestUri = opts.speedTestUri || '../speed-test/200K.jpg',
-	speedTestKB = opts.speedTestKB || 200,
-	speedTestExpireMinutes = opts.speedTestExpireMinutes || 1,
+	speedTestUri = opts.speedTestUri || RFCX.cdn.rfcxVendor+"/foresight.js/2.0.0/speed-test/"+RFCX.speedTest.kB+"K.jpg",
+	speedTestKB = opts.speedTestKB || RFCX.speedTest.kB,
+	speedTestExpireMinutes = opts.speedTestExpireMinutes || RFCX.speedTest.expireMinutes,
 	hiResClassname =  opts.hiResClassname || 'fs-high-resolution',
 	lowResClassname = opts.lowResClassname || 'fs-standard-resolution',
 

@@ -15,7 +15,7 @@ var RFCX = {
   nodeEnv: null,
   appVersion: null,
   donateAmount: 50,
-  video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false, options: [
+  video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false, sizes: [
       [1920,1080,5500], [1280,720,2500], [854,480,1100], [640,360,600]
     ]
   },
@@ -191,11 +191,11 @@ RFCX.fn.load.stripePayments = function(){
 }
 
 RFCX.fn.load.bootstrapJs = function(){
-  $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js",function(){});
+  $.getScript(RFCX.cdn.bootstrap+"/twitter-bootstrap/2.3.2/js/bootstrap.min.js");
 }
 
 RFCX.fn.load.jqueryAnimateScroll = function(){
-  if (!RFCX.renderForMobile) { $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js",function(){}); }
+  if (!RFCX.renderForMobile) { $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js"); }
 }
 
  RFCX.fn.load.hintCss = function() {
@@ -236,7 +236,7 @@ RFCX.fn.ui.about.initMap = function(){
     
     var mapUrls = {
       tiles: 'http://a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
-      json: 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json'
+      json: 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json?+v='+RFCX.appVersion
     };
 
     L.tileLayer(mapUrls.tiles, {
@@ -260,16 +260,15 @@ RFCX.fn.ui.intro.initVideo = function(){
 
   $.getScript(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video.js",function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }
-    $.getScript(RFCX.cdn.rfcxVendor+"/foresight.js/2.0.0/foresight.min.js",function(){
-      $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js",function(){
-        $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js",function(){
-          
-          $(".video-box-page").each(function(){
-            if (RFCX.renderForMobile) { RFCX.placeVideo(this);
-            } else { $(this).click(function(){ RFCX.setupVideo(this); });
-            } 
-          });
-  });});});});
+    $(".video-box-page").each(function(){
+      if (RFCX.renderForMobile) { RFCX.placeVideo(this);
+      } else { $(this).click(function(){ RFCX.setupVideo(this); });
+      } 
+    });
+    $.getScript(RFCX.cdn.rfcxVendor+"/foresight.js/2.0.0/foresight.min.js");
+    $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js");
+    $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js");
+  });
 }
 
 RFCX.fn.ui.about.animateHelpCalls = function() {
@@ -351,13 +350,17 @@ RFCX.placeVideo = function(containerObj) {
   RFCX.video.id = jqCont.attr("data-video-id");
   RFCX.video.version = jqCont.attr("data-video-version");
   if (!RFCX.video.forceYouTube) {
-    var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".";
-    console.log(RFCX.getBandwidth());
-    videoLocation += (RFCX.renderForMobile) ? "854" : "1280";
-
+    var sz = RFCX.video.sizes, vSize = sz[sz.length-1][0], wndw = [parseInt(jqCont.width()),parseInt(jqCont.height())];
+    if (RFCX.renderForMobile) {
+      vSize = sz[sz.length-1][0];
+    } else {
+      for (var i = sz.length-1; i >= 0; i--) { if ((1.2 * sz[i][0]) >= wndw[0]) { vSize = sz[i][0]; break; } }
+      console.log(RFCX.getBandwidth());
+    }
+    var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+"."+vSize;
+    console.log(wndw[0]+" -> "+vSize);
       var playerHtml =  "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
-              +" width=\""+parseInt(jqCont.width())+"\" height=\""+parseInt(jqCont.height())+"\""
-              +" style=\"width:100%;\">"
+              +" width=\""+wndw[0]+"\" height=\""+wndw[1]+"\" style=\"width:100%;\">"
           +"<source src=\"http://www.youtube.com/watch?v="+jqCont.attr("data-video-youtube")+"\" type=\"video/youtube\" />"
           +"<source src=\""+videoLocation+".mp4\" type=\"video/mp4\" />"
       //    +"<source src=\""+videoLocation+".flv\" type=\"video/flv\" />"
@@ -413,6 +416,7 @@ RFCX.closeVideo = function() {
 RFCX.closeVideoHtml = function(jqCont) {
   if (!RFCX.renderForMobile) {
     jqCont.append("<a href=\"javascript:RFCX.closeVideo()\""
+          +" title=\"Stop/Close\""
           +" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-33 rfcx-crnr-10 rfcx-crnr-t-off rfcx-crnr-r-off\">"
           +"<i class=\"fa fa-times\"></i></a>");
   }

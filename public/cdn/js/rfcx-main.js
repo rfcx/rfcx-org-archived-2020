@@ -15,7 +15,10 @@ var RFCX = {
   nodeEnv: null,
   appVersion: null,
   donateAmount: 50,
-  video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false },
+  video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false, options: [
+      [1920,1080,5500], [1280,720,2500], [854,480,1100], [640,360,600]
+    ]
+  },
   speedTest: { kB: 200, expireMinutes: 2 },
   snapJsObj: null,
   olark: { allow: true, excludePaths: ["/intro"], displayDelay: 10 },
@@ -349,15 +352,15 @@ RFCX.placeVideo = function(containerObj) {
   RFCX.video.version = jqCont.attr("data-video-version");
   if (!RFCX.video.forceYouTube) {
     var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".";
-    console.log(RFCX.getBandwidthQuality());
-    videoLocation += (RFCX.renderForMobile) ? "477" : "720";
+    console.log(RFCX.getBandwidth());
+    videoLocation += (RFCX.renderForMobile) ? "854" : "1280";
 
       var playerHtml =  "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
               +" width=\""+parseInt(jqCont.width())+"\" height=\""+parseInt(jqCont.height())+"\""
               +" style=\"width:100%;\">"
           +"<source src=\"http://www.youtube.com/watch?v="+jqCont.attr("data-video-youtube")+"\" type=\"video/youtube\" />"
           +"<source src=\""+videoLocation+".mp4\" type=\"video/mp4\" />"
-          +"<source src=\""+videoLocation+".flv\" type=\"video/flv\" />"
+      //    +"<source src=\""+videoLocation+".flv\" type=\"video/flv\" />"
           +"<source src=\""+videoLocation+".webm\" type=\"video/webm\" />"
       //    +"<source src=\""+videoLocation+"."+size+".3gp\" type=\"video/3gp\" />"
           +"<track kind=\"captions\" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+".en.vtt?v="+Math.random()+"\""
@@ -491,7 +494,7 @@ RFCX.setOlark = function(setOnOff) {
   }
 }
 
-RFCX.getBandwidthQuality = function() {
+RFCX.getBandwidth = function() {
   var ratio = 1;
   if (typeof foresight.connKbps != "undefined") {
     ratio = (foresight.connKbps/8)/RFCX.speedTest.kB;

@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+	<title>Foresight.js Demo: Basic Image Comparison</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="demo.css" type="text/css" rel="stylesheet" />
+
+	<style>
+		.fs-img {
+			font-family: 'image-set( url({src}) 1x low-bandwidth, url({protocol}://{host}{directory}{filename}-2x.{ext}) 2x high-bandwidth )';
+			display:none;
+		}
+	</style>
+
+	<script src="foresight-debugger.js"></script>
+	<script src="../foresight.js"></script>
+
+</head>
+<body>
+
+	<h2>
+		Basic Image Comparison
+	</h2>
+
+	<p>
+		Below are some examples of high-resolution and standard-resolution images so you can compare their quality 
+		side-by-side. Images with a green border are the high-resolution, and images with the red border are the 
+		standard-resolution. The image browser widths are set at 320 pixels. If both images have a red border 
+		then you're not viewing them on a hi-res display (or your network connection is slow).
+	</p>
+	<p>
+		The high-resolution image widths will be 320 pixels multiplied by the scale factor, so a device with a
+		pixel resolution of 2 would request an image width of 640 pixels. However, a standard monitor with a 
+		pixel ratio of 1 or a device with a slow connection would still only request an image that's 320 pixels wide.
+	</p>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/rail.jpg" data-width="320" data-height="240" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/rail.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/rail.jpg" width="320" height="240" class="fs-standard-resolution">
+	<p>
+		Photo by <a href="http://commons.wikimedia.org/wiki/File:%C5%A0koda_15T,_smy%C4%8Dka_Radlick%C3%A1.jpg">Honza Groh</a>
+	</p>
+
+
+
+	<hr>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/rally.jpg" data-width="320" data-height="213" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/rally.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/rally.jpg" width="320" height="213" class="fs-standard-resolution">
+	<p>
+		Photo by <a href="http://commons.wikimedia.org/wiki/File:Neste_Oil_Rally_2010_-_Jari-Matti_Latvala_in_shakedown.jpg">Kallerna</a>
+	</p>
+
+
+
+	<hr>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/vday.jpg" data-width="320" data-height="260" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/vday.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/vday.jpg" width="320" height="260" class="fs-standard-resolution">
+
+
+
+	<hr>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/jobs-and-gates.jpg" data-width="320" data-height="228" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/jobs-and-gates.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/jobs-and-gates.jpg" width="320" height="228" class="fs-standard-resolution">
+	<p>
+		Photo by <a href="http://www.flickr.com/people/35034362831@N01">Joi Ito</a>
+	</p>
+
+
+
+	<hr>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/neuschwanstein.jpg" data-width="320" data-height="209" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/neuschwanstein.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/neuschwanstein.jpg" width="320" height="209" class="fs-standard-resolution">
+	<p>
+		Photo by <a href="http://commons.wikimedia.org/wiki/User:Softeis">Softeis</a>
+	</p>
+
+
+
+	<hr>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/drop-impact.jpg" data-width="320" data-height="309" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/drop-impact.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/drop-impact.jpg" width="320" height="309" class="fs-standard-resolution">
+	<p>
+		Photo by <a href="http://commons.wikimedia.org/wiki/User:Roger_McLassus">Roger McLassus</a>
+	</p>
+
+
+
+	<hr>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/fallujah.jpg" data-width="320" data-height="213" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/fallujah.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/fallujah.jpg" width="320" height="213" class="fs-standard-resolution">
+	<p>
+		Photo by Lance Corporal Samantha L. Jones, USMC
+	</p>
+
+
+
+	<hr>
+
+
+
+	<img data-src="http://foresightjs.appspot.com/static-images/born-to-the-west.jpg" data-width="320" data-height="245" class="fs-img">
+	<noscript>
+		<img src="http://foresightjs.appspot.com/static-images/born-to-the-west.jpg">
+	</noscript>
+
+	<!-- This is a standard image that does not get enhanced by foresight -->
+	<img src="http://foresightjs.appspot.com/static-images/born-to-the-west.jpg" width="320" height="245" class="fs-standard-resolution">
+	<p>
+		<em>Born to the West</em> (Paramount Pictures)
+	</p>
+
+
+
+	<hr>
+
+
+
+	<ul>
+		<li><a href="index.html">Demo Homepage</a>
+		<li><a href="https://github.com/adamdbradley/foresight.js">Foresight.js Homepage</a>
+	</ul>
+
+</body>
+</html>

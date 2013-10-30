@@ -195,8 +195,15 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .btn-primary { font-weight:bold; }
 
 .rfcx-banner-alert-container { position:absolute; top:0%; left:-27.8%; width:155.6%; max-width:155.6%; height:0px; overflow:hidden; }
-.rfcx-banner-alert { font-size:24px; position:absolute; height:auto; left:0%; top:0%; border-left:0; border-right:0; padding:12px 0px 14px 0px; font-weight:bold; }
+.rfcx-banner-alert-inner { position:absolute; height:auto; top:0%; border-left:0; border-right:0; padding-left:0; padding-right:0; font-weight:bold; }
+.rfcx-banner-alert-btn { position:relative; font-size:24px; left:0%; padding-top:16px; padding-bottom:18px; z-index:0; }
+.rfcx-banner-alert-close { font-size:40px; right:50px; z-index:1; top:8px; cursor:pointer; background:none; }
+.rfcx-banner-alert-close:hover { background:none; color:#ccc; }
+.rfcx-banner-alert-btn:hover {  }
 
+/*.rfcx-banner-alert-inner { position:absolute; height:auto; top:0%; border-left:0; border-right:0; padding-left:0; padding-right:0; font-weight:bold; }
+.rfcx-banner-alert-btn { position:relative; font-size:24px; left:0%; padding-top:16px; padding-bottom:18px; z-index:0; }
+.rfcx-banner-alert-close { font-size:40px; right:50px; z-index:1; }*/
 /* AddThis style overrides */
 /*.aticon-facebook, .aticon-twitter, .aticon-google_follow, .at4-show .at4-arrow, .at4-follow.at4-follow-24 .at4-follow-inner .at4-follow-close-control div { background-image:none !important; background:none !important; font-family:FontAwesome; font-weight:normal; font-style:normal; display:inline-block; text-decoration:inherit; text-indent:0; font-size:24px; color:#ffffff; }
 .at-follow-btn, .at4-arrow { text-decoration:none; -webkit-transition:all .2s linear; -moz-transition:all .2s linear; transition:all .2s linear; }

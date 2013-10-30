@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+	<title>Foresight.js Demos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="demo.css" type="text/css" rel="stylesheet" />
+	<link rel="canonical" href="http://foresightjs.appspot.com/demos/" />
+</head>
+<body class="index">
+
+	<h1>Foresight.js Demos using image-set() CSS</h1>
+
+	<p>
+		Its best to view the demos using a high resolution display because currently most 
+		desktop and laptop displays do not have a device pixel ratio greater than one. Additionally,
+		each demo has full debugging information included so you can see how the images have adjusted
+		for each device.
+	</p>
+
+
+	<h3>
+		<a href="basic-comparison.html">Demo 1: Basic Image Comparison</a>
+	</h3>
+	<p>
+		This demo displays images which have a browser width set at 320 pixels, but the image's requested
+		dimensions adjusts according to the device pixel ratio. Compare the high-resolution images to the 
+		standard-resolution (you can only see the difference on a hi-res display).
+	</p>
+
+
+	<h3>
+		<a href="static-image-uri-template.html">Demo 2: Static Image URI Template Examples</a>
+	</h3>
+	<p>
+		This example only uses static images and they cannot be dynamically resized by the server.
+		Common examples includes hi-res image filenames ending with "@2x" or "-high-res".
+	</p>
+
+
+	<h3>
+		<a href="dynamic-image-uri-template.html">Demo 3: Dynamic Image URI Template Examples</a>
+	</h3>
+	<p>
+		This demo uses images which can be dynamically resized by requesting specific 
+		dimensions directly within the image request. Common examples includes a directory 
+		with dimension values, such as /images/640x480/awesomeness.jpg,
+		or querystring values, such as /images/sweetness.png?w=640&amp;h=480.
+	</p>
+
+
+	<h3>
+		<a href="static-image-uri-replacement.html">Demo 4: Static Image URI Replacement Examples</a>
+	</h3>
+	<p>
+		This demo replaces existing scale factors and values within static image request URIs.
+	</p>
+
+
+	<h3>
+		<a href="dynamic-image-uri-replacement.html">Demo 5: Dynamic Image URI Replacement Examples</a>
+	</h3>
+	<p>
+		This demo replaces existing dimensions and scale factors within dynamic image request URIs.
+	</p>
+
+
+	<h3>
+		<a href="high-resolution-src-attribute.html">Demo 6: Assigning High-Resolution Src in Img Attribute</a>
+	</h3>
+	<p>
+		Aside from all of the CSS options, this example assigns the hi-res version of the image file
+		as an attribute directly in the img element.
+	</p>
+
+
+	<h3>
+		<a href="parent-element-percentage.html">Demo 7: Dynamically Resized Responsive Image</a>
+	</h3>
+	<p>
+		This demo expands the image browser pixels to 100% of its parent element's width, and 
+		scales the image adjusted to the device pixel ratio. This example uses dynamically resized images.
+	</p>
+
+
+	<h3>
+		<a href="parent-element-media-queries.html">Demo 8: Smooth Scaling Static Responsive Image using Media Queries (Conditional CSS)</a>
+	</h3>
+	<p>
+		This demo has primary content on the left side and an image on the right side. The image scales
+		its size according to the available width of the side menu. This example uses static image files
+		and requests different images using media queries, but has the browser scale the given image.
+	</p>
+
+
+	<h3>
+		<a href="parent-element-media-queries-2.html">Demo 9: Block Scaling Static Responsive Image using Media Queries (Conditional CSS)</a>
+	</h3>
+	<p>
+		This demo has primary content on the left side and an image on the right side. The image adjusts
+		its size according to the available width of the side menu. This example uses static image files
+		and requests different images using media queries, but until demo 8 it doesn't let the browser
+		scale the image to the available width.
+	</p>
+
+
+	<h3>
+		<a href="parent-percentage-unknown-image-width.html">Demo 10: Parent Percentage with unknown Image Width</a>
+	</h3>
+	<p>
+		This demo shows image-set() CSS can work with percentage css width and an unknown aspect ratio. 
+		Obviously this will not allow you to specify the height on the URL for dynamic images so your 
+		server side component should determine the aspect ratio or you should set the aspect ratio not to auto.
+	</p>
+
+
+	<h3>
+		<a href="jquery-mobile-page-1.html">Demo 11: jQuery Mobile Pages</a>
+	</h3>
+	<p>
+		This demo shows how foresight.js can be integrated with jQuery mobile. You can use existing jQuery Mobile
+		functionality to help adjust images when a device is rotated. Additionally, jQuery Mobile pages can use
+		ajax calls to retrieve the next page which updates the DOM, not refresh the entire page. This demo shows
+		how foresight.js is updated after page transitions.
+	</p>
+
+	<h3>
+		<a href="parent-element-known-dimension-and-aspect-ratio.html">Demo 12: Parent Known Dimension and Aspect Ratio</a>
+	</h3>
+	<p>
+		This demo shows image-set() CSS can work with pixel css width and an known aspect ratio. 
+		Obviously this will not allow you to specify the height on the URL for dynamic images so 
+		you should set the aspect ratio not to auto.
+	</p>
+
+
+	<h3>
+		<a href="resolve-method.html">foresight.resolve() Public Method</a>
+	</h3>
+	<p>
+		Testing page shows how the public foresight.resolve() method can be used. Also useful for testing various scenarios.
+	</p>
+
+	<hr>
+
+
+	<h3>
+		<a href="resolution-compare.html">Hard Coded <code>src</code> Comparison</a>
+	</h3>
+	<p>
+		This image comparison page is hard coded with two resolutions. No javascript added.
+	</p>
+
+	<hr>
+	
+	<ul>
+		<li><a href="https://github.com/adamdbradley/foresight.js">Foresight.js Homepage</a>
+		<li><a href="https://twitter.com/adamdbradley">@adamdbradley</a>
+	</ul>
+
+	<div id="qr">
+		<div>Don't kill me, but the QR code is here just to make it easier to open this page on a mobile device</div>
+		<img src="http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=http%3A//foresightjs.appspot.com/demos/&chld=H|0">
+	</div>
+	
+	<div>
+		
+		<script>
+			function clearForesightLocalStorage() {
+				try {
+					localStorage.removeItem( 'fsjs' );
+				} catch( e ) { }
+			}
+		</script>
+		
+		<input type="button" onclick="clearForesightLocalStorage();" value="Clear Foresight Local Storage" /><br>
+		(For debugging purposes)
+		
+	</div>
+
+	
+</body>
+</html>

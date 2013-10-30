@@ -263,13 +263,14 @@ RFCX.fn.ui.intro.initVideo = function(){
 
   $.getScript(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video.js",function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }
-    $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js",function(){
-      $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js",function(){
-        $(".video-box-page").each(function(){
-          if (RFCX.renderForMobile) { RFCX.placeVideo(this);
-          } else { $(this).click(function(){ RFCX.setupVideo(this); });
-          } 
-  });});});});
+    $.getScript(RFCX.cdn.rfcxVendor+"/foresight.js/2.0.0/foresight.min.js",function(){
+      $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js",function(){
+        $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js",function(){
+          $(".video-box-page").each(function(){
+            if (RFCX.renderForMobile) { RFCX.placeVideo(this);
+            } else { $(this).click(function(){ RFCX.setupVideo(this); });
+            } 
+  });});});});});
 }
 
 RFCX.fn.ui.about.animateHelpCalls = function() {
@@ -423,23 +424,34 @@ RFCX.toggleAddThis = function(onOff) {
   $(".addthis-smartlayers-desktop-right").css("display",newDisplay);
 }
 
-RFCX.toggleBanner = function(onOff,type,pos,msg,href) {
-  var bannerContainer = $(".rfcx-banner-alert-container");
+RFCX.toggleBanner = function(onOff,inputObj) {
+  
+  if (inputObj==null) { var inputObj = {}; }
+  var id = (typeof inputObj.id=="undefined") ? "" : inputObj.id;
+  var bannerContainer = $("#rfcx-banner-alert-"+id);
+  
   if (onOff && (bannerContainer.length==0)) {
-    RFCX.toggleBanner(false);
-    var type_ = (type==null) ? "primary" : type;
-    var pos_ = (pos==null) ? 0 : parseInt(pos);
-    var msg_ = (msg==null) ? "Enter a message..." : msg;
-    var href_ = (href==null) ? "#" : href;
+    var color = (typeof inputObj.color=="undefined") ? "green" : inputObj.color;
+    var yPos = (typeof inputObj.yPos=="undefined") ? 0 : parseInt(inputObj.yPos);
+    var text = (typeof inputObj.text=="undefined") ? "Enter a message..." : inputObj.text;
+    var href = (typeof inputObj.href=="undefined") ? "#" : inputObj.href;
     var wd = Math.round(1.556*$("#rfcx-container").width());
-    $("#rfcx-container").append("<div class=\"dynamic-crop-right rfcx-banner-alert-container\" style=\"top:"+pos_+"px;\">"
-        +"<a class=\"btn btn-"+type_+" rfcx-crnr-all-off rfcx-trans-linear rfcx-banner-alert\""
-        +" style=\"width:"+wd+"px;max-width:"+wd+"px;\" href=\""+href_+"\">"+msg_+"</a>"
+    var classIndex = { green:"success", gray:"", grey:"", red:"danger", blue:"action", yellow:"warning", marine:"info", black:"inverse"};
+    var colorClass = (typeof classIndex[color] == "undefined") ? "" : classIndex[color];
+    RFCX.toggleBanner(false,{ "id":id });
+    $("#rfcx-container").append("<div class=\"dynamic-crop-right rfcx-banner-alert-container\""
+          +" id=\"rfcx-banner-alert-"+id+"\""
+          +" style=\"top:"+yPos+"px;\">"
+        +"<a class=\"btn btn-"+colorClass+" rfcx-crnr-all-off rfcx-trans-linear rfcx-banner-alert-inner rfcx-banner-alert-btn\""
+        +" style=\"width:"+wd+"px;max-width:"+wd+"px;\" href=\""+href+"\">"+text+"</a>"
+        +"<i class=\"btn-"+colorClass+" fa fa-times rfcx-banner-alert-inner rfcx-banner-alert-close\""
+          +" onClick=\"RFCX.toggleBanner(false,{id:'"+id+"'});\""
+          +" title=\"Remove this alert\" />"
       +"</div>");
     RFCX.fn.reactiveUi.modifyOverWidthElements();
-    $(".rfcx-banner-alert-container").animate({height:$(".rfcx-banner-alert").outerHeight()+"px"});
+    $("#rfcx-banner-alert-"+id).animate({height:$("#rfcx-banner-alert-"+id+" .rfcx-banner-alert-btn").outerHeight()+"px"});
   } else if (onOff && (bannerContainer.length > 0)) {
-    bannerContainer.animate({height:"0px"},function(){ $(this).remove(); RFCX.toggleBanner(onOff,type,pos,msg,href); });
+    bannerContainer.animate({height:"0px"},function(){ $(this).remove(); RFCX.toggleBanner(onOff,inputObj); });
   } else if (!onOff) {
     bannerContainer.animate({height:"0px"},function(){ $(this).remove(); });
   }

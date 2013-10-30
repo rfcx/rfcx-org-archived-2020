@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Foresight.js Demo: jQuery Mobile Demo Page 3</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		
+		<!-- CSS applied to the Foresight images is in this external stylesheet -->
+		<link href="jquery-mobile-examples.css" rel="stylesheet" />
+
+		<script src="foresight-debugger.js"></script>
+		<script src="../foresight.js"></script>
+
+		<script>
+			$(document).bind("pagechange", foresight.reload);
+		</script>
+
+	</head>
+	<body>
+		<div data-role="page" id="page2">
+			<div data-theme="a" data-role="header">
+				<h3>
+					Page Not AJAX Loaded
+				</h3>
+			</div>
+			<div data-role="content">
+				<div style="text-align:center">
+
+
+					<!-- Foresight.js Image -->
+					<img data-src="http://foresightjs.appspot.com/dynamic-images/castle-neuschwanstein.jpg" data-width="320" data-height="210" class="uri-template-querystring">
+					<noscript>
+						<img src="http://foresightjs.appspot.com/dynamic-images/castle-neuschwanstein.jpg">
+					</noscript>
+					<p>
+						Photo by <a href="http://commons.wikimedia.org/wiki/File:Castle_Neuschwanstein.jpg">Softeis</a>
+					</p>
+
+
+				</div>
+				<div>
+					<b>
+						The second image uses inline CSS to set a max-width of 420,
+						which overrides the max-width of 640px found in the external stylesheet.
+					</b>
+				</div>
+				<div style="text-align:center">
+
+
+					<!-- Foresight.js Image -->
+					<img data-src="http://foresightjs.appspot.com/dynamic-images/dew-on-grass.jpg" 
+						 data-width="320" 
+						 data-height="230" 
+						 class="uri-template-querystring"
+						 style="max-width:420px;">
+					<noscript>
+						<img src="http://foresightjs.appspot.com/dynamic-images/dew-on-grass.jpg">
+					</noscript>
+					<p>
+						Photo by <a href="http://commons.wikimedia.org/wiki/File:Dew_on_grass_Luc_Viatour.jpg">Luc Viatour</a>
+					</p>
+
+
+				</div>
+				<a data-role="button" data-transition="fade" href="jquery-mobile-page-1.html" data-ajax="false" data-icon="arrow-l" data-iconpos="left">
+					Go Back
+				</a>
+			</div>
+			<div data-theme="a" data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li>
+							<a href="index.html" data-ajax="false" data-theme="" data-icon="star">
+								Demos
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/adamdbradley/foresight.js" data-theme="" data-icon="home">
+								Git Hub
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

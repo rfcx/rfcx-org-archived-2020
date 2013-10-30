@@ -1,11 +1,9 @@
 var RFCX = {
   currentPage: null,
   pageLoaded:new Date(),
-  fn: {
-    load: {},
-    reactiveUi: {},
-    initializeUi: {},
-    ui: { all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {} }
+  fn: { load: {}, reactiveUi: {}, initializeUi: {}, ui: {
+      all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}
+    }
   },
   cdn: { rfcx: null, bootstrap: null },
   mapObj: null,
@@ -45,7 +43,6 @@ $(function(){
   for (i in RFCX.fn.ui.all) { RFCX.fn.ui.all[i](); };
 
   RFCX.fn.initializeUi.setupMobileMenu();
-
   RFCX.fn.initializeUi.onResize();
   RFCX.fn.initializeUi.onScroll();
 
@@ -76,9 +73,7 @@ RFCX.fn.initializeUi.onScroll = function() {
 }
 
 RFCX.fn.initializeUi.hideMobileHeader = function() {
-  setTimeout(function(){
-    window.scrollTo(0, 1);
-   }, 50);
+  setTimeout(function(){ window.scrollTo(0, 1); }, 50);
 }
 
 RFCX.fn.initializeUi.setupMobileMenu = function() {
@@ -316,7 +311,6 @@ RFCX.fn.ui.all.emailSubscribeFormSetup = function() {
       });
     });
   }
-
 }
 
 
@@ -468,16 +462,15 @@ RFCX.regressFontAwesome = function() {
   $("#font-awesome-4").remove();
   RFCX.fn.insertCss(RFCX.cdn.bootstrap+"/font-awesome/3.2.1/css/font-awesome.min.css");
   RFCX.fn.insertCss(RFCX.cdn.bootstrap+"/font-awesome/3.2.1/css/font-awesome-ie7.min.css");
-  $(".fa-play-circle-o").addClass("icon-play-circle").removeClass("fa");
-  $(".fa-play").addClass("icon-play").removeClass("fa");
-  $(".fa-facebook-square").addClass("icon-facebook-sign").removeClass("fa");
-  $(".fa-twitter-square").addClass("icon-twitter-sign").removeClass("fa");
-  $(".fa-google-plus-square").addClass("icon-google-plus-sign").removeClass("fa");
-  $(".fa-instagram").addClass("icon-instagram").removeClass("fa");
-  $(".fa-linkedin-square").addClass("icon-linkedin-sign").removeClass("fa");
-  $(".fa-flickr").addClass("icon-flickr").removeClass("fa");
-  $(".fa-github-square").addClass("icon-github-sign").removeClass("fa");
-  $(".fa-sort-up").addClass("icon-sort-up").removeClass("fa");
+  var classPairs = [
+    ["fa-play-circle-o","icon-play-circle"],["fa-play","icon-play"],["fa-facebook-square","icon-facebook-sign"],
+    ["fa-twitter-square","icon-twitter-sign"],["fa-google-plus-square","icon-google-plus-sign"],
+    ["fa-instagram","icon-instagram"],["fa-linkedin-square","icon-linkedin-sign"],["fa-flickr","icon-flickr"],
+    ["fa-github-square","icon-github-sign"],["fa-sort-up","icon-sort-up"]
+  ];
+  for (var i = 0; i < classPairs.length; i++) {
+    $("."+classPairs[i][0]).addClass(classPairs[i][1]).removeClass("fa");    
+  }
 }
 
 RFCX.setOlark = function(setOnOff) {

@@ -1,5 +1,6 @@
 var RFCX = {
   currentPage: null,
+  pageLoaded:new Date(),
   fn: {
     load: {},
     reactiveUi: {},
@@ -19,6 +20,7 @@ var RFCX = {
   video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false },
   speedTest: { kB: 100, expireMinutes: 2 },
   snapJsObj: null,
+  olark: { allow: true, excludePaths: [], displayDelay: 10 },
   scrollQueues: {
     loadFollowButtons: {
       whenVisible: { intro: ".rfcx-row-intro-join" },
@@ -46,6 +48,8 @@ $(function(){
 
   RFCX.fn.initializeUi.onResize();
   RFCX.fn.initializeUi.onScroll();
+
+  RFCX.setOlark();
 
 });
 
@@ -134,17 +138,6 @@ RFCX.fn.insertCss = function(url) {
   var x = document.getElementsByTagName("head")[0]; x.appendChild(s);
 }
 
-RFCX.fn.load.addThis = function() {
-  for (var i = 0; i < RFCX.social.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.addThis.env[i]) {
-    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.social.addThis.pubId, function(){
-      addthis.layers({ theme: "transparent",
-        share: { position: "right", numPreferredServices: 4 }/*, whatsnext: { recommendedTitle: "Hello" }*/
-      });
-    });
-    break;
-  } }
-}
-
 RFCX.fn.reactiveUi.loadFollowButtons = function(){
   for (var i = 0; i < RFCX.social.followButtons.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.followButtons.env[i]) {
     setTimeout(function(){
@@ -204,15 +197,21 @@ RFCX.fn.load.bootstrapJs = function(){
 }
 
 RFCX.fn.load.jqueryAnimateScroll = function(){
-  if (!RFCX.renderForMobile) {
-    $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js",function(){});
-  }
+  if (!RFCX.renderForMobile) { $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js",function(){}); }
 }
 
  RFCX.fn.load.hintCss = function() {
-  if (!RFCX.renderForMobile) {
-    RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css");
-  }
+  if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css"); }
+}
+
+RFCX.fn.load.addThis = function() {
+  for (var i = 0; i < RFCX.social.addThis.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.addThis.env[i]) {
+    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid="+RFCX.social.addThis.pubId, function(){
+      addthis.layers({ theme: "transparent", 
+        share: { position: "right", numPreferredServices: 4 }/*,
+        whatsnext: { recommendedTitle: "Hello" }*/
+      });
+  }); break; } }
 }
 
 RFCX.fn.load.browserDetect = function() {
@@ -222,8 +221,7 @@ RFCX.fn.load.browserDetect = function() {
         if (BrowserDetect.version <= 8) { RFCX.video.forceYouTube = true; }
         if (BrowserDetect.version <= 7) { RFCX.regressFontAwesome(); }
       }
-    });
-  }
+  });}
 }
 
 RFCX.fn.ui.about.initMap = function(){
@@ -336,7 +334,7 @@ RFCX.setupVideo = function(videoBox) {
     $(".video-box-outer-backdrop").css({display:"block",opacity:0}).animate({
       opacity:1
     },function(){
-      if (typeof olark != "undefined") { olark('api.box.hide'); }
+      RFCX.setOlark(false);
       $("div.video-box-outer .video-box-bg").animate({opacity:0},1000);
       jqVideoBoxOuter.animate({
         top: "0px", left: "0%", width: "100%", borderWidth: "0px"
@@ -407,7 +405,7 @@ RFCX.closeVideo = function() {
   },500,function(){
     $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
     RFCX.toggleAddThis(true);
-    if (typeof olark != "undefined") { olark('api.box.show'); }
+    RFCX.setOlark(true);
   });
 }
 
@@ -482,3 +480,13 @@ RFCX.regressFontAwesome = function() {
   $(".fa-sort-up").addClass("icon-sort-up").removeClass("fa");
 }
 
+RFCX.setOlark = function(setOnOff) {
+  if (setOnOff!=null) { RFCX.olark.allow = setOnOff; }
+  var sincePageLoad = (((new Date()).valueOf()-RFCX.pageLoaded.valueOf())/1000);
+  if (sincePageLoad<=RFCX.olark.displayDelay) {
+    if (typeof olark != "undefined") { olark('api.box.hide'); }
+    setTimeout("RFCX.setOlark()",750);
+  } else if (RFCX.olark.allow) {
+    if (typeof olark != "undefined") { olark('api.box.show'); }
+  }
+}

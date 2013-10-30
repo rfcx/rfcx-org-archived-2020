@@ -20,7 +20,7 @@ var RFCX = {
   video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false },
   speedTest: { kB: 100, expireMinutes: 2 },
   snapJsObj: null,
-  olark: { allow: true, excludePaths: [], displayDelay: 10 },
+  olark: { allow: true, excludePaths: ["/intro"], displayDelay: 10 },
   scrollQueues: {
     loadFollowButtons: {
       whenVisible: { intro: ".rfcx-row-intro-join" },
@@ -487,6 +487,9 @@ RFCX.setOlark = function(setOnOff) {
     if (typeof olark != "undefined") { olark('api.box.hide'); }
     setTimeout("RFCX.setOlark()",750);
   } else if (RFCX.olark.allow) {
-    if (typeof olark != "undefined") { olark('api.box.show'); }
+    if (typeof olark != "undefined") {
+      var canRender = true; for (var i = 0; i < RFCX.olark.excludePaths.length; i++) { if (RFCX.olark.excludePaths[i]===window.location.pathname) { canRender = false; } }
+      if (canRender) { olark('api.box.show'); }
+    }
   }
 }

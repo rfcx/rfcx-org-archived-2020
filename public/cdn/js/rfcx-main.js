@@ -16,7 +16,7 @@ var RFCX = {
   appVersion: null,
   donateAmount: 50,
   video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false },
-  speedTest: { kB: 100, expireMinutes: 2 },
+  speedTest: { kB: 200, expireMinutes: 2, score: 1 },
   snapJsObj: null,
   olark: { allow: true, excludePaths: ["/intro"], displayDelay: 10 },
   scrollQueues: {
@@ -260,11 +260,19 @@ RFCX.fn.ui.intro.initVideo = function(){
     $.getScript(RFCX.cdn.rfcxVendor+"/foresight.js/2.0.0/foresight.min.js",function(){
       $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js",function(){
         $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js",function(){
+          
           $(".video-box-page").each(function(){
             if (RFCX.renderForMobile) { RFCX.placeVideo(this);
             } else { $(this).click(function(){ RFCX.setupVideo(this); });
             } 
-  });});});});});
+          });
+
+          if (typeof foresight.connKbps != "undefined") {
+            RFCX.speedTest.score = (foresight.connKbps/8)/RFCX.speedTest.kB;
+            console.log(RFCX.speedTest.score);
+          }
+
+  });});});});
 }
 
 RFCX.fn.ui.about.animateHelpCalls = function() {
@@ -348,6 +356,7 @@ RFCX.placeVideo = function(containerObj) {
   if (!RFCX.video.forceYouTube) {
     var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".";
     videoLocation += (RFCX.renderForMobile) ? "477" : "720";
+
       var playerHtml =  "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
               +" width=\""+parseInt(jqCont.width())+"\" height=\""+parseInt(jqCont.height())+"\""
               +" style=\"width:100%;\">"

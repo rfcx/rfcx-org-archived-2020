@@ -16,7 +16,7 @@ var RFCX = {
   appVersion: null,
   donateAmount: 50,
   video: { offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false },
-  speedTest: { kB: 200, expireMinutes: 2, score: 1 },
+  speedTest: { kB: 200, expireMinutes: 2 },
   snapJsObj: null,
   olark: { allow: true, excludePaths: ["/intro"], displayDelay: 10 },
   scrollQueues: {
@@ -266,12 +266,6 @@ RFCX.fn.ui.intro.initVideo = function(){
             } else { $(this).click(function(){ RFCX.setupVideo(this); });
             } 
           });
-
-          if (typeof foresight.connKbps != "undefined") {
-            RFCX.speedTest.score = (foresight.connKbps/8)/RFCX.speedTest.kB;
-            console.log(RFCX.speedTest.score);
-          }
-
   });});});});
 }
 
@@ -355,6 +349,7 @@ RFCX.placeVideo = function(containerObj) {
   RFCX.video.version = jqCont.attr("data-video-version");
   if (!RFCX.video.forceYouTube) {
     var videoLocation = "//d4bl4mvczhn5i.cloudfront.net/video"+"/"+RFCX.video.id+"/"+RFCX.video.id+"-v"+RFCX.video.version+".";
+    console.log(RFCX.getBandwidthQuality());
     videoLocation += (RFCX.renderForMobile) ? "477" : "720";
 
       var playerHtml =  "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
@@ -494,4 +489,13 @@ RFCX.setOlark = function(setOnOff) {
       if (canRender) { olark('api.box.show'); }
     }
   }
+}
+
+RFCX.getBandwidthQuality = function() {
+  var ratio = 1;
+  if (typeof foresight.connKbps != "undefined") {
+    ratio = (foresight.connKbps/8)/RFCX.speedTest.kB;
+    analytics.track("bandwidth_test", { label: RFCX.speedTest.kB+"KB_download", value: ratio });
+  }
+  return ratio;
 }

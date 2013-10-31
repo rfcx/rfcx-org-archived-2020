@@ -2,7 +2,7 @@ doctype 1.1
 html(lang="en")
   
   head
-    title= title
+    title= current_page[3]
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, minimum-scale=0.67, maximum-scale=4.0, user-scalable=no")
     meta(name="apple-mobile-web-app-capable", content="yes")
@@ -22,55 +22,48 @@ html(lang="en")
 
       div.rfcx-unselectable.rfcx-trans-linear.masthead
         div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
-        a.menu-toggle
-          i.fa.fa-reorder
-          i.fa.fa-chevron-up
-        ul.rfcx-trans-linear.nav.nav-pills.pull-right
-          for item in nav_items
-            if (item[0] == current_page)
-              li.active
-                a= item[1]
-                i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
-            else
-              li
-                a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
-        a(href="/intro")
+        if (!current_page[5])
+          a.menu-toggle
+            i.fa.fa-reorder
+            i.fa.fa-chevron-up
+          ul.rfcx-trans-linear.nav.nav-pills.pull-right
+            for item in nav_items
+              if (item[0] == current_page[0])
+                li.active
+                  a= item[1]
+                  i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
+              else if (item[4])
+                li
+                  a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
+        a
           img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
 
       block content
-    
+
     div.footer.lucida
       div.container-narrow
         ul.nav.nav-pills.pull-left
           li.cp
             span.copyright= "©2013 Rainforest Connection"
-          li.ft= "|"
-          for item in nav_items
-            li.ft
-              if (item[0] == current_page)
-                a.rfcx-trans-linear(href="#")= item[1]
-              else
-                a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
+
+          if (!current_page[5]) 
             li.ft= "|"
-        a.pull-right.hint--rounded.hint--top(target='_blank',href='https://www.facebook.com/RainforestCx', data-hint='Check us out on Facebook!')
-          i.footer-social.rfcx-trans-linear.fa.fa-facebook-square
-        a.pull-right.hint--rounded.hint--bottom(target='_blank',href='https://twitter.com/RainforestCx', data-hint='Check us out on Twitter!')
-          i.footer-social.rfcx-trans-linear.fa.fa-twitter-square
-        a.pull-right.hint--rounded.hint--top(target='_blank',href='https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts', data-hint='Check us out on Google+!')
-          i.footer-social.rfcx-trans-linear.fa.fa-google-plus-square
-        a.pull-right.hint--rounded.hint--bottom(target='_blank',href='http://www.linkedin.com/company/rainforest-connection', data-hint='Check us out on LinkedIn!')
-          i.footer-social.rfcx-trans-linear.fa.fa-linkedin-square
-        a.pull-right.hint--rounded.hint--top(target='_blank',href='http://instagram.com/rainforestcx/', data-hint='Check us out on Instagram!')
-          i.footer-social.rfcx-trans-linear.fa.fa-instagram
-        a.pull-right.hint--rounded.hint--bottom(target='_blank',href='http://www.flickr.com/photos/rainforestcx/', data-hint='Check us out on Flickr!')
-          i.footer-social.rfcx-trans-linear.fa.fa-flickr
-        a.pull-right.hint--rounded.hint--top(target='_blank',href='https://github.com/rfcx', data-hint='Check us out on Github!')
-          i.footer-social.rfcx-trans-linear.fa.fa-github-square
+            for item in nav_items
+              li.ft
+                if (item[0] == current_page[0])
+                  a.rfcx-trans-linear(href="#")= item[1]
+                else
+                  a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
+              li.ft= "|"
+        if (!current_page[5]) 
+          for item in social_media
+            a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
+              i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript').
-      RFCX.currentPage = "#{current_page}"; RFCX.cdn.rfcx = "#{rfcx_cdn}"; RFCX.cdn.bootstrap = "#{bootstrap_cdn}"; RFCX.cdn.cdnJs = "#{cdnjs_cdn}"; RFCX.cdn.rfcxVendor = "#{rfcx_vendor_cdn}"; RFCX.cdn.videoJs = "#{videojs_cdn}"; RFCX.social.addThis.pubId = "#{addthis_pubid}"; RFCX.nodeEnv = "#{node_env}"; RFCX.appVersion = "#{app_version}";
+      RFCX.currentPage = "#{current_page[0]}"; RFCX.cdn.rfcx = "#{rfcx_cdn}"; RFCX.cdn.bootstrap = "#{bootstrap_cdn}"; RFCX.cdn.cdnJs = "#{cdnjs_cdn}"; RFCX.cdn.rfcxVendor = "#{rfcx_vendor_cdn}"; RFCX.cdn.videoJs = "#{videojs_cdn}"; RFCX.social.addThis.pubId = "#{addthis_pubid}"; RFCX.nodeEnv = "#{node_env}"; RFCX.appVersion = "#{app_version}"; RFCX.isIsolated = #{current_page[5]};
     if (node_env == "production")
       script(type='text/javascript').
         var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])}; analytics.load("#{segment_io_client_id}");

@@ -4,7 +4,7 @@ block content
   
   div.container-narrow.banner-video
     div.dynamic-crop-right.banner-bg(style="background-image:url(#{rfcx_cdn}/img/intro/banner-forest.1400.jpg?v=#{app_version});")
-    div.video-box.video-box-page(data-video-id="vid01",data-video-version="3",data-video-youtube="bILb02OyWdc")
+    div.video-box.video-box-page(data-video-id="vid01",data-video-version="4",data-video-youtube="bILb02OyWdc")
       img.rfcx-trans-linear.video-box-poster(src="#{rfcx_cdn}/img/intro/video-poster.512.jpg")
       img.rfcx-trans-linear.rfcx-trans-25.video-box-bg(src="#{rfcx_cdn}/img/intro/16x9.16.gif")
       i.rfcx-trans-linear.fa.fa-play-circle-o
@@ -38,44 +38,32 @@ block content
       p.roadgeek.rfcx-header
         | EVERY MINUTE COUNTS.
         br
-        | REAL-TIME DATA MAKES
+        | REAL-TIME DATA MEANS
         br
-        | ALL THE DIFFERENCE
+        | REAL-TIME INTERVENTION
       p.rfcx-body
-        | We take old mobile phones, retrofit them
+        | We upcycle used phones into solar-powered
+        br 
+        | devices that pinpoint the location of
         br
-        | to survive the elements and hide them sporadically
+        | illegal logging as it happens,
         br
-        | in trees in threatened rainforests. 
-        br
-        | Powered by solar panels, the phones can
-        br
-        | stay charged for years, listening intently
-        br
-        | for the sounds of chainsaws, gunshots,
-        br
-        | and other noises that simply do not belong.
-        br
-        | When destructive activity occurs,
-        br
-        | we can tell in seconds exactly where
-        br
-        | the problem is — and then we
-        br
-        | alert local authorities who are able
-        br
-        | to intervene before the damage is done.
+        | enabling local authorities
+        br 
+        | to respond in real time.
 
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-join
     div.span7
+      a#get_involved
       p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS"
       p.rfcx-body
         img.stopsign-mobile(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
-        | Get involved by signing up for our newsletter.
+        | We have some big things in the works. Please help us.
         br
-        | We have some big things in the works, and we want you to always be amongst the first to know. We will never sell or disclose your address to anyone else.
-
+        a.btn.btn-primary= "Make a donation"
+        br
+        | Get involved by signing up for our newsletter.
         form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
           div.control-group
             div.controls
@@ -83,7 +71,7 @@ block content
                 input.input-large.email#mce-EMAIL(type='text', data-type='email', id='email', name='EMAIL', placeholder='Your email', required)
                 a.btn.btn-success= "Sign up"
           span.rfcx-body
-            span= "For even more info, follow us on "
+            span= "Follow us on "
             span.social-names= "Facebook, Twitter and Google+."
           div.social-follow-container
             div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
@@ -91,7 +79,6 @@ block content
             a.social-follow-item.twitter-follow-button(data-show-count="true", data-size="", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
           div.social-follow-container
             div.social-follow-item.g-follow(data-annotation="bubble", data-height="24", data-href="//plus.google.com/110790947035627675960", data-rel="publisher")
-
     div.span5
       img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
 

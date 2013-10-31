@@ -4,14 +4,26 @@
  */
 
 var navItems = [
-    [ "intro", "Intro", "/intro", "Rainforest Connection | Protecting rainforests with real-time data" ],
-    [ "about", "About", "/about", "About" ],
-    [ "get_involved", "Get Involved", "/get_involved", "Get Involved" ],
-    [ "blog", "Blog", "/blog", "Blog" ],
-    [ "team", "Team", "/team", "Team" ],
-    [ "forum", "Forum", "http://tumblr.rfcx.org/", null ]
+//  [ page-id, nav-title, uri-path, page-title, show-in-nav, is-isolated ]
+    [ "intro", "Intro", "/intro", "Rainforest Connection | Protecting rainforests with real-time data", true, false ],
+    [ "about", "About", "/about", "About", true, false ],
+    [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
+    [ "blog", "Blog", "/blog", "Blog", false, false ],
+    [ "team", "Team", "/team", "Team", false, false ],
+    [ "forum", "Forum", "http://tumblr.rfcx.org/", "", true, false ],
+
+    [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true ]
   ];
 
+var socialMedia = [
+  [ "facebook", "https://www.facebook.com/RainforestCx", "facebook-square", "Check us out on Facebook!"],
+  [ "twitter", "https://twitter.com/RainforestCx", "twitter-square", "Check us out on Twitter!"],
+  [ "google-plus", "https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts", "google-plus-square", "Check us out on Google+!"],
+  [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!"],
+  [ "instagram", "http://www.linkedin.com/company/rainforest-connection", "instagram", "Check us out on Instagram!"],
+  [ "flickr", "http://www.linkedin.com/company/rainforest-connection", "flickr", "Check us out on Flickr!"],
+  [ "github", "http://www.linkedin.com/company/rainforest-connection", "github-square", "Check us out on Github!"]
+];
 
 function setJadeVars(process, jV) {
   var inProd = (process.env.NODE_ENV === "production");
@@ -27,6 +39,7 @@ function setJadeVars(process, jV) {
   jV.rfcx_cdn = inProd ? "//d3gq709nndn9uy.cloudfront.net/cdn" : "/cdn";
   jV.rfcx_vendor_cdn = inProd ? "//d3gq709nndn9uy.cloudfront.net/vendor" : "/vendor";
   jV.nav_items = navItems;
+  jV.social_media = socialMedia;
   return jV;
 }
 
@@ -41,8 +54,7 @@ exports.page = function(req, res, process, Model){
   }
   res.setHeader("Access-Control-Allow-Origin","*");
   res.render(navItem[0], setJadeVars(process, {
-    current_page: navItem[0],
-    title: navItem[3]
+    current_page: navItem
   }));
 };
 

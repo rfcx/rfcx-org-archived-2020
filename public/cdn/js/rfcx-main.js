@@ -17,7 +17,7 @@ var RFCX = {
   nodeEnv: null,
   appVersion: null,
   donateAmount: 50,
-  speedTest: { kB: 150, expireMinutes: 2 },
+  speedTest: { kB: 100, expireMinutes: 2 },
   snapJsObj: null,
   olark: { allow: true, excludePaths: ["/intro","/video"], displayDelay: 10 },
   scrollQueues: {

@@ -62,6 +62,7 @@ html(lang="en")
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-video.js?v=#{app_version}')
     script(type='text/javascript').
       RFCX.currentPage = "#{current_page[0]}"; RFCX.cdn.rfcx = "#{rfcx_cdn}"; RFCX.cdn.bootstrap = "#{bootstrap_cdn}"; RFCX.cdn.cdnJs = "#{cdnjs_cdn}"; RFCX.cdn.rfcxVendor = "#{rfcx_vendor_cdn}"; RFCX.cdn.videoJs = "#{videojs_cdn}"; RFCX.social.addThis.pubId = "#{addthis_pubid}"; RFCX.nodeEnv = "#{node_env}"; RFCX.appVersion = "#{app_version}"; RFCX.isIsolated = #{current_page[5]};
     if (node_env == "production")

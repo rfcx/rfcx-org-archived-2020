@@ -13,6 +13,7 @@ var RFCX = {
   bodyWidth: $('.container-narrow').innerWidth(),
   overflowMarginWidth: 250,
   renderForMobile: false,
+  renderForTouch: $("html").hasClass("touch"),
   transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30 },
   nodeEnv: null,
   appVersion: null,
@@ -197,6 +198,7 @@ RFCX.fn.load.jqueryAnimateScroll = function(){
 }
 
  RFCX.fn.load.hintCss = function() {
+  console.log($("html").hasClass("no-touch"));
   if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css"); }
 }
 

@@ -24,7 +24,7 @@ RFCX.fn.video.init = function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }
     $.getScript(RFCX.cdn.rfcxVendor+"/foresight.js/2.0.0/foresight.min.js",function(){
       $(".video-box-page").each(function(){
-        if (RFCX.renderForMobile) { RFCX.fn.video.place(this);
+        if (RFCX.renderForTouch) { RFCX.fn.video.place(this);
         } else { $(this).click(function(){ RFCX.fn.video.setup(this); });
         } 
       });
@@ -54,7 +54,7 @@ RFCX.fn.video.place = function(containerObj) {
   RFCX.video.version = jqCont.attr("data-video-version");
   if (!RFCX.video.forceYouTube) {
     var sz = RFCX.video.sizes, vidSz = sz[sz.length-1], wndw = [parseInt(jqCont.width()),parseInt(jqCont.height())], bw = RFCX.getBandwidthKb(),
-    posterImg = (RFCX.renderForMobile) ? "//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/video-poster.512.jpg" : "";
+    posterImg = (RFCX.renderForTouch) ? "//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/video-poster.512.jpg" : "";
     // set video size based on window width (or smallest for mobile devices)
     if (RFCX.renderForMobile) { vidSz = sz[RFCX.video.mobileSize];
     } else { for (var i = sz.length-1; i >= 0; i--) { if ((1.1 * sz[i][0]) >= wndw[0]) { vidSz = sz[i]; break; } } }
@@ -69,7 +69,7 @@ RFCX.fn.video.place = function(containerObj) {
       var uriBase = "//d4bl4mvczhn5i.cloudfront.net/video/"+RFCX.video.id
           +"/v"+RFCX.video.version+"/"+RFCX.video.id+"-v"+RFCX.video.version+".",
           vidUri = uriBase + vidSz[1],
-          posterUri = (RFCX.renderForMobile) ? $(".video-box-page .video-box-poster").attr("src") : ""
+          posterUri = (RFCX.renderForTouch) ? $(".video-box-page .video-box-poster").attr("src") : ""
           ;
 
       console.log("window width: "+wndw[0]+" -> playing: "+vidSz[0]+"x"+vidSz[1]+" ("+vidSz[2]+"kb/s)");
@@ -119,22 +119,25 @@ RFCX.fn.video.close = function() {
   } else {
     analytics.track("video_stop", { label: RFCX.video.id, value: null });
   }
-  $(document).off("keyup");
-  var jqVideoBoxOuter = $("div.video-box-outer");
-  jqVideoBoxOuter.css({height:playerHeight+"px"}).html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-0 video-box-bg\"/><i class=\"fa fa-play-circle-o\"></i>");
-  $("div.video-box-outer .video-box-bg").animate({opacity:0.5},1000);
-  jqVideoBoxOuter.animate({
-    top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", height:$("div.video-box-page").height()+"px", borderWidth: "4px"
-  },500,function(){
-    $(".banner-video").animate({marginBottom:"0px"});
-    $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
-    RFCX.toggleAddThis(true);
-    RFCX.setOlark(true);
-  });
+  if (!RFCX.renderForTouch) {
+    $(document).off("keyup");
+    var jqVideoBoxOuter = $("div.video-box-outer");
+    jqVideoBoxOuter.css({height:playerHeight+"px"}).html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-0 video-box-bg\"/><i class=\"fa fa-play-circle-o\"></i>");
+    $("div.video-box-outer .video-box-bg").animate({opacity:0.5},1000);
+    jqVideoBoxOuter.animate({
+      top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", height:$("div.video-box-page").height()+"px", borderWidth: "4px"
+    },500,function(){
+      $(".banner-video").animate({marginBottom:"0px"});
+      $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
+      RFCX.toggleAddThis(true);
+      RFCX.setOlark(true);
+    });
+  }
+  RFCX.fn.video.followUp(RFCX.video.id);
 }
 
 RFCX.fn.video.htmlClose = function(jqCont) {
-  if (!RFCX.renderForMobile) {
+  if (!RFCX.renderForTouch) {
     jqCont.append("<a href=\"javascript:RFCX.fn.video.close()\""
           +" title=\"Stop/Close\""
           +" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-33 rfcx-crnr-10 rfcx-crnr-t-off rfcx-crnr-r-off\">"
@@ -169,4 +172,8 @@ RFCX.fn.video.setup = function(videoBox) {
         });
       });
     });
+}
+
+RFCX.fn.video.followUp = function(vidId) {
+  console.log("video follow up: "+vidId);
 }

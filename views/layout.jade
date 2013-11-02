@@ -16,7 +16,7 @@ html(lang="en")
       link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/gradient-ie9.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
-    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='only screen and (max-device-width: 480px) and (orientation : portrait)')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='all and (max-device-width: 480px)')
   body.helvetica
     div.container-narrow#rfcx-container
 
@@ -61,6 +61,7 @@ html(lang="en")
               i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
+    script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-video.js?v=#{app_version}')
     script(type='text/javascript').

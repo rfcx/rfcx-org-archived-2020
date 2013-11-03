@@ -20,9 +20,9 @@ var socialMedia = [
   [ "twitter", "https://twitter.com/RainforestCx", "twitter-square", "Check us out on Twitter!"],
   [ "google-plus", "https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts", "google-plus-square", "Check us out on Google+!"],
   [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!"],
-  [ "instagram", "http://www.linkedin.com/company/rainforest-connection", "instagram", "Check us out on Instagram!"],
-  [ "flickr", "http://www.linkedin.com/company/rainforest-connection", "flickr", "Check us out on Flickr!"],
-  [ "github", "http://www.linkedin.com/company/rainforest-connection", "github-square", "Check us out on Github!"]
+  [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!"],
+  [ "flickr", "http://flickr.com/photos/rainforestcx/", "flickr", "Check us out on Flickr!"],
+  [ "github", "https://github.com/rfcx", "github-square", "Check us out on Github!"]
 ];
 
 function setJadeVars(process, jV) {

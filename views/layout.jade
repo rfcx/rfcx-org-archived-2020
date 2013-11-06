@@ -55,10 +55,9 @@ html(lang="en")
                 else
                   a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
               li.ft= "|"
-        if (!current_page[5]) 
-          for item in social_media
-            a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
-              i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
+        for item in social_media
+          a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
+            i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')

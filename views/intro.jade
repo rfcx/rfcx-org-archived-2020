@@ -10,22 +10,21 @@ block content
       i.rfcx-trans-linear.fa.fa-play-circle-o
     span.rfcx-unselectable.slogan
       p.roadgeek
-        | PROTECTING RAINFORESTS
+        | A SOLUTION THAT CAN
         br
-        | WITH REAL-TIME DATA
+        | HALT ILLEGAL LOGGING
+        br
+        | IN RAINFORESTS
+
       p.video-link
         | Watch the video to learn how
         i.fa.fa-play
 
   div.row-fluid.rfcx-row.rfcx-row-intro-stats
-    div.span12
-      p.roadgeek.rfcx-header= "WE OFFER AN IMMEDIATE SOLUTION"
-      p.roadgeek.rfcx-header= "to the accelerating problem of"
-      p.roadgeek.rfcx-header
-        | forest destruction - the biggest single contributor to CO
-        sub(style="margin-right:0.5em;")
-          span(style="font-size:75%;")= 2
-        | emissions
+    div.span6
+      p.roadgeek.rfcx-header= "deforestation causes extinctions"
+    div.span6
+      p.roadgeek.rfcx-header= "deforestation causes climate change"
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
     div.span7
@@ -63,22 +62,30 @@ block content
         br
         a.btn.btn-primary= "Make a donation"
         br
-        | Get involved by signing up for our newsletter.
+
         form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
+
+          span.rfcx-body
+            span= "Follow us on "
+            span.social-names= "Facebook, Twitter and Google+."
+          
+          div.social-follow-containers
+            div.social-follow-container
+              div.social-follow-item.fb-follow(data-width="300", data-layout="box_count", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
+            div.social-follow-container
+              a.social-follow-item.twitter-follow-button(data-show-count="true", data-size="", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
+            div.social-follow-container(style="clear:right;")
+              div.social-follow-item.g-follow(data-annotation="vertical-bubble", data-height="24", data-href="//plus.google.com/110790947035627675960", data-rel="publisher")
+
+          span.rfcx-body
+            span= "Stay informed by signing up for our newsletter."
+          br
           div.control-group
             div.controls
               div.input-append
                 input.input-large.email#mce-EMAIL(type='text', data-type='email', id='email', name='EMAIL', placeholder='Your email', required)
                 a.btn.btn-success= "Sign up"
-          span.rfcx-body
-            span= "Follow us on "
-            span.social-names= "Facebook, Twitter and Google+."
-          div.social-follow-container
-            div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
-          div.social-follow-container(style="top:11px;")
-            a.social-follow-item.twitter-follow-button(data-show-count="true", data-size="", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
-          div.social-follow-container
-            div.social-follow-item.g-follow(data-annotation="bubble", data-height="24", data-href="//plus.google.com/110790947035627675960", data-rel="publisher")
+
     div.span5
       img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
 

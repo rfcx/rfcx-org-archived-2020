@@ -100,7 +100,7 @@ RFCX.fn.video.place = function(containerObj) {
         +" src=\"http://www.youtube.com/embed/"+jqCont.attr("data-video-youtube")
           +"?enablejsapi=1"+"&iv_load_policy=3"+"&playerapiid=rfcx-video-player"
           +"&disablekb=1"+"&wmode=transparent"+"&controls=1"+"&showinfo=0"
-          +"modestbranding=1"+"&rel=0"+"&autoplay=1"+"&loop=0"
+          +"modestbranding=0"+"&rel=0"+"&autoplay=1"+"&loop=0"
           +"&origin="+encodeURIComponent(window.location.origin)
         +jqCont.attr("data-video-youtube")+"\""
         +" width=\""+parseInt(jqCont.width())+"\" height=\""+parseInt(jqCont.height())+"\""

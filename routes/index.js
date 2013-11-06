@@ -16,13 +16,13 @@ var navItems = [
   ];
 
 var socialMedia = [
-  [ "facebook", "https://www.facebook.com/RainforestCx", "facebook-square", "Check us out on Facebook!"],
-  [ "twitter", "https://twitter.com/RainforestCx", "twitter-square", "Check us out on Twitter!"],
-  [ "google-plus", "https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts", "google-plus-square", "Check us out on Google+!"],
-  [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!"],
+  [ "github", "https://github.com/rfcx", "github-square", "Check us out on Github!"],
   [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!"],
   [ "flickr", "http://flickr.com/photos/rainforestcx/", "flickr", "Check us out on Flickr!"],
-  [ "github", "https://github.com/rfcx", "github-square", "Check us out on Github!"]
+  [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!"],
+  [ "google-plus", "https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts", "google-plus-square", "Check us out on Google+!"],
+  [ "twitter", "https://twitter.com/RainforestCx", "twitter-square", "Check us out on Twitter!"],
+  [ "facebook", "https://www.facebook.com/RainforestCx", "facebook-square", "Check us out on Facebook!"]
 ];
 
 function setJadeVars(process, jV) {

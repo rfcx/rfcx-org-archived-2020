@@ -63,6 +63,11 @@ exports.redirectToHomePage = function(req,res) {
   res.end();
 };
 
+exports.redirectToVideoPage = function(req,res) {
+  res.writeHead(302, { "Location": "http://rfcx.org/video" } );
+  res.end();
+};
+
 exports.returnHealthCheck = function(req,res) {
   res.send("rfcx");
 };

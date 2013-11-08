@@ -6,10 +6,19 @@ block content
     div.span12
       p.roadgeek.rfcx-header= "FINALLY, TREES THAT CAN TALK"
       p.rfcx-body
-        span.bold= "Rainforest Connection"
-        span= " uses mobile technology to monitor and protect remote forests in real-time. "
-  div.row-fluid.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
+        span
+          | <span class="bold">Rainforest Connection</span> uses mobile technology to monitor and protect remote forests in real-time.
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
     div.span4
+      p.roadgeek.rfcx-header
+        | IF A TREE FALLS
+        br
+        | IN THE FOREST...
+      p.rfcx-body
+        span
+          | These days, unfortunately, if a tree falls in the forest, there's almost always somebody around to hear it—those who cut it down. <em>Rainforest Connection</em>
+
+
     div.span8
       div.screen-container(onClick="showHelpBubbles();")
         img.screen-img(src="#{rfcx_cdn}/img/about/screen-trans.560.png")

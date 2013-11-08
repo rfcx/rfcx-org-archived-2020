@@ -381,6 +381,7 @@ RFCX.getBandwidthKb = function() {
     console.log("Bandwidth measured to be "+((kb==0) ? "very high" : (kb+"Kb/s")));
     analytics.track("bandwidth_test", { label: RFCX.speedTest.kB+"KB_download", value: kb });
   } else {
+    RFCX.video.forceYouTube;
     console.log("Bandwidth measurements not yet available. Defaulting to higher bandwidth (for now).");
   }
   return kb;

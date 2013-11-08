@@ -20,7 +20,7 @@ var socialMedia = [
   [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!"],
   [ "flickr", "http://flickr.com/photos/rainforestcx/", "flickr", "Check us out on Flickr!"],
   [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!"],
-  [ "google-plus", "https://plus.google.com/u/0/b/110790947035627675960/110790947035627675960/posts", "google-plus-square", "Check us out on Google+!"],
+  [ "google-plus", "https://plus.google.com/+RfcxOrg", "google-plus-square", "Check us out on Google+!"],
   [ "twitter", "https://twitter.com/RainforestCx", "twitter-square", "Check us out on Twitter!"],
   [ "facebook", "https://www.facebook.com/RainforestCx", "facebook-square", "Check us out on Facebook!"]
 ];

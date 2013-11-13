@@ -18,7 +18,7 @@ RFCX.fn.ui.video.initVideo = function(){
 RFCX.fn.video.init = function(){
 
   var videoJsVersion = "4.2.2";
-  RFCX.fn.insertCss(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.css");
+  RFCX.fn.insertCss(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.min.css");
 
   $.getScript(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video.js",function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }
@@ -28,8 +28,7 @@ RFCX.fn.video.init = function(){
         } else { $(this).click(function(){ RFCX.fn.video.setup(this); });
         } 
       });
-      $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.js");
-      $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/media.youtube.js");
+      $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.min.js");
     });
   });
 }

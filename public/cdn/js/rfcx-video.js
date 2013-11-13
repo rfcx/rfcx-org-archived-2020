@@ -155,9 +155,11 @@ RFCX.fn.video.setup = function(videoBox) {
     var jqVideoBoxOuter = $("div.video-box-outer");
     jqVideoBoxOuter.css({ top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width:RFCX.video.offset[2]+"px", height:"auto", display:"block" });
     RFCX.toggleAddThis(false);
-    var videoWidthPct = 75;
-    $("body").animatescroll({scrollSpeed:500}); var vidHt = Math.round(9*(videoWidthPct/100)*$("body").width()/16);
-    var bannerVideo = $(".banner-video").animate({marginBottom:(vidHt-(380+76))+"px"}).offset();
+    $("body").animatescroll({scrollSpeed:500});
+    var videoWidthPct = 75, bodyWd = $("body").width(), vidHt = Math.round(9*(videoWidthPct/100)*bodyWd/16);
+    var bannerHt = $(".banner-video").innerHeight()+$(".masthead").innerHeight();
+    if (vidHt < bannerHt) { vidHt = bannerHt; videoWidthPct = 100*(16*bannerHt/9)/bodyWd; }
+    var bannerVideo = $(".banner-video").animate({marginBottom:(vidHt-bannerHt)+"px"}).offset();
     $(".video-box-outer-backdrop").css({display:"block",opacity:0,height:vidHt+"px"}).animate({
       opacity:1
     },function(){

@@ -64,6 +64,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead #masthead-notch-media { color:rgb(251,252,253); }
 
 .banner-video { height:380px; }
+.banner-video p { text-shadow: 0px 0px 2px #004400; filter: dropshadow(color=#004400, offx=0, offy=0); }
 .banner-video .slogan { position:absolute; margin-top:110px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; }
 .banner-video .slogan p.roadgeek { font-size:48px; margin-bottom:0px; cursor:default; }
 .banner-video .banner-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; }
@@ -115,19 +116,20 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-intro-join .stopsign-mobile { position:relative; float:right; display:none; }
 .rfcx-row-intro-join .input-append .input-large { padding:13px 19px 11px 19px; }
 .rfcx-row-intro-join .input-append .btn { padding:11px 19px 13px 19px; }
-.rfcx-row-intro-join .social-follow-containers { width:90%; border:none; position:relative; height:100px; clear:both; }
-.rfcx-row-intro-join .social-follow-container { position:relative; margin:5px 0px 10px 20px; border:0; top:10px; width:20%; float:left; }
+.rfcx-row-intro-join .social-follow-containers { width:90%; border:none; position:relative; height:100px; clear:both; margin-bottom:10px; margin-top:5px; }
+.rfcx-row-intro-join .social-follow-container { position:relative; margin:0px 0px 0px 20px; height:32px; border:0; top:10px; width:20%; float:left; clear:left; }
 .rfcx-row-intro-join .social-follow-container .social-follow-item { width:100%; }
 .rfcx-row-intro-join .control-group .rfcx-body { margin-left:0px; position:relative; top:5px; width:200%; }
 .rfcx-row-intro-join .control-group .parsley-error-list { display:none !important; }
+.rfcx-row-intro-join .control-group .controls { margin-top:20px; }
 .rfcx-row-intro-join .rfcx-form .rfcx-body { clear:left; }
 
-.rfcx-row-about-1 { padding-top:30px; margin-top:0px; }
+.rfcx-row-about-1 { padding-top:30px; margin-top:0px; overflow:visible; }
 .rfcx-row-about-1 .rfcx-header, .rfcx-row-about-1 .rfcx-body, .rfcx-row-about-1 .rfcx-header, .rfcx-row-about-1 .screen-container { margin-left:auto; margin-right:auto; }
 .rfcx-row-about-1 .rfcx-header { width:98%; text-align:center; }
 .rfcx-row-about-1 .rfcx-body { width:98%; text-align:center; }
 
-.rfcx-row-about-1 .screen-container { position:relative; /*width:800px; height:483px;*/ width:560px; height:338px; border:0; background-color:transparent; float:right; }
+.rfcx-row-about-1 .screen-container { position:relative; left:30px; /*width:800px; height:483px;*/ width:560px; height:338px; border:0; background-color:transparent; float:right; }
 .rfcx-row-about-1 .screen-container .screen-img { z-index:1; position:absolute; top:0%; left:0%; width:100%; height:100%; }
 .rfcx-row-about-1 .screen-container .screen-bg { z-index:0; position:absolute; top:4.8%; left:4.4%; width:91.3%; height:70%;  }
 .rfcx-row-about-1 .screen-container .alert-help { position:absolute; top:100px; width:0px; height:0px; border:0; background-color:transparent; }
@@ -135,9 +137,16 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-about-1 .screen-container .hint--error:after { background-color:red; }
 .rfcx-row-about-1 .screen-container .hint--error.hint--top:before { border-top-color:red; }
 
+.rfcx-row-about-1 .screen-container .hint--bounce:before, .rfcx-row-about-1 .screen-container .hint--bounce:after {
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s cubic-bezier(0.71, 4, 0.77, 1.24);
+  -moz-transition: opacity 0.3s ease, visibility 0.3s ease, -moz-transform 0.3s cubic-bezier(0.71, 4, 0.77, 1.24);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.71, 4, 0.77, 1.24);
+}
+
 .rfcx-row-about-1-1 .rfcx-header { margin-bottom:5px;font-size:55px; }
-.rfcx-row-about-1-2 .rfcx-header, .rfcx-row-about-1-2 .rfcx-body { text-align:left;  }
+.rfcx-row-about-1-2 .rfcx-header, .rfcx-row-about-1-2 .rfcx-body { text-align:left; width:114%; }
 .rfcx-row-about-1-2 { padding-top:20px; }
+.rfcx-row-about-1-2 .rfcx-body { padding-top:4px; padding-bottom:0px; }
 
 .rfcx-row-about-2 { margin-top:0px; }
 .rfcx-row-about-2 .trash-img { margin-top:20px; }

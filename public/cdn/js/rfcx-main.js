@@ -198,7 +198,8 @@ RFCX.fn.load.jqueryAnimateScroll = function(){
 }
 
  RFCX.fn.load.hintCss = function() {
-  if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css"); }
+//  if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css"); }
+  if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.css"); }
 }
 
 RFCX.fn.load.addThis = function() {
@@ -261,7 +262,7 @@ RFCX.fn.ui.about.animateHelpCalls = function() {
         $(this).addClass("hint--always");
       });
     });
-  }, 1000);
+  }, 2000);
 }
 
 
@@ -287,7 +288,7 @@ RFCX.fn.ui.all.emailSubscribeFormSetup = function() {
 RFCX.toggleAddThis = function(onOff) {
   var newDisplay = "none";
   if (onOff) { newDisplay = "block"; }
-  $(".addthis-smartlayers-desktop-right").css("display",newDisplay);
+  $(".addthis-smartlayers-desktop").css("display",newDisplay);
 }
 
 RFCX.toggleBanner = function(onOff,inputObj) {

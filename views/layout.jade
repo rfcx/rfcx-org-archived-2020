@@ -52,9 +52,10 @@ html(lang="en")
               li.ft
                 if (item[0] == current_page[0])
                   a.rfcx-trans-linear(href="#")= item[1]
-                else
-                  a.rfcx-trans-linear(href="/#{item[0]}")= item[1]
-              li.ft= "|"
+                  li.ft= "|"
+                else if (item[4])
+                  a.rfcx-trans-linear(href="#{item[2]}")= item[1]
+                  li.ft= "|"
         for item in social_media
           a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
             i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")

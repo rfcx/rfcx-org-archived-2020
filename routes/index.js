@@ -67,6 +67,9 @@ exports.redirectToVideoPage = function(req,res) {
   res.writeHead(302, { "Location": "http://rfcx.org/video" } );
   res.end();
 };
+exports.dumpHeaders = function(req,res) {
+  res.send(req.headers);
+};
 
 exports.returnHealthCheck = function(req,res) {
   res.send("rfcx");

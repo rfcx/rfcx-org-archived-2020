@@ -85,6 +85,7 @@ app.get("/", function(req, res){
 
 app.get("/referral/bonne_app", routes.redirectToHomePage );
 app.get("/interpol", routes.redirectToVideoPage );
+app.get("/headers", routes.dumpHeaders );
 
 app.get("/health_check", routes.returnHealthCheck );
 

@@ -18,7 +18,7 @@ RFCX.fn.ui.video.initVideo = function(){
 RFCX.fn.video.init = function(){
 
   var videoJsVersion = "4.2.2";
-  RFCX.fn.insertCss(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.min.css");
+  RFCX.fn.insertCss(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.css");
 
   $.getScript(RFCX.cdn.videoJs+"/"+videoJsVersion+"/video.js",function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }

@@ -7,7 +7,7 @@ var RFCX = {
       all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}
     }
   },
-  cdn: { rfcx: null, bootstrap: null },
+  cdn: { rfcx: null, rfcxVendor: null, bootstrap: null, cdnJs: null, videoJs: null },
   mapObj: null,
   timer: { windowResize: null, windowScroll: null },
   bodyWidth: $('.container-narrow').innerWidth(),
@@ -198,7 +198,6 @@ RFCX.fn.load.jqueryAnimateScroll = function(){
 }
 
  RFCX.fn.load.hintCss = function() {
-  console.log($("html").hasClass("no-touch"));
   if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css"); }
 }
 
@@ -254,18 +253,6 @@ RFCX.fn.ui.about.initMap = function(){
       
     });
 }
-
-/*
-RFCX.fn.ui.intro.initVideo = function(){
-  RFCX.fn.video.init();
-  RFCX.fn.video.prepare();
-}
-
-RFCX.fn.ui.video.initVideo = function(){
-  RFCX.fn.video.init();
-  RFCX.fn.video.prepare();
-}
-*/
 
 RFCX.fn.ui.about.animateHelpCalls = function() {
   setTimeout(function(){

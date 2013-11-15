@@ -16,7 +16,7 @@ var navItems = [
   ];
 
 var socialMedia = [
-  [ "github", "https://github.com/rfcx", "github-square", "Check us out on Github!"],
+  [ "github", "https://github.com/rfcx", "github-square", "Fork our repos on Github!"],
   [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!"],
   [ "flickr", "http://flickr.com/photos/rainforestcx/", "flickr", "Check us out on Flickr!"],
   [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!"],

@@ -47,6 +47,12 @@ RFCX.fn.video.prepare = function() {
         +"<div class=\"video-box-outer-backdrop rfcx-trans-0\"></div>");
 }
 
+RFCX.fn.video.vttTag = function(shortName, longName) {
+  return "<track srclang=\""+shortName+"\" label=\""+longName+"\""
+        +" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+"."+shortName+".vtt?v="+RFCX.appVersion+"\""
+        +" kind=\"captions\" default />";
+}
+
 RFCX.fn.video.place = function(containerObj) {
   var jqCont = $(containerObj);
   RFCX.video.id = jqCont.attr("data-video-id");
@@ -72,6 +78,7 @@ RFCX.fn.video.place = function(containerObj) {
           ;
 
       console.log("window width: "+wndw[0]+" -> playing: "+vidSz[0]+"x"+vidSz[1]+" ("+vidSz[2]+"kb/s)");
+      var vttPreUri = "";
       var playerHtml = "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
               +" controls preload=\"auto\" poster=\""+posterUri+"\""
               +" width=\""+wndw[0]+"\" height=\""+wndw[1]+"\" style=\"width:100%;\">"
@@ -80,8 +87,8 @@ RFCX.fn.video.place = function(containerObj) {
           +"<source src=\""+vidUri+".webm\" type=\"video/webm\" />"
           +"<source src=\""+vidUri+".flv\" type=\"video/flv\" />"
       //    +"<source src=\""+vidUri+"."+size+".3gp\" type=\"video/3gp\" />"
-          +"<track kind=\"captions\" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+".en.vtt?v="+Math.random()+"\""
-              +" srclang=\"en\" label=\"English\" default />"
+      //    +"<track srclang=\"en\" label=\"English\" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+".en.vtt?v="+RFCX.appVersion+"\" kind=\"captions\" default />"
+          +RFCX.fn.video.vttTag("en","English")
           +"</video>";
       jqCont.html(playerHtml);
 
@@ -139,7 +146,7 @@ RFCX.fn.video.htmlClose = function(jqCont) {
   if (!RFCX.renderForTouch) {
     jqCont.append("<a href=\"javascript:RFCX.fn.video.close()\""
           +" title=\"Stop/Close\""
-          +" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-33 rfcx-crnr-10 rfcx-crnr-t-off rfcx-crnr-r-off\">"
+          +" class=\"video-player-close rfcx-trans-linear hover-trans-67 rfcx-trans-33 rfcx-crnr-10\">"
           +"<i class=\"fa fa-times\"></i></a>");
   }
 }

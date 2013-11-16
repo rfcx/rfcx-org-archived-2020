@@ -10,7 +10,7 @@ var navItems = [
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
     [ "blog", "Blog", "/blog", "Blog", false, false ],
     [ "team", "Team", "/team", "Team", false, false ],
-    [ "forum", "Forum", "http://tumblr.rfcx.org/", "", true, false ],
+    [ "tumblr", "Editorial", "http://tumblr.rfcx.org/", "", true, false ],
 
     [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true ]
   ];

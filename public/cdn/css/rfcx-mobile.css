@@ -32,6 +32,12 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .banner-video .video-link .fa-play { font-size:8px; }
 .banner-video .slogan { margin-top:20px; margin-left:0px; width:100%; text-align:center; }
 .banner-video .slogan p.roadgeek { font-size:36px; line-height:32px; }
+.video-box-followup { margin-left:0%; margin-top:0%; overflow:hidden; }
+
+.rfcx-social-like { top:116px; width:25%; }
+.rfcx-fb-like { left:8%; }
+.rfcx-tw-like { left:71%; }
+.rfcx-gp-like { left:44%; }
 
 .rfcx-row {  } 
 .rfcx-row .rfcx-header, .rfcx-row .rfcx-body { text-align:center; width:100%; margin-left:none; margin-right:none; }

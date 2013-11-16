@@ -24,9 +24,16 @@ RFCX.fn.video.init = function(){
     if (RFCX.cdn.videoJs.indexOf("//") == -1) { videojs.options.flash.swf = RFCX.cdn.videoJs+"/"+videoJsVersion+"/video-js.swf"; }
     $.getScript(RFCX.cdn.rfcxVendor+"/foresight.js/2.0.0/foresight.min.js",function(){
       $(".video-box-page").each(function(){
+        
+        var gPos = $(this).offset();
+        RFCX.video.offset = [gPos.top, gPos.left, parseInt($(this).width())];
+        
         if (RFCX.renderForTouch) { RFCX.fn.video.place(this);
-        } else { $(this).click(function(){ RFCX.fn.video.setup(this); });
+        } else {
+          $(this).click(function(){ RFCX.fn.video.setup(this); });
+          $(".video-link .fa-play").click(function(){ RFCX.fn.video.setup(this); });
         } 
+
       });
       $.getScript(RFCX.cdn.rfcxVendor+"/video.js/"+videoJsVersion+"/vjs.youtube.min.js");
     });
@@ -35,8 +42,8 @@ RFCX.fn.video.init = function(){
 
 RFCX.fn.video.prepare = function() {
 
-    var refBox = $("div.video-box-page");
-    $("body").append(
+    var refBox = $(".video-box-page");
+    $((RFCX.renderForMobile) ? "#rfcx-container" : "body").append(
         "<div class=\"video-box video-box-outer\""
           +" data-video-id=\""+refBox.attr("data-video-id")+"\""
           +" data-video-version=\""+refBox.attr("data-video-version")+"\""
@@ -44,7 +51,11 @@ RFCX.fn.video.prepare = function() {
         +"<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\">"
         +"<i class=\"fa fa-play-circle-o\"></i>"
         +"</div>"
-        +"<div class=\"video-box-outer-backdrop rfcx-trans-0\"></div>");
+        +"<div class=\"video-box-outer-backdrop rfcx-trans-0\"></div>"
+      +"<div class=\"video-box video-box-followup rfcx-trans-0 rfcx-crnr-10\">"
+        +"<div class=\"video-followup-bg rfcx-trans-75\"></div>"
+      +"</div>"
+      );
 }
 
 RFCX.fn.video.vttTag = function(shortName, longName) {
@@ -94,7 +105,10 @@ RFCX.fn.video.place = function(containerObj) {
 
       videojs("rfcx-video-player", { "techOrder": ["html5","flash","youtube"], "preload": "auto", "autoplay":true, "controls":true }).ready(function(){
         RFCX.video.obj = this;
-        RFCX.video.obj.on("pause", function(){ console.log("video paused"); });
+        RFCX.video.obj.on("pause", function(){
+          analytics.track("video_pause", { label: RFCX.video.id, value: RFCX.fn.video.percentComplete });
+          if (RFCX.renderForTouch && !RFCX.fn.video.isFullScreen()){ RFCX.fn.video.followUp(true); }
+        });
         RFCX.video.obj.on("ended", function(){ RFCX.fn.video.close(); });
         analytics.track("video_play", { label: RFCX.video.id });
         devLog("video-loaded");
@@ -118,8 +132,7 @@ RFCX.fn.video.place = function(containerObj) {
 RFCX.fn.video.close = function() {
   var playerHeight = $("#rfcx-video-player").height();
   if (RFCX.video.obj != null) {
-    var percentComplete = Math.round(100*RFCX.video.obj.currentTime()/RFCX.video.obj.duration());
-    analytics.track("video_stop", { label: RFCX.video.id, value: percentComplete });
+    analytics.track("video_stop", { label: RFCX.video.id, value: RFCX.fn.video.percentComplete() });
     RFCX.video.obj.dispose();
     RFCX.video.obj = null;
   } else {
@@ -127,19 +140,19 @@ RFCX.fn.video.close = function() {
   }
   if (!RFCX.renderForTouch) {
     $(document).off("keyup");
-    var jqVideoBoxOuter = $("div.video-box-outer");
+    var jqVideoBoxOuter = $(".video-box-outer");
     jqVideoBoxOuter.css({height:playerHeight+"px"}).html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-0 video-box-bg\"/><i class=\"fa fa-play-circle-o\"></i>");
-    $("div.video-box-outer .video-box-bg").animate({opacity:0.5},1000);
+    $(".video-box-outer .video-box-bg").animate({opacity:0.5},1000);
     jqVideoBoxOuter.animate({
-      top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", height:$("div.video-box-page").height()+"px", borderWidth: "4px"
+      top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", height:$(".video-box-page").height()+"px", borderWidth: "4px"
     },500,function(){
       $(".banner-video").animate({marginBottom:"0px"});
-      $("div.video-box-outer, div.video-box-outer-backdrop").css({display:"none"});
+      $(".video-box-outer, .video-box-outer-backdrop").css({display:"none"});
       RFCX.toggleAddThis(true);
       RFCX.setOlark(true);
+      RFCX.fn.video.followUp(true);
     });
   }
-  RFCX.fn.video.followUp(RFCX.video.id);
 }
 
 RFCX.fn.video.htmlClose = function(jqCont) {
@@ -153,12 +166,8 @@ RFCX.fn.video.htmlClose = function(jqCont) {
 
 RFCX.fn.video.setup = function(videoBox) {
 
-    $("div.video-box-page").each(function(){
-      var gPos = $(this).offset();
-      RFCX.video.offset = [gPos.top, gPos.left, parseInt($(this).width())];
-    });
-
-    var jqVideoBoxOuter = $("div.video-box-outer");
+    RFCX.fn.video.followUp(false);
+    var jqVideoBoxOuter = $(".video-box-outer");
     jqVideoBoxOuter.css({ top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width:RFCX.video.offset[2]+"px", height:"auto", display:"block" });
     RFCX.toggleAddThis(false);
     $("body").animatescroll({scrollSpeed:500});
@@ -170,7 +179,7 @@ RFCX.fn.video.setup = function(videoBox) {
       opacity:1
     },function(){
       RFCX.setOlark(false);
-      $("div.video-box-outer .video-box-bg").animate({opacity:0},1000);
+      $(".video-box-outer .video-box-bg").animate({opacity:0},1000);
       jqVideoBoxOuter.animate({
         top: "0px", left: ((100-videoWidthPct)/2)+"%", width: videoWidthPct+"%", borderWidth: "0px"
       },500,function(){
@@ -182,6 +191,51 @@ RFCX.fn.video.setup = function(videoBox) {
     });
 }
 
-RFCX.fn.video.followUp = function(vidId) {
-  console.log("video follow up: "+vidId);
+RFCX.fn.video.percentComplete = function() {
+  return Math.round(100*RFCX.video.obj.currentTime()/RFCX.video.obj.duration());
+}
+
+RFCX.fn.video.isFullScreen = function() {
+  var rtrn = false;
+  if (RFCX.renderForTouch) {
+    $("video").each(function(){
+      rtrn = this.webkitDisplayingFullscreen;
+    });
+  }
+  return rtrn;
+}
+
+RFCX.fn.video.followUp = function(showHide) {
+  var followUpBox = $(".video-box-followup");
+  if (showHide) {
+    followUpBox.css({
+      top: (RFCX.video.offset[0]-10)+"px", left: (RFCX.video.offset[1]-10)+"px",
+      width: (RFCX.video.offset[2]+20)+"px", height:($(".video-box-page").height()+20)+"px",
+      display: "block" }).animate({opacity:1},"slow",function(){
+        $("#rfcx-video-player").remove();
+        $(this).append(""
+        +"<span class=\"rfcx-social-like rfcx-fb-like\"><iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"
+        +"<span class=\"rfcx-social-like rfcx-tw-like\"><iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20novel%20solution%20that%20can%20actually%20stop%20illegal%20%23logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe></span>"
+    //    +"<script type=\"text/javascript\" src=\"//apis.google.com/js/plusone.js\"></script>"
+        +"<span class=\"rfcx-social-like rfcx-gp-like\"><div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div></span>"
+        );
+        $.getScript("//apis.google.com/js/plusone.js");
+        //  RFCX.fn.reactiveUi.loadFollowButtons();
+            // if (RFCX.renderForTouch) {
+            // } else {
+            // }      
+      
+      });
+    analytics.track("video_followup", { label: RFCX.video.id });
+  } else {
+    followUpBox.animate({display:"none",opacity:0}).html("<div class=\"video-followup-bg rfcx-trans-75\"></div>");
+  }
+}
+
+RFCX.fn.video.unFollowUp = function(vidId) {
+$(".video-box-page").animate({opacity:1},function(){
+    if (RFCX.renderForTouch) {
+    } else {
+    }
+  });
 }

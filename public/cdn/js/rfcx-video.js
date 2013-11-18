@@ -1,5 +1,5 @@
 RFCX.video = {
-  offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false, sizes: [
+  offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false, posterUri: "", sizes: [
       [1920,1080,5500], [1280,720,2500], [854,480,1100], [640,360,600]
     ], mobileSize: 3
 };
@@ -52,10 +52,9 @@ RFCX.fn.video.prepare = function() {
         +"<i class=\"fa fa-play-circle-o\"></i>"
         +"</div>"
         +"<div class=\"video-box-outer-backdrop rfcx-trans-0\"></div>"
-      +"<div class=\"video-box video-box-followup rfcx-trans-0 rfcx-crnr-10\">"
-        +"<div class=\"video-followup-bg rfcx-trans-75\"></div>"
-      +"</div>"
       );
+    $("#rfcx-container").append("<div class=\"video-box video-box-followup rfcx-trans-0 rfcx-crnr-10\"></div>");
+    RFCX.fn.video.followUp(false);
 }
 
 RFCX.fn.video.vttTag = function(shortName, longName) {
@@ -69,7 +68,7 @@ RFCX.fn.video.place = function(containerObj) {
   RFCX.video.id = jqCont.attr("data-video-id");
   RFCX.video.version = jqCont.attr("data-video-version");
   if (!RFCX.video.forceYouTube) {
-    var sz = RFCX.video.sizes, vidSz = sz[sz.length-1], wndw = [parseInt(jqCont.width()),parseInt(jqCont.height())], bw = RFCX.getBandwidthKb(),
+    var sz = RFCX.video.sizes, vidSz = sz[sz.length-1], wndw = [parseInt(jqCont.width()),Math.round(9*parseInt(jqCont.width())/16)], bw = RFCX.getBandwidthKb(),
     posterImg = (RFCX.renderForTouch) ? "//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/video-poster.512.jpg" : "";
     // set video size based on window width (or smallest for mobile devices)
     if (RFCX.renderForMobile) { vidSz = sz[RFCX.video.mobileSize];
@@ -84,21 +83,21 @@ RFCX.fn.video.place = function(containerObj) {
     if (!RFCX.video.forceYouTube) {
       var uriBase = "//d4bl4mvczhn5i.cloudfront.net/video/"+RFCX.video.id
           +"/v"+RFCX.video.version+"/"+RFCX.video.id+"-v"+RFCX.video.version+".",
-          vidUri = uriBase + vidSz[1],
-          posterUri = (RFCX.renderForTouch) ? $(".video-box-page .video-box-poster").attr("src") : ""
-          ;
+          vidUri = uriBase + vidSz[1];
+          if ((RFCX.video.posterUri=="") && RFCX.renderForTouch) {
+            RFCX.video.posterUri = $(".video-box-page .video-box-poster").attr("src");
+          }
 
       console.log("window width: "+wndw[0]+" -> playing: "+vidSz[0]+"x"+vidSz[1]+" ("+vidSz[2]+"kb/s)");
       var vttPreUri = "";
       var playerHtml = "<video id=\"rfcx-video-player\" class=\"video-js vjs-default-skin\""
-              +" controls preload=\"auto\" poster=\""+posterUri+"\""
+              +" controls preload=\"auto\" poster=\""+RFCX.video.posterUri+"\""
               +" width=\""+wndw[0]+"\" height=\""+wndw[1]+"\" style=\"width:100%;\">"
-          +"<source src=\"http://www.youtube.com/watch?v="+jqCont.attr("data-video-youtube")+"\" type=\"video/youtube\" />"
+          +"<source src=\"//www.youtube.com/watch?v="+jqCont.attr("data-video-youtube")+"\" type=\"video/youtube\" />"
           +"<source src=\""+vidUri+".mp4\" type=\"video/mp4\" />"
           +"<source src=\""+vidUri+".webm\" type=\"video/webm\" />"
           +"<source src=\""+vidUri+".flv\" type=\"video/flv\" />"
       //    +"<source src=\""+vidUri+"."+size+".3gp\" type=\"video/3gp\" />"
-      //    +"<track srclang=\"en\" label=\"English\" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+".en.vtt?v="+RFCX.appVersion+"\" kind=\"captions\" default />"
           +RFCX.fn.video.vttTag("en","English")
           +"</video>";
       jqCont.html(playerHtml);
@@ -209,33 +208,34 @@ RFCX.fn.video.followUp = function(showHide) {
   var followUpBox = $(".video-box-followup");
   if (showHide) {
     followUpBox.css({
-      top: (RFCX.video.offset[0]-10)+"px", left: (RFCX.video.offset[1]-10)+"px",
+      top: (RFCX.video.offset[0]-10)+"px", left: (RFCX.video.offset[1]-10-parseInt($("#rfcx-container").offset().left))+"px",
       width: (RFCX.video.offset[2]+20)+"px", height:($(".video-box-page").height()+20)+"px",
       display: "block" }).animate({opacity:1},"slow",function(){
         $("#rfcx-video-player").remove();
         $(this).append(""
-        +"<span class=\"rfcx-social-like rfcx-fb-like\"><iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"
-        +"<span class=\"rfcx-social-like rfcx-tw-like\"><iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20novel%20solution%20that%20can%20actually%20stop%20illegal%20%23logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe></span>"
-    //    +"<script type=\"text/javascript\" src=\"//apis.google.com/js/plusone.js\"></script>"
-        +"<span class=\"rfcx-social-like rfcx-gp-like\"><div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div></span>"
-        );
-        $.getScript("//apis.google.com/js/plusone.js");
-        //  RFCX.fn.reactiveUi.loadFollowButtons();
-            // if (RFCX.renderForTouch) {
-            // } else {
-            // }      
+          +"<span class=\"rfcx-social-like rfcx-fb-like\">"
+            +"<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"
+          +"<span class=\"rfcx-social-like rfcx-tw-like\">"
+            +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20novel%20solution%20that%20can%20actually%20stop%20illegal%20%23logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe></span>"
+          +"<span class=\"rfcx-social-like rfcx-gp-like\">"
+            +"<div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div></span>"
+        ); $.getScript("//apis.google.com/js/plusone.js");
+        
+      // if (RFCX.renderForTouch) {
+      // } else {
+      // }      
       
       });
     analytics.track("video_followup", { label: RFCX.video.id });
   } else {
-    followUpBox.animate({display:"none",opacity:0}).html("<div class=\"video-followup-bg rfcx-trans-75\"></div>");
-  }
-}
+    followUpBox.animate({opacity:0},function(){
+      $(this).css({display:"none"}).html(""
+        +"<div class=\"video-followup-bg rfcx-trans-75\"></div>"
+        +"<div class=\"video-followup-x\" onClick=\"RFCX.fn.video.followUp(false)\"></div>"
+      );
+      if (RFCX.renderForTouch && ($("#rfcx-video-player").length===0)) { $(".video-box-page").each(function(){ RFCX.fn.video.place(this); }); }
+    });
 
-RFCX.fn.video.unFollowUp = function(vidId) {
-$(".video-box-page").animate({opacity:1},function(){
-    if (RFCX.renderForTouch) {
-    } else {
-    }
-  });
+    
+  }
 }

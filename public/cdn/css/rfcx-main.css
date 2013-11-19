@@ -83,7 +83,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .video-box-followup { border:solid 4px #000; background-color:transparent; cursor:default; margin-left:0%; margin-top:0%; }
 .video-box-followup iframe, .video-box-followup div { z-index:10; }
 .video-box-followup .video-followup-bg { position:absolute; left:0%; top:0%; width:100%; height:100%; border:0; background-color:#000; z-index:0; }
-.video-box-followup .video-followup-x { position:absolute; right:0px; top:0px; width:20px; height:20px; background-color:white; border:0; cursor:pointer; }
+.video-box-followup .video-followup-x { position:absolute; right:3px; top:3px; width:20px; height:20px; background-color:transparent; border:0; cursor:pointer; }
+.video-box-followup .video-followup-x .fa { position:absolute; right:0px; top:-4px; font-size:24px; color:white; }
+.video-box-followup .video-followup-x:hover .fa { color:#aaaaaa; }
 .video-player-close { position:absolute; top:0px; right:0px; z-index:1001; color:#fff; font-size:42px; padding:8px 12px; font-weight:bold; background-color:transparent; text-decoration:none; }
 .video-player-close:hover { background-color:#bbb; text-decoration:none; color:black; }
 

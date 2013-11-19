@@ -1,7 +1,7 @@
 RFCX.video = {
   offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: false, posterUri: "", sizes: [
       [1920,1080,5500], [1280,720,2500], [854,480,1100], [640,360,600]
-    ], mobileSize: 3
+    ], mobileSize: 3, followUp: { excludePaths: [ "/video" ] }
 };
 
 
@@ -206,9 +206,11 @@ RFCX.fn.video.isFullScreen = function() {
 
 RFCX.fn.video.followUp = function(showHide) {
   var followUpBox = $(".video-box-followup");
-  if (showHide) {
+  var runFollowUp = true; for (var i = 0; i < RFCX.video.followUp.excludePaths.length; i++) { if (RFCX.video.followUp.excludePaths[i]===window.location.pathname) { runFollowUp = false; } }
+  if (runFollowUp && showHide) {
+    var boxOffset = $(".video-box-page").offset();
     followUpBox.css({
-      top: (RFCX.video.offset[0]-10)+"px", left: (RFCX.video.offset[1]-10-parseInt($("#rfcx-container").offset().left))+"px",
+      top: (boxOffset.top-10)+"px", left: (boxOffset.left-10-parseInt($("#rfcx-container").offset().left))+"px",
       width: (RFCX.video.offset[2]+20)+"px", height:($(".video-box-page").height()+20)+"px",
       display: "block" }).animate({opacity:1},"slow",function(){
         $("#rfcx-video-player").remove();
@@ -231,7 +233,9 @@ RFCX.fn.video.followUp = function(showHide) {
     followUpBox.animate({opacity:0},function(){
       $(this).css({display:"none"}).html(""
         +"<div class=\"video-followup-bg rfcx-trans-75\"></div>"
-        +"<div class=\"video-followup-x\" onClick=\"RFCX.fn.video.followUp(false)\"></div>"
+        +"<div class=\"video-followup-x\" onClick=\"RFCX.fn.video.followUp(false)\">"
+          +"<i class=\"fa fa-times\"></i>"
+        +"</div>"
       );
       if (RFCX.renderForTouch && ($("#rfcx-video-player").length===0)) { $(".video-box-page").each(function(){ RFCX.fn.video.place(this); }); }
     });

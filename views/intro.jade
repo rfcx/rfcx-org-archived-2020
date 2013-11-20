@@ -22,23 +22,27 @@ block content
 
   div.row-fluid.rfcx-row.rfcx-row-intro-stats
     div.span12
-      p.roadgeek.rfcx-header= "deforestation: the facts:"
+      p.roadgeek.rfcx-header.title= "Here are the facts. Rainforest Destruction is..."
   div.row-fluid.rfcx-row.rfcx-row-intro-stats
     div.span4
-      p.roadgeek.rfcx-header= "deforestation causes extinctions"
+      p.roadgeek.rfcx-header
+        span.quote
+          | &quot;...one of the leading causes of climate change.&quot;
     div.span4
-      p.roadgeek.rfcx-header= "deforestation causes climate change"
+      p.roadgeek.rfcx-header
+        span.quote
+          | &quot;is the driving force behind the highest species extinction rate in human history.&quot;
     div.span4
-      p.roadgeek.rfcx-header= "deforestation is mostly illegal"
+      p.roadgeek.rfcx-header
+        span.quote
+          | &quot;deforestation causes extinctions&quot;
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
-    div.span7
+    div.span6
       a(href='#infoGraphic', role='button', data-toggle='modal')
-        div.rfcx-trans-linear.infographic-box
-          i.rfcx-trans-linear.fa.fa-plus.expand-button.expand-button-front
-          i.rfcx-trans-linear.fa.fa-circle.expand-button.expand-button-rear
-          img.infographic-thmb(src='/cdn/img/intro/infographic.png')
-    div.span5
+        div.rfcx-trans-linear.rfcx-crnr-5.infographic-box
+          img.infographic-thmb(src='/cdn/img/intro/infographic.450.png')
+    div.span6.intro-what-text-container
       p.roadgeek.rfcx-header
         | EVERY MINUTE COUNTS.
         br
@@ -60,15 +64,15 @@ block content
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-join
     div.span7
       a#get_involved
-      p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS"
+      p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS. JOIN US."
       p.rfcx-body
         img.stopsign-mobile(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
 
         form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
 
           span.rfcx-body
-            span= "Please Like & Follow Us On "
-            span.social-names= "Facebook, Twitter and Google+."
+            span
+              | Please <span class="bold">Like & Follow Us</span> On Facebook, Twitter and Google+.
           
           div.social-follow-containers
             div.social-follow-container

@@ -145,7 +145,7 @@ RFCX.fn.video.close = function() {
     jqVideoBoxOuter.animate({
       top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", height:$(".video-box-page").height()+"px", borderWidth: "4px"
     },500,function(){
-      $(".banner-video").animate({marginBottom:"0px"});
+      $(".banner-video").animate({marginBottom:"10px"});
       $(".video-box-outer, .video-box-outer-backdrop").css({display:"none"});
       RFCX.toggleAddThis(true);
       RFCX.setOlark(true);
@@ -173,7 +173,7 @@ RFCX.fn.video.setup = function(videoBox) {
     var videoWidthPct = 75, bodyWd = $("body").width(), vidHt = Math.round(9*(videoWidthPct/100)*bodyWd/16);
     var bannerHt = $(".banner-video").innerHeight()+$(".masthead").innerHeight();
     if (vidHt < bannerHt) { vidHt = bannerHt; videoWidthPct = 100*(16*bannerHt/9)/bodyWd; }
-    var bannerVideo = $(".banner-video").animate({marginBottom:(vidHt-bannerHt)+"px"}).offset();
+    var bannerVideo = $(".banner-video").animate({marginBottom:(vidHt-bannerHt+10)+"px"}).offset();
     $(".video-box-outer-backdrop").css({display:"block",opacity:0,height:vidHt+"px"}).animate({
       opacity:1
     },function(){
@@ -216,9 +216,9 @@ RFCX.fn.video.followUp = function(showHide) {
         $("#rfcx-video-player").remove();
         $(this).append(""
           +"<span class=\"rfcx-social-like rfcx-fb-like\">"
-            +"<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"
+            +"<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=recommend&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"
           +"<span class=\"rfcx-social-like rfcx-tw-like\">"
-            +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20novel%20solution%20that%20can%20actually%20stop%20illegal%20%23logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe></span>"
+            +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20new%20way%20to%20stop%20illegal%20logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe></span>"
           +"<span class=\"rfcx-social-like rfcx-gp-like\">"
             +"<div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div></span>"
         ); $.getScript("//apis.google.com/js/plusone.js");

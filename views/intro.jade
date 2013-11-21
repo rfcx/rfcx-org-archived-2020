@@ -34,7 +34,7 @@ block content
           br
           span.source= "—United Nations"
           br
-          a.btn.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
+          a.btn.btn-rfcx-mini.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
     div.span4.stat-page-extinction
       div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version})")
       p.roadgeek.rfcx-header
@@ -45,7 +45,7 @@ block content
           br
           span.source= "—United Nations"
           br
-          a.btn.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
+          a.btn.btn-rfcx-mini.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
         
     div.span4.stat-page-crime
       div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version})")
@@ -57,13 +57,13 @@ block content
           br
           span.source= "—Interpol"
           br
-          a.btn.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
+          a.btn.btn-rfcx-mini.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
     div.span6
-      a(href='#infoGraphic', role='button', data-toggle='modal')
-        div.rfcx-trans-linear.rfcx-crnr-5.infographic-box
-          img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}")
+      p.roadgeek.rfcx-header.rfcx-intro-what-title= "WE CAN STOP ILLEGAL LOGGING & POACHING. HERE'S HOW:"
+      div.rfcx-trans-linear.rfcx-crnr-5.infographic-box(onClick="RFCX.fn.infoGraphicVideo();")
+        img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}")
     div.span6.intro-what-text-container
       p.roadgeek.rfcx-header
         | EVERY MINUTE COUNTS.
@@ -72,15 +72,14 @@ block content
         br
         | REAL-TIME INTERVENTION
       p.rfcx-body
-        | We upcycle used phones into solar-powered
-        br 
-        | devices that pinpoint the location of
-        br
-        | illegal logging as it happens,
-        br
-        | enabling local authorities
-        br 
-        | to respond in real time.
+        | Today, illegal logging is rampant and decentralized. Loggers have virtually no fear of being caught, because, well, it pretty much never happens.
+      p.rfcx-body
+        | <span class="italic">Rainforest Connection</span> changes the game by providing the world's first real-time system for pinpointing deforestation activity <span class="italic">as it occurs</span>, and providing the data openly, freely, and in real-time to anyone around the world.
+      p.rfcx-body
+        | For the first time on a scalable level, responsible agents can arrive on the scene in-time to interrupt the perpetrators and stop the damage, and you too can listen-in as it occurs.
+        a.btn.btn-success(href="/about")
+          | Learn More
+          i.fa.fa-arrow-right
 
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-join

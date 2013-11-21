@@ -22,26 +22,48 @@ block content
 
   div.row-fluid.rfcx-row.rfcx-row-intro-stats
     div.span12
-      p.roadgeek.rfcx-header.title= "Here are the facts. Rainforest Destruction is..."
+      p.roadgeek.rfcx-header.title= "TODAY, RAINFOREST DESTRUCTION IS..."
   div.row-fluid.rfcx-row.rfcx-row-intro-stats
-    div.span4
+    div.span4.stat-page-climate
       p.roadgeek.rfcx-header
-        span.quote
-          | &quot;...one of the leading causes of climate change.&quot;
-    div.span4
+        img.icon(src="#{rfcx_cdn}/img/intro/stats-icon-globe.70.png?v=#{app_version}",style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-bg.70.png?v=#{app_version})")
+        span
+          | ...a leading cause of
+          br
+          span.conclusion= "CLIMATE CHANGE."
+          br
+          span.source= "—United Nations"
+          br
+          a.btn.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
+    div.span4.stat-page-extinction
       p.roadgeek.rfcx-header
-        span.quote
-          | &quot;is the driving force behind the highest species extinction rate in human history.&quot;
-    div.span4
+        img.icon(src="#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version}",style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-bg.70.png?v=#{app_version})")
+        span
+          | ...causing global
+          br
+          span.conclusion= "MASS EXTINCTIONS."
+          br
+          span.source= "—United Nations"
+          br
+          a.btn.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
+        
+    div.span4.stat-page-crime
       p.roadgeek.rfcx-header
-        span.quote
-          | &quot;deforestation causes extinctions&quot;
+        img.icon(src="#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version}",style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-bg.70.png?v=#{app_version})")
+        span
+          | ...mostly caused by
+          br
+          span.conclusion= "ILLEGAL ACTIVITY."
+          br
+          span.source= "—Interpol"
+          br
+          a.btn.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
     div.span6
       a(href='#infoGraphic', role='button', data-toggle='modal')
         div.rfcx-trans-linear.rfcx-crnr-5.infographic-box
-          img.infographic-thmb(src='/cdn/img/intro/infographic.450.png')
+          img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}")
     div.span6.intro-what-text-container
       p.roadgeek.rfcx-header
         | EVERY MINUTE COUNTS.
@@ -96,12 +118,30 @@ block content
       img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
 
 
-  div.modal.hide.fade(id='infoGraphic', tabindex='-1', role='dialog', aria-labelledby='infoGraphicLabel', aria-hidden='true')
+  div.modal.hide.fade(id='stat-climate', tabindex='-1', role='dialog', aria-labelledby='stat-climate-label', aria-hidden='true')
     div.modal-header
       button.close(type='button', data-dismiss='modal', aria-hidden='true')= "x"
-      h3#infoGraphicLabel= "Info Graphic"
+      h3#stat-climate-label= "Deforestation is one of the leading causes of climate change."
     div.modal-body
-      p= "Currently using Bootstrap popup... will use more stylish fade-in YWC popup and interactive features"
+      p= "More info goes here"
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+  div.modal.hide.fade(id='stat-extinction', tabindex='-1', role='dialog', aria-labelledby='stat-extinction-label', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')= "x"
+      h3#stat-extinction-label= "Deforestation is the cause of the biggest extinction since the age of the dinosaurs."
+    div.modal-body
+      p= "More info goes here"
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+  div.modal.hide.fade(id='stat-crime', tabindex='-1', role='dialog', aria-labelledby='stat-crime-label', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')= "x"
+      h3#stat-crime-label= "Deforestation is mostly caused by illegal activity."
+    div.modal-body
+      p= "More info goes here"
     div.modal-footer
       button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 

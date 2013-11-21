@@ -114,12 +114,18 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-intro-what .infographic-box .infographic-thmb { width:100%; }*/
 
 .rfcx-row-intro-stats { padding-top:0px; margin-top:0px; }
-.rfcx-row-intro-stats .rfcx-header { margin:0px 0px 0px 0px; text-align:center; font-size:24px; line-height:24px; }
-.rfcx-row-intro-stats .span4 { margin:15px 0px; }
-.rfcx-row-intro-stats .title { font-size:32px; line-height:32px; margin-top:5px; }
-.rfcx-row-intro-stats .quote { font-style:italic; }
-.rfcx-row-intro-stats .source {  }
+.rfcx-row-intro-stats .rfcx-header { margin:0px 0px 0px 0px; text-align:center; }
+.rfcx-row-intro-stats .span4 { margin:15px 0px; border-right:solid 0px #cccccc; width:33%;}
+.rfcx-row-intro-stats .span4 .rfcx-header  { font-size:28px; line-height:28px; }
+.rfcx-row-intro-stats .icon { float:left; width:70px; height:70px; border:solid 1px white; position:relative; left:7px; }
+.rfcx-row-intro-stats .title { /*font-size:32px; line-height:32px;*/ margin-top:5px; }
+.rfcx-row-intro-stats .btn { margin-top:8px; padding:0px 8px; font-size:12px; clear:both; float:right; margin-right:23%; }
+.rfcx-row-intro-stats .conclusion { font-size:32px; line-height:32px; }
+.rfcx-row-intro-stats .source { clear:both; font-size:22px; line-height:22px; }
 .rfcx-row-intro-stats .rfcx-body { margin:0px 0px 0px 15px; }
+.rfcx-row-intro-stats .stat-page-climate { border-left:solid 0px #cccccc; margin-left:1%; }
+.rfcx-row-intro-stats .stat-page-extinction { border-left:solid 0px #cccccc; }
+.rfcx-row-intro-stats .stat-page-crime { border-left:solid 0px #cccccc; }
 /*.rfcx-row-intro-stats .slider-container { position:relative; border:solid 6px #dddddd; width:98%; height:295px; margin-right:auto; margin-left:auto; overflow:visible; margin-bottom:10px; }
 .rfcx-row-intro-stats .slider-container div { position:absolute; top:0%; left:0%; height:100%; overflow:hidden; border:solid 0px black; }
 .rfcx-row-intro-stats .slider-container .slider-left { width:50%; z-index:1; background-color:gray; }

@@ -124,9 +124,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-intro-stats .span4 .rfcx-header  { font-size:28px; line-height:28px; }
 .rfcx-row-intro-stats .icon { background-color:green; float:left; width:70px; height:70px; border:solid 1px white; position:relative; left:7px; -moz-border-radius:35px; -webkit-border-radius:35px; border-radius:35px; }
 .rfcx-row-intro-stats .title { /*font-size:32px; line-height:32px;*/ margin-top:20px; margin-bottom:15px; }
-.rfcx-row-intro-stats .btn { margin-top:8px; clear:both; left:42px; margin-right:auto; margin-left:auto; }
+.rfcx-row-intro-stats .btn { margin-top:8px; clear:both; left:42px; margin-right:auto; margin-left:auto; position:relative; top:-6px; }
 .rfcx-row-intro-stats .conclusion { font-size:32px; line-height:32px; }
-.rfcx-row-intro-stats .source { clear:both; font-size:22px; line-height:22px; }
+.rfcx-row-intro-stats .source { position:relative; top:-4px; clear:both; font-size:20px; line-height:20px; font-style:italic; }
 .rfcx-row-intro-stats .rfcx-body { margin:0px 0px 0px 15px; }
 .rfcx-row-intro-stats .stat-page-climate { border-left:solid 0px #cccccc; margin-left:1%; }
 .rfcx-row-intro-stats .stat-page-extinction { border-left:solid 0px #cccccc; }

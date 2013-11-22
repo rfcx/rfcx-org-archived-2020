@@ -97,8 +97,8 @@ RFCX.fn.video.place = function(containerObj) {
           +"<source src=\""+vidUri+".mp4\" type=\"video/mp4\" />"
           +"<source src=\""+vidUri+".webm\" type=\"video/webm\" />"
           +"<source src=\""+vidUri+".flv\" type=\"video/flv\" />"
-      //    +"<source src=\""+vidUri+"."+size+".3gp\" type=\"video/3gp\" />"
-          +RFCX.fn.video.vttTag("en","English")
+          +"<source src=\""+uriBase+"240.3gp\" type=\"video/3gp\" />"
+    //      +RFCX.fn.video.vttTag("en","English")
           +"</video>";
       jqCont.html(playerHtml);
 
@@ -248,7 +248,8 @@ RFCX.fn.infoGraphicVideo = function() {
 
   var box = $(".infographic-box");
   var ht = parseInt(box.height());
-  var wd = Math.round(16*ht/9);
-  $(".infographic-box").css({width:0.67*wd+"px",height:ht+"px",overflow:"hidden"}).html("<iframe src=\"//rfcx-static.s3.amazonaws.com/video/vid02/v2/vid02-v2.480.mp4\" style=\"position:absolute;left:-"+Math.round(0.1677*wd)+"px;width:150%;height:100%;\" border=\"0\" frameborder=\"0\"></iframe>");
+  var wd = parseInt(box.width());
+  var vidWd = 16*ht/9;
+  $(".infographic-box").css({width:wd+"px",height:ht+"px",overflow:"hidden"}).html("<iframe src=\"//rfcx-static.s3.amazonaws.com/video/vid02/v2/vid02-v2.480.mp4\" style=\"position:absolute;left:-"+Math.round((vidWd-wd)/2)+"px;width:"+vidWd+"px;height:100%;\" border=\"0\" frameborder=\"0\"></iframe>");
 
 }

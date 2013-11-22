@@ -1,35 +1,173 @@
 WEBVTT
 
-00:01.390 --> 00:04.500
+00:00.000 --> 00:03.236
 We have a solution to illegal logging in rainforests.
 
-00:10.288 --> 00:14.293
-70% OF RAINFOREST LOGGING IS ILLEGAL — UNITED NATIONS
+00:05.700 --> 00:08.700
+70% of logging in rainforests is illegal. -United Nations
 
-00:14.293 --> 00:18.871
-DEFORESTATION IS ONE OF THE LEADING CAUSES OF CLIMATE CHANGE — UNITED NATIONS
+00:08.700 --> 00:13.000
+Deforestation is one of the leading causes of climate change. -United Nations
 
-00:25.000 --> 00:26.879
+00:16.349 --> 00:18.846
 This is what illegal logging looks like.
 
-00:26.879 --> 00:29.200
+00:18.846 --> 00:21.167
 Though it may seem like a small operation,
 
-00:29.200 --> 00:33.438
-in actuality, up to 90% of the rainforest logging that occurs worldwide every year is illegal.
+00:21.167 --> 00:23.938
+in actuality, up to 90% of the rainforest logging
 
-00:35.152 --> 00:40.152
-And year after year, despite many global efforts, it's accelerating rapidly.
+00:23.938 --> 00:26.994
+that occurs worldwide every year is illegal.
 
-00:40.152 --> 00:42.688
+00:26.994 --> 00:30.312
+And year after year, despite many global efforts,
+
+00:30.312 --> 00:32.064
+it's accelerating rapidly. 
+
+00:32.064 --> 00:34.121
 But how is this possible?
 
-00:42.688 --> 00:47.625
-It's possible, because today, illegal loggers have virtually no risk of ever being caught.
+00:34.121 --> 00:38.200
+It's possible because today illegal loggers have virtually
 
-00:48.000 --> 00:51.725
-This current state-of-the-art in detection is satellite surveillance,
+00:38.200 --> 00:39.799
+no risk of ever being caught.
 
-00:51.725 --> 00:55.833
-but with satellites, the updates are so infrequent,
+00:39.799 --> 00:43.181
+The current state of the art in detection is satellite surveillance,
+
+00:43.181 --> 00:45.802
+but with satellites, the updates are so infrequent
+
+00:45.802 --> 00:49.000
+that we can only know about logging activity days or weeks
+
+00:49.000 --> 00:50.309
+after it's already occurred.
+
+00:50.309 --> 00:53.160
+By then, the wood has already been cut
+
+00:53.160 --> 00:56.016
+and removed and has disappeared into the world market.
+
+00:56.016 --> 01:00.901
+What this means is that for all the global investments in stopping deforestation
+
+01:00.901 --> 01:04.599
+our only recourse is often to measure the damage that has already been done.
+
+01:04.599 --> 01:09.018
+There has never been a scalable way to actively prevent illegal logging as it occurs.
+
+01:11.000 --> 01:14.078
+My name is Topher White and I'm a Physicist and Software Engineer.
+
+01:19.700 --> 01:22.465
+We founded Rainforest Connection in 2013,
+
+01:22.465 --> 01:26.974
+because after consulting with experts in the field, we wanted to try an alternative approach to this problem.
+
+01:26.974 --> 01:31.993
+Since then, we've developed the first real-time system for stopping illegal logging.
+
+01:31.993 --> 01:34.500
+It's an amazingly simple system.
+
+01:34.500 --> 01:36.455
+We take old recycled smart phones,
+
+01:36.455 --> 01:38.000
+retrofit them with solar panels,
+
+01:38.000 --> 01:39.868
+and hide them in the tree canopy
+
+01:39.868 --> 01:42.839
+where they listen constantly for the sound profiles of illegal logging.
+
+01:42.839 --> 01:45.786
+The very moment that a chainsaw is used in the forest,
+
+01:45.786 --> 01:49.915
+the noise is picked up by our devices and using the standard GSM cell-phone network
+
+01:49.915 --> 01:54.553
+an alert is sent to local partners who can intervene immediately and actually halt the logging.
+
+01:54.553 --> 01:57.473
+This entire process happens within a matter of minutes.
+
+01:57.473 --> 02:02.389
+The devices cost very little, have no negative ecological impact on the forest,
+
+02:02.389 --> 02:05.000
+and can detect chainsaw noises up to a kilometer in the distance.
+
+02:06.000 --> 02:08.200
+But does it actually work?
+
+02:08.200 --> 02:10.119
+We took it to Indonesia,
+
+02:10.119 --> 02:13.265
+to one of the world's most endangered rainforests to find out.
+
+02:13.800 --> 02:16.774
+Our first partner in the field, Kalaweit,
+
+02:16.774 --> 02:20.716
+maintains a rainforest sanctuary in Sumatra to protect Gibbons,
+
+02:20.716 --> 02:24.551
+a small ape that, like countless animals, has been driven out by illegal logging.
+
+02:24.851 --> 02:28.727
+Even their well-guarded reserve is threatened daily by loggers.
+
+02:28.727 --> 02:33.000
+In cooperation with Kalaweit, we installed a prototype of our system in their reserve,
+
+02:33.000 --> 02:37.062
+and only one day later we detected our first chainsaw noises.
+
+02:37.200 --> 02:41.484
+We were able to respond immediately and arrive on the scene within minutes,
+
+02:41.484 --> 02:43.937
+effectively interrupting the loggers in the act.
+
+02:44.200 --> 02:47.179
+As news of our initial success has spread,
+
+02:47.179 --> 02:49.865
+we've been contacted by other groups who want the system too.
+
+02:49.865 --> 02:54.787
+But first, we want to perfect the design where we began with our partner, Kalaweit.
+
+02:54.787 --> 02:58.840
+To move forward we need more resources to expand our engineering team
+
+02:58.840 --> 03:01.010
+and bring our system to a point of maturity.
+
+03:01.010 --> 03:04.955
+Whereby we can scale up and offer Rainforest Connection to other rainforest reserves,
+
+03:04.955 --> 03:07.589
+NGOs, local partners and communities
+
+03:07.589 --> 03:11.006
+to assist in effectively protecting the earth's last remaining rainforests.
+
+03:11.100 --> 03:13.900
+With this simple technology and your help,
+
+03:13.900 --> 03:18.000
+we think we can stop the black market logging industry.
 

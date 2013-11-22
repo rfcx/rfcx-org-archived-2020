@@ -98,7 +98,7 @@ RFCX.fn.video.place = function(containerObj) {
           +"<source src=\""+vidUri+".webm\" type=\"video/webm\" />"
           +"<source src=\""+vidUri+".flv\" type=\"video/flv\" />"
           +"<source src=\""+uriBase+"240.3gp\" type=\"video/3gp\" />"
-    //      +RFCX.fn.video.vttTag("en","English")
+          +RFCX.fn.video.vttTag("en","English")
           +"</video>";
       jqCont.html(playerHtml);
 
@@ -246,10 +246,15 @@ RFCX.fn.video.followUp = function(showHide) {
 
 RFCX.fn.infoGraphicVideo = function() {
 
-  var box = $(".infographic-box");
-  var ht = parseInt(box.height());
-  var wd = parseInt(box.width());
-  var vidWd = 16*ht/9;
-  $(".infographic-box").css({width:wd+"px",height:ht+"px",overflow:"hidden"}).html("<iframe src=\"//rfcx-static.s3.amazonaws.com/video/vid02/v2/vid02-v2.480.mp4\" style=\"position:absolute;left:-"+Math.round((vidWd-wd)/2)+"px;width:"+vidWd+"px;height:100%;\" border=\"0\" frameborder=\"0\"></iframe>");
+  // var box = $(".infographic-box");
+  // var ht = parseInt(box.height());
+  // var wd = parseInt(box.width());
+  // var vidWd = 16*ht/9;
+  // $(".infographic-box").css({width:wd+"px",height:ht+"px",overflow:"hidden"}).html("<iframe src=\"//rfcx-static.s3.amazonaws.com/video/vid02/v2/vid02-v2.480.mp4\" style=\"position:absolute;left:-"+Math.round((vidWd-wd)/2)+"px;width:"+vidWd+"px;height:100%;\" border=\"0\" frameborder=\"0\"></iframe>");
+
+}
+
+RFCX.fn.infoGraphicVideoSetup = function() {
+
 
 }

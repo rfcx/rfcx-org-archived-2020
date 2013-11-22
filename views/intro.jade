@@ -4,7 +4,7 @@ block content
   
   div.container-narrow.banner-video
     div.dynamic-crop-right.banner-bg(style="background-image:url(#{rfcx_cdn}/img/intro/banner-forest.1400.jpg?v=#{app_version});")
-    div.video-box.video-box-page(data-video-id="vid01",data-video-version="7",data-video-youtube="XryA4YLKPj0")
+    div.video-box.video-box-page(data-video-id="vid01",data-video-version="7",data-video-youtube="XryA4YLKPj0",data-video-cc="1",data-video-run-followup="1")
       img.rfcx-trans-linear.video-box-poster(src="#{rfcx_cdn}/img/intro/video-poster.512.jpg")
       img.rfcx-trans-linear.rfcx-trans-25.video-box-bg(src="#{rfcx_cdn}/img/intro/16x9.16.gif")
       i.rfcx-trans-linear.fa.fa-play-circle-o
@@ -62,8 +62,8 @@ block content
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
     div.span6
       p.roadgeek.rfcx-header.rfcx-intro-what-title= "WE CAN STOP ILLEGAL LOGGING & POACHING. HERE'S HOW:"
-      div.rfcx-trans-linear.rfcx-crnr-5.infographic-box(onClick="RFCX.fn.infoGraphicVideo();")
-        img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}")
+      div.rfcx-trans-linear.rfcx-crnr-5.infographic-box(data-video-id="vid02",data-video-version="2",data-video-youtube="YkR69ssGK6o",data-video-cc="0",data-video-height="350",data-video-controls="0",data-video-run-followup="0")
+        img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}",onClick="RFCX.fn.video.place('.infographic-box');")
     div.span6.intro-what-text-container
       p.roadgeek.rfcx-header
         | EVERY MINUTE COUNTS.
@@ -77,11 +77,8 @@ block content
         | <span class="italic">Rainforest Connection</span> changes the game by providing the world's first real-time logging detection system, pinpointing deforestation activity <span class="italic">as it occurs</span>, and providing the data openly, freely, and immediately to anyone around the world.
       p.rfcx-body
         | For the first time on a scalable level, responsible agents can arrive on the scene in-time to interrupt the perpetrators and stop the damage, and the world can listen-in as it occurs.
-        a.btn.btn-success(href="/about")
+        a.btn.btn-primary(href="/about")
           | Learn More
-          i.fa.fa-arrow-right
-        a.btn.btn-warning(href="/about")
-          | Get Involved
           i.fa.fa-arrow-right
 
 

@@ -245,12 +245,17 @@ RFCX.fn.video.followUp = function(showHide) {
       display: "block" }).animate({opacity:1},"slow",function(){
         $("#rfcx-video-player-"+RFCX.video.id).remove();
         $(this).append(""
+
+          +"<p class=\"roadgeek rfcx-header\">HELP US SPREAD THE WORD</p>"
+          +"<p class=\"roadgeek rfcx-header rfcx-sub-header\">1. Share with your networks:</p>"
+
           +"<span class=\"rfcx-social-like rfcx-fb-like\">"
             +"<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=recommend&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"
           +"<span class=\"rfcx-social-like rfcx-tw-like\">"
             +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20new%20way%20to%20stop%20illegal%20logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe></span>"
           +"<span class=\"rfcx-social-like rfcx-gp-like\">"
             +"<div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div></span>"
+        
         ); $.getScript("//apis.google.com/js/plusone.js");
         
       // if (RFCX.renderForTouch) {

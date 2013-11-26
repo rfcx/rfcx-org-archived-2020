@@ -20,7 +20,7 @@ var RFCX = {
   donateAmount: 50,
   speedTest: { kB: 100, expireMinutes: 2 },
   snapJsObj: null,
-  olark: { allow: true, excludePaths: ["/intro","/video"], displayDelay: 10 },
+  olark: { allow: true, excludePaths: ["/","/video"], displayDelay: 10 },
   scrollQueues: {
     loadFollowButtons: {
       whenVisible: { intro: ".rfcx-row-intro-join" },
@@ -168,6 +168,7 @@ RFCX.fn.load.stripePayments = function(){
 
     $.getScript("https://checkout.stripe.com/v2/checkout.js", function(){
       $("#stripe-payment-button").click(function(){
+        RFCX.donateAmount = Math.round($("#rfcx-donate-amount").val());
         var token = function(res){
           var $input = $('<input type=hidden name=stripeToken />').val(res.id);
           $('form').append($input).submit();

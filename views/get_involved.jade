@@ -46,7 +46,7 @@ block content
 
       div.control-group.stripe-donate
         div.controls
-          a.btn.btn-primary#stripe-payment-button= "Donate via credit card"
+          a.btn.btn-primary(href="#make-donation", role="button", data-toggle="modal")= "Make a donation"
 
     div.span4
       p.roadgeek.rfcx-header= "DONATE A PHONE"
@@ -89,6 +89,25 @@ block content
       | Suite 101-1717
       br
       | San Francisco, CA, 94102
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+  div.modal.hide.fade(id='make-donation', tabindex='-1', role='dialog', aria-labelledby='make-donation-label', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')
+        i.fa.fa-times
+      h3#make-donation-label
+        | Thank you!<br />Your contribution means so much to us.
+    div.modal-body
+      br
+      div.control-group.form-donate
+        div.controls
+          div.left-label
+            | Amount (USD):
+          div.input-append
+            input.input-large#rfcx-donate-amount(type='text', data-type='number', data-required='true', id='rfcx-donate-amount', name='rfcx-donate-amount', placeholder='USD',value='50.00', size='7', maxlength='7')
+            a.btn.btn-primary#stripe-payment-button= "Make a Donation"
+
     div.modal-footer
       button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 

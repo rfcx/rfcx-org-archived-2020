@@ -248,7 +248,7 @@ RFCX.fn.video.followUp = function(showHide) {
 
           +"<p class=\"roadgeek rfcx-header\">JOIN US &amp; SPREAD THE WORD</p>"
           +"<p class=\"roadgeek rfcx-header rfcx-sub-header\">"
-            +"1. Please share this video with your friends"
+            /*+"1. "*/+"Please share this video with your friends"
             +"<br /><br />"
 //            +"2. Stay tuned!"
           +"</p>"

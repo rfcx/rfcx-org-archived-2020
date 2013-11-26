@@ -10,21 +10,19 @@ block content
           | <em>Rainforest Connection</em> uses up-cycled mobile technology to monitor and protect remote forests in real-time.
   div.row-fluid.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
     div.span4
-      p.roadgeek.rfcx-header
-        | IF A TREE FALLS
+      p.roadgeek.rfcx-header.italic
+        | &ldquo;IF A TREE FALLS
         br
-        | IN THE FOREST...
+        | <span style="position:relative;left:75px;">IN THE FOREST...&rdquo;</span>
+      p.rfcx-body
+        span.italic
+          | &ldquo;...and no one is there to hear it, does it make a sound?&rdquo;
       p.rfcx-body
         span
-          | These days, statistically speaking, when a tree falls in the forest, there's usually  somebody there to hear it—the people that cut it down.
-        br
-        br
-        span
-          | <em>Rainforest Connection</em> technology lets us finally rewrite the ancient adage. Now, we can say:
-        br
-        br
+          | These days, statistically speaking, when a tree falls in the forest, there's usually  somebody there to hear it—the people that cut it down. With <em>Rainforest Connection</em> technology, we can finally rewrite this ancient adage, to read:
+      p.rfcx-body
         span.italic
-          | "If a tree falls in the forest, "
+          | &ldquo;If a tree falls in the forest, and no one is there to hear it, <b>you</b> still can. And so can the world.&rdquo;
 
 
     div.span8
@@ -46,35 +44,68 @@ block content
         | TURNING OLD PHONES
         br
         | INTO FOREST GUARDIANS
+      img.trash-img-mobile(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
       p.rfcx-body
-        img.trash-img-mobile(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
-        span= "Why use old smartphones to guard the rainforest?"
-        br
-        span= "Explaining why this is the moment when all technology converged to make this possible. Turning trash into value."
+        span
+          | Why use old, recycled smartphones to guard the rainforest?
+          br
+          | Because it's simple, inexpensive and it works. 
+      p.rfcx-body
+        span
+          | Smartphones are arguably the most efficient, advanced, and well-understood computers available on the market today, and each year, more than 150 million phones are discarded <a target="_blank" href="http://www.electronicstakeback.com/wp-content/uploads/Facts_and_Figures_on_EWaste_and_Recycling.pdf">in the United States alone</a>.
+          br
+          | <span class="italic">Rainforest Connection</span> can take this "trash" and put it to use immediately.
+      p.rfcx-body
+        span
+          | Today, even earth's most remote forested areas have solid, reliable wireless telecommunications infrastructure. Rather than start from scratch, <span class="italic">Rainforest Connection</span> is already able to leverage this infrastructure from the start to protect the world's most threatened forests.
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
     div.span4
       p.roadgeek.rfcx-header= "WHERE DO WE START?"
       p.rfcx-body
-        | Explanation of where we are now, where we're gonna go, and why we know what we're doing...
+        | The <span class="italic">Rainforest Connection</span> system works, and we've now <a href="video" target="_blank">proven it in the field</a> in Sumatra against actual illegal logging operations. Now we need to expand by putting the next generation of devices into <b>three more reserves</b> in the rainforests of Africa and Borneo.
+      p.rfcx-body
+        | These three latest pilot projects will help to prove that the system can operate on <b>a global scale, in any forest, anywhere</b>.
+      p.rfcx-body
+        | We know that this innovation can help to turn the tide of environmental crisis, but <a href="get_involved">we need your help</a> to make it a reality.
     div.span8
       div.rfcx-crnr-5.nopin.map-cropper
         img.map-frame(src="#{rfcx_cdn}/img/about/iphone5-black-bg.690.png?v=#{app_version}")
         div.map-cropper-internal
           div#map-container
           div.map-cover
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-4
-    div.span5.offset1
-      img.frog-img(src="#{rfcx_cdn}/img/about/azureus.290.png?v=#{app_version}")
-    div.span6
-      p.roadgeek.rfcx-header
-        | REAL VALUE:
-        br
-        | WHY FROGS
-        i.fa.fa-angle-right(style="margin:0px 10px;")
-        | LOGS
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-join
+    div.span7
+      a#get_involved
+      p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS. JOIN US."
       p.rfcx-body
-        img.frog-img-mobile(src="#{rfcx_cdn}/img/about/azureus.290.png?v=#{app_version}")
-        | Short rational appeal for why saving the rainforest is an imperative.
-        br
-        | End with a succinct, potent emotional appeal.
+        img.stopsign-mobile(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
+
+        form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
+
+          span.rfcx-body
+            span
+              | Please <span class="bold">Like & Follow Us</span> On Facebook, Twitter and Google+.
+          
+          div.social-follow-containers
+            div.social-follow-container
+              div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
+            div.social-follow-container
+              a.social-follow-item.twitter-follow-button(data-show-count="true", href="https://twitter.com/RainforestCx")= "Follow @RainforestCx"
+            div.social-follow-container
+              div.social-follow-item.g-follow(data-height="24", data-href="//plus.google.com/+RfcxOrg", data-rel="publisher")
+
+
+          div.control-group
+            span.rfcx-body
+              span
+              | Stay informed by signing up for our <span class="bold">email newsletter</span>.
+            br
+            div.controls
+              div.input-append
+                input.input-large.email#mce-EMAIL(type='text', data-type='email', id='email', name='EMAIL', placeholder='Your email', required)
+                a.btn.btn-success= "Sign up"
+
+    div.span5
+      img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")

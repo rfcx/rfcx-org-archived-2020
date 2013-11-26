@@ -66,30 +66,13 @@ function apiCb(req, res, next) { apiCb_.run(req, res, next, apiEp, Model); }
 for (i in apiEp.get) { app.get(apiEp.get[i].path, apiCb); }
 for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 
-
-
-// Web Initialization
-app.get("/", function(req, res){
-  if  ( (process.env.NODE_ENV === "production") && (req.host !== "rfcx.org") ) {
-      console.log("Received request at '"+req.host+"'. Redirecting to http://rfcx.org/.");
-      routes.redirectToHomePage(req,res);
-  } else {
-    fs.readFile("./public/_old_site/index.html", function (e, d) {
-      if (e) throw e;
-      res.setHeader("Content-Type", "text/html");
-      res.setHeader("Content-Length", d.length);
-      res.send(d);
-    });
-  }
-});
-
 app.get("/referral/bonne_app", routes.redirectToHomePage );
-app.get("/interpol", routes.redirectToVideoPage );
+app.get("/intro", routes.redirectToHomePage );
 
 app.get("/health_check", routes.returnHealthCheck );
 
 for (var i = 0; i < routes.navItems.length; i++) {
-  app.get("/"+routes.navItems[i][0], function(req, res){ routes.page(req, res, process, Model); });
+  app.get(routes.navItems[i][2], function(req, res){ routes.page(req, res, process, Model); });
 }
 
 app.get("/tumblr", require("./routes/tumblr.js").refreshTumblrCache );

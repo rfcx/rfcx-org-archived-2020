@@ -5,12 +5,12 @@
 
 var navItems = [
 //  [ page-id, nav-title, uri-path, page-title, show-in-nav, is-isolated ]
-    [ "intro", "Intro", "/intro", "Rainforest Connection | Protecting rainforests with real-time data", true, false ],
+    [ "intro", "Intro", "/", "Rainforest Connection | Protecting rainforests with real-time data", true, false ],
     [ "about", "About", "/about", "About", true, false ],
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
     [ "blog", "Blog", "/blog", "Blog", false, false ],
     [ "team", "Team", "/team", "Team", false, false ],
-    [ "tumblr", "Editorial", "http://tumblr.rfcx.org/", "", true, false ],
+    [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", true, false ],
 
     [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true ]
   ];

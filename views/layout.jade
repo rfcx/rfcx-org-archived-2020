@@ -34,7 +34,10 @@ html(lang="en")
                   i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
               else if (item[4])
                 li
-                  a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
+                  if (item[2].indexOf("://") != -1)
+                    a.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")= item[1]
+                  else
+                    a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
         a
           img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
 
@@ -44,7 +47,8 @@ html(lang="en")
       div.container-narrow
         ul.nav.nav-pills.pull-left
           li.cp
-            span.copyright= "©2013 Rainforest Connection"
+            span.copyright
+              | &copy;2013 Rainforest Connection &#0153;
 
           if (!current_page[5]) 
             li.ft= "|"

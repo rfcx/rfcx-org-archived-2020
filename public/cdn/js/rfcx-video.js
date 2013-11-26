@@ -246,8 +246,12 @@ RFCX.fn.video.followUp = function(showHide) {
         $("#rfcx-video-player-"+RFCX.video.id).remove();
         $(this).append(""
 
-          +"<p class=\"roadgeek rfcx-header\">HELP US SPREAD THE WORD</p>"
-          +"<p class=\"roadgeek rfcx-header rfcx-sub-header\">1. Share with your networks:</p>"
+          +"<p class=\"roadgeek rfcx-header\">JOIN US &amp; SPREAD THE WORD</p>"
+          +"<p class=\"roadgeek rfcx-header rfcx-sub-header\">"
+            +"1. Please share this video with your friends"
+            +"<br /><br />"
+//            +"2. Stay tuned!"
+          +"</p>"
 
           +"<span class=\"rfcx-social-like rfcx-fb-like\">"
             +"<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=recommend&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"

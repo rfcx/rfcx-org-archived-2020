@@ -238,7 +238,7 @@ RFCX.fn.ui.about.initMap = function(){
     
     var mapUrls = {
       tiles: 'http://a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
-      json: 'http://rfcx.cartodb.com/api/v2/viz/67b0fa66-ee40-11e2-8244-3085a9a9563c/viz.json?+v='+RFCX.appVersion
+      json: 'http://rfcx.cartodb.com/api/v2/viz/40cabcb8-56d0-11e3-87d7-3085a9a9563c/viz.json?+v='+RFCX.appVersion
     };
 
     L.tileLayer(mapUrls.tiles, {

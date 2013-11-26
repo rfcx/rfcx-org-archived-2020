@@ -212,6 +212,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-get_involved-2 .phone-donate .btn { font-size:18px; padding:10px 15px; }
 .rfcx-row-get_involved-2 .control-group .parsley-error-list { display:none !important; }
 
+.form-donate { position:relative; margin-right:auto; margin-left:auto; width:420px; }
 .form-donate .input-append .input-large { width:80px; padding-left:0px; padding-right:15px; padding-top:10px; padding-bottom:10px; font-size:18px; font-weight:bold; text-align:right; }
 .form-donate .input-append .btn { padding:9px 20px 11px 20px; font-size:18px; color:white; }
 .form-donate .left-label { float:left; width:auto; font-size:18px; color:#000; padding:11px 6px 11px 0px; } 

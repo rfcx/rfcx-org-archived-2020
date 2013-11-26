@@ -38,7 +38,7 @@ var callbacks = {
   post: {
 
     postCheckIn: function(req, res, Model) {
-      
+
       parsers.processCheckIn(req,res,function(req, res, d){
 
         var rtrn = {

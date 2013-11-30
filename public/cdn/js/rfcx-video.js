@@ -60,10 +60,13 @@ RFCX.fn.video.prepare = function() {
     RFCX.fn.video.followUp(false);
 }
 
-RFCX.fn.video.vttTag = function(shortName, longName) {
-  return "<track srclang=\""+shortName+"\" label=\""+longName+"\""
-        +" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+"."+shortName+".vtt?v="+RFCX.appVersion+"\""
-        +" kind=\"captions\" default />";
+RFCX.fn.video.vttTags = function(shortNames) {
+  var rtrn = "", longNames = { en:"English", fr:"Français" };
+  for (var i = 0; i < shortNames.length; i++) {
+    rtrn += "<track srclang=\""+shortNames[i]+"\" label=\""+longNames[shortNames[i]]+"\""
+        +" src=\""+RFCX.cdn.rfcx+"/vtt/"+RFCX.video.id+"/"+RFCX.video.id+"."+shortNames[i]+".vtt?v="+RFCX.appVersion+"\""
+        +" kind=\"captions\""+((i==0) ? " default" : "")+" />";
+  } return rtrn;
 }
 
 RFCX.fn.video.place = function(containerObj) {
@@ -119,7 +122,7 @@ RFCX.fn.video.place = function(containerObj) {
           +"<source src=\""+vidUri+".webm\" type=\"video/webm\" />"
           +"<source src=\""+vidUri+".flv\" type=\"video/flv\" />"
           +"<source src=\""+uriBase+"240.3gp\" type=\"video/3gp\" />"
-          +((RFCX.video.cc==0) ? "" : RFCX.fn.video.vttTag("en","English"))
+          +((RFCX.video.cc==0) ? "" : RFCX.fn.video.vttTags(["en","fr"]))
           +"</video>";
       RFCX.video.previousHtml = jqCont.html();
       jqCont.html(playerHtml);

@@ -63,6 +63,9 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .rfcx-row-intro-what .rfcx-header { margin:0px 0px 0px 0px; font-size:34px; line-height:28px; }
 .rfcx-row-intro-what .infographic-box { width:300px; margin-left:2px; }
 .rfcx-row-intro-what .intro-what-text-container p { margin-left:2%; margin-top:0px; width:96%; }
+.rfcx-row-intro-what { padding-top:70px; }
+.rfcx-row-intro-what .rfcx-intro-what-title { top:-65px; }
+.rfcx-row-intro-what .intro-what-text-container .rfcx-header { font-size:26px; line-height:26px; }
 
 .rfcx-row-about-1 .rfcx-header { margin:10px 0px 0px 0px; }
 .rfcx-row-about-2 .rfcx-header { margin:20px 0px 0px 0px; }

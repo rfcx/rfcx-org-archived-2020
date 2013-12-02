@@ -4,4 +4,4 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 #rfcx-container, #rfcx-menu-mobile { display:none; }
 
 #rfcx-disclaimer-mobile { display:block; position:fixed; width:90%; height:90%; padding:5%; text-align:center; }
-#rfcx-disclaimer-mobile span:before { content:"Currently, this site can only be viewed on mobile devices when oriented vertically (in 'portrait mode'). Please rotate your device to the vertical position, and the page should appear automatically. Thank you!"; }
+#rfcx-disclaimer-mobile span:before { content:"Currently, this site can only be viewed on vertically-oriented mobile devices ('portrait mode'). Please rotate your device to the vertical position to view the page. Thank you!"; }

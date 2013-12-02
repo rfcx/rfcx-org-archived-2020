@@ -49,6 +49,7 @@ $(function(){
   RFCX.fn.initializeUi.onResize();
   RFCX.fn.initializeUi.onScroll();
   RFCX.fn.initializeUi.externalizeModalPopups();
+  RFCX.fn.reactiveUi.setOnOrientationChange();
 
   RFCX.setOlark();
 
@@ -136,6 +137,14 @@ RFCX.fn.reactiveUi.scrollQueues = function() {
 RFCX.fn.reactiveUi.modifyOverWidthElements = function() {
   var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
   $(".dynamic-crop-right").css("width",newWidth);
+}
+
+RFCX.fn.reactiveUi.setOnOrientationChange = function() {
+  window.onorientationchange = function() {
+    if (RFCX.renderForTouch) {
+      RFCX.fn.video.init();
+    }
+  }
 }
 
 RFCX.fn.insertCss = function(url) {

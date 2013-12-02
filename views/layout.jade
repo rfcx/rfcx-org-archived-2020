@@ -97,6 +97,20 @@ html(lang="en")
     div.modal-footer
       button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
+  div#rfcx-menu-mobile
+    ul
+      li.roadgeek.header
+        | Rainforest Connection
+      for item in nav_items
+        if (item[0] == current_page[0])
+          a(href="#")
+            li.roadgeek.active= item[1]
+        else if (item[4])
+          a(href="#{item[2]}")
+            li.roadgeek= item[1]
+      a(href="#contact", role="button", data-toggle="modal")
+        li.roadgeek= "Contact"
+
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')

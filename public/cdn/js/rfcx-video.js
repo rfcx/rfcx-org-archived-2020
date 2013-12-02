@@ -89,8 +89,8 @@ RFCX.fn.video.place = function(containerObj) {
     RFCX.video.runFollowUp = (parseInt(jqCont.attr("data-video-run-followup"))===1);
   } else { RFCX.video.runFollowUp = false; }
   if (!RFCX.video.forceYouTube) {
-    var sz = RFCX.video.sizes, vidSz = sz[sz.length-1], bw = RFCX.getBandwidthKb(),
-    posterImg = "//d3gq709nndn9uy.cloudfront.net/video/"+RFCX.video.id+"/"+RFCX.video.id+"-poster.jpg";
+    var sz = RFCX.video.sizes, vidSz = sz[sz.length-1], bw = RFCX.getBandwidthKb();
+    RFCX.video.posterUri = RFCX.cdn.rfcxStatic+"video/"+RFCX.video.id+"/"+RFCX.video.id+"-poster.jpg";
     // set video size based on window width (or smallest for mobile devices)
     if (RFCX.renderForMobile) { vidSz = sz[RFCX.video.mobileSize];
     } else { for (var i = sz.length-1; i >= 0; i--) { if ((1.1 * sz[i][0]) >= wndw[0]) { vidSz = sz[i]; break; } } }
@@ -102,12 +102,9 @@ RFCX.fn.video.place = function(containerObj) {
     }
 
     if (!RFCX.video.forceYouTube) {
-      var uriBase = "//d4bl4mvczhn5i.cloudfront.net/video/"+RFCX.video.id
+      var uriBase = RFCX.cdn.rfcxStatic+"video/"+RFCX.video.id
           +"/v"+RFCX.video.version+"/"+RFCX.video.id+"-v"+RFCX.video.version+".",
           vidUri = uriBase + vidSz[1];
-          if ((RFCX.video.posterUri=="") && RFCX.renderForTouch) {
-            RFCX.video.posterUri = $(".video-box-page .video-box-poster").attr("src");
-          }
 
       console.log("window width: "+wndw[0]+" -> playing: "+vidSz[0]+"x"+vidSz[1]+" ("+vidSz[2]+"kb/s)");
       var vttPreUri = "";
@@ -131,7 +128,7 @@ RFCX.fn.video.place = function(containerObj) {
         RFCX.video.obj = this;
         RFCX.video.obj.on("pause", function(){
           analytics.track("video_pause", { label: RFCX.video.id, value: RFCX.fn.video.percentComplete });
-          if (RFCX.renderForTouch && !RFCX.fn.video.isFullScreen()){ RFCX.fn.video.followUp(true); }
+          if (RFCX.renderForTouch && !RFCX.fn.video.isFullScreen()){ jqCont.html(RFCX.video.previousHtml); RFCX.fn.video.followUp(true); }
         });
         RFCX.video.obj.on("ended", function(){
           if (RFCX.video.runFollowUp) { RFCX.fn.video.close(); } else { jqCont.html(RFCX.video.previousHtml); RFCX.fn.video.reset(); }

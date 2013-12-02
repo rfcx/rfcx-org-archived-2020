@@ -8,7 +8,7 @@ var RFCX = {
       all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}
     }
   },
-  cdn: { rfcx: null, rfcxVendor: null, bootstrap: null, cdnJs: null, videoJs: null },
+  cdn: { rfcx: null, rfcxVendor: null, rfcxStatic:"//d4bl4mvczhn5i.cloudfront.net/", bootstrap: null, cdnJs: null, videoJs: null },
   mapObj: null,
   timer: { windowResize: null, windowScroll: null },
   bodyWidth: $('.container-narrow').innerWidth(),
@@ -196,7 +196,7 @@ RFCX.fn.load.bootstrapJs = function(){
 }
 
 RFCX.fn.load.jqueryAnimateScroll = function(){
-  if (!RFCX.renderForMobile) { $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js"); }
+  $.getScript(RFCX.cdn.rfcxVendor+"/jquery-animate-scroll/1.0.5/animatescroll.js");
 }
 
  RFCX.fn.load.hintCss = function() {
@@ -329,7 +329,7 @@ RFCX.setDevMode = function() {
   if (typeof window.console === "undefined") { window.console = function(msg){ }; }
   window.devLog = function(msg){ if (RFCX.nodeEnv!=="production") { console.log(msg); } };
   if (typeof window.analytics === "undefined") {
-    window.analytics = { track: function(name,opt){ console.log("analytics: "+name); console.log(opt); } }
+    window.analytics = { track: function(name,opt){ console.log("analytics: "+name); } }
   }
 }
 

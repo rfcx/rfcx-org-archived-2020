@@ -376,6 +376,7 @@ RFCX.forceOlark = function() {
   RFCX.olark.displayDelay = 0;
   RFCX.olark.allow = true;
   olark('api.box.show');
+  olark('api.box.expand');
 }
 
 RFCX.getBandwidthKb = function() {

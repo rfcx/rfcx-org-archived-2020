@@ -180,6 +180,7 @@ RFCX.fn.load.stripePayments = function(){
     $.getScript("https://checkout.stripe.com/v2/checkout.js", function(){
       $("#stripe-payment-button").click(function(){
         RFCX.donateAmount = Math.round($("#rfcx-donate-amount").val());
+        $("#make-donation").modal("hide");
         var token = function(res){
           var $input = $('<input type=hidden name=stripeToken />').val(res.id);
           $('form').append($input).submit();

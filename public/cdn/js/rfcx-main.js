@@ -2,6 +2,7 @@ var RFCX = {
   currentPage: null,
   pageLoaded:new Date(),
   isIsolated: false,
+  isHTTPS: (window.location.protocol.indexOf("https") > -1),
   fn: { load: {}, reactiveUi: {}, initializeUi: {}, video: {},
     ui: {
       all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}
@@ -20,10 +21,10 @@ var RFCX = {
   donateAmount: 50,
   speedTest: { kB: 100, expireMinutes: 2 },
   snapJsObj: null,
-  olark: { allow: true, excludePaths: ["/","/video"], displayDelay: 10 },
+  olark: { allow: true, excludePaths: ["/","/video"], displayDelay: 15 },
   scrollQueues: {
     loadFollowButtons: {
-      whenVisible: { intro: ".rfcx-row-intro-join" },
+      whenVisible: { intro: ".rfcx-row-sctn-join" },
       position: 1000, mobilePosition: 1000, isLoaded: false }
   },
   social: {
@@ -219,8 +220,13 @@ RFCX.fn.load.browserDetect = function() {
   if (!RFCX.renderForMobile) {
     $.getScript(RFCX.cdn.rfcxVendor+"/browser-detect/browser-detect.min.js",function(){
       if (BrowserDetect.browser==="Explorer") {
-        if (BrowserDetect.version <= 8) { RFCX.video.forceYouTube = true; }
-        if (BrowserDetect.version <= 7) { RFCX.regressFontAwesome(); }
+        if (BrowserDetect.version <= 8) {
+          RFCX.video.forceYouTube = true;
+          if ($("#map-container").length > 0) { RFCX.fn.insertCss("//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css"); }
+        }
+        if (BrowserDetect.version <= 7) {
+          RFCX.regressFontAwesome();
+        }
       }
   });}
 }
@@ -228,31 +234,25 @@ RFCX.fn.load.browserDetect = function() {
 RFCX.fn.ui.about.initMap = function(){
 
   RFCX.fn.insertCss("//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css");
-
   $.getScript("//libs.cartocdn.com/cartodb.js/v3/cartodb.js",function(){
 
     RFCX.mapObj = new L.Map('map-container', {
-      center:[2,60],
-      zoom: (!RFCX.renderForMobile) ? 2 : 1,
-      zoomControl: false
+      center:[2,60], zoom: (!RFCX.renderForMobile) ? 2 : 1, zoomControl: false
     });
     
     var mapUrls = {
-      tiles: 'http://a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
-      json: 'http://rfcx.cartodb.com/api/v2/viz/40cabcb8-56d0-11e3-87d7-3085a9a9563c/viz.json?+v='+RFCX.appVersion
+      tiles: '//a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
+      json: '//rfcx.cartodb.com/api/v2/viz/40cabcb8-56d0-11e3-87d7-3085a9a9563c/viz.json?+v='+RFCX.appVersion
     };
 
     L.tileLayer(mapUrls.tiles, {
       attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
     }).addTo(RFCX.mapObj);
     
-    cartodb.createLayer(RFCX.mapObj, mapUrls.json).addTo(RFCX.mapObj)
+    cartodb.createLayer(RFCX.mapObj, mapUrls.json, {https:RFCX.isHTTPS}).addTo(RFCX.mapObj)
       .on('done', function(layer){
-
       }).on('error', function(err){
-        console.log("an error occurred: " + err);
-      }); 
-      
+      });
     });
 }
 
@@ -360,6 +360,12 @@ RFCX.setOlark = function(setOnOff) {
       if (canRender) { olark('api.box.show'); }
     }
   }
+}
+
+RFCX.forceOlark = function() {
+  RFCX.olark.displayDelay = 0;
+  RFCX.olark.allow = true;
+  olark('api.box.show');
 }
 
 RFCX.getBandwidthKb = function() {

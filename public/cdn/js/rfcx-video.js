@@ -122,7 +122,7 @@ RFCX.fn.video.place = function(containerObj) {
           +"<source src=\""+vidUri+".webm\" type=\"video/webm\" />"
           +"<source src=\""+vidUri+".flv\" type=\"video/flv\" />"
           +"<source src=\""+uriBase+"240.3gp\" type=\"video/3gp\" />"
-          +((RFCX.video.cc==0) ? "" : RFCX.fn.video.vttTags(["en","fr"]))
+          +((RFCX.video.cc==0) ? "" : RFCX.fn.video.vttTags(["en"]))
           +"</video>";
       RFCX.video.previousHtml = jqCont.html();
       jqCont.html(playerHtml);

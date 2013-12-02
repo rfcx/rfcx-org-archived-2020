@@ -75,18 +75,21 @@ block content
           div#map-container
           div.map-cover
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-join
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-sctn-join
     div.span7
       a#get_involved
       p.roadgeek.rfcx-header= "HELP SILENCE THE CHAINSAWS. JOIN US."
       p.rfcx-body
-        img.stopsign-mobile(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
+        div.stopsign-mobile
+          img(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
 
         form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
 
           span.rfcx-body
             span
-              | Please <span class="bold">Like & Follow Us</span> On Facebook, Twitter and Google+.
+              | Please <span class="bold">Like & Follow Us</span> 
+              br.mobile-only
+              | On Facebook, Twitter and Google+.
           
           div.social-follow-containers
             div.social-follow-container
@@ -100,7 +103,7 @@ block content
           div.control-group
             span.rfcx-body
               span
-              | Stay informed by signing up for our <span class="bold">email newsletter</span>.
+              | Stay informed by signing up for our <span class="bold">email newsletter.</span>
             br
             div.controls
               div.input-append

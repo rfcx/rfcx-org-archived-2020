@@ -38,6 +38,8 @@ html(lang="en")
                     a.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")= item[1]
                   else
                     a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
+            li
+              a.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
         a
           img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
 
@@ -61,9 +63,39 @@ html(lang="en")
                   else if (item[4])
                     a.rfcx-trans-linear(href="#{item[2]}")= item[1]
                     li.ft= "|"
+              li.ft
+                a.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
+              li.ft= "|"
           for item in social_media
             a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
               i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
+
+  div.modal.hide.fade(id='contact', tabindex='-1', role='dialog', aria-labelledby='contact-label', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')
+        i.fa.fa-times
+      h3#contact-label= "We'd love to hear from you!"
+    div.modal-body
+      div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='mailto:contact@rfcx.org';")
+        span.lbl
+          i.fa.fa-inbox
+          | Email:
+        div.bdy
+          | contact@rfcx.org
+      div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="alert('LiveChat is currently offline, sorry. Check back soon or send us an email!');")
+        span.lbl
+          i.fa.fa-comment-o
+          | LiveChat:
+        div.bdy
+          | Click to Launch
+      div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='tel:+14153359205';")
+        span.lbl
+          i.fa.fa-phone
+          | Phone:
+        div.bdy
+          | +1 (415) 335-9205
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')

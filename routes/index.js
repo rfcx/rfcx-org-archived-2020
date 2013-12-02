@@ -12,7 +12,7 @@ var navItems = [
     [ "team", "Team", "/team", "Team", false, false ],
     [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", true, false ],
 
-    [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true ]
+    [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true, {} ]
   ];
 
 var socialMedia = [
@@ -59,12 +59,12 @@ exports.page = function(req, res, process, Model){
 };
 
 exports.redirectToHomePage = function(req,res) {
-  res.writeHead(302, { "Location": "http://rfcx.org/" } );
+  res.writeHead(302, { "Location": "/" } );
   res.end();
 };
 
 exports.redirectToVideoPage = function(req,res) {
-  res.writeHead(302, { "Location": "http://rfcx.org/video" } );
+  res.writeHead(302, { "Location": "/video" } );
   res.end();
 };
 

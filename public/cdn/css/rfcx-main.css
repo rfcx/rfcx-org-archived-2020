@@ -74,6 +74,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead #masthead-notch-media { color:rgb(251,252,253); }
 
 #rfcx-menu-mobile { display:none; }
+#rfcx-disclaimer-mobile { display:none; }
 
 .banner-video { height:380px; margin-bottom:10px; }
 .banner-video p { text-shadow: 0px 0px 2px #004400; filter: dropshadow(color=#004400, offx=0, offy=0); }

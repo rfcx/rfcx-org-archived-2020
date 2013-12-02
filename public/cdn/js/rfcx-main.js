@@ -242,7 +242,7 @@ RFCX.fn.load.browserDetect = function() {
       if (BrowserDetect.browser==="Explorer") {
         if (BrowserDetect.version <= 8) {
           RFCX.video.forceYouTube = true;
-          if ($("#map-container").length > 0) { RFCX.fn.insertCss("//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css"); }
+          if ($("#map-container").length > 0) { RFCX.fn.insertCss("http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css"); }
         }
         if (BrowserDetect.version <= 7) {
           RFCX.regressFontAwesome();
@@ -253,16 +253,16 @@ RFCX.fn.load.browserDetect = function() {
 
 RFCX.fn.ui.about.initMap = function(){
 
-  RFCX.fn.insertCss("//libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css");
-  $.getScript("//libs.cartocdn.com/cartodb.js/v3/cartodb.js",function(){
+  RFCX.fn.insertCss("http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css");
+  $.getScript("http://libs.cartocdn.com/cartodb.js/v3/cartodb.js",function(){
 
     RFCX.mapObj = new L.Map('map-container', {
       center:[2,60], zoom: (!RFCX.renderForMobile) ? 2 : 1, zoomControl: false
     });
     
     var mapUrls = {
-      tiles: '//a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
-      json: '//rfcx.cartodb.com/api/v2/viz/40cabcb8-56d0-11e3-87d7-3085a9a9563c/viz.json?+v='+RFCX.appVersion
+      tiles: 'https://a.tiles.mapbox.com/v3/rfcx.map-3tqdi8se/{z}/{x}/{y}.png?as',
+      json: 'https://rfcx.cartodb.com/api/v2/viz/1585c886-5b99-11e3-a77b-3085a9a9563c/viz.json'
     };
 
     L.tileLayer(mapUrls.tiles, {

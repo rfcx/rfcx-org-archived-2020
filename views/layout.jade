@@ -17,6 +17,7 @@ html(lang="en")
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='all and (max-device-width: 480px)')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile-landscape.css?v=#{app_version}', media='all and (max-device-width: 480px) and (orientation:landscape)')
   body.helvetica
     div.container-narrow#rfcx-container
 
@@ -70,46 +71,46 @@ html(lang="en")
             a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
               i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
 
-  div.modal.hide.fade(id='contact', tabindex='-1', role='dialog', aria-labelledby='contact-label', aria-hidden='true')
-    div.modal-header
-      button.close(type='button', data-dismiss='modal', aria-hidden='true')
-        i.fa.fa-times
-      h3#contact-label= "We'd love to hear from you!"
-    div.modal-body
-      div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='mailto:contact@rfcx.org';")
-        span.lbl
-          i.fa.fa-inbox
-          | Email:
-        div.bdy
-          | contact@rfcx.org
-      div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="alert('LiveChat is currently offline, sorry. Check back soon or send us an email!');")
-        span.lbl
-          i.fa.fa-comment-o
-          | LiveChat:
-        div.bdy
-          | Click to Launch
-      div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='tel:+14153359205';")
-        span.lbl
-          i.fa.fa-phone
-          | Phone:
-        div.bdy
-          | +1 (415) 335-9205
-    div.modal-footer
-      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+    div.modal.hide.fade(id='contact', tabindex='-1', role='dialog', aria-labelledby='contact-label', aria-hidden='true')
+      div.modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+          i.fa.fa-times
+        h3#contact-label= "We'd love to hear from you!"
+      div.modal-body
+        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='mailto:contact@rfcx.org';")
+          span.lbl
+            i.fa.fa-inbox
+            | Email:
+          div.bdy
+            | contact@rfcx.org
+        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="alert('LiveChat is currently offline, sorry. Check back soon or send us an email!');")
+          span.lbl
+            i.fa.fa-comment-o
+            | LiveChat:
+          div.bdy
+            | Click to Launch
+        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='tel:+14153359205';")
+          span.lbl
+            i.fa.fa-phone
+            | Phone:
+          div.bdy
+            | +1 (415) 335-9205
+      div.modal-footer
+        button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
-  div#rfcx-menu-mobile
-    ul
-      li.roadgeek.header
-        | Rainforest Connection
-      for item in nav_items
-        if (item[0] == current_page[0])
-          a(href="#")
-            li.roadgeek.active= item[1]
-        else if (item[4])
-          a(href="#{item[2]}")
-            li.roadgeek= item[1]
-      a(href="#contact", role="button", data-toggle="modal")
-        li.roadgeek= "Contact"
+    div#rfcx-menu-mobile
+      ul
+        li.roadgeek.header
+          | Rainforest Connection
+        for item in nav_items
+          if (item[0] == current_page[0])
+            a(href="#")
+              li.roadgeek.active= item[1]
+          else if (item[4])
+            a(href="#{item[2]}")
+              li.roadgeek= item[1]
+        a(href="#contact", role="button", data-toggle="modal")
+          li.roadgeek= "Contact"
 
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
@@ -120,4 +121,6 @@ html(lang="en")
     if (node_env == "production")
       script(type='text/javascript').
         var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])}; analytics.load("#{segment_io_client_id}");
+    div#rfcx-disclaimer-mobile
+      span
     div#fb-root

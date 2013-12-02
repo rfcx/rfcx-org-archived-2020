@@ -48,6 +48,7 @@ $(function(){
   RFCX.fn.initializeUi.setupMobileMenu();
   RFCX.fn.initializeUi.onResize();
   RFCX.fn.initializeUi.onScroll();
+  RFCX.fn.initializeUi.externalizeModalPopups();
 
   RFCX.setOlark();
 
@@ -92,6 +93,15 @@ RFCX.fn.initializeUi.setupMobileMenu = function() {
         RFCX.snapJsObj.open("right");
     });
   }
+}
+
+
+RFCX.fn.initializeUi.externalizeModalPopups = function() {
+  $("#rfcx-container .modal").each(function(){
+    var modal = $(this).clone();
+    $(modal).appendTo("body");
+    $(this).remove();
+  });
 }
 
 RFCX.fn.reactiveUi.toggleMobileMenu = function() {

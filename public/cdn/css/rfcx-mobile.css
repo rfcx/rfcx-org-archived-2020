@@ -3,6 +3,8 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 
 .mobile-only { display:block; }
 
+.modal { z-index:1000010; }
+
 .btn-primary, .btn-gray, .input-append .btn { font-weight:300; }
 
 .container-narrow, .footer, .masthead { margin-left:0px; margin-right:0px; width:100%; }
@@ -136,5 +138,5 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 
 .span3, .span4, .span5, .span6 { clear:both; }
 
-
+.rfcx-contact-sctn { width:99%; }
 

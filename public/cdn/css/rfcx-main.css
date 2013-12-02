@@ -280,6 +280,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .read-more { padding:0px 4px 0px 10px; position:relative; top:1px; }
 
+#contact-label { text-align:center; width:50%; margin-left:25%; }
 .rfcx-contact-sctn { position:relative; width:32.67%; border:solid 1px #ddd; border-top:0; /*border-right:0;*/ float:left; color:#222; cursor:pointer; text-align:center; }
 .rfcx-contact-sctn:hover { color:#fff; background-color:#444; border:solid 1px #444; border-top:0; }
 .rfcx-contact-sctn .lbl { font-size:24px; text-align:center; margin:10px 0px; }

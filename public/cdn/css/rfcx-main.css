@@ -79,10 +79,10 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .banner-video { height:380px; margin-bottom:10px; }
 .banner-video p { text-shadow: 0px 0px 2px #004400; filter: dropshadow(color=#004400, offx=0, offy=0); }
-.banner-video .slogan { position:absolute; margin-top:110px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; }
+.banner-video .slogan { position:absolute; margin-top:110px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; text-transform:uppercase; }
 .banner-video .slogan p.roadgeek { font-size:48px; margin-bottom:0px; cursor:default; }
 .banner-video .banner-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; }
-.banner-video .video-link { font-size:16px; padding-top:0px; font-weight:600; margin-left:0px; cursor:default; }
+.banner-video .video-link { font-size:16px; padding-top:0px; font-weight:600; margin-left:0px; cursor:default; text-transform:none; }
 .banner-video .video-link .fa-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
 
 .video-box { position:absolute; z-index:1; margin-top:45px; width:448px; margin-left:48.1%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
@@ -123,7 +123,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .btn-rfcx-mini { padding:3px 6px; font-size:11px; line-height:11px; position:relative; }
 
 .rfcx-row-intro-what { padding-top:80px; }
-.rfcx-row-intro-what .rfcx-intro-what-title { position:absolute; top:-57px; text-align:center; clear:both; width:200%; font-size:44px; }
+.rfcx-row-intro-what .rfcx-intro-what-title { position:absolute; top:-57px; text-align:center; clear:both; width:200%; font-size:44px; text-transform:uppercase; }
 .rfcx-row-intro-what .span6 { /*width:48%;*/ overflow:visible; position:relative; }
 .rfcx-row-intro-what .infographic-box { position:relative; cursor:pointer; width:450px; background-color:#ffffff; margin-top:4px; border:solid 8px #ddd; overflow:visible; color:#ddd; }
 .rfcx-row-intro-what .infographic-box:hover { border-color:#aaa; }
@@ -138,16 +138,16 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-intro-stats .span4 { margin:15px 0px; border-right:solid 0px #cccccc; width:33%;}
 .rfcx-row-intro-stats .span4 .rfcx-header  { font-size:28px; line-height:28px; }
 .rfcx-row-intro-stats .icon { background-color:green; float:left; width:70px; height:70px; border:solid 1px white; position:relative; left:7px; -moz-border-radius:35px; -webkit-border-radius:35px; border-radius:35px; }
-.rfcx-row-intro-stats .title { margin-top:20px; margin-bottom:15px; }
+.rfcx-row-intro-stats .title { margin-top:20px; margin-bottom:15px; text-transform:uppercase; }
 .rfcx-row-intro-stats .btn { margin-top:8px; clear:both; left:42px; margin-right:auto; margin-left:auto; position:relative; top:-6px; }
-.rfcx-row-intro-stats .conclusion { font-size:32px; line-height:32px; }
+.rfcx-row-intro-stats .conclusion { font-size:32px; line-height:32px; text-transform:uppercase; }
 .rfcx-row-intro-stats .source { position:relative; top:-4px; clear:both; font-size:20px; line-height:20px; font-style:italic; }
 .rfcx-row-intro-stats .rfcx-body { margin:0px 0px 0px 15px; }
 .rfcx-row-intro-stats .stat-page-climate { border-left:solid 0px #cccccc; margin-left:1%; }
 .rfcx-row-intro-stats .stat-page-extinction { border-left:solid 0px #cccccc; }
 .rfcx-row-intro-stats .stat-page-crime { border-left:solid 0px #cccccc; }
 
-.rfcx-row-sctn-join .rfcx-header { margin:10px 0px 0px 15px; width:120%; }
+.rfcx-row-sctn-join .rfcx-header { margin:10px 0px 0px 15px; width:120%; text-transform:uppercase; }
 .rfcx-row-sctn-join .rfcx-body { margin:0px 0px 0px 15px; width:100%; }
 .rfcx-row-sctn-join .control-group { margin-top:5px; margin-left:15px; }
 .rfcx-row-sctn-join .stopsign { position:relative; margin-left:0px; }
@@ -165,6 +165,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .rfcx-row-about-1 { padding-top:30px; margin-top:0px; overflow:visible; }
 .rfcx-row-about-1 .rfcx-header, .rfcx-row-about-1 .rfcx-body, .rfcx-row-about-1 .rfcx-header, .rfcx-row-about-1 .screen-container { margin-left:auto; margin-right:auto; }
+.rfcx-row-about-1 .rfcx-header { text-transform:uppercase; }
 .rfcx-row-about-1 .rfcx-header { width:98%; text-align:center; }
 .rfcx-row-about-1 .rfcx-body { width:98%; text-align:center; }
 
@@ -191,7 +192,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-about-2 .trash-img { margin-top:30px; position:relative; left:-30px; }
 .rfcx-row-about-2 .trash-img-mobile { display:none; }
 .rfcx-row-about-2 .span6 { overflow:visible; }
-.rfcx-row-about-2 .rfcx-header { margin-top:0px; position:relative; left:-20%; }
+.rfcx-row-about-2 .rfcx-header { margin-top:0px; position:relative; left:-20%; text-transform:uppercase; }
 .rfcx-row-about-2 .rfcx-body { padding-top:4px; padding-bottom:0px; position:relative; left:-20%; width:120%; }
 
 .rfcx-row-about-3 { margin-top:0px; overflow:visible; padding-top:40px; }
@@ -200,7 +201,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-about-3 #map-container, .rfcx-row-about-3 .map-cover, .rfcx-row-about-3 .map-cropper-internal { position:absolute; top:0%; left:0%; width:100%; height:115%; z-index:0; }
 .rfcx-row-about-3 .map-cropper-internal { height:100%; overflow:hidden; }
 .rfcx-row-about-3 .map-cover { background-color:transparent; z-index:1; height:100%; top:0%; }
-.rfcx-row-about-3 .rfcx-header { margin-top:10px; }
+.rfcx-row-about-3 .rfcx-header { margin-top:10px; text-transform:uppercase; }
 .rfcx-row-about-3 .rfcx-body { padding-top:4px; padding-bottom:0px; width:105%; }
 .rfcx-row-about-3 .rfcx-body-full { width:300%; }
 
@@ -212,10 +213,11 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .rfcx-row-get_involved-1 { padding-top:40px; margin-top:0px;  }
 .rfcx-row-get_involved-1 .rfcx-header, .rfcx-row-get_involved-1 .rfcx-body, .rfcx-row-get_involved-1 .rfcx-header { margin-left:auto; margin-right:auto; }
-.rfcx-row-get_involved-1 .rfcx-header { width:98%; text-align:center; font-size:55px; }
+.rfcx-row-get_involved-1 .rfcx-header { width:98%; text-align:center; font-size:55px; text-transform: uppercase; }
 .rfcx-row-get_involved-1 .rfcx-body { width:98%; text-align:center; }
 
 .rfcx-row-get_involved-2 { padding:30px 0px 10px 0px;  }
+.rfcx-row-get_involved-2 .rfcx-header { text-transform: uppercase; }
 .rfcx-row-get_involved-2 .input-append .input-large { width:156px; padding-left:10px; padding-right:7px; padding-top:10px; padding-bottom:10px; font-size:14px; }
 .rfcx-row-get_involved-2 .input-append .btn { padding:9px 9px 11px 9px; font-size:18px; }
 .rfcx-row-get_involved-2 .stripe-donate .btn { font-size:18px; padding:10px 15px; }

@@ -90,7 +90,7 @@ RFCX.fn.video.place = function(containerObj) {
   } else { RFCX.video.runFollowUp = false; }
   if (!RFCX.video.forceYouTube) {
     var sz = RFCX.video.sizes, vidSz = sz[sz.length-1], bw = RFCX.getBandwidthKb();
-    RFCX.video.posterUri = RFCX.cdn.rfcxStatic+"video/"+RFCX.video.id+"/"+RFCX.video.id+"-poster.jpg";
+    RFCX.video.posterUri = RFCX.cdn.rfcxStatic+"video/"+RFCX.video.id+"/"+RFCX.video.id+"-poster.jpg?v="+RFCX.appVersion;
     // set video size based on window width (or smallest for mobile devices)
     if (RFCX.renderForMobile) { vidSz = sz[RFCX.video.mobileSize];
     } else { for (var i = sz.length-1; i >= 0; i--) { if ((1.1 * sz[i][0]) >= wndw[0]) { vidSz = sz[i]; break; } } }
@@ -246,32 +246,47 @@ RFCX.fn.video.followUp = function(showHide) {
         $("#rfcx-video-player-"+RFCX.video.id).remove();
         $(this).append(""
 
-          +"<p class=\"roadgeek rfcx-header\">JOIN US &amp; SPREAD THE WORD</p>"
+          +"<p class=\"roadgeek rfcx-header\">PLEASE HELP US SAVE THE TREES</p>"
           +"<p class=\"roadgeek rfcx-header rfcx-sub-header\">"
-            /*+"1. "*/+"Please share this video with your friends"
+            +"We need your help today to make this dream a reality."
+            +"<br /><br /><br /><br /><br /><br /><br />"+/*"1. "+*/"Please share this video with your friends"
             +"<br /><br />"
 //            +"2. Stay tuned!"
           +"</p>"
 
           +"<span class=\"rfcx-social-like rfcx-fb-like\">"
-            +"<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=recommend&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe></span>"
+            +"<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Frfcx.org%2F&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe>"
+            +"</span>"
           +"<span class=\"rfcx-social-like rfcx-tw-like\">"
-            +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20new%20way%20to%20stop%20illegal%20logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe></span>"
+            +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20new%20way%20to%20stop%20illegal%20logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+            +"</span>"
           +"<span class=\"rfcx-social-like rfcx-gp-like\">"
-            +"<div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div></span>"
+            +"<div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div>"
+            +"</span>"
+          +"<a class=\"rfcx-social-like rfcx-at-like addthis_button addthis_pill_style\">"
+            +"</a>"
         
-        ); $.getScript("//apis.google.com/js/plusone.js");
-        
+        );
+        $.getScript("//apis.google.com/js/plusone.js");
+        addthis.counter(".rfcx-at-like");
       // if (RFCX.renderForTouch) {
       // } else {
-      // }      
+      // }    
+
+      /*
+      <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:50px;top:50px;">
+<a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+<a class="addthis_button_tweet" tw:count="vertical"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+<a class="addthis_counter"></a>
+</div>*/  
       
       });
     analytics.track("video_followup", { label: RFCX.video.id });
   } else {
     followUpBox.animate({opacity:0},function(){
       $(this).css({display:"none"}).html(""
-        +"<div class=\"video-followup-bg rfcx-trans-75\"></div>"
+        +"<div class=\"video-followup-bg rfcx-trans-85\"></div>"
         +"<div class=\"video-followup-x\" onClick=\"RFCX.fn.video.followUp(false)\">"
           +"<i class=\"fa fa-times\"></i>"
         +"</div>"

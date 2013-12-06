@@ -69,6 +69,7 @@ for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 
 app.get("/referral/bonne_app", routes.redirectToHomePage );
 app.get("/intro", routes.redirectToHomePage );
+app.get("/video", routes.redirectToHomePage );
 
 app.get("/health_check", routes.returnHealthCheck );
 

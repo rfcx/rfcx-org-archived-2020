@@ -410,7 +410,7 @@ html, body{
     
     #foots{
         text-align: center;
-        padding: 30px 0px;
+        padding: 0px 0px;
         font-size: 14px;
         color: rgb(133, 133, 133);
     }
@@ -525,14 +525,24 @@ html, body{
     div.section-header h2 { line-height: 1; }
 
     .rfcx-logo {
-        width:185px;
-        height:33px;
+        position:absolute;
+        top:11px;
+        left:1px;
+        margin-top:2px;
+        width:280px;
+        height:50px;
     }
 
     .logo-cont {
 
     }
 
+    .certified-domains {
+        font-size:10px; color:#ccc; line-height:0em !important;
+    }
+    .certified-domains a {
+        color:#ccc; line-height:0em !important;
+    }
 
     h2 { 
         margin-bottom:0.2em;

@@ -15,10 +15,9 @@ exports.middlewares = {
       ) {
         var protocol = req.protocol.toLowerCase();
         res.writeHead(302, { "Location": protocol+"://rfcx.org"+req.path } );
-        res.end();      
-    } else {
-      next();
+        res.end();
     }
+    next();
   }
 
 }

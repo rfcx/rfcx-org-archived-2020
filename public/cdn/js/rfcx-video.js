@@ -140,7 +140,9 @@ RFCX.fn.video.place = function(containerObj) {
   }
   if (RFCX.video.forceYouTube) {
     jqCont.html("<iframe id=\"rfcx-video-player-"+RFCX.video.id+"\" frameborder=\"0\" class=\"\""
-        +" src=\"//www.youtube.com/embed/"+jqCont.attr("data-video-youtube")+"?playerapiid=rfcx-video-player-"+RFCX.video.id
+        +" src=\"//www.youtube.com/embed/"+jqCont.attr("data-video-youtube")
+          +"?playerapiid=rfcx-video-player-"+RFCX.video.id
+          +"&amp;origin="+encodeURIComponent(window.location.origin)
           +"&amp;enablejsapi=1"
           +"&amp;iv_load_policy=3"
           +"&amp;cc_load_policy=0"
@@ -152,7 +154,6 @@ RFCX.fn.video.place = function(containerObj) {
           +"&amp;rel=0"
           +"&amp;autoplay=1"
           +"&amp;loop=0"
-          +"&amp;origin="+encodeURIComponent(window.location.origin)
         +"\""
         +" width=\""+wndw[0]+"\" height=\""+wndw[1]+"\""
         +" style=\"width:100%;\"></iframe>")

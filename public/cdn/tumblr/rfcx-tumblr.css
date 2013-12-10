@@ -406,6 +406,8 @@ html, body{
     
     footer{
         border-top: 1px solid #ccc;
+        margin-top: 30px;
+        padding-top:20px;
     }
     
     #foots{
@@ -413,6 +415,7 @@ html, body{
         padding: 0px 0px;
         font-size: 14px;
         color: rgb(133, 133, 133);
+        width:99%;
     }
     
     .search{

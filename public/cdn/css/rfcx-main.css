@@ -97,9 +97,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .video-box-followup .video-followup-x { position:absolute; right:3px; top:3px; width:20px; height:20px; background-color:transparent; border:0; cursor:pointer; }
 .video-box-followup .video-followup-x .fa { position:absolute; right:0px; top:-4px; font-size:24px; color:white; }
 .video-box-followup .video-followup-x:hover .fa { color:#aaaaaa; }
-.video-box-followup .rfcx-header { left:2%; width:96%; top:15px; text-align:center; font-size:42px; line-height:40px; }
+.video-box-followup .rfcx-header { left:2%; width:96%; top:15px; text-align:center; font-size:42px; line-height:40px; margin-top:20px; }
 .video-box-followup .rfcx-sub-header { top:75px; font-size:26px; line-height:6px; }
-.video-box-followup .rfcx-social-like { z-index:11; top:145px; }
+.video-box-followup .rfcx-social-like { z-index:11; top:175px; }
 .video-player-close { position:absolute; top:0px; right:0px; z-index:1001; color:#fff; font-size:42px; padding:8px 12px; font-weight:bold; background-color:transparent; text-decoration:none; }
 .video-player-close:hover { background-color:#bbb; text-decoration:none; color:black; }
 
@@ -137,7 +137,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-intro-stats .rfcx-header { margin:0px 0px 0px 0px; text-align:center; }
 .rfcx-row-intro-stats .span4 { margin:15px 0px; border-right:solid 0px #cccccc; width:33%;}
 .rfcx-row-intro-stats .span4 .rfcx-header  { font-size:28px; line-height:28px; }
-.rfcx-row-intro-stats .icon { background-color:green; float:left; width:70px; height:70px; border:solid 1px white; position:relative; left:7px; -moz-border-radius:35px; -webkit-border-radius:35px; border-radius:35px; }
+.rfcx-row-intro-stats .icon { background-color:#119911; float:left; width:70px; height:70px; border:solid 1px white; position:relative; left:7px; -moz-border-radius:35px; -webkit-border-radius:35px; border-radius:35px; }
 .rfcx-row-intro-stats .title { margin-top:20px; margin-bottom:15px; text-transform:uppercase; }
 .rfcx-row-intro-stats .btn { margin-top:8px; clear:both; left:42px; margin-right:auto; margin-left:auto; position:relative; top:-6px; }
 .rfcx-row-intro-stats .conclusion { font-size:32px; line-height:32px; text-transform:uppercase; }

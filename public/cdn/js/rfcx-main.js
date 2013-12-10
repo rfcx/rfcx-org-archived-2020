@@ -220,8 +220,7 @@ RFCX.fn.load.jqueryAnimateScroll = function(){
 }
 
  RFCX.fn.load.hintCss = function() {
-//  if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css"); }
-  if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.css"); }
+  if (!RFCX.renderForMobile) { RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/hint.css/1.3.0/hint.min.css"); }
 }
 
 RFCX.fn.load.addThis = function() {

@@ -53,19 +53,20 @@ exports.page = function(req, res, process, Model){
       navItem = navItems[i]; break;
     }
   }
-  res.setHeader("Access-Control-Allow-Origin","*");
-  res.render(navItem[0], setJadeVars(process, {
-    current_page: navItem
-  }));
+  if ( (process.env.NODE_ENV==="production") && (req.host!=="rfcx.org") ) {
+    var protocol = req.protocol.toLowerCase();
+    res.writeHead(302, { "Location": protocol+"://rfcx.org"+req.path } );
+    res.end();
+  } else {
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.render(navItem[0], setJadeVars(process, {
+      current_page: navItem
+    }));
+  }
 };
 
 exports.redirectToHomePage = function(req,res) {
   res.writeHead(302, { "Location": "/" } );
-  res.end();
-};
-
-exports.redirectToVideoPage = function(req,res) {
-  res.writeHead(302, { "Location": "/video" } );
   res.end();
 };
 

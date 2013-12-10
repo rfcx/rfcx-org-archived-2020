@@ -8,7 +8,7 @@ var RFCX = {
       all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}
     }
   },
-  cdn: { rfcx: null, rfcxVendor: null, rfcxStatic:"//d4bl4mvczhn5i.cloudfront.net/", bootstrap: null, cdnJs: null, videoJs: null },
+  cdn: { rfcx: null, rfcxVendor: null, rfcxStatic: null, bootstrap: null, cdnJs: null, videoJs: null },
   mapObj: null,
   timer: { windowResize: null, windowScroll: null },
   bodyWidth: $('.container-narrow').innerWidth(),

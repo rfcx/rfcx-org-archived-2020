@@ -5,7 +5,7 @@
 
 var navItems = [
 //  [ page-id, nav-title, uri-path, page-title, show-in-nav, is-isolated ]
-    [ "intro", "Intro", "/", "Rainforest Connection | Protecting rainforests with real-time data", true, false ],
+    [ "intro", "Home", "/", "Protecting rainforests with real-time data", true, false ],
     [ "about", "About", "/about", "About", true, false ],
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
     [ "blog", "Blog", "/blog", "Blog", false, false ],
@@ -14,7 +14,8 @@ var navItems = [
 
     [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true, {} ]
   ];
-
+for (var i = 0; i < navItems.length; i++) { navItems[i][3] = "Rainforest Connection | "+navItems[i][3]; }
+  
 var socialMedia = [
   [ "github", "https://github.com/rfcx", "github-square", "Fork our repos on Github!"],
   [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!"],

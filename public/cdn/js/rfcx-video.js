@@ -255,9 +255,9 @@ RFCX.fn.video.followUp = function(showHide) {
         $("#rfcx-video-player-"+RFCX.video.id).remove();
         $(this).append(""
 
-          +"<p class=\"roadgeek rfcx-header\">PLEASE HELP US SPREAD THE WORD</p>"
+          +"<p class=\"roadgeek rfcx-header\">PLEASE HELP SPREAD THE WORD</p>"
           +"<p class=\"roadgeek rfcx-header rfcx-sub-header\">"
-            +"We need your help today to make this dream a reality."
+            +"We need your help today to make our vision real."
             +"<br /><br /><br /><br /><br /><br /><br />"+/*"1. "+*/"Please share this video with your friends"
             +"<br /><br />"
 //            +"2. Stay tuned!"

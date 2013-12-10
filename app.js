@@ -48,6 +48,7 @@ app.configure(function(){
   app.use(middlewares.allowCrossDomain);
 //  app.use(middlewares.productionDomainCorrection);
   app.use(app.router);
+  app.use(express.compress());
   app.use(express.static(path.join(__dirname, "public")));
 });
 

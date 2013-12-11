@@ -192,7 +192,6 @@ RFCX.fn.load.stripePayments = function(){
         $("#make-donation").modal("hide");
         var token = function(res){
           var $input = $('<input type=hidden name=stripeToken />').val(res.id);
-          $('form').append($input).submit();
         };
         StripeCheckout.open({
           key: 'pk_live_gIGVwWmWwTU2jEbGpAp8RvR5',

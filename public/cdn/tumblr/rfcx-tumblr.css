@@ -30,7 +30,7 @@ html, body{
         min-width:900px;
     }
     h1, h2, h3, h4, h5, h6{
-        font-family: 'roadgeek_2005_engschrift',Sans-Serif;
+        font-family: 'roadgeek',Sans-Serif;
         color: rgb(73, 72, 72);
     }
     
@@ -75,7 +75,7 @@ html, body{
         font-weight: 700;
         outline: 0px;
         text-transform: uppercase;
-        font-family: 'roadgeek_2005_engschrift',Sans-Serif;
+        font-family: 'roadgeek',Sans-Serif;
         border: 1px solid transparent;
     }
     
@@ -154,7 +154,7 @@ html, body{
     
     .article h2, .sticky h2{
         color: rgb(73, 72, 72);
-        font-family: 'roadgeek_2005_engschrift',Sans-Serif;
+        font-family: 'roadgeek',Sans-Serif;
         font-size: 42px;
         line-height: 38px;
         margin-bottom: 5px;   
@@ -200,7 +200,7 @@ html, body{
         padding: 20px 10px 20px 50px;
         font-size: 25px;
         text-transform: uppercase;
-        font-family: 'roadgeek_2005_engschrift',Sans-Serif;
+        font-family: 'roadgeek',Sans-Serif;
         position:absolute;
         bottom: 20px;
     }
@@ -212,7 +212,7 @@ html, body{
     
     h3{
         color: rgb(73, 72, 72);
-        font-family: 'roadgeek_2005_engschrift',Sans-Serif;
+        font-family: 'roadgeek',Sans-Serif;
         font-size: 30px;
         line-height: 28px;
         margin-bottom: 5px;   
@@ -256,7 +256,7 @@ html, body{
     
     .info a{
         font-size: 20px;
-        font-family: 'roadgeek_2005_engschrift',Sans-Serif;
+        font-family: 'roadgeek',Sans-Serif;
         background: rgb(73, 72, 72);
         padding: 5px 20px;
         border-radius: 3px 3px 3px 3px;
@@ -390,7 +390,7 @@ html, body{
     }
     #pagination a, #pagination span{
         color: rgb(73, 72, 72);
-        font-family: 'roadgeek_2005_engschrift',Sans-Serif;
+        font-family: 'roadgeek',Sans-Serif;
         padding: 5px 10px;
         margin: 0px 5px;
         display:inline-block;

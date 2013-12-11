@@ -1,6 +1,6 @@
 body { padding-top: 0px; padding-bottom: 40px; min-width:900px; font-weight:300; -webkit-font-smoothing:antialiased; }
 
-.roadgeek { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:42px; line-height:40px; margin-bottom:15px; }
+.roadgeek { font-family:'roadgeek',Sans-Serif; font-size:42px; line-height:40px; margin-bottom:15px; }
 .lucida { font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; }
 .helvetica { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 .italic { font-style:italic; }
@@ -277,7 +277,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .at-vertical-menu.at-vertical-menu-right { top:150px; }
 .at-vertical-menu.at-vertical-menu-right a { min-width:132px; width:132px; }
 .at-vertical-menu.at-vertical-menu-right a:hover { background:rgba(144,144,144,0.8); right:75px; }
-.at-vertical-menu label, .at-vertical-menu .at-share-label { font-family:'roadgeek_2005_engschrift',Sans-Serif; font-size:18px; }
+.at-vertical-menu label, .at-vertical-menu .at-share-label { font-family:'roadgeek',Sans-Serif; font-size:18px; }
 .at-vertical-menu .aticon { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
 
 .vjs-default-skin .vjs-volume-level, .vjs-default-skin .vjs-play-progress { background: #338833 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat !important; }

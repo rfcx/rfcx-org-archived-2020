@@ -51,7 +51,7 @@ RFCX.fn.video.prepare = function() {
           +" data-video-cc=\""+refBox.attr("data-video-cc")+"\""
           +" data-video-run-followup=\""+refBox.attr("data-video-run-followup")+"\""
           +">"
-        +"<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-50 video-box-bg\">"
+        +"<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif?v="+RFCX.appVersion+"\" class=\"rfcx-trans-50 video-box-bg\">"
         +"<i class=\"fa fa-play-circle-o\"></i>"
         +"</div>"
         +"<div class=\"video-box-outer-backdrop rfcx-trans-0\"></div>"
@@ -169,7 +169,7 @@ RFCX.fn.video.close = function() {
   if (!RFCX.renderForTouch) {
     $(document).off("keyup");
     var jqVideoBoxOuter = $(".video-box-outer");
-    jqVideoBoxOuter.css({height:playerHeight+"px"}).html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif\" class=\"rfcx-trans-0 video-box-bg\"/><i class=\"fa fa-play-circle-o\"></i>");
+    jqVideoBoxOuter.css({height:playerHeight+"px"}).html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif?v="+RFCX.appVersion+"\" class=\"rfcx-trans-0 video-box-bg\"/><i class=\"fa fa-play-circle-o\"></i>");
     $(".video-box-outer .video-box-bg").animate({opacity:0.5},1000);
     jqVideoBoxOuter.animate({
       top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", height:$(".video-box-page").height()+"px", borderWidth: "4px"

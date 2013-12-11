@@ -15,8 +15,9 @@ html(lang="en")
     link(id='font-awesome-4', rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.0.0/css/font-awesome.min.css')
     // if lt IE 9
       script(type='text/javascript', src='#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js')
-      link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/gradient-ie9.css?v=#{app_version}')
-    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/font/font.css?v=#{app_version}')
+      style(type="text/css")= ".gradient{filter:none;}"
+    style(type="text/css").
+      @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='all and (max-device-width: 480px)')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile-landscape.css?v=#{app_version}', media='all and (max-device-width: 480px) and (orientation:landscape)')

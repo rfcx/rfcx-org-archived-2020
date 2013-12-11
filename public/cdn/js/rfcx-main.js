@@ -195,7 +195,7 @@ RFCX.fn.load.stripePayments = function(){
           $('form').append($input).submit();
         };
         StripeCheckout.open({
-          key: 'pk_test_t9ZzGqE7SlzQzSyGVmLaDj8K',
+          key: 'pk_live_gIGVwWmWwTU2jEbGpAp8RvR5',
           address: false,
           amount: (100*RFCX.donateAmount),
           currency: 'usd',

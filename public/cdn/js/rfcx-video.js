@@ -272,11 +272,15 @@ RFCX.fn.video.followUp = function(showHide) {
           +"<span class=\"rfcx-social-like rfcx-gp-like\">"
             +"<div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div>"
             +"</span>"
-          +"<a class=\"rfcx-social-like rfcx-at-like addthis_button addthis_pill_style\">"
+          +"<a class=\"rfcx-social-like rfcx-social-like-bttm rfcx-at-like addthis_button addthis_pill_style\">"
             +"</a>"
+          +"<span class=\"rfcx-social-like rfcx-social-like-bttm rfcx-li-like\">"
+            +"<script type=\"IN/Share\" data-url=\"http://rfcx.org/\" data-counter=\"right\"></script>"
+            +"</span>"
         
         );
         $.getScript("//apis.google.com/js/plusone.js");
+        $.getScript("//platform.linkedin.com/in.js");
         addthis.counter(".rfcx-at-like");
       // if (RFCX.renderForTouch) {
       // } else {

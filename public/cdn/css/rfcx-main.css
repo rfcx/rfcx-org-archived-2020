@@ -100,6 +100,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .video-box-followup .rfcx-header { left:2%; width:96%; top:15px; text-align:center; font-size:42px; line-height:40px; margin-top:20px; }
 .video-box-followup .rfcx-sub-header { top:75px; font-size:26px; line-height:6px; }
 .video-box-followup .rfcx-social-like { z-index:11; top:175px; }
+.video-box-followup .rfcx-social-like-bttm { top:210px; }
 .video-player-close { position:absolute; top:0px; right:0px; z-index:1001; color:#fff; font-size:42px; padding:8px 12px; font-weight:bold; background-color:transparent; text-decoration:none; }
 .video-player-close:hover { background-color:#bbb; text-decoration:none; color:black; }
 
@@ -108,10 +109,11 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .rfcx-social-like { position:absolute; border:none; top:0px; width:25%; height:40px; }
 .rfcs-social-like iframe, .rfcx-social-like div { position:relative; border:none; overflow:hidden; height:21px; margin-left:auto; margin-right:auto; }
-.rfcx-gp-like { left:9%; }
-.rfcx-fb-like { left:29%; }
-.rfcx-tw-like { left:50%; }
-.rfcx-at-like { left:72%; }
+.rfcx-tw-like { left:9%; }
+.rfcx-fb-like { left:41%; }
+.rfcx-gp-like { left:76%; }
+.rfcx-li-like { left:24%; }
+.rfcx-at-like { left:58%; }
 
 .rfcx-row { padding-top:20px; margin-top:10px; position:relative; overflow:hidden; } 
 .rfcx-row .rfcx-header { color:#494848;  margin-bottom:15px; }

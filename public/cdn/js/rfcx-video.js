@@ -23,10 +23,8 @@ RFCX.fn.video.init = function(){
       });
     });
   } else {
-    window.onYouTubeIframeAPIReady = function() { }
-    $.getScript("//www.youtube.com/iframe_api",function(){
-      RFCX.fn.video.initUI();  
-    });
+    window.onYouTubeIframeAPIReady = function() { RFCX.fn.video.initUI(); }
+    $.getScript("//www.youtube.com/iframe_api",function(){ });
   }
 }
 
@@ -34,7 +32,8 @@ RFCX.fn.video.initUI = function(){
   $(".video-box-page").each(function(){
     var gPos = $(this).offset();
     RFCX.video.offset = [gPos.top, gPos.left, parseInt($(this).width())];
-    if (RFCX.renderForTouch) { RFCX.fn.video.place(this);
+    if (RFCX.renderForTouch) {
+      RFCX.fn.video.place(this);
     } else {
       $(this).click(function(){ RFCX.fn.video.setup(this); });
       $(".video-link .fa-play").click(function(){ RFCX.fn.video.setup(this); });
@@ -128,10 +127,7 @@ RFCX.fn.video.place = function(containerObj) {
 
       videojs("rfcx-video-player-"+RFCX.video.id, { "techOrder": ["html5","flash","youtube"], "preload": "auto", "autoplay":true, "controls":RFCX.video.controls }).ready(function(){
         RFCX.video.obj = this;
-        RFCX.video.obj.on("pause", function(){
-          analytics.track("video_pause", { label: RFCX.video.id, value: RFCX.fn.video.percentComplete });
-          if (RFCX.renderForTouch && !RFCX.fn.video.isFullScreen()){ jqCont.html(RFCX.video.previousHtml); RFCX.fn.video.followUp(true); }
-        });
+        RFCX.video.obj.on("pause", function(){ RFCX.fn.video.paused(); });
         RFCX.video.obj.on("ended", function(){ RFCX.fn.video.ended(); });
         analytics.track("video_play", { label: RFCX.video.id });
         devLog("video-loaded");
@@ -139,25 +135,6 @@ RFCX.fn.video.place = function(containerObj) {
     }
   }
   if (RFCX.video.forceYouTube) {
-    // jqCont.html("<iframe id=\"rfcx-video-player-"+RFCX.video.id+"\" frameborder=\"0\" class=\"\""
-    //     +" src=\"//www.youtube.com/embed/"+jqCont.attr("data-video-youtube")
-    //       +"?playerapiid=rfcx-video-player-"+RFCX.video.id
-    //       +"&amp;origin="+encodeURIComponent(window.location.origin)
-    //       +"&amp;enablejsapi=1"
-    //       +"&amp;iv_load_policy=3"
-    //       +"&amp;cc_load_policy=0"
-    //       +"&amp;disablekb=0"
-    //       +"&amp;wmode=transparent"
-    //       +"&amp;controls=1"
-    //       +"&amp;showinfo=0"
-    //       +"&amp;modestbranding=0"
-    //       +"&amp;rel=0"
-    //       +"&amp;autoplay=1"
-    //       +"&amp;loop=0"
-    //     +"\""
-    //     +" width=\""+wndw[0]+"\" height=\""+wndw[1]+"\""
-    //     +" style=\"width:100%;\""
-    //     +"></iframe>");
     
     jqCont.css({height:wndw[1]+"px"});
     jqCont.html(""
@@ -172,16 +149,16 @@ RFCX.fn.video.place = function(containerObj) {
         width: ""+wndw[0],
         videoId: jqCont.attr("data-video-youtube"),
         playerVars: {
-          "autoplay": 1,
+          "autoplay": ((RFCX.renderForTouch) ? 0 : 1),
           "controls": ((RFCX.video.controls) ? 1 : 0),
           "modestbranding": 0,
           "loop": 0,
           "wmode":"transparent",
           "showinfo": 0
         }, events: {
-          "onReady": function(event){event.target.playVideo();},
+          "onReady": function(event){},
           "onStateChange": RFCX.fn.youTubeOnStateChange,
-          "onError": function() {}
+          "onError": function(event) {}
         }
     });
   }
@@ -195,6 +172,14 @@ RFCX.fn.video.ended = function() {
     RFCX.fn.video.close();
   } else {
     jqCont.html(RFCX.video.previousHtml); RFCX.fn.video.reset();
+  }
+}
+
+RFCX.fn.video.paused = function() {
+  analytics.track("video_pause", { label: RFCX.video.id, value: RFCX.fn.video.percentComplete });
+  if (RFCX.renderForTouch && !RFCX.fn.video.isFullScreen()){
+    $(".video-box-page").each(function(){ $(this).html(RFCX.video.previousHtml); });
+    RFCX.fn.video.followUp(true);
   }
 }
 
@@ -353,6 +338,8 @@ RFCX.fn.infoGraphicVideoSetup = function() {
 RFCX.fn.youTubeOnStateChange = function(event) {
   if (event.data == YT.PlayerState.ENDED) {
     RFCX.fn.video.ended();
+  } else if (event.data == YT.PlayerState.PAUSED) {
+    RFCX.fn.video.paused();
   }
 }
 

@@ -108,9 +108,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .video-box-page:hover .fa-play-circle-o, .infographic-box:hover .fa-play-circle-o { filter:alpha(opacity=80); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; -moz-opacity:0.80; -khtml-opacity:0.80; opacity:0.80; }
 
 .rfcx-social-like { position:absolute; border:none; top:0px; width:25%; height:40px; }
-.rfcx-social-like iframe, .rfcx-social-like div { position:relative; border:none; overflow:hidden; height:21px; margin-left:auto; margin-right:auto; max-width:120px; }
+.rfcx-social-like iframe, .rfcx-social-like div { position:relative; border:none; overflow:hidden; height:21px; margin-left:auto; margin-right:auto; max-width:140px; }
 .rfcx-tw-like { left:9%; }
-.rfcx-fb-like { left:41%; }
+.rfcx-fb-like { left:38%; }
 .rfcx-gp-like { left:76%; }
 .rfcx-li-like { left:24%; }
 .rfcx-at-like { left:58%; }

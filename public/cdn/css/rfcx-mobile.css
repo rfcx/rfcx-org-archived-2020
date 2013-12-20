@@ -51,16 +51,16 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .video-box-followup { margin-left:0%; margin-top:0%; overflow:hidden; }
 
 .video-box-followup .video-followup-x .fa { font-size:20px; }
-.video-box-followup .rfcx-header { font-size:24px; line-height:22px; top:-5px; */margin-top:0px; }
+.video-box-followup .rfcx-header { font-size:24px; line-height:22px; top:-5px; }
 .video-box-followup .rfcx-sub-header { top:25px; font-size:15px; line-height:2px; }
 .video-box-followup .rfcx-social-like { top:78px; height:20px; overflow:hidden; }
 .video-box-followup .rfcx-social-like-bttm { top:108px; }
-
-.rfcx-tw-like { left:9%; }
-.rfcx-fb-like { left:41%; }
-.rfcx-gp-like { left:76%; }
-.rfcx-li-like { left:24%; }
-.rfcx-at-like { left:58%; }
+.rfcx-social-like iframe, .rfcx-social-like div { max-width:180px; }
+.rfcx-tw-like { left:18%; }
+.rfcx-fb-like { left:46%; width:180px; }
+.rfcx-gp-like { left:45%; margin-top:30px; }
+.rfcx-li-like { left:12%; }
+.rfcx-at-like { left:69%; }
 
 .rfcx-row { overflow-x:hidden !important; } 
 .rfcx-row .rfcx-header, .rfcx-row .rfcx-body { text-align:center; width:100%; margin-left:0px; margin-right:0px; }

@@ -17,7 +17,7 @@
     "analytics-node": "*",
     "crypto": "*",
     "toobusy": "*",
-    "jade": "*",
+    "jade": "0.32.0",
     "newrelic": "*"
   },
   "devDependencies": {

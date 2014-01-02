@@ -154,6 +154,7 @@ RFCX.fn.video.place = function(containerObj) {
           "modestbranding": 0,
           "loop": 0,
           "wmode":"transparent",
+          "cc_load_policy": 1,
           "showinfo": 0
         }, events: {
           "onReady": function(event){},
@@ -296,7 +297,7 @@ RFCX.fn.video.followUp = function(showHide) {
             +"<iframe src=\"//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Frainforestcx&amp;width&amp;layout=button"+((RFCX.renderForMobile) ? "" : "_count")+"&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe>"
             +"</span>"
           +"<span class=\"rfcx-social-like rfcx-tw-like\">"
-            +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20—%20A%20new%20way%20to%20stop%20illegal%20logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+            +"<iframe class=\"rfcx-social-iframe rfcx-tw-iframe\" src=\"//platform.twitter.com/widgets/tweet_button.html?text=Check%20out%20this%20video%20by%20@RainforestCx%20|%20A%20new%20way%20to%20stop%20illegal%20logging%20in%20the%20%23rainforest.&amp;related=RainforestCx&amp;url=http://rfcx.org/&amp;count="+((RFCX.renderForMobile) ? "none" : "horizontal")+"\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe>"
             +"</span>"
           +"<span class=\"rfcx-social-like rfcx-gp-like\">"
             +"<div class=\"rfcx-social-iframe rfcx-gp-iframe g-plusone\" data-size=\"medium\" data-href=\"http://rfcx.org\" data-annotation=\""+((RFCX.renderForMobile) ? "none" : "bubble")+"\"></div>"
@@ -304,7 +305,7 @@ RFCX.fn.video.followUp = function(showHide) {
           +"<a class=\"rfcx-social-like rfcx-social-like-bttm rfcx-at-like addthis_button addthis_pill_style\">"
             +"</a>"
           +"<span class=\"rfcx-social-like rfcx-social-like-bttm rfcx-li-like\">"
-            +"<script type=\"IN/Share\" data-url=\"http://rfcx.org/\" data-counter=\"right\"></script>"
+            +"<script type=\"IN/Share\" data-url=\"https://rfcx.org/\" data-counter=\"right\"></script>"
             +"</span>"
         
         );

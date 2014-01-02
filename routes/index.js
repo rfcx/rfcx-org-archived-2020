@@ -54,6 +54,7 @@ exports.page = function(req, res, process, Model){
       navItem = navItems[i]; break;
     }
   }
+//  console.log(req.headers);
   if ( (process.env.NODE_ENV==="production") && (req.host!=="rfcx.org") ) {
     var protocol = req.protocol.toLowerCase();
     res.writeHead(302, { "Location": protocol+"://rfcx.org"+req.path } );

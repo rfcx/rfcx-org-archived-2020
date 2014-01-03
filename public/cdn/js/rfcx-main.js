@@ -2,6 +2,7 @@ var RFCX = {
   currentPage: null,
   pageLoaded:new Date(),
   isIsolated: false,
+  userLanguage: (window.navigator.userLanguage || window.navigator.language).substr(0,2).toLowerCase(),
   isHTTPS: (window.location.protocol.indexOf("https") > -1),
   fn: { load: {}, reactiveUi: {}, initializeUi: {}, video: {},
     ui: {

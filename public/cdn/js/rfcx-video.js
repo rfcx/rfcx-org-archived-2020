@@ -154,7 +154,8 @@ RFCX.fn.video.place = function(containerObj) {
           "modestbranding": 0,
           "loop": 0,
           "wmode":"transparent",
-          "cc_load_policy": 1,
+          "cc_load_policy": (RFCX.userLanguage!=="en") ? 1 : 1,
+//          "hl": "fr",
           "showinfo": 0
         }, events: {
           "onReady": function(event){},
@@ -343,5 +344,3 @@ RFCX.fn.youTubeOnStateChange = function(event) {
     RFCX.fn.video.paused();
   }
 }
-
-

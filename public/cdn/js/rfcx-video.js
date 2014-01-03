@@ -287,7 +287,7 @@ RFCX.fn.video.followUp = function(showHide) {
 
           +"<p class=\"roadgeek rfcx-header\">PLEASE HELP SPREAD THE WORD</p>"
           +"<p class=\"roadgeek rfcx-header rfcx-sub-header\">"
-            +"We need your help today to make our vision real."
+            +"We need your help today. Join us and save the forest."
             +"<br /><br /><br /><br /><br /><br /><br />"+/*"1. "+*/"Please share this video with your friends"
             +"<br /><br />"
 //            +"2. Stay tuned!"

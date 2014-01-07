@@ -28,8 +28,7 @@ html(lang="en")
         div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
         if (!current_page[5])
           a.menu-toggle
-            i.fa.fa-reorder
-            i.fa.fa-chevron-up
+            i.fa.fa-bars
           ul.rfcx-trans-linear.nav.nav-pills.pull-right
             for item in nav_items
               if (item[0] == current_page[0])
@@ -98,7 +97,7 @@ html(lang="en")
             | Phone:
           div.bdy
             | +1 (415) 335-9205
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-long(onClick="window.open('http://rainforest.cx/1eOnizB');")
+        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-long(onClick="window.open('http://r-f.cx/1eOnizB');")
           span.lbl
             i.fa.fa-envelope
             | Mailing Address:
@@ -106,41 +105,21 @@ html(lang="en")
             | 77 Van Ness Ave, Suite 101-1717
             br
             | San Francisco, CA, 94102, USA
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('https://www.facebook.com/RainforestCx');")
-          span.lbl
-            i.fa.fa-facebook-square
-            | <br />Facebook
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('https://twitter.com/RainforestCx');")
-          span.lbl
-            i.fa.fa-twitter-square
-            | <br />Twitter
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('https://plus.google.com/+RfcxOrg');")
-          span.lbl
-            i.fa.fa-google-plus-square
-            | <br />Google+
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('http://www.linkedin.com/company/rainforest-connection');")
-          span.lbl
-            i.fa.fa-linkedin-square
-            | <br />LinkedIn
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('http://www.flickr.com/photos/rainforestcx/');")
-          span.lbl
-            i.fa.fa-flickr
-            | <br />Flickr
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('http://instagram.com/rainforestcx');")
-          span.lbl
-            i.fa.fa-instagram
-            | <br />Instagram
-        div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('https://github.com/rfcx');")
-          span.lbl
-            i.fa.fa-github-square
-            | <br />Github
+        for item in social_media
+          - var i = social_media.length-1-social_media.indexOf(item)
+          div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-social(onClick="window.open('#{social_media[i][1]}');")
+            span.lbl
+              i.fa(class="fa-#{social_media[i][2]}")
+              | <br />#{social_media[i][4]}#{ind}
       div.modal-footer
         button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
     div#rfcx-menu-mobile
+      div.menu-bg
       ul
-        li.roadgeek.header
-          | Rainforest Connection
+        li.roadgeek.header.rfcx-trans-67(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
+          span= "Rainforest Connection"
+          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
         for item in nav_items
           if (item[0] == current_page[0])
             a(href="#")

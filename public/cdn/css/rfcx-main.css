@@ -55,7 +55,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .container-narrow { margin:0 auto; width:900px; max-width:900px; position:relative; }
 .masthead .logo { position:absolute; width:31.1%; top:21.1%; margin-top:2px; left:4px; z-index:1; }
 .masthead { position:relative; margin-bottom:0px; margin-top:0px; height:76px; }
-.masthead .masthead-bg { position:absolute; width:155.6%; max-width:155.6%; height:100%; left:-27.8%; top:0px; z-index:0; }
+.masthead-bg { position:absolute; width:155.6%; max-width:155.6%; height:100%; left:-27.8%; top:0px; z-index:0; }
 .masthead .menu-toggle { display:none; }
 .masthead ul { position:relative; margin-top:20px; z-index:1; }
 .masthead li { position:relative; font-size:16px; }
@@ -248,8 +248,8 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .footer li { margin-right:8px; }
 .footer .nav-pills>li>a, .footer .nav-pills>li>a:hover { padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:20px;  color:#ffffff; padding-left:0px; padding-right:0px; }
 .footer .nav-pills>li>a:hover { background-color:#898989; text-decoration:none; color:black; }
-.footer .footer-social { font-size:2em; margin:0px 4px; position:relative; vertical-align:top; text-decoration:none; color:#ffffff; }
-.footer a.pull-right { margin-top:11px; font-size:14px; }
+.footer .footer-social { font-size:24px; margin:0px 4px; position:relative; vertical-align:top; text-decoration:none; color:#ffffff; }
+.footer a.pull-right { margin-top:14px; font-size:14px; }
 .footer a:hover .footer-social { color:#000000; }
 .footer span.copyright {  }
 

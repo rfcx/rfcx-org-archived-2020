@@ -106,21 +106,6 @@ RFCX.fn.initializeUi.externalizeModalPopups = function() {
   });
 }
 
-RFCX.fn.reactiveUi.toggleMobileMenu = function() {
-  
-  var bttnIcon = ["block","none"];
-  var menuHeight = 174;
-  if (parseInt($(".masthead ul").css("height")) > 0) {
-    bttnIcon = ["none","block"];
-    menuHeight = 0;
-  }
-  $(".masthead ul").css({height:menuHeight+"px"});
-  $(".masthead").css({marginBottom:menuHeight+"px"});
-
-  $(".masthead .menu-toggle .fa-chevron-up").css({display:bttnIcon[0]});
-  $(".masthead .menu-toggle .fa-reorder").css({display:bttnIcon[1]});
-};
-
 
 RFCX.fn.reactiveUi.scrollQueues = function() {
   var scrollPosition = $(window).scrollTop() + $(window).height();

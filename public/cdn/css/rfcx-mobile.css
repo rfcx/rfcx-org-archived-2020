@@ -13,13 +13,16 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 #rfcx-container { position:absolute; z-index:1; background-color:#fff; }
 
 #rfcx-menu-mobile { display:block; position:fixed; z-index:0; background-color:#ccc; padding-left:15%; width:85%; height:100%; border:0; }
-
-#rfcx-menu-mobile ul { position:relative; float:left; padding:0; margin:0; list-style-type:none; width:100%;  }
+#rfcx-menu-mobile .menu-bg { position:absolute; z-index:0; height:100%; width:85%; left:17%; background-color:transparent; box-shadow:inset 0 0 8px #222; -moz-box-shadow:inset 0 0 8px #222; }
+#rfcx-menu-mobile ul { position:relative; float:left; padding:0; margin:0; list-style-type:none; width:100%; z-index:0; }
 #rfcx-menu-mobile li { display:block; margin:0; padding:15px 20px; border-bottom:solid 1px #bbb; font-weight:bold; text-decoration:none; text-shadow:0 1px 0 #bbb; color:#444; }
 #rfcx-menu-mobile a { margin:0; padding:0; text-decoration:none; }
-#rfcx-menu-mobile li.header { background-color:#999; }
-#rfcx-menu-mobile li.active { background-color:#aaa; }
+#rfcx-menu-mobile li.header { background-color:transparent; position:relative; border-bottom:0; }
+#rfcx-menu-mobile li.header span { visibility:hidden; }
+#rfcx-menu-mobile li.header .logo { position:absolute; width:79%; left:6%; top:22%; }
+#rfcx-menu-mobile li.active { background-color:#aaa; padding-left:12px; box-shadow:inset 0 0 4px #222; -moz-box-shadow:inset 0 0 4px #222; margin-left:2.7%; border-bottom:solid 1px #666; }
 #rfcx-menu-mobile .roadgeek { font-size:20px; line-height:20px; margin-bottom:0px; }
+
 
 .input-append .input-large { padding:23px 7px 21px 10px; font-size:18px; }
 
@@ -28,8 +31,7 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .masthead .masthead-bg { left:-63%; width:163%; max-width:163%;  }
 .masthead .logo { position:absolute; width:67%; left:4%; top:45%; }
 .masthead .menu-toggle { display:block; position:absolute; top:48%; right:5%; font-size:28px; color:white; text-decoration:none; }
-.masthead .menu-toggle .fa-chevron-up { display:none; }
-.masthead .menu-toggle .fa-reorder { display:block; }
+.masthead .menu-toggle .fa-bars { display:block; }
 
 .masthead ul { position:absolute; top:100%; left:0%; margin-top:0%; width:100%; height:0px; background-color:#111111; overflow:hidden; }
 .masthead ul li { width:50%; border-width:0px; float:left; padding:12px 0px; text-align:center; }
@@ -128,7 +130,7 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .footer ul li.ft { display:none; }
 .footer ul li.cp { width:100%; font-size:60%; }
 .footer ul { position:absolute; width:100%; top:28px; }
-.footer .footer-social { font-size:3em; margin:0px 4px; }
+.footer .footer-social { font-size:30px; margin:0px 4px; }
 
 .footer { margin-bottom:40px; height:64px; text-align:center; margin-bottom:42px; }
 .footer-bg { display:none; }

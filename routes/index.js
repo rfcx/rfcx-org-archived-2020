@@ -17,13 +17,15 @@ var navItems = [
 for (var i = 0; i < navItems.length; i++) { navItems[i][3] = "Rainforest Connection | "+navItems[i][3]; }
   
 var socialMedia = [
-  [ "github", "https://github.com/rfcx", "github-square", "Fork our repos on Github!"],
-  [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!"],
-  [ "flickr", "http://flickr.com/photos/rainforestcx/", "flickr", "Check us out on Flickr!"],
-  [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!"],
-  [ "google-plus", "https://plus.google.com/+RfcxOrg", "google-plus-square", "Check us out on Google+!"],
-  [ "twitter", "https://twitter.com/RainforestCx", "twitter-square", "Check us out on Twitter!"],
-  [ "facebook", "https://www.facebook.com/RainforestCx", "facebook-square", "Check us out on Facebook!"]
+  [ "github", "https://github.com/rfcx", "github-square", "Fork our repos on Github!", "Github"],
+  [ "youtube", "http://www.youtube.com/user/RfcxOrg", "youtube-square", "Watch our videos on YouTube!", "YouTube"],
+  [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!", "Instagram"],
+  [ "tumblr", "http://tumblr.rfcx.org/", "tumblr-square", "Check out our Tumblr!", "Tumblr"],
+  [ "flickr", "http://flickr.com/photos/rainforestcx/", "flickr", "Check us out on Flickr!", "Flickr"],
+  [ "linkedin", "http://www.linkedin.com/company/rainforest-connection", "linkedin-square", "Check us out on LinkedIn!", "LinkedIn"],
+  [ "google-plus", "https://plus.google.com/+RfcxOrg", "google-plus-square", "Check us out on Google+!", "Google+"],
+  [ "twitter", "https://twitter.com/RainforestCx", "twitter-square", "Check us out on Twitter!", "Twitter"],
+  [ "facebook", "https://www.facebook.com/RainforestCx", "facebook-square", "Check us out on Facebook!", "Facebook"]
 ];
 
 function setJadeVars(process, jV) {

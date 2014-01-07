@@ -15,12 +15,12 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 #rfcx-menu-mobile { display:block; position:fixed; z-index:0; background-color:#ccc; padding-left:15%; width:85%; height:100%; border:0; }
 #rfcx-menu-mobile .menu-bg { position:absolute; z-index:0; height:100%; width:85%; left:17%; background-color:transparent; box-shadow:inset 0 0 8px #222; -moz-box-shadow:inset 0 0 8px #222; }
 #rfcx-menu-mobile ul { position:relative; float:left; padding:0; margin:0; list-style-type:none; width:100%; z-index:0; }
-#rfcx-menu-mobile li { display:block; margin:0; padding:15px 20px; border-bottom:solid 1px #bbb; font-weight:bold; text-decoration:none; text-shadow:0 1px 0 #bbb; color:#444; }
+#rfcx-menu-mobile li { display:block; margin:0; padding:15px 20px; border-bottom:solid 1px #bbb; font-weight:bold; text-decoration:none; text-shadow:0 1px 0 #eee; color:#444; }
 #rfcx-menu-mobile a { margin:0; padding:0; text-decoration:none; }
 #rfcx-menu-mobile li.header { background-color:transparent; position:relative; border-bottom:0; }
 #rfcx-menu-mobile li.header span { visibility:hidden; }
 #rfcx-menu-mobile li.header .logo { position:absolute; width:79%; left:6%; top:22%; }
-#rfcx-menu-mobile li.active { background-color:#aaa; padding-left:12px; box-shadow:inset 0 0 4px #222; -moz-box-shadow:inset 0 0 4px #222; margin-left:2.7%; border-bottom:solid 1px #666; }
+#rfcx-menu-mobile li.active { background-color:#aaa; padding-left:12px; box-shadow:inset 0 0 4px #222; -moz-box-shadow:inset 0 0 4px #222; margin-left:2.7%; border-bottom:solid 1px #666; text-shadow:0 1px 0 #ccc; }
 #rfcx-menu-mobile .roadgeek { font-size:20px; line-height:20px; margin-bottom:0px; }
 
 

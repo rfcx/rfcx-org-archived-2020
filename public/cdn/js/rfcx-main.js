@@ -226,7 +226,7 @@ RFCX.fn.load.browserDetect = function() {
       if (BrowserDetect.browser==="Explorer") {
         if (BrowserDetect.version <= 8) {
           RFCX.video.forceYouTube = true;
-          if ($("#map-container").length > 0) { RFCX.fn.insertCss("http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css"); }
+          if ($("#map-container").length > 0) { RFCX.fn.insertCss("//d3voyrscnb0slx.cloudfront.net/cartodb.js/v3/themes/css/cartodb.ie.css"); }
         }
         if (BrowserDetect.version <= 7) {
           RFCX.regressFontAwesome();

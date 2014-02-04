@@ -237,8 +237,8 @@ RFCX.fn.load.browserDetect = function() {
 
 RFCX.fn.ui.about.initMap = function(){
 
-  RFCX.fn.insertCss("http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css");
-  $.getScript("http://libs.cartocdn.com/cartodb.js/v3/cartodb.js",function(){
+  RFCX.fn.insertCss("//d3voyrscnb0slx.cloudfront.net/cartodb.js/v3/themes/css/cartodb.css");
+  $.getScript("//d3voyrscnb0slx.cloudfront.net/cartodb.js/v3/cartodb.js",function(){
 
     RFCX.mapObj = new L.Map('map-container', {
       center:[2,60], zoom: (!RFCX.renderForMobile) ? 2 : 1, zoomControl: false

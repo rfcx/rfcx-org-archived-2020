@@ -58,10 +58,11 @@ exports.page = function(req, res, process, Model){
     }
   }
   if (  (process.env.NODE_ENV==="production")
-    &&  ( (req.host!=="rfcx.org") /*|| (req.headers["http_x_forwarded_proto"])*/ )
+    &&  (   (req.host!=="rfcx.org")
+        ||  (req.headers["x-forwarded-proto"]!=="https")
+        )
     ) {
-    var protocol = req.protocol.toLowerCase();
-    res.writeHead(302, { "Location": protocol+"://rfcx.org"+req.path } );
+    res.writeHead(302, { "Location": "https://rfcx.org"+req.path } );
     res.end();
   } else {
     res.setHeader("Access-Control-Allow-Origin","*");
@@ -77,5 +78,7 @@ exports.redirectToHomePage = function(req,res) {
 };
 
 exports.returnHealthCheck = function(req,res) {
-  res.send("rfcx - "+JSON.stringify(req.headers));
+  var sendString = "rfcx";
+  if (req.query.headers==="1") { sendString += "<br />"+JSON.stringify(req.headers); }
+  res.send(sendString);
 };

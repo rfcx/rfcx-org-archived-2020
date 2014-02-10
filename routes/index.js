@@ -10,6 +10,7 @@ var navItems = [
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
     [ "blog", "Blog", "/blog", "Blog", false, false ],
     [ "team", "Team", "/team", "Team", false, false ],
+    [ "media", "Media", "/media", "Media", false, false ],
     [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", true, false ],
 
     [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true, {} ]
@@ -56,7 +57,9 @@ exports.page = function(req, res, process, Model){
       navItem = navItems[i]; break;
     }
   }
-  if ( (process.env.NODE_ENV==="production") && (req.host!=="rfcx.org") ) {
+  if (  (process.env.NODE_ENV==="production")
+    &&  ( (req.host!=="rfcx.org") /*|| (req.headers["http_x_forwarded_proto"])*/ )
+    ) {
     var protocol = req.protocol.toLowerCase();
     res.writeHead(302, { "Location": protocol+"://rfcx.org"+req.path } );
     res.end();
@@ -74,5 +77,5 @@ exports.redirectToHomePage = function(req,res) {
 };
 
 exports.returnHealthCheck = function(req,res) {
-  res.send("rfcx");
+  res.send("rfcx - "+req.headers["http_x_forwarded_proto"]);
 };

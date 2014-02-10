@@ -77,5 +77,5 @@ exports.redirectToHomePage = function(req,res) {
 };
 
 exports.returnHealthCheck = function(req,res) {
-  res.send("rfcx - "+req.headers["http_x_forwarded_proto"]);
+  res.send("rfcx - "+JSON.stringify(req.headers));
 };

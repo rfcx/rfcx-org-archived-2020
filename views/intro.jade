@@ -64,8 +64,9 @@ block content
     div.span6
       p.roadgeek.rfcx-header.rfcx-intro-what-title
         | We <span class="ul">can</span> stop illegal logging &amp; poaching.
-      div.rfcx-trans-linear.rfcx-crnr-5.infographic-box(data-video-id="vid02",data-video-version="2",data-video-youtube="YkR69ssGK6o",data-video-cc="0",data-video-height="350",data-video-controls="0",data-video-run-followup="0")
-        img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}",onClick="RFCX.fn.video.place('.infographic-box');")
+      div.rfcx-trans-linear.rfcx-crnr-5.infographic-box
+        img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}",onClick="RFCX.fn.infoGraphicVideo(false)")
+        img.infographic-thmb-bg(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}")
     div.span6.intro-what-text-container
       p.roadgeek.rfcx-header
         | Every minute counts.

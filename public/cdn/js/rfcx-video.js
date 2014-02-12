@@ -328,13 +328,17 @@ RFCX.fn.video.followUp = function(showHide) {
   }
 }
 
-RFCX.fn.infoGraphicVideo = function(containerObj) {
-  RFCX.fn.video.place(containerObj);
+RFCX.fn.infoGraphicVideo = function(reCycle) {
+    $(".infographic-box").html(
+      "<img class=\"infographic-thmb\""
+        +" src=\""+RFCX.cdn.rfcx+"/img/intro/infographic.450.gif?v="+RFCX.appVersion+(reCycle ? "&k="+Math.random() : "")+"\""
+        +" onClick=\"RFCX.fn.infoGraphicVideo(true)\" />"
+      +"<img class=\"infographic-thmb-bg\""
+        +" src=\""+RFCX.cdn.rfcx+"/img/intro/infographic.450.png?v="+RFCX.appVersion+"\""
+        +" />"
+      );
 }
 
-RFCX.fn.infoGraphicVideoSetup = function() {
-
-}
 
 RFCX.fn.youTubeOnStateChange = function(event) {
   if (event.data == YT.PlayerState.ENDED) {

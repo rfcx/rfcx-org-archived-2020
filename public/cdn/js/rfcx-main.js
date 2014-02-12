@@ -25,7 +25,10 @@ var RFCX = {
   olark: { allow: true, excludePaths: ["/","/video"], displayDelay: 15 },
   scrollQueues: {
     loadFollowButtons: {
-      whenVisible: { intro: ".rfcx-row-sctn-join" },
+      whenVisible: { intro: "#mce-EMAIL" },
+      position: 1000, mobilePosition: 1000, isLoaded: false },
+    autoAnimateInfographic: {
+      whenVisible: { intro: ".intro-what-text-container .btn-primary" },
       position: 1000, mobilePosition: 1000, isLoaded: false }
   },
   social: {
@@ -165,6 +168,10 @@ RFCX.fn.reactiveUi.loadFollowButtons = function(){
       }
     }, 50);
   } }
+}
+
+RFCX.fn.reactiveUi.autoAnimateInfographic = function(){
+  RFCX.fn.infoGraphicVideo(true);
 }
 
 

@@ -11,7 +11,7 @@
     "test": "./node_modules/.bin/mocha -u tdd"
   },
   "dependencies": {
-    "express": "3.0.3",
+    "express": "3.4.2",
     "mysql": "*",
     "sequelize": "*",
     "analytics-node": "*",

@@ -30,7 +30,7 @@ html(lang="en")
             i.fa.fa-bars
           ul.rfcx-trans-linear.nav.nav-pills.pull-right
             for item in nav_items
-              if (item[0] == current_page[0])
+              if ((item[0] == current_page[0]) && item[4])
                 li.active
                   a= item[1]
                   i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
@@ -59,7 +59,7 @@ html(lang="en")
               li.ft= "|"
               for item in nav_items
                 li.ft
-                  if (item[0] == current_page[0])
+                  if ((item[0] == current_page[0]) && item[4])
                     a.rfcx-trans-linear(href="#")= item[1]
                     li.ft= "|"
                   else if (item[4])
@@ -120,7 +120,7 @@ html(lang="en")
           span= "Rainforest Connection"
           img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
         for item in nav_items
-          if (item[0] == current_page[0])
+          if ((item[0] == current_page[0]) && item[4])
             a(href="#")
               li.roadgeek.active= item[1]
           else if (item[4])

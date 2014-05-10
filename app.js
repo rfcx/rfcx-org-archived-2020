@@ -17,7 +17,10 @@ process.env.productionVersionId = require("./config/version.js").productionVersi
 // Express Initialization
 var express = require("express"), routes = require("./routes"),
   http = require("http"), path = require("path"),
-  middlewares = require("./middlewares/all.js").middlewares;
+  middlewares = require("./middlewares/all.js").middlewares,
+  knoxAudio = require("knox").createClient({
+    key: process.env.AWS_ACCESS_KEY_ID, secret: process.env.AWS_SECRET_KEY, bucket: process.env.AWS_S3_BUCKET_AUDIO
+  })
 var app = express();
 
 // TooBusy checks if we are overloaded
@@ -61,6 +64,20 @@ app.param("source_id",function(req,res,next,source_id){
   next();
 });
 
+
+app.param("event_id",function(req,res,next,event_id){
+  req.url_params = {"event_id":event_id}; next();
+});
+
+app.param("audio_capture_date",function(req,res,next,audio_capture_date){
+  req.url_params = {"audio_capture_date":audio_capture_date}; next();
+});
+
+app.param("audio_event_starts_at",function(req,res,next,audio_event_starts_at){
+  req.url_params = {"audio_event_starts_at":audio_event_starts_at}; next();
+});
+
+
 // API Initialization
 var apiCb_ = require("./routes/api/callbacks.js"), apiEp = require("./routes/api/endpoints.js").endpoints;
 function apiCb(req, res, next) { apiCb_.run(req, res, next, apiEp, Model); }
@@ -73,9 +90,48 @@ app.get("/video", routes.redirectToHomePage );
 
 app.get("/health_check", routes.returnHealthCheck );
 
+
+app.get('/api/1/event/:event_id', function(req,res){
+
+  res.send(
+    {
+      source: {
+        source_id: 1,
+        cpu_percent: 88,
+        cpu_clock: 66,
+        battery_level: 100,
+        battery_temperature: 28,
+        app_version: "0.3.1"
+      },
+      triggered_at: (new Date()).toISOString(),
+      audio_uri: "https://"+req.headers.host+"/api/1"
+        +"/source/1"
+        +"/audio/2014-05-10-13-55"
+        +"/01:30"
+        ,
+      geo: {
+        lat: -0.876105,
+        lng: 100.816414
+      }
+    }
+  );
+});
+
+
+app.get('/api/1/source/:source_id/audio/:audio_capture_date/:audio_event_starts_at', function(req,res){
+  var source_id = req.url_params.client_id;
+  var audio = req.url_params.audio_capture_date;
+  var starts = req.url_params.audio_event_starts_at;
+  res.send({
+    blah:"blah"
+  });
+});
+
 for (var i = 0; i < routes.navItems.length; i++) {
   app.get(routes.navItems[i][2], function(req, res){ routes.page(req, res, process, Model); });
 }
+
+
 
 app.get("/tumblr", require("./routes/tumblr.js").refreshTumblrCache );
 

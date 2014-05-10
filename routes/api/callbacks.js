@@ -31,6 +31,28 @@ var callbacks = {
       // });
       // res.json([{name:'wine1'}, {name:'wine2'}]);
       // res.end();
+    },
+
+    getEvent: function(req, res, Model) {
+
+      var req = {
+
+        blah: "blah"
+
+      };
+
+      res.send(req);
+      console.log(req);
+
+      // Model.Source.find({
+      //   source_id: res.urlParams.sourceId
+      // }).success(function(Src){
+      //   res.json(Src);
+      // }).error(function(e){
+      //   console.log(e);
+      // });
+      // res.json([{name:'wine1'}, {name:'wine2'}]);
+      // res.end();
     }
 
   },

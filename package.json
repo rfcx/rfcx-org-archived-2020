@@ -18,7 +18,8 @@
     "crypto": "*",
     "toobusy": "*",
     "jade": "*",
-    "newrelic": "*"
+    "newrelic": "*",
+    "knox": "*"
   },
   "devDependencies": {
     "mocha": "*",

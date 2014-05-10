@@ -59,22 +59,27 @@ app.configure("development", function(){
 });
 
 app.param("source_id",function(req,res,next,source_id){
+  if (req.url_params == null) { req.url_params = {}; }
   req.urlParams = {};
   req.urlParams.source_id = parseInt(source_id);
+  req.url_params.source_id = parseInt(source_id);
   next();
 });
 
 
 app.param("event_id",function(req,res,next,event_id){
-  req.url_params = {"event_id":event_id}; next();
+  if (req.url_params == null) { req.url_params = {}; }
+  req.url_params.event_id = event_id; next();
 });
 
-app.param("audio_capture_date",function(req,res,next,audio_capture_date){
-  req.url_params = {"audio_capture_date":audio_capture_date}; next();
+app.param("audio_id",function(req,res,next,audio_id){
+  if (req.url_params == null) { req.url_params = {}; }
+  req.url_params.audio_id = audio_id; next();
 });
 
-app.param("audio_event_starts_at",function(req,res,next,audio_event_starts_at){
-  req.url_params = {"audio_event_starts_at":audio_event_starts_at}; next();
+app.param("audio_start",function(req,res,next,audio_start){
+  if (req.url_params == null) { req.url_params = {}; }
+  req.url_params.audio_start = audio_start; next();
 });
 
 
@@ -108,6 +113,7 @@ app.get('/api/1/event/:event_id', function(req,res){
         +"/source/1"
         +"/audio/2014-05-10-13-55"
         +"/01:30"
+        +"/rfcx.m4a"
         ,
       geo: {
         lat: -0.876105,
@@ -118,13 +124,16 @@ app.get('/api/1/event/:event_id', function(req,res){
 });
 
 
-app.get('/api/1/source/:source_id/audio/:audio_capture_date/:audio_event_starts_at', function(req,res){
-  var source_id = req.url_params.client_id;
-  var audio = req.url_params.audio_capture_date;
-  var starts = req.url_params.audio_event_starts_at;
-  res.send({
-    blah:"blah"
+app.get('/api/1/source/:source_id/audio/:audio_id/:audio_start/rfcx.m4a', function(req,res){
+
+  res.contentType("audio/mp4");
+  knoxAudio.getFile('/m4a/'+req.url_params.source_id
+                  +'/'+req.url_params.audio_id+'-src'+req.url_params.source_id+'-8k.m4a',
+                  function(err, audioStream){
+                    audioStream.pipe(res);
   });
+
+
 });
 
 for (var i = 0; i < routes.navItems.length; i++) {

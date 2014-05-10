@@ -109,10 +109,11 @@ app.get('/api/1/event/:event_id', function(req,res){
         app_version: "0.3.1"
       },
       triggered_at: (new Date()).toISOString(),
+      audio_start: 90242,
       audio_uri: "https://"+req.headers.host+"/api/1"
         +"/source/1"
-        +"/audio/2014-05-10-13-55"
-        +"/01:30"
+        +"/audio/"+"2014-05-10-13-55"
+        +"/"+90242
         +"/rfcx.m4a"
         ,
       geo: {

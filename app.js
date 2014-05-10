@@ -110,9 +110,10 @@ app.get('/api/1/event/:event_id', function(req,res){
       },
       triggered_at: (new Date()).toISOString(),
       audio_start: 90242,
+      pagerduty_incident_key: "",
       audio_uri: "https://"+req.headers.host+"/api/1"
         +"/source/1"
-        +"/audio/"+"2014-05-10-13-55"
+        +"/audio/"+"2014-05-12-18-23"
         +"/"+90242
         +"/rfcx.m4a"
         ,

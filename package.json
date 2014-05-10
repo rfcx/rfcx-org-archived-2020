@@ -19,7 +19,8 @@
     "toobusy": "*",
     "jade": "*",
     "newrelic": "*",
-    "knox": "*"
+    "knox": "*",
+    "pagerduty": "*"
   },
   "devDependencies": {
     "mocha": "*",

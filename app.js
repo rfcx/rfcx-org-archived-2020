@@ -69,7 +69,7 @@ app.param("source_id",function(req,res,next,source_id){
 
 app.param("event_id",function(req,res,next,event_id){
   if (req.url_params == null) { req.url_params = {}; }
-  req.url_params.event_id = event_id; next();
+  req.url_params.event_id = parseInt(event_id); next();
 });
 
 app.param("audio_id",function(req,res,next,audio_id){
@@ -79,7 +79,7 @@ app.param("audio_id",function(req,res,next,audio_id){
 
 app.param("audio_start",function(req,res,next,audio_start){
   if (req.url_params == null) { req.url_params = {}; }
-  req.url_params.audio_start = audio_start; next();
+  req.url_params.audio_start = parseInt(audio_start); next();
 });
 
 
@@ -118,8 +118,8 @@ app.get('/api/1/event/:event_id', function(req,res){
         +"/rfcx.m4a"
         ,
       geo: {
-        lat: -0.876105,
-        lng: 100.816414
+        lat: -0.876,
+        lng: 100.816
       }
     }
   );
@@ -138,10 +138,28 @@ app.get('/api/1/source/:source_id/audio/:audio_id/:audio_start/rfcx.m4a', functi
 
 });
 
+app.get('/a/:event_id', function(req,res){
+  if (  (process.env.NODE_ENV==="production")
+    &&  (   (req.host!=="rfcx.org")
+        ||  (req.headers["x-forwarded-proto"]!=="https")
+        )
+    ) {
+    res.writeHead(302, { "Location": "https://rfcx.org"+req.path } );
+    res.end();
+  } else {
+    res.send({event_id:req.url_params.event_id});
+  }
+});
+
+
 for (var i = 0; i < routes.navItems.length; i++) {
   app.get(routes.navItems[i][2], function(req, res){ routes.page(req, res, process, Model); });
 }
 
+
+/*
+
+  */
 
 
 app.get("/tumblr", require("./routes/tumblr.js").refreshTumblrCache );

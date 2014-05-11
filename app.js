@@ -109,7 +109,7 @@ app.get('/api/1/event/:event_id', function(req,res){
         app_version: "0.3.1"
       },
       triggered_at: (new Date()).toISOString(),
-      audio_start: 90242,
+      audio_start: 223242,
       pagerduty_incident_key: "",
       audio_uri: "https://"+req.headers.host+"/api/1"
         +"/source/1"

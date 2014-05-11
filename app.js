@@ -114,11 +114,12 @@ app.get('/api/1/event/:event_id', function(req,res){
       triggered_at: (new Date()).toISOString(),
       audio_start: 223242,
       pagerduty_incident_key: "",
-      audio_uri: "https://"+req.headers.host+"/api/1"
+      audio_uri: /*"https://"+req.headers.host+"/api/1"
         +"/source/1"
         +"/audio/"+"2014-05-14-03-42"
         +"/"+223242
-        +"/rfcx.m4a"
+        +"/rfcx.m4a"*/
+        "https://rfcx-audio.s3.amazonaws.com/m4a/1/2014-05-14-03-42-src1-8k.m4a"
         ,
       geo: {
         lat: -0.876,

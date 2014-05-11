@@ -138,7 +138,7 @@ app.get('/api/1/source/:source_id/audio/:audio_id/:audio_start/rfcx.m4a', functi
 
 });
 
-app.get('/a/:event_id', function(req,res){
+app.get('/alrt/:event_id', function(req,res){
   if (  (process.env.NODE_ENV==="production")
     &&  (   (req.host!=="rfcx.org")
         ||  (req.headers["x-forwarded-proto"]!=="https")

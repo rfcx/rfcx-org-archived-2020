@@ -20,7 +20,7 @@ var express = require("express"), routes = require("./routes"),
   middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
 
-if ((process.env.AWS_ACCESS_KEY_ID != "") && (process.env.AWS_SECRET_KEY != "") && (process.env.AWS_S3_BUCKET_AUDIO != "")) { 
+if ((process.env.AWS_ACCESS_KEY_ID != "") && (process.env.AWS_SECRET_KEY != "") && (process.env.AWS_S3_BUCKET_AUDIO != "")) {
   var knoxAudio = require("knox").createClient({
     key: process.env.AWS_ACCESS_KEY_ID, secret: process.env.AWS_SECRET_KEY, bucket: process.env.AWS_S3_BUCKET_AUDIO
   });
@@ -95,6 +95,9 @@ for (i in apiEp.post) { app.post(apiEp.post[i].path, apiCb); }
 app.get("/referral/bonne_app", routes.redirectToHomePage );
 app.get("/intro", routes.redirectToHomePage );
 app.get("/video", routes.redirectToHomePage );
+
+app.get("/ranger-app",  routes.toRanger);
+
 
 app.get("/health_check", routes.returnHealthCheck );
 

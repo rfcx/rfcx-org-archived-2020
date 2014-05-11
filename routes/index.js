@@ -17,7 +17,7 @@ var navItems = [
     [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true, {} ]
   ];
 for (var i = 0; i < navItems.length; i++) { navItems[i][3] = "Rainforest Connection | "+navItems[i][3]; }
-  
+
 var socialMedia = [
   [ "github", "https://github.com/rfcx", "github-square", "Fork our repos on Github!", "Github"],
   [ "youtube", "http://www.youtube.com/user/RfcxOrg", "youtube-square", "Watch our videos on YouTube!", "YouTube"],
@@ -72,6 +72,10 @@ exports.page = function(req, res, process, Model){
     }));
   }
 };
+
+exports.toRanger = function(req,res){
+res.render('./ranger')
+}
 
 exports.redirectToHomePage = function(req,res) {
   res.writeHead(302, { "Location": "/" } );

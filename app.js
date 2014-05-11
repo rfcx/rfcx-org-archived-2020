@@ -17,11 +17,14 @@ process.env.productionVersionId = require("./config/version.js").productionVersi
 // Express Initialization
 var express = require("express"), routes = require("./routes"),
   http = require("http"), path = require("path"),
-  middlewares = require("./middlewares/all.js").middlewares,
-  knoxAudio = require("knox").createClient({
-    key: process.env.AWS_ACCESS_KEY_ID, secret: process.env.AWS_SECRET_KEY, bucket: process.env.AWS_S3_BUCKET_AUDIO
-  })
+  middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
+
+if ((process.env.AWS_ACCESS_KEY_ID != "") && (process.env.AWS_SECRET_KEY != "") && (process.env.AWS_S3_BUCKET_AUDIO != "")) { 
+  var knoxAudio = require("knox").createClient({
+    key: process.env.AWS_ACCESS_KEY_ID, secret: process.env.AWS_SECRET_KEY, bucket: process.env.AWS_S3_BUCKET_AUDIO
+  });
+}
 
 // TooBusy checks if we are overloaded
 if (parseInt(process.env.TOOBUSY_ENABLED)===1) {
@@ -128,12 +131,16 @@ app.get('/api/1/event/:event_id', function(req,res){
 
 app.get('/api/1/source/:source_id/audio/:audio_id/:audio_start/rfcx.m4a', function(req,res){
 
-  res.contentType("audio/mp4");
-  knoxAudio.getFile('/m4a/'+req.url_params.source_id
-                  +'/'+req.url_params.audio_id+'-src'+req.url_params.source_id+'-8k.m4a',
-                  function(err, audioStream){
-                    audioStream.pipe(res);
-  });
+  if (knoxAudio != null) {
+    res.contentType("audio/mp4");
+    knoxAudio.getFile('/m4a/'+req.url_params.source_id
+                    +'/'+req.url_params.audio_id+'-src'+req.url_params.source_id+'-8k.m4a',
+                    function(err, audioStream){
+                      audioStream.pipe(res);
+    });
+  } else {
+    res.send({}, 500);
+  }
 
 
 });
@@ -155,11 +162,6 @@ app.get('/alrt/:event_id', function(req,res){
 for (var i = 0; i < routes.navItems.length; i++) {
   app.get(routes.navItems[i][2], function(req, res){ routes.page(req, res, process, Model); });
 }
-
-
-/*
-
-  */
 
 
 app.get("/tumblr", require("./routes/tumblr.js").refreshTumblrCache );

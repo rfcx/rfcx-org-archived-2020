@@ -20,11 +20,9 @@ var express = require("express"), routes = require("./routes"),
   middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
 
-if ((process.env.AWS_ACCESS_KEY_ID != "") && (process.env.AWS_SECRET_KEY != "") && (process.env.AWS_S3_BUCKET_AUDIO != "")) { 
-  var knoxAudio = require("knox").createClient({
-    key: process.env.AWS_ACCESS_KEY_ID, secret: process.env.AWS_SECRET_KEY, bucket: process.env.AWS_S3_BUCKET_AUDIO
-  });
-}
+var knoxAudio = require("knox").createClient({
+  key: process.env.AWS_ACCESS_KEY_ID, secret: process.env.AWS_SECRET_KEY, bucket: process.env.AWS_S3_BUCKET_AUDIO
+});
 
 // TooBusy checks if we are overloaded
 if (parseInt(process.env.TOOBUSY_ENABLED)===1) {
@@ -119,7 +117,7 @@ app.get('/api/1/event/:event_id', function(req,res){
         +"/audio/"+"2014-05-14-03-42"
         +"/"+223242
         +"/rfcx.m4a"*/
-        "https://rfcx-audio.s3.amazonaws.com/m4a/1/2014-05-14-03-42-src1-8k.m4a"
+        "https://rfcx-audio.s3.amazonaws.com/m4a/1/2014-05-14-03-42-src1-8k.mp3"
         ,
       geo: {
         lat: -0.876,
@@ -132,17 +130,12 @@ app.get('/api/1/event/:event_id', function(req,res){
 
 app.get('/api/1/source/:source_id/audio/:audio_id/:audio_start/rfcx.m4a', function(req,res){
 
-  if (knoxAudio != null) {
-    res.contentType("audio/mp4");
-    knoxAudio.getFile('/m4a/'+req.url_params.source_id
-                    +'/'+req.url_params.audio_id+'-src'+req.url_params.source_id+'-8k.m4a',
-                    function(err, audioStream){
-                      audioStream.pipe(res);
-    });
-  } else {
-    res.send({}, 500);
-  }
-
+  res.contentType("audio/mp4");
+  knoxAudio.getFile('/m4a/'+req.url_params.source_id
+      +'/'+req.url_params.audio_id+'-src'+req.url_params.source_id+'-8k.m4a',
+        function(err, audioStream){
+                    audioStream.pipe(res);
+  });
 
 });
 

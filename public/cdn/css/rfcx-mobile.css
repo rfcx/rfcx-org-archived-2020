@@ -40,7 +40,7 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 /* menu button styles */
 .masthead ul li { -moz-box-shadow: inset 0 0 10px #aaa; -webkit-box-shadow: inset 0 0 10px #aaa; box-shadow: inset 0 0 10px #aaa; }
 
-.banner-video { height:265px; margin-top:0px; top:-26px; margin-bottom:0px; }
+.banner-video { height:265px; margin-top:0px; top:-26px; margin-bottom:0px; border-bottom:solid 40px #888888; }
 .banner-video .banner-bg { left:-63%; width:163%; max-width:163%; }
 .video-box { width:74%; margin-left:13%; margin-top:120px; border-width:1px; }
 .video-box .video-box-poster { display:none; }
@@ -51,6 +51,10 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .banner-video .slogan { margin-top:10px; margin-left:0px; width:100%; text-align:center; }
 .banner-video .slogan p.roadgeek { font-size:32px; line-height:28px; }
 .video-box-followup { margin-left:0%; margin-top:0%; overflow:hidden; }
+
+.banner-video .intro-social-facebook { margin-left:114px; }
+.banner-video .intro-social-tumblr { display:none; margin-left:144px; }
+.banner-video .intro-social-twitter { margin-left:174px; }
 
 .video-box-followup .video-followup-x .fa { font-size:20px; }
 .video-box-followup .rfcx-header { font-size:24px; line-height:22px; top:-5px; }

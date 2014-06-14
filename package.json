@@ -14,7 +14,6 @@
     "express": "3.4.2",
     "mysql": "*",
     "sequelize": "*",
-    "analytics-node": "*",
     "crypto": "*",
     "toobusy": "*",
     "jade": "*",

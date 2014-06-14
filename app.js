@@ -44,7 +44,7 @@ var Model = require("./model/_all.js").createModel(db,Sequelize,modelNames);
 
 app.configure(function(){
   app.set("title", "Rainforest Connection");
-  app.set("port", process.env.PORT || 8080);
+  app.set("port", process.env.PORT || 8081);
   app.use(express.bodyParser());
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");

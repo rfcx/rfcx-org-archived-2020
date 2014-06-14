@@ -8,7 +8,6 @@ if (fs.existsSync("./config/env_vars.js")) {
 // Segment.io & New Relic Initialization
 if (process.env.NODE_ENV === "production") {
   process.env.NEW_RELIC_HOME = __dirname+"/config"; require('newrelic');
-  var analytics = require("analytics-node"); analytics.init({secret:process.env.SEGMENT_IO_SECRET});
 }
 
 // Load Production Version ID

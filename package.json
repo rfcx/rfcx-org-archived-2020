@@ -15,7 +15,6 @@
     "mysql": "*",
     "sequelize": "*",
     "crypto": "*",
-    "analytics-node": "*",
     "toobusy": "*",
     "jade": "*",
     "newrelic": "*",

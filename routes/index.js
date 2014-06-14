@@ -43,8 +43,8 @@ function setJadeVars(process, jV) {
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
   jV.videojs_cdn = inProd ? "//vjs.zencdn.net" : "/vendor/video.js"
   jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";
-  jV.rfcx_cdn = inProd ? "//d3c83qz125mff6.cloudfront.net/cdn" : "/cdn";
-  jV.rfcx_vendor_cdn = inProd ? "//d3c83qz125mff6.cloudfront.net/vendor" : "/vendor";
+  jV.rfcx_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/cdn" : "/cdn";
+  jV.rfcx_vendor_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/vendor" : "/vendor";
   jV.rfcx_static_cdn = inProd ? "//d4bl4mvczhn5i.cloudfront.net" : "//rfcx-static.s3.amazonaws.com";
   jV.nav_items = navItems;
   jV.social_media = socialMedia;

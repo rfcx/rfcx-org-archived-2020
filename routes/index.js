@@ -60,19 +60,19 @@ exports.page = function(req, res, process, Model){
       navItem = navItems[i]; break;
     }
   }
-  // if (  (process.env.NODE_ENV==="production")
-  //   &&  (   (req.host!=="rfcx.org")
-  //       ||  (req.headers["x-forwarded-proto"]!=="https")
-  //       )
-  //   ) {
-  //   res.writeHead(302, { "Location": "https://rfcx.org"+req.path } );
-  //   res.end();
-  // } else {
+  if (  (process.env.NODE_ENV==="production")
+    &&  (   (req.host!=="rfcx.org")
+        ||  (req.headers["x-forwarded-proto"]!=="https")
+        )
+    ) {
+    res.writeHead(302, { "Location": "https://rfcx.org"+req.path } );
+    res.end();
+  } else {
     res.setHeader("Access-Control-Allow-Origin","*");
     res.render(navItem[0], setJadeVars(process, {
       current_page: navItem
     }));
-//  }
+  }
 };
 
 exports.toRanger = function(req,res){

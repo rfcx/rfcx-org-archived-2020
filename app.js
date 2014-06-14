@@ -96,6 +96,16 @@ app.get("/referral/bonne_app", routes.redirectToHomePage );
 app.get("/intro", routes.redirectToHomePage );
 app.get("/video", routes.redirectToHomePage );
 
+
+app.get("/ks-vid-1", function(req,res){
+  res.writeHead(302, { "Location": "http://r-f.cx/1onVz0V" } );
+  res.end();
+});
+app.get("/ks-vid-2", function(req,res){
+  res.writeHead(302, { "Location": "http://r-f.cx/1mDXlph" } );
+  res.end();
+});
+
 app.get("/ranger-app",  routes.toRanger);
 
 

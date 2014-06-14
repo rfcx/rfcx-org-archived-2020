@@ -6,7 +6,7 @@ var RFCX = {
   isHTTPS: (window.location.protocol.indexOf("https") > -1),
   fn: { load: {}, reactiveUi: {}, initializeUi: {}, video: {},
     ui: {
-      all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}
+      all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}, campaign: {}
     }
   },
   cdn: { rfcx: null, rfcxVendor: null, rfcxStatic: null, bootstrap: null, cdnJs: null, videoJs: null },
@@ -16,7 +16,7 @@ var RFCX = {
   overflowMarginWidth: 250,
   renderForMobile: false,
   renderForTouch: $("html").hasClass("touch"),
-  transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30 },
+  transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30, campaign: 418 },
   nodeEnv: null,
   appVersion: null,
   donateAmount: 50,

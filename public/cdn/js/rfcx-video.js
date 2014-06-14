@@ -1,7 +1,8 @@
 RFCX.video = {
   offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: true, posterUri: "", sizes: [
       [1920,1080,5500], [1280,720,2500], [854,480,1100], [640,360,600]
-    ], mobileSize: 3, followUp: { excludePaths: [ "/video" ] }
+    ], mobileSize: 3, followUp: { excludePaths: [ "/video" ] },
+    offsetAtPlay: { intro: { top: 0 }, campaign: { top: 76 } }
 };
 
 
@@ -9,6 +10,8 @@ RFCX.fn.ui.intro.initVideo = function(){
   RFCX.fn.video.init();
   RFCX.fn.video.prepare();
 }
+
+RFCX.fn.ui.campaign.initVideo = RFCX.fn.ui.intro.initVideo;
 
 RFCX.fn.video.init = function(){
 
@@ -56,9 +59,11 @@ RFCX.fn.video.prepare = function() {
         +"<i class=\"fa fa-play-circle-o\"></i>"
         +"</div>"
         +"<div class=\"video-box-outer-backdrop rfcx-trans-0\"></div>"
+        +"<div class=\"video-box-outer-backdrop-extra rfcx-trans-0\"></div>"
       );
     $("#rfcx-container").append("<div class=\"video-box video-box-followup rfcx-trans-0 rfcx-crnr-10\"></div>");
     RFCX.fn.video.followUp(false);
+    RFCX.fn.video.followUpExtra(false);
 }
 
 RFCX.fn.video.vttTags = function(shortNames) {
@@ -181,6 +186,7 @@ RFCX.fn.video.paused = function() {
   if (RFCX.renderForTouch && !RFCX.fn.video.isFullScreen()){
     $(".video-box-page").each(function(){ $(this).html(RFCX.video.previousHtml); });
     RFCX.fn.video.followUp(true);
+    RFCX.fn.video.followUpExtra(true);
   }
 }
 
@@ -193,13 +199,17 @@ RFCX.fn.video.close = function() {
     jqVideoBoxOuter.css({height:playerHeight+"px"}).html("<img src=\""+RFCX.cdn.rfcx+"/img/intro/16x9.16.gif?v="+RFCX.appVersion+"\" class=\"rfcx-trans-0 video-box-bg\"/><i class=\"fa fa-play-circle-o\"></i>");
     $(".video-box-outer .video-box-bg").animate({opacity:0.5},1000);
     jqVideoBoxOuter.animate({
-      top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width: RFCX.video.offset[2]+"px", height:$(".video-box-page").height()+"px", borderWidth: "4px"
+      top: RFCX.video.offset[0]+"px",
+      left: RFCX.video.offset[1]+"px", 
+      width: RFCX.video.offset[2]+"px", 
+      height:$(".video-box-page").height()+"px", borderWidth: "4px"
     },500,function(){
       $(".banner-video").animate({marginBottom:"10px"});
-      $(".video-box-outer, .video-box-outer-backdrop").css({display:"none"});
+      $(".video-box-outer, .video-box-outer-backdrop, .video-box-outer-backdrop-extra").css({display:"none"});
       RFCX.toggleAddThis(true);
       RFCX.setOlark(true);
       RFCX.fn.video.followUp(true);
+      RFCX.fn.video.followUpExtra(true);
     });
   }
 }
@@ -226,6 +236,7 @@ RFCX.fn.video.htmlClose = function(jqCont) {
 RFCX.fn.video.setup = function(videoBox) {
 
     RFCX.fn.video.followUp(false);
+    RFCX.fn.video.followUpExtra(false);
     var jqVideoBoxOuter = $(".video-box-outer");
     jqVideoBoxOuter.css({ top: RFCX.video.offset[0]+"px", left: RFCX.video.offset[1]+"px", width:RFCX.video.offset[2]+"px", height:"auto", display:"block" });
     RFCX.toggleAddThis(false);
@@ -234,13 +245,14 @@ RFCX.fn.video.setup = function(videoBox) {
     var bannerHt = $(".banner-video").innerHeight()+$(".masthead").innerHeight();
     if (vidHt < bannerHt) { vidHt = bannerHt; videoWidthPct = 100*(16*bannerHt/9)/bodyWd; }
     var bannerVideo = $(".banner-video").animate({marginBottom:(vidHt-bannerHt+10)+"px"}).offset();
-    $(".video-box-outer-backdrop").css({display:"block",opacity:0,height:vidHt+"px"}).animate({
+    RFCX.fn.video.setupExtra(500);
+    $(".video-box-outer-backdrop").css({display:"block",opacity:0,height:vidHt+"px",top:RFCX.video.offsetAtPlay[RFCX.currentPage].top+"px"}).animate({
       opacity:1
     },function(){
       RFCX.setOlark(false);
       $(".video-box-outer .video-box-bg").animate({opacity:0},1000);
       jqVideoBoxOuter.animate({
-        top: "0px", left: ((100-videoWidthPct)/2)+"%", width: videoWidthPct+"%", borderWidth: "0px"
+        top: RFCX.video.offsetAtPlay[RFCX.currentPage].top+"px", left: ((100-videoWidthPct)/2)+"%", width: videoWidthPct+"%", borderWidth: "0px"
       },500,function(){
         RFCX.fn.video.place(this);
         $(document).keyup(function(e) {
@@ -319,7 +331,7 @@ RFCX.fn.video.followUp = function(showHide) {
     followUpBox.animate({opacity:0},function(){
       $(this).css({display:"none"}).html(""
         +"<div class=\"video-followup-bg rfcx-trans-85\"></div>"
-        +"<div class=\"video-followup-x\" onClick=\"RFCX.fn.video.followUp(false)\">"
+        +"<div class=\"video-followup-x\" onClick=\"RFCX.fn.video.followUp(false);RFCX.fn.video.followUpExtra(false);\">"
           +"<i class=\"fa fa-times\"></i>"
         +"</div>"
       );
@@ -347,3 +359,11 @@ RFCX.fn.youTubeOnStateChange = function(event) {
     RFCX.fn.video.paused();
   }
 }
+
+
+RFCX.fn.video.setupExtra = function(animationDuration) {
+}
+
+RFCX.fn.video.followUpExtra = function(showHide) {
+}
+

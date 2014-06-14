@@ -1,0 +1,205 @@
+extends layout-campaign
+
+block content
+  
+  div.container-narrow.banner-video.campaign-video
+    div.dynamic-crop-right.rfcx-trans-100.banner-bg(style="background-image:url(#{rfcx_cdn}/img/intro/banner-forest.1400.jpg?v=#{app_version});")
+    div.video-box.video-box-page(data-video-id="vid03",data-video-version="1",data-video-youtube="JtlogWisxPY",data-video-cc="3",data-video-run-followup="1")
+      img.rfcx-trans-linear.video-box-poster(src="#{rfcx_static_cdn}/video/vid01/vid01-poster.jpg?v=#{app_version}")
+      img.rfcx-trans-linear.rfcx-trans-25.video-box-bg(src="#{rfcx_cdn}/img/intro/16x9.16.gif")
+      i.rfcx-trans-linear.fa.fa-play-circle-o
+    span.rfcx-unselectable#campaign-countdown
+    span.rfcx-unselectable.slogan
+      p.roadgeek
+        | 1) Follow us!
+        br
+        | 2) Spread the idea!
+        br
+        | 3) Back us!
+
+      p.video-link
+        | Watch the video to learn how it works
+        i.fa.fa-play
+
+  div.row-fluid.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats-title
+    div.span12
+      p.roadgeek.rfcx-header.title
+       | The Facts: Destruction of tropical rainforest...
+  div.row-fluid.rfcx-row.rfcx-row-intro-stats
+    div.span4.stat-page-climate
+      div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-globe.70.png?v=#{app_version})")
+      p.roadgeek.rfcx-header
+        span
+          | ...is a leading cause of
+          br
+          span.conclusion= "climate change."
+          br
+          span.source= "-United Nations"
+          br
+          a.btn.btn-rfcx-mini.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
+    div.span4.stat-page-extinction
+      div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version})")
+      p.roadgeek.rfcx-header
+        span
+          | ...is causing global
+          br
+          span.conclusion= "mass extinctions."
+          br
+          span.source= "-United Nations"
+          br
+          a.btn.btn-rfcx-mini.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
+        
+    div.span4.stat-page-crime
+      div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version})")
+      p.roadgeek.rfcx-header
+        span
+          | ...is mostly caused by
+          br
+          span.conclusion= "illegal activity."
+          br
+          span.source= "-Interpol"
+          br
+          a.btn.btn-rfcx-mini.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
+    div.span6
+      p.roadgeek.rfcx-header.rfcx-intro-what-title
+        | We <span class="ul">can</span> stop illegal logging &amp; poaching.
+      div.rfcx-trans-linear.rfcx-crnr-5.infographic-box
+        img.infographic-thmb(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}",onClick="RFCX.fn.infoGraphicVideo(false)")
+        img.infographic-thmb-bg(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}")
+    div.span6.intro-what-text-container
+      p.roadgeek.rfcx-header
+        | Every minute counts.
+        br
+        | Real-time awareness means
+        br
+        | real-time intervention.
+      p.rfcx-body
+        | <span class="bold">Rainforest Connection</span> (RFCx) transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.
+      p.rfcx-body
+        | This changes the game by providing the world's first real-time logging detection system, pinpointing deforestation activity <span class="italic">as it occurs</span>, and providing the data openly, freely, and immediately to anyone around the world.
+      p.rfcx-body
+        | For the first time on a scalable level, responsible agents can arrive on the scene in time to interrupt the perpetrators and stop the damage, and the world can listen in as it occurs.
+        br
+        a.btn.btn-primary(href="/about")
+          | Learn More
+          i.fa.fa-arrow-right
+
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-sctn-join
+    div.span7
+      a#get_involved
+      p.roadgeek.rfcx-header= "Help silence the chainsaws. Join us."
+      p.rfcx-body
+        div.stopsign-mobile
+          img(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
+
+        form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us7.list-manage.com/subscribe/post?u=c424f3e330b7fd5c41da1f891&amp;id=d040c73f65", method="post")
+
+          span.rfcx-body
+            span
+              | Please <span class="bold">Like & Follow Us</span> 
+              br.mobile-only
+              | On Facebook, Twitter and Google+.
+          
+          div.social-follow-containers
+            div.social-follow-container
+              div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
+            div.social-follow-container
+              a.social-follow-item.twitter-follow-button(data-show-count="true", href="https://twitter.com/RainforestCx")= "Follow"
+            div.social-follow-container
+              div.social-follow-item.g-follow(data-height="24", data-href="//plus.google.com/+RfcxOrg", data-rel="publisher")
+
+
+          div.control-group
+            span.rfcx-body
+              span
+              | Stay informed by signing up for our <span class="bold">email newsletter.</span>
+            br
+            div.controls
+              div.input-append
+                input.input-large.email#mce-EMAIL(type='text', data-type='email', name='EMAIL', placeholder='Your email', required)
+                a.btn.btn-success= "Sign up"
+
+    div.span5
+      img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
+
+
+  div.modal.hide.fade(id='stat-climate', tabindex='-1', role='dialog', aria-labelledby='stat-climate-label', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')
+        i.fa.fa-times
+      h3#stat-climate-label= "Deforestation and Climate Change"
+    div.modal-body
+      p
+      hr
+      p
+        span.bold= "The Independent (2007)"
+        br
+        a.italic.rfcx-trans-linear(target="_blank",href="http://www.countercurrents.org/howden140507.htm")
+          | "In the next 24 hours, deforestation will release as much CO2 into the atmosphere as 8 million people flying from London to New York. Stopping the loggers is the fastest and cheapest solution to climate change. So why are global leaders turning a blind eye to this crisis?"
+          i.fa.fa-external-link.read-more
+          | read more
+      p
+        span.bold= "Nature Magazine (2009)"
+        br 
+        a.italic.rfcx-trans-linear(target="_blank",href="http://www.nature.com/ngeo/journal/v2/n11/abs/ngeo671.html")
+          | "Deforestation is the second largest anthropogenic source of carbon dioxide to the atmosphere, after fossil fuel combustion."
+          i.fa.fa-external-link.read-more
+          | read more
+      p
+        span.bold= "Amazon Watch"
+        br
+        a.italic.rfcx-trans-linear(target="_blank",href="http://amazonwatch.org/work/climate-change-and-the-amazon-rainforest")
+          | "The rainforest serves as one of Earth's largest reservoirs of carbon dioxide, helping to regulate global climate patterns through the sequestration and storage of carbon dioxide in above-ground biomass and soil."
+          i.fa.fa-external-link.read-more
+          | read more
+
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+  div.modal.hide.fade(id='stat-extinction', tabindex='-1', role='dialog', aria-labelledby='stat-extinction-label', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')
+        i.fa.fa-times
+      h3#stat-extinction-label= "Deforestation and Global Mass Extinction"
+    div.modal-body
+      p
+      hr
+      p
+        span.bold= "United Nations (2010)"
+        br
+        a.italic.rfcx-trans-linear(target="_blank",href="http://nupge.ca/content/3679/world-facing-worst-extinction-rate-dinosaurs")
+          | "The world is facing the worst extinction rate since the dinosaurs vanished 65 million years ago, a crisis that must be addressed by governments, businesses and communities."
+          i.fa.fa-external-link.read-more
+          | read more
+      p
+        span.bold= "United Nations (2010)"
+        br
+        a.italic.rfcx-trans-linear(target="_blank",href="http://www.theguardian.com/environment/2006/mar/21/conservationandendangeredspecies.internationalnews")
+          | "In effect, we are currently responsible for the sixth major extinction event in the history of earth."
+          i.fa.fa-external-link.read-more
+          | read more
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+  div.modal.hide.fade(id='stat-crime', tabindex='-1', role='dialog', aria-labelledby='stat-crime-label', aria-hidden='true')
+    div.modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true')
+        i.fa.fa-times
+      h3#stat-crime-label= "Deforestation and Criminal Activity"
+    div.modal-body
+      p
+      hr
+      p
+        span.bold= "INTERPOL — Project Leaf"
+        br
+        a.italic.rfcx-trans-linear(target="_blank",href="http://www.interpol.int/Crime-areas/Environmental-crime/Projects/Project-Leaf")
+          | "It is estimated that illegal logging accounts for 50-90% of the volume of forestry activities in key producer tropical countries."
+          i.fa.fa-external-link.read-more
+          | read more
+    div.modal-footer
+      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+

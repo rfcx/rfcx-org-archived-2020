@@ -9,6 +9,9 @@ html(lang="en")
     meta(name="title", content="Rainforest Connection, a solution that can halt illegal logging in rainforests")
     meta(name="description", content="Rainforest Connection transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.")
     meta(name="image", content="//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/infographic.450.png")
+    
+  
+
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
@@ -21,7 +24,7 @@ html(lang="en")
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='all and (max-device-width: 480px)')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile-landscape.css?v=#{app_version}', media='all and (max-device-width: 480px) and (orientation:landscape)')
   body.helvetica
-    div.container-narrow#rfcx-container
+    div#rfcx-container(class="container-narrow rfcx-container-#{current_page[0]}")
 
       div.rfcx-unselectable.rfcx-trans-linear.masthead
         div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
@@ -133,6 +136,7 @@ html(lang="en")
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-video.js?v=#{app_version}')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-campaign.js?v=#{app_version}')
     script(type='text/javascript').
       RFCX.currentPage = "#{current_page[0]}"; RFCX.cdn.rfcx = "#{rfcx_cdn}"; RFCX.cdn.bootstrap = "#{bootstrap_cdn}"; RFCX.cdn.cdnJs = "#{cdnjs_cdn}"; RFCX.cdn.rfcxVendor = "#{rfcx_vendor_cdn}"; RFCX.cdn.rfcxStatic = "#{rfcx_static_cdn}"; RFCX.cdn.videoJs = "#{videojs_cdn}"; RFCX.social.addThis.pubId = "#{addthis_pubid}"; RFCX.nodeEnv = "#{node_env}"; RFCX.appVersion = "#{app_version}"; RFCX.isIsolated = #{current_page[5]};
     if (node_env == "production")

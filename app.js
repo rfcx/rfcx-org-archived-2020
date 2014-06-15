@@ -43,7 +43,7 @@ var Model = require("./model/_all.js").createModel(db,Sequelize,modelNames);
 
 app.configure(function(){
   app.set("title", "Rainforest Connection");
-  app.set("port", process.env.PORT || 8081);
+  app.set("port", process.env.PORT || 8080);
   app.use(express.bodyParser());
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");
@@ -97,7 +97,7 @@ app.get("/video", routes.redirectToHomePage );
 
 
 app.get("/ks-vid-1", function(req,res){
-  res.writeHead(302, { "Location": "http://r-f.cx/1onVz0V" } );
+  res.writeHead(302, { "Location": "http://r-f.cx/1nFgFV7" } );
   res.end();
 });
 app.get("/ks-vid-2", function(req,res){

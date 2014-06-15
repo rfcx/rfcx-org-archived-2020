@@ -5,7 +5,7 @@ if (fs.existsSync("./config/env_vars.js")) {
   for (i in env) { process.env[i] = env[i]; }
 }
 
-// Segment.io & New Relic Initialization
+// New Relic Initialization
 if (process.env.NODE_ENV === "production") {
   process.env.NEW_RELIC_HOME = __dirname+"/config"; require('newrelic');
 }
@@ -15,7 +15,10 @@ process.env.productionVersionId = require("./config/version.js").productionVersi
 
 // Express Initialization
 var express = require("express"), routes = require("./routes"),
-  http = require("http"), path = require("path"),
+  http = require("http"), path = require("path"), errorHandler = require("errorhandler"),
+  morganLogger = require("morgan"), methodOverride = require("method-override"),
+  bodyParser = require("body-parser"), favicon = require("serve-favicon"),
+  compression = require("compression"), serveStatic = require("serve-static"),
   middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
 
@@ -41,24 +44,24 @@ var modelNames = [ "source" , "spectrum", "diagnostic", "version", "audio", "mes
 var db = require("./config/sequelize.js").createConnection(Sequelize,process.env);
 var Model = require("./model/_all.js").createModel(db,Sequelize,modelNames);
 
-app.configure(function(){
+//app.configure(function(){
   app.set("title", "Rainforest Connection");
   app.set("port", process.env.PORT || 8080);
-  app.use(express.bodyParser());
+  app.use(bodyParser.urlencoded());
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");
-  app.use(express.favicon("./public/cdn/img/logo/favicon.ico"));
-  app.use(express.logger("dev"));
-  app.use(express.methodOverride());
+  app.use(favicon("./public/cdn/img/logo/favicon.ico"));
+  app.use(morganLogger("dev"));
+  app.use(methodOverride());
   app.use(middlewares.allowCrossDomain);
-  app.use(app.router);
-  app.use(express.compress());
-  app.use(express.static(path.join(__dirname, "public")));
-});
+//  app.use(app.router);
+  app.use(compression());
+  app.use(serveStatic(path.join(__dirname, "public")));
+//});
 
-app.configure("development", function(){
-  app.use(express.errorHandler());
-});
+if (process.env.NODE_ENV === "development") {
+  app.use(errorHandler());
+}
 
 app.param("source_id",function(req,res,next,source_id){
   if (req.url_params == null) { req.url_params = {}; }

@@ -11,7 +11,14 @@
     "test": "./node_modules/.bin/mocha -u tdd"
   },
   "dependencies": {
-    "express": "3.4.2",
+    "express": "4.4.3",
+    "body-parser": "*",
+    "serve-favicon": "*",
+    "morgan": "*",
+    "compression": "*",
+    "serve-static": "*",
+    "errorhandler": "*",
+    "method-override": "*",
     "mysql": "*",
     "sequelize": "*",
     "crypto": "*",

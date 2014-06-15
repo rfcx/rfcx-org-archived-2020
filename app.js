@@ -22,7 +22,7 @@ var express = require("express"), routes = require("./routes"),
   middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
 
-if ((process.env.AWS_ACCESS_KEY_ID !== "") && (process.env.AWS_SECRET_KEY !== "") && (process.env.AWS_S3_BUCKET_AUDIO !== "")) {
+if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_KEY && process.env.AWS_S3_BUCKET_AUDIO) {
   var knoxAudio = require("knox").createClient({
     key: process.env.AWS_ACCESS_KEY_ID, secret: process.env.AWS_SECRET_KEY, bucket: process.env.AWS_S3_BUCKET_AUDIO
   });

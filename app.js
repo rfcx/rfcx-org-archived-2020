@@ -107,6 +107,10 @@ app.get("/ks-vid-2", function(req,res){
   res.writeHead(302, { "Location": "http://r-f.cx/1mDXlph" } );
   res.end();
 });
+app.get("/ks", function(req,res){
+  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/1912716008?token=868c071b" } );
+  res.end();
+});
 
 app.get("/ranger-app",  routes.toRanger);
 

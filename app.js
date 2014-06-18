@@ -112,6 +112,11 @@ app.get("/ks", function(req,res){
   res.end();
 });
 
+app.get("/media", function(req,res){
+  res.writeHead(302, { "Location": "https://secure.flickr.com/photos/rainforestcx/sets/72157645045151716/" } );
+  res.end();
+});
+
 app.get("/ranger-app",  routes.toRanger);
 
 

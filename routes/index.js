@@ -12,7 +12,7 @@ var navItems = [
     [ "donate", "Donate", "/donate", "Donate", false, false ],
     [ "blog", "Blog", "/blog", "Blog", false, false ],
     [ "team", "Team", "/team", "Team", false, false ],
-    [ "media", "Media", "/media", "Media", false, false ],
+//    [ "media", "Media", "/media", "Media", true, false ],
     [ "letsgo", "Let's Go", "/letsgo", "Let's Go", false, true ],
     [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", true, false ],
 

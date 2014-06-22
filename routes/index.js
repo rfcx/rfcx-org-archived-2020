@@ -15,7 +15,7 @@ var navItems = [
     [ "media", "Media", "/media2", "Media", true, false ],
     [ "letsgo", "Let's Go", "/letsgo", "Let's Go", false, true ],
     [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", false, false ],
-    [ "ks", "Kickstarter", "/ks", "Rainforest Connection is LIVE on Kickstarter", false, true ],
+    [ "ks", "Kickstarter", "/ks2", "Rainforest Connection is LIVE on Kickstarter", false, true ],
 
     [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true, {} ]
   ];

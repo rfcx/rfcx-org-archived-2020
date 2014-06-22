@@ -81,3 +81,13 @@ RFCX.fn.video.followUpExtra = function(showHide) {
   });
 }
 
+
+
+RFCX.fn.ui.campaign.initMap = function(){ RFCX.fn.ui.about.initMap(); }
+
+RFCX.fn.ui.campaign.animateHelpCalls = function() { RFCX.fn.ui.about.animateHelpCalls(); }
+
+RFCX.fn.ui.campaign.loadFollowButtons = function() { RFCX.fn.reactiveUi.loadFollowButtons(); }
+
+
+

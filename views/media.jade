@@ -2,28 +2,62 @@ extends layout
 
 block content
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-1(style="text-align:center;")
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-1(style="text-align:center;")
     div.span12
-      p.roadgeek.rfcx-header= "PAGE FOR MEDIA CONTACTS, ASSETS AND PAST COVERAGE"
+      p.roadgeek.rfcx-header= "GREAT JOURNALISM DESERVES GREAT MATERIAL"
       p.rfcx-body
+        span.help1= "We need you. The forests need you. "
+        span.help2= "The world needs you."
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-2(style="text-align:center;")
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
     div.span12
-      p.roadgeek.rfcx-header= "IMAGES"
+      p.roadgeek.rfcx-header= "HARDWARE"
       p.rfcx-body
-    a(target="_blank",href="http://farm4.staticflickr.com/3832/10834924195_21bec14c46_o.jpg")
-      img(src="//farm4.staticflickr.com/3832/10834924195_383beff3d0_n.jpg")
-    a(target="_blank",href="http://farm8.staticflickr.com/7304/10834953145_acc5cd2d8c_o.jpg")
-      img(src="//farm8.staticflickr.com/7304/10834953145_102714f799_n.jpg")
-    a(target="_blank",href="http://farm8.staticflickr.com/7403/10835116584_ac73ffda41_o.jpg")
-      img(src="//farm8.staticflickr.com/7403/10835116584_95188d4d9f_n.jpg")
-    a(target="_blank",href="http://farm8.staticflickr.com/7459/10835267423_3641e10275_o.jpg")
-      img(src="//farm8.staticflickr.com/7459/10835267423_4da14f7369_n.jpg")
+        span= "NOTE: The following photos of RFCx hardware do not represent realistic placement locations, and are intended for display purposes only. In these photos, the devices are low-mounted on trees in order to enhance their visibility. When properly installed, RFCx devices are placed high in the tree canopy where they are virtually invisible."
 
-    a(target="_blank",href="http://farm6.staticflickr.com/5518/10835256143_f8f3a75993_o.jpg")
-      img(src="//farm6.staticflickr.com/5518/10835256143_5e7f6b88bd_n.jpg")
+    for v,i in media_assets
+      if (v['category'] == 'device')
 
-    a(target="_blank",href="http://farm4.staticflickr.com/3747/10834579143_b906a08c44_o.jpg")
-      img(src="//farm4.staticflickr.com/3747/10834579143_18c9b19842_n.jpg")
+        if (v['type'] == 'image')
+          a(target='_blank',href="#{v['orig_link']}")
+            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
+          script(type="text/javascript").
+            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+
+        if (v['type'] == 'video')
+          iframe.rfcx-video-media(src='#{v["thmb"]}')
+
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
+    div.span12
+      p.roadgeek.rfcx-header= "THOSE WE PROTECT"
+
+    for v,i in media_assets
+      if (v['category'] == 'megafauna')
+
+        if (v['type'] == 'image')
+          a(target='_blank',href="#{v['orig_link']}")
+            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
+          script(type="text/javascript").
+            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+
+        if (v['type'] == 'video')
+          iframe.rfcx-video-media(src='#{v["thmb"]}')
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
+    div.span12
+      p.roadgeek.rfcx-header= "PUTTING IT ALL TOGETHER"
+
+    for v,i in media_assets
+      if (v['category'] == 'assembly')
+
+        if (v['type'] == 'image')
+          a(target='_blank',href="#{v['orig_link']}")
+            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
+          script(type="text/javascript").
+            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+
+        if (v['type'] == 'video')
+          iframe.rfcx-video-media(src='#{v["thmb"]}')
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-3(style="text-align:center;")

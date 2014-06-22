@@ -12,9 +12,10 @@ var navItems = [
     [ "donate", "Donate", "/donate", "Donate", false, false ],
     [ "blog", "Blog", "/blog", "Blog", false, false ],
     [ "team", "Team", "/team", "Team", false, false ],
-//    [ "media", "Media", "/media", "Media", true, false ],
+    [ "media", "Media", "/media2", "Media", true, false ],
     [ "letsgo", "Let's Go", "/letsgo", "Let's Go", false, true ],
-    [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", true, false ],
+    [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", false, false ],
+    [ "ks", "Kickstarter", "/ks", "Rainforest Connection is LIVE on Kickstarter", false, true ],
 
     [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true, {} ]
   ];
@@ -48,6 +49,7 @@ function setJadeVars(process, jV) {
   jV.rfcx_static_cdn = inProd ? "//d4bl4mvczhn5i.cloudfront.net" : "//rfcx-static.s3.amazonaws.com";
   jV.nav_items = navItems;
   jV.social_media = socialMedia;
+  jV.media_assets = []; if (jV.current_page[0] === "media") { jV.media_assets = require("./../data/media.js").load(); }
   return jV;
 }
 

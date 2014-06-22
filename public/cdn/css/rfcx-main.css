@@ -15,6 +15,16 @@ body { padding-top: 0px; padding-bottom: 40px; min-width:900px; font-weight:300;
 
 .mobile-only { display:none; }
 
+.rfcx-thmb { position:relative; padding:0px; overflow:hidden; }
+.rfcx-thmb img { position:absolute; visibility:hidden; top:0%; left:0%; width:auto; height:auto; border:none; z-index:0; max-width:300%; }
+
+.rfcx-thmb-media, .rfcx-video-media { float:left; margin:8px; }
+
+.rfcx-thmb-media { width:280px; height:240px; border:solid 1px #aaa; }
+.rfcx-thmb-media:hover { border:solid 1px #000; }
+
+.rfcx-video-media { width:428px; height:266px; }
+
 .rfcx-unselectable { user-select:none; -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-user-select:none; }
 .rfcx-selectable { user-select:text; -webkit-touch-callout:text; -webkit-user-select:text; -khtml-user-select:text; -moz-user-select:text; -ms-user-select:text; -o-user-select:text; }
 .rfcx-trans-linear { -webkit-transition:all .2s linear; -moz-transition:all .2s linear; transition:all .2s linear; }
@@ -245,6 +255,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .form-donate .left-label { float:left; width:auto; font-size:18px; color:#000; padding:11px 6px 11px 0px; font-weight:bold; } 
 
 .rfcx-row-media-1 { padding:30px 0px 10px 0px; margin-top:0px; }
+.rfcx-row-media-img { padding:15px 0px 10px 0px; margin-top:0px; }
+.rfcx-row-media-img .rfcx-header { padding-bottom:0px; margin-bottom:0px; padding-top:0px; margin-top:0px; }
+.rfcx-row-media-img .rfcx-body { padding-bottom:0px; margin-bottom:0px; padding-top:0px; margin-top:0px; }
 
 .footer-forest { height:425px; }
 .footer-forest .footer-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; border-bottom:solid 1px #444444; }
@@ -328,3 +341,19 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-container-campaign .masthead .nav-pills { display:none; }
 .rfcx-container-campaign .masthead .menu-toggle { display:block; position:absolute; left:auto; right:0px; top:23px; color:white; font-size:28px; cursor:pointer; }
 .rfcx-container-campaign .masthead .menu-toggle:hover { color:#cccccc; }
+
+.campaign-video .social-follow-container { position:absolute; top:40px; left:40px; height:30px; }
+.campaign-video .social-follow-container-facebook { position:absolute; }
+.campaign-video .social-follow-container-twitter { position:absolute; left:140px;}
+
+.campaign-video .social-share-container { position:relative; top:0px; left:20px; height:0px; }
+
+.campaign-video .social-follow-container
+
+.campaign-social-follow-facebook { border:none;overflow:hidden;height:21px;width:70px; }
+.campaign-social-follow-twitter { border:none;overflow:hidden;height:21px;width:70px; }
+.campaign-social-follow-linkedin { border:none;overflow:hidden;height:21px;width:70px; }
+
+
+.rfcx-container-campaign .social-follow-container { clear:none; }
+

@@ -104,13 +104,13 @@ app.get("/ks-vid-1", function(req,res){
   res.end();
 });
 app.get("/ks-vid-2", function(req,res){
-  res.writeHead(302, { "Location": "http://r-f.cx/1pb6tVM" } );
+  res.writeHead(302, { "Location": "http://r-f.cx/1prywOU" } );
   res.end();
 });
-app.get("/ks", function(req,res){
-  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/1912716008?token=868c071b" } );
-  res.end();
-});
+// app.get("/ks", function(req,res){
+//   res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/1912716008?token=868c071b" } );
+//   res.end();
+// });
 
 app.get("/media", function(req,res){
   res.writeHead(302, { "Location": "https://secure.flickr.com/photos/rainforestcx/sets/72157645045151716/" } );

@@ -9,7 +9,26 @@ html(lang="en")
     meta(name="title", content="Rainforest Connection, a solution that can halt illegal logging in rainforests")
     meta(name="description", content="Rainforest Connection transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.")
     meta(name="image", content="//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/infographic.450.png")
-    
+
+    if (current_page[0] == "campaign")
+      meta(http-equiv="refresh",content="10;url=https://rfcx.org/ks")
+
+    if (current_page[0] == "ks")
+      //-meta(http-equiv="refresh",content="15;url=http://r-f.cx/1wiIJRN")
+
+      meta(property="fb:app_id",content="195492227267100")
+      meta(property="og:title", content="Rainforest Connection: Phones Turned into Forest Guardians")
+      meta(property="og:url", content="http://videosk.in/watch/43Roc62IVy")
+      meta(property="og:site_name", content="Rainforest Connection")
+      meta(property="og:description", content="LIVE on KICKSTARTER! Technology that stops illegal loggers in-the-act. Our answer to climate change & global mass extinctions.")
+      meta(property="og:image", content="http://www.videosk.in/dashboard/https://i1.ytimg.com/vi/LyIAiqV-Oo8/sddefault.jpg")
+      meta(property="og:video", content="https://vskin.s3.amazonaws.com/player.swf?config=https://www.videosk.in/dashboard/uploads/3319/43Roc62IVy.xml")
+      meta(property="og:type", content="movie")
+      meta(property="og:video:width", content="504")
+      meta(property="og:video:height", content="460")
+      meta(property="og:video:type", content="application/x-shockwave-flash")
+
+
   
 
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
@@ -27,7 +46,7 @@ html(lang="en")
     div#rfcx-container(class="container-narrow rfcx-container-#{current_page[0]}")
 
       div.rfcx-unselectable.rfcx-trans-linear.masthead
-        div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
+        div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/campaign/masthead-bg.1400.jpg?v=#{app_version});")
         if (!current_page[5])
           a.menu-toggle
             i.fa.fa-bars

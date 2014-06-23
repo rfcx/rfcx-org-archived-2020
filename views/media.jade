@@ -19,8 +19,9 @@ block content
       if (v['category'] == 'device')
 
         if (v['type'] == 'image')
-          a(target='_blank',href="#{v['orig_link']}")
+          a(href="#popup-#{v['id']}", role='button', data-toggle='modal')
             div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
+
           script(type="text/javascript").
             var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
 
@@ -61,3 +62,17 @@ block content
           iframe.rfcx-video-media(src='#{v["thmb"]}')
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-3(style="text-align:center;")
+
+
+
+  for v,i in media_assets
+    div.modal.hide.fade(id="popup-#{v['id']}", tabindex='-1', role='dialog', aria-labelledby="popup-#{v['id']}-label", aria-hidden='true')
+      div.modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+          i.fa.fa-times
+        h3.roadgeek(id="popup-#{v['id']}-label")
+          | Rainforest Connection: #{v['category']}
+      div.modal-body(style="width:640px;")
+        img.rfcx-view-media(src="#{v['thmb']}")
+      div.modal-footer
+        button.btn(data-dismiss='modal',aria-hidden='true')= "Close"

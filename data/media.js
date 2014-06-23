@@ -19,7 +19,7 @@ var data = [
 {   id: "device_woodside",
     type: "image",
     category: "device",
-    thmb: "https://farm6.staticflickr.com/5581/14466257085_81cb8b68a8.jpg",
+    thmb: "https://farm6.staticflickr.com/5581/14466257085_81cb8b68a8_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/14466257085/sizes/l/",
     caption: {
       english: "Rainforest Connection hardware on display during testing.",
@@ -32,7 +32,7 @@ var data = [
 {   id: "device_redwood",
     type: "image",
     category: "device",
-    thmb: "https://farm3.staticflickr.com/2904/13985834168_f0b94f5a1a.jpg",
+    thmb: "https://farm3.staticflickr.com/2904/13985834168_f0b94f5a1a_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/13985834168/sizes/l/",
     caption: {
       english: "Rainforest Connection hardware on display during alert testing in the redwood forests north of San Francisco, CA.",
@@ -45,7 +45,7 @@ var data = [
 {   id: "device_v1_1",
     type: "image",
     category: "installation",
-    thmb: "https://farm8.staticflickr.com/7304/10834953145_102714f799.jpg",
+    thmb: "https://farm8.staticflickr.com/7304/10834953145_102714f799_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834953145/sizes/l/",
     caption: {
       english: "asdf",
@@ -58,7 +58,7 @@ var data = [
 {   id: "device_v1_2",
     type: "image",
     category: "installation",
-    thmb: "https://farm4.staticflickr.com/3832/10834924195_383beff3d0.jpg",
+    thmb: "https://farm4.staticflickr.com/3832/10834924195_383beff3d0_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834924195/sizes/l/",
     caption: {
       english: "asdf",
@@ -71,7 +71,7 @@ var data = [
 {   id: "device_v1_3",
     type: "image",
     category: "installation",
-    thmb: "https://farm6.staticflickr.com/5518/10835256143_5e7f6b88bd.jpg",
+    thmb: "https://farm6.staticflickr.com/5518/10835256143_5e7f6b88bd_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10835256143/sizes/l/",
     caption: {
       english: "asdf",
@@ -86,7 +86,7 @@ var data = [
 {   id: "assembly_closeup",
     type: "image",
     category: "assembly",
-    thmb: "https://farm4.staticflickr.com/3747/10834579143_18c9b19842.jpg",
+    thmb: "https://farm4.staticflickr.com/3747/10834579143_18c9b19842_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834579143/sizes/l/",
     caption: {
       english: "Near view of RFCx device interior, including Android phone. Held by RFCx founder, Topher White.",
@@ -100,7 +100,7 @@ var data = [
 {   id: "assembly_lean",
     type: "image",
     category: "assembly",
-    thmb: "https://farm3.staticflickr.com/2806/10834584413_43cf6172a5.jpg",
+    thmb: "https://farm3.staticflickr.com/2806/10834584413_43cf6172a5_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834584413/sizes/l/",
     caption: {
       english: "Rainforest Connection founder, Topher White, assembles hardware in the field in Western Sumatra, Indonesia.",
@@ -114,7 +114,7 @@ var data = [
 {   id: "assembly_above",
     type: "image",
     category: "assembly",
-    thmb: "https://farm8.staticflickr.com/7355/10834461514_b69e692158.jpg",
+    thmb: "https://farm8.staticflickr.com/7355/10834461514_b69e692158_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834461514/sizes/l/",
     caption: {
       english: "Rainforest Connection founder, Topher White, assembles hardware in the field in Western Sumatra, Indonesia.",
@@ -157,7 +157,7 @@ var data = [
 {   id: "megafauna_siberut",
     type: "image",
     category: "megafauna",
-    thmb: "https://farm6.staticflickr.com/5500/10834081165_c75095a84c.jpg",
+    thmb: "https://farm6.staticflickr.com/5500/10834081165_c75095a84c_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834081165/sizes/l/",
     caption: {
       english: "Siberut Gibbon",
@@ -171,7 +171,7 @@ var data = [
 {   id: "megafauna_",
     type: "image",
     category: "megafauna",
-    thmb: "https://farm3.staticflickr.com/2885/10834510913_7bf351a618.jpg",
+    thmb: "https://farm3.staticflickr.com/2885/10834510913_7bf351a618_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834510913/sizes/l/",
     caption: {
       english: "Sun Bear",
@@ -185,7 +185,7 @@ var data = [
 {   id: "megafauna_gibbon_vet",
     type: "image",
     category: "megafauna",
-    thmb: "https://farm3.staticflickr.com/2805/10834235526_66f6f7c1db.jpg",
+    thmb: "https://farm3.staticflickr.com/2805/10834235526_66f6f7c1db_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834235526/sizes/l/",
     caption: {
       english: "Kalaweit",
@@ -199,7 +199,7 @@ var data = [
 {   id: "3d_model",
     type: "image",
     category: "deforestation",
-    thmb: "https://farm8.staticflickr.com/7333/10834112235_f30578a307.jpg",
+    thmb: "https://farm8.staticflickr.com/7333/10834112235_f30578a307_z.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/10834112235/sizes/l/",
     caption: {
       english: "Logging",

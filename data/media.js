@@ -42,6 +42,13 @@ var data = [
     visible: true
 },
 
+
+
+
+
+
+
+
 {   id: "device_v1_1",
     type: "image",
     category: "installation",
@@ -80,6 +87,11 @@ var data = [
     },
     visible: true
 },
+
+
+
+
+
 
 
 
@@ -154,6 +166,9 @@ var data = [
 
 
 
+
+
+
 {   id: "megafauna_siberut",
     type: "image",
     category: "megafauna",
@@ -196,7 +211,12 @@ var data = [
 },
 
 
-{   id: "3d_model",
+
+
+
+
+
+{   id: "chainsaw_guy",
     type: "image",
     category: "deforestation",
     thmb: "https://farm8.staticflickr.com/7333/10834112235_f30578a307_z.jpg",
@@ -208,6 +228,12 @@ var data = [
     },
     visible: true
 },
+
+
+
+
+
+
 
 
 {   id: "infographic_how_it_works",

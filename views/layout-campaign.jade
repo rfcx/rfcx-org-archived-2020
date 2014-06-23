@@ -16,19 +16,16 @@ html(lang="en")
     if (current_page[0] == "ks")
       //-meta(http-equiv="refresh",content="15;url=http://r-f.cx/1wiIJRN")
 
-      meta(property="fb:app_id",content="195492227267100")
-      meta(property="og:title", content="Amazing! Rainforest Connection: Phones Turned into Forest Guardians")
-      meta(property="og:url", content="http://videosk.in/watch/Y4p4hzqGHH")
-      meta(property="og:site_name", content="Rainforest Connection")
-      meta(property="og:description", content="NOW LIVE ON KICKSTARTER — Rainforest Connection — Technology that stops illegal loggers in-the-act. Our answer to climate change & global mass extinctions.")
-      meta(property="og:image", content="http://rfcx-static.s3.amazonaws.com/video/vid03/vid03-poster-square.jpg")
-      meta(property="og:video", content="https://vskin.s3.amazonaws.com/player.swf?config=https://www.videosk.in/dashboard/uploads/3319/Y4p4hzqGHH.xml")
       meta(property="og:type", content="movie")
-      meta(property="og:video:width", content="504")
-      meta(property="og:video:height", content="460")
+
+      meta(property="og:title", content="Amazing! Rainforest Connection: Phones Turned into Forest Guardians")
+      meta(property="og:description", content="NOW LIVE ON KICKSTARTER — Rainforest Connection — Technology that stops illegal loggers in-the-act. Our answer to climate change & global mass extinctions.")
+      
+      meta(property="og:url", content="http://#{http_headers['host']}/ks2")
+      meta(property="og:image", content="https:#{rfcx_static_cdn}/video/vid03/vid03-poster-square.jpg")
+      
+      != '<meta property="og:video" content="https://d4bl4mvczhn5i.cloudfront.net/video/jwplayer/5.7/jwplayer.flash.swf?file=https%3a%2f%2fd4bl4mvczhn5i.cloudfront.net%2fvideo%2fvid03%2fv1%2fvid03-v1.720.mp4%3fv%3d1&autoplay=true" />'
       meta(property="og:video:type", content="application/x-shockwave-flash")
-
-
   
 
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')

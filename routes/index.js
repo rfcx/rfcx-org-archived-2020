@@ -70,10 +70,10 @@ exports.page = function(req, res, process, Model){
     res.writeHead(302, { "Location": "https://rfcx.org"+req.path } );
     res.end();
   } else {
-    console.log(req.headers);
     res.setHeader("Access-Control-Allow-Origin","*");
     res.render(navItem[0], setJadeVars(process, {
-      current_page: navItem
+      current_page: navItem,
+      http_headers: req.headers
     }));
   }
 };

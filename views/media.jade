@@ -5,13 +5,13 @@ block content
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-1(style="text-align:center;")
     div.span12
       p.roadgeek.rfcx-header= "GREAT JOURNALISM DESERVES GREAT MATERIAL"
-      p.rfcx-body
-        span.help1= "We need you. The forests need you. "
-        span.help2= "The world needs you."
+      //-p.rfcx-body
+        //-span.help1= "We need you. The forests need you. "
+        //-span.help2= "The world needs you."
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
     div.span12
-      p.roadgeek.rfcx-header= "HARDWARE"
+      p.roadgeek.rfcx-header= "THE DEVICE"
       p.rfcx-body
         span= "NOTE: The following photos of RFCx hardware do not represent realistic placement locations, and are intended for display purposes only. In these photos, the devices are low-mounted on trees in order to enhance their visibility. When properly installed, RFCx devices are placed high in the tree canopy where they are virtually invisible."
 
@@ -19,9 +19,10 @@ block content
       if (v['category'] == 'device')
 
         if (v['type'] == 'image')
-          a(href="#popup-#{v['id']}", role='button', data-toggle='modal')
+          //-a(href="#popup-#{v['id']}", role='button', data-toggle='modal')
+          a(target="_blank",href="#{v['orig_link']}")
             div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
-
+          
           script(type="text/javascript").
             var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
 
@@ -44,6 +45,26 @@ block content
 
         if (v['type'] == 'video')
           iframe.rfcx-video-media(src='#{v["thmb"]}')
+
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
+    div.span12
+      p.roadgeek.rfcx-header= "INFOGRAPHICS"
+
+    for v,i in media_assets
+      if (v['category'] == 'illustration')
+
+        if (v['type'] == 'image')
+          a(target='_blank',href="#{v['orig_link']}")
+            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
+          script(type="text/javascript").
+            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+
+        if (v['type'] == 'video')
+          iframe.rfcx-video-media(src='#{v["thmb"]}')
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-3(style="text-align:center;")
+
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
     div.span12

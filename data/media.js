@@ -210,19 +210,60 @@ var data = [
 },
 
 
-
-{   id: "3d_model",
-    type: "link",
-    category: "device",
-    thmb: "",
-    orig_link: "http://p3d.in/90ZO0/xray+spin",
+{   id: "infographic_how_it_works",
+    type: "image",
+    category: "illustration",
+    thmb: "https://farm6.staticflickr.com/5593/14361735096_1cfc3b2125_z.jpg",
+    orig_link: "https://secure.flickr.com/photos/rainforestcx/14361735096/sizes/l/",
     caption: {
-      english: "3D Model Link",
+      english: "Siberut Gibbon",
       spanish: "",
       french: ""
     },
     visible: true
 },
+
+  
+{   id: "deforestation_climate_change",
+    type: "image",
+    category: "illustration",
+    thmb: "https://farm3.staticflickr.com/2940/14222374280_5783b48b6e_z.jpg",
+    orig_link: "https://secure.flickr.com/photos/rainforestcx/14222374280/sizes/l/",
+    caption: {
+      english: "Sun Bear",
+      spanish: "",
+      french: ""
+    },
+    visible: true
+},
+
+
+{   id: "rfcx_3000_cards",
+    type: "image",
+    category: "illustration",
+    thmb: "https://farm6.staticflickr.com/5595/14489066484_1cdd632602_z.jpg",
+    orig_link: "https://secure.flickr.com/photos/rainforestcx/14489066484/sizes/l/",
+    caption: {
+      english: "Kalaweit",
+      spanish: "",
+      french: ""
+    },
+    visible: true
+},
+
+
+// {   id: "3d_model",
+//     type: "link",
+//     category: "device",
+//     thmb: "",
+//     orig_link: "http://p3d.in/90ZO0/xray+spin",
+//     caption: {
+//       english: "3D Model Link",
+//       spanish: "",
+//       french: ""
+//     },
+//     visible: true
+// },
 
 
 

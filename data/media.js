@@ -211,6 +211,47 @@ var data = [
 },
 
 
+{   id: "megafauna_sloth",
+    type: "image",
+    category: "megafauna",
+    thmb: "https://farm3.staticflickr.com/2921/14304611749_8db1b61cb2_z.jpg",
+    orig_link: "https://secure.flickr.com/photos/rainforestcx/14304611749/sizes/l/",
+    caption: {
+      english: "Sloth",
+      spanish: "",
+      french: ""
+    },
+    visible: true
+},
+
+  
+{   id: "megafauna_beetle",
+    type: "image",
+    category: "megafauna",
+    thmb: "https://farm6.staticflickr.com/5585/14489945444_586a96f415_z.jpg",
+    orig_link: "https://secure.flickr.com/photos/rainforestcx/14489945444/sizes/l/",
+    caption: {
+      english: "Beetle from EarthTrain",
+      spanish: "",
+      french: ""
+    },
+    visible: true
+},
+
+
+{   id: "valley_gorge",
+    type: "image",
+    category: "megafauna",
+    thmb: "https://farm6.staticflickr.com/5495/14468111226_7d53ea3002_z.jpg",
+    orig_link: "https://secure.flickr.com/photos/rainforestcx/14468111226/sizes/l/",
+    caption: {
+      english: "Mamoni Valley",
+      spanish: "",
+      french: ""
+    },
+    visible: true
+},
+
 
 
 

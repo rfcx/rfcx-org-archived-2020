@@ -24,9 +24,10 @@ html(lang="en")
       meta(property="og:url", content="#{(http_headers['x-forwarded-proto']==='https') ? 'https' : 'http'}://#{http_headers['host']}/ks2")
       meta(property="og:image", content="https:#{rfcx_static_cdn}/video/vid03/vid03-poster-square.jpg")
       
-      != '<meta property="og:video" content="https://d4bl4mvczhn5i.cloudfront.net/video/jwplayer/5.7/jwplayer.flash.swf?file=https%3a%2f%2fd4bl4mvczhn5i.cloudfront.net%2fvideo%2fvid03%2fv1%2fvid03-v1.720.mp4%3fv%3d1&autoplay=true" />'
+      meta(property="og:video", content="https://d4bl4mvczhn5i.cloudfront.net/video/jwplayer/5.7/jwplayer.flash.swf?file=..%2f..%2fvid03%2fv2%2fvid03-v2.720.mp4&autostart=true")
       meta(property="og:video:type", content="application/x-shockwave-flash")
-  
+      meta(property="og:video:width", content="486")
+      meta(property="og:video:height", content="297")
 
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')

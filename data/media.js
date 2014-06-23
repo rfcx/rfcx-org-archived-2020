@@ -6,7 +6,7 @@ var data = [
 {   id: "device_stern_grove",
     type: "image",
     category: "device",
-    thmb: "https://farm3.staticflickr.com/2895/14151071006_f993404819.jpg",
+    thmb: "https://farm3.staticflickr.com/2895/14151071006_d2379544ec.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/14151071006/sizes/l/",
     caption: {
       english: "Rainforest Connection hardware is tested in the eucalyptus forests south of San Francisco, CA. Pictured on right is RFCx founder Topher White.",
@@ -19,7 +19,7 @@ var data = [
 {   id: "device_woodside",
     type: "image",
     category: "device",
-    thmb: "https://farm6.staticflickr.com/5581/14466257085_9286bc639c.jpg",
+    thmb: "https://farm6.staticflickr.com/5581/14466257085_81cb8b68a8.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/14466257085/sizes/l/",
     caption: {
       english: "Rainforest Connection hardware on display during testing.",
@@ -32,7 +32,7 @@ var data = [
 {   id: "device_redwood",
     type: "image",
     category: "device",
-    thmb: "https://farm3.staticflickr.com/2904/13985834168_c51d8dc1f4.jpg",
+    thmb: "https://farm3.staticflickr.com/2904/13985834168_f0b94f5a1a.jpg",
     orig_link: "https://secure.flickr.com/photos/rainforestcx/13985834168/sizes/l/",
     caption: {
       english: "Rainforest Connection hardware on display during alert testing in the redwood forests north of San Francisco, CA.",

@@ -6,7 +6,7 @@
 var navItems = [
 //  [ page-id, nav-title, uri-path, page-title, show-in-nav, is-isolated ]
     [ "intro", "Home", "/", "Protecting rainforests with real-time data", true, false ],
-//    [ "campaign", "Home", "/", "Protecting rainforests with real-time data", true, false ],
+    [ "campaign", "Home", "/campaign", "Protecting rainforests with real-time data", false, false ],
     [ "about", "About", "/about", "About", true, false ],
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
     [ "donate", "Donate", "/donate", "Donate", false, false ],
@@ -70,6 +70,7 @@ exports.page = function(req, res, process, Model){
     res.writeHead(302, { "Location": "https://rfcx.org"+req.path } );
     res.end();
   } else {
+    console.log(req.headers);
     res.setHeader("Access-Control-Allow-Origin","*");
     res.render(navItem[0], setJadeVars(process, {
       current_page: navItem

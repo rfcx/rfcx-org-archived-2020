@@ -36,46 +36,7 @@ block content
         | Watch the video to learn how it works
         i.fa.fa-play
 
-  div.row-fluid.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats-title
-    div.span12
-      p.roadgeek.rfcx-header.title
-       | The Facts: Destruction of tropical rainforest...
-  div.row-fluid.rfcx-row.rfcx-row-intro-stats
-    div.span4.stat-page-climate
-      div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-globe.70.png?v=#{app_version})")
-      p.roadgeek.rfcx-header
-        span
-          | ...is a leading cause of
-          br
-          span.conclusion= "climate change."
-          br
-          span.source= "-United Nations"
-          br
-          a.btn.btn-rfcx-mini.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
-    div.span4.stat-page-extinction
-      div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version})")
-      p.roadgeek.rfcx-header
-        span
-          | ...is causing global
-          br
-          span.conclusion= "mass extinctions."
-          br
-          span.source= "-United Nations"
-          br
-          a.btn.btn-rfcx-mini.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
-        
-    div.span4.stat-page-crime
-      div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version})")
-      p.roadgeek.rfcx-header
-        span
-          | ...is mostly caused by
-          br
-          span.conclusion= "illegal activity."
-          br
-          span.source= "-Interpol"
-          br
-          a.btn.btn-rfcx-mini.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
-
+ 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
     div.span6
       p.roadgeek.rfcx-header.rfcx-intro-what-title
@@ -100,91 +61,6 @@ block content
         a.btn.btn-primary(href="/ks")
           | Learn More
           i.fa.fa-arrow-right
-
-
-
-
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
-    div.span12
-      p.roadgeek.rfcx-header= "Finally, trees that can talk."
-      p.rfcx-body
-        span
-          | <em>Rainforest Connection</em> uses upcycled mobile technology to monitor and protect remote forests in real-time.
-  div.row-fluid.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
-    div.span4
-      p.roadgeek.rfcx-header.italic
-        | &ldquo;If a tree falls
-        br
-        | <span style="position:relative;left:75px;">in the forest...&rdquo;</span>
-      p.rfcx-body
-        span.italic
-          | &ldquo;...and no one is there to hear it, does it make a sound?&rdquo;
-      p.rfcx-body
-        span
-          | These days, statistically speaking, when a tree falls in the forest, there's usually somebody there to hear it&#8212;the people that cut it down. With <em>Rainforest Connection</em> technology, we can finally rewrite this ancient adage to read:
-      p.rfcx-body
-        span.italic
-          | &ldquo;If a tree falls in the forest, and no one is there to hear it, <b>you</b> still can. And so can the world.&rdquo;
-        br
-        a.btn.btn-primary(href="/ks")
-          | Learn More
-          i.fa.fa-arrow-right
-
-
-    div.span8
-      div.screen-container(onClick="showHelpBubbles();")
-        img.screen-img(src="#{rfcx_cdn}/img/about/screen-trans.560.png?v=#{app_version}")
-        img.screen-bg(src="#{rfcx_cdn}/img/about/screen-bg.511.jpg?v=#{app_version}")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:20%;top:25%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:84%;top:33%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:21%;top:55%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:59%;top:60%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:44%;top:30%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:68%;top:24%;")
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-2
-    div.span6
-      img.trash-img(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
-    div.span6
-      p.roadgeek.rfcx-header
-        | Turning old phones
-        br
-        | into forest guardians
-      img.trash-img-mobile(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
-      p.rfcx-body
-        span
-          | Why use old, recycled smartphones to guard the rainforest?
-          br
-          | Because it's simple, inexpensive and it works. 
-      p.rfcx-body
-        span
-          | Smartphones are arguably the most efficient, advanced, and well-understood computers available on the market today, and each year, more than 150 million phones are discarded <a target="_blank" href="http://www.electronicstakeback.com/wp-content/uploads/Facts_and_Figures_on_EWaste_and_Recycling.pdf">in the United States alone</a>.
-          br
-          | <span class="italic">Rainforest Connection</span> can take this "trash" and put it to use immediately.
-      p.rfcx-body
-        span
-          | Today, even earth's most remote forested areas have solid, reliable wireless telecommunications infrastructure. Rather than start from scratch, <span class="italic">Rainforest Connection</span> is already able to leverage this infrastructure from the start to protect the world's most threatened forests.
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
-    div.span4
-      p.roadgeek.rfcx-header= "Where do we start?"
-      p.rfcx-body
-        | The <span class="italic">Rainforest Connection</span> system works, and we've now <a href="video" target="_blank">proven it in the field</a> in Sumatra against actual illegal logging operations. Now we need to expand by putting the next generation of devices into <b>three more reserves</b> in the rainforests of Indonesia, the Amazon and Africa.
-      p.rfcx-body
-        | These three latest pilot projects will help to prove that the system can operate on <b>a global scale, in any forest, anywhere</b>.
-      p.rfcx-body.rfcx-body-full
-        | This requires funding and strong on-the-ground partnerships with local communities, indigenous partners and organizations that are committed to responding to logging alerts in real-time. We know that <span class="italic">Rainforest Connection</span> can help turn the tide of environmental crisis, but <a href="get_involved">we need your help</a> to make it a reality.
-    div.span8
-      div.rfcx-crnr-5.nopin.map-cropper
-        img.map-frame(src="#{rfcx_cdn}/img/about/iphone5-black-bg.690.png?v=#{app_version}")
-        div.map-cropper-internal
-          div#map-container
-          div.map-cover
-
-
-
-
 
 
 

@@ -24,7 +24,7 @@ html(lang="en")
       meta(property="og:url", content="#{(http_headers['x-forwarded-proto']==='https') ? 'https' : 'http'}://#{http_headers['host']}/ks2")
       meta(property="og:image", content="https:#{rfcx_static_cdn}/video/vid03/vid03-poster-square.jpg")
       
-      meta(property="og:video", content="https://d4bl4mvczhn5i.cloudfront.net/video/jwplayer/5.7/jwplayer.flash.swf?file=..%2f..%2fvid03%2fv3%2fvid03-v3.720.mp4&autostart=true")
+      meta(property="og:video", content="https://d4bl4mvczhn5i.cloudfront.net/video/jwplayer/5.7/jwplayer.flash.swf?file=..%2f..%2fvid03%2fv4%2fvid03-v4.720.mp4&autostart=true")
       meta(property="og:video:type", content="application/x-shockwave-flash")
       meta(property="og:video:width", content="486")
       meta(property="og:video:height", content="297")
@@ -38,6 +38,7 @@ html(lang="en")
     style(type="text/css").
       @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-campaign.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='all and (max-device-width: 480px)')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile-landscape.css?v=#{app_version}', media='all and (max-device-width: 480px) and (orientation:landscape)')
   body.helvetica
@@ -64,6 +65,8 @@ html(lang="en")
               a.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
         a
           img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
+        a
+          img.ks-logo(src="#{rfcx_cdn}/img/campaign/kickstarter-logo.450.png?v=#{app_version}")
 
       block content
 
@@ -136,7 +139,7 @@ html(lang="en")
     div#rfcx-menu-mobile
       div.menu-bg
       ul
-        li.roadgeek.header.rfcx-trans-67(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
+        li.roadgeek.header.rfcx-trans-67(style="background-image:url(#{rfcx_cdn}/img/campaign/masthead-bg.1400.jpg?v=#{app_version});")
           span= "Rainforest Connection"
           img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
         for item in nav_items

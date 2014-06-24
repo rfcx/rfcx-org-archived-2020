@@ -6,7 +6,7 @@ var RFCX = {
   isHTTPS: (window.location.protocol.indexOf("https") > -1),
   fn: { load: {}, reactiveUi: {}, initializeUi: {}, video: {},
     ui: {
-      all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}, campaign: {}
+      all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}, campaign: {}, ks: {}
     }
   },
   cdn: { rfcx: null, rfcxVendor: null, rfcxStatic: null, bootstrap: null, cdnJs: null, videoJs: null },
@@ -16,7 +16,7 @@ var RFCX = {
   overflowMarginWidth: 250,
   renderForMobile: false,
   renderForTouch: $("html").hasClass("touch"),
-  transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30, campaign: 418 },
+  transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30, campaign: 418, ks: 418 },
   nodeEnv: null,
   appVersion: null,
   donateAmount: 50,
@@ -147,15 +147,15 @@ RFCX.fn.insertCss = function(url) {
 RFCX.fn.reactiveUi.loadFollowButtons = function(){
   for (var i = 0; i < RFCX.social.followButtons.env.length; i++) { if (RFCX.nodeEnv === RFCX.social.followButtons.env[i]) {
     setTimeout(function(){
-      if ($("a.twitter-follow-button").length > 0) {
+      if ($("a.twitter-follow-button, a.twitter-share-button").length > 0) {
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
       }
-      if ($("div.fb-follow").length > 0) {
+      if ($("div.fb-follow, div.fb-like").length > 0) {
         (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
       }

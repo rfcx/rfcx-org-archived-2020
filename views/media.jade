@@ -9,6 +9,23 @@ block content
         //-span.help1= "We need you. The forests need you. "
         //-span.help2= "The world needs you."
 
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;padding-top:20px;")
+    div.span12      
+      p.rfcx-body(style="font-size:16px;")
+        span= "We're here to help you find what you're looking for."
+        
+  //-div.row-fluid.rfcx-row.rfcx-row-media-img(style="text-align:center;")
+    //-div.span4
+      //-p.roadgeek.rfcx-header= "CONTACT US"
+      //-p.rfcx-body
+       
+    //-div.span4
+      //-p.roadgeek.rfcx-header= "CONTACT US"
+      //-p.rfcx-body
+    //-div.span4
+      //-p.roadgeek.rfcx-header= "CONTACT US"
+      //-p.rfcx-body
+
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
     div.span12
       p.roadgeek.rfcx-header= "THE DEVICE"
@@ -52,7 +69,7 @@ block content
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
     div.span12
-      p.roadgeek.rfcx-header= "THOSE WE PROTECT"
+      p.roadgeek.rfcx-header= "THE ONES WE HELP TO PROTECT"
 
     for v,i in media_assets
       if (v['category'] == 'megafauna')
@@ -83,7 +100,6 @@ block content
         if (v['type'] == 'video')
           iframe.rfcx-video-media(src='#{v["thmb"]}')
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-3(style="text-align:center;")
 
 
   div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")

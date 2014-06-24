@@ -100,23 +100,21 @@ app.get("/video", routes.redirectToHomePage );
 
 
 app.get("/ks-vid-1", function(req,res){
-  res.writeHead(302, { "Location": "http://r-f.cx/1rqEukw" } );
+  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar" } );
   res.end();
 });
 app.get("/ks-vid-2", function(req,res){
-  res.writeHead(302, { "Location": "http://r-f.cx/1wnFit0" } );
+  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar" } );
   res.end();
 });
 
 app.get("/ks-redirect", function(req,res){
-  var sendString = "This redirect will become active upon Kickstarter launch, early in the morning on Tuesday, 24 June.";
-  res.send(sendString);
-  // res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/1912716008?token=868c071b" } );
-  // res.end();
+  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar" } );
+  res.end();
 });
 
 app.get("/ks", function(req,res){
-  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/1912716008?token=868c071b" } );
+  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar" } );
   res.end();
 });
 

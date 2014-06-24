@@ -3,7 +3,7 @@
 .rfcx-container-ks .footer {  }
 
 
-.btn-custom-facebook, .btn-custom-twitter { padding:7px 24px; }
+.btn-custom-facebook, .btn-custom-twitter { padding:7px 24px; margin:10px 0px 10px 70px; }
 
 .btn-custom-facebook i.fa { color:#eee; margin-right:10px; }
 .btn-custom-twitter i.fa { color:#fff; margin-right:10px; }

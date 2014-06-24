@@ -1,7 +1,7 @@
 RFCX.video = {
   offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: true, posterUri: "", sizes: [
       [1920,1080,5500], [1280,720,2500], [854,480,1100], [640,360,600]
-    ], mobileSize: 3, followUp: { excludePaths: [ "/video" ] },
+    ], mobileSize: 3, followUp: { excludePaths: [ "/video", "/ks", "/ks2" ] },
     offsetAtPlay: { intro: { top: 0 }, campaign: { top: 76 }, ks: { top: 76 } }
 };
 

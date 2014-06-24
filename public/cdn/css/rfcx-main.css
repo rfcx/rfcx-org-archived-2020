@@ -360,7 +360,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .rfcx-container-campaign .social-follow-container { clear:none; }
 
-.masthead .ks-logo { position:absolute; width:36%; top:16%; margin-top:2px; /*left:44%;*/ left:auto; right:4px; z-index:1; }
-.masthead .ks-bridge {  }
+.masthead .ks-logo { position:absolute; width:36%; top:16%; margin-top:2px; left:50%; z-index:1; }
+.masthead .is-on { position:absolute; width:4%; top:31%; margin-top:2px; left:44%;  z-index:1; }
 .rfcx-container-ks .masthead .logo { width:40%; top:15%; }
 

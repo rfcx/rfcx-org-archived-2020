@@ -2,14 +2,17 @@
 
 .rfcx-container-ks .share-msg { font-size:18px; }
 
+.action-title { font-size:70%;position:relative;top:-4px; margin-left:10px; }
 
 .rfcx-container-ks .footer {  }
 
 
-.btn-custom-facebook, .btn-custom-twitter { padding:7px 24px; margin:10px 0px 10px 70px; }
+.btn-custom-facebook, .btn-custom-twitter, .btn-custom-kickstarter { padding:12px 12px 12px 24px; margin:10px 0px 10px 10px; }
 
 .btn-custom-facebook i.fa { color:#eee; margin-right:10px; }
 .btn-custom-twitter i.fa { color:#fff; margin-right:10px; }
+.btn-custom-kickstarter i.fa { color:#333; margin-right:10px; }
+
 
 .btn-custom-facebook {
   background-color: hsl(214, 37%, 28%) !important;
@@ -43,5 +46,23 @@
   border-color: #1798c4 #1798c4 hsl(195, 79%, 38%);
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.btn-custom-kickstarter {
+  background-color: hsl(86, 79%, 44%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#daf6b5", endColorstr="#7cc817");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#daf6b5), to(#7cc817));
+  background-image: -moz-linear-gradient(top, #daf6b5, #7cc817);
+  background-image: -ms-linear-gradient(top, #daf6b5, #7cc817);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #daf6b5), color-stop(100%, #7cc817));
+  background-image: -webkit-linear-gradient(top, #daf6b5, #7cc817);
+  background-image: -o-linear-gradient(top, #daf6b5, #7cc817);
+  background-image: linear-gradient(#daf6b5, #7cc817);
+  border-color: #7cc817 #7cc817 hsl(86, 79%, 34%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.66);
   -webkit-font-smoothing: antialiased;
 }

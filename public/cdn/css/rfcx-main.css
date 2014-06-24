@@ -329,12 +329,15 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .campaign-video { height:380px; margin-bottom:10px; }
 .campaign-video p { text-shadow: 0px 0px 2px #004400; filter: dropshadow(color=#004400, offx=0, offy=0); }
-.campaign-video .slogan, #campaign-countdown { position:absolute; margin-top:80px; margin-left:55%; color:#ffffff; z-index:1; line-height:48px; text-transform:uppercase; }
+.campaign-video .slogan, #campaign-countdown { position:absolute; margin-top:110px; margin-left:55%; color:#ffffff; z-index:1; line-height:48px; text-transform:uppercase; }
 .campaign-video .slogan p.roadgeek { font-size:48px; margin-bottom:0px; cursor:default; text-transform:none; }
 .campaign-video .banner-bg { position:absolute; z-index:0; width:155.6%; height:100%; left:-27.8%; max-width:155.6%; }
 .campaign-video .video-link { font-size:16px; padding-top:0px; font-weight:600; margin-left:0px; cursor:default; text-transform:none; }
 .campaign-video .video-link .fa-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
 #campaign-countdown { margin-left:0%; margin-top:0px; font-family:courier; }
+
+.banner-video .slogan-left { margin-top:5px; margin-left:25%; left:5%; font-size:18px; text-align:right; }
+
 
 .campaign-video .video-box { position:absolute; z-index:1; margin-top:100px; width:448px; margin-left:0%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
 .campaign-video .video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }
@@ -351,7 +354,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .campaign-video .social-share-container { position:relative; top:0px; left:20px; height:0px; }
 
-.campaign-video .social-follow-container
+
 
 .campaign-social-follow-facebook { border:none;overflow:hidden;height:21px;width:70px; }
 .campaign-social-follow-twitter { border:none;overflow:hidden;height:21px;width:70px; }
@@ -363,4 +366,5 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead .ks-logo { position:absolute; width:36%; top:16%; margin-top:2px; left:50%; z-index:1; }
 .masthead .is-on { position:absolute; width:4%; top:31%; margin-top:2px; left:44%;  z-index:1; }
 .rfcx-container-ks .masthead .logo { width:40%; top:15%; }
+
 

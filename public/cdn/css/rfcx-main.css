@@ -339,10 +339,6 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .banner-video .slogan-left { margin-top:5px; margin-left:25%; left:5%; font-size:18px; text-align:right; }
 
 
-.campaign-video .video-box { position:absolute; z-index:1; margin-top:100px; width:448px; margin-left:0%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
-.campaign-video .video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }
-.campaign-video .video-box .video-box-bg { position:relative; z-index:1; width:100%; background-color:#00bb00; border:none; }
-.campaign-video .video-box-page:hover .video-box-bg { filter:alpha(opacity=40); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; -moz-opacity:0.40; -khtml-opacity:0.40; opacity:0.40; }
 
 .rfcx-container-campaign .masthead .nav-pills { display:none; }
 .rfcx-container-campaign .masthead .menu-toggle { display:block; position:absolute; left:auto; right:0px; top:23px; color:white; font-size:28px; cursor:pointer; }

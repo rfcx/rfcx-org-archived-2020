@@ -66,3 +66,10 @@
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.66);
   -webkit-font-smoothing: antialiased;
 }
+
+
+.video-box { position:absolute; z-index:1; margin-top:100px; width:448px; margin-left:0%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
+.video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }
+.video-box .video-box-bg { position:relative; z-index:1; width:100%; background-color:#00bb00; border:none; }
+.video-box-page:hover .video-box-bg { filter:alpha(opacity=40); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; -moz-opacity:0.40; -khtml-opacity:0.40; opacity:0.40; }
+

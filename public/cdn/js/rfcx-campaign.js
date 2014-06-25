@@ -40,14 +40,14 @@ $(function() {
             
             
             if ((screen.width < 480) || (screen.height < 480)) {
-                window.open ('http://www.facebook.com/share.php?u=http://r-f.cx/lwqlhyf', '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+                window.open ('http://www.facebook.com/share.php?u=http://r-f.cx/1mbKMiA', '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
             } else {
-                window.open ('http://www.facebook.com/share.php?u=http://r-f.cx/lwqlhyf', '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);   
+                window.open ('http://www.facebook.com/share.php?u=http://r-f.cx/1mbKMiA', '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);   
             }
     });
     
     $('.btn-custom-twitter').on('click', function() {
-        var loc = encodeURIComponent('http://r-f.cx/lylnkks'),
+        var loc = encodeURIComponent('http://r-f.cx/1iCrd8m'),
                 title = "Amazing! Rainforest Connection: Phones turned to Forest Guardians ",
                 w = 580, h = 300,
                 left = (screen.width/2)-(w/2),

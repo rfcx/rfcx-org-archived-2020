@@ -100,21 +100,21 @@ app.get("/video", routes.redirectToHomePage );
 
 
 app.get("/ks-vid-1", function(req,res){
-  res.writeHead(302, { "Location": "http://youtu.be/tiTP5QLYYcA" } );
+  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
   res.end();
 });
 app.get("/ks-vid-2", function(req,res){
-  res.writeHead(302, { "Location": "http://youtu.be/pkwkrusLw3U" } );
+  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
   res.end();
 });
 
 app.get("/ks-redirect", function(req,res){
-  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar" } );
+  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
   res.end();
 });
 
 app.get("/ks", function(req,res){
-  res.writeHead(302, { "Location": "https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar" } );
+  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
   res.end();
 });
 

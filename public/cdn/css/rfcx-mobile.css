@@ -67,9 +67,9 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .banner-video .slogan p.roadgeek { font-size:32px; line-height:28px; }
 .video-box-followup { margin-left:0%; margin-top:0%; overflow:hidden; }
 
-.banner-video .intro-social-facebook { margin-left:114px; }
-.banner-video .intro-social-tumblr { display:none; margin-left:144px; }
-.banner-video .intro-social-twitter { margin-left:174px; }
+.banner-video .intro-social-facebook { margin-left:114px; top:-40px; }
+.banner-video .intro-social-tumblr { display:none; margin-left:144px; top:-40px; }
+.banner-video .intro-social-twitter { margin-left:174px; top:-40px; }
 
 .banner-video .slogan { }
 
@@ -167,3 +167,6 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .rfcx-contact-sctn { width:99%; }
 .rfcx-contact-sctn-social { width:24%; }
 .rfcx-contact-sctn:hover { color:#444; background-color:#ddd; border:solid 1px #ddd; }
+
+.back-us { position:absolute; top:-22px; left:0px; }
+

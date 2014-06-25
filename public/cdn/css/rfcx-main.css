@@ -363,4 +363,5 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .masthead .is-on { position:absolute; width:4%; top:31%; margin-top:2px; left:44%;  z-index:1; }
 .rfcx-container-ks .masthead .logo { width:40%; top:15%; }
 
+.back-us { position:relative; left:-20px }
 

@@ -72,4 +72,6 @@
 .video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }
 .video-box .video-box-bg { position:relative; z-index:1; width:100%; background-color:#00bb00; border:none; }
 .video-box-page:hover .video-box-bg { filter:alpha(opacity=40); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; -moz-opacity:0.40; -khtml-opacity:0.40; opacity:0.40; }
+.video-box-outer, .video-box-followup { z-index:1000; display:none; margin-left:0px; margin-top:0px; border:solid 4px #ffffff; }
+.video-box-outer-backdrop, .video-box-outer-backdrop-extra { z-index:999; background-color:black; display:none; position:absolute; top:0%; left:0%; width:100%; height:0%; filter:alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity:0; -khtml-opacity:0; opacity:0; }
 

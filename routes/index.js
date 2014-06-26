@@ -7,9 +7,9 @@ var navItems = [
 //  [ page-id, nav-title, uri-path, page-title, show-in-nav, is-isolated ]
     [ "intro", "Home", "/", "Protecting rainforests with real-time data", true, false ],
     [ "campaign", "Home", "/campaign", "Protecting rainforests with real-time data", false, false ],
-    [ "about", "About", "/about", "About", true, false ],
+ //   [ "about", "About", "/about", "About", true, false ],
     [ "get_involved", "Get Involved", "/ks-redirect", "Get Involved", true, false ],
-    [ "donate", "Donate", "/donate", "Donate", false, false ],
+    [ "donate", "Donate", "/donate", "Donate", false, true ],
     [ "blog", "Blog", "/blog", "Blog", false, false ],
     [ "team", "Team", "/team", "Team", false, false ],
     [ "media", "Media", "/media", "Media", true, false ],

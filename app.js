@@ -119,7 +119,7 @@ app.get("/ks", function(req,res){
 });
 
 app.get("/about", function(req,res){
-  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
+  res.writeHead(302, { "Location": "/" } );
   res.end();
 });
 

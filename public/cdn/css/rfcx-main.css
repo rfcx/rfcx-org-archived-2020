@@ -100,12 +100,12 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .banner-video .video-link { font-size:16px; padding-top:0px; font-weight:600; margin-left:0px; cursor:default; text-transform:none; }
 .banner-video .video-link .fa-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
 
-.banner-video .intro-social { position:absolute; margin-top:300px; font-size:36px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; text-transform:uppercase;  }
+.banner-video .intro-social { position:absolute; margin-top:312px; font-size:48px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; text-transform:uppercase;  }
 .banner-video .intro-social .fa { color:#eeeeee; }
 .banner-video .intro-social .fa:hover { color:#888888; }
-.banner-video .intro-social-facebook { margin-left:140px; }
-.banner-video .intro-social-tumblr { margin-left:140px; display:none; }
-.banner-video .intro-social-twitter { margin-left:190px; }
+.banner-video .intro-social-facebook { margin-left:260px; }
+.banner-video .intro-social-tumblr { margin-left:260px; display:none; }
+.banner-video .intro-social-twitter { margin-left:310px; }
 
 .video-box { position:absolute; z-index:1; margin-top:45px; width:448px; margin-left:48.1%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
 .video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }
@@ -350,7 +350,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .campaign-video .social-share-container { position:relative; top:0px; left:20px; height:0px; }
 
-
+.ks-preview-container { position:relative; width:220px; height:55px; border:none; overflow:hidden; cursor:pointer; }
+.ks-preview-cover { position:absolute; width:100%; height:100%; left:0%; top:0%; background-color:transparent; z-index:1; cursor:pointer; }
+.ks-preview { position:absolute; top:-355px; left:0px; height:420px; width:220px; z-index:0; }
 
 .campaign-social-follow-facebook { border:none;overflow:hidden;height:21px;width:70px; }
 .campaign-social-follow-twitter { border:none;overflow:hidden;height:21px;width:70px; }

@@ -100,21 +100,26 @@ app.get("/video", routes.redirectToHomePage );
 
 
 app.get("/ks-vid-1", function(req,res){
-  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
+  res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );
   res.end();
 });
 app.get("/ks-vid-2", function(req,res){
-  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
+  res.writeHead(302, { "Location": "http://r-f.cx/1jsKARJ" } );
   res.end();
 });
 
 app.get("/ks-redirect", function(req,res){
-  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
+  res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );
   res.end();
 });
 
 app.get("/ks", function(req,res){
-  res.writeHead(302, { "Location": "http://kck.st/TrOsX7" } );
+  res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );
+  res.end();
+});
+
+app.get("/about", function(req,res){
+  res.writeHead(302, { "Location": "/" } );
   res.end();
 });
 

@@ -1,0 +1,59 @@
+extends layout-campaign
+
+block content
+  
+  div.container-narrow.banner-video.campaign-video
+    div.dynamic-crop-right.rfcx-trans-100.banner-bg(style="background-image:url(#{rfcx_cdn}/img/campaign/banner-forest.1400.jpg?v=#{app_version});")
+    iframe.video-box.video-box-page(style="margin-top:20px;margin-left:210px;height:252px",src="//www.youtube.com/embed/ovrBnDf1q2Y?wmode=transparent&rel=0&autohide=1&showinfo=0&enablejsapi=1&controls=1", frameborder="0", allowfullscreen)    
+
+    span.rfcx-unselectable.slogan.slogan-left
+      p.roadgeek(style="font-size:34px;line-height:28px;")
+       | You're here because you have influence.
+       br
+       | When you share something, people pay attention.
+       br
+       | Please take a few seconds to share our work with the world.
+
+
+  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
+    table(style="width:100%;")
+      tr.press-source
+        td
+          a(href="http://www.huffingtonpost.com/2014/07/07/illegal-logging_n_5565090.html", target="_blank")= "HuffPost"
+        td
+          a(href="", target="_blank")= "Mashable"
+        td
+          a(href="", target="_blank")= "TechCrunch"
+        td
+          a(href="", target="_blank")= "VentureBeat"
+        td
+          a(href="https://www.youtube.com/watch?v=dFK4Zh7SmSo", target="_blank")= "BBC Horizons"
+        td
+          a(href="", target="_blank")= "ScientificAmerican"
+        td
+          a(href="http://motherboard.vice.com/read/a-network-of-recycled-phones-is-listening-for-illegal-logging-in-the-rainforest", target="_blank")= "VICE"
+        td
+          a(href="http://blogs.wsj.com/digits/2014/07/03/chainsaws-gunshots-and-coughs-our-smartphones-are-listening/", target="_blank")= "WSJ"
+        td
+          a(href="http://www.engadget.com/2014/06/24/rainforest-connection-kickstarter/", target="_blank")= "Engadget"
+      tr.press-button
+        td
+          div.fb-like(data-href="http://www.huffingtonpost.com/2014/07/07/illegal-logging_n_5565090.html", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="http://mashable.com/2014/06/26/recycle-smartphone-startup-deforestation/", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="http://techcrunch.com/2014/06/24/rfcx-kickstarter/", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="http://venturebeat.com/2014/06/26/your-old-smartphone-could-pinpoint-illegal-logging-save-the-rainforests/", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="https://www.youtube.com/watch?v=dFK4Zh7SmSo", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="http://www.scientificamerican.com/article/if-poachers-and-illegal-loggers-strike-this-forest-phones-it-in/", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="http://motherboard.vice.com/read/a-network-of-recycled-phones-is-listening-for-illegal-logging-in-the-rainforest", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="http://blogs.wsj.com/digits/2014/07/03/chainsaws-gunshots-and-coughs-our-smartphones-are-listening/", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+        td
+          div.fb-like(data-href="http://www.engadget.com/2014/06/24/rainforest-connection-kickstarter/", data-layout="box_count", data-action="like", data-show-faces="false", data-share="false")
+
+

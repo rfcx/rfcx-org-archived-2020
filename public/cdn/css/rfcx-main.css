@@ -361,8 +361,8 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .rfcx-container-campaign .social-follow-container { clear:none; }
 
-.masthead .ks-logo { position:absolute; width:36%; top:16%; margin-top:2px; left:50%; z-index:1; }
-.masthead .is-on { position:absolute; width:4%; top:31%; margin-top:2px; left:44%;  z-index:1; }
+.masthead .ks-logo { position:absolute; width:36%; top:16%; margin-top:2px; right:0%; z-index:1; }
+.masthead .is-on { position:absolute; width:4%; top:31%; margin-top:2px; left:44%; z-index:1; }
 .rfcx-container-ks .masthead .logo { width:40%; top:15%; }
 
 .back-us { position:relative; left:-20px }

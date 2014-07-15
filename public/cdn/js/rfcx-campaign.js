@@ -26,6 +26,7 @@ RFCX.fn.ui.campaign.loadFollowButtons = function() { RFCX.fn.reactiveUi.loadFoll
 
 RFCX.fn.ui.ks.loadFollowButtons = function() { RFCX.fn.reactiveUi.loadFollowButtons(); }
 
+// RFCX.fn.ui.update.loadFollowButtons = function() { RFCX.fn.reactiveUi.loadFollowButtons(); }
 
 
 

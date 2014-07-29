@@ -118,6 +118,19 @@ app.get("/ks", function(req,res){
   res.end();
 });
 
+app.get("/ks/next", function(req,res){
+  res.writeHead(302, { "Location": "/donate" } );
+  res.end();
+});
+app.get("/ks/facebook", function(req,res){
+  res.writeHead(302, { "Location": "https://www.facebook.com/RainforestCx" } );
+  res.end();
+});
+app.get("/ks/twitter", function(req,res){
+  res.writeHead(302, { "Location": "https://twitter.com/RainforestCx" } );
+  res.end();
+});
+
 app.get("/about", function(req,res){
   res.writeHead(302, { "Location": "/" } );
   res.end();

@@ -100,12 +100,14 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .banner-video .video-link { font-size:16px; padding-top:0px; font-weight:600; margin-left:0px; cursor:default; text-transform:none; }
 .banner-video .video-link .fa-play { position:relative; margin-left:8px; font-size:10px; top:-1px;  }
 
-.banner-video .intro-social { position:absolute; margin-top:312px; font-size:48px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; text-transform:uppercase;  }
+.banner-video .intro-social { position:absolute; margin-top:232px; font-size:48px; margin-left:10px; color:#ffffff; z-index:1; line-height:48px; text-transform:uppercase;  }
 .banner-video .intro-social .fa { color:#eeeeee; }
 .banner-video .intro-social .fa:hover { color:#888888; }
-.banner-video .intro-social-facebook { margin-left:260px; }
+.banner-video .intro-social-facebook { margin-left:16px; }
 .banner-video .intro-social-tumblr { margin-left:260px; display:none; }
-.banner-video .intro-social-twitter { margin-left:310px; }
+.banner-video .intro-social-twitter { margin-left:78px; }
+
+.banner-video .control-group { position:absolute; margin-top:232px; margin-left:144px; background-color:rgba(255,255,255,0.5); padding:10px 8px 0px 8px; }
 
 .video-box { position:absolute; z-index:1; margin-top:45px; width:448px; margin-left:48.1%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
 .video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }

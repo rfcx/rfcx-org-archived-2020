@@ -4,32 +4,34 @@ block content
   
   div.container-narrow.banner-video
     div.dynamic-crop-right.banner-bg(style="background-image:url(#{rfcx_cdn}/img/intro/banner-forest.1400.jpg?v=#{app_version});")
-    a(href="/ks-redirect")
-      div.video-box
-        img.rfcx-trans-linear.video-box-poster(src="#{rfcx_static_cdn}/video/vid01/vid01-poster.jpg?v=#{app_version}")
-        img.rfcx-trans-linear.rfcx-trans-25.video-box-bg(src="#{rfcx_cdn}/img/intro/16x9.16.gif")
-        i.rfcx-trans-linear.fa.fa-play-circle-o
+    div.video-box.video-box-page(data-video-id="vid03",data-video-version="1",data-video-youtube="qEHH9VSWYTI",data-video-cc="1",data-video-run-followup="1")
+      img.rfcx-trans-linear.video-box-poster(src="#{rfcx_static_cdn}/video/vid01/vid01-poster.jpg?v=#{app_version}")
+      img.rfcx-trans-linear.rfcx-trans-25.video-box-bg(src="#{rfcx_cdn}/img/intro/16x9.16.gif")
+      i.rfcx-trans-linear.fa.fa-play-circle-o
     span.rfcx-unselectable.slogan
-      p.roadgeek(style="display:none;")
+      p.roadgeek
         | A solution that can
         br
         | halt illegal logging
         br
         | in rainforests
-      a(href="/ks-redirect",style="")
-        img.back-us(src="#{rfcx_cdn}/img/campaign/kickstarter.png")
-      br
-      br
-      a(href="/ks-redirect")
-        div.ks-preview-container
-          div.ks-preview-cover
-          iframe.ks-preview(frameborder="0", height="420", width="220", scrolling="no", src="https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar/widget/card.html?v=2")
 
-    a.intro-social.intro-social-facebook(href="https://www.facebook.com/RainforestCx",target="_blank",style="top:-75px;")
+      p.video-link
+        | Watch the video to learn how it works
+        i.fa.fa-play
+
+    div.control-group.rfcx-crnr-5
+      form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
+        input(type="hidden", name="cmd", value="_s-xclick")
+        input(type="hidden", name="hosted_button_id", value="ZEMNV9Q5ALW6Y")
+        input(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", border="0", name="submit", alt="")
+        img(border="0", width="1", height="1", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif")
+
+    a.intro-social.intro-social-facebook(href="https://www.facebook.com/RainforestCx",target="_blank")
       i.rfcx-trans-linear.fa.fa-facebook-square
-    a.intro-social.intro-social-tumblr(href="http://tumblr.rfcx.org/",target="_blank",style="top:-75px;")
+    a.intro-social.intro-social-tumblr(href="http://tumblr.rfcx.org/",target="_blank")
       i.rfcx-trans-linear.fa.fa-tumblr-square
-    a.intro-social.intro-social-twitter(href="https://twitter.com/RainforestCx",target="_blank",style="top:-75px;")
+    a.intro-social.intro-social-twitter(href="https://twitter.com/RainforestCx",target="_blank")
       i.rfcx-trans-linear.fa.fa-twitter-square
 
   div.row-fluid.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats-title

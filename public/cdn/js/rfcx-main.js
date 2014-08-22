@@ -6,7 +6,7 @@ var RFCX = {
   isHTTPS: (window.location.protocol.indexOf("https") > -1),
   fn: { load: {}, reactiveUi: {}, initializeUi: {}, video: {},
     ui: {
-      all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}, campaign: {}, ks: {}, udpate: {}
+      all: {}, intro: {}, about: {}, get_involved: {}, team:{}, media: {}, video: {}, press: {}, campaign: {}, ks: {}, update: {}
     }
   },
   cdn: { rfcx: null, rfcxVendor: null, rfcxStatic: null, bootstrap: null, cdnJs: null, videoJs: null },
@@ -16,7 +16,7 @@ var RFCX = {
   overflowMarginWidth: 250,
   renderForMobile: false,
   renderForTouch: $("html").hasClass("touch"),
-  transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30, campaign: 418, ks: 418, update: 30 },
+  transitionAt: { intro: 418, about: 30, get_involved: 30, media: 30, press: 30, campaign: 418, ks: 418, update: 30 },
   nodeEnv: null,
   appVersion: null,
   donateAmount: 50,
@@ -294,6 +294,12 @@ RFCX.fn.ui.all.emailSubscribeFormSetup = function() {
       });
     });
   }
+}
+
+RFCX.fn.ui.press.loadPress = function(){
+  $.getScript(RFCX.cdn.rfcx+"/js/rfcx-press.js",function(){
+    RFCX.fn.ui.press.loadPressClippings();
+  });
 }
 
 

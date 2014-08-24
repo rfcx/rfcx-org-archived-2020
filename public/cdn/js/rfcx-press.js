@@ -20,7 +20,7 @@ RFCX.fn.ui.press.loadPressClippings = function(){
             +"<div class='rfcx-press-clipping-container'"
             +" data-category='transition'"
             +">"
-            +"<a target='_blank' href='"+RFCX.press.data[i].uri+"'>"
+            +"<a target='_blank' href='"+RFCX.press.data[i].bitly+"'>"
             +"<div class='rfcx-press-clipping-clickable'>"
 
             +RFCX.press.data[i].date
@@ -29,7 +29,7 @@ RFCX.fn.ui.press.loadPressClippings = function(){
 
             +"</div>"
             +"</a>"
-            +"<div class='fb-like' data-href='"+RFCX.press.data[i].uri+"' data-width='80' data-layout='button_count' data-action='like' data-show-faces='false' data-share='false'></div>"
+            +"<div class='fb-like' data-href='"+RFCX.press.data[i].bitly+"' data-width='80' data-layout='button_count' data-action='like' data-show-faces='false' data-share='false'></div>"
 
             +"</div>";
         }

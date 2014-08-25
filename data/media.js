@@ -137,31 +137,6 @@ var data = [
 },
 
 
-{   id: "assembly_30sec",
-    type: "video",
-    category: "assembly",
-    thmb: "https://docs.google.com/file/d/0B6Rt6u62UXbjMm9wT3ZHVlpkMnc/preview",
-    orig_link: "https://docs.google.com/file/d/0B6Rt6u62UXbjMm9wT3ZHVlpkMnc/edit",
-    caption: {
-      english: "RFCx device assembly, 30 second time lapse.",
-      spanish: "",
-      french: ""
-    },
-    visible: true
-},
-
-{   id: "assembly_blank",
-    type: "video",
-    category: "assembly",
-    thmb: "https://docs.google.com/file/d/0B6Rt6u62UXbjTUZiYTF5WGNBZHc/preview",
-    orig_link: "https://docs.google.com/file/d/0B6Rt6u62UXbjTUZiYTF5WGNBZHc/edit",
-    caption: {
-      english: "RFCx device assembly, 30 second time lapse.",
-      spanish: "",
-      french: ""
-    },
-    visible: true
-},
 
 
 

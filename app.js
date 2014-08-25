@@ -17,7 +17,8 @@ process.env.productionVersionId = require("./config/version.js").productionVersi
 var express = require("express"), routes = require("./routes"),
   http = require("http"), path = require("path"), errorHandler = require("errorhandler"),
   morganLogger = require("morgan"), methodOverride = require("method-override"),
-  bodyParser = require("body-parser"), favicon = require("serve-favicon"),
+  bodyParser = require("body-parser"),
+  // favicon = require("serve-favicon"),
   compression = require("compression"), serveStatic = require("serve-static"),
   middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
@@ -50,7 +51,7 @@ var Model = require("./model/_all.js").createModel(db,Sequelize,modelNames);
   app.use(bodyParser.urlencoded());
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");
-  app.use(favicon("./public/cdn/img/logo/favicon.ico"));
+//  app.use(favicon("./public/cdn/img/logo/favicon.ico"));
   app.use(morganLogger("dev"));
   app.use(methodOverride());
   app.use(middlewares.allowCrossDomain);

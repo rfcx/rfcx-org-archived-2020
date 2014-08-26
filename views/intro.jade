@@ -24,7 +24,8 @@ block content
       form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
         input(type="hidden", name="cmd", value="_s-xclick")
         input(type="hidden", name="hosted_button_id", value="ZEMNV9Q5ALW6Y")
-        input(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", border="0", name="submit", alt="")
+        input.mobile-exclude(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", border="0", name="submit")
+        input.mobile-only(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", border="0", name="submit")
         img(border="0", width="1", height="1", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif")
 
     a.intro-social.intro-social-facebook(href="https://www.facebook.com/RainforestCx",target="_blank")

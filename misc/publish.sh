@@ -2,6 +2,9 @@
 cd misc;
 node _publish-prep.js;
 cd ../;
+rm -Rf node_modules;
+npm install;
+npm test;
 read -p "Are you sure you would like to push this version to prod? (y/n): " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

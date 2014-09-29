@@ -194,7 +194,48 @@ var callbacks = {
           time: Math.round((new Date()).valueOf()/1000)
         };
       res.json(rtrn);
+    },
+
+
+
+
+
+    postMappingRegister: function(req, res, Model) {
+      var rtrn = {
+          currentTime: Math.round((new Date()).valueOf()/1000),
+          user: {}
+        };
+ 
+        Model.User.findOrCreate({
+                  where: {
+                    name: "topherwhite"
+                  }
+                }).success(function(Usr){
+
+            if (Usr[0].guid == null) {
+              require('crypto').randomBytes(6, function(ex, buf) {
+                Usr[0].updateAttributes({
+                  guid: buf.toString('hex')
+                }).success(function(){
+                }).error(function(e){
+                    console.log(e);
+                });
+              });
+            }
+
+          res.send(rtrn, 200);
+        }).error(function(e){
+          console.log("Failure: Sequelize findOrCreate User...");
+          console.log(e);
+          res.send(rtrn, 500);
+        });
+
+
     }
+
+
+
+
 
   }
 

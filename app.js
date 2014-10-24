@@ -207,6 +207,11 @@ for (var i = 0; i < routes.navItems.length; i++) {
 
 app.get("/tumblr", require("./routes/tumblr.js").refreshTumblrCache );
 
+app.get("/app/ecam", function(req,res) {
+  res.writeHead(302, { "Location": "https://rfcx-release.s3.amazonaws.com/mapping-android/rfcx-mapping-android-0.0.1.apk" } );
+  res.end();
+});
+
 var server = http.createServer(app).listen(app.get("port"), function(){
   console.log(
     app.get("title")+" (port "+app.get("port")+") ("+process.env.NODE_ENV+")"

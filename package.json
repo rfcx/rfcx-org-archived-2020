@@ -22,7 +22,6 @@
     "mysql": "*",
     "sequelize": "*",
     "crypto": "*",
-    "toobusy": "*",
     "jade": "*",
     "newrelic": "*",
     "knox": "*",

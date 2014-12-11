@@ -29,15 +29,15 @@ if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_KEY && process.env.A
   });
 }
 
-// TooBusy checks if we are overloaded
-if (parseInt(process.env.TOOBUSY_ENABLED)===1) {
-  var toobusyConfig = require("./config/toobusy.js").config;
-  var toobusy = require('toobusy');
-  console.log("Enabling 'toobusy' overload handler");
-  app.use(function(req,res,next) {
-    if (toobusy()){ res.send(503, toobusyConfig.message); } else { next(); }
-  });
-}
+// // TooBusy checks if we are overloaded
+// if (parseInt(process.env.TOOBUSY_ENABLED)===1) {
+//   var toobusyConfig = require("./config/toobusy.js").config;
+//   var toobusy = require('toobusy');
+//   console.log("Enabling 'toobusy' overload handler");
+//   app.use(function(req,res,next) {
+//     if (toobusy()){ res.send(503, toobusyConfig.message); } else { next(); }
+//   });
+// }
 
 // Sequelize Database ORM Initialization
 var Sequelize = require("sequelize");
@@ -219,8 +219,8 @@ var server = http.createServer(app).listen(app.get("port"), function(){
   );
 });
 
-process.on('SIGINT', function(){
-  server.close();
-  if (typeof(toobusy) !== "undefined") { toobusy.shutdown(); }
-  process.exit();
-});
+// process.on('SIGINT', function(){
+//   server.close();
+//   if (typeof(toobusy) !== "undefined") { toobusy.shutdown(); }
+//   process.exit();
+// });

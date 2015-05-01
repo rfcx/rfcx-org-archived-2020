@@ -2,27 +2,11 @@ exports.env = {
 
   NODE_ENV: "development",
 
-  TOOBUSY_ENABLED: false,
-
   NEW_RELIC_KEY: "",
-
-  SEGMENT_IO_SECRET: "",
-  SEGMENT_IO_CLIENT_ID: "",
 
   ADDTHIS_PUBID: "",
 
-  TUMBLR_SUBDOMAIN: "",
-  TUMBLR_OAUTH_CONSUMER_KEY: "",
-  TUMBLR_OAUTH_SECRET_KEY: "",
-
   AWS_ACCESS_KEY_ID: "",
   AWS_SECRET_KEY: "",
-  AWS_S3_BUCKET_AUDIO: "",
-
-  RDS_HOSTNAME: "",
-  RDS_DB_NAME: "",
-  RDS_USERNAME: "",
-  RDS_PASSWORD: "",
-  RDS_PORT: 3306
 
 }

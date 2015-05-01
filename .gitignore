@@ -20,3 +20,8 @@ node_modules/
 
 .ebextensions/env_vars.config
 config/env_vars.js
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

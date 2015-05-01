@@ -26,7 +26,6 @@ for (var i = 0; i < navItems.length; i++) { navItems[i][3] = "Rainforest Connect
 var socialMedia = [
   [ "github", "https://github.com/rfcx", "github-square", "Fork our repos on Github!", "Github"],
   [ "youtube", "http://www.youtube.com/user/RfcxOrg", "youtube-square", "Watch our videos on YouTube!", "YouTube"],
-//  [ "kickstarter", "https://www.kickstarter.com/projects/topherwhite/rainforest-connection-phones-turned-to-forest-guar", "", "Check out our successful campaign on Kickstarter!", "Kickstarter"]
   [ "instagram", "http://instagram.com/rainforestcx", "instagram", "Check us out on Instagram!", "Instagram"],
   [ "tumblr", "http://tumblr.rfcx.org/", "tumblr-square", "Check out our Tumblr!", "Tumblr"],
   [ "flickr", "http://flickr.com/photos/rainforestcx/", "flickr", "Check us out on Flickr!", "Flickr"],
@@ -58,7 +57,7 @@ function setJadeVars(process, jV) {
 
 exports.navItems = navItems;
 
-exports.page = function(req, res, process, Model){
+exports.page = function(req, res, process){
   var navItem = [];
   for (var i = 0; i < navItems.length; i++) {
     if (req.route.path === navItems[i][2]) {
@@ -80,10 +79,6 @@ exports.page = function(req, res, process, Model){
     }));
   }
 };
-
-exports.toRanger = function(req,res){
-res.render('./ranger')
-}
 
 exports.redirectToHomePage = function(req,res) {
   res.writeHead(302, { "Location": "/" } );

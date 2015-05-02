@@ -319,10 +319,11 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-contact-sctn-social .lbl .fa { margin:5px 0px 5px 0px; clear:both; color:#222; }
 .rfcx-contact-sctn-social:hover .lbl .fa { color:#fff; }
 
-
 .banner-video .slogan-left { margin-top:5px; margin-left:25%; left:5%; font-size:18px; text-align:right; }
 
 .masthead .is-on { position:absolute; width:4%; top:31%; margin-top:2px; left:44%; z-index:1; }
 
 .back-us { position:relative; left:-20px }
+
+.logo-footer-shuttleworth { position:relative; top:-12px; margin-left:0px; }
 

@@ -75,19 +75,9 @@ html(lang="en")
               span.copyright
                 | &copy;2014 Rainforest Connection &#0153;
 
-            if (!current_page[5]) 
-              li.ft= "|"
-              for item in nav_items
-                li.ft
-                  if ((item[0] == current_page[0]) && item[4])
-                    a.rfcx-trans-linear(href="#")= item[1]
-                    li.ft= "|"
-                  else if (item[4])
-                    a.rfcx-trans-linear(href="#{item[2]}")= item[1]
-                    li.ft= "|"
-              li.ft
-                a.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
-              li.ft= "|"
+            li.ft
+              img.logo-footer-shuttleworth.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}")
+
           for item in social_media
             a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
               i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")

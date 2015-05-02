@@ -169,17 +169,3 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 
 .back-us { position:absolute; top:-22px; left:0px; }
  
-.rfcx-container-ks .masthead .logo { top:35%; left:2%; width:53%; }
-.rfcx-container-ks .masthead .is-on { top:74%; left:27%; width:9%; }
-.rfcx-container-ks .masthead .ks-logo { top:62%; left:39%; width:60%; }
-
-.rfcx-container-ks .btn-custom-facebook, .rfcx-container-ks .btn-custom-twitter, .rfcx-container-ks .btn-custom-kickstarter { font-size:16px !important; padding: 6px 10px 6px 10px !important; top:-4px !important; }
-
-.rfcx-container-ks .campaign-video .slogan { margin-top:150px; }
-.rfcx-container-ks .campaign-video .slogan p.roadgeek { font-size:48px !important; margin-top:6px !important; margin-left:20px; text-align:left; line-height:32px; }
-
-.rfcx-container-ks .video-box { width:70%; margin-left:15%; margin-top:10px; border-width:1px; }
-
-.ks-preview-container { display:none; }
-
-.rfcx-container-ks .banner-video { border-bottom:0px; }

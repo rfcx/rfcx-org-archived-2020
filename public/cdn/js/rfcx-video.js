@@ -2,7 +2,7 @@ RFCX.video = {
   offset: [0, 0, 0], obj: null, id: null, version: null, forceYouTube: true, posterUri: "", sizes: [
       [1920,1080,5500], [1280,720,2500], [854,480,1100], [640,360,600]
     ], mobileSize: 3, followUp: { excludePaths: [ /* array of urls that don't run the video followup */] },
-    offsetAtPlay: { intro: { top: 0 }, campaign: { top: 76 }, ks: { top: 76 } }
+    offsetAtPlay: { intro: { top: 0 } }
 };
 
 
@@ -11,8 +11,6 @@ RFCX.fn.ui.intro.initVideo = function(){
   RFCX.fn.video.prepare();
 }
 
-RFCX.fn.ui.campaign.initVideo = RFCX.fn.ui.intro.initVideo;
-RFCX.fn.ui.ks.initVideo = RFCX.fn.ui.intro.initVideo;
 
 RFCX.fn.video.init = function(){
 

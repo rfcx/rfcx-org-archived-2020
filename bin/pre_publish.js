@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var exec = require('child_process').exec;
 var fs = require("fs");
 
@@ -12,10 +14,6 @@ require('crypto').randomBytes(6, function(ex, buf) {
       if (!e) {
         exec( "git add "+file+"; "
               +"git commit -m \"Incrementing Production Version.\"; "
-              +"git checkout aws_push; "
-              +"git merge master -m \"Merging with master branch.\"; "
- //             +"git aws.push; "
- //             +"git checkout master; "
               ,function(err,stdout,stderr){
           console.log(stdout);
           exec("git status | grep \"nothing to commit\";",function(err,stdout,stderr){

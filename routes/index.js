@@ -6,20 +6,13 @@
 var navItems = [
 //  [ page-id, nav-title, uri-path, page-title, show-in-nav, is-isolated ]
     [ "intro", "Home", "/", "Protecting rainforests with real-time data", true, false ],
-    [ "campaign", "Home", "/campaign", "Protecting rainforests with real-time data", false, false ],
     [ "about", "About", "/about", "About", true, false ],
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
-    [ "donate", "Donate", "/donate", "Donate", false, true ],
-    [ "blog", "Blog", "/blog", "Blog", false, false ],
-    [ "team", "Team", "/team", "Team", false, false ],
     [ "media", "Media", "/media", "Media", true, false ],
-    [ "press", "Press", "/press", "Press Clippings", false, false ],
-    [ "letsgo", "Let's Go", "/letsgo", "Let's Go", false, true ],
-    [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", false, false ],
-    [ "ks", "Kickstarter", "/ks-share", "Rainforest Connection is LIVE on Kickstarter", false, true ],
-    [ "update", "Kickstarter", "/update-01", "Rainforest Connection on Kickstarter", false, true ],
 
-    [ "video", null, "/video", "Rainforest Connection | Protecting rainforests with real-time data", false, true, {} ]
+    [ "press", "Press", "/press", "Press Clippings", false, false ],
+    [ "donate", "Donate", "/donate", "Donate", false, true ],
+    [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", false, false ]
   ];
 for (var i = 0; i < navItems.length; i++) { navItems[i][3] = "Rainforest Connection | "+navItems[i][3]; }
 

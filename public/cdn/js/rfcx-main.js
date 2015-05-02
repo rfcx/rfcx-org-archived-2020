@@ -22,7 +22,7 @@ var RFCX = {
   donateAmount: 50,
   speedTest: { kB: 100, expireMinutes: 2 },
   snapJsObj: null,
-  olark: { allow: true, excludePaths: ["/","/video"], displayDelay: 15 },
+  olark: { allow: true, excludePaths: ["/"], displayDelay: 15 },
   scrollQueues: {
     loadFollowButtons: {
       whenVisible: { intro: "#mce-EMAIL" },

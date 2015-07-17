@@ -12,6 +12,7 @@ var navItems = [
 
     [ "press", "Press", "/press", "Press Clippings", false, false ],
     [ "donate", "Donate", "/donate", "Donate", false, true ],
+    [ "ecuador", "Ecuador", "/ecuador", "Ecuador", false, false ],
     [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", false, false ]
   ];
 for (var i = 0; i < navItems.length; i++) { navItems[i][3] = "Rainforest Connection | "+navItems[i][3]; }

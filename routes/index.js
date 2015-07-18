@@ -34,7 +34,7 @@ function setJadeVars(process, jV) {
   jV.app_version = process.env.productionVersionId;
   jV.node_env = process.env.NODE_ENV;
   jV.title += (inProd ? "" : (" ("+process.env.NODE_ENV+")"));
-  jV.segment_io_client_id =  process.env.SEGMENT_IO_CLIENT_ID;
+  jV.segment_analytics_client_id =  process.env.SEGMENT_ANALYTICS_CLIENT_ID;
   jV.addthis_pubid = process.env.ADDTHIS_PUBID;
   jV.bootstrap_cdn = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";

@@ -4,6 +4,8 @@ exports.env = {
 
   NEW_RELIC_KEY: "",
 
+  SEGMENT_ANALYTICS_CLIENT_ID: "",
+
   ADDTHIS_PUBID: "",
 
   AWS_ACCESS_KEY_ID: "",

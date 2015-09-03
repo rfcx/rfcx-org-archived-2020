@@ -10,7 +10,7 @@ RFCX.fn.ui.press.loadPressClippings = function(){
 
   $.getScript(RFCX.cdn.rfcxVendor+"/jquery-isotope/2.0.0/jquery-isotope.min.js",function(){
     $.getScript(RFCX.cdn.rfcxVendor+"/string.js/1.9.0/string.min.js",function(){
-      $.getScript(RFCX.cdn.rfcxGithub+"/rfcx-clippings/clippings.js?v="+Math.random(),function(){
+      $.getScript(RFCX.cdn.rfcxGithub+"/rfcx-web-assets/press/clippings.js?v="+Math.random(),function(){
         
         // sort by date, descending
         RFCX.press.data.sort(RFCX.fn.sortBy("date", false, function(a){return (new Date(a).valueOf()) }));

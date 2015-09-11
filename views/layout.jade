@@ -1,4 +1,4 @@
-doctype 1.1
+doctype html
 html(lang="en")
   
   head
@@ -36,51 +36,53 @@ html(lang="en")
     | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> -->
     style(type="text/css").
       @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/styles.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
     link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='all and (max-device-width: 480px)')
-    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile-landscape.css?v=#{app_version}', media='all and (max-device-width: 480px) and (orientation:landscape)')
+    //link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile-landscape.css?v=#{app_version}', media='all and (max-device-width: 480px) and (orientation:landscape)')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-preload.js?v=#{app_version}')
   body.helvetica
+    header.header
+      div.header__bg(style="background:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version}) no-repeat center top;")
+      .header__i
+        div.rfcx-unselectable.rfcx-trans-linear.masthead
+          if (!current_page[5])
+            a.menu-toggle
+              i.fa.fa-bars
+            ul.rfcx-trans-linear.nav.nav-pills.pull-right
+              for item in nav_items
+                if ((item[0] == current_page[0]) && item[4])
+                  li.active
+                    a= item[1]
+                    i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
+                else if (item[4])
+                  li
+                    if (item[2].indexOf("://") != -1)
+                      a.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")= item[1]
+                    else
+                      a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
+              li
+                a.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
+          a
+            img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
+
     div.container-narrow#rfcx-container
-
-      div.rfcx-unselectable.rfcx-trans-linear.masthead
-        div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
-        if (!current_page[5])
-          a.menu-toggle
-            i.fa.fa-bars
-          ul.rfcx-trans-linear.nav.nav-pills.pull-right
-            for item in nav_items
-              if ((item[0] == current_page[0]) && item[4])
-                li.active
-                  a= item[1]
-                  i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
-              else if (item[4])
-                li
-                  if (item[2].indexOf("://") != -1)
-                    a.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")= item[1]
-                  else
-                    a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
-            li
-              a.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
-        a
-          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
-
       block content
 
-      div.footer.lucida
-        div.footer-bg.dynamic-crop-right
-        div.container-narrow
-          ul.nav.nav-pills.pull-left
-            li.cp
-              span.copyright
-                | &copy;2014 Rainforest Connection &#0153;
+    footer.footer.lucida
+      .footer__i.footer-bg
+      .footer__i
+        ul.nav.nav-pills.pull-left
+          li.cp
+            span.copyright
+              | &copy;2014 Rainforest Connection &#0153;
 
-            li.ft
-              img.logo-footer-shuttleworth.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}")
+          li.ft
+            img.logo-footer-shuttleworth.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}")
 
-          for item in social_media
-            a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
-              i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
+        for item in social_media
+          a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
+            i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
 
     div.modal.hide.fade(id='contact', tabindex='-1', role='dialog', aria-labelledby='contact-label', aria-hidden='true')
       div.modal-header

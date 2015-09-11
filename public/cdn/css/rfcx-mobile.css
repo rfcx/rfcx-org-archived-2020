@@ -1,7 +1,7 @@
 
 body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 0px; }
 
-.mobile-only { display:block; }
+/*.mobile-only { display:block; }*/
 .mobile-exclude { display:none; }
 
 .modal { z-index:1000010; }

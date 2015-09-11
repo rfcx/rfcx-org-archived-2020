@@ -9,11 +9,100 @@
 .clearfix:after {
   clear: both;
 }
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.roadgeek {
+  font-family: 'roadgeek', Sans-Serif;
+  font-size: 42px;
+  line-height: 40px;
+  margin-bottom: 15px;
 }
-.gradient {
-  filter: none;
+.lucida {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+.helvetica {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.italic {
+  font-style: italic;
+}
+.bold {
+  font-weight: bold;
+}
+.ul {
+  text-decoration: underline;
+}
+.mobile-only {
+  display: none;
+}
+.mobile-exclude {
+  display: block;
+}
+@media only screen and (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+  .mobile-exclude {
+    display: none;
+  }
+}
+.modal {
+  z-index: 1000003;
+}
+.modal-backdrop {
+  z-index: 1000002;
+}
+.modal a {
+  color: #494848;
+}
+.modal a:hover {
+  color: #49cc48;
+  text-decoration: none;
+}
+.modal .close {
+  font-size: 32px;
+  line-height: 32px;
+  position: relative;
+  top: -4px;
+  left: 2px;
+}
+.header {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+.header__i {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.header__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+.footer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+.footer__i {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.footer__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
 }

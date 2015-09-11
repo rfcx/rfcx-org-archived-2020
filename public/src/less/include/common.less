@@ -1,5 +1,22 @@
-* {
-    .box-sizing(border-box);
+// Common element styles
+
+.ul {
+    text-decoration: underline;
 }
 
-.gradient { filter: none; }
+.mobile-only {
+    display: none;
+}
+
+.mobile-exclude {
+    display: block;
+}
+
+@media @mobile {
+    .mobile-only {
+        display: block;
+    }
+    .mobile-exclude {
+        display: none;
+    }
+}

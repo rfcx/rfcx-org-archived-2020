@@ -11,10 +11,4 @@ option_settings:
 
   - option_name: ADDTHIS_PUBID
     value: 
-
-  - option_name: AWS_ACCESS_KEY_ID
-    value: 
-
-  - option_name: AWS_SECRET_KEY
-    value: 
     

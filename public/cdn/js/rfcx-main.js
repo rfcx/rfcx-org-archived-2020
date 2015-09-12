@@ -73,11 +73,11 @@ RFCX.fn.updateMobileVars = function() {
 
 RFCX.fn.initializeUi.onResize = function() {
   if (!RFCX.renderForMobile) {
-    RFCX.fn.reactiveUi.modifyOverWidthElements();
+    //RFCX.fn.reactiveUi.modifyOverWidthElements();
     $(window).resize(function(){
       clearTimeout(RFCX.timer.windowResize);
       RFCX.timer.windowResize = setTimeout(function(){
-        RFCX.fn.reactiveUi.modifyOverWidthElements();
+        //RFCX.fn.reactiveUi.modifyOverWidthElements();
       },100);
     });
   }
@@ -137,10 +137,10 @@ RFCX.fn.reactiveUi.scrollQueues = function() {
   }
 }
 
-RFCX.fn.reactiveUi.modifyOverWidthElements = function() {
-  var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
-  $(".dynamic-crop-right").css("width",newWidth);
-}
+//RFCX.fn.reactiveUi.modifyOverWidthElements = function() {
+//  var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
+//  $(".dynamic-crop-right").css("width",newWidth);
+//}
 
 RFCX.fn.reactiveUi.setOnOrientationChange = function() {
   window.onorientationchange = function() {
@@ -347,7 +347,7 @@ RFCX.toggleBanner = function(onOff,inputObj) {
           +" onClick=\"RFCX.toggleBanner(false,{id:'"+id+"'});\""
           +" title=\"Remove this alert\" />"
       +"</div>");
-    RFCX.fn.reactiveUi.modifyOverWidthElements();
+    //RFCX.fn.reactiveUi.modifyOverWidthElements();
     $("#rfcx-banner-alert-"+id).animate({height:$("#rfcx-banner-alert-"+id+" .rfcx-banner-alert-btn").outerHeight()+"px"});
   } else if (onOff && (bannerContainer.length > 0)) {
     bannerContainer.animate({height:"0px"},function(){ $(this).remove(); RFCX.toggleBanner(onOff,inputObj); });

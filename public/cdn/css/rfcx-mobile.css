@@ -26,7 +26,7 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 
 
 
-.banner-video .slogan-left { display:none; }
+/*.banner-video .slogan-left { display:none; }*/
 
 .input-append .input-large { padding:23px 7px 21px 10px; font-size:18px; }
 
@@ -52,25 +52,25 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 
 
 
-.banner-video { height:265px; margin-top:0px; top:-26px; margin-bottom:0px; border-bottom:solid 40px #888888; }
-.banner-video .banner-bg { left:-63%; width:163%; max-width:163%; }
+/*.banner-video { height:265px; margin-top:0px; top:-26px; margin-bottom:0px; border-bottom:solid 40px #888888; }*/
+/*.banner-video .banner-bg { left:-63%; width:163%; max-width:163%; }*/
 .video-box { width:74%; margin-left:13%; margin-top:120px; border-width:1px; }
 .video-box .video-box-poster { display:none; }
 .video-box video { z-index:1001; }
 .video-box .fa-play-circle-o { font-size:70px; height:70px; }
-.banner-video .video-link { position:relative; top:-12px; font-size:12px; }
-.banner-video .video-link .fa-play { font-size:8px; }
-.banner-video .slogan { margin-top:10px; margin-left:0px; width:100%; text-align:center; }
-.banner-video .slogan p.roadgeek { font-size:32px; line-height:28px; }
+/*.banner-video .video-link { position:relative; top:-12px; font-size:12px; }*/
+/*.banner-video .video-link .fa-play { font-size:8px; }*/
+/*.banner-video .slogan { margin-top:10px; margin-left:0px; width:100%; text-align:center; }*/
+/*.banner-video .slogan p.roadgeek { font-size:32px; line-height:28px; }*/
 .video-box-followup { margin-left:0%; margin-top:0%; overflow:hidden; }
 
-.banner-video .intro-social { margin-top:300px; font-size:40px; }
-.banner-video .intro-social-facebook { margin-left:34px; top:-40px; }
-.banner-video .intro-social-tumblr { display:none; margin-left:144px; top:-40px; }
-.banner-video .intro-social-twitter { margin-left:94px; top:-40px; }
-.banner-video .control-group { margin-top:272px; margin-left:195px; background:none; padding:0px 0px 0px 0px; }
+/*.banner-video .intro-social { margin-top:300px; font-size:40px; }*/
+/*.banner-video .intro-social-facebook { margin-left:34px; top:-40px; }*/
+/*.banner-video .intro-social-tumblr { display:none; margin-left:144px; top:-40px; }*/
+/*.banner-video .intro-social-twitter { margin-left:94px; top:-40px; }*/
+/*.banner-video .control-group { margin-top:272px; margin-left:195px; background:none; padding:0px 0px 0px 0px; }*/
 
-.banner-video .slogan { }
+/*.banner-video .slogan { }*/
 
 .video-box-followup .video-followup-x .fa { font-size:20px; }
 .video-box-followup .rfcx-header { font-size:24px; line-height:22px; top:-5px; }
@@ -157,8 +157,8 @@ body { min-width:320px; max-width:320px; overflow-x:hidden; padding:0px 0px 0px 
 .footer a.pull-right { position:relative; float:none; top:6px; }
 .footer ul {  }
 
-.footer-forest { height:151px; overflow:hidden; }
-.footer-forest .footer-bg {  }
+/*.footer-forest { height:151px; overflow:hidden; }*/
+/*.footer-forest .footer-bg {  }*/
 
 
 .span3, .span4, .span5, .span6 { clear:both; }

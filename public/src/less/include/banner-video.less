@@ -1,0 +1,164 @@
+.banner-video {
+    height: 380px;
+    margin-bottom: 10px;
+    p {
+        text-shadow: 0px 0px 2px #004400;
+        filter: dropshadow(color=#004400, offx=0, offy=0);
+    }
+    .slogan {
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 10px;
+        color: #ffffff;
+        z-index: 1;
+        line-height: 48px;
+        text-transform: uppercase;
+        p.roadgeek {
+            font-size: 48px;
+            margin-bottom: 0px;
+            cursor: default;
+        }
+    }
+    .banner-bg {
+        position: absolute;
+        z-index: 0;
+        width: 155.6%;
+        height: 100%;
+        left: -27.8%;
+        max-width: 155.6%;
+    }
+
+    .video-link {
+        font-size: 16px;
+        padding-top: 0px;
+        font-weight: 600;
+        margin-left: 0px;
+        cursor: default;
+        text-transform: none;
+        .fa-play {
+            position: relative;
+            margin-left: 8px;
+            font-size: 10px;
+            top: -1px;
+        }
+    }
+    .intro-social {
+        position: absolute;
+        margin-top: 232px;
+        font-size: 48px;
+        margin-left: 10px;
+        color: #ffffff;
+        z-index: 1;
+        line-height: 48px;
+        text-transform: uppercase;
+        .fa {
+            color: #eeeeee;
+            &:hover {
+                color: #888888;
+            }
+        }
+    }
+    .intro-social-facebook {
+        margin-left: 16px;
+    }
+    .intro-social-tumblr {
+        margin-left: 260px;
+        display: none;
+    }
+    .intro-social-twitter {
+        margin-left: 78px;
+    }
+    .control-group {
+        position: absolute;
+        margin-top: 232px;
+        margin-left: 144px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 8px 0px 8px;
+    }
+    .slogan-left {
+        margin-top: 5px;
+        margin-left: 25%;
+        left: 5%;
+        font-size: 18px;
+        text-align: right;
+    }
+}
+
+.banner-video {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+    }
+    &__i {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+@media @mobile{
+    .banner-video {
+        height: 265px;
+        margin-top: 0px;
+        top: -26px;
+        margin-bottom: 0px;
+        border-bottom: solid 40px #888888;
+        .banner-bg {
+            left: -63%;
+            width: 163%;
+            max-width: 163%;
+        }
+        .slogan-left {
+            display: none;
+        }
+        .video-link {
+            position: relative;
+            top: -12px;
+            font-size: 12px;
+            .fa-play {
+                font-size: 8px;
+            }
+        }
+        .slogan {
+            margin-top: 10px;
+            margin-left: 0px;
+            width: 100%;
+            text-align: center;
+            p.roadgeek {
+                font-size: 32px;
+                line-height: 28px;
+            }
+        }
+        .intro-social {
+            margin-top: 300px;
+            font-size: 40px;
+        }
+        .intro-social-facebook {
+            margin-left: 34px;
+            top: -40px;
+        }
+        .intro-social-tumblr {
+            display: none;
+            margin-left: 144px;
+            top: -40px;
+        }
+        .intro-social-twitter {
+            margin-left: 94px;
+            top: -40px;
+        }
+        .control-group {
+            margin-top: 272px;
+            margin-left: 195px;
+            background: none;
+            padding: 0px 0px 0px 0px;
+        }
+    }
+}

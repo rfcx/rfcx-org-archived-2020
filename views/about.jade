@@ -1,240 +1,240 @@
 extends layout
 
 block content
-  
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
-    div.span12
-      p.roadgeek.rfcx-header= "Finally, trees that can talk."
-      p.rfcx-body
-        span
-          | <em>Rainforest Connection</em> uses upcycled mobile technology to monitor and protect remote forests, enabling real-time interventions.
-  div.row-fluid.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
-    div.span4
-      p.roadgeek.rfcx-header.italic
-        | &ldquo;If a tree falls
-        br
-        | <span style="position:relative;left:75px;">in the forest...&rdquo;</span>
-      p.rfcx-body
-        span.italic
-          | &ldquo;...and no one is there to hear it, does it make a sound?&rdquo;
-      p.rfcx-body
-        span
-          | These days, statistically speaking, when a tree falls in the forest, there's usually somebody there to hear it&#8212;the people that cut it down. With <em>Rainforest Connection</em> technology, we can finally rewrite this ancient adage to read:
-      p.rfcx-body
-        span.italic
-          | &ldquo;If a tree falls in the forest, and no one is there to hear it, <b>you</b> still can. And so can the world. We're developing multi-tiered platforms for remote sensing of ecological data that can be used to monitor the health of forests and endangered species &rdquo;
 
-
-    div.span8
-      div.screen-container(onClick="showHelpBubbles();")
-        img.screen-img(src="#{rfcx_cdn}/img/about/screen-trans.560.png?v=#{app_version}")
-        img.screen-bg(src="#{rfcx_cdn}/img/about/screen-bg.511.jpg?v=#{app_version}")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:20%;top:25%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:84%;top:33%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:21%;top:55%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:59%;top:60%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:44%;top:30%;")
-        div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:68%;top:24%;")
-
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats-title(style="padding-top:40px;")
-      div.span12
-        p.roadgeek.rfcx-header.title
-         | The Facts: Destruction of tropical rainforest...
-    div.row-fluid.rfcx-row.rfcx-row-intro-stats
-      div.span4.stat-page-climate
-        div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-globe.70.png?v=#{app_version})")
-        p.roadgeek.rfcx-header
-          span
-            | ...is a leading cause of
-            br
-            span.conclusion= "climate change."
-            br
-            span.source= "-United Nations"
-            br
-            a.btn.btn-rfcx-mini.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
-      div.span4.stat-page-extinction
-        div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version})")
-        p.roadgeek.rfcx-header
-          span
-            | ...is causing global
-            br
-            span.conclusion= "mass extinctions."
-            br
-            span.source= "-United Nations"
-            br
-            a.btn.btn-rfcx-mini.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
-          
-      div.span4.stat-page-crime
-        div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version})")
-        p.roadgeek.rfcx-header
-          span
-            | ...is mostly caused by
-            br
-            span.conclusion= "illegal activity."
-            br
-            span.source= "-Interpol"
-            br
-            a.btn.btn-rfcx-mini.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
-
-
-
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-2
-    div.span6
-      img.trash-img(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
-    div.span6
-      p.roadgeek.rfcx-header
-        | Turning old phones
-        br
-        | into forest guardians
-      img.trash-img-mobile(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
-      p.rfcx-body
-        span
-          | Why use old, recycled smartphones to guard the rainforest?
-          br
-          | Because it could be the simplest, least expensive way to do it.
-      p.rfcx-body
-        span
-          | Smartphones are arguably the most efficient, advanced, and well-understood computers available on the market today, and each year, more than 150 million phones are discarded <a target="_blank" href="http://www.electronicstakeback.com/wp-content/uploads/Facts_and_Figures_on_EWaste_and_Recycling.pdf">in the United States alone</a>.
-          br
-          | <span class="italic">Rainforest Connection</span> can take this "trash" and put it to use immediately.
-      p.rfcx-body
-        span
-          | Today, many of earth's endangered forests are being touched by wireless telecommunications infrastructure. Rather than start from scratch, <span class="italic">Rainforest Connection</span> is already able to leverage this infrastructure from the start to protect some the world's most threatened forests.
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
-    div.span4
-      p.roadgeek.rfcx-header= "Where do we start?"
-      p.rfcx-body
-        | The <span class="italic">Rainforest Connection</span> system works, and we've now <a href="video" target="_blank">proven it in the field</a> in Sumatra against actual illegal logging operations. Now we need to expand by putting the next generation of devices into <b>three more endangered areas</b> in the rainforests of Indonesia, the Amazon and Africa.
-      p.rfcx-body
-        | Why such different locations? Our goal is to demonstrate that our system can operate on <b>a global scale, in any forest, anywhere</b>.
-      p.rfcx-body.rfcx-body-full
-        | This requires funding and strong on-the-ground partnerships with local communities, indigenous partners and organizations that are committed to responding to real-time itervention. We know that <span class="italic">Rainforest Connection</span> can help turn the tide of environmental crisis, but <a href="get_involved">we need your help</a> to make it a reality.
-    div.span8
-      div.rfcx-crnr-5.nopin.map-cropper
-        img.map-frame(src="#{rfcx_cdn}/img/about/iphone5-black-bg.690.png?v=#{app_version}")
-        div.map-cropper-internal
-          div#map-container
-          div.map-cover
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-sctn-join
-    div.span7
-      a#get_involved
-      p.roadgeek.rfcx-header= "Help silence the chainsaws. Join us."
-      p.rfcx-body
-        div.stopsign-mobile
-          img(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
-
-        form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us9.list-manage.com/subscribe/post?u=979004c94b83bcd925931d541&amp;id=58fbf16b44", method="post")
-
-          span.rfcx-body
+  section.content
+    .content__i
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
+        div.span12
+          p.roadgeek.rfcx-header= "Finally, trees that can talk."
+          p.rfcx-body
             span
-              | Please <span class="bold">Like & Follow Us</span> 
-              br.mobile-only
-              | On Facebook, Twitter and Google+.
-          
-          div.social-follow-containers
-            div.social-follow-container
-              div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
-            div.social-follow-container
-              a.social-follow-item.twitter-follow-button(data-show-count="true", href="https://twitter.com/RainforestCx")= "Follow"
-            div.social-follow-container
-              div.social-follow-item.g-follow(data-height="24", data-href="//plus.google.com/+RfcxOrg", data-rel="publisher")
-
-
-          div.control-group
-            span.rfcx-body
-              span
-              | Stay informed by signing up for our <span class="bold">email newsletter.</span>
+              | <em>Rainforest Connection</em> uses upcycled mobile technology to monitor and protect remote forests, enabling real-time interventions.
+      div.row-fluid.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
+        div.span4
+          p.roadgeek.rfcx-header.italic
+            | &ldquo;If a tree falls
             br
-            div.controls
-              div.input-append
-                input.input-large.email#mce-EMAIL(type='text', data-type='email', name='EMAIL', placeholder='Your email', required)
-                a.btn.btn-success= "Sign up"
-
-    div.span5
-      img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
-
-
-
-
-
-  div.modal.hide.fade(id='stat-climate', tabindex='-1', role='dialog', aria-labelledby='stat-climate-label', aria-hidden='true')
-    div.modal-header
-      button.close(type='button', data-dismiss='modal', aria-hidden='true')
-        i.fa.fa-times
-      h3#stat-climate-label= "Deforestation and Climate Change"
-    div.modal-body
-      p
-      hr
-      p
-        span.bold= "The Independent (2007)"
-        br
-        a.italic.rfcx-trans-linear(target="_blank",href="http://www.countercurrents.org/howden140507.htm")
-          | "In the next 24 hours, deforestation will release as much CO2 into the atmosphere as 8 million people flying from London to New York. Stopping the loggers is the fastest and cheapest solution to climate change. So why are global leaders turning a blind eye to this crisis?"
-          i.fa.fa-external-link.read-more
-          | read more
-      p
-        span.bold= "Nature Magazine (2009)"
-        br 
-        a.italic.rfcx-trans-linear(target="_blank",href="http://www.nature.com/ngeo/journal/v2/n11/abs/ngeo671.html")
-          | "Deforestation is the second largest anthropogenic source of carbon dioxide to the atmosphere, after fossil fuel combustion."
-          i.fa.fa-external-link.read-more
-          | read more
-      p
-        span.bold= "Amazon Watch"
-        br
-        a.italic.rfcx-trans-linear(target="_blank",href="http://amazonwatch.org/work/climate-change-and-the-amazon-rainforest")
-          | "The rainforest serves as one of Earth's largest reservoirs of carbon dioxide, helping to regulate global climate patterns through the sequestration and storage of carbon dioxide in above-ground biomass and soil."
-          i.fa.fa-external-link.read-more
-          | read more
-
-    div.modal-footer
-      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
-
-  div.modal.hide.fade(id='stat-extinction', tabindex='-1', role='dialog', aria-labelledby='stat-extinction-label', aria-hidden='true')
-    div.modal-header
-      button.close(type='button', data-dismiss='modal', aria-hidden='true')
-        i.fa.fa-times
-      h3#stat-extinction-label= "Deforestation and Global Mass Extinction"
-    div.modal-body
-      p
-      hr
-      p
-        span.bold= "United Nations (2010)"
-        br
-        a.italic.rfcx-trans-linear(target="_blank",href="http://nupge.ca/content/3679/world-facing-worst-extinction-rate-dinosaurs")
-          | "The world is facing the worst extinction rate since the dinosaurs vanished 65 million years ago, a crisis that must be addressed by governments, businesses and communities."
-          i.fa.fa-external-link.read-more
-          | read more
-      p
-        span.bold= "United Nations (2010)"
-        br
-        a.italic.rfcx-trans-linear(target="_blank",href="http://www.theguardian.com/environment/2006/mar/21/conservationandendangeredspecies.internationalnews")
-          | "In effect, we are currently responsible for the sixth major extinction event in the history of earth."
-          i.fa.fa-external-link.read-more
-          | read more
-    div.modal-footer
-      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
-
-  div.modal.hide.fade(id='stat-crime', tabindex='-1', role='dialog', aria-labelledby='stat-crime-label', aria-hidden='true')
-    div.modal-header
-      button.close(type='button', data-dismiss='modal', aria-hidden='true')
-        i.fa.fa-times
-      h3#stat-crime-label= "Deforestation and Criminal Activity"
-    div.modal-body
-      p
-      hr
-      p
-        span.bold= "INTERPOL — Project Leaf"
-        br
-        a.italic.rfcx-trans-linear(target="_blank",href="http://www.interpol.int/Crime-areas/Environmental-crime/Projects/Project-Leaf")
-          | "It is estimated that illegal logging accounts for 50-90% of the volume of forestry activities in key producer tropical countries."
-          i.fa.fa-external-link.read-more
-          | read more
-    div.modal-footer
-      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+            | <span style="position:relative;left:75px;">in the forest...&rdquo;</span>
+          p.rfcx-body
+            span.italic
+              | &ldquo;...and no one is there to hear it, does it make a sound?&rdquo;
+          p.rfcx-body
+            span
+              | These days, statistically speaking, when a tree falls in the forest, there's usually somebody there to hear it&#8212;the people that cut it down. With <em>Rainforest Connection</em> technology, we can finally rewrite this ancient adage to read:
+          p.rfcx-body
+            span.italic
+              | &ldquo;If a tree falls in the forest, and no one is there to hear it, <b>you</b> still can. And so can the world. We're developing multi-tiered platforms for remote sensing of ecological data that can be used to monitor the health of forests and endangered species &rdquo;
 
 
+        div.span8
+          div.screen-container(onClick="showHelpBubbles();")
+            img.screen-img(src="#{rfcx_cdn}/img/about/screen-trans.560.png?v=#{app_version}")
+            img.screen-bg(src="#{rfcx_cdn}/img/about/screen-bg.511.jpg?v=#{app_version}")
+            div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:20%;top:25%;")
+            div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:84%;top:33%;")
+            div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:21%;top:55%;")
+            div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:59%;top:60%;")
+            div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:44%;top:30%;")
+            div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:68%;top:24%;")
+
+
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats-title(style="padding-top:40px;")
+          div.span12
+            p.roadgeek.rfcx-header.title
+             | The Facts: Destruction of tropical rainforest...
+        div.row-fluid.rfcx-row.rfcx-row-intro-stats
+          div.span4.stat-page-climate
+            div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-globe.70.png?v=#{app_version})")
+            p.roadgeek.rfcx-header
+              span
+                | ...is a leading cause of
+                br
+                span.conclusion= "climate change."
+                br
+                span.source= "-United Nations"
+                br
+                a.btn.btn-rfcx-mini.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
+          div.span4.stat-page-extinction
+            div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version})")
+            p.roadgeek.rfcx-header
+              span
+                | ...is causing global
+                br
+                span.conclusion= "mass extinctions."
+                br
+                span.source= "-United Nations"
+                br
+                a.btn.btn-rfcx-mini.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
+
+          div.span4.stat-page-crime
+            div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version})")
+            p.roadgeek.rfcx-header
+              span
+                | ...is mostly caused by
+                br
+                span.conclusion= "illegal activity."
+                br
+                span.source= "-Interpol"
+                br
+                a.btn.btn-rfcx-mini.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
+
+
+
+
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-2
+        div.span6
+          img.trash-img(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
+        div.span6
+          p.roadgeek.rfcx-header
+            | Turning old phones
+            br
+            | into forest guardians
+          img.trash-img-mobile(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
+          p.rfcx-body
+            span
+              | Why use old, recycled smartphones to guard the rainforest?
+              br
+              | Because it could be the simplest, least expensive way to do it.
+          p.rfcx-body
+            span
+              | Smartphones are arguably the most efficient, advanced, and well-understood computers available on the market today, and each year, more than 150 million phones are discarded <a target="_blank" href="http://www.electronicstakeback.com/wp-content/uploads/Facts_and_Figures_on_EWaste_and_Recycling.pdf">in the United States alone</a>.
+              br
+              | <span class="italic">Rainforest Connection</span> can take this "trash" and put it to use immediately.
+          p.rfcx-body
+            span
+              | Today, many of earth's endangered forests are being touched by wireless telecommunications infrastructure. Rather than start from scratch, <span class="italic">Rainforest Connection</span> is already able to leverage this infrastructure from the start to protect some the world's most threatened forests.
+
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
+        div.span4
+          p.roadgeek.rfcx-header= "Where do we start?"
+          p.rfcx-body
+            | The <span class="italic">Rainforest Connection</span> system works, and we've now <a href="video" target="_blank">proven it in the field</a> in Sumatra against actual illegal logging operations. Now we need to expand by putting the next generation of devices into <b>three more endangered areas</b> in the rainforests of Indonesia, the Amazon and Africa.
+          p.rfcx-body
+            | Why such different locations? Our goal is to demonstrate that our system can operate on <b>a global scale, in any forest, anywhere</b>.
+          p.rfcx-body.rfcx-body-full
+            | This requires funding and strong on-the-ground partnerships with local communities, indigenous partners and organizations that are committed to responding to real-time itervention. We know that <span class="italic">Rainforest Connection</span> can help turn the tide of environmental crisis, but <a href="get_involved">we need your help</a> to make it a reality.
+        div.span8
+          div.rfcx-crnr-5.nopin.map-cropper
+            img.map-frame(src="#{rfcx_cdn}/img/about/iphone5-black-bg.690.png?v=#{app_version}")
+            div.map-cropper-internal
+              div#map-container
+              div.map-cover
+
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-sctn-join
+        div.span7
+          a#get_involved
+          p.roadgeek.rfcx-header= "Help silence the chainsaws. Join us."
+          p.rfcx-body
+            div.stopsign-mobile
+              img(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
+
+            form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us9.list-manage.com/subscribe/post?u=979004c94b83bcd925931d541&amp;id=58fbf16b44", method="post")
+
+              span.rfcx-body
+                span
+                  | Please <span class="bold">Like & Follow Us</span>
+                  br.mobile-only
+                  | On Facebook, Twitter and Google+.
+
+              div.social-follow-containers
+                div.social-follow-container
+                  div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
+                div.social-follow-container
+                  a.social-follow-item.twitter-follow-button(data-show-count="true", href="https://twitter.com/RainforestCx")= "Follow"
+                div.social-follow-container
+                  div.social-follow-item.g-follow(data-height="24", data-href="//plus.google.com/+RfcxOrg", data-rel="publisher")
+
+
+              div.control-group
+                span.rfcx-body
+                  span
+                  | Stay informed by signing up for our <span class="bold">email newsletter.</span>
+                br
+                div.controls
+                  div.input-append
+                    input.input-large.email#mce-EMAIL(type='text', data-type='email', name='EMAIL', placeholder='Your email', required)
+                    a.btn.btn-success= "Sign up"
+
+        div.span5
+          img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
+
+
+
+
+
+      div.modal.hide.fade(id='stat-climate', tabindex='-1', role='dialog', aria-labelledby='stat-climate-label', aria-hidden='true')
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+            i.fa.fa-times
+          h3#stat-climate-label= "Deforestation and Climate Change"
+        div.modal-body
+          p
+          hr
+          p
+            span.bold= "The Independent (2007)"
+            br
+            a.italic.rfcx-trans-linear(target="_blank",href="http://www.countercurrents.org/howden140507.htm")
+              | "In the next 24 hours, deforestation will release as much CO2 into the atmosphere as 8 million people flying from London to New York. Stopping the loggers is the fastest and cheapest solution to climate change. So why are global leaders turning a blind eye to this crisis?"
+              i.fa.fa-external-link.read-more
+              | read more
+          p
+            span.bold= "Nature Magazine (2009)"
+            br
+            a.italic.rfcx-trans-linear(target="_blank",href="http://www.nature.com/ngeo/journal/v2/n11/abs/ngeo671.html")
+              | "Deforestation is the second largest anthropogenic source of carbon dioxide to the atmosphere, after fossil fuel combustion."
+              i.fa.fa-external-link.read-more
+              | read more
+          p
+            span.bold= "Amazon Watch"
+            br
+            a.italic.rfcx-trans-linear(target="_blank",href="http://amazonwatch.org/work/climate-change-and-the-amazon-rainforest")
+              | "The rainforest serves as one of Earth's largest reservoirs of carbon dioxide, helping to regulate global climate patterns through the sequestration and storage of carbon dioxide in above-ground biomass and soil."
+              i.fa.fa-external-link.read-more
+              | read more
+
+        div.modal-footer
+          button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+      div.modal.hide.fade(id='stat-extinction', tabindex='-1', role='dialog', aria-labelledby='stat-extinction-label', aria-hidden='true')
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+            i.fa.fa-times
+          h3#stat-extinction-label= "Deforestation and Global Mass Extinction"
+        div.modal-body
+          p
+          hr
+          p
+            span.bold= "United Nations (2010)"
+            br
+            a.italic.rfcx-trans-linear(target="_blank",href="http://nupge.ca/content/3679/world-facing-worst-extinction-rate-dinosaurs")
+              | "The world is facing the worst extinction rate since the dinosaurs vanished 65 million years ago, a crisis that must be addressed by governments, businesses and communities."
+              i.fa.fa-external-link.read-more
+              | read more
+          p
+            span.bold= "United Nations (2010)"
+            br
+            a.italic.rfcx-trans-linear(target="_blank",href="http://www.theguardian.com/environment/2006/mar/21/conservationandendangeredspecies.internationalnews")
+              | "In effect, we are currently responsible for the sixth major extinction event in the history of earth."
+              i.fa.fa-external-link.read-more
+              | read more
+        div.modal-footer
+          button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+      div.modal.hide.fade(id='stat-crime', tabindex='-1', role='dialog', aria-labelledby='stat-crime-label', aria-hidden='true')
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+            i.fa.fa-times
+          h3#stat-crime-label= "Deforestation and Criminal Activity"
+        div.modal-body
+          p
+          hr
+          p
+            span.bold= "INTERPOL — Project Leaf"
+            br
+            a.italic.rfcx-trans-linear(target="_blank",href="http://www.interpol.int/Crime-areas/Environmental-crime/Projects/Project-Leaf")
+              | "It is estimated that illegal logging accounts for 50-90% of the volume of forestry activities in key producer tropical countries."
+              i.fa.fa-external-link.read-more
+              | read more
+        div.modal-footer
+          button.btn(data-dismiss='modal',aria-hidden='true')= "Close"

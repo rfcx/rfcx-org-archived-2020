@@ -34,7 +34,9 @@ var RFCX = {
   social: {
     addThis: { pubId: "", env: [ "production", "development" ] },
     followButtons: { env: [ "production", "development" ] }
-  }
+  },
+  isPhone: false,
+  isTablet: false
 };
 
 $(function(){
@@ -43,7 +45,8 @@ $(function(){
   
   RFCX.setDevMode();
 
-  RFCX.renderForMobile = (parseInt($("body").css("min-width")) < 512);
+  //RFCX.renderForMobile = (parseInt($("body").css("min-width")) < 512);
+  RFCX.renderForMobile = RFCX.isPhone;
 
   for (i in RFCX.fn.load) { RFCX.fn.load[i](); }
   for (i in RFCX.fn.ui[RFCX.currentPage]) { RFCX.fn.ui[RFCX.currentPage][i](); }
@@ -54,11 +57,19 @@ $(function(){
   RFCX.fn.initializeUi.onScroll();
   RFCX.fn.initializeUi.externalizeModalPopups();
   RFCX.fn.reactiveUi.setOnOrientationChange();
+  RFCX.fn.updateMobileVars();
 
   RFCX.setOlark();
 
 });
 
+// update phone and tablet variables according to window width
+// when window width takes tablet css media query then  #tabletDeviceContainer is set to none
+// when window width takes phone css media query then  #phoneDeviceContainer is set to none
+RFCX.fn.updateMobileVars = function() {
+    RFCX.isPhone  = $('#phoneDeviceContainer').css('display') == 'none';
+    RFCX.isTablet = $('#tabletDeviceContainer').css('display') == 'none';
+};
 
 RFCX.fn.initializeUi.onResize = function() {
   if (!RFCX.renderForMobile) {
@@ -70,6 +81,9 @@ RFCX.fn.initializeUi.onResize = function() {
       },100);
     });
   }
+  $(window).resize(function(){
+    RFCX.fn.updateMobileVars();
+  });
 }
 
 RFCX.fn.initializeUi.onScroll = function() {

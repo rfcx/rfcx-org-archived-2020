@@ -36,7 +36,19 @@
 .mobile-exclude {
   display: block;
 }
+#phoneDeviceContainer,
+#tabletDeviceContainer {
+  display: block;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  #tabletDeviceContainer {
+    display: none;
+  }
+}
 @media only screen and (max-width: 767px) {
+  #phoneDeviceContainer {
+    display: none;
+  }
   .mobile-only {
     display: block;
   }
@@ -105,4 +117,5 @@
   z-index: 0;
   top: 0;
   left: 0;
+  background: #898989;
 }

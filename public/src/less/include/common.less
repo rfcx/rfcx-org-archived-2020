@@ -12,7 +12,21 @@
     display: block;
 }
 
+#phoneDeviceContainer,
+#tabletDeviceContainer{
+    display: block;
+}
+
+@media @tablet{
+    #tabletDeviceContainer{
+        display: none;
+    }
+}
+
 @media @mobile {
+    #phoneDeviceContainer{
+        display: none;
+    }
     .mobile-only {
         display: block;
     }

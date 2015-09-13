@@ -100,19 +100,11 @@ RFCX.fn.initializeUi.hideMobileHeader = function() {
 }
 
 RFCX.fn.initializeUi.setupMobileMenu = function() {
-  if (RFCX.renderForMobile) {
-    RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/snap.js/1.9.2/snap.css");
-    $.getScript(RFCX.cdn.rfcxVendor+"/snap.js/1.9.2/snap.min.js",function(){
-      RFCX.snapJsObj = new Snap({
-        element: document.getElementById("rfcx-container"),
-        disable: "left"
-      });
-    });
-    $(".masthead .menu-toggle").click(function(){
-        RFCX.snapJsObj.open("right");
-    });
-  }
-}
+  $("#mobileMenuToggle").click(function(){
+    $('#rfcx-menu-mobile').toggleClass('visible');
+    $('#rfcx-container').toggleClass('opened');
+  });
+};
 
 
 RFCX.fn.initializeUi.externalizeModalPopups = function() {

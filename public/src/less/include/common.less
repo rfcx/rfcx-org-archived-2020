@@ -1,5 +1,11 @@
 // Common element styles
 
+body {
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 0 40px;
+}
+
 .ul {
     text-decoration: underline;
 }
@@ -13,35 +19,53 @@
 }
 
 #phoneDeviceContainer,
-#tabletDeviceContainer{
+#tabletDeviceContainer {
     display: block;
 }
 
-.content{
+.content {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
-    &__i{
+    &__i {
         width: 100%;
         max-width: 900px;
         margin: 0 auto;
     }
 }
 
+.rfcx-container{
+    .transition(all .5s);
+    &.opened{
+        .translate3d(-84.9%,0,0);
+    }
+}
+
+@media @desktopAndTablet{
+    .rfcx-container{
+        -webkit-transform:   translate3d(0,0,0) !important;
+        -moz-transform: 	 translate3d(0,0,0) !important;
+        -ms-transform: 		 translate3d(0,0,0) !important;
+        -o-transform: 		 translate3d(0,0,0) !important;
+    }
+}
+
 @media @tablet{
-    #tabletDeviceContainer{
+    #tabletDeviceContainer {
         display: none;
     }
 }
 
 @media @mobile {
-    #phoneDeviceContainer{
+    #phoneDeviceContainer {
         display: none;
     }
+
     .mobile-only {
         display: block;
     }
+
     .mobile-exclude {
         display: none;
     }

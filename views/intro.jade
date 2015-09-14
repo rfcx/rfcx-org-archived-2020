@@ -6,10 +6,6 @@ block content
     .banner-video
       .banner-video__bg(style="background:url(#{rfcx_cdn}/img/intro/banner-forest.1400.jpg?v=#{app_version}) no-repeat center top;")
       .banner-video__i
-        div.video-box.video-box-page(data-video-id="vid03",data-video-version="1",data-video-youtube="ScrRZuaXtV0",data-video-cc="1",data-video-run-followup="1")
-          img.rfcx-trans-linear.video-box-poster(src="#{rfcx_static_cdn}/video/vid01/vid01-poster.jpg?v=#{app_version}")
-          img.rfcx-trans-linear.rfcx-trans-25.video-box-bg(src="#{rfcx_cdn}/img/intro/16x9.16.gif")
-          i.rfcx-trans-linear.fa.fa-play-circle-o
         span.rfcx-unselectable.slogan
           p.roadgeek
             | A solution that can
@@ -22,13 +18,19 @@ block content
             | Watch the video to learn how it works
             i.fa.fa-play
 
+        .banner-video__video-wrapper
+          div.video-box.video-box-page(data-video-id="vid03",data-video-version="1",data-video-youtube="ScrRZuaXtV0",data-video-cc="1",data-video-run-followup="1")
+            img.rfcx-trans-linear.video-box-poster(src="#{rfcx_static_cdn}/video/vid01/vid01-poster.jpg?v=#{app_version}")
+            img.rfcx-trans-linear.rfcx-trans-25.video-box-bg(src="#{rfcx_cdn}/img/intro/16x9.16.gif")
+            i.rfcx-trans-linear.fa.fa-play-circle-o
+
         div.control-group.rfcx-crnr-5
           form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
             input(type="hidden", name="cmd", value="_s-xclick")
             input(type="hidden", name="hosted_button_id", value="ZEMNV9Q5ALW6Y")
             input.mobile-exclude(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", border="0", name="submit")
             input.mobile-only(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", border="0", name="submit")
-            //img(border="0", width="1", height="1", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif")
+            img._hidden(border="0", width="1", height="1", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif")
 
         a.intro-social.intro-social-facebook(href="https://www.facebook.com/RainforestCx",target="_blank")
           i.rfcx-trans-linear.fa.fa-facebook-square

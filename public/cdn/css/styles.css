@@ -35,6 +35,9 @@ body {
 .ul {
   text-decoration: underline;
 }
+._hidden {
+  display: none;
+}
 .mobile-only {
   display: none;
 }
@@ -433,9 +436,85 @@ body {
   left: 0;
   background: #898989;
 }
+@media screen and (max-width: 1000px) {
+  .footer .hint--rounded:after {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+.video-box {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  border: solid 4px #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.video-box .video-box-poster {
+  position: absolute;
+  z-index: 0;
+  min-width: 100%;
+  min-height: 100%;
+  border: none;
+}
+.video-box .video-box-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #00bb00;
+  border: none;
+}
+.video-box .fa-play-circle-o,
+.video-box .infographic-box .fa-play-circle-o {
+  position: absolute;
+  font-size: 144px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 144px;
+  text-align: center;
+  padding: 0;
+  z-index: 2;
+}
 .banner-video {
   height: 380px;
   margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.banner-video__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+.banner-video__i {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 100%;
+}
+.banner-video__video-wrapper {
+  position: absolute;
+  top: 11.8%;
+  right: 1.2%;
+  z-index: 1;
+  width: 50%;
+  max-width: 448px;
 }
 .banner-video p {
   text-shadow: 0px 0px 2px #004400;
@@ -517,32 +596,42 @@ body {
   font-size: 18px;
   text-align: right;
 }
-.banner-video {
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-.banner-video__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-}
-.banner-video__i {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-}
 @media only screen and (max-width: 767px) {
+  .video-box {
+    border-width: 1px;
+  }
+  .video-box .video-box-poster {
+    display: none;
+  }
+  .video-box .video-box-bg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background-color: #00bb00;
+    border: none;
+  }
+  .video-box video {
+    z-index: 1001;
+  }
+  .video-box .fa-play-circle-o {
+    font-size: 70px;
+    height: 70px;
+  }
   .banner-video {
-    height: 265px;
+    height: auto;
     margin-top: 0;
     top: 0;
     margin-bottom: 0;
     border-bottom: solid 40px #888888;
+  }
+  .banner-video__i {
+    padding-top: 10px;
+  }
+  .banner-video__video-wrapper {
+    position: static;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 390px;
   }
   .banner-video .banner-bg {
     left: -63%;
@@ -553,16 +642,17 @@ body {
     display: none;
   }
   .banner-video .video-link {
-    position: relative;
-    top: -12px;
+    margin: 10px auto 0;
     font-size: 12px;
   }
   .banner-video .video-link .fa-play {
     font-size: 8px;
   }
   .banner-video .slogan {
+    position: static;
+    line-height: inherit;
     margin-top: 10px;
-    margin-left: 0px;
+    margin-left: 0;
     width: 100%;
     text-align: center;
   }
@@ -571,27 +661,33 @@ body {
     line-height: 28px;
   }
   .banner-video .intro-social {
-    margin-top: 300px;
+    bottom: -43px;
+    top: auto;
     font-size: 40px;
   }
+  .banner-video .intro-social .fa:hover {
+    color: #eee;
+  }
   .banner-video .intro-social-facebook {
-    margin-left: 34px;
-    top: -40px;
+    margin: 0;
+    left: 10%;
   }
   .banner-video .intro-social-tumblr {
     display: none;
-    margin-left: 144px;
-    top: -40px;
   }
   .banner-video .intro-social-twitter {
-    margin-left: 94px;
-    top: -40px;
+    left: 30%;
+    margin: 0;
   }
   .banner-video .control-group {
-    margin-top: 272px;
-    margin-left: 195px;
+    margin: 0;
+    bottom: -33px;
+    right: 10%;
     background: none;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
+  }
+  .banner-video .control-group form {
+    margin-bottom: 0;
   }
 }
 .footer-forest {

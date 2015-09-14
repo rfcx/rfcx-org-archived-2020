@@ -106,9 +106,9 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 /*.banner-video .control-group { position:absolute; margin-top:232px; margin-left:144px; background-color:rgba(255,255,255,0.5); padding:10px 8px 0px 8px; }*/
 
-.video-box { position:absolute; z-index:1; margin-top:45px; width:448px; margin-left:48.1%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }
-.video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }
-.video-box .video-box-bg { position:relative; z-index:1; width:100%; background-color:#00bb00; border:none; }
+/*.video-box { position:absolute; z-index:1; margin-top:45px; width:448px; margin-left:48.1%; border:solid 4px #ffffff; vertical-align:middle; color:#ffffff; cursor:pointer; }*/
+/*.video-box .video-box-poster { position:absolute; z-index:0; width:100%; height:252px; border:none; }*/
+/*.video-box .video-box-bg { position:relative; z-index:1; width:100%; background-color:#00bb00; border:none; }*/
 .video-box-page:hover .video-box-bg { filter:alpha(opacity=40); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; -moz-opacity:0.40; -khtml-opacity:0.40; opacity:0.40; }
 .video-box-outer, .video-box-followup { z-index:1000; display:none; margin-left:0px; margin-top:0px; border:solid 4px #ffffff; }
 .video-box-outer-backdrop, .video-box-outer-backdrop-extra { z-index:999; background-color:black; display:none; position:absolute; top:0%; left:0%; width:100%; height:0%; filter:alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity:0; -khtml-opacity:0; opacity:0; }
@@ -125,7 +125,7 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .video-player-close { position:absolute; top:0px; right:0px; z-index:1001; color:#fff; font-size:42px; padding:8px 12px; font-weight:bold; background-color:transparent; text-decoration:none; }
 .video-player-close:hover { background-color:#bbb; text-decoration:none; color:black; }
 
-.video-box .fa-play-circle-o, .infographic-box .fa-play-circle-o { position:absolute; font-size:144px; margin:auto; top:0; left:0; bottom:0; right:0; width:100%; height:144px; text-align:center; padding:none; z-index:2; }
+/*.video-box .fa-play-circle-o, .infographic-box .fa-play-circle-o { position:absolute; font-size:144px; margin:auto; top:0; left:0; bottom:0; right:0; width:100%; height:144px; text-align:center; padding:none; z-index:2; }*/
 .video-box-page:hover .fa-play-circle-o, .infographic-box:hover .fa-play-circle-o { filter:alpha(opacity=80); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; -moz-opacity:0.80; -khtml-opacity:0.80; opacity:0.80; }
 
 .rfcx-social-like { position:absolute; border:none; top:0px; width:25%; height:40px; }

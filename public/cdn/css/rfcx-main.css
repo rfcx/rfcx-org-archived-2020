@@ -157,19 +157,19 @@ input::-webkit-input-placeholder { color:#cccccc; }
 .rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn { margin-top:10px; }
 .rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn .fa-arrow-right { margin-left:8px; }
 
-.rfcx-row-intro-stats { padding-top:0px; margin-top:0px; }
-.rfcx-row-intro-stats .rfcx-header { margin:0px 0px 0px 0px; text-align:center; }
-.rfcx-row-intro-stats .span4 { margin:15px 0px; border-right:solid 0px #cccccc; width:33%;}
-.rfcx-row-intro-stats .span4 .rfcx-header  { font-size:28px; line-height:28px; }
-.rfcx-row-intro-stats .icon { background-color:#119911; float:left; width:70px; height:70px; border:solid 1px white; position:relative; left:7px; -moz-border-radius:35px; -webkit-border-radius:35px; border-radius:35px; }
-.rfcx-row-intro-stats .title { margin-top:20px; margin-bottom:15px; text-transform:uppercase; }
-.rfcx-row-intro-stats .btn { margin-top:8px; clear:both; left:42px; margin-right:auto; margin-left:auto; position:relative; top:-6px; }
-.rfcx-row-intro-stats .conclusion { font-size:32px; line-height:32px; text-transform:uppercase; }
-.rfcx-row-intro-stats .source { position:relative; top:-4px; clear:both; font-size:20px; line-height:20px; font-style:italic; }
-.rfcx-row-intro-stats .rfcx-body { margin:0px 0px 0px 15px; }
-.rfcx-row-intro-stats .stat-page-climate { border-left:solid 0px #cccccc; margin-left:1%; }
-.rfcx-row-intro-stats .stat-page-extinction { border-left:solid 0px #cccccc; }
-.rfcx-row-intro-stats .stat-page-crime { border-left:solid 0px #cccccc; }
+/*.rfcx-row-intro-stats { padding-top:0px; margin-top:0px; }*/
+/*.rfcx-row-intro-stats .rfcx-header { margin:0px 0px 0px 0px; text-align:center; }*/
+/*.rfcx-row-intro-stats .span4 { margin:15px 0px; border-right:solid 0px #cccccc; width:33%;}*/
+/*.rfcx-row-intro-stats .span4 .rfcx-header  { font-size:28px; line-height:28px; }*/
+/*.rfcx-row-intro-stats .icon { background-color:#119911; float:left; width:70px; height:70px; border:solid 1px white; position:relative; left:7px; -moz-border-radius:35px; -webkit-border-radius:35px; border-radius:35px; }*/
+/*.rfcx-row-intro-stats .title { margin-top:20px; margin-bottom:15px; text-transform:uppercase; }*/
+/*.rfcx-row-intro-stats .btn { margin-top:8px; clear:both; left:42px; margin-right:auto; margin-left:auto; position:relative; top:-6px; }*/
+/*.rfcx-row-intro-stats .conclusion { font-size:32px; line-height:32px; text-transform:uppercase; }*/
+/*.rfcx-row-intro-stats .source { position:relative; top:-4px; clear:both; font-size:20px; line-height:20px; font-style:italic; }*/
+/*.rfcx-row-intro-stats .rfcx-body { margin:0px 0px 0px 15px; }*/
+/*.rfcx-row-intro-stats .stat-page-climate { border-left:solid 0px #cccccc; margin-left:1%; }*/
+/*.rfcx-row-intro-stats .stat-page-extinction { border-left:solid 0px #cccccc; }*/
+/*.rfcx-row-intro-stats .stat-page-crime { border-left:solid 0px #cccccc; }*/
 
 .rfcx-row-sctn-join .rfcx-header { margin:10px 0px 0px 15px; width:120%; text-transform:uppercase; }
 .rfcx-row-sctn-join .rfcx-body { margin:0px 0px 0px 15px; width:100%; }

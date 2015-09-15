@@ -89,15 +89,15 @@
 .rfcx-row .rfcx-header {  }
 .rfcx-row .rfcx-body {  }
 
-.rfcx-row .rfcx-header { margin:0px 0px 0px 0px; line-height:42px; font-size:42px; }
+/*.rfcx-row .rfcx-header { margin:0px 0px 0px 0px; line-height:42px; font-size:42px; }*/
 .rfcx-row .rfcx-body { margin:0px 0px 0px 0px; }
 
-.rfcx-row-intro-stats-title { top:-10px; }
-.rfcx-row-intro-stats { overflow:hidden; }
-.rfcx-row-intro-stats .title { font-size:32px; line-height:28px; margin-top:0px; margin-bottom:10px; width:75%; position:relative; margin-left:auto; margin-right:auto; top:0px; }
-.rfcx-row-intro-stats .span4 { width:100%; margin:0px 0px; height:100px; }
-.rfcx-row-intro-stats .btn { position:relative; left:-18%; top:-38px; }
-.rfcx-row-intro-stats .source { left:0%; }
+/*.rfcx-row-intro-stats-title { top:-10px; }*/
+/*.rfcx-row-intro-stats { overflow:hidden; }*/
+/*.rfcx-row-intro-stats .title { font-size:32px; line-height:28px; margin-top:0px; margin-bottom:10px; width:75%; position:relative; margin-left:auto; margin-right:auto; top:0px; }*/
+/*.rfcx-row-intro-stats .span4 { width:100%; margin:0px 0px; height:100px; }*/
+/*.rfcx-row-intro-stats .btn { position:relative; left:-18%; top:-38px; }*/
+/*.rfcx-row-intro-stats .source { left:0%; }*/
 
 .rfcx-row-intro-what .rfcx-header { margin:0px 0px 0px 0px; font-size:34px; line-height:28px; }
 .rfcx-row-intro-what .infographic-box { width:300px; margin-left:2px; }

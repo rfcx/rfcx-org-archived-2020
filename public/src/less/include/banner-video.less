@@ -1,9 +1,11 @@
 .video-box {
-    height: 0;
-    // youtube video proportions
-    padding-bottom: 56.25%;
-    position: relative;
+    position: absolute;
+    z-index: 1;
+    margin-top: 45px;
+    width: 448px;
+    margin-left: 48.1%;
     border: solid 4px #ffffff;
+    vertical-align: middle;
     color: #ffffff;
     cursor: pointer;
     overflow: hidden;
@@ -42,6 +44,150 @@
     }
 }
 
+.video-box-page {
+    &:hover {
+        .video-box-bg {
+            filter: alpha(opacity=40);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+            -moz-opacity: 0.40;
+            -khtml-opacity: 0.40;
+            opacity: 0.40;
+        }
+        .fa-play-circle-o {
+            filter: alpha(opacity=80);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+            -moz-opacity: 0.80;
+            -khtml-opacity: 0.80;
+            opacity: 0.80;
+        }
+    }
+}
+
+.video-box-outer,
+.video-box-followup {
+    z-index: 1000;
+    display: none;
+    margin-left: 0px;
+    margin-top: 0px;
+    border: solid 4px #ffffff;
+}
+
+.video-box-outer-backdrop,
+.video-box-outer-backdrop-extra {
+    z-index: 999;
+    background-color: black;
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 0%;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
+.video-box-followup {
+    border: solid 4px #000;
+    background-color: transparent;
+    cursor: default;
+    margin-left: 0%;
+    margin-top: 0%;
+    iframe,
+    div,
+    p {
+        position: absolute;
+        z-index: 10;
+    }
+    .video-followup-bg {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: #000;
+        z-index: 0;
+    }
+    .video-followup-x {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        .fa {
+            position: absolute;
+            right: 0px;
+            top: -4px;
+            font-size: 24px;
+            color: white;
+        }
+        &:hover {
+            .fa {
+                color: #aaaaaa;
+            }
+        }
+    }
+    .rfcx-header {
+        left: 2%;
+        width: 96%;
+        top: 15px;
+        text-align: center;
+        font-size: 42px;
+        line-height: 40px;
+        margin-top: 20px;
+    }
+    .rfcx-sub-header {
+        top: 75px;
+        font-size: 26px;
+        line-height: 6px;
+    }
+
+    .rfcx-social-like {
+        z-index: 11;
+        top: 175px;
+    }
+
+    .rfcx-social-like-bttm {
+        top: 210px;
+    }
+}
+
+.video-player-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1001;
+    color: #fff;
+    font-size: 42px;
+    padding: 8px 12px;
+    font-weight: bold;
+    background-color: transparent;
+    text-decoration: none;
+    &:hover {
+        background-color: #bbb;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.infographic-box {
+    &:hover{
+        .fa-play-circle-o {
+            filter: alpha(opacity=80);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+            -moz-opacity: 0.80;
+            -khtml-opacity: 0.80;
+            opacity: 0.80;
+        }
+    }
+}
+
 .banner-video {
     height: 380px;
     margin-bottom: 10px;
@@ -62,14 +208,29 @@
         max-width: 900px;
         margin: 0 auto;
         height: 100%;
+        .video-box {
+
+        }
     }
-    &__video-wrapper{
+    &__video-wrapper {
         position: absolute;
         top: 11.8%;
         right: 1.2%;
         z-index: 1;
         width: 50%;
         max-width: 448px;
+        .video-box {
+            display: block;
+            width: 100%;
+            margin: 0;
+            height: 0;
+            // youtube video proportions
+            padding-bottom: 56.25%;
+            position: relative;
+            border: solid 4px #ffffff;
+            color: #ffffff;
+            cursor: pointer;
+        }
     }
     p {
         text-shadow: 0px 0px 2px #004400;
@@ -154,6 +315,17 @@
     }
 }
 
+@media @tablet {
+    .video-box-followup {
+        .rfcx-header {
+            font-size: 40px;
+        }
+        .rfcx-sub-header{
+            font-size: 24px;
+        }
+    }
+}
+
 @media @mobile{
     .video-box {
         border-width: 1px;
@@ -182,10 +354,10 @@
         top: 0;
         margin-bottom: 0;
         border-bottom: solid 40px #888888;
-        &__i{
+        &__i {
             padding-top: 10px;
         }
-        &__video-wrapper{
+        &__video-wrapper {
             position: static;
             margin: 15px auto;
             width: 80%;
@@ -222,8 +394,8 @@
             bottom: -43px;
             top: auto;
             font-size: 40px;
-            .fa{
-                &:hover{
+            .fa {
+                &:hover {
                     color: #eee;
                 }
             }

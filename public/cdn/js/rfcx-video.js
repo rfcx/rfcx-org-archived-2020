@@ -342,10 +342,10 @@ RFCX.fn.video.followUp = function(showHide) {
 
 RFCX.fn.infoGraphicVideo = function(reCycle) {
     $(".infographic-box").html(
-      "<img class=\"infographic-thmb\""
+      "<img class=\"infographic-box__img infographic-thmb\""
         +" src=\""+RFCX.cdn.rfcx+"/img/intro/infographic.450.gif?v="+RFCX.appVersion+(reCycle ? "&k="+Math.random() : "")+"\""
         +" onClick=\"RFCX.fn.infoGraphicVideo(true)\" />"
-      +"<img class=\"infographic-thmb-bg\""
+      +"<img class=\"infographic-box__img infographic-thmb-bg\""
         +" src=\""+RFCX.cdn.rfcx+"/img/intro/infographic.450.png?v="+RFCX.appVersion+"\""
         +" />"
       );

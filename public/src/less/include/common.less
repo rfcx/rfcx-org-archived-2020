@@ -40,6 +40,8 @@ body {
 }
 
 .rfcx-container{
+    position: relative;
+    z-index: 1;
     .transition(all .5s);
     &.opened{
         .translate3d(-84.9%,0,0);
@@ -62,6 +64,9 @@ body {
 }
 
 @media @mobile {
+    body {
+        padding-bottom: 45px;
+    }
     #phoneDeviceContainer {
         display: none;
     }

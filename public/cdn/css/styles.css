@@ -1,12 +1,16 @@
-.clearfix {
+.clearfix,
+.rfcx-row-intro-what__i {
   *zoom: 1;
 }
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.rfcx-row-intro-what__i:before,
+.rfcx-row-intro-what__i:after {
   content: "";
   display: table;
 }
-.clearfix:after {
+.clearfix:after,
+.rfcx-row-intro-what__i:after {
   clear: both;
 }
 .roadgeek {
@@ -983,5 +987,89 @@ body {
   }
   .rfcx-row-intro-stats .source {
     left: 0;
+  }
+  .rfcx-row-intro-stats-title {
+    margin-top: 20px;
+  }
+}
+.rfcx-row-intro-what .rfcx-intro-what-title {
+  text-align: center;
+  font-size: 44px;
+  text-transform: uppercase;
+}
+.rfcx-row-intro-what .span6 {
+  overflow: visible;
+  position: relative;
+}
+.rfcx-row-intro-what .infographic-box {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 0;
+  padding-bottom: 77.77%;
+  background-color: #ffffff;
+  margin-top: 4px;
+  border: solid 8px #ddd;
+  overflow: hidden;
+  color: #ddd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rfcx-row-intro-what .infographic-box__img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.rfcx-row-intro-what .infographic-box .infographic-thmb-bg {
+  z-index: 0;
+}
+.rfcx-row-intro-what .infographic-box:hover {
+  border-color: #aaa;
+}
+.rfcx-row-intro-what .intro-what-text-container__p {
+  margin-left: 6%;
+  margin-top: 0;
+  width: 94%;
+}
+.rfcx-row-intro-what .intro-what-text-container .rfcx-header {
+  font-size: 32px;
+  line-height: 32px;
+}
+.rfcx-row-intro-what .intro-what-text-container .rfcx-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn {
+  margin-top: 10px;
+}
+.rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn .fa-arrow-right {
+  margin-left: 8px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .rfcx-row-intro-what__i {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .rfcx-row-intro-what .rfcx-intro-what-title {
+    margin-bottom: 15px;
+    font-size: 32px;
+  }
+  .rfcx-row-intro-what__i {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .rfcx-row-intro-what .infographic-box {
+    margin-bottom: 20px;
+  }
+  .rfcx-row-intro-what .intro-what-text-container__p {
+    margin-left: 0;
+    width: 100%;
   }
 }

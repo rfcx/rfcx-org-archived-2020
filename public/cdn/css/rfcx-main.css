@@ -144,18 +144,18 @@ input::-webkit-input-placeholder { color:#cccccc; }
 
 .btn-rfcx-mini { padding:3px 6px; font-size:11px; line-height:11px; position:relative; }
 
-.rfcx-row-intro-what { padding-top:80px; }
-.rfcx-row-intro-what .rfcx-intro-what-title { position:absolute; top:-57px; text-align:center; clear:both; width:200%; font-size:44px; text-transform:uppercase; }
-.rfcx-row-intro-what .span6 { /*width:48%;*/ overflow:visible; position:relative; }
-.rfcx-row-intro-what .infographic-box { position:relative; cursor:pointer; width:450px; height:350px; background-color:#ffffff; margin-top:4px; border:solid 8px #ddd; overflow:visible; color:#ddd; }
-.rfcx-row-intro-what .infographic-box img { position:absolute; top:0%; left:0%; width:100%; height:100%; z-index:1; }
-.rfcx-row-intro-what .infographic-box .infographic-thmb-bg { z-index:0; }
-.rfcx-row-intro-what .infographic-box:hover { border-color:#aaa; }
-.rfcx-row-intro-what .intro-what-text-container p { margin-left:6%; margin-top:0px; width:94%; }
-.rfcx-row-intro-what .intro-what-text-container .rfcx-header { font-size:32px; line-height:32px; }
-.rfcx-row-intro-what .intro-what-text-container .rfcx-body { padding-top:0px; padding-bottom:0px; }
-.rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn { margin-top:10px; }
-.rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn .fa-arrow-right { margin-left:8px; }
+/*.rfcx-row-intro-what { padding-top:80px; }*/
+/*.rfcx-row-intro-what .rfcx-intro-what-title { position:absolute; top:-57px; text-align:center; clear:both; width:200%; font-size:44px; text-transform:uppercase; }*/
+/*.rfcx-row-intro-what .span6 { *//*width:48%;*//* overflow:visible; position:relative; }*/
+/*.rfcx-row-intro-what .infographic-box { position:relative; cursor:pointer; width:450px; height:350px; background-color:#ffffff; margin-top:4px; border:solid 8px #ddd; overflow:visible; color:#ddd; }*/
+/*.rfcx-row-intro-what .infographic-box img { position:absolute; top:0%; left:0%; width:100%; height:100%; z-index:1; }*/
+/*.rfcx-row-intro-what .infographic-box .infographic-thmb-bg { z-index:0; }*/
+/*.rfcx-row-intro-what .infographic-box:hover { border-color:#aaa; }*/
+/*.rfcx-row-intro-what .intro-what-text-container p { margin-left:6%; margin-top:0px; width:94%; }*/
+/*.rfcx-row-intro-what .intro-what-text-container .rfcx-header { font-size:32px; line-height:32px; }*/
+/*.rfcx-row-intro-what .intro-what-text-container .rfcx-body { padding-top:0px; padding-bottom:0px; }*/
+/*.rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn { margin-top:10px; }*/
+/*.rfcx-row-intro-what .intro-what-text-container .rfcx-body .btn .fa-arrow-right { margin-left:8px; }*/
 
 /*.rfcx-row-intro-stats { padding-top:0px; margin-top:0px; }*/
 /*.rfcx-row-intro-stats .rfcx-header { margin:0px 0px 0px 0px; text-align:center; }*/

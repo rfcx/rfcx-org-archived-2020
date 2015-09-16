@@ -344,10 +344,10 @@ RFCX.fn.infoGraphicVideo = function(reCycle) {
     $(".infographic-box").html(
       "<img class=\"infographic-box__img infographic-thmb\""
         +" src=\""+RFCX.cdn.rfcx+"/img/intro/infographic.450.gif?v="+RFCX.appVersion+(reCycle ? "&k="+Math.random() : "")+"\""
-        +" onClick=\"RFCX.fn.infoGraphicVideo(true)\" />"
+        +" onClick=\"RFCX.fn.infoGraphicVideo(true)\" alt=\"\" />"
       +"<img class=\"infographic-box__img infographic-thmb-bg\""
         +" src=\""+RFCX.cdn.rfcx+"/img/intro/infographic.450.png?v="+RFCX.appVersion+"\""
-        +" />"
+        +" alt=\"\" />"
       );
 }
 

@@ -67,7 +67,7 @@ html(lang="en")
                 li.masthead__list-item
                   a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
             a(href="/").header__logo-link
-              img.header__logo-img(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
+              img.header__logo-img(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="")
 
       block content
 
@@ -77,10 +77,10 @@ html(lang="en")
           ul.nav.nav-pills.pull-left
             li.cp
               span.copyright
-                | &copy;2014 Rainforest Connection &#0153;
+                | &copy;2014 Rainforest Connection &trade;
 
             li.ft
-              img.logo-footer-shuttleworth.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}")
+              img.logo-footer-shuttleworth.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}", alt="")
 
           for item in social_media
             a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )

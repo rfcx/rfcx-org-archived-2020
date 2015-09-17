@@ -147,7 +147,7 @@ body {
 .modal.fade.in {
   top: 50%;
   max-height: 70vh;
-  overflow: scroll;
+  overflow: auto;
 }
 .modal-backdrop {
   z-index: 1000002;

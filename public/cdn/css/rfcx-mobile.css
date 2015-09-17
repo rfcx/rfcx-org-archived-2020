@@ -62,7 +62,7 @@
 /*.banner-video .video-link .fa-play { font-size:8px; }*/
 /*.banner-video .slogan { margin-top:10px; margin-left:0px; width:100%; text-align:center; }*/
 /*.banner-video .slogan p.roadgeek { font-size:32px; line-height:28px; }*/
-.video-box-followup { margin-left:0%; margin-top:0%; overflow:hidden; }
+/*.video-box-followup { margin-left:0%; margin-top:0%; overflow:hidden; }*/
 
 /*.banner-video .intro-social { margin-top:300px; font-size:40px; }*/
 /*.banner-video .intro-social-facebook { margin-left:34px; top:-40px; }*/
@@ -72,11 +72,11 @@
 
 /*.banner-video .slogan { }*/
 
-.video-box-followup .video-followup-x .fa { font-size:20px; }
-.video-box-followup .rfcx-header { font-size:24px; line-height:22px; top:-5px; }
-.video-box-followup .rfcx-sub-header { top:25px; font-size:15px; line-height:2px; }
-.video-box-followup .rfcx-social-like { top:78px; height:20px; overflow:hidden; }
-.video-box-followup .rfcx-social-like-bttm { top:108px; }
+/*.video-box-followup .video-followup-x .fa { font-size:20px; }*/
+/*.video-box-followup .rfcx-header { font-size:24px; line-height:22px; top:-5px; }*/
+/*.video-box-followup .rfcx-sub-header { top:25px; font-size:15px; line-height:2px; }*/
+/*.video-box-followup .rfcx-social-like { top:78px; height:20px; overflow:hidden; }*/
+/*.video-box-followup .rfcx-social-like-bttm { top:108px; }*/
 .rfcx-social-like iframe, .rfcx-social-like div { max-width:180px; }
 .rfcx-tw-like { left:18%; }
 .rfcx-fb-like { left:46%; width:180px; }
@@ -147,15 +147,15 @@
 
 .rfcx-row .span4 { clear:both; }
 
-.footer ul li.ft { display:none; }
-.footer ul li.cp { width:100%; font-size:60%; }
-.footer ul { position:absolute; width:100%; top:28px; }
-.footer .footer-social { font-size:30px; margin:0px 4px; }
+/*.footer ul li.ft { display:none; }*/
+/*.footer ul li.cp { width:100%; font-size:60%; }*/
+/*.footer ul { position:absolute; width:100%; top:28px; }*/
+/*.footer .footer-social { font-size:30px; margin:0px 4px; }*/
 
-.footer { margin-bottom:40px; height:64px; text-align:center; margin-bottom:42px; }
-.footer-bg { display:none; }
-.footer a.pull-right { position:relative; float:none; top:6px; }
-.footer ul {  }
+/*.footer { margin-bottom:40px; height:64px; text-align:center; margin-bottom:42px; }*/
+/*.footer-bg { display:none; }*/
+/*.footer a.pull-right { position:relative; float:none; top:6px; }*/
+/*.footer ul {  }*/
 
 /*.footer-forest { height:151px; overflow:hidden; }*/
 /*.footer-forest .footer-bg {  }*/

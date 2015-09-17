@@ -73,19 +73,19 @@ html(lang="en")
       block content
 
       footer.footer.lucida
-        .footer__i.footer-bg
         .footer__i
-          ul.nav.nav-pills.pull-left
-            li.cp
-              span.copyright
+          ul.footer__left-list
+            li.footer__left-list-item.cp
+              span.footer__copyright
                 | &copy;2014 Rainforest Connection &trade;
+            li.footer__left-list-item.ft
+              img.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}", alt="")
 
-            li.ft
-              img.logo-footer-shuttleworth.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}", alt="")
-
-          for item in social_media
-            a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
-              i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
+          ul.footer__social-list
+            for item in social_media
+              li.footer__social-item
+                a.footer__social-link.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
+                  i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
 
     div.modal.hide.fade(id='contact', tabindex='-1', role='dialog', aria-labelledby='contact-label', aria-hidden='true')
       div.modal-header

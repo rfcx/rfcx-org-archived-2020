@@ -87,6 +87,9 @@ body {
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
+  body {
+    padding-bottom: 45px;
+  }
   #tabletDeviceContainer {
     display: none;
   }
@@ -424,6 +427,9 @@ body {
   }
 }
 .footer {
+  background-color: #898989;
+  color: #ffffff;
+  font-size: 12px;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -431,10 +437,14 @@ body {
 }
 .footer__i {
   width: 100%;
+  height: 50px;
   max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .footer__bg {
   width: 100%;
@@ -445,10 +455,92 @@ body {
   left: 0;
   background: #898989;
 }
+.footer__left-list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  font-size: 0;
+  text-align: left;
+}
+.footer__left-list-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.footer__left-list-item:last-child {
+  margin-right: 0;
+}
+.footer__social-list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  font-size: 0;
+  text-align: right;
+}
+.footer__social-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+.footer .footer-social {
+  font-size: 24px;
+  margin: 0 4px;
+  position: relative;
+  vertical-align: top;
+  text-decoration: none;
+  color: #ffffff;
+}
+.footer__social-link:hover .footer-social {
+  color: #000000;
+}
+.footer__copyright {
+  font-size: 12px;
+}
+.footer .container-narrow {
+  z-index: 1;
+}
+.footer .hint--rounded:after {
+  left: -103px;
+}
 @media screen and (max-width: 1000px) {
+  .footer__left-list {
+    left: 5%;
+  }
+  .footer__social-list {
+    right: 5%;
+  }
   .footer .hint--rounded:after {
     left: auto !important;
     right: 0 !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .footer__left-list {
+    display: none;
+  }
+  .footer__social-list {
+    right: auto;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
   }
 }
 .video-box {

@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-  section.content
+  section.content.content_about
     .content__i
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
         div.span12
@@ -38,49 +38,7 @@ block content
             div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:44%;top:30%;")
             div.roadgeek.hint--rounded.hint--bounce.hint--error.hint--top.alert-help(data-hint="HELP!", style="left:68%;top:24%;")
 
-
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats-title(style="padding-top:40px;")
-          div.span12
-            p.roadgeek.rfcx-header.title
-             | The Facts: Destruction of tropical rainforest...
-        div.row-fluid.rfcx-row.rfcx-row-intro-stats
-          div.span4.stat-page-climate
-            div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-globe.70.png?v=#{app_version})")
-            p.roadgeek.rfcx-header
-              span
-                | ...is a leading cause of
-                br
-                span.conclusion= "climate change."
-                br
-                span.source= "-United Nations"
-                br
-                a.btn.btn-rfcx-mini.lucida(href='#stat-climate', role='button', data-toggle='modal')= "learn more"
-          div.span4.stat-page-extinction
-            div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version})")
-            p.roadgeek.rfcx-header
-              span
-                | ...is causing global
-                br
-                span.conclusion= "mass extinctions."
-                br
-                span.source= "-United Nations"
-                br
-                a.btn.btn-rfcx-mini.lucida(href='#stat-extinction', role='button', data-toggle='modal')= "learn more"
-
-          div.span4.stat-page-crime
-            div.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version})")
-            p.roadgeek.rfcx-header
-              span
-                | ...is mostly caused by
-                br
-                span.conclusion= "illegal activity."
-                br
-                span.source= "-Interpol"
-                br
-                a.btn.btn-rfcx-mini.lucida(href='#stat-crime', role='button', data-toggle='modal')= "learn more"
-
-
-
+      include common/intro-stats
 
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-2
         div.span6

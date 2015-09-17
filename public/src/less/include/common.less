@@ -39,21 +39,31 @@ body {
     }
 }
 
-.rfcx-container{
+.rfcx-container {
     position: relative;
     z-index: 1;
     .transition(all .5s);
-    &.opened{
-        .translate3d(-84.9%,0,0);
+    &.opened {
+        .translate3d(-84.9%, 0, 0);
     }
 }
 
+.rfcx-row-gradient {
+    border-top: solid 1px rgba(235, 236, 237, 1);
+    background: -moz-radial-gradient(center top, ellipse cover, rgba(235, 236, 237, 1) 0%, rgba(235, 236, 237, 1) 25%, rgba(255, 255, 255, 1) 72%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-gradient(radial, center top, 0px, center center, 100%, color-stop(0%, rgba(235, 236, 237, 1)), color-stop(25%, rgba(235, 236, 237, 1)), color-stop(72%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+    background: -webkit-radial-gradient(center top, ellipse cover, rgba(235, 236, 237, 1) 0%, rgba(235, 236, 237, 1) 25%, rgba(255, 255, 255, 1) 72%, rgba(255, 255, 255, 1) 100%);
+    background: -o-radial-gradient(center top, ellipse cover, rgba(235, 236, 237, 1) 0%, rgba(235, 236, 237, 1) 25%, rgba(255, 255, 255, 1) 72%, rgba(255, 255, 255, 1) 100%);
+    background: -ms-radial-gradient(center top, ellipse cover, rgba(235, 236, 237, 1) 0%, rgba(235, 236, 237, 1) 25%, rgba(255, 255, 255, 1) 72%, rgba(255, 255, 255, 1) 100%);
+    background: radial-gradient(ellipse at center top, rgba(235, 236, 237, 1) 0%, rgba(235, 236, 237, 1) 25%, rgba(255, 255, 255, 1) 72%, rgba(255, 255, 255, 1) 100%);
+}
+
 @media @desktopAndTablet{
-    .rfcx-container{
-        -webkit-transform:   translate3d(0,0,0) !important;
-        -moz-transform: 	 translate3d(0,0,0) !important;
-        -ms-transform: 		 translate3d(0,0,0) !important;
-        -o-transform: 		 translate3d(0,0,0) !important;
+    .rfcx-container {
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        -moz-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate3d(0, 0, 0) !important;
+        -o-transform: translate3d(0, 0, 0) !important;
     }
 }
 
@@ -61,6 +71,7 @@ body {
     body {
         padding-bottom: 45px;
     }
+
     #tabletDeviceContainer {
         display: none;
     }
@@ -70,6 +81,7 @@ body {
     body {
         padding-bottom: 45px;
     }
+
     #phoneDeviceContainer {
         display: none;
     }

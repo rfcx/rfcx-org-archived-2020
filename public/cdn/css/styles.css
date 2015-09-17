@@ -109,10 +109,16 @@ body {
   }
 }
 .modal {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: -50%;
   z-index: 1000003;
-}
-.modal-backdrop {
-  z-index: 1000002;
 }
 .modal a {
   color: #494848;
@@ -127,6 +133,29 @@ body {
   position: relative;
   top: -4px;
   left: 2px;
+}
+.modal.fade.in {
+  top: 50%;
+  max-height: 70vh;
+  overflow: scroll;
+}
+.modal-backdrop {
+  z-index: 1000002;
+}
+.modal-body {
+  max-height: none;
+}
+.modal-body p:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 767px) {
+  .modal {
+    z-index: 1000010;
+    top: 45%;
+  }
+  .modal.fade.in {
+    top: 45%;
+  }
 }
 .masthead {
   position: relative;

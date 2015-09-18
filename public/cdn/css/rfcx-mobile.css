@@ -108,8 +108,8 @@
 /*.rfcx-row-intro-what .intro-what-text-container .rfcx-body { text-align:left; width:90%; margin-left:5%; }*/
 /*.rfcx-row-intro-what .intro-what-text-container .btn { width:40%; margin-left:25%; }*/
 
-.rfcx-row-about-1 .rfcx-header { margin:10px 0px 0px 0px; }
-.rfcx-row-about-2 .rfcx-header { margin:20px 0px 0px 0px; }
+/*.rfcx-row-about-1 .rfcx-header { margin:10px 0px 0px 0px; }*/
+/*.rfcx-row-about-2 .rfcx-header { margin:20px 0px 0px 0px; }*/
 
 /*.rfcx-row-sctn-join .rfcx-header { margin:0px 0px 0px 0px; font-size:34px; line-height:28px; }*/
 /*.rfcx-row-sctn-join .rfcx-body { text-align:left; margin-left:0px; position:relative; left:15px; }*/
@@ -120,15 +120,15 @@
 .rfcx-row-sctn-join .control-group .rfcx-body span { position:relative; left:-7px; width:100%; float:left; clear:left; }
 .rfcx-row-sctn-join .control-group .controls { position:relative; top:20px; }
 
-.rfcx-row-about-1 { top:-26px; padding-top:0px; }
-.rfcx-row-about-2 { top:-26px; padding-top:0px; }
-.rfcx-row-about-3 { top:-26px; }
-.rfcx-row-about-4 { top:-26px; padding-top:0px; }
-.rfcx-row-about-1 .screen-container { width:300px; height:181px; }
-.rfcx-row-about-2 .rfcx-header { margin-top:0px; }
-.rfcx-row-about-2 .rfcx-body { text-align:left; padding-left:15px; }
-.rfcx-row-about-2 .trash-img { display:none; }
-.rfcx-row-about-2 .trash-img-mobile { margin:0px 15px 0px 5px; width:50%; display:block; float:right; }
+/*.rfcx-row-about-1 { top:-26px; padding-top:0px; }*/
+/*.rfcx-row-about-2 { top:-26px; padding-top:0px; }*/
+/*.rfcx-row-about-3 { top:-26px; }*/
+/*.rfcx-row-about-4 { top:-26px; padding-top:0px; }*/
+/*.rfcx-row-about-1 .screen-container { width:300px; height:181px; }*/
+/*.rfcx-row-about-2 .rfcx-header { margin-top:0px; }*/
+/*.rfcx-row-about-2 .rfcx-body { text-align:left; padding-left:15px; }*/
+/*.rfcx-row-about-2 .trash-img { display:none; }*/
+/*.rfcx-row-about-2 .trash-img-mobile { margin:0px 15px 0px 5px; width:50%; display:block; float:right; }*/
 .rfcx-row-about-3 .map-cropper { width:225px; height:126px; float:none; margin-right:auto; margin-left:auto; margin-bottom:10px; }
 .rfcx-row-about-3 #map-container { height:126%; }
 

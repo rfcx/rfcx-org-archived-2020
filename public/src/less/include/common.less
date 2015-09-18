@@ -18,6 +18,10 @@ body {
     display: none;
 }
 
+.only-desktop {
+    display: block;
+}
+
 .mobile-exclude {
     display: block;
 }
@@ -42,7 +46,7 @@ body {
 .rfcx-container {
     position: relative;
     z-index: 1;
-    .transition(all .5s);
+    .transition(transform .5s);
     &.opened {
         .translate3d(-84.9%, 0, 0);
     }
@@ -73,6 +77,12 @@ body {
     }
 
     #tabletDeviceContainer {
+        display: none;
+    }
+}
+
+@media @tabletAndPhone {
+    .only-desktop {
         display: none;
     }
 }

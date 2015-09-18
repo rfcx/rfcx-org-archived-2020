@@ -6,16 +6,17 @@ block content
     .content__i
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
         div.span12
-          p.roadgeek.rfcx-header= "Finally, trees that can talk."
+          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= "Finally, trees that can talk."
           p.rfcx-body
             span
               | <em>Rainforest Connection</em> uses upcycled mobile technology to monitor and protect remote forests, enabling real-time interventions.
       div.row-fluid.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
-        div.span4
+        div.span5
           p.roadgeek.rfcx-header.italic
-            | &ldquo;If a tree falls
-            br
-            | <span style="position:relative;left:75px;">in the forest...&rdquo;</span>
+            span.rfcx-row-about-1-1__quote-first-line
+              | &ldquo;If a tree falls&nbsp;
+            span.rfcx-row-about-1-1__quote-second-line
+              | in the forest...&rdquo;
           p.rfcx-body
             span.italic
               | &ldquo;...and no one is there to hear it, does it make a sound?&rdquo;
@@ -25,9 +26,7 @@ block content
           p.rfcx-body
             span.italic
               | &ldquo;If a tree falls in the forest, and no one is there to hear it, <b>you</b> still can. And so can the world. We're developing multi-tiered platforms for remote sensing of ecological data that can be used to monitor the health of forests and endangered species &rdquo;
-
-
-        div.span8
+        div.span7
           div.screen-container(onClick="showHelpBubbles();")
             img.screen-img(src="#{rfcx_cdn}/img/about/screen-trans.560.png?v=#{app_version}")
             img.screen-bg(src="#{rfcx_cdn}/img/about/screen-bg.511.jpg?v=#{app_version}")
@@ -41,14 +40,12 @@ block content
       include common/intro-stats
 
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-2
-        div.span6
-          img.trash-img(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
-        div.span6
+        .rfcx-row-about-2__content
           p.roadgeek.rfcx-header
             | Turning old phones
             br
             | into forest guardians
-          img.trash-img-mobile(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
+          img.rfcx-row-about-2__img(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}")
           p.rfcx-body
             span
               | Why use old, recycled smartphones to guard the rainforest?

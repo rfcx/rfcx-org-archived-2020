@@ -1571,3 +1571,86 @@ body {
     margin: 5px auto;
   }
 }
+.rfcx-row-about-3 {
+  margin-top: 0;
+  overflow: visible;
+  padding-top: 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rfcx-row-about-3 .iphone-container {
+  width: 106.5%;
+}
+.rfcx-row-about-3 .rfcx-header {
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.rfcx-row-about-3 .rfcx-body {
+  padding-top: 4px;
+  padding-bottom: 0;
+  width: 105%;
+}
+.rfcx-row-about-3 .rfcx-body-full {
+  width: 300%;
+}
+@media (max-width: 1000px) {
+  .rfcx-row-about-3 {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .rfcx-row-about-3 .iphone-container {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .rfcx-row-about-3 .iphone-container {
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .rfcx-row-about-3 {
+    padding-top: 20px;
+  }
+  .rfcx-row-about-3 .rfcx-body,
+  .rfcx-row-about-3 .rfcx-body-full {
+    width: 100%;
+  }
+}
+.iphone-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 52.22%;
+  position: relative;
+  z-index: 1;
+}
+.iphone-container__phone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.iphone-container__map {
+  position: absolute;
+  left: 14%;
+  top: 7%;
+  right: 13.5%;
+  bottom: 7.5%;
+  z-index: 1;
+  overflow: hidden;
+}
+.iphone-container__map .cartodb-logo,
+.iphone-container__map .leaflet-control-container {
+  display: none !important;
+}
+.iphone-container__overlay {
+  position: absolute;
+  background: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}

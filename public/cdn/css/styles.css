@@ -1281,7 +1281,10 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .footer-forest {
-    height: 151px;
+    height: 300px;
+  }
+  .banner-donate__bg {
+    background-position: 25% center !important;
   }
 }
 .rfcx-row-intro-what .rfcx-intro-what-title {

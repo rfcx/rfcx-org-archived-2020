@@ -1,0 +1,24 @@
+div.modal.hide.fade(id='stat-extinction', tabindex='-1', role='dialog', aria-labelledby='stat-extinction-label', aria-hidden='true')
+  div.modal-header
+    button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      i.fa.fa-times
+    h3#stat-extinction-label= "Deforestation and Global Mass Extinction"
+  div.modal-body
+    p
+    hr
+    p
+      span.bold= "United Nations (2010)"
+      br
+      a.italic.rfcx-trans-linear(target="_blank",href="http://nupge.ca/content/3679/world-facing-worst-extinction-rate-dinosaurs")
+        | "The world is facing the worst extinction rate since the dinosaurs vanished 65 million years ago, a crisis that must be addressed by governments, businesses and communities."
+        i.fa.fa-external-link.read-more
+        | read more
+    p
+      span.bold= "United Nations (2010)"
+      br
+      a.italic.rfcx-trans-linear(target="_blank",href="http://www.theguardian.com/environment/2006/mar/21/conservationandendangeredspecies.internationalnews")
+        | "In effect, we are currently responsible for the sixth major extinction event in the history of earth."
+        i.fa.fa-external-link.read-more
+        | read more
+  div.modal-footer
+    button.btn(data-dismiss='modal',aria-hidden='true')= "Close"

@@ -1,0 +1,17 @@
+div.modal.hide.fade(id='stat-crime', tabindex='-1', role='dialog', aria-labelledby='stat-crime-label', aria-hidden='true')
+  div.modal-header
+    button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      i.fa.fa-times
+    h3#stat-crime-label= "Deforestation and Criminal Activity"
+  div.modal-body
+    p
+    hr
+    p
+      span.bold= "INTERPOL — Project Leaf"
+      br
+      a.italic.rfcx-trans-linear(target="_blank",href="http://www.interpol.int/Crime-areas/Environmental-crime/Projects/Project-Leaf")
+        | "It is estimated that illegal logging accounts for 50-90% of the volume of forestry activities in key producer tropical countries."
+        i.fa.fa-external-link.read-more
+        | read more
+  div.modal-footer
+    button.btn(data-dismiss='modal',aria-hidden='true')= "Close"

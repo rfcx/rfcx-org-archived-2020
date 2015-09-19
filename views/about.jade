@@ -75,47 +75,7 @@ block content
             .iphone-container__map#map-container
             .iphone-container__overlay
 
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-sctn-join
-        div.span7
-          a#get_involved
-          p.roadgeek.rfcx-header= "Help silence the chainsaws. Join us."
-          p.rfcx-body
-            div.stopsign-mobile
-              img(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
-
-            form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us9.list-manage.com/subscribe/post?u=979004c94b83bcd925931d541&amp;id=58fbf16b44", method="post")
-
-              span.rfcx-body
-                span
-                  | Please <span class="bold">Like & Follow Us</span>
-                  br.mobile-only
-                  | On Facebook, Twitter and Google+.
-
-              div.social-follow-containers
-                div.social-follow-container
-                  div.social-follow-item.fb-follow(data-width="300", data-show-faces="false", data-href="https://www.facebook.com/RainforestCx")
-                div.social-follow-container
-                  a.social-follow-item.twitter-follow-button(data-show-count="true", href="https://twitter.com/RainforestCx")= "Follow"
-                div.social-follow-container
-                  div.social-follow-item.g-follow(data-height="24", data-href="//plus.google.com/+RfcxOrg", data-rel="publisher")
-
-
-              div.control-group
-                span.rfcx-body
-                  span
-                  | Stay informed by signing up for our <span class="bold">email newsletter.</span>
-                br
-                div.controls
-                  div.input-append
-                    input.input-large.email#mce-EMAIL(type='text', data-type='email', name='EMAIL', placeholder='Your email', required)
-                    a.btn.btn-success= "Sign up"
-
-        div.span5
-          img.stopsign(src="#{rfcx_cdn}/img/intro/stopsign.358.png?v=#{app_version}")
-
-
-
-
+      include common/join-us
 
       div.modal.hide.fade(id='stat-climate', tabindex='-1', role='dialog', aria-labelledby='stat-climate-label', aria-hidden='true')
         div.modal-header

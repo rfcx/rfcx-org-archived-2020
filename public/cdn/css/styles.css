@@ -1654,3 +1654,52 @@ body {
   height: 100%;
   z-index: 3;
 }
+.rfcx-row-get_involved-2 {
+  padding: 30px 0 10px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rfcx-row-get_involved-2 .rfcx-header {
+  text-transform: uppercase;
+}
+.rfcx-row-get_involved-2 .input-append .input-large,
+.rfcx-row-get_involved-2 .input-append .btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rfcx-row-get_involved-2 .input-append .input-large {
+  width: 60%;
+  padding: 10px 7px 10px 10px;
+  font-size: 14px;
+  height: auto;
+}
+.rfcx-row-get_involved-2 .input-append .btn {
+  width: 40%;
+  padding: 9px 9px 11px 9px;
+  font-size: 19px;
+}
+.rfcx-row-get_involved-2 .stripe-donate .btn {
+  font-size: 18px;
+  padding: 10px 15px;
+}
+.rfcx-row-get_involved-2 .phone-donate .btn {
+  font-size: 18px;
+  padding: 10px 15px;
+}
+.rfcx-row-get_involved-2 .control-group .parsley-error-list {
+  display: none !important;
+}
+@media (max-width: 950px) {
+  .rfcx-row-get_involved-2 {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .content_involved .rfcx-row-about-1-1 .help1,
+  .content_involved .rfcx-row-about-1-1 .help2 {
+    display: block;
+  }
+}

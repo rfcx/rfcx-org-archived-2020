@@ -12,7 +12,7 @@ var RFCX = {
   cdn: { rfcx: null, rfcxVendor: null, rfcxStatic: null, bootstrap: null, cdnJs: null, videoJs: null },
   mapObj: null,
   timer: { windowResize: null, windowScroll: null },
-  bodyWidth: $('.container-narrow').innerWidth(),
+  bodyWidth: $('.content__i').innerWidth(),
   overflowMarginWidth: 250,
   renderForMobile: false,
   renderForTouch: $("html").hasClass("touch"),
@@ -40,7 +40,7 @@ var RFCX = {
 };
 
 $(function(){
-  
+
   $.ajaxSetup({ cache:true });
   
   RFCX.setDevMode();

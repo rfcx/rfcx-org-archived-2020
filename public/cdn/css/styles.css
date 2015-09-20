@@ -864,6 +864,74 @@ body {
     padding: 22px 10px;
   }
 }
+.rfcx-contact-sctn {
+  position: relative;
+  width: 32.67%;
+  border: solid 1px #ddd;
+  border-top: 0;
+  float: left;
+  color: #222;
+  cursor: pointer;
+  text-align: center;
+}
+.rfcx-contact-sctn .lbl {
+  font-size: 24px;
+  text-align: center;
+  margin: 10px 0;
+}
+.rfcx-contact-sctn .lbl .fa {
+  font-size: 32px;
+  margin: 5px 10px 5px 0;
+  position: relative;
+  top: 3px;
+}
+.rfcx-contact-sctn .bdy {
+  font-size: 14px;
+  line-height: 16px;
+  width: 100%;
+  border: 0;
+  float: left;
+  clear: left;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.rfcx-contact-sctn:hover {
+  color: #fff;
+  background-color: #444;
+  border: solid 1px #444;
+  border-top: 0;
+}
+.rfcx-contact-sctn-long {
+  width: 98.4%;
+}
+.rfcx-contact-sctn-social {
+  width: 13.7%;
+}
+.rfcx-contact-sctn-social .lbl {
+  font-size: 12px;
+}
+.rfcx-contact-sctn-social .lbl .fa {
+  margin: 5px 0 5px 0;
+  clear: both;
+  color: #222;
+}
+.rfcx-contact-sctn-social:hover .lbl .fa {
+  color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  .rfcx-contact-sctn {
+    width: 99%;
+  }
+  .rfcx-contact-sctn:hover {
+    color: #444;
+    background-color: #ddd;
+    border: solid 1px #ddd;
+  }
+  .rfcx-contact-sctn-social {
+    width: 24%;
+  }
+}
 .video-box {
   position: absolute;
   z-index: 1;

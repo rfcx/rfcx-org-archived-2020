@@ -113,12 +113,12 @@
 
 /*.rfcx-row-sctn-join .rfcx-header { margin:0px 0px 0px 0px; font-size:34px; line-height:28px; }*/
 /*.rfcx-row-sctn-join .rfcx-body { text-align:left; margin-left:0px; position:relative; left:15px; }*/
-.rfcx-row-sctn-join .stopsign { display:none;}
-.rfcx-row-sctn-join .stopsign-mobile { width:80%; margin-left:8%; margin-right:10%; margin-top:0px; display:block; top:-20px; height:250px; overflow:hidden; }
-.rfcx-row-sctn-join .input-append .input-large { width:194px; padding:23px 7px 21px 10px; font-size:18px; }
-.rfcx-row-sctn-join .control-group .rfcx-body { padding-left:0px; margin-left:0px; text-align:center; width:100%; font-size:120%; }
-.rfcx-row-sctn-join .control-group .rfcx-body span { position:relative; left:-7px; width:100%; float:left; clear:left; }
-.rfcx-row-sctn-join .control-group .controls { position:relative; top:20px; }
+/*.rfcx-row-sctn-join .stopsign { display:none;}*/
+/*.rfcx-row-sctn-join .stopsign-mobile { width:80%; margin-left:8%; margin-right:10%; margin-top:0px; display:block; top:-20px; height:250px; overflow:hidden; }*/
+/*.rfcx-row-sctn-join .input-append .input-large { width:194px; padding:23px 7px 21px 10px; font-size:18px; }*/
+/*.rfcx-row-sctn-join .control-group .rfcx-body { padding-left:0px; margin-left:0px; text-align:center; width:100%; font-size:120%; }*/
+/*.rfcx-row-sctn-join .control-group .rfcx-body span { position:relative; left:-7px; width:100%; float:left; clear:left; }*/
+/*.rfcx-row-sctn-join .control-group .controls { position:relative; top:20px; }*/
 
 /*.rfcx-row-about-1 { top:-26px; padding-top:0px; }*/
 /*.rfcx-row-about-2 { top:-26px; padding-top:0px; }*/
@@ -140,8 +140,8 @@
 /*.rfcx-row-get_involved-1 { top:-26px; padding-top:10px; }*/
 /*.rfcx-row-get_involved-2 { top:-26px; padding-top:10px; }*/
 
-.rfcx-row-get_involved-1 .rfcx-body span { position:relative; float:left; width:100%; }
-.rfcx-row-get_involved-1 .rfcx-body .help2 { clear:left; }
+/*.rfcx-row-get_involved-1 .rfcx-body span { position:relative; float:left; width:100%; }*/
+/*.rfcx-row-get_involved-1 .rfcx-body .help2 { clear:left; }*/
 
 /*.rfcx-row-get_involved-2 .input-append .input-large { width:194px; padding:21px 7px 19px 10px; font-size:18px; }*/
 

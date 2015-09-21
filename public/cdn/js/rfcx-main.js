@@ -40,6 +40,7 @@ var RFCX = {
 };
 
 $(function(){
+  $('#loadingContainer').fadeOut();
 
   $.ajaxSetup({ cache:true });
   

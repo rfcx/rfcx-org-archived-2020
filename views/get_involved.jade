@@ -14,7 +14,7 @@ block content
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-2(style="text-align:center;")
         div.span4
           p.roadgeek.rfcx-header= "Stay informed"
-          p.rfcx-body
+          .rfcx-body
             | Sign up for our newsletter.
             br.only-desktop
             | Big things are in the works, and
@@ -47,13 +47,8 @@ block content
             br.only-desktop
             | and making a donation is fast and easy.
 
-
           div.control-group
-            form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
-              input(type="hidden", name="cmd", value="_s-xclick")
-              input(type="hidden", name="hosted_button_id", value="ZEMNV9Q5ALW6Y")
-              input(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", border="0", name="submit", alt="")
-              img(border="0", width="1", height="1", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif")
+            include common/donate-form
 
         hr.mobile-only
 

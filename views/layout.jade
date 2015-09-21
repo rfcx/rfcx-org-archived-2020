@@ -7,13 +7,8 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, minimum-scale=0.67, maximum-scale=1.0, user-scalable=no")
     meta(name="apple-mobile-web-app-capable", content="yes")
-    //-meta(name="title", content="Rainforest Connection, a solution that can halt illegal logging in rainforests")
-    //-meta(name="description", content="Rainforest Connection transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.")
-    //-meta(name="image", content="//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/infographic.450.png")
-
 
     if (current_page[0] == "intro")
-
       meta(property="og:type", content="movie")
 
       meta(property="og:title", content="Rainforest Connection (RFCx): Phones Turned into Forest Guardians")
@@ -27,12 +22,11 @@ html(lang="en")
       meta(property="og:video:width", content="486")
       meta(property="og:video:height", content="297")
 
-
-
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
+
     link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
-    link(id='font-awesome-4', rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css', id='font-awesome-4')
     | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> <![endif]-->
     | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> <![endif]-->
     style(type="text/css").

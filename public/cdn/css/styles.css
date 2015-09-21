@@ -424,6 +424,12 @@ body {
   position: relative;
   top: 1px;
 }
+.form-donate {
+  text-align: center;
+}
+.form-donate > * {
+  margin: auto;
+}
 input::-webkit-input-placeholder {
   color: #cccccc;
 }

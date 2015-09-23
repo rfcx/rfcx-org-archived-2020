@@ -7,13 +7,8 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, minimum-scale=0.67, maximum-scale=1.0, user-scalable=no")
     meta(name="apple-mobile-web-app-capable", content="yes")
-    //-meta(name="title", content="Rainforest Connection, a solution that can halt illegal logging in rainforests")
-    //-meta(name="description", content="Rainforest Connection transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.")
-    //-meta(name="image", content="//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/infographic.450.png")
-
 
     if (current_page[0] == "intro")
-
       meta(property="og:type", content="movie")
 
       meta(property="og:title", content="Rainforest Connection (RFCx): Phones Turned into Forest Guardians")
@@ -27,19 +22,12 @@ html(lang="en")
       meta(property="og:video:width", content="486")
       meta(property="og:video:height", content="297")
 
-
-
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
-    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
-    link(id='font-awesome-4', rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css')
     | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> <![endif]-->
     | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> <![endif]-->
-    style(type="text/css").
-      @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
-    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/styles.css?v=#{app_version}')
-    script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-preload.js?v=#{app_version}')
   body.helvetica
+    #loadingContainer.loading-container(style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: #fff;")
     #phoneDeviceContainer
     #tabletDeviceContainer
     #rfcx-container.rfcx-container
@@ -141,8 +129,14 @@ html(lang="en")
         li.rfcx-menu-mobile__list-item
           a.rfcx-menu-mobile__link.roadgeek(href="#contact", role="button", data-toggle="modal")= "Contact"
 
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css', id='font-awesome-4')
+    style(type="text/css").
+      @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/styles.css?v=#{app_version}')
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-preload.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-video.js?v=#{app_version}')
     script(type='text/javascript').

@@ -424,6 +424,21 @@ body {
   position: relative;
   top: 1px;
 }
+.form-donate {
+  text-align: center;
+}
+.form-donate > * {
+  margin: auto;
+}
+.loading-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+  background: #fff;
+}
 input::-webkit-input-placeholder {
   color: #cccccc;
 }
@@ -2231,6 +2246,9 @@ input::-webkit-input-placeholder {
 }
 .rfcx-row-get_involved-2 .control-group .parsley-error-list {
   display: none !important;
+}
+.rfcx-row-get_involved-2 .col-sign-up .rfcx-form {
+  margin: 22px auto 0;
 }
 @media (max-width: 950px) {
   .rfcx-row-get_involved-2 {

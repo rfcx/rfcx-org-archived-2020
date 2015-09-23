@@ -10,6 +10,8 @@ var navItems = [
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],
     [ "media", "Media", "/media", "Media", true, false ],
 
+    [ "donatephone", "Donate", "/donatephone", "Donate a Phone", false, false ],
+
     [ "press", "Press", "/press", "Press Clippings", false, false ],
     [ "donate", "Donate", "/donate", "Donate", false, true ],
     [ "ecuador", "Ecuador", "/ecuador", "Ecuador", false, false ],

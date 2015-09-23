@@ -1,18 +1,14 @@
-doctype 1.1
+doctype html
 html(lang="en")
   
   head
     title= current_page[3]
     meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, minimum-scale=0.67, maximum-scale=4.0, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, minimum-scale=0.67, maximum-scale=1.0, user-scalable=no")
     meta(name="apple-mobile-web-app-capable", content="yes")
-    //-meta(name="title", content="Rainforest Connection, a solution that can halt illegal logging in rainforests")
-    //-meta(name="description", content="Rainforest Connection transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.")
-    //-meta(name="image", content="//d3gq709nndn9uy.cloudfront.net/cdn/img/intro/infographic.450.png")
-
 
     if (current_page[0] == "intro")
-
       meta(property="og:type", content="movie")
 
       meta(property="og:title", content="Rainforest Connection (RFCx): Phones Turned into Forest Guardians")
@@ -26,67 +22,61 @@ html(lang="en")
       meta(property="og:video:width", content="486")
       meta(property="og:video:height", content="297")
 
-
-
     link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
-    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
-    link(id='font-awesome-4', rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css')
-    | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> -->
-    | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> -->
-    style(type="text/css").
-      @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
-    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-main.css?v=#{app_version}')
-    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile.css?v=#{app_version}', media='all and (max-device-width: 480px)')
-    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/rfcx-mobile-landscape.css?v=#{app_version}', media='all and (max-device-width: 480px) and (orientation:landscape)')
-    script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-preload.js?v=#{app_version}')
+    | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> <![endif]-->
+    | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> <![endif]-->
   body.helvetica
-    div.container-narrow#rfcx-container
-
-      div.rfcx-unselectable.rfcx-trans-linear.masthead
-        div.dynamic-crop-right.masthead-bg(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
-        if (!current_page[5])
-          a.menu-toggle
-            i.fa.fa-bars
-          ul.rfcx-trans-linear.nav.nav-pills.pull-right
-            for item in nav_items
-              if ((item[0] == current_page[0]) && item[4])
-                li.active
-                  a= item[1]
-                  i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
-              else if (item[4])
-                li
-                  if (item[2].indexOf("://") != -1)
-                    a.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")= item[1]
-                  else
-                    a.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
-            li
-              a.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
-        a
-          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
+    #loadingContainer.loading-container(style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: #fff;")
+    #phoneDeviceContainer
+    #tabletDeviceContainer
+    #rfcx-container.rfcx-container
+      header.header
+        div.header__bg(style="background:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version}) no-repeat center bottom;")
+        .header__i
+          div.rfcx-unselectable.rfcx-trans-linear.masthead
+            if (!current_page[5])
+              a.menu-toggle#mobileMenuToggle
+                i.fa.fa-bars
+              ul.masthead__list.rfcx-trans-linear.nav.nav-pills.pull-right
+                for item in nav_items
+                  if ((item[0] == current_page[0]) && item[4])
+                    li.masthead__list-item.active
+                      a.masthead__link= item[1]
+                      i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
+                  else if (item[4])
+                    li.masthead__list-item
+                      if (item[2].indexOf("://") != -1)
+                        a.masthead__link.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")= item[1]
+                      else
+                        a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
+                li.masthead__list-item
+                  a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
+            a(href="/").header__logo-link
+              img.header__logo-img(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="")
 
       block content
 
-      div.footer.lucida
-        div.footer-bg.dynamic-crop-right
-        div.container-narrow
-          ul.nav.nav-pills.pull-left
-            li.cp
-              span.copyright
-                | &copy;2014 Rainforest Connection &#0153;
+      footer.footer.lucida
+        .footer__i
+          ul.footer__left-list
+            li.footer__left-list-item.cp
+              span.footer__copyright
+                | &copy;2014 Rainforest Connection &trade;
+            li.footer__left-list-item.ft
+              img.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}", alt="")
 
-            li.ft
-              img.logo-footer-shuttleworth.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}")
-
-          for item in social_media
-            a.pull-right.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
-              i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
+          ul.footer__social-list
+            for item in social_media
+              li.footer__social-item
+                a.footer__social-link.hint--rounded(class=((1+social_media.indexOf(item)) % 2) ? "hint--top" : "hint--bottom", target="_blank",href="#{item[1]}", data-hint="#{item[3]}", )
+                  i.footer-social.rfcx-trans-linear.fa(class="fa-#{item[2]}")
 
     div.modal.hide.fade(id='contact', tabindex='-1', role='dialog', aria-labelledby='contact-label', aria-hidden='true')
       div.modal-header
         button.close(type='button', data-dismiss='modal', aria-hidden='true')
           i.fa.fa-times
-        h3#contact-label= "Contact"
+        h3#contact-label.contact-label= "Contact"
       div.modal-body
         div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='mailto:contact@rfcx.org';")
           span.lbl
@@ -123,24 +113,30 @@ html(lang="en")
       div.modal-footer
         button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
-    div#rfcx-menu-mobile
-      div.menu-bg
-      ul
-        li.roadgeek.header.rfcx-trans-67(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
-          span= "Rainforest Connection"
-          img.logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}")
+    #rfcx-menu-mobile.rfcx-menu-mobile
+      .rfcx-menu-mobile__bg
+      ul.rfcx-menu-mobile__list
+        li.rfcx-menu-mobile__list-item.roadgeek.header.rfcx-trans-67(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
+          span.rfcx-menu-mobile__ghost-text= "Rainforest Connection"
+          img.rfcx-menu-mobile__logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="Rainforest Connection")
         for item in nav_items
           if ((item[0] == current_page[0]) && item[4])
-            a(href="#")
-              li.roadgeek.active= item[1]
+            li.rfcx-menu-mobile__list-item.active
+              span.rfcx-menu-mobile__nolink.roadgeek= item[1]
           else if (item[4])
-            a(href="#{item[2]}")
-              li.roadgeek= item[1]
-        a(href="#contact", role="button", data-toggle="modal")
-          li.roadgeek= "Contact"
+            li.rfcx-menu-mobile__list-item
+              a.rfcx-menu-mobile__link.roadgeek(href="#{item[2]}")= item[1]
+        li.rfcx-menu-mobile__list-item
+          a.rfcx-menu-mobile__link.roadgeek(href="#contact", role="button", data-toggle="modal")= "Contact"
 
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css', id='font-awesome-4')
+    style(type="text/css").
+      @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/styles.css?v=#{app_version}')
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-preload.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-video.js?v=#{app_version}')
     script(type='text/javascript').
@@ -148,6 +144,4 @@ html(lang="en")
     if (node_env == "production")
       script(type='text/javascript').
         !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";analytics.load("#{segment_analytics_client_id}");analytics.page()}}();
-    div#rfcx-disclaimer-mobile
-      span
     div#fb-root

@@ -12,7 +12,7 @@ var RFCX = {
   cdn: { rfcx: null, rfcxVendor: null, rfcxStatic: null, bootstrap: null, cdnJs: null, videoJs: null },
   mapObj: null,
   timer: { windowResize: null, windowScroll: null },
-  bodyWidth: $('.container-narrow').innerWidth(),
+  bodyWidth: $('.content__i').innerWidth(),
   overflowMarginWidth: 250,
   renderForMobile: false,
   renderForTouch: $("html").hasClass("touch"),
@@ -34,16 +34,20 @@ var RFCX = {
   social: {
     addThis: { pubId: "", env: [ "production", "development" ] },
     followButtons: { env: [ "production", "development" ] }
-  }
+  },
+  isPhone: false,
+  isTablet: false
 };
 
 $(function(){
-  
+  $('#loadingContainer').fadeOut();
+
   $.ajaxSetup({ cache:true });
   
   RFCX.setDevMode();
 
-  RFCX.renderForMobile = (parseInt($("body").css("min-width")) < 512);
+  //RFCX.renderForMobile = (parseInt($("body").css("min-width")) < 512);
+  RFCX.renderForMobile = RFCX.isPhone;
 
   for (i in RFCX.fn.load) { RFCX.fn.load[i](); }
   for (i in RFCX.fn.ui[RFCX.currentPage]) { RFCX.fn.ui[RFCX.currentPage][i](); }
@@ -54,22 +58,33 @@ $(function(){
   RFCX.fn.initializeUi.onScroll();
   RFCX.fn.initializeUi.externalizeModalPopups();
   RFCX.fn.reactiveUi.setOnOrientationChange();
+  RFCX.fn.updateMobileVars();
 
   RFCX.setOlark();
 
 });
 
+// update phone and tablet variables according to window width
+// when window width takes tablet css media query then  #tabletDeviceContainer is set to none
+// when window width takes phone css media query then  #phoneDeviceContainer is set to none
+RFCX.fn.updateMobileVars = function() {
+    RFCX.isPhone  = $('#phoneDeviceContainer').css('display') == 'none';
+    RFCX.isTablet = $('#tabletDeviceContainer').css('display') == 'none';
+};
 
 RFCX.fn.initializeUi.onResize = function() {
   if (!RFCX.renderForMobile) {
-    RFCX.fn.reactiveUi.modifyOverWidthElements();
+    //RFCX.fn.reactiveUi.modifyOverWidthElements();
     $(window).resize(function(){
       clearTimeout(RFCX.timer.windowResize);
       RFCX.timer.windowResize = setTimeout(function(){
-        RFCX.fn.reactiveUi.modifyOverWidthElements();
+        //RFCX.fn.reactiveUi.modifyOverWidthElements();
       },100);
     });
   }
+  $(window).resize(function(){
+    RFCX.fn.updateMobileVars();
+  });
 }
 
 RFCX.fn.initializeUi.onScroll = function() {
@@ -86,19 +101,11 @@ RFCX.fn.initializeUi.hideMobileHeader = function() {
 }
 
 RFCX.fn.initializeUi.setupMobileMenu = function() {
-  if (RFCX.renderForMobile) {
-    RFCX.fn.insertCss(RFCX.cdn.rfcxVendor+"/snap.js/1.9.2/snap.css");
-    $.getScript(RFCX.cdn.rfcxVendor+"/snap.js/1.9.2/snap.min.js",function(){
-      RFCX.snapJsObj = new Snap({
-        element: document.getElementById("rfcx-container"),
-        disable: "left"
-      });
-    });
-    $(".masthead .menu-toggle").click(function(){
-        RFCX.snapJsObj.open("right");
-    });
-  }
-}
+  $("#mobileMenuToggle").click(function(){
+    $('#rfcx-menu-mobile').toggleClass('visible');
+    $('#rfcx-container').toggleClass('opened');
+  });
+};
 
 
 RFCX.fn.initializeUi.externalizeModalPopups = function() {
@@ -123,10 +130,10 @@ RFCX.fn.reactiveUi.scrollQueues = function() {
   }
 }
 
-RFCX.fn.reactiveUi.modifyOverWidthElements = function() {
-  var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
-  $(".dynamic-crop-right").css("width",newWidth);
-}
+//RFCX.fn.reactiveUi.modifyOverWidthElements = function() {
+//  var newWidth = RFCX.bodyWidth+RFCX.overflowMarginWidth+Math.floor(($('body').innerWidth()-RFCX.bodyWidth)/2);
+//  $(".dynamic-crop-right").css("width",newWidth);
+//}
 
 RFCX.fn.reactiveUi.setOnOrientationChange = function() {
   window.onorientationchange = function() {
@@ -247,8 +254,11 @@ RFCX.fn.ui.about.initMap = function(){
   RFCX.fn.insertCss("//d3voyrscnb0slx.cloudfront.net/cartodb.js/v3/themes/css/cartodb.css");
   $.getScript("//d3voyrscnb0slx.cloudfront.net/cartodb.js/v3/cartodb.js",function(){
 
+    //RFCX.mapObj = new L.Map('map-container', {
+    //  center:[2,60], zoom: (!RFCX.renderForMobile) ? 2 : 1, zoomControl: false
+    //});
     RFCX.mapObj = new L.Map('map-container', {
-      center:[2,60], zoom: (!RFCX.renderForMobile) ? 2 : 1, zoomControl: false
+      center:[2,60], zoom: 1, zoomControl: false
     });
     
     var mapUrls = {
@@ -333,7 +343,7 @@ RFCX.toggleBanner = function(onOff,inputObj) {
           +" onClick=\"RFCX.toggleBanner(false,{id:'"+id+"'});\""
           +" title=\"Remove this alert\" />"
       +"</div>");
-    RFCX.fn.reactiveUi.modifyOverWidthElements();
+    //RFCX.fn.reactiveUi.modifyOverWidthElements();
     $("#rfcx-banner-alert-"+id).animate({height:$("#rfcx-banner-alert-"+id+" .rfcx-banner-alert-btn").outerHeight()+"px"});
   } else if (onOff && (bannerContainer.length > 0)) {
     bannerContainer.animate({height:"0px"},function(){ $(this).remove(); RFCX.toggleBanner(onOff,inputObj); });

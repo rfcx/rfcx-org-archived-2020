@@ -1,0 +1,121 @@
+.footer {
+    background-color: #898989;
+    color: #ffffff;
+    font-size: 12px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    &__i {
+        width: 100%;
+        height: 50px;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        .box-sizing(border-box);
+    }
+    &__bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        background: #898989;
+    }
+    &__left-list {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        .translate(0, -50%);
+        font-size: 0;
+        text-align: left;
+    }
+    &__left-list-item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__social-list {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        .translate(0, -50%);
+        font-size: 0;
+        text-align: right;
+    }
+    &__social-item {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .footer-social {
+        font-size: 24px;
+        margin: 0 4px;
+        position: relative;
+        vertical-align: top;
+        text-decoration: none;
+        color: #ffffff;
+    }
+    &__social-link {
+        &:hover {
+            .footer-social {
+                color: #000000;
+            }
+        }
+    }
+    &__copyright {
+        font-size: 12px;
+    }
+    .container-narrow {
+        z-index: 1;
+    }
+    .hint--rounded {
+        &:after {
+            left: -103px;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .footer {
+        &__left-list {
+            left: 5%;
+        }
+        &__social-list {
+            right: 5%;
+        }
+        .hint--rounded {
+            &:after {
+                left: auto !important;
+                right: 0 !important;
+            }
+        }
+    }
+}
+
+@media @mobile {
+    .footer {
+        &__left-list {
+            display: none;
+        }
+        &__social-list {
+            right: auto;
+            left: 50%;
+            margin-right: -50%;
+            .translate(-50%, -50%);
+        }
+    }
+}

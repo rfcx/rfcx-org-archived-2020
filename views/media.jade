@@ -2,133 +2,138 @@ extends layout
 
 block content
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-1(style="text-align:center;")
-    div.span12
-      p.roadgeek.rfcx-header= "GREAT JOURNALISM DESERVES GREAT MATERIAL"
-      //-p.rfcx-body
-        //-span.help1= "We need you. The forests need you. "
-        //-span.help2= "The world needs you."
+  section.content.content_media
+    .content__i
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
+        div.span12
+          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= "GREAT JOURNALISM DESERVES GREAT MATERIAL"
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;padding-top:20px;padding-bottom:0px;")
-    div.span12      
-      p.rfcx-body(style="font-size:16px;")
-        span= "We're here to help you find what you're looking for."
-        
-  div.row-fluid.rfcx-row.rfcx-row-media-img(style="text-align:center;padding-top:0px;padding-bottom:20px;")
-    div.span3.offset3
-      p.roadgeek.rfcx-header= "CONTACT US:"
-      p.rfcx-body
-       
-    div.span3
-      p.rfcx-body
-        a(href="mailto:contact@rfcx.org")= "contact@rfcx.org"
-        br
-        | +1 (415) 335-9205
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-row-media-img_subtitle
+        div.span12
+          p.rfcx-body
+            span= "We're here to help you find what you're looking for."
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
-    div.span12
-      p.roadgeek.rfcx-header= "THE DEVICE"
-      p.rfcx-body
-        span= "NOTE: The following photos of RFCx hardware do not represent realistic placement locations, and are intended for display purposes only. In these photos, the devices are low-mounted on trees in order to enhance their visibility. When properly installed, RFCx devices are placed high in the tree canopy where they are virtually invisible."
+      div.row-fluid.rfcx-row.rfcx-row-media-img.rfcx-row-media-img_contacts.rfcx-row-media-contacts
+        p.rfcx-row-media-contacts__text.roadgeek.rfcx-header= "CONTACT US:"
+        .rfcx-row-media-contacts__links
+          p.rfcx-body
+            a.rfcx-row-media-contacts__link(href="mailto:contact@rfcx.org")= "contact@rfcx.org"
+            br
+            a.rfcx-row-media-contacts__link(href="tel:+14153359205")= "+1 (415) 335-9205"
 
-    for v,i in media_assets
-      if (v['category'] == 'device')
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
+        p.roadgeek.rfcx-header= "THE DEVICE"
+        p.rfcx-body
+          span= "NOTE: The following photos of RFCx hardware do not represent realistic placement locations, and are intended for display purposes only. In these photos, the devices are low-mounted on trees in order to enhance their visibility. When properly installed, RFCx devices are placed high in the tree canopy where they are virtually invisible."
 
-        if (v['type'] == 'image')
-          //-a(href="#popup-#{v['id']}", role='button', data-toggle='modal')
-          a(target="_blank",href="#{v['orig_link']}")
-            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
-          
-          script(type="text/javascript").
-            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+        .rfcx-media__thumbs
+          for v,i in media_assets
+            if (v['category'] == 'device')
+              if (v['type'] == 'image')
+                a.rfcx-media__thumb(target="_blank",href="#{v['orig_link']}",id='img_thmb_#{v["id"]}')
+                script(type="text/javascript").
+                  var img_#{v['id']} = new Image();
+                  img_#{v['id']}.className = 'rfcx-media__thumb-img';
+                  img_#{v['id']}.onload = function(){setSquImg(this);};
+                  img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random();
+                  img_#{v['id']}.alt = "";
+                  if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); }
+                  img_#{v['id']}.style.visibility='hidden';
+                  document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+              if (v['type'] == 'video')
+                iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
-        if (v['type'] == 'video')
-          iframe.rfcx-video-media(src='#{v["thmb"]}')
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
+        p.roadgeek.rfcx-header= "INFOGRAPHICS"
 
+        .rfcx-media__thumbs
+          for v,i in media_assets
+            if (v['category'] == 'illustration')
+              if (v['type'] == 'image')
+                a.rfcx-media__thumb(target='_blank',href="#{v['orig_link']}",id='img_thmb_#{v["id"]}')
+                script(type="text/javascript").
+                  var img_#{v['id']} = new Image();
+                  img_#{v['id']}.className = 'rfcx-media__thumb-img';
+                  img_#{v['id']}.onload = function(){setSquImg(this);};
+                  img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random();
+                  img_#{v['id']}.alt = "";
+                  if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); }
+                  img_#{v['id']}.style.visibility='hidden';
+                  document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+              if (v['type'] == 'video')
+                iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-media
+        p.roadgeek.rfcx-header= "THE ONES WE HELP TO PROTECT"
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
-    div.span12
-      p.roadgeek.rfcx-header= "INFOGRAPHICS"
-
-    for v,i in media_assets
-      if (v['category'] == 'illustration')
-
-        if (v['type'] == 'image')
-          a(target='_blank',href="#{v['orig_link']}")
-            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
-          script(type="text/javascript").
-            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
-
-        if (v['type'] == 'video')
-          iframe.rfcx-video-media(src='#{v["thmb"]}')
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-3(style="text-align:center;")
-
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
-    div.span12
-      p.roadgeek.rfcx-header= "THE ONES WE HELP TO PROTECT"
-
-    for v,i in media_assets
-      if (v['category'] == 'megafauna')
-
-        if (v['type'] == 'image')
-          a(target='_blank',href="#{v['orig_link']}")
-            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
-          script(type="text/javascript").
-            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
-
-        if (v['type'] == 'video')
-          iframe.rfcx-video-media(src='#{v["thmb"]}')
-
-
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
-    div.span12
-      p.roadgeek.rfcx-header= "RFCx IN THE FOREST"
-
-    for v,i in media_assets
-      if (v['category'] == 'installation')
-
-        if (v['type'] == 'image')
-          a(target='_blank',href="#{v['orig_link']}")
-            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
-          script(type="text/javascript").
-            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
-
-        if (v['type'] == 'video')
-          iframe.rfcx-video-media(src='#{v["thmb"]}')
+        .rfcx-media__thumbs
+          for v,i in media_assets
+            if (v['category'] == 'megafauna')
+              if (v['type'] == 'image')
+                a.rfcx-media__thumb(target='_blank',href="#{v['orig_link']}",id='img_thmb_#{v["id"]}')
+                script(type="text/javascript").
+                  var img_#{v['id']} = new Image();
+                  img_#{v['id']}.className = 'rfcx-media__thumb-img';
+                  img_#{v['id']}.onload = function(){setSquImg(this);};
+                  img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random();
+                  img_#{v['id']}.alt = "";
+                  if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); }
+                  img_#{v['id']}.style.visibility='hidden';
+                  document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+              if (v['type'] == 'video')
+                iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
 
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
+        p.roadgeek.rfcx-header= "RFCx IN THE FOREST"
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img(style="text-align:center;")
-    div.span12
-      p.roadgeek.rfcx-header= "PUTTING IT ALL TOGETHER"
+        .rfcx-media__thumbs
+          for v,i in media_assets
+            if (v['category'] == 'installation')
 
-    for v,i in media_assets
-      if (v['category'] == 'assembly')
+              if (v['type'] == 'image')
+                a.rfcx-media__thumb(target='_blank',href="#{v['orig_link']}",id='img_thmb_#{v["id"]}')
+                script(type="text/javascript").
+                  var img_#{v['id']} = new Image();
+                  img_#{v['id']}.className = 'rfcx-media__thumb-img';
+                  img_#{v['id']}.onload = function(){setSquImg(this);};
+                  img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random();
+                  img_#{v['id']}.alt = "";
+                  if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); }
+                  img_#{v['id']}.style.visibility='hidden';
+                  document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+              if (v['type'] == 'video')
+                iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
-        if (v['type'] == 'image')
-          a(target='_blank',href="#{v['orig_link']}")
-            div.rfcx-thmb.rfcx-thmb-media(id='img_thmb_#{v["id"]}')
-          script(type="text/javascript").
-            var img_#{v['id']} = new Image(); img_#{v['id']}.class = 'rfcx-media-thmb'; img_#{v['id']}.onload = function(){setSquImg(this);}; img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random(); if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); } img_#{v['id']}.style.visibility='hidden'; document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
+        p.roadgeek.rfcx-header= "PUTTING IT ALL TOGETHER"
 
-        if (v['type'] == 'video')
-          iframe.rfcx-video-media(src='#{v["thmb"]}')
+        .rfcx-media__thumbs
+          for v,i in media_assets
+            if (v['category'] == 'assembly')
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-3(style="text-align:center;")
+              if (v['type'] == 'image')
+                a.rfcx-media__thumb(target='_blank',href="#{v['orig_link']}",id='img_thmb_#{v["id"]}')
+                script(type="text/javascript").
+                  var img_#{v['id']} = new Image();
+                  img_#{v['id']}.className = 'rfcx-media__thumb-img';
+                  img_#{v['id']}.onload = function(){setSquImg(this);};
+                  img_#{v['id']}.src = '#{v["thmb"]}?v=#{app_version}&hash='+Math.random();
+                  img_#{v['id']}.alt = "";
+                  if (img_#{v['id']}.complete) { setSquImg(img_#{v['id']}); }
+                  img_#{v['id']}.style.visibility='hidden';
+                  document.getElementById('img_thmb_#{v["id"]}').appendChild(img_#{v['id']});
+              if (v['type'] == 'video')
+                iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
-
-
-  for v,i in media_assets
-    div.modal.hide.fade(id="popup-#{v['id']}", tabindex='-1', role='dialog', aria-labelledby="popup-#{v['id']}-label", aria-hidden='true')
-      div.modal-header
-        button.close(type='button', data-dismiss='modal', aria-hidden='true')
-          i.fa.fa-times
-        h3.roadgeek(id="popup-#{v['id']}-label")
-          | Rainforest Connection: #{v['category']}
-      div.modal-body(style="width:640px;")
-        img.rfcx-view-media(src="#{v['thmb']}")
-      div.modal-footer
-        button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+      for v,i in media_assets
+        div.modal.hide.fade(id="popup-#{v['id']}", tabindex='-1', role='dialog', aria-labelledby="popup-#{v['id']}-label", aria-hidden='true')
+          div.modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')
+              i.fa.fa-times
+            h3.roadgeek(id="popup-#{v['id']}-label")
+              | Rainforest Connection: #{v['category']}
+          div.modal-body(style="width:640px;")
+            img.rfcx-view-media(src="#{v['thmb']}", alt="")
+          div.modal-footer
+            button.btn(data-dismiss='modal',aria-hidden='true')= "Close"

@@ -1,0 +1,28 @@
+.footer-forest {
+    height: 425px;
+}
+
+.banner-donate {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+    }
+}
+
+@media @mobile{
+    .footer-forest {
+        height: 300px;
+    }
+    .banner-donate {
+        &__bg {
+            background-position: 25% center !important;
+        }
+    }
+}

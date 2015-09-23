@@ -2,113 +2,112 @@ extends layout
 
 block content
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-1(style="text-align:center;")
-    div.span12
-      p.roadgeek.rfcx-header= "Bring Rainforest Connection to Ecuador."
-      p.rfcx-body(style="padding-bottom:0px;")
-        span.help1(style="font-weight:bold;")= "RFCx has been invited to do a pilot project in the "
-        a.help1(href="http://bosquecerroblanco.org/en/",style="font-weight:bold;")= "Cerro Blanco"
-        span.help1(style="font-weight:bold;")= " reserve in Ecuador. "
-        br
-        br
-        span.help2= "The reserve is small (40 square miles), but it hosts an enormous amount of biodiversity. After implementation and advanced testing, the system will help protect the area and, even more importantly, act as a model demonstration of the technology."
-        br
-        br
-        span.help2= "The pilot is scheduled for a target start date of September/October, 2015. RFCx is registered as a 501(c)(3) nonprofit."
-        br
-        span.help2= "All donations are tax-deductible. Our nonprofit EIN # is 46-2022575."
+  section.content
+    .content__i
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-1(style="text-align:center;")
+        div.span12
+          p.roadgeek.rfcx-header= "Bring Rainforest Connection to Ecuador."
+          p.rfcx-body(style="padding-bottom:0px;")
+            span.help1(style="font-weight:bold;")= "RFCx has been invited to do a pilot project in the "
+            a.help1(href="http://bosquecerroblanco.org/en/",style="font-weight:bold;")= "Cerro Blanco"
+            span.help1(style="font-weight:bold;")= " reserve in Ecuador. "
+            br
+            br
+            span.help2= "The reserve is small (40 square miles), but it hosts an enormous amount of biodiversity. After implementation and advanced testing, the system will help protect the area and, even more importantly, act as a model demonstration of the technology."
+            br
+            br
+            span.help2= "The pilot is scheduled for a target start date of September/October, 2015. RFCx is registered as a 501(c)(3) nonprofit."
+            br
+            span.help2= "All donations are tax-deductible. Our nonprofit EIN # is 46-2022575."
 
-      p.rfcx-body(style="padding-top:0px;font-size:80%;")
-        | Want to learn more about Rainforest Connection?
-        br
-        a(style="margin-left:8px;",href="https://www.youtube.com/watch?v=ScrRZuaXtV0",target="_blank")
-          | Click here to watch a short introductory video »
+          p.rfcx-body(style="padding-top:0px;font-size:80%;")
+            | Want to learn more about Rainforest Connection?
+            br
+            a(style="margin-left:8px;",href="https://www.youtube.com/watch?v=ScrRZuaXtV0",target="_blank")
+              | Click here to watch a short introductory video »
 
-  div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-2(style="text-align:center;")
-
-
-    div.span6
-      p.roadgeek.rfcx-header
-        | Support RFC
-        span(style="text-transform:lowercase;")= "x "
-        | in Ecuador
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-2(style="text-align:center;")
 
 
-
-      div.control-group
-        br
-        form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
-          input(type="hidden", name="cmd", value="_s-xclick")
-          input(type="hidden", name="hosted_button_id", value="ZEMNV9Q5ALW6Y")
-          input(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", border="0", name="submit", alt="")
-          img(border="0", width="1", height="1", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif")
-
-      p.rfcx-body
-        | Make a real impact today.
-        br
-        | Your donation will go directly toward
-        br
-        | bringing Rainforest Connection to the
-        br
-        | Cerro Blanco reserve in Ecuador.
+        div.span6
+          p.roadgeek.rfcx-header
+            | Support RFC
+            span(style="text-transform:lowercase;")= "x "
+            | in Ecuador
 
 
 
+          div.control-group
+            br
+            form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
+              input(type="hidden", name="cmd", value="_s-xclick")
+              input(type="hidden", name="hosted_button_id", value="ZEMNV9Q5ALW6Y")
+              input(type="image", src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", border="0", name="submit", alt="")
+              img(border="0", width="1", height="1", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif")
+
+          p.rfcx-body
+            | Make a real impact today.
+            br
+            | Your donation will go directly toward
+            br
+            | bringing Rainforest Connection to the
+            br
+            | Cerro Blanco reserve in Ecuador.
 
 
-    hr.mobile-only
-
-    div.span6
-      img(src="//static.rfcx.org/tmp/ecuador/cerro-blanco.jpg",style="position:relative;width:90%;border:solid 1px gray;")
 
 
-   
-  div.container-narrow.footer-forest
-    img.footer-bg(src="#{rfcx_cdn}/img/get_involved/forest-footer.1400.jpg?v=#{app_version}")
 
-  div.modal.hide.fade(id='rfcx_donate_phone', tabindex='-1', role='dialog', aria-labelledby='rfcx_donate_phone_label', aria-hidden='true', style="width:500px;")
-    div.modal-header
-      button.close(type='button', data-dismiss='modal', aria-hidden='true')
-        i.fa.fa-times
-      h3.roadgeek#rfcx_donate_phone_label= "DONATE AN OLD SMARTPHONE"
-    div.modal-body
-      | Mail us your old smartphone.
-      br
-      br 
-      | We'll erase it, retrofit it and send it into the jungle for its second life as a tireless forest guardian.
-      br
-      br 
-      | Please send phones to this address:
-      br
-      br 
-      | Rainforest Connection
-      br
-      | 77 Van Ness Ave
-      br
-      | Suite 101-1717-
-      br
-      | San Francisco, CA, 94102
-    div.modal-footer
-      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+        hr.mobile-only
 
-  div.modal.hide.fade(id='make-donation', tabindex='-1', role='dialog', aria-labelledby='make-donation-label', aria-hidden='true')
-    div.modal-header
-      button.close(type='button', data-dismiss='modal', aria-hidden='true')
-        i.fa.fa-times
-      h3#make-donation-label
-        | Your contribution means so much to us!
-    div.modal-body
-      p(style="text-align:center;font-size:18px;font-weight:bold;")= "Thank you!"
-      div.control-group.form-donate
-        div.controls
-          div.left-label
-            | Amount:
-          div.input-append.input-prepend
-            span.add-on
-              | <span class="currency">USD</span> $
-            input.input-large#rfcx-donate-amount(type='text', data-type='number', data-required='true', name='rfcx-donate-amount', placeholder='USD',value='50.00', size='7', maxlength='7')
-            a.btn.btn-primary#stripe-payment-button= "Make a Donation"
+        div.span6
+          img(src="//static.rfcx.org/tmp/ecuador/cerro-blanco.jpg",style="position:relative;width:90%;border:solid 1px gray;")
 
-    div.modal-footer
-      button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+      div.modal.hide.fade(id='rfcx_donate_phone', tabindex='-1', role='dialog', aria-labelledby='rfcx_donate_phone_label', aria-hidden='true', style="width:500px;")
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+            i.fa.fa-times
+          h3.roadgeek#rfcx_donate_phone_label= "DONATE AN OLD SMARTPHONE"
+        div.modal-body
+          | Mail us your old smartphone.
+          br
+          br
+          | We'll erase it, retrofit it and send it into the jungle for its second life as a tireless forest guardian.
+          br
+          br
+          | Please send phones to this address:
+          br
+          br
+          | Rainforest Connection
+          br
+          | 77 Van Ness Ave
+          br
+          | Suite 101-1717-
+          br
+          | San Francisco, CA, 94102
+        div.modal-footer
+          button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
+      div.modal.hide.fade(id='make-donation', tabindex='-1', role='dialog', aria-labelledby='make-donation-label', aria-hidden='true')
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+            i.fa.fa-times
+          h3#make-donation-label
+            | Your contribution means so much to us!
+        div.modal-body
+          p(style="text-align:center;font-size:18px;font-weight:bold;")= "Thank you!"
+          div.control-group.form-donate
+            div.controls
+              div.left-label
+                | Amount:
+              div.input-append.input-prepend
+                span.add-on
+                  | <span class="currency">USD</span> $
+                input.input-large#rfcx-donate-amount(type='text', data-type='number', data-required='true', name='rfcx-donate-amount', placeholder='USD',value='50.00', size='7', maxlength='7')
+                a.btn.btn-primary#stripe-payment-button= "Make a Donation"
+
+        div.modal-footer
+          button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+
+    div.banner-donate.footer-forest
+      .banner-donate__bg(style="background: url(#{rfcx_cdn}/img/get_involved/forest-footer.1400.jpg?v=#{app_version}) no-repeat center center")

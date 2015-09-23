@@ -1,5 +1,5 @@
 {
-  "name": "rfcx-api-express",
+  "name": "rfcx.org",
   "version": "0.0.1",
   "private": false,
   "repository": {
@@ -23,6 +23,10 @@
     "serve-static": "^1.9.2"
   },
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
     "mocha": "*",
     "sinon": "*"
   }

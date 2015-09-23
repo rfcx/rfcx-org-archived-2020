@@ -506,6 +506,66 @@ input::-webkit-input-placeholder {
     font-weight: 300;
   }
 }
+.select-custom {
+  width: 100%;
+  max-height: 32px;
+  background: transparent url(/cdn/img/common/icon-arrow-down_black.png) no-repeat;
+  background-position: calc(100% - 5px) 50%;
+  background-size: 11px 6px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1b1b1b;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.select-custom select {
+  font: 16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #000000;
+  width: 150%;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 2px 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.select-custom select:focus {
+  outline: none;
+  background: transparent;
+}
+.select-custom select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+@media only screen and (max-width: 767px) {
+  .select-custom {
+    background-size: 9px 5px;
+    background-position: calc(100% - 4px) 50%;
+    position: relative;
+    max-height: 40px;
+  }
+  .select-custom:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% - 29px);
+    z-index: 1;
+  }
+  .select-custom select {
+    font-size: 14px;
+  }
+}
 .modal {
   top: 50%;
   left: 50%;
@@ -2383,4 +2443,44 @@ input::-webkit-input-placeholder {
     width: 98%;
     padding-bottom: 83.79%;
   }
+}
+.donatephone {
+  min-height: 600px;
+}
+.donatephone__title {
+  margin-bottom: 15px;
+}
+.donatephone__step {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 0;
+  border-top: 1px solid #e4e6e6;
+  border-bottom: 1px solid #e4e6e6;
+  text-align: center;
+}
+.donatephone__step_2,
+.donatephone__step_3 {
+  display: none;
+}
+.donatephone__question {
+  font: 18px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+.donatephone__question .many {
+  visibility: hidden;
+}
+.donatephone__question .many.visible {
+  visibility: visible;
+}
+.donatephone__select-container {
+  margin-bottom: 20px;
+}
+.donatephone__select {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  margin: 0 10px;
 }

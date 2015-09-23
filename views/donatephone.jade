@@ -1,7 +1,29 @@
 extends layout
+block additionalfiles
+  script(type='text/javascript', src='#{rfcx_cdn}/js/donatephone.js?v=#{app_version}')
 block content
-  section.content.content_about
+  section.content
     .content__i
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
-        div.span12
-          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= "Donate A Phone"
+      .donatephone
+        .donatephone__title
+          include common/help-silence-title
+        form#donateForm.donatephone__form(action="", method="post")
+          // public token from API, which is set on frontend
+          input#tokenInput(type="hidden", name="token", value="")
+          .donatephone__step.donatephone__step_1#donatePhoneStep1
+            .donatephone__select-container
+              p.donatephone__question I want to donate
+              span.select-custom.donatephone__select
+                select.select.js-select-phones-qty(name="phonesqty")
+                  option(value="1", selected="selected") 1
+                  option(value="2") 2
+                  option(value="3") 3
+                  option(value="4") 4
+                  option(value="5") 5
+              p.donatephone__question.js-smartphones-word.
+                smartphone<span class="many js-many">s</span>
+            button.btn.btn-success.btn-large#getStartedBtn(type="button") Get Started!
+          .donatephone__step.donatephone__step_2#donatePhoneStep2
+            | Step 2 Content
+          .donatephone__step.donatephone__step_3#donatePhoneStep3
+            | Step 3 Content

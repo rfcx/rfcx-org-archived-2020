@@ -59,3 +59,16 @@
     -ms-transform: 		 translate3d(@x, @y, @z);
     -o-transform: 		 translate3d(@x, @y, @z);
 }
+
+// Font mixins
+.roadgeek(@sizeValue) {
+    font: ~"@{sizeValue}px" 'roadgeek', sans-serif;
+}
+
+.lucida(@sizeValue) {
+    font: ~"@{sizeValue}px" "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.helvetica(@sizeValue) {
+    font: ~"@{sizeValue}px" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}

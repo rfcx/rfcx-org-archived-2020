@@ -1,0 +1,38 @@
+.donatephone {
+    min-height: 600px;
+    &__title {
+        margin-bottom: 15px;
+    }
+    &__step {
+        .box-sizing(border-box);
+        padding: 40px 0;
+        border-top: 1px solid #e4e6e6;
+        border-bottom: 1px solid #e4e6e6;
+        text-align: center;
+        &_2,
+        &_3 {
+            display: none;
+        }
+    }
+    &__question {
+        .helvetica(18);
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        .many {
+            visibility: hidden;
+            &.visible {
+                visibility: visible;
+            }
+        }
+    }
+    &__select-container {
+        margin-bottom: 20px;
+    }
+    &__select {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50px;
+        margin: 0 10px;
+    }
+}

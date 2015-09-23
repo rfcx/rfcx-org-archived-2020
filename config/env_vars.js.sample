@@ -6,9 +6,6 @@ exports.env = {
 
   SEGMENT_ANALYTICS_CLIENT_ID: "",
 
-  ADDTHIS_PUBID: "",
-
-  AWS_ACCESS_KEY_ID: "",
-  AWS_SECRET_KEY: "",
+  ADDTHIS_PUBID: ""
 
 }

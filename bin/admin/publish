@@ -13,12 +13,14 @@ then
     echo -e "\nYou chose to deploy to 'production'.\n"
     git checkout deploy;
     git merge master -m "Merging with master branch.";
+    $SCRIPT_DIR/version_increment;
     echo -e "\nExecuting deployment script (this may take a few minutes).\n"
     eb deploy rfcx-org-production;
   else
     echo -e "\nYou chose to deploy to 'staging'.\n"
     git checkout deploy;
     git merge master -m "Merging with master branch.";
+    $SCRIPT_DIR/version_increment;
     echo -e "\nExecuting deployment script (this may take a few minutes).\n"
     eb deploy rfcx-org-staging;
   fi

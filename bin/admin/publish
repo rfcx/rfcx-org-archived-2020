@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+export SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+cd $SCRIPT_DIR/../../;
+
+read -p "Are you sure you want to deploy this version to AWS? (y/n): " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  echo -e "\nYou chose 'yes'.\n";
+  read -p "Would you like to deploy to the (s)taging or (p)roduction environment? (s/p): " -n 1 -r
+  if [[ $REPLY =~ ^[Pp]$ ]]
+  then
+    echo -e "\nYou chose to deploy to 'production'.\n"
+    git checkout deploy;
+    git merge master -m "Merging with master branch.";
+    echo -e "\nExecuting deployment script (this may take a few minutes).\n"
+    eb deploy rfcx-org-production;
+  else
+    echo -e "\nYou chose to deploy to 'staging'.\n"
+    git checkout deploy;
+    git merge master -m "Merging with master branch.";
+    echo -e "\nExecuting deployment script (this may take a few minutes).\n"
+    eb deploy rfcx-org-staging;
+  fi
+  git checkout master;
+  eb status;
+else
+  echo -e "\nYou chose NOT to deploy the application to AWS.\n";
+  git checkout master;
+fi

@@ -32,6 +32,20 @@ block content
                   li.donatephone__benefit-item lorem ipsum sit amet
                   li.donatephone__benefit-item lorem ipsum dolor sit amet ipsum sit amet dolor
           .donatephone__step.donatephone__step_2#donatePhoneStep2
-            | Step 2 Content
+            .donatephone__left
+              .donatephone__text Please type your E-mail address here:
+              .donatephone__input-container.input-append
+                input.donatephone__email-input.span2(type="email", name="email", required)
+                button.btn.btn-success.btn-large(type="submit") Send
+            .donatephone__right
+              .donatephone__benefits
+                p.donatephone__text Why do we need this?
+                ul.donatephone__benefits-list
+                  li.donatephone__benefit-item We will use this E-mail to send your personal token
+                  li.donatephone__benefit-item lorem ipsum sit amet
+                  li.donatephone__benefit-item lorem ipsum dolor sit amet ipsum sit
           .donatephone__step.donatephone__step_3#donatePhoneStep3
-            | Step 3 Content
+            .donatephone__text.donatephone__text_huge
+              | Your personal token is <b>ebhoinr83v7n0t</b>
+            .donatephone__text
+              | Please include it in the box with your phone

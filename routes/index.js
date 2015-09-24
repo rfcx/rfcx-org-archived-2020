@@ -40,6 +40,7 @@ function setJadeVars(process, jV) {
   jV.addthis_pubid = process.env.ADDTHIS_PUBID;
   jV.bootstrap_cdn = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
+  jV.jsdelivr_cdn = inProd ? "//cdn.jsdelivr.net" : "/vendor";
   jV.videojs_cdn = inProd ? "//vjs.zencdn.net" : "/vendor/video.js";
   jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";
   jV.rfcx_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/cdn" : "/cdn";

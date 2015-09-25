@@ -117,6 +117,18 @@
     }
     &__email-input {
         padding: 11px !important;
+        height: auto !important;
+    }
+}
+
+@media @tablet {
+    .donatephone {
+        &__left {
+            width: 50%;
+        }
+        &__right {
+            width: 50%;
+        }
     }
 }
 
@@ -124,6 +136,7 @@
     .donatephone {
         padding-left: 3%;
         padding-right: 3%;
+        min-height: 0;
         &__left,
         &__right {
             width: 100%;

@@ -2624,11 +2624,21 @@ input::-webkit-input-placeholder {
 }
 .donatephone__email-input {
   padding: 11px !important;
+  height: auto !important;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .donatephone__left {
+    width: 50%;
+  }
+  .donatephone__right {
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 767px) {
   .donatephone {
     padding-left: 3%;
     padding-right: 3%;
+    min-height: 0;
   }
   .donatephone__left,
   .donatephone__right {

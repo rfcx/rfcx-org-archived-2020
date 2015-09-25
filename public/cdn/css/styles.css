@@ -35,6 +35,30 @@
 .bold {
   font-weight: bold;
 }
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #b94a48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: #b94a48;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.parsley-errors-list.filled {
+  opacity: 1;
+}
 body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -565,6 +589,16 @@ input::-webkit-input-placeholder {
   .select-custom select {
     font-size: 14px;
   }
+}
+.form__row {
+  position: relative;
+}
+.form__row .parsley-errors-list {
+  position: absolute;
+}
+.form .parsley-errors-list {
+  font: 12px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1;
 }
 .modal {
   top: 50%;

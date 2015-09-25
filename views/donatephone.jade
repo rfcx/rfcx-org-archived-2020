@@ -1,13 +1,14 @@
 extends layout
 block additionalfiles
   script(type='text/javascript', src='#{rfcx_cdn}/js/donatephone.js?v=#{app_version}')
+  script(type='text/javascript', src='/vendor/parsley.js/2.2.0/parsley.min.js?v=#{app_version}')
 block content
   section.content
     .content__i
       .donatephone
         .donatephone__title
           include common/help-silence-title
-        form#donateForm.donatephone__form(action="", method="post")
+        form#donateForm.form.donatephone__form(action="", method="post", data-parsley-validate)
           // public token from API, which is set on frontend
           input#tokenInput(type="hidden", name="token", value="")
           .donatephone__step.donatephone__step_1#donatePhoneStep1
@@ -34,8 +35,8 @@ block content
           .donatephone__step.donatephone__step_2#donatePhoneStep2
             .donatephone__left
               .donatephone__text Please type your E-mail address here:
-              .donatephone__input-container.input-append
-                input.donatephone__email-input.span2(type="email", name="email", required)
+              .donatephone__input-container.input-append.form__row
+                input.donatephone__email-input.span2(type="email", name="email", data-parsley-trigger="change", required)
                 button.btn.btn-success.btn-large(type="submit") Send
             .donatephone__right
               .donatephone__benefits

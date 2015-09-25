@@ -1,0 +1,28 @@
+input,
+select,
+textarea {
+//    &.parsley-success {
+//        color: #468847;
+//        background-color: #DFF0D8;
+//        border: 1px solid #D6E9C6;
+//    }
+    &.parsley-error {
+        color: @validationError;
+        background-color: #F2DEDE;
+        border: 1px solid #EED3D7;
+    }
+}
+
+.parsley-errors-list {
+    margin: 2px 0 3px;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    opacity: 0;
+    color: @validationError;
+    .transition(all .3s ease-in);
+    &.filled {
+        opacity: 1;
+    }
+}

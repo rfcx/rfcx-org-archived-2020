@@ -20,12 +20,7 @@ block content
             br.only-desktop
             | your address to anyone else.
 
-            form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us9.list-manage.com/subscribe/post?u=979004c94b83bcd925931d541&amp;id=58fbf16b44", method="post")
-              div.control-group.email-sign-up
-                div.controls
-                  div.input-append
-                    input.input-large.email#mce-EMAIL(type='text', data-type='email', data-required='true', name='EMAIL', placeholder='Your email', required)
-                    a.btn.btn-success= "Sign up"
+            include common/email-signup-form
 
         hr.mobile-only
 

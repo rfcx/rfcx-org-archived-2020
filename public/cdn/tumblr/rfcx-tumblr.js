@@ -30,25 +30,6 @@
     }});
   }
 
-function emailSubscribeFormSetup() {
-
-  if ($("form.rfcx-form").length > 0) {
-    $.getScript("http://cdn.rfcx.org/vendor/parsley.js/1.1.16/parsley.min.js",function(){
-      $("#mc-embedded-subscribe-form").submit(function(){
-        var isEmailValid = $("input.input-large.email").parsley("validate");
-        if (!isEmailValid) {
-          alert("Please enter a valid e-mail.");
-        }
-        return isEmailValid;
-      });
-      $("#mc-embedded-subscribe-form a.btn-success").click(function(){
-        $("#mc-embedded-subscribe-form").submit();
-      });
-    });
-  }
-
-}
-
 function loadDisqus() {
   window.disqus_shortname = 'rfcx-tumblr';
   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);

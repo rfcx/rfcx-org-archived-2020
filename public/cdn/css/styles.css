@@ -463,6 +463,9 @@ body {
   z-index: 99999;
   background: #fff;
 }
+.rfcx-form .input-append {
+  position: relative;
+}
 input::-webkit-input-placeholder {
   color: #cccccc;
 }
@@ -593,10 +596,8 @@ input::-webkit-input-placeholder {
 .form__row {
   position: relative;
 }
-.form__row .parsley-errors-list {
+.parsley-errors-list {
   position: absolute;
-}
-.form .parsley-errors-list {
   font: 12px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1;
 }
@@ -1288,6 +1289,9 @@ input::-webkit-input-placeholder {
   }
 }
 @media only screen and (max-width: 767px) {
+  .rfcx-row-sctn-join {
+    padding-bottom: 20px;
+  }
   .rfcx-row-sctn-join .span12 {
     padding-right: 0;
     min-height: 0;

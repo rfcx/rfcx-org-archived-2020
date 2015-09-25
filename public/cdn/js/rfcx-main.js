@@ -288,24 +288,6 @@ RFCX.fn.ui.about.animateHelpCalls = function() {
 }
 
 
-RFCX.fn.ui.all.emailSubscribeFormSetup = function() {
-
-  if ($("form.rfcx-form").length > 0) {
-    $.getScript(RFCX.cdn.cdnJs+"/parsley.js/1.1.16/parsley.min.js",function(){
-      $("#mc-embedded-subscribe-form").submit(function(){
-        var isEmailValid = $("input.input-large.email").parsley("validate");
-        if (!isEmailValid) {
-          alert("Please enter a valid e-mail.");
-        }
-        return isEmailValid;
-      });
-      $("#mc-embedded-subscribe-form a.btn-success").click(function(){
-        $("#mc-embedded-subscribe-form").submit();
-      });
-    });
-  }
-}
-
 RFCX.fn.ui.press.loadPress = function(){
   $.getScript(RFCX.cdn.rfcx+"/js/rfcx-press.js",function(){
     RFCX.fn.ui.press.loadPressClippings();

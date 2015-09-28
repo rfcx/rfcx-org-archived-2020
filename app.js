@@ -19,8 +19,19 @@ var express = require("express"), routes = require("./routes"),
   morganLogger = require("morgan"), methodOverride = require("method-override"),
   favicon = require("serve-favicon"),
   compression = require("compression"), serveStatic = require("serve-static"),
+  i18n = require('i18n-2'),
+  cookieParser = require('cookie-parser'),
   middlewares = require("./middlewares/all.js").middlewares;
 var app = express();
+
+i18n.expressBind(app, {
+  //setup some locales - other locales default to en silently
+  locales: ['en', 'ru', 'de'],
+  defaultLocale: 'en',
+  extension: '.json',
+  // setup cookie 'lang' to some of locale on frontend or backend
+  cookieName: 'lang'
+});
 
 app.set("title", "Rainforest Connection");
 app.set("port", process.env.PORT || 8080);
@@ -29,6 +40,7 @@ app.set("view engine", "jade");
 app.use(favicon("./public/cdn/img/logo/favicon.ico"));
 app.use(morganLogger("dev"));
 app.use(methodOverride());
+app.use(cookieParser());
 app.use(middlewares.allowCrossDomain);
 app.use(compression());
 app.use(serveStatic(path.join(__dirname, "public")));
@@ -36,6 +48,11 @@ app.use(serveStatic(path.join(__dirname, "public")));
 if (process.env.NODE_ENV === "development") {
   app.use(errorHandler());
 }
+
+app.use(function(req, res, next) {
+  req.i18n.setLocaleFromCookie();
+  next();
+});
 
 app.get("/ks", function(req,res){
   res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );

@@ -53,6 +53,7 @@ exports.navItems = navItems;
 
 exports.page = function(req, res, process){
   var navItem = [];
+  var locale = req.i18n.getLocale();
   for (var i = 0; i < navItems.length; i++) {
     if (req.route.path === navItems[i][2]) {
       navItem = navItems[i]; break;
@@ -69,7 +70,8 @@ exports.page = function(req, res, process){
     res.setHeader("Access-Control-Allow-Origin","*");
     res.render(navItem[0], setJadeVars(process, {
       current_page: navItem,
-      http_headers: req.headers
+      http_headers: req.headers,
+      locale: locale
     }));
   }
 };

@@ -35,6 +35,17 @@
 .bold {
   font-weight: bold;
 }
+.lang-ru .roadgeek {
+  letter-spacing: 0;
+}
+.lang-ru .roadgeek span {
+  font-size: 0.6em;
+  line-height: 0.6em;
+}
+.lang-de .roadgeek span {
+  font-size: 0.9em;
+  line-height: 0.9em;
+}
 body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -1583,6 +1594,7 @@ input::-webkit-input-placeholder {
   z-index: 1;
   line-height: 48px;
   text-transform: uppercase;
+  width: 40%;
 }
 .banner-video .slogan p.roadgeek {
   font-size: 48px;

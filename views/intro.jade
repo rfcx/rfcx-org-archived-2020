@@ -33,12 +33,7 @@ block content
 
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
         p.roadgeek.rfcx-header.rfcx-intro-what-title
-          span= __("We")
-          | &nbsp;
-          span.ul= __("can")
-          | &nbsp;
-          span= __("stop illegal logging and poaching")
-          | .
+          span!= __("We %scan%s stop illegal logging and poaching.", '<span class="ul">', '</span>')
         .rfcx-row-intro-what__i
           div.span6
             div.rfcx-trans-linear.rfcx-crnr-5.infographic-box
@@ -46,25 +41,13 @@ block content
               img.infographic-box__img.infographic-box__img_bg.infographic-thmb-bg(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}", alt="")
           div.span6.intro-what-text-container
             p.intro-what-text-container__p.roadgeek.rfcx-header
-              span= __("Every minute counts")
-              | .
+              span= __("Every minute counts.")
               br
-              span= __("Real-time awareness means")
-              br
-              span= __("real-time intervention")
-              | .
+              span!= __("Real-time awareness means %sreal-time intervention.", '<br>')
             p.intro-what-text-container__p.rfcx-body
-              span.bold Rainforest Connection
-              | (RFCx)
-              span= __("transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance")
-              | .
+              span!= __('%sRainforest Connection%s (RFCx) transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.', '<span class="bold">', '</span>')
             p.intro-what-text-container__p.rfcx-body
-              span= __("This changes the game by providing the world's first real-time logging detection system, pinpointing deforestation activity")
-              | &nbsp;
-              span.italic= __("as it occurs")
-              | ,
-              span= __("and providing the data openly, freely, and immediately to anyone around the world")
-              | .
+              span!= __('This changes the game by providing the world\'s first real-time logging detection system, pinpointing deforestation activity %sas it occurs%s, and providing the data openly, freely, and immediately to anyone around the world. ', '<span class="italic">', '</span>')
             p.intro-what-text-container__p.rfcx-body
               span= __("For the first time on a scalable level, responsible agents can arrive on the scene in time to interrupt the perpetrators and stop the damage, and the world can listen in as it occurs.")
               br

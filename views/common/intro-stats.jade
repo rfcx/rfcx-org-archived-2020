@@ -8,9 +8,7 @@ div.row-fluid.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats_content
       span.rfcx-row-intro-stats__tablet-wrapper
         span.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-globe.70.png?v=#{app_version})")
       span.rfcx-row-intro-stats__content
-        span= __("...is a leading cause of")
-        br
-        span.conclusion= __("climate change.")
+        span!= __("...is a leading cause of %s%sclimate change.%s", '<br>', '<span class="conclusion">', '</span>')
         br
         span.source= "-United Nations"
         span.rfcx-row-intro-stats__wrapper
@@ -20,9 +18,7 @@ div.row-fluid.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats_content
       span.rfcx-row-intro-stats__tablet-wrapper
         span.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-death.70.png?v=#{app_version})")
       span.rfcx-row-intro-stats__content
-        span= __("...is causing global")
-        br
-        span.conclusion= __("mass extinctions.")
+        span!= __("...is causing global %s%smass extinctions.%s", '<br>', '<span class="conclusion">', '</span>')
         br
         span.source= "-United Nations"
         span.rfcx-row-intro-stats__wrapper
@@ -33,9 +29,7 @@ div.row-fluid.rfcx-row.rfcx-row-intro-stats.rfcx-row-intro-stats_content
       span.rfcx-row-intro-stats__tablet-wrapper
         span.icon(style="background-image:url(#{rfcx_cdn}/img/intro/stats-icon-alert.70.png?v=#{app_version})")
       span.rfcx-row-intro-stats__content
-        span= __("...is mostly caused by")
-        br
-        span.conclusion= __("illegal activity.")
+        span!= __("...is mostly caused by%s%sillegal activity.%s", '<br>', '<span class="conclusion">', '</span>')
         br
         span.source= "-Interpol"
         span.rfcx-row-intro-stats__wrapper

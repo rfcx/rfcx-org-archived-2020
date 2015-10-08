@@ -102,5 +102,6 @@
 	"...is a leading cause of %s%sclimate change.%s": "...is a leading cause of %s%sclimate change.%s",
 	"...is causing global %s%smass extinctions.%s": "...is causing global %s%smass extinctions.%s",
 	"...is mostly caused by%s%sillegal activity.%s": "...is mostly caused by%s%sillegal activity.%s",
-	"...is causing global %s%s mass extinctions.%s": "...is causing global %s%s mass extinctions.%s"
+	"...is causing global %s%s mass extinctions.%s": "...is causing global %s%s mass extinctions.%s",
+	"Stay informed by signing up for our %semail newsletter%s.": "Stay informed by signing up for our %semail newsletter%s."
 }

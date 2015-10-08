@@ -11,7 +11,7 @@ exports.middleware = {
   getSetLanguage: function(req, res, next) {
     req.language = "en";
     var languageSection = req.url.substr(0,1+req.url.lastIndexOf("/")),
-        languageOptions = [ "fr", "jp" ];
+        languageOptions = [ "en", "de", "ru" ];
     var urls = []; for (i in languageOptions) { urls.push("/"+languageOptions[i]+"/"); }
 
     if (urls.indexOf(languageSection) > -1) {

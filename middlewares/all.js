@@ -10,12 +10,14 @@ exports.middleware = {
 
   getSetLanguage: function(req, res, next) {
     req.language = "en";
+    req.language_url = "";
     var languageSection = req.url.substr(0,1+req.url.lastIndexOf("/")),
         languageOptions = [ "en", "de", "ru" ];
     var urls = []; for (i in languageOptions) { urls.push("/"+languageOptions[i]+"/"); }
 
     if (urls.indexOf(languageSection) > -1) {
       req.language = languageOptions[urls.indexOf(languageSection)];
+      req.language_url = "/"+req.language;
       req.url = req.url.substr(("/"+req.language).length);
       // TO DO: maybe add something so that un-supported languages still render, but fallback to "en"
  //   } else if (languageSection.length > 0) {

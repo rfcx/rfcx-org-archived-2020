@@ -21,7 +21,7 @@ var express = require("express"), routes = require("./routes"),
   compression = require("compression"), serveStatic = require("serve-static"),
   i18n = require('i18n-2'),
   cookieParser = require('cookie-parser'),
-  middlewares = require("./middlewares/all.js").middlewares;
+  middleware = require("./middlewares/all.js").middleware;
 var app = express();
 
 i18n.expressBind(app, {
@@ -41,7 +41,8 @@ app.use(favicon("./public/cdn/img/logo/favicon.ico"));
 app.use(morganLogger("dev"));
 app.use(methodOverride());
 app.use(cookieParser());
-app.use(middlewares.allowCrossDomain);
+app.use(middleware.allowCrossDomain);
+app.use(middleware.getSetLanguage);
 app.use(compression());
 app.use(serveStatic(path.join(__dirname, "public")));
 

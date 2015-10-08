@@ -19,7 +19,7 @@ var express = require("express"), routes = require("./routes"),
   morganLogger = require("morgan"), methodOverride = require("method-override"),
   favicon = require("serve-favicon"),
   compression = require("compression"), serveStatic = require("serve-static"),
-  middlewares = require("./middlewares/all.js").middlewares;
+  middleware = require("./middlewares/all.js").middleware;
 var app = express();
 
 app.set("title", "Rainforest Connection");
@@ -29,7 +29,8 @@ app.set("view engine", "jade");
 app.use(favicon("./public/cdn/img/logo/favicon.ico"));
 app.use(morganLogger("dev"));
 app.use(methodOverride());
-app.use(middlewares.allowCrossDomain);
+app.use(middleware.allowCrossDomain);
+app.use(middleware.getSetLanguage);
 app.use(compression());
 app.use(serveStatic(path.join(__dirname, "public")));
 

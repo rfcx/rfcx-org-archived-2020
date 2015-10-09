@@ -6,113 +6,89 @@ block content
     .content__i
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
         div.span12
-          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= "Help silence the chainsaws."
+          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= __("Help silence the chainsaws.")
           p.rfcx-body
-            span.help1= "We need you. The forests need you. "
-            span.help2= "The world needs you."
+            span.help1
+              span= __("We need you. ")
+              span= __("The forests need you. ")
+            span.help2= __("The world needs you.")
 
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-get_involved-2(style="text-align:center;")
         div.span4.col-sign-up
-          p.roadgeek.rfcx-header= "Stay informed"
+          p.roadgeek.rfcx-header= __("Stay informed")
           .rfcx-body
-            | Sign up for our newsletter.
-            br.only-desktop
-            | Big things are in the works, and
-            br.only-desktop
-            | we want you to be the first to know.
-            br.only-desktop
-            | We will never sell or disclose
-            br.only-desktop
-            | your address to anyone else.
-
+            span!= __("Sign up for our newsletter. %s", '<br class="only-desktop">')
+            span!= __("Big things are in the works, and %swe want you to be the first to know. %sWe will never sell or disclose %syour address to anyone else.", '<br class="only-desktop">', '<br class="only-desktop">', '<br class="only-desktop">')
             form.rfcx-form#mc-embedded-subscribe-form(name="mc-embedded-subscribe-form", target="_blank", action="https://rfcx.us9.list-manage.com/subscribe/post?u=979004c94b83bcd925931d541&amp;id=58fbf16b44", method="post")
               div.control-group.email-sign-up
                 div.controls
                   div.input-append
-                    input.input-large.email#mce-EMAIL(type='text', data-type='email', data-required='true', name='EMAIL', placeholder='Your email', required)
-                    a.btn.btn-success= "Sign up"
+                    input.input-large.email#mce-EMAIL(type='text', data-type='email', data-required='true', name='EMAIL', placeholder=__('Your email'), required)
+                    a.btn.btn-success= __("Sign up")
 
         hr.mobile-only
 
         div.span4
-          p.roadgeek.rfcx-header= "Donate money"
+          p.roadgeek.rfcx-header= __("Donate money")
           p.rfcx-body
-            | Make a real impact. Help us grow.
-            br.only-desktop
-            | As a bootstrapped startup, financial
-            br.only-desktop
-            | donations are the single most impactful
-            br.only-desktop
-            | contribution you can make to our cause,
-            br.only-desktop
-            | and making a donation is fast and easy.
-
+            span!= __('Make a real impact. Help us grow. %s', '<br class="only-desktop">')
+            span!= __('As a bootstrapped startup, financial %sdonations are the single most impactful. %sContribution you can make to our cause, %sand making a donation is fast and easy.', '<br class="only-desktop">', '<br class="only-desktop">', '<br class="only-desktop">')
           div.control-group
             include common/donate-form
 
         hr.mobile-only
 
         div.span4
-          p.roadgeek.rfcx-header= "Donate a phone"
+          p.roadgeek.rfcx-header= __("Donate a phone")
           p.rfcx-body
-            | Mail us your old smartphone.
-            br.only-desktop
-            | We'll erase it, retrofit it and send it
-            br.only-desktop
-            | into the jungle for its second life
-            br.only-desktop
-            | as a tireless forest guardian.
-            br.only-desktop
+            span!= __('Mail us your old smartphone. %sWe\'ll erase it, retrofit it and send it %sinto the jungle for its second life %sas a tireless forest guardian.%s', '<br class="only-desktop">', '<br class="only-desktop">', '<br class="only-desktop">', '<br class="only-desktop">')
             span(style="visibility:hidden;")= "."
 
           div.control-group.phone-donate
             div.controls
-              a.btn.btn-gray#phone-donate-button(href="#rfcx_donate_phone", role="button", data-toggle="modal")= "Donate a smartphone"
+              a.btn.btn-gray#phone-donate-button(href="#rfcx_donate_phone", role="button", data-toggle="modal")= __("Donate a smartphone")
 
-      div.modal.hide.fade(id='rfcx_donate_phone', tabindex='-1', role='dialog', aria-labelledby='rfcx_donate_phone_label', aria-hidden='true', style="width:500px;")
-        div.modal-header
-          button.close(type='button', data-dismiss='modal', aria-hidden='true')
-            i.fa.fa-times
-          h3.roadgeek#rfcx_donate_phone_label= "DONATE AN OLD SMARTPHONE"
-        div.modal-body
-          | Mail us your old smartphone.
-          br
-          br
-          | We'll erase it, retrofit it and send it into the jungle for its second life as a tireless forest guardian.
-          br
-          br
-          | Please send phones to this address:
-          br
-          br
-          | Rainforest Connection
-          br
-          | 77 Van Ness Ave
-          br
-          | Suite 101-1717-
-          br
-          | San Francisco, CA, 94102
-        div.modal-footer
-          button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+      //div.modal.hide.fade(id='rfcx_donate_phone', tabindex='-1', role='dialog', aria-labelledby='rfcx_donate_phone_label', aria-hidden='true', style="width:500px;")
+      //  div.modal-header
+      //    button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      //      i.fa.fa-times
+      //    h3.roadgeek#rfcx_donate_phone_label= "DONATE AN OLD SMARTPHONE"
+      //  div.modal-body
+      //    | Mail us your old smartphone.
+      //    br
+      //    br
+      //    | We'll erase it, retrofit it and send it into the jungle for its second life as a tireless forest guardian.
+      //    br
+      //    br
+      //    | Please send phones to this address:
+      //    br
+      //    br
+      //    | Rainforest Connection
+      //    br
+      //    | 77 Van Ness Ave
+      //    br
+      //    | Suite 101-1717-
+      //    br
+      //    | San Francisco, CA, 94102
+      //  div.modal-footer
+      //    button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
 
       div.modal.hide.fade(id='make-donation', tabindex='-1', role='dialog', aria-labelledby='make-donation-label', aria-hidden='true')
         div.modal-header
           button.close(type='button', data-dismiss='modal', aria-hidden='true')
             i.fa.fa-times
-          h3#make-donation-label
-            | Your contribution means so much to us!
+          h3#make-donation-label= __('Your contribution means so much to us!')
         div.modal-body
-          p(style="text-align:center;font-size:18px;font-weight:bold;")= "Thank you!"
+          p(style="text-align:center;font-size:18px;font-weight:bold;")= __("Thank you!")
           div.control-group.form-donate
             div.controls
-              div.left-label
-                | Amount:
+              div.left-label= __('Amount:')
               div.input-append.input-prepend
-                span.add-on
-                  | <span class="currency">USD</span> $
-                input.input-large#rfcx-donate-amount(type='text', data-type='number', data-required='true', name='rfcx-donate-amount', placeholder='USD',value='50.00', size='7', maxlength='7')
-                a.btn.btn-primary#stripe-payment-button= "Make a Donation"
+                span.add-on!= __('%sUSD%s', '<span class="currency">', '</span>')
+                input.input-large#rfcx-donate-amount(type='text', data-type='number', data-required='true', name='rfcx-donate-amount', placeholder=__('USD'),value='50.00', size='7', maxlength='7')
+                a.btn.btn-primary#stripe-payment-button= __("Make a Donation")
 
         div.modal-footer
-          button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+          button.btn(data-dismiss='modal',aria-hidden='true')= __("Close")
 
     include common/banner-donate

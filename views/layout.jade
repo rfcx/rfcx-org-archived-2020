@@ -26,7 +26,7 @@ html(lang="en")
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> <![endif]-->
     | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> <![endif]-->
-  body.helvetica
+  body(class="helvetica lang-#{locale}")
     #loadingContainer.loading-container(style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: #fff;")
     #phoneDeviceContainer
     #tabletDeviceContainer
@@ -42,17 +42,21 @@ html(lang="en")
                 for item in nav_items
                   if ((item[0] == current_page[0]) && item[4])
                     li.masthead__list-item.active
-                      a.masthead__link= item[1]
+                      a.masthead__link
+                        span= __(item[1])
                       i.fa.fa-sort-up(id="masthead-notch-#{item[0]}")
                   else if (item[4])
                     li.masthead__list-item
                       if (item[2].indexOf("://") != -1)
-                        a.masthead__link.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")= item[1]
+                        a.masthead__link.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{locale_url}#{item[2]}")
+                          span= __(item[1])
                       else
-                        a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")= item[1]
+                        a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#{locale_url}#{item[2]}")
+                          span= __(item[1])
                 li.masthead__list-item
-                  a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")= "Contact"
-            a(href="/").header__logo-link
+                  a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")
+                    span= __("Contact")
+            a(href="#{locale_url}/").header__logo-link
               img.header__logo-img(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="")
 
       block content
@@ -62,7 +66,7 @@ html(lang="en")
           ul.footer__left-list
             li.footer__left-list-item.cp
               span.footer__copyright
-                | &copy;2014 Rainforest Connection &trade;
+                | &copy;2015 Rainforest Connection &trade;
             li.footer__left-list-item.ft
               img.rfcx-crnr-5(src="#{rfcx_cdn}/img/masthead/shuttleworth-funded.156.png?v=#{app_version}", alt="")
 
@@ -76,30 +80,30 @@ html(lang="en")
       div.modal-header
         button.close(type='button', data-dismiss='modal', aria-hidden='true')
           i.fa.fa-times
-        h3#contact-label.contact-label= "Contact"
+        h3#contact-label.contact-label= __("Contact")
       div.modal-body
         div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='mailto:contact@rfcx.org';")
           span.lbl
             i.fa.fa-inbox
-            | Email:
+            span= __("Email")
+            | :
           div.bdy
             | contact@rfcx.org
         div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.mobile-exclude(onClick="RFCX.forceOlark();")
           span.lbl
             i.fa.fa-comment
             | LiveChat:
-          div.bdy
-            | Click to Launch
+          div.bdy= __("Click to Launch")
         div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn(onClick="parent.location='tel:+14153359205';")
           span.lbl
-            i.fa.fa-phone-square
-            | Phone:
+            i.fa.fa-phone-square= __("Phone")
+            | :
           div.bdy
             | +1 (415) 335-9205
         div.rfcx-crnr-5.rfcx-trans-linear.rfcx-contact-sctn.rfcx-contact-sctn-long(onClick="window.open('http://r-f.cx/1eOnizB');")
           span.lbl
-            i.fa.fa-envelope
-            | Mailing Address:
+            i.fa.fa-envelope= __("Mailing Address")
+            | :
           div.bdy
             | 77 Van Ness Ave, Suite 101-1717
             br
@@ -111,7 +115,7 @@ html(lang="en")
               i.fa(class="fa-#{social_media[i][2]}")
               | <br />#{social_media[i][4]}#{ind}
       div.modal-footer
-        button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+        button.btn(data-dismiss='modal',aria-hidden='true')= __("Close")
 
     #rfcx-menu-mobile.rfcx-menu-mobile
       .rfcx-menu-mobile__bg
@@ -122,12 +126,12 @@ html(lang="en")
         for item in nav_items
           if ((item[0] == current_page[0]) && item[4])
             li.rfcx-menu-mobile__list-item.active
-              span.rfcx-menu-mobile__nolink.roadgeek= item[1]
+              span.rfcx-menu-mobile__nolink.roadgeek= __(item[1])
           else if (item[4])
             li.rfcx-menu-mobile__list-item
-              a.rfcx-menu-mobile__link.roadgeek(href="#{item[2]}")= item[1]
+              a.rfcx-menu-mobile__link.roadgeek(href="#{locale_url}#{item[2]}")= __(item[1])
         li.rfcx-menu-mobile__list-item
-          a.rfcx-menu-mobile__link.roadgeek(href="#contact", role="button", data-toggle="modal")= "Contact"
+          a.rfcx-menu-mobile__link.roadgeek(href="#contact", role="button", data-toggle="modal")= __("Contact")
 
     link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
     link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css', id='font-awesome-4')

@@ -35,6 +35,17 @@
 .bold {
   font-weight: bold;
 }
+.lang-ru .roadgeek {
+  letter-spacing: 0;
+}
+.lang-ru .roadgeek span {
+  font-size: 0.6em;
+  line-height: 0.6em;
+}
+.lang-de .roadgeek span {
+  font-size: 0.9em;
+  line-height: 0.9em;
+}
 body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -735,9 +746,9 @@ input::-webkit-input-placeholder {
     float: left;
     padding: 12px 0;
     text-align: center;
-    -webkit-box-shadow: inset 0 0 10px #aaaaaa;
-    -moz-box-shadow: inset 0 0 10px #aaaaaa;
-    box-shadow: inset 0 0 10px #aaaaaa;
+    -webkit-box-shadow: inset 0 0 10px #aaa;
+    -moz-box-shadow: inset 0 0 10px #aaa;
+    box-shadow: inset 0 0 10px #aaa;
   }
   .masthead ul li.active {
     background-color: #444;
@@ -782,9 +793,9 @@ input::-webkit-input-placeholder {
   left: 0;
   top: 0;
   background-color: transparent;
-  -webkit-box-shadow: inset 0 0 8px #222222;
-  -moz-box-shadow: inset 0 0 8px #222222;
-  box-shadow: inset 0 0 8px #222222;
+  -webkit-box-shadow: inset 0 0 8px #222;
+  -moz-box-shadow: inset 0 0 8px #222;
+  box-shadow: inset 0 0 8px #222;
 }
 .rfcx-menu-mobile__list {
   padding: 0;
@@ -806,9 +817,9 @@ input::-webkit-input-placeholder {
 }
 .rfcx-menu-mobile__list-item.active {
   background-color: #aaa;
-  -webkit-box-shadow: inset 0 0 4px #222222;
-  -moz-box-shadow: inset 0 0 4px #222222;
-  box-shadow: inset 0 0 4px #222222;
+  -webkit-box-shadow: inset 0 0 4px #222;
+  -moz-box-shadow: inset 0 0 4px #222;
+  box-shadow: inset 0 0 4px #222;
   border-bottom: solid 1px #666;
   text-shadow: 0 1px 0 #ccc;
 }
@@ -1583,6 +1594,7 @@ input::-webkit-input-placeholder {
   z-index: 1;
   line-height: 48px;
   text-transform: uppercase;
+  width: 40%;
 }
 .banner-video .slogan p.roadgeek {
   font-size: 48px;
@@ -2301,6 +2313,9 @@ input::-webkit-input-placeholder {
 .rfcx-row-media-contacts {
   text-align: center;
 }
+.rfcx-row-media-contacts__text {
+  text-transform: uppercase;
+}
 .rfcx-row-media-contacts__text,
 .rfcx-row-media-contacts__links {
   display: inline-block;
@@ -2308,6 +2323,9 @@ input::-webkit-input-placeholder {
 }
 .rfcx-row-media-contacts__links {
   margin-left: 9%;
+}
+.rfcx-row-media-block__title {
+  text-transform: uppercase;
 }
 .rfcx-media__thumbs {
   font-size: 0;

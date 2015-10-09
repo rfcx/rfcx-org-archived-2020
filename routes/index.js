@@ -69,7 +69,9 @@ exports.page = function(req, res, process){
     res.setHeader("Access-Control-Allow-Origin","*");
     res.render(navItem[0], setJadeVars(process, {
       current_page: navItem,
-      http_headers: req.headers
+      http_headers: req.headers,
+      locale: req.locale,
+      locale_url: req.locale_url
     }));
   }
 };

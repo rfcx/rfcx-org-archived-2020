@@ -8,14 +8,9 @@ block content
       .banner-video__i
         .rfcx-unselectable.slogan
           p.roadgeek
-            | A solution that can
-            br
-            | halt illegal logging
-            br
-            | in rainforests
-
+            span= __('A solution that can halt illegal logging in rainforests')
           p.video-link
-            | Watch the video to learn how it works
+            span= __("Watch the video to learn how it works")
             i.fa.fa-play
 
         .banner-video__video-wrapper
@@ -38,7 +33,7 @@ block content
 
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-intro-what
         p.roadgeek.rfcx-header.rfcx-intro-what-title
-          | We <span class="ul">can</span> stop illegal logging &amp; poaching.
+          span!= __("We %scan%s stop illegal logging and poaching.", '<span class="ul">', '</span>')
         .rfcx-row-intro-what__i
           div.span6
             div.rfcx-trans-linear.rfcx-crnr-5.infographic-box
@@ -46,20 +41,18 @@ block content
               img.infographic-box__img.infographic-box__img_bg.infographic-thmb-bg(src="#{rfcx_cdn}/img/intro/infographic.450.png?v=#{app_version}", alt="")
           div.span6.intro-what-text-container
             p.intro-what-text-container__p.roadgeek.rfcx-header
-              | Every minute counts.
+              span= __("Every minute counts.")
               br
-              | Real-time awareness means
+              span!= __("Real-time awareness means %sreal-time intervention.", '<br>')
+            p.intro-what-text-container__p.rfcx-body
+              span!= __('%sRainforest Connection%s (RFCx) transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.', '<span class="bold">', '</span>')
+            p.intro-what-text-container__p.rfcx-body
+              span!= __('This changes the game by providing the world\'s first real-time logging detection system, pinpointing deforestation activity %sas it occurs%s, and providing the data openly, freely, and immediately to anyone around the world. ', '<span class="italic">', '</span>')
+            p.intro-what-text-container__p.rfcx-body
+              span= __("For the first time on a scalable level, responsible agents can arrive on the scene in time to interrupt the perpetrators and stop the damage, and the world can listen in as it occurs.")
               br
-              | real-time intervention.
-            p.intro-what-text-container__p.rfcx-body
-              | <span class="bold">Rainforest Connection</span> (RFCx) transforms recycled cell-phones into autonomous, solar-powered listening devices that can monitor and pinpoint chainsaw activity at great distance.
-            p.intro-what-text-container__p.rfcx-body
-              | This changes the game by providing the world's first real-time logging detection system, pinpointing deforestation activity <span class="italic">as it occurs</span>, and providing the data openly, freely, and immediately to anyone around the world.
-            p.intro-what-text-container__p.rfcx-body
-              | For the first time on a scalable level, responsible agents can arrive on the scene in time to interrupt the perpetrators and stop the damage, and the world can listen in as it occurs.
-              br
-              a.btn.btn-primary(href="/about")
-                | Learn More
+              a.btn.btn-primary(href="#{locale_url}/about")
+                span= __("Learn More")
                 i.fa.fa-arrow-right
 
       include common/join-us

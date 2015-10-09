@@ -1,6 +1,7 @@
 extends layout
 block additionalfiles
   script(type='text/javascript', src='#{rfcx_cdn}/js/donatephone.js?v=#{app_version}')
+  script(src='https://www.google.com/recaptcha/api.js')
 block content
   section.content
     .content__i
@@ -37,6 +38,7 @@ block content
               .donatephone__input-container.input-append.form__row
                 input.donatephone__email-input.span2(type="email", name="email", data-parsley-trigger="change", placeholder="E-mail" required)
                 button.btn.btn-success.btn-large(type="submit") Send
+              .g-recaptcha(data-sitekey="6LfJdg4TAAAAAIxtNdSegF9wIshD1JlYa2852csQ")
             .donatephone__right
               .donatephone__benefits
                 p.donatephone__text Why do we need this?

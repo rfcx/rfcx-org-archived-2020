@@ -2626,6 +2626,12 @@ input::-webkit-input-placeholder {
   padding: 11px !important;
   height: auto !important;
 }
+.donatephone .g-recaptcha {
+  margin-top: 15px;
+}
+.donatephone .g-recaptcha > div > div {
+  margin: 0 auto;
+}
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .donatephone__left {
     width: 50%;

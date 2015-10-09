@@ -23,7 +23,8 @@ exports.middleware = {
  //   } else if (localeSection.length > 0) {
  //     req.url = req.url.substr(localeSection.length-1);
     }
+    req.i18n.setLocale(req.locale);
     next();
-  },
+  }
 
-}
+};

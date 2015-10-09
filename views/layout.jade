@@ -48,15 +48,15 @@ html(lang="en")
                   else if (item[4])
                     li.masthead__list-item
                       if (item[2].indexOf("://") != -1)
-                        a.masthead__link.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{item[2]}")
+                        a.masthead__link.hover-trans-67.rfcx-trans-linear(target="_blank",href="#{locale_url}#{item[2]}")
                           span= __(item[1])
                       else
-                        a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#{item[2]}")
+                        a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#{locale_url}#{item[2]}")
                           span= __(item[1])
                 li.masthead__list-item
                   a.masthead__link.hover-trans-67.rfcx-trans-linear(href="#contact", role="button", data-toggle="modal")
                     span= __("Contact")
-            a(href="/").header__logo-link
+            a(href="#{locale_url}/").header__logo-link
               img.header__logo-img(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="")
 
       block content
@@ -126,10 +126,10 @@ html(lang="en")
         for item in nav_items
           if ((item[0] == current_page[0]) && item[4])
             li.rfcx-menu-mobile__list-item.active
-              span.rfcx-menu-mobile__nolink.roadgeek= item[1]
+              span.rfcx-menu-mobile__nolink.roadgeek= __(item[1])
           else if (item[4])
             li.rfcx-menu-mobile__list-item
-              a.rfcx-menu-mobile__link.roadgeek(href="#{item[2]}")= item[1]
+              a.rfcx-menu-mobile__link.roadgeek(href="#{locale_url}#{item[2]}")= __(item[1])
         li.rfcx-menu-mobile__list-item
           a.rfcx-menu-mobile__link.roadgeek(href="#contact", role="button", data-toggle="modal")= __("Contact")
 

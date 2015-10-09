@@ -4,6 +4,9 @@ exports.env = {
 
   NEW_RELIC_KEY: "",
 
+  RECAPTCHA_SITE_KEY: "",
+  RECAPTCHA_SECRET_KEY: "",
+
   SEGMENT_ANALYTICS_CLIENT_ID: "",
 
   ADDTHIS_PUBID: ""

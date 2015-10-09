@@ -9,7 +9,7 @@ exports.env = {
 
   MAILCHIMP_APP_KEY: "",
 
-  SEGMENT_ANALYTICS_CLIENT_ID: "",
+  SEGMENT_WRITE_KEY: "",
 
   ADDTHIS_PUBID: ""
 

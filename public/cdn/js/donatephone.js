@@ -74,7 +74,6 @@ $(function(){
         data: this.$form.serialize()
       }, false);
       res.success(function(data){
-        console.log('data', data);
         if (!data) {
           return alert('Server has not responded.');
         }

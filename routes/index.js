@@ -95,6 +95,7 @@ exports.donatePhonePost = function(req, res) {
   var clientIp = ip.getIp(req);
   // if request body is not parsed
   if (!body) {
+    console.log('Donatephone Post Error: req.body is not defined or empty.');
     return sendJson(res, 'error', 'Internal server error.');
   }
 
@@ -119,6 +120,7 @@ exports.donatePhonePost = function(req, res) {
     }
   }, function (error, response, body) {
     if (error) {
+      console.log('Donatephone Post Error: Google Recaptcha server error.');
       return sendJson(res, 'error', 'Internal server error.');
     }
     try {
@@ -131,6 +133,7 @@ exports.donatePhonePost = function(req, res) {
       }
     }
     catch(e) {
+      console.log('Donatephone Post Error: Error while parsing body from Google Recapthca.');
       return sendJson(res, 'error', 'Internal server error.');
     }
   });

@@ -67,20 +67,6 @@ $(function(){
         console.log('Error getting api token. Check ajax parameters');
       }.bind(this));
     },
-    //checkRecaptcha: function() {
-    //  var res = this._sendAjax({
-    //    type: 'POST',
-    //    url: '/checkrecaptcha',
-    //    data: this.$form.serialize()
-    //  }, false);
-    //  res.success(function(data) {
-    //    console.log('data', data);
-    //    //this.sendUserData();
-    //  }).bind(this);
-    //  res.error(function(data) {
-    //    alert('Error processing data.')
-    //  });
-    //},
     sendUserData: function() {
       var res = this._sendAjax({
         type: 'POST',
@@ -88,7 +74,16 @@ $(function(){
         data: this.$form.serialize()
       }, false);
       res.success(function(data){
-        this.showStep(3);
+        console.log('data', data);
+        if (!data) {
+          return alert('Server has not responded.');
+        }
+        if (data.status == 'success') {
+          this.showStep(3);
+        }
+        else if (data.status == 'error') {
+          alert(data.message);
+        }
       }.bind(this));
       res.error(function(){
         alert('Error processing data.')

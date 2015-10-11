@@ -8,9 +8,7 @@ block content
       .donatephone
         .donatephone__title
           include common/help-silence-title
-        form#donateForm.form.donatephone__form(action="", method="post", data-parsley-validate)
-          // public token from API, which is set on frontend
-          input#tokenInput(type="hidden", name="token", value="")
+        form#donateForm.form.donatephone__form(action="donatephone", method="post", data-parsley-validate)
           .donatephone__step.donatephone__step_1#donatePhoneStep1
             .donatephone__left
               .donatephone__select-container

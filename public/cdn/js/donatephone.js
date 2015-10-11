@@ -6,7 +6,6 @@ $(function(){
     // First method to call
     init: function() {
       this.initCache();
-      this.sendTokenRequest();
       this.bindEvents();
     },
 
@@ -14,13 +13,15 @@ $(function(){
     initCache: function() {
         this.$form = $('#donateForm');
         this.$getStarted = $('#getStartedBtn');
-        this.$tokenInput = $('#tokenInput');
     },
 
     // Bind events
     bindEvents: function() {
+      // Onchange phone number select
       this.$form.on('change', '.js-select-phones-qty', onPhonesQtyChanged.bind(this));
+      // onSubmit overall form
       this.$form.on('submit', onFormSubmit.bind(this));
+      // onClick for Get Started btn
       this.$getStarted.click(onGetStartedClick.bind(this));
 
       function onPhonesQtyChanged(e) {
@@ -51,26 +52,10 @@ $(function(){
       }
     },
 
-    // Set token value in hidden input to value obtained from API
-    sendTokenRequest: function() {
-      // Change to actual values when backend will be ready.
-      var res = this._sendAjax({
-        type: 'GET',
-        url: '/someurl'
-      });
-      res.success(function(data) {
-        if (data && data.tokenid) {
-          this.$tokenInput.val(data.tokenid);
-        }
-      }.bind(this));
-      res.error(function() {
-        console.log('Error getting api token. Check ajax parameters');
-      }.bind(this));
-    },
     sendUserData: function() {
       var res = this._sendAjax({
-        type: 'POST',
-        url: '/donatephone',
+        type: this.$form.attr('method'),
+        url: this.$form.attr('action'),
         data: this.$form.serialize()
       }, false);
       res.success(function(data){
@@ -88,6 +73,8 @@ $(function(){
         alert('Error processing data.')
       }.bind(this));
     },
+
+    // Common method for ajax
     _sendAjax: function(params, silent) {
       silent = silent || true;
       return $.ajax({
@@ -106,6 +93,8 @@ $(function(){
         }
       });
     },
+
+    // Smooth page scrolling
     _scrollToPos: function (pos, cb) {
       $("html").velocity("scroll",
         {

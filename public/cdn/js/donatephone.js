@@ -67,17 +67,31 @@ $(function(){
         console.log('Error getting api token. Check ajax parameters');
       }.bind(this));
     },
+    //checkRecaptcha: function() {
+    //  var res = this._sendAjax({
+    //    type: 'POST',
+    //    url: '/checkrecaptcha',
+    //    data: this.$form.serialize()
+    //  }, false);
+    //  res.success(function(data) {
+    //    console.log('data', data);
+    //    //this.sendUserData();
+    //  }).bind(this);
+    //  res.error(function(data) {
+    //    alert('Error processing data.')
+    //  });
+    //},
     sendUserData: function() {
       var res = this._sendAjax({
         type: 'POST',
-        url: '/saveuserdata',
+        url: '/donatephone',
         data: this.$form.serialize()
       }, false);
       res.success(function(data){
         this.showStep(3);
       }.bind(this));
       res.error(function(){
-        this.showStep(3);
+        alert('Error processing data.')
       }.bind(this));
     },
     _sendAjax: function(params, silent) {

@@ -19,7 +19,8 @@ var express = require("express"), routes = require("./routes"),
   morganLogger = require("morgan"), methodOverride = require("method-override"),
   favicon = require("serve-favicon"),
   compression = require("compression"), serveStatic = require("serve-static"),
-  middlewares = require("./middlewares/all.js").middlewares;
+  middlewares = require("./middlewares/all.js").middlewares,
+  bodyParser = require('body-parser');
 var app = express();
 
 app.set("title", "Rainforest Connection");
@@ -32,6 +33,8 @@ app.use(methodOverride());
 app.use(middlewares.allowCrossDomain);
 app.use(compression());
 app.use(serveStatic(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 if (process.env.NODE_ENV === "development") {
   app.use(errorHandler());
@@ -55,6 +58,8 @@ app.get("/ks/twitter", function(req,res){
 });
 
 app.get("/health_check", routes.returnHealthCheck );
+
+app.post("/donatephone", routes.donatePhonePost);
 
 for (var i = 0; i < routes.navItems.length; i++) {
   app.get(routes.navItems[i][2], function(req, res){ routes.page(req, res, process); });

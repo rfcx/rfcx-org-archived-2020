@@ -36,7 +36,6 @@ exports.mailchimp = {
   addToList: function(listId, email_addr, merge_vars) {
 
     return new Promise(function(resolve,reject){
-
       mc.lists.subscribe({
           id: listId,
           email: { email: email_addr },
@@ -47,7 +46,6 @@ exports.mailchimp = {
       }, function(error) {
         reject(error);
       });
-
     });
 
   }

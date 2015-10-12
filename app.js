@@ -1,5 +1,8 @@
 // check for environmental variable file and load if present
-var fs = require("fs");
+var fs        = require("fs"),
+    extend    = require('util')._extend,
+    recaptcha = require("./helpers/recaptcha.js");
+
 if (fs.existsSync("./config/env_vars.js")) {
   var env = require("./config/env_vars.js").env;
   for (i in env) { process.env[i] = env[i]; }
@@ -49,7 +52,7 @@ app.get("/mailchimp/get", function(req,res){
   });
 });
 
-app.post("/donate_phone/donor", function(req,res){
+app.post("/donate_phone/donor", [recaptcha.validate], function(req,res){
   var merge_vars = {
     COUNT: 1,
     REGISTERED: (new Date()).toISOString()
@@ -58,15 +61,25 @@ app.post("/donate_phone/donor", function(req,res){
   if (req.body.COUNT !== null) { merge_vars.COUNT = parseInt(req.body.COUNT); }
   if (req.body.NOTE_DONOR !== null) { merge_vars.NOTE_DONOR = req.body.NOTE_DONOR; }
   if (req.body.EMAIL !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL; }
+
+  var generatedEmail = Math.random().toString().substr(2) + "@rfcx.org";
+
   require('./helpers/mailchimp.js').mailchimp.addToList(
-        process.env.MAILCHIMP_DONOR_LIST_ID, 
-        (""+Math.random()).substr(2)+"@rfcx.org",
-        merge_vars
-      ).then(function(rtrnData){
-    res.json(rtrnData);
-  }).catch(function(err){
-    res.status(500).json({msg:"Failed to save entry"});
-  });
+        process.env.MAILCHIMP_DONOR_LIST_ID,
+        generatedEmail,
+        merge_vars)
+    .then(function(rtrnData){
+      var response = {
+        status: "success"
+      };
+      res.json(extend(response, rtrnData));
+    })
+    .catch(function(err){
+      res.status(500).json({
+        status: 'error',
+        message: "Failed to save entry"
+      });
+    });
 });
 
 app.get("/ks", function(req,res){
@@ -87,8 +100,6 @@ app.get("/ks/twitter", function(req,res){
 });
 
 app.get("/health_check", routes.returnHealthCheck );
-
-app.post("/donatephone", routes.donatePhonePost);
 
 for (var i = 0; i < routes.navItems.length; i++) {
   app.get(routes.navItems[i][2], function(req, res){ routes.page(req, res, process); });

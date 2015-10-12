@@ -54,7 +54,10 @@ app.post("/donate_phone/donor", function(req,res){
     COUNT: 1,
     REGISTERED: (new Date()).toISOString()
   };
-  for (i in req.body) { merge_vars[i.toUpperCase()] = req.body.i; }
+  if (req.body.NAME_DONOR !== null) { merge_vars.NAME_DONOR = req.body.NAME_DONOR; }
+  if (req.body.COUNT !== null) { merge_vars.COUNT = parseInt(req.body.COUNT); }
+  if (req.body.NOTE_DONOR !== null) { merge_vars.NOTE_DONOR = req.body.NOTE_DONOR; }
+  if (req.body.EMAIL !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL; }
   require('./helpers/mailchimp.js').mailchimp.addToList(
         process.env.MAILCHIMP_DONOR_LIST_ID, 
         (""+Math.random()).substr(2)+"@rfcx.org",

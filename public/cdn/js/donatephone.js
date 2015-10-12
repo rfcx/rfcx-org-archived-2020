@@ -63,15 +63,21 @@ $(function(){
           return alert('Server has not responded.');
         }
         if (data.status == 'success') {
+          this.setToken(data.email);
           this.showStep(3);
         }
         else if (data.status == 'error') {
           alert(data.message);
         }
       }.bind(this));
-      res.error(function(){
-        alert('Error processing data.')
+      res.error(function(data){
+        alert(data.responseJSON.message);
       }.bind(this));
+    },
+
+    setToken: function(email) {
+      var token = email.substring(0,6);
+      $('#personalToken').text(token);
     },
 
     // Common method for ajax

@@ -8,13 +8,13 @@ block content
       .donatephone
         .donatephone__title
           include common/help-silence-title
-        form#donateForm.form.donatephone__form(action="donatephone", method="post", data-parsley-validate)
+        form#donateForm.form.donatephone__form(action="/donate_phone/donor", method="post", data-parsley-validate)
           .donatephone__step.donatephone__step_1#donatePhoneStep1
             .donatephone__left
               .donatephone__select-container
                 p.donatephone__question I want to donate
                 span.select-custom.donatephone__select
-                  select.select.js-select-phones-qty(name="phonesqty")
+                  select.select.js-select-phones-qty(name="COUNT")
                     option(value="1", selected="selected") 1
                     option(value="2") 2
                     option(value="3") 3
@@ -34,7 +34,9 @@ block content
             .donatephone__left
               .donatephone__text Please type your E-mail address here:
               .donatephone__input-container.input-append.form__row
-                input.donatephone__email-input.span2(type="email", name="email", data-parsley-trigger="change", placeholder="E-mail" required)
+                input(name="NAME_DONOR", placeholder="Your name", type="text")
+                textarea(name="NOTE_DONOR", placeholder="Note")
+                input.donatephone__email-input.span2(type="email", name="EMAIL", data-parsley-trigger="change", placeholder="E-mail" required)
                 button.btn.btn-success.btn-large(type="submit") Send
               .g-recaptcha(data-sitekey="6LfJdg4TAAAAAIxtNdSegF9wIshD1JlYa2852csQ")
             .donatephone__right
@@ -46,6 +48,6 @@ block content
                   li.donatephone__benefit-item lorem ipsum dolor sit amet ipsum sit
           .donatephone__step.donatephone__step_3#donatePhoneStep3
             .donatephone__text.donatephone__text_huge
-              | Your personal token is <b>ebhoinr83v7n0t</b>
+              | Your personal token is <b id="personalToken"></b>
             .donatephone__text
               | Please include it in the box with your phone

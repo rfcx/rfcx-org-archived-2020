@@ -40,6 +40,32 @@ if (process.env.NODE_ENV === "development") {
   app.use(errorHandler());
 }
 
+
+app.get("/mailchimp/get", function(req,res){
+  require('./helpers/mailchimp.js').mailchimp.getListDetails(process.env.MAILCHIMP_DONOR_LIST_ID).then(function(rtrnData){
+    res.json(rtrnData);
+  }).catch(function(err){
+    console.log("failed to create anonymous token | "+err);
+  });
+});
+
+app.post("/donate_phone/donor", function(req,res){
+  var merge_vars = {
+    COUNT: 1,
+    REGISTERED: (new Date()).toISOString()
+  };
+  for (i in req.body) { merge_vars[i.toUpperCase()] = req.body.i; }
+  require('./helpers/mailchimp.js').mailchimp.addToList(
+        process.env.MAILCHIMP_DONOR_LIST_ID, 
+        (""+Math.random()).substr(2)+"@rfcx.org",
+        merge_vars
+      ).then(function(rtrnData){
+    res.json(rtrnData);
+  }).catch(function(err){
+    res.status(500).json({msg:"Failed to save entry"});
+  });
+});
+
 app.get("/ks", function(req,res){
   res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );
   res.end();

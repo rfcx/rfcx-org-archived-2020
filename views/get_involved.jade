@@ -48,30 +48,30 @@ block content
             div.controls
               a.btn.btn-gray#phone-donate-button(href="#rfcx_donate_phone", role="button", data-toggle="modal")= __("Donate a smartphone")
 
-      //div.modal.hide.fade(id='rfcx_donate_phone', tabindex='-1', role='dialog', aria-labelledby='rfcx_donate_phone_label', aria-hidden='true', style="width:500px;")
-      //  div.modal-header
-      //    button.close(type='button', data-dismiss='modal', aria-hidden='true')
-      //      i.fa.fa-times
-      //    h3.roadgeek#rfcx_donate_phone_label= "DONATE AN OLD SMARTPHONE"
-      //  div.modal-body
-      //    | Mail us your old smartphone.
-      //    br
-      //    br
-      //    | We'll erase it, retrofit it and send it into the jungle for its second life as a tireless forest guardian.
-      //    br
-      //    br
-      //    | Please send phones to this address:
-      //    br
-      //    br
-      //    | Rainforest Connection
-      //    br
-      //    | 77 Van Ness Ave
-      //    br
-      //    | Suite 101-1717-
-      //    br
-      //    | San Francisco, CA, 94102
-      //  div.modal-footer
-      //    button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+      div.modal.hide.fade(id='rfcx_donate_phone', tabindex='-1', role='dialog', aria-labelledby='rfcx_donate_phone_label', aria-hidden='true', style="width:500px;")
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+            i.fa.fa-times
+          h3.roadgeek#rfcx_donate_phone_label= __("DONATE AN OLD SMARTPHONE")
+        div.modal-body
+          span= __("Mail us your old smartphone.")
+          br
+          br
+          span= __("We'll erase it, retrofit it and send it into the jungle for its second life as a tireless forest guardian.")
+          br
+          br
+          span= __("Please send phones to this address:")
+          br
+          br
+          | Rainforest Connection
+          br
+          | 77 Van Ness Ave
+          br
+          | Suite 101-1717-
+          br
+          | San Francisco, CA, 94102
+        div.modal-footer
+          button.btn(data-dismiss='modal',aria-hidden='true')= __("Close")
 
       div.modal.hide.fade(id='make-donation', tabindex='-1', role='dialog', aria-labelledby='make-donation-label', aria-hidden='true')
         div.modal-header

@@ -60,18 +60,18 @@ $(function(){
       }, false);
       res.success(function(data){
         if (!data) {
-          return alert('Server has not responded.');
+          return new rfcxNotification({type: 'error', message: 'Server has not responded.'})
         }
         if (data.status == 'success') {
           this.setToken(data.email);
           this.showStep(3);
         }
         else if (data.status == 'error') {
-          alert(data.message);
+          return new rfcxNotification({type: 'error', message: data.message})
         }
       }.bind(this));
       res.error(function(data){
-        alert(data.responseJSON.message);
+        new rfcxNotification({type: 'error', message: data.responseJSON.message})
       }.bind(this));
     },
 

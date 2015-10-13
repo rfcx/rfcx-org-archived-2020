@@ -521,6 +521,38 @@ input::-webkit-input-placeholder {
   background: url(/cdn/img/common/ajax-loader.gif) no-repeat center center;
   background-size: contain;
 }
+.notifications-container {
+  opacity: 0;
+  position: fixed;
+  z-index: 999999;
+  top: 20%;
+  left: 50%;
+  width: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.notifications-container.visible {
+  opacity: 1;
+}
+.notifications-container .alert {
+  text-align: center;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 50px -5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 50px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 50px -5px rgba(0, 0, 0, 0.5);
+}
+.notifications-container .alert .close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
 @media only screen and (min-width: 768px) {
   .rfcx-container {
     -webkit-transform: translate3d(0, 0, 0) !important;
@@ -576,6 +608,9 @@ input::-webkit-input-placeholder {
   .btn-gray,
   .input-append .btn {
     font-weight: 300;
+  }
+  .notifications-container {
+    width: 80%;
   }
 }
 .select-custom {

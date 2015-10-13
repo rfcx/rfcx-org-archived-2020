@@ -130,6 +130,7 @@ html(lang="en")
         li.rfcx-menu-mobile__list-item
           a.rfcx-menu-mobile__link.roadgeek(href="#contact", role="button", data-toggle="modal")= "Contact"
 
+    include common/notifications-tmpl
     link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
     link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css', id='font-awesome-4')
     style(type="text/css").
@@ -138,8 +139,10 @@ html(lang="en")
     script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
     script(type='text/javascript', src='#{jsdelivr_cdn}/velocity/1.2.2/velocity.min.js')
     script(type='text/javascript', src='/vendor/parsley.js/2.2.0/parsley.min.js?v=#{app_version}')
+    script(type='text/javascript', src='/vendor/jsrender/1.0.0/jsrender.min.js?v=#{app_version}')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
     script(type='text/javascript', src='#{rfcx_cdn}/js/spinner.js?v=#{app_version}')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/notifications.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-preload.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-video.js?v=#{app_version}')

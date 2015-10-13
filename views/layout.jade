@@ -30,6 +30,7 @@ html(lang="en")
     #loadingContainer.loading-container(style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: #fff;")
     #phoneDeviceContainer
     #tabletDeviceContainer
+    #spinnerContainer.spinner-container
     #rfcx-container.rfcx-container
       header.header
         div.header__bg(style="background:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version}) no-repeat center bottom;")
@@ -138,6 +139,7 @@ html(lang="en")
     script(type='text/javascript', src='#{jsdelivr_cdn}/velocity/1.2.2/velocity.min.js')
     script(type='text/javascript', src='/vendor/parsley.js/2.2.0/parsley.min.js?v=#{app_version}')
     script(type='text/javascript', src='#{cdnjs_cdn}/modernizr/2.6.2/modernizr.min.js')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/spinner.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-preload.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-main.js?v=#{app_version}')
     script(type='text/javascript', src='#{rfcx_cdn}/js/rfcx-video.js?v=#{app_version}')

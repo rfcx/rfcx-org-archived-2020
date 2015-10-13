@@ -82,19 +82,19 @@ $(function(){
 
     // Common method for ajax
     _sendAjax: function(params, silent) {
-      silent = silent || true;
+      silent = silent || false;
       return $.ajax({
         type: params.type,
         url: params.url,
         data: params.data || null,
         beforeSend: function() {
           if (!silent) {
-            // show loading spinner
+            loadingSpinner.show();
           }
         },
         complete: function() {
           if (!silent) {
-            // hide loading spinner
+            loadingSpinner.hide();
           }
         }
       });

@@ -42,6 +42,26 @@ textarea.parsley-error {
   background-color: #F2DEDE;
   border: 1px solid #EED3D7;
 }
+input.parsley-error::-webkit-input-placeholder,
+select.parsley-error::-webkit-input-placeholder,
+textarea.parsley-error::-webkit-input-placeholder {
+  color: #d59392;
+}
+input.parsley-error:-moz-placeholder,
+select.parsley-error:-moz-placeholder,
+textarea.parsley-error:-moz-placeholder {
+  color: #d59392;
+}
+input.parsley-error::-moz-placeholder,
+select.parsley-error::-moz-placeholder,
+textarea.parsley-error::-moz-placeholder {
+  color: #d59392;
+}
+input.parsley-error:-ms-input-placeholder,
+select.parsley-error:-ms-input-placeholder,
+textarea.parsley-error:-ms-input-placeholder {
+  color: #d59392;
+}
 .parsley-errors-list {
   margin: 2px 0 3px;
   padding: 0;
@@ -475,6 +495,31 @@ input::-webkit-input-placeholder {
 }
 .video-js .vjs-text-track {
   font-size: 1.8em !important;
+}
+.spinner-container {
+  display: none;
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.spinner-container:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: url(/cdn/img/common/ajax-loader.gif) no-repeat center center;
+  background-size: contain;
 }
 @media only screen and (min-width: 768px) {
   .rfcx-container {
@@ -2619,15 +2664,28 @@ input::-webkit-input-placeholder {
   font: 18px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   margin: 0 auto 5px;
 }
-.donatephone__input-container {
-  margin-top: 15px;
+.donatephone .form__row {
+  margin-bottom: 1rem;
 }
-.donatephone__email-input {
-  padding: 11px !important;
-  height: auto !important;
+.donatephone .form__row .parsley-errors-list {
+  left: 50%;
+  bottom: -1rem;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+}
+.donatephone__input,
+.donatephone__textarea {
+  width: 60%;
+  border: 1px solid #1b1b1b !important;
+  padding: 5px 7px !important;
+}
+.donatephone__textarea {
+  resize: none;
 }
 .donatephone .g-recaptcha {
-  margin-top: 15px;
+  margin-bottom: 1rem;
 }
 .donatephone .g-recaptcha > div > div {
   margin: 0 auto;

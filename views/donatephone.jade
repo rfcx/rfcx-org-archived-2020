@@ -32,13 +32,19 @@ block content
                   li.donatephone__benefit-item lorem ipsum dolor sit amet ipsum sit amet dolor
           .donatephone__step.donatephone__step_2#donatePhoneStep2
             .donatephone__left
-              .donatephone__text Please type your E-mail address here:
-              .donatephone__input-container.input-append.form__row
-                input(name="NAME_DONOR", placeholder="Your name", type="text")
-                textarea(name="NOTE_DONOR", placeholder="Note")
-                input.donatephone__email-input.span2(type="email", name="EMAIL", data-parsley-trigger="change", placeholder="E-mail" required)
-                button.btn.btn-success.btn-large(type="submit") Send
+              .donatephone__text Please type your E-mail address here (required):
+              .form__row.donatephone__input-container
+                input.donatephone__input(type="email", name="EMAIL", data-parsley-trigger="change", placeholder="E-mail" required)
+              .donatephone__text Please type your name (optional):
+              .form__row.donatephone__input-container
+                input.donatephone__input(name="NAME_DONOR", placeholder="Your name", type="text")
+              .donatephone__text You can add some notes for us (optional):
+              .form__row.donatephone__input-container
+                textarea.donatephone__textarea(name="NOTE_DONOR", placeholder="Note")
+              .donatephone__text Are you a robot? (required):
               .g-recaptcha(data-sitekey="6LfJdg4TAAAAAIxtNdSegF9wIshD1JlYa2852csQ")
+              .form__row.donatephone__input-container
+                button.btn.btn-success.btn-large(type="submit") Send
             .donatephone__right
               .donatephone__benefits
                 p.donatephone__text Why do we need this?

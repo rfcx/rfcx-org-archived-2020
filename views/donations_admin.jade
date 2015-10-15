@@ -1,0 +1,20 @@
+extends layout_admin
+block additionalfiles
+  link(rel='stylesheet', type='text/css', href='#{cdn_datatables}/1.10.9/css/jquery.dataTables.min.css')
+  link(rel='stylesheet', type='text/css', href='/vendor/datatables/FixedColumns/css/fixedColumns.dataTables.min.css')
+  script(type='text/javascript', src='#{cdn_datatables}/1.10.9/js/jquery.dataTables.min.js')
+  script(type='text/javascript', src='/vendor/datatables/FixedColumns/js/dataTables.fixedColumns.min.js')
+  script(type='text/javascript', src='#{rfcx_cdn}/js/donations-admin.js?v=#{app_version}')
+block content
+  section.admin-donatephone
+    table#dataTable.stripe
+      thead
+        tr
+          th Email
+          th Donor Name
+          th Donation Count
+          th Donor Notes
+          th Admin Notes
+          th Donor Address
+          th Photo
+          th Email Real

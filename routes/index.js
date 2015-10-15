@@ -11,6 +11,7 @@ var navItems = [
     [ "media", "Media", "/media", "Media", true, false ],
 
     [ "donatephone", "Donate", "/donatephone", "Donate a Phone", false, false ],
+    [ "donations_admin", "Donations", "/donations_admin", "Donations", false, true ],
 
     [ "press", "Press", "/press", "Press Clippings", false, false ],
     [ "donate", "Donate", "/donate", "Donate", false, true ],
@@ -44,6 +45,7 @@ function setJadeVars(process, jV) {
   jV.videojs_cdn = inProd ? "//vjs.zencdn.net" : "/vendor/video.js";
   jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";
   jV.rfcx_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/cdn" : "/cdn";
+  jV.cdn_datatables = inProd ? "//cdn.datatables.net" : "/vendor/datatables";
   jV.rfcx_vendor_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/vendor" : "/vendor";
   jV.rfcx_static_cdn = inProd ? "//d1gbw6jvuihkp4.cloudfront.net" : "//rfcx-static.s3.amazonaws.com";
   jV.nav_items = navItems;

@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "development") {
 
 app.get("/mailchimp/get", function(req,res){
   require('./helpers/mailchimp.js').mailchimp.getListDetails(process.env.MAILCHIMP_DONOR_LIST_ID).then(function(rtrnData){
-    res.json(rtrnData);
+    res.json({data: rtrnData});
   }).catch(function(err){
     console.log("failed to create anonymous token | "+err);
   });

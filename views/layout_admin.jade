@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+  
+  head
+    title= current_page[3]
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, minimum-scale=0.67, maximum-scale=1.0, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+
+    link(rel='shortcut icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
+    link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
+    | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> <![endif]-->
+    | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> <![endif]-->
+  body.helvetica
+    #loadingContainer.loading-container(style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: #fff;")
+    #phoneDeviceContainer
+    #tabletDeviceContainer
+    #spinnerContainer.spinner-container
+    #rfcx-container.rfcx-container
+      header.header
+        div.header__bg(style="background:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version}) no-repeat center bottom;")
+        .header__i
+          div.rfcx-unselectable.rfcx-trans-linear.masthead
+            if (!current_page[5])
+              a.menu-toggle#mobileMenuToggle
+                i.fa.fa-bars
+            a(href="/").header__logo-link
+              img.header__logo-img(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="")
+
+      block content
+
+    #rfcx-menu-mobile.rfcx-menu-mobile
+      .rfcx-menu-mobile__bg
+      ul.rfcx-menu-mobile__list
+        li.rfcx-menu-mobile__list-item.roadgeek.header.rfcx-trans-67(style="background-image:url(#{rfcx_cdn}/img/masthead/masthead-bg.1400.jpg?v=#{app_version});")
+          span.rfcx-menu-mobile__ghost-text= "Rainforest Connection"
+          img.rfcx-menu-mobile__logo(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="Rainforest Connection")
+
+    include common/notifications-tmpl
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css')
+    link(rel='stylesheet', type='text/css', href='#{bootstrap_cdn}/font-awesome/4.1.0/css/font-awesome.min.css', id='font-awesome-4')
+    style(type="text/css").
+      @font-face{font-family:'roadgeek';font-weight:normal;font-style:normal;src:url('#{rfcx_cdn}/font/roadgeek/roadgeek.eot');src:local('☺'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.woff')format('woff'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.ttf')format('truetype'),url('#{rfcx_cdn}/font/roadgeek/roadgeek.svg')format('svg');}
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/admin.css?v=#{app_version}')
+    script(type='text/javascript', src='#{googlelibs_cdn}/jquery/1.10.1/jquery.min.js')
+    script(type='text/javascript', src='#{jsdelivr_cdn}/velocity/1.2.2/velocity.min.js')
+    script(type='text/javascript', src='/vendor/parsley.js/2.2.0/parsley.min.js?v=#{app_version}')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/spinner.js?v=#{app_version}')
+    script(type='text/javascript', src='#{rfcx_cdn}/js/notifications.js?v=#{app_version}')
+    block additionalfiles
+    //script(type='text/javascript').
+      RFCX.currentPage = "#{current_page[0]}"; RFCX.cdn.rfcx = "#{rfcx_cdn}"; RFCX.cdn.bootstrap = "#{bootstrap_cdn}"; RFCX.cdn.cdnJs = "#{cdnjs_cdn}"; RFCX.cdn.rfcxVendor = "#{rfcx_vendor_cdn}"; RFCX.cdn.rfcxStatic = "#{rfcx_static_cdn}"; RFCX.cdn.videoJs = "#{videojs_cdn}"; RFCX.cdn.rfcxGithub = "https://rfcx.github.io"; RFCX.social.addThis.pubId = "#{addthis_pubid}"; RFCX.nodeEnv = "#{node_env}"; RFCX.appVersion = "#{app_version}"; RFCX.isIsolated = #{current_page[5]};
+    if (node_env == "production")
+      script(type='text/javascript').
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";analytics.load("#{segment_analytics_client_id}");analytics.page()}}();

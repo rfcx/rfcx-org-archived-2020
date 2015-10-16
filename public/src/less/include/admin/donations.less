@@ -1,5 +1,5 @@
 .admin-donatephone {
-    max-width: 900px;
+    max-width: 1280px;
     width: 90%;
     margin: 0 auto;
     padding: 2rem 0;
@@ -7,6 +7,16 @@
         width: 100%;
         th, td {
             text-align: left;
+            min-width: 150px;
+            padding-left: 18px;
+            padding-right: 18px;
+            &:first-child {
+                min-width: 0;
+            }
+        }
+        .fa-edit {
+            color: #119911;
+            text-decoration: none;
         }
     }
 }

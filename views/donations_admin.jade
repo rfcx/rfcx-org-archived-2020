@@ -7,9 +7,10 @@ block additionalfiles
   script(type='text/javascript', src='#{rfcx_cdn}/js/donations-admin.js?v=#{app_version}')
 block content
   section.admin-donatephone
-    table#dataTable.stripe
+    table#dataTable.stripe.admin-donatephone__table
       thead
         tr
+          th
           th Email
           th Donor Name
           th Donation Count
@@ -18,3 +19,7 @@ block content
           th Donor Address
           th Photo
           th Email Real
+          th Date Registered
+          th Date Received
+          th Admin Name
+          th Estimated Value

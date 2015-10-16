@@ -5,7 +5,7 @@ $(function () {
   var donationsOpts = {
     fixedColsCount: 2,
     url: 'mailchimp/get',
-    sortedColumnIndex: 1,
+    sortedColumnIndex: 1
   };
 
   var donationsAdmin = {
@@ -18,8 +18,14 @@ $(function () {
       $('#dataTable').on('click', '.js-edit-row', this.onChangeRow.bind(this));
     },
     onChangeRow: function(ev) {
-      var $this = $(ev.target);
-      console.log('Clicked ID:', $this.data('id'));
+      var $this = $(ev.target),
+          id    = $this.data('id');
+      if (id) {
+        var rowObj = this.mailchimpData[id];
+        if (rowObj) {
+          console.log('Clicked', rowObj);
+        }
+      }
     },
     initDataTable: function() {
       this.dataTable = $('#dataTable').DataTable({
@@ -32,9 +38,9 @@ $(function () {
         "ajax": {
           url: donationsOpts.url,
           dataSrc: function(d) {
-            this.mailchimpData = d.data;
+            this.prepareLocalData(d.data);
             return d.data;
-          }
+          }.bind(this)
         },
         "columns": [
           {
@@ -58,6 +64,14 @@ $(function () {
           {"data": "merges.VALUE_USD"}
         ]
       });
+    },
+    prepareLocalData: function(data) {
+      if (data) {
+        // set local mailchimpData variable to have an id key as identificator
+        for(var i = 0; i < data.length; i++) {
+          this.mailchimpData[data[i].id] = data[i];
+        }
+      }
     }
   };
 

@@ -1024,32 +1024,30 @@ input::-webkit-input-placeholder {
   max-width: 1280px;
   width: 90%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
-.admin-donatephone .dataTables_wrapper {
-  margin: 0 auto 5rem;
-}
-.admin-donatephone .dataTable {
-  width: 100%;
-}
-.admin-donatephone .dataTable th,
-.admin-donatephone .dataTable td {
-  text-align: left;
-  min-width: 150px;
-  padding-left: 18px;
-  padding-right: 18px;
-}
-.admin-donatephone .dataTable th:first-child,
-.admin-donatephone .dataTable td:first-child {
-  min-width: 0;
-}
-.admin-donatephone .dataTable .fa-edit {
-  color: #119911;
-  text-decoration: none;
-}
-.admin-donatephone .form-donations-admin {
-  max-width: 900px;
+.admin-donatephone .form-admin-search {
+  max-width: 600px;
   margin: 0 auto;
+  text-align: center;
+}
+.admin-donatephone .form-admin-search .form__label {
+  margin-bottom: 20px;
+}
+.admin-donatephone .form-admin-search .input-append {
+  display: block;
+  margin: 0 auto;
+}
+.admin-donatephone .form-admin-search .parsley-errors-list {
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+}
+.admin-donatephone .form-admin-search .search-query {
+  padding: 11px 19px;
+  font-size: 17.5px;
 }
 .form__row {
   position: relative;

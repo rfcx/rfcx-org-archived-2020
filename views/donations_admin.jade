@@ -7,6 +7,13 @@ block additionalfiles
   script(type='text/javascript', src='#{rfcx_cdn}/js/donations-admin.js?v=#{app_version}')
 block content
   section.admin-donatephone
+    form.form.form-admin-search.form-search#formSearchMailchimpId(method="GET", action="/mailchimp/search", data-parsley-validate)
+      .form__row
+        label.form__label(for="searchIdInput") Type user ID in the search field
+        .input-append
+          input.search-query#searchIdInput(type="text", name="id", placeholder="xxxxxx", data-parsley-trigger="change", required)
+          button.btn.btn-large.btn-success(type="submit") Search
+
     //form.form.form-donations-admin
     //  .form__row
     //    .form__cell

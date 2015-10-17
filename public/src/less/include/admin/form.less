@@ -1,0 +1,37 @@
+.form {
+    &__row {
+        position: relative;
+        &:extend(.clearfix all);
+        margin-bottom: 1.5rem;
+    }
+    &__cell {
+        float: left;
+        width: 48%;
+        margin-right: 2%;
+        & + .form__cell {
+            margin-right: 0;
+            margin-left: 2%;
+        }
+    }
+    &__label {
+        font-size: 1.4rem;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    &__input {
+        .helvetica(16);
+        font-size: 16px !important;
+        height: auto !important;
+        padding: 6px 3% !important;
+        line-height: normal !important;
+        width: 100%;
+        border-color: #000 !important;
+        .box-sizing(border-box);
+    }
+}
+
+.parsley-errors-list {
+    position: absolute;
+    .helvetica(12);
+    line-height: 1;
+}

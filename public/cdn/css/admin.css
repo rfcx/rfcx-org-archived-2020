@@ -1,12 +1,16 @@
-.clearfix {
+.clearfix,
+.form__row {
   *zoom: 1;
 }
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.form__row:before,
+.form__row:after {
   content: "";
   display: table;
 }
-.clearfix:after {
+.clearfix:after,
+.form__row:after {
   clear: both;
 }
 .roadgeek {
@@ -70,6 +74,66 @@ textarea.parsley-error:-ms-input-placeholder {
 }
 .parsley-errors-list.filled {
   opacity: 1;
+}
+.select-custom {
+  width: 100%;
+  max-height: 32px;
+  background: transparent url(/cdn/img/common/icon-arrow-down_black.png) no-repeat;
+  background-position: calc(100% - 5px) 50%;
+  background-size: 11px 6px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1b1b1b;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.select-custom select {
+  font: 16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #000000;
+  width: 150%;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 2px 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.select-custom select:focus {
+  outline: none;
+  background: transparent;
+}
+.select-custom select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+@media only screen and (max-width: 767px) {
+  .select-custom {
+    background-size: 9px 5px;
+    background-position: calc(100% - 4px) 50%;
+    position: relative;
+    max-height: 40px;
+  }
+  .select-custom:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% - 29px);
+    z-index: 1;
+  }
+  .select-custom select {
+    font-size: 14px;
+  }
 }
 body {
   font-weight: 300;
@@ -962,6 +1026,9 @@ input::-webkit-input-placeholder {
   margin: 0 auto;
   padding: 2rem 0;
 }
+.admin-donatephone .dataTables_wrapper {
+  margin: 0 auto 5rem;
+}
 .admin-donatephone .dataTable {
   width: 100%;
 }
@@ -979,4 +1046,43 @@ input::-webkit-input-placeholder {
 .admin-donatephone .dataTable .fa-edit {
   color: #119911;
   text-decoration: none;
+}
+.admin-donatephone .form-donations-admin {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.form__row {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.form__cell {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+.form__cell + .form__cell {
+  margin-right: 0;
+  margin-left: 2%;
+}
+.form__label {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.form__input {
+  font: 16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px !important;
+  height: auto !important;
+  padding: 6px 3% !important;
+  line-height: normal !important;
+  width: 100%;
+  border-color: #000 !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.parsley-errors-list {
+  position: absolute;
+  font: 12px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1;
 }

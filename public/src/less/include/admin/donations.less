@@ -6,7 +6,7 @@
 
     .form-admin-search {
         max-width: 600px;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
         text-align: center;
         .form__label {
             margin-bottom: 20px;
@@ -22,6 +22,23 @@
         .search-query {
             padding: 11px 19px;
             font-size: 17.5px;
+        }
+    }
+
+    .admin-donatephone-results {
+        display: none;
+        text-align: center;
+        &.visible {
+            display: block;
+        }
+        &__title {
+            .helvetica(20);
+            color: #000;
+        }
+        &__value,
+        &__text {
+            display: inline-block;
+            vertical-align: bottom;
         }
     }
 

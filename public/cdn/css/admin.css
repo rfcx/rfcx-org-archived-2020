@@ -1028,7 +1028,7 @@ input::-webkit-input-placeholder {
 }
 .admin-donatephone .form-admin-search {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   text-align: center;
 }
 .admin-donatephone .form-admin-search .form__label {
@@ -1049,6 +1049,22 @@ input::-webkit-input-placeholder {
   padding: 11px 19px;
   font-size: 17.5px;
 }
+.admin-donatephone .admin-donatephone-results {
+  display: none;
+  text-align: center;
+}
+.admin-donatephone .admin-donatephone-results.visible {
+  display: block;
+}
+.admin-donatephone .admin-donatephone-results__title {
+  font: 20px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #000;
+}
+.admin-donatephone .admin-donatephone-results__value,
+.admin-donatephone .admin-donatephone-results__text {
+  display: inline-block;
+  vertical-align: bottom;
+}
 .form__row {
   position: relative;
   margin-bottom: 1.5rem;
@@ -1063,7 +1079,7 @@ input::-webkit-input-placeholder {
   margin-left: 2%;
 }
 .form__label {
-  font-size: 1.4rem;
+  font: 20px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   display: block;
   margin-bottom: 0.5rem;
 }

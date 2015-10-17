@@ -13,9 +13,23 @@ $(function () {
     onFormSubmit: function(ev) {
       ev.preventDefault();
       var url = this.$form.attr('action');
-      var ajaxObj = $.get(url, this.$form.serialize());
-      ajaxObj.done(function(data) {
-        console.log('success', data);
+      var ajaxObj = $.ajax({
+        url: url,
+        data: this.$form.serialize(),
+        beforeSend: function() {
+          loadingSpinner.show();
+          $('#searchResults').removeClass('visible');
+        },
+        complete: function() {
+          loadingSpinner.hide();
+          $('#searchResults').addClass('visible');
+        }
+      });
+      ajaxObj.done(function(res) {
+        if (res && res.data) {
+          $('#searchResultsCount').text(res.data.length);
+          console.log('success', res.data);
+        }
       });
       ajaxObj.fail(function(err) {
         console.log('error', err);

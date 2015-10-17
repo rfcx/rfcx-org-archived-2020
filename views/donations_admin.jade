@@ -13,6 +13,11 @@ block content
         .input-append
           input.search-query#searchIdInput(type="text", name="id", placeholder="xxxxxx", data-parsley-trigger="change", required)
           button.btn.btn-large.btn-success(type="submit") Search
+    .admin-donatephone-results#searchResults
+      p.admin-donatephone-results__title
+        span.admin-donatephone-results__count#searchResultsCount 0
+        span.admin-donatephone-results__text.
+          &nbsp;results found
 
     //form.form.form-donations-admin
     //  .form__row

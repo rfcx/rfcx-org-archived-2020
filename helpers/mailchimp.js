@@ -48,6 +48,21 @@ exports.mailchimp = {
       });
     });
 
+  },
+
+  searchListMembers: function(listId, queryString) {
+
+    return new Promise(function(resolve,reject){
+      mc.helper.searchMembers({
+          id: listId,
+          query: queryString
+        }, function(listData) {
+          resolve(listData.full_search.members);
+      }, function (error) {
+         reject(error);
+       });
+    });
+
   }
 
 

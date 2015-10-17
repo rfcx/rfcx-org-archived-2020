@@ -52,6 +52,14 @@ app.get("/mailchimp/get", function(req,res){
   });
 });
 
+app.get("/mailchimp/search", function(req,res){
+  require('./helpers/mailchimp.js').mailchimp.searchListMembers(process.env.MAILCHIMP_DONOR_LIST_ID,req.query.id).then(function(rtrnData){
+    res.json({data: rtrnData});
+  }).catch(function(err){
+    console.log("failed to create anonymous token | "+err);
+  });
+});
+
 app.post("/donate_phone/donor", [recaptcha.validate], function(req,res){
   var merge_vars = {
     COUNT: 1,

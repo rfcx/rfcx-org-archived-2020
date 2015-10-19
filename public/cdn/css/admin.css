@@ -1160,7 +1160,7 @@ input::-webkit-input-placeholder {
 }
 .form__row {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
 }
 .form__cell {
   float: left;
@@ -1171,22 +1171,43 @@ input::-webkit-input-placeholder {
   margin-right: 0;
   margin-left: 2%;
 }
+.form__title {
+  font: 18px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 .form__label {
-  font: 20px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font: 16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   display: block;
   margin-bottom: 0.5rem;
 }
 .form__input {
-  font: 16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 16px !important;
+  font: 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px !important;
   height: auto !important;
-  padding: 6px 3% !important;
+  padding: 6px !important;
   line-height: normal !important;
   width: 100%;
   border-color: #000 !important;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  margin-bottom: 0 !important;
+}
+.form__textarea {
+  font: 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px !important;
+  width: 100%;
+  height: auto !important;
+  min-height: 40px;
+  padding: 6px !important;
+  line-height: normal !important;
+  border-color: #000 !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 0 !important;
+  resize: none;
 }
 .parsley-errors-list {
   position: absolute;

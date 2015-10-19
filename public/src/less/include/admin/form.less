@@ -2,7 +2,7 @@
     &__row {
         position: relative;
         &:extend(.clearfix all);
-        margin-bottom: 1.5rem;
+        margin-bottom: 15px;
     }
     &__cell {
         float: left;
@@ -13,20 +13,39 @@
             margin-left: 2%;
         }
     }
+    &__title {
+        .helvetica(18);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
     &__label {
-        .helvetica(20);
+        .helvetica(16);
         display: block;
         margin-bottom: 0.5rem;
     }
     &__input {
-        .helvetica(16);
-        font-size: 16px !important;
+        .helvetica(14);
+        font-size: 14px !important;
         height: auto !important;
-        padding: 6px 3% !important;
+        padding: 6px !important;
         line-height: normal !important;
         width: 100%;
         border-color: #000 !important;
         .box-sizing(border-box);
+        margin-bottom: 0 !important;
+    }
+    &__textarea {
+        .helvetica(14);
+        font-size: 14px !important;
+        width: 100%;
+        height: auto !important;
+        min-height: 40px;
+        padding: 6px !important;
+        line-height: normal !important;
+        border-color: #000 !important;
+        .box-sizing(border-box);
+        margin-bottom: 0 !important;
+        resize: none;
     }
 }
 

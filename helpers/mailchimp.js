@@ -63,6 +63,23 @@ exports.mailchimp = {
        });
     });
 
+  },
+
+  updateMember: function(listId, email_addr, merge_vars) {
+
+    return new Promise(function(resolve,reject){
+      mc.lists.updateMember({
+        id: listId,
+        email: {
+          email: email_addr
+        },
+        merge_vars: merge_vars
+      }, function(data) {
+        resolve(data);
+      }, function (error) {
+        reject(error);
+      });
+    });
   }
 
 

@@ -2,6 +2,8 @@ $(function () {
 
   $('#loadingContainer').fadeOut();
 
+  var localData = {};
+
   var idSearch = {
     $form: $('#formSearchMailchimpId'),
     $results: $('#searchResults'),
@@ -16,6 +18,7 @@ $(function () {
     bindEvents: function() {
       this.$form.on('submit', this.onFormSubmit.bind(this));
       this.$resetBtn.click(this.resetForm.bind(this));
+      this.$list.on('click', '.js-edit-row', this.onEditClick.bind(this));
     },
     resetForm: function() {
       this.$form[0].reset();
@@ -33,6 +36,11 @@ $(function () {
     onFormSubmit: function(ev) {
       ev.preventDefault();
       this.sendAjax();
+    },
+    onEditClick: function(ev) {
+      var $this = $(ev.currentTarget);
+      var id    = $this.attr('data-id');
+      formUpdate.setValues(localData[id]);
     },
     sendAjax: function() {
       var url = this.$form.attr('action');
@@ -53,6 +61,7 @@ $(function () {
           var data = res.data;
           this.$resultsCount.text(data.length);
           if (data.length) {
+            this.reformatLocalData(data);
             this.$list.addClass('visible');
             this.$resetBtn.addClass('visible');
             this.renderData(data);
@@ -62,6 +71,11 @@ $(function () {
       ajaxObj.fail(function(err) {
         console.log('error', err);
       })
+    },
+    reformatLocalData: function(data) {
+      for (var i=0; i < data.length; i++) {
+        localData[data[i].id] = data[i];
+      }
     },
     // Append results to results list
     renderData: function(data) {
@@ -79,6 +93,49 @@ $(function () {
     }
   };
 
+  var formUpdate = {
+    $form: $('#formUpdate'),
+    init: function() {
+      this.bindEvents();
+    },
+    bindEvents: function() {
+      this.$form.on('submit', this.onSubmit.bind(this));
+    },
+    setValues: function(data) {
+      this.$form.find('.js-form-input').each(function() {
+        var $this = $(this);
+        var name = $this.attr('name');
+        $this.val(data[name] || data.merges[name] || '');
+      });
+    },
+    onSubmit: function(ev) {
+      ev.preventDefault();
+      this.saveData();
+    },
+    saveData: function() {
+      var ajaxObj = $.ajax({
+        type: this.$form.attr('method'),
+        url: this.$form.attr('action'),
+        data: this.$form.serialize(),
+        beforeSend: function() {
+          loadingSpinner.show();
+        },
+        complete: function() {
+          loadingSpinner.hide();
+        }
+      });
+      ajaxObj.done(function(res) {
+        if (res && res.status == 'success') {
+          new rfcxNotification({type: 'success', message: 'Successfully updated.'})
+        }
+      }.bind(this));
+      ajaxObj.fail(function(err) {
+        new rfcxNotification({type: 'error', message: 'Error when saving the data.'})
+      })
+    }
+  };
+
   idSearch.init();
+  formUpdate.init();
 
 });

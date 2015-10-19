@@ -36,27 +36,62 @@ block content
       span.admin-donatephone-results__item-controls
         a.fa.fa-edit.js-edit-row(data-id="{{:id}}", href="javascript:void(0);")
 
-    //form.form.form-donations-admin
-    //  .form__row
-    //    .form__cell
-    //      label.form__label(for="inputEmail") Email
-    //      input.form__input#inputEmail(name="email", type="email", readonly)
-    //    .form__cell
-    //      label.form__label(for="inputDonorName") Donor Name
-    //      input.form__input#inputDonorName(name="merges=[NAME_DONOR]", type="text")
-    //  .form__row
-    //    .form__cell
-    //      label.form__label(for="selectDonationCount") Donation Count
-    //      .select-custom
-    //        select#selectDonationCount(name="merges[COUNT]")
-    //          option(value="1") 1
-    //          option(value="2") 2
-    //          option(value="3") 3
-    //          option(value="4") 4
-    //          option(value="5") 5
-    //    .form__cell
-    //      label.form__label(for="inputDonorAddress") Donor Address
-    //      input.form__input#inputDonorAddress(name="merges[ADDRESS]", type="text")
+  .temporary(style="max-width: 800px; margin: 0 auto;")
+    form.form.form-donations-admin#formUpdate(method="POST", action="/donate_phone/donor/update")
+      p.form__title Customer part
+      .form__row
+        .form__cell
+          label.form__label(for="inputEmail") Email ID
+          input.form__input.js-form-input#inputEmail(name="email", type="email", readonly)
+        .form__cell
+          label.form__label(for="inputEmail") Email Real
+          input.form__input.js-form-input#inputEmail(name="EMAIL_REAL", type="email", readonly)
+      .form__row
+        .form__cell
+          label.form__label(for="inputDonorName") Donor Name
+          input.form__input.js-form-input#inputDonorName(name="NAME_DONOR", type="text")
+        .form__cell
+          label.form__label(for="selectDonationCount") Donation Count
+          .select-custom
+            select.js-form-input#selectDonationCount(name="COUNT")
+              option(value="1") 1
+              option(value="2") 2
+              option(value="3") 3
+              option(value="4") 4
+              option(value="5") 5
+              option(value="6") 6
+              option(value="7") 7
+              option(value="8") 8
+              option(value="9") 9
+              option(value="10") 10
+      .form__row
+        .form__cell
+          label.form__label(for="textareaDonorNotes") Donor Notes
+          textarea.form__textarea.js-form-input#textareaDonorNotes(name="NOTE_DONOR", readonly)
+      p.form__title Admin part
+      .form__row
+        .form__cell
+          label.form__label(for="textareaAdminNotes") Admin Notes
+          textarea.form__textarea.js-form-input#textareaAdminNotes(name="NOTE_ADMIN")
+        .form__cell
+          label.form__label(for="inputPhoto") Photo
+          input.form__input.js-form-input#inputPhoto(name="PHOTO", type="text")
+      .form__row
+        .form__cell
+          label.form__label(for="inputDonorAddress") Donor Address
+          input.form__input.js-form-input#inputDonorAddress(name="ADDRESS", type="text")
+        .form__cell
+          label.form__label(for="inputDateReceived") Date Received
+          input.form__input.js-form-input#inputDateReceived(name="RECEIVED", type="text")
+      .form__row
+        .form__cell
+          label.form__label(for="inputAdminName") Admin Name
+          input.form__input.js-form-input#inputAdminName(name="NAME_ADMIN", type="text")
+        .form__cell
+          label.form__label(for="inputValueUsd") Value USD
+          input.form__input.js-form-input#inputValueUsd(name="VALUE_USD", type="text")
+      .form__row
+        button.btn.btn-large.btn-success(type="submit") Update
 
     //table#dataTable.stripe.admin-donatephone__table
     //  thead

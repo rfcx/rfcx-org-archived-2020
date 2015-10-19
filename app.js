@@ -48,6 +48,7 @@ if (process.env.NODE_ENV === "development") {
 app.get("/mailchimp/get", donatePhoneRoutes.getMailChimpListDetails);
 app.get("/mailchimp/search", donatePhoneRoutes.searchMailChimpList);
 app.post("/donate_phone/donor", [recaptcha.validate], donatePhoneRoutes.putMailChimpEntry );
+app.post("/donate_phone/donor/update", donatePhoneRoutes.updateMailChimpEntry );
 
 app.get("/ks", function(req,res){
   res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );

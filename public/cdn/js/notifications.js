@@ -45,7 +45,7 @@ $(function() {
     setTimeout(function() {
       var $el = $('#' + _elId);
       if ($el.length) {
-        $('#' + _elId).alert('close');
+        $('#' + _elId).trigger('close');
       }
     }, 7000);
   }

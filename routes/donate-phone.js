@@ -55,3 +55,27 @@ exports.putMailChimpEntry = function(req,res) {
       });
     });
 };
+
+exports.updateMailChimpEntry = function(req,res) {
+
+  var email = req.body.email || '';
+
+  mailchimp_helpers.mailchimp.updateMember(
+      process.env.MAILCHIMP_DONOR_LIST_ID,
+      email,
+      req.body)
+    .then(function(rtrnData){
+      var response = {
+        status: "success"
+      };
+      res.json(extend(response, rtrnData));
+    })
+    .catch(function(err){
+      console.log(err);
+      res.status(500).json({
+        status: 'error',
+        message: "Failed to save entry"
+      });
+    });
+
+};

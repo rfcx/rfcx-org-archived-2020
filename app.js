@@ -23,7 +23,8 @@ var express = require("express"), routes = require("./routes"),
   favicon = require("serve-favicon"),
   compression = require("compression"), serveStatic = require("serve-static"),
   middlewares = require("./middlewares/all.js").middlewares,
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  donatePhoneRoutes = require('./routes/donate-phone.js');
 var app = express();
 
 app.set("title", "Rainforest Connection");
@@ -44,51 +45,9 @@ if (process.env.NODE_ENV === "development") {
 }
 
 
-app.get("/mailchimp/get", function(req,res){
-  require('./helpers/mailchimp.js').mailchimp.getListDetails(process.env.MAILCHIMP_DONOR_LIST_ID).then(function(rtrnData){
-    res.json({data: rtrnData});
-  }).catch(function(err){
-    console.log("failed to create anonymous token | "+err);
-  });
-});
-
-app.get("/mailchimp/search", function(req,res){
-  require('./helpers/mailchimp.js').mailchimp.searchListMembers(process.env.MAILCHIMP_DONOR_LIST_ID,req.query.id).then(function(rtrnData){
-    res.json({data: rtrnData});
-  }).catch(function(err){
-    console.log("failed to create anonymous token | "+err);
-  });
-});
-
-app.post("/donate_phone/donor", [recaptcha.validate], function(req,res){
-  var merge_vars = {
-    COUNT: 1,
-    REGISTERED: (new Date()).toISOString()
-  };
-  if (req.body.NAME_DONOR !== null) { merge_vars.NAME_DONOR = req.body.NAME_DONOR; }
-  if (req.body.COUNT !== null) { merge_vars.COUNT = parseInt(req.body.COUNT); }
-  if (req.body.NOTE_DONOR !== null) { merge_vars.NOTE_DONOR = req.body.NOTE_DONOR; }
-  if (req.body.EMAIL !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL; }
-
-  var generatedEmail = Math.random().toString().substr(2) + "@rfcx.org";
-
-  require('./helpers/mailchimp.js').mailchimp.addToList(
-        process.env.MAILCHIMP_DONOR_LIST_ID,
-        generatedEmail,
-        merge_vars)
-    .then(function(rtrnData){
-      var response = {
-        status: "success"
-      };
-      res.json(extend(response, rtrnData));
-    })
-    .catch(function(err){
-      res.status(500).json({
-        status: 'error',
-        message: "Failed to save entry"
-      });
-    });
-});
+app.get("/mailchimp/get", donatePhoneRoutes.getMailChimpListDetails);
+app.get("/mailchimp/search", donatePhoneRoutes.searchMailChimpList);
+app.post("/donate_phone/donor", [recaptcha.validate], donatePhoneRoutes.putMailChimpEntry );
 
 app.get("/ks", function(req,res){
   res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );

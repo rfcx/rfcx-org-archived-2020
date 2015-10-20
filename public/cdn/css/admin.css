@@ -558,7 +558,7 @@ input::-webkit-input-placeholder {
 .spinner-container {
   display: none;
   position: fixed;
-  z-index: 999999;
+  z-index: 99999999;
   top: 0;
   left: 0;
   width: 100%;
@@ -583,7 +583,7 @@ input::-webkit-input-placeholder {
 .notifications-container {
   opacity: 0;
   position: fixed;
-  z-index: 999999;
+  z-index: 9999999;
   top: 20%;
   left: 50%;
   width: 50%;
@@ -1023,6 +1023,16 @@ input::-webkit-input-placeholder {
   .rfcx-menu-mobile {
     display: block;
   }
+}
+* {
+  outline: none !important;
+}
+.html-admin,
+.body-admin {
+  height: 100%;
+}
+.body-admin .rfcx-container {
+  height: 100%;
 }
 .admin-donatephone {
   max-width: 1280px;

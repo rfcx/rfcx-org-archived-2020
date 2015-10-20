@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html.html-admin(lang="en")
   
   head
     title= current_page[3]
@@ -12,7 +12,7 @@ html(lang="en")
     link(rel='apple-touch-icon', href='#{rfcx_cdn}/img/logo/logo-square-trans.128.png?v=#{app_version}')
     | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> <![endif]-->
     | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> <![endif]-->
-  body.helvetica
+  body.helvetica.body-admin
     #loadingContainer.loading-container(style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: #fff;")
     #phoneDeviceContainer
     #tabletDeviceContainer
@@ -29,6 +29,7 @@ html(lang="en")
               img.header__logo-img(src="#{rfcx_cdn}/img/masthead/masthead-logo-white.560.png?v=#{app_version}", alt="")
 
       block content
+    block modals
 
     #rfcx-menu-mobile.rfcx-menu-mobile
       .rfcx-menu-mobile__bg

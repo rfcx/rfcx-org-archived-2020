@@ -97,6 +97,7 @@ $(function () {
 
   // Modal form with Donor info update
   var formUpdate = {
+    $modal: $('#myModal'),
     $form: $('#formUpdate'),
     $inputAddress: $('#inputDonorAddress'),
     $inputStreet: $('#inputDonorStreet'),
@@ -170,6 +171,8 @@ $(function () {
       ajaxObj.done(function(res) {
         if (res && res.status == 'success') {
           new rfcxNotification({type: 'success', message: 'Successfully updated.'})
+          this.$modal.modal('hide');
+          idSearch.$form.trigger('submit');
         }
       }.bind(this));
       ajaxObj.fail(function(err) {

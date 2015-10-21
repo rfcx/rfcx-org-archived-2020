@@ -45,17 +45,17 @@ block modals
       form.form.form-donations-admin#formUpdate(method="POST", action="/donate_phone/donor/update")
         p.form__title Customer part
         .form__row
-          .form__cell
+          .form__cell_3
             label.form__label(for="inputEmail") Email ID
             input.form__input.js-form-input#inputEmail(name="email", type="email", readonly)
-          .form__cell
+          .form__cell_3
             label.form__label(for="inputEmail") Email Real
             input.form__input.js-form-input#inputEmail(name="EMAIL_REAL", type="email", readonly)
-        .form__row
-          .form__cell
+          .form__cell_3
             label.form__label(for="inputDonorName") Donor Name
             input.form__input.js-form-input#inputDonorName(name="NAME_DONOR", type="text")
-          .form__cell
+        .form__row
+          .form__cell_3
             label.form__label(for="selectDonationCount") Donation Count
             .select-custom
               select.js-form-input#selectDonationCount(name="COUNT")
@@ -69,32 +69,47 @@ block modals
                 option(value="8") 8
                 option(value="9") 9
                 option(value="10") 10
-        .form__row
-          .form__cell
+          .form__cell_6
             label.form__label(for="textareaDonorNotes") Donor Notes
             textarea.form__textarea.js-form-input#textareaDonorNotes(name="NOTE_DONOR", readonly)
-        p.form__title Admin part
+        p.form__title
+          span Admin part
+          span.small (all address fields must be filled to save full address)
+        input#inputDonorAddress(name="ADDRESS", type="hidden")
         .form__row
-          .form__cell
-            label.form__label(for="textareaAdminNotes") Admin Notes
-            textarea.form__textarea.js-form-input#textareaAdminNotes(name="NOTE_ADMIN")
-          .form__cell
+          .form__cell_3
             label.form__label(for="inputPhoto") Photo
             input.form__input.js-form-input#inputPhoto(name="PHOTO", type="text")
+          .form__cell_3
+            label.form__label(for="inputAdminName") Admin Name
+            input.form__input.js-form-input#inputAdminName(name="NAME_ADMIN", type="text")
+          .form__cell_3
+            label.form__label(for="inputValueUsd") Value USD
+            input.form__input.js-form-input#inputValueUsd(name="VALUE_USD", type="text")
         .form__row
-          .form__cell
-            label.form__label(for="inputDonorAddress") Donor Address
-            input.form__input.js-form-input#inputDonorAddress(name="ADDRESS", type="text")
-          .form__cell
+          .form__cell_3
+            label.form__label(for="inputDonorStreet") Donor Address: Street
+            input.form__input.js-address-field#inputDonorStreet(type="text")
+          .form__cell_3
+            label.form__label(for="inputDonorCity") Donor Address: City
+            input.form__input.js-address-field#inputDonorCity(type="text")
+          .form__cell_3
+            label.form__label(for="inputDonorRegion") Donor Address: Region
+            input.form__input.js-address-field#inputDonorRegion(type="text")
+        .form__row
+          .form__cell_3
+            label.form__label(for="inputDonorZip") Donor Address: ZIP
+            input.form__input.js-address-field#inputDonorZip(type="text")
+          .form__cell_3
+            label.form__label(for="inputDonorCountry") Donor Address: Coutry
+            input.form__input.js-address-field#inputDonorCountry(type="text")
+          .form__cell_3
             label.form__label(for="inputDateReceived") Date Received
             input.form__input.js-form-input#inputDateReceived(name="RECEIVED", type="text")
         .form__row
-          .form__cell
-            label.form__label(for="inputAdminName") Admin Name
-            input.form__input.js-form-input#inputAdminName(name="NAME_ADMIN", type="text")
-          .form__cell
-            label.form__label(for="inputValueUsd") Value USD
-            input.form__input.js-form-input#inputValueUsd(name="VALUE_USD", type="text")
+          .form__cell_6
+            label.form__label(for="textareaAdminNotes") Admin Notes
+            textarea.form__textarea.js-form-input#textareaAdminNotes(name="NOTE_ADMIN")
         .form__row
           button.btn.btn-large.btn-success(type="submit") Update
 

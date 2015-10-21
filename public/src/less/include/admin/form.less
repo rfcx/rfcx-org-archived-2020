@@ -12,11 +12,33 @@
             margin-right: 0;
             margin-left: 2%;
         }
+        &_3 {
+            float: left;
+            width: 32%;
+            margin-left: 0;
+            margin-right: 2%;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &_6 {
+            float: left;
+            width: 64%;
+            margin-left: 0;
+            margin-right: 2%;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
     &__title {
         .helvetica(18);
         font-weight: bold;
         margin-bottom: 0.5rem;
+        .small {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
     }
     &__label {
         .helvetica(16);
@@ -39,7 +61,7 @@
         font-size: 14px !important;
         width: 100%;
         height: auto !important;
-        min-height: 40px;
+        min-height: 62px;
         padding: 6px !important;
         line-height: normal !important;
         border-color: #000 !important;
@@ -53,4 +75,28 @@
     position: absolute;
     .helvetica(12);
     line-height: 1;
+}
+
+@media @tablet {
+    .form {
+        &__cell {
+            &_3 {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media @mobile {
+    .form {
+        &__cell {
+            &_3 {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
 }

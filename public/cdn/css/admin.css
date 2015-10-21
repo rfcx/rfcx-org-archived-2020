@@ -1185,10 +1185,32 @@ input::-webkit-input-placeholder {
   margin-right: 0;
   margin-left: 2%;
 }
+.form__cell_3 {
+  float: left;
+  width: 32%;
+  margin-left: 0;
+  margin-right: 2%;
+}
+.form__cell_3:last-child {
+  margin-right: 0;
+}
+.form__cell_6 {
+  float: left;
+  width: 64%;
+  margin-left: 0;
+  margin-right: 2%;
+}
+.form__cell_6:last-child {
+  margin-right: 0;
+}
 .form__title {
   font: 18px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+.form__title .small {
+  margin-left: 5px;
+  font-size: 0.8em;
 }
 .form__label {
   font: 16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -1213,7 +1235,7 @@ input::-webkit-input-placeholder {
   font-size: 14px !important;
   width: 100%;
   height: auto !important;
-  min-height: 40px;
+  min-height: 62px;
   padding: 6px !important;
   line-height: normal !important;
   border-color: #000 !important;
@@ -1227,4 +1249,18 @@ input::-webkit-input-placeholder {
   position: absolute;
   font: 12px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .form__cell_3 {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .form__cell_3 {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
 }

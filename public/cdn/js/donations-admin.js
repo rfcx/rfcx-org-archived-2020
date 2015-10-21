@@ -1,3 +1,5 @@
+"use strict";
+
 $(function () {
 
   $('#loadingContainer').fadeOut();
@@ -95,11 +97,18 @@ $(function () {
 
   var formUpdate = {
     $form: $('#formUpdate'),
+    $inputAddress: $('#inputDonorAddress'),
+    $inputStreet: $('#inputDonorStreet'),
+    $inputCity: $('#inputDonorCity'),
+    $inputRegion: $('#inputDonorRegion'),
+    $inputZip: $('#inputDonorZip'),
+    $inputCountry: $('#inputDonorCountry'),
     init: function() {
       this.bindEvents();
     },
     bindEvents: function() {
       this.$form.on('submit', this.onSubmit.bind(this));
+      this.$form.on('keyup change', '.js-address-field', this.onAddressChanged.bind(this));
     },
     setValues: function(data) {
       this.$form.find('.js-form-input').each(function() {
@@ -111,6 +120,27 @@ $(function () {
     onSubmit: function(ev) {
       ev.preventDefault();
       this.saveData();
+    },
+    onAddressChanged: function() {
+      var address = {
+        street  : this.$inputStreet.val(),
+        city    : this.$inputCity.val(),
+        region  : this.$inputRegion.val(),
+        zip     : this.$inputZip.val(),
+        country : this.$inputCountry.val()
+      };
+      // if one of the address fields is empty then clear address input
+      for (var key in address) {
+        if (address.hasOwnProperty(key)) {
+          if (!address[key].length) {
+            this.$inputAddress.val('');
+            return;
+          }
+        }
+      }
+      // concatenate address fields into one mailchimp address string
+      var fullAddress = $.trim([address.street, address.city, address.region, address.zip, address.country].join('  '));
+      this.$inputAddress.val(fullAddress);
     },
     saveData: function() {
       var ajaxObj = $.ajax({

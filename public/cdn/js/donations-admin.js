@@ -95,12 +95,13 @@ $(function () {
     }
   };
 
+  // Modal form with Donor info update
   var formUpdate = {
     $form: $('#formUpdate'),
     $inputAddress: $('#inputDonorAddress'),
     $inputStreet: $('#inputDonorStreet'),
     $inputCity: $('#inputDonorCity'),
-    $inputRegion: $('#inputDonorRegion'),
+    $inputState: $('#inputDonorState'),
     $inputZip: $('#inputDonorZip'),
     $inputCountry: $('#inputDonorCountry'),
     init: function() {
@@ -111,11 +112,23 @@ $(function () {
       this.$form.on('keyup change', '.js-address-field', this.onAddressChanged.bind(this));
     },
     setValues: function(data) {
+      // fullfill all values from selected Donor except complex address field
       this.$form.find('.js-form-input').each(function() {
         var $this = $(this);
         var name = $this.attr('name');
-        $this.val(data[name] || data.merges[name] || '');
+        if (name !== 'ADDRESS') {
+          $this.val(data[name] || data.merges[name] || '');
+        }
       });
+      // Split address complex object into separate fields
+      if (data.merges && data.merges.ADDRESS) {
+        var address = data.merges.ADDRESS;
+        this.$inputStreet.val(address['addr1'] || '');
+        this.$inputCity.val(address.city || '');
+        this.$inputState.val(address.state || '');
+        this.$inputZip.val(address.zip || '');
+        this.$inputCountry.val(address.country || '');
+      }
     },
     onSubmit: function(ev) {
       ev.preventDefault();
@@ -125,7 +138,7 @@ $(function () {
       var address = {
         street  : this.$inputStreet.val(),
         city    : this.$inputCity.val(),
-        region  : this.$inputRegion.val(),
+        state   : this.$inputState.val(),
         zip     : this.$inputZip.val(),
         country : this.$inputCountry.val()
       };
@@ -139,7 +152,7 @@ $(function () {
         }
       }
       // concatenate address fields into one mailchimp address string
-      var fullAddress = $.trim([address.street, address.city, address.region, address.zip, address.country].join('  '));
+      var fullAddress = $.trim([address.street, address.city, address.state, address.zip, address.country].join('  '));
       this.$inputAddress.val(fullAddress);
     },
     saveData: function() {

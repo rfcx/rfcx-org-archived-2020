@@ -1027,6 +1027,10 @@ input::-webkit-input-placeholder {
 * {
   outline: none !important;
 }
+.modal-donor-info {
+  max-height: 90%;
+  overflow: auto;
+}
 .html-admin,
 .body-admin {
   height: 100%;

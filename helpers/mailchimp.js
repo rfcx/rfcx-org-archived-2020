@@ -1,6 +1,7 @@
 var Promise = require("bluebird");
 var mailchimp = require("../node_modules/mailchimp-api/mailchimp");
 var mc = new mailchimp.Mailchimp(process.env.MAILCHIMP_APP_KEY);
+var stripHtml = require("../helpers/striphtml.js");
 
 exports.mailchimp = {
 
@@ -35,6 +36,8 @@ exports.mailchimp = {
 
   addToList: function(listId, email_addr, merge_vars) {
 
+    merge_vars = stripHtml.stringObject(merge_vars);
+
     return new Promise(function(resolve,reject){
       mc.lists.subscribe({
           id: listId,
@@ -66,6 +69,8 @@ exports.mailchimp = {
   },
 
   updateMember: function(listId, email_addr, merge_vars) {
+
+    merge_vars = stripHtml.stringObject(merge_vars);
 
     return new Promise(function(resolve,reject){
       mc.lists.updateMember({

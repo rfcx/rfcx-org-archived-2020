@@ -79,3 +79,9 @@ exports.updateMailChimpEntry = function(req,res) {
     });
 
 };
+
+exports.validateUser = function(req, res) {
+  // if we went into this method, than it means that we passed checkPassword middleware successfully.
+  // that's why return success response
+  res.status(200).json({status: 'success'});
+};

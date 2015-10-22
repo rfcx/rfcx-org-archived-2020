@@ -4,9 +4,68 @@ $(function () {
 
   $('#loadingContainer').fadeOut();
 
+  // mailchimp returns an array with objects
+  // we will create a common object where we will store data from mailchimp in format:
+  //  {
+  //    subscriber_id_1 : {
+  //      // subscriber data
+  //      ...
+  //    },
+  //    subscriber_id_2 : {
+  //      // subscriber data
+  //      ...
+  //    },
+  //  }
   var localData = {};
 
-  var idSearch = {
+  // ===================================================================================================================
+  // PASSWORD FORM
+  // ===================================================================================================================
+
+  var formPassword = {
+    $el: $('#adminPassword'),
+    $form: $('#formAdminPassword'),
+    $input: $('#checkPasswordInput'),
+    init: function() {
+      this.bindEvents();
+      this.$input.focus();
+    },
+    bindEvents: function() {
+      this.$form.on('submit', this.onSubmit.bind(this));
+    },
+    onSubmit: function(ev) {
+      ev.preventDefault();
+      var ajaxObj = sendAjax({
+        type: this.$form.attr('method'),
+        url: this.$form.attr('action'),
+        data: this.$form.serialize()
+      });
+      ajaxObj.done(function(res) {
+        if (res && res.status == 'success') {
+          this.initGeneralStuff();
+        }
+      }.bind(this));
+      ajaxObj.fail(function(res) {
+        new rfcxNotification({type: 'error', message: res.responseJSON.message || 'Server error.'});
+      }.bind(this))
+    },
+    initGeneralStuff: function() {
+      // hide check password section
+      this.$el.addClass('hidden');
+      // set hidden password input in Update Donor form to valid value to pass backend middleware
+      $('#inputAdminPassword').val($('#checkPasswordInput').val());
+      // init search form
+      formSearch.init();
+      // init update form
+      formUpdate.init();
+    }
+  };
+
+  // ===================================================================================================================
+  // SEARCH FORM
+  // ===================================================================================================================
+
+  var formSearch = {
     $form: $('#formSearchMailchimpId'),
     $results: $('#searchResults'),
     $resultsCount: $('#searchResultsCount'),
@@ -45,20 +104,14 @@ $(function () {
       formUpdate.setValues(localData[id]);
     },
     sendAjax: function() {
-      var url = this.$form.attr('action');
-      var ajaxObj = $.ajax({
-        url: url,
-        data: this.$form.serialize(),
-        beforeSend: function() {
-          loadingSpinner.show();
-          this.resetResults();
-        }.bind(this),
-        complete: function() {
-          loadingSpinner.hide();
-          this.$results.addClass('visible');
-        }.bind(this)
+      this.resetResults();
+      var ajaxObj = sendAjax({
+        type: this.$form.attr('method'),
+        url: this.$form.attr('action'),
+        data: this.$form.serialize()
       });
       ajaxObj.done(function(res) {
+        this.$results.addClass('visible');
         if (res && res.data) {
           var data = res.data;
           this.$resultsCount.text(data.length);
@@ -95,7 +148,10 @@ $(function () {
     }
   };
 
-  // Modal form with Donor info update
+  // ===================================================================================================================
+  // UPDATE INFO FORM
+  // ===================================================================================================================
+
   var formUpdate = {
     $modal: $('#myModal'),
     $form: $('#formUpdate'),
@@ -157,31 +213,42 @@ $(function () {
       this.$inputAddress.val(fullAddress);
     },
     saveData: function() {
-      var ajaxObj = $.ajax({
+      var ajaxObj = sendAjax({
         type: this.$form.attr('method'),
         url: this.$form.attr('action'),
         data: this.$form.serialize(),
-        beforeSend: function() {
-          loadingSpinner.show();
-        },
-        complete: function() {
-          loadingSpinner.hide();
-        }
       });
       ajaxObj.done(function(res) {
-        if (res && res.status == 'success') {
-          new rfcxNotification({type: 'success', message: 'Successfully updated.'})
+        if (res) {
+          new rfcxNotification({type: 'success', message: 'Successfully updated.'});
           this.$modal.modal('hide');
-          idSearch.$form.trigger('submit');
+          formSearch.$form.trigger('submit');
         }
       }.bind(this));
-      ajaxObj.fail(function(err) {
-        new rfcxNotification({type: 'error', message: 'Error when saving the data.'})
+      ajaxObj.fail(function(res) {
+        new rfcxNotification({type: 'error', message: res.responseJSON.message || 'Error while saving the data.'});
       })
     }
   };
 
-  idSearch.init();
-  formUpdate.init();
+  // ===================================================================================================================
+  // COMMON METHODS, INIT
+  // ===================================================================================================================
+
+  function sendAjax(opts) {
+    return $.ajax({
+      type : opts.type,
+      url  : opts.url,
+      data : opts.data,
+      beforeSend : function() {
+        loadingSpinner.show();
+      },
+      complete: function() {
+        loadingSpinner.hide();
+      }
+    });
+  }
+
+  formPassword.init();
 
 });

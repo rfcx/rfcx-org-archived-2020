@@ -6,4 +6,24 @@ exports.middlewares = {
     next();
   },
 
+  checkAdminPassword: function(req, res, next) {
+    var userPassword = req.body.adminpassword;
+    if (!userPassword) {
+      return sendJson(res, 'error', 'Missing admin password field');
+    }
+    if (userPassword !== process.env.ADMIN_MASTER_PASSWORD) {
+      return sendJson(res, 'error', 'Wrong password.');
+    }
+    else {
+      next();
+    }
+  }
+
+};
+
+function sendJson(res, type, msg) {
+  res.status(type == 'success'? 200 : 403).json({
+    status: type,
+    message: msg
+  })
 }

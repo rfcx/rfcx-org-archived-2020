@@ -6,6 +6,14 @@ block additionalfiles
   //script(type='text/javascript', src='/vendor/datatables/FixedColumns/js/dataTables.fixedColumns.min.js')
   script(type='text/javascript', src='#{rfcx_cdn}/js/donations-admin.js?v=#{app_version}')
 block content
+  section.admin-password#adminPassword
+    form.form.form-admin-password#formAdminPassword(method="POST", action="/donate_phone/check_password", data-parsley-validate)
+      .form__row
+        label.form__label(for="checkPasswordInput") To have access you need to type admin master password
+      .form__row
+        input.form__input#checkPasswordInput(type="password", name="adminpassword", data-parsley-trigger="change", required)
+      .form__row
+        button.btn.btn-large.btn-success(type="submit") Send
   section.admin-donatephone
     form.form.form-admin-search.form-search#formSearchMailchimpId(method="GET", action="/mailchimp/search", data-parsley-validate)
       .form__row
@@ -43,6 +51,8 @@ block modals
       h3 Update Donor Info
     .modal-body
       form.form.form-donations-admin#formUpdate(method="POST", action="/donate_phone/donor/update")
+        input#inputDonorAddress(name="ADDRESS", type="hidden")
+        input#inputAdminPassword(name="adminpassword", type="hidden")
         p.form__title Customer part
         .form__row
           .form__cell_3
@@ -75,7 +85,6 @@ block modals
         p.form__title
           span Admin part
           span.small (all address fields must be filled to save full address)
-        input#inputDonorAddress(name="ADDRESS", type="hidden")
         .form__row
           .form__cell_3
             label.form__label(for="inputPhoto") Photo

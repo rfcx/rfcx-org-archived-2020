@@ -161,6 +161,9 @@ $(function () {
     $inputState: $('#inputDonorState'),
     $inputZip: $('#inputDonorZip'),
     $inputCountry: $('#inputDonorCountry'),
+    $cellPhoto: $('#imgPreviewCell'),
+    $linkPhoto: $('#imgPreviewLink'),
+    $imgPhoto: $('#imgPreview'),
     init: function() {
       this.bindEvents();
     },
@@ -186,6 +189,19 @@ $(function () {
         this.$inputZip.val(address.zip || '');
         this.$inputCountry.val(address.country || '');
       }
+      // Set src for image preview and show it
+      this.resetImage();
+      if (data.merges && data.merges.PHOTO) {
+        var photoUrl = data.merges.PHOTO;
+        this.$linkPhoto.attr('href', photoUrl);
+        this.$imgPhoto.attr('src', photoUrl);
+        this.$cellPhoto.show();
+      }
+    },
+    resetImage: function() {
+      this.$linkPhoto.attr('href', '');
+      this.$imgPhoto.attr('src', '');
+      this.$cellPhoto.hide();
     },
     onSubmit: function(ev) {
       ev.preventDefault();

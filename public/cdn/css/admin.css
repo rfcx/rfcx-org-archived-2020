@@ -1,6 +1,7 @@
 .clearfix,
 .admin-donatephone .admin-donatephone-results__item,
-.form__row {
+.form__row,
+.form__cell {
   *zoom: 1;
 }
 .clearfix:before,
@@ -8,13 +9,16 @@
 .admin-donatephone .admin-donatephone-results__item:before,
 .admin-donatephone .admin-donatephone-results__item:after,
 .form__row:before,
-.form__row:after {
+.form__row:after,
+.form__cell:before,
+.form__cell:after {
   content: "";
   display: table;
 }
 .clearfix:after,
 .admin-donatephone .admin-donatephone-results__item:after,
-.form__row:after {
+.form__row:after,
+.form__cell:after {
   clear: both;
 }
 .roadgeek {
@@ -1031,6 +1035,9 @@ input::-webkit-input-placeholder {
   max-height: 90%;
   overflow: auto;
 }
+.fp__overlay {
+  z-index: 10000000 !important;
+}
 .html-admin,
 .body-admin {
   height: 100%;
@@ -1256,6 +1263,17 @@ input::-webkit-input-placeholder {
   box-sizing: border-box;
   margin-bottom: 0 !important;
 }
+.form__input_photo {
+  display: inline-block !important;
+  vertical-align: middle;
+  width: 67%;
+  margin-right: 3%;
+}
+.form__filepicker-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+}
 .form__textarea {
   font: 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 14px !important;
@@ -1270,6 +1288,14 @@ input::-webkit-input-placeholder {
   box-sizing: border-box;
   margin-bottom: 0 !important;
   resize: none;
+}
+.form__img-preview-link {
+  display: block;
+}
+.form__img-preview {
+  display: block;
+  max-height: 62px;
+  max-width: 100%;
 }
 .parsley-errors-list {
   position: absolute;

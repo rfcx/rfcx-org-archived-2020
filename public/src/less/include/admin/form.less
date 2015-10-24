@@ -8,6 +8,7 @@
         float: left;
         width: 48%;
         margin-right: 2%;
+        &:extend(.clearfix all);
         & + .form__cell {
             margin-right: 0;
             margin-left: 2%;
@@ -55,6 +56,17 @@
         border-color: #000 !important;
         .box-sizing(border-box);
         margin-bottom: 0 !important;
+        &_photo {
+            display: inline-block !important;
+            vertical-align: middle;
+            width: 67%;
+            margin-right: 3%;
+        }
+    }
+    &__filepicker-btn {
+        display: inline-block;
+        vertical-align: middle;
+        width: 30%;
     }
     &__textarea {
         .helvetica(14);
@@ -68,6 +80,14 @@
         .box-sizing(border-box);
         margin-bottom: 0 !important;
         resize: none;
+    }
+    &__img-preview-link {
+        display: block;
+    }
+    &__img-preview {
+        display: block;
+        max-height: 62px;
+        max-width: 100%;
     }
 }
 

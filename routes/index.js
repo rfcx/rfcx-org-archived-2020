@@ -48,9 +48,11 @@ function setJadeVars(process, jV) {
   jV.cdn_datatables = inProd ? "//cdn.datatables.net" : "/vendor/datatables";
   jV.rfcx_vendor_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/vendor" : "/vendor";
   jV.rfcx_static_cdn = inProd ? "//d1gbw6jvuihkp4.cloudfront.net" : "//rfcx-static.s3.amazonaws.com";
+  jV.filepicker_cdn = "//api.filepicker.io";
   jV.nav_items = navItems;
   jV.social_media = socialMedia;
   jV.media_assets = []; if (jV.current_page[0] === "media") { jV.media_assets = require("./../data/media.js").load(); }
+  jV.filepicker_api = process.env.FILEPICKER_API_KEY;
   return jV;
 }
 

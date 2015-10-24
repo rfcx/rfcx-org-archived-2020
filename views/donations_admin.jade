@@ -4,6 +4,7 @@ block additionalfiles
   //link(rel='stylesheet', type='text/css', href='/vendor/datatables/FixedColumns/css/fixedColumns.dataTables.min.css')
   //script(type='text/javascript', src='#{cdn_datatables}/1.10.9/js/jquery.dataTables.min.js')
   //script(type='text/javascript', src='/vendor/datatables/FixedColumns/js/dataTables.fixedColumns.min.js')
+  script(type='text/javascript', src="#{filepicker_cdn}/v2/filepicker.js")
   script(type='text/javascript', src='#{rfcx_cdn}/js/donations-admin.js?v=#{app_version}')
 block content
   section.admin-password#adminPassword
@@ -87,28 +88,25 @@ block modals
           span.small (all address fields must be filled to save full address)
         .form__row
           .form__cell_3
-            label.form__label(for="inputPhoto") Photo
-            input.form__input.js-form-input#inputPhoto(name="PHOTO", type="text")
-          .form__cell_3
             label.form__label(for="inputAdminName") Admin Name
             input.form__input.js-form-input#inputAdminName(name="NAME_ADMIN", type="text")
           .form__cell_3
             label.form__label(for="inputValueUsd") Value USD
             input.form__input.js-form-input#inputValueUsd(name="VALUE_USD", type="text")
-        .form__row
           .form__cell_3
             label.form__label(for="inputDonorStreet") Donor Address: Street
             input.form__input.js-address-field#inputDonorStreet(type="text")
+        .form__row
           .form__cell_3
             label.form__label(for="inputDonorCity") Donor Address: City
             input.form__input.js-address-field#inputDonorCity(type="text")
           .form__cell_3
             label.form__label(for="inputDonorState") Donor Address: State
             input.form__input.js-address-field#inputDonorState(type="text")
-        .form__row
           .form__cell_3
             label.form__label(for="inputDonorZip") Donor Address: ZIP
             input.form__input.js-address-field#inputDonorZip(type="text")
+        .form__row
           .form__cell_3
             label.form__label(for="inputDonorCountry") Donor Address: Coutry
             input.form__input.js-address-field#inputDonorCountry(type="text")
@@ -119,6 +117,15 @@ block modals
           .form__cell_6
             label.form__label(for="textareaAdminNotes") Admin Notes
             textarea.form__textarea.js-form-input#textareaAdminNotes(name="NOTE_ADMIN")
+          .form__cell_3#imgPreviewCell
+            label.form__label Photo Preview
+            a.form__img-preview-link#imgPreviewLink(href="", target="_blank", title="Open Original Image in New Tab")
+              img.form__img-preview#imgPreview(src="", alt="Photo Preview")
+        .form__row
+          .form__cell_6
+            label.form__label(for="inputPhoto") Photo
+            input.form__input.form__input_photo.js-form-input#inputPhoto(name="PHOTO", type="filepicker",
+            data-fp-apikey="#{filepicker_api}", data-fp-button-class="btn form__filepicker-btn", data-fp-mimetype="image/*")
         .form__row
           button.btn.btn-large.btn-success(type="submit") Update
 

@@ -1,8 +1,14 @@
 .form {
+    margin-bottom: 0;
     &__row {
         position: relative;
         &:extend(.clearfix all);
         margin-bottom: 15px;
+        &_controls {
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            margin-bottom: 0;
+        }
     }
     &__cell {
         float: left;
@@ -24,12 +30,16 @@
         }
         &_6 {
             float: left;
-            width: 64%;
+            width: 66%;
             margin-left: 0;
             margin-right: 2%;
             &:last-child {
                 margin-right: 0;
             }
+        }
+        &_12 {
+            float: left;
+            width: 100%;
         }
     }
     &__title {

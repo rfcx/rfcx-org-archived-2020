@@ -180,6 +180,10 @@ $(function () {
         if (name !== 'ADDRESS') {
           $this.val(data[name] || data.merges[name] || '');
         }
+        // Email attribute has value such as 1231231423452@rfcx.org. We will show only numbers before @ letter
+        if (name.toLowerCase() === 'email') {
+          $this.val(data.email.split('@')[0]);
+        }
       });
       // Split address complex object into separate fields
       if (data.merges && data.merges.ADDRESS) {

@@ -1205,9 +1205,17 @@ input::-webkit-input-placeholder {
   color: #119911;
   text-decoration: none;
 }
+.form {
+  margin-bottom: 0;
+}
 .form__row {
   position: relative;
   margin-bottom: 15px;
+}
+.form__row_controls {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-bottom: 0;
 }
 .form__cell {
   float: left;
@@ -1229,12 +1237,16 @@ input::-webkit-input-placeholder {
 }
 .form__cell_6 {
   float: left;
-  width: 64%;
+  width: 66%;
   margin-left: 0;
   margin-right: 2%;
 }
 .form__cell_6:last-child {
   margin-right: 0;
+}
+.form__cell_12 {
+  float: left;
+  width: 100%;
 }
 .form__title {
   font: 18px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

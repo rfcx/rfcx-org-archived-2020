@@ -55,20 +55,20 @@ block modals
       form.form.form-donations-admin#formUpdate(method="POST", action="/donate_phone/donor/update")
         input#inputDonorAddress(name="ADDRESS", type="hidden")
         input#inputAdminPasswordUpdate(name="adminpassword", type="hidden")
-        p.form__title Customer part
+        p.form__title Donor Supplied Info
         .form__row
           .form__cell_3
-            label.form__label(for="inputEmail") Email ID
+            label.form__label(for="inputEmail") Donation ID
             input.form__input.js-form-input#inputEmail(name="email", type="email", readonly)
           .form__cell_3
-            label.form__label(for="inputEmail") Email Real
-            input.form__input.js-form-input#inputEmail(name="EMAIL_REAL", type="email", readonly)
+            label.form__label(for="inputEmailReal") Donor Email
+            input.form__input.js-form-input#inputEmailReal(name="EMAIL_REAL", type="email")
           .form__cell_3
             label.form__label(for="inputDonorName") Donor Name
             input.form__input.js-form-input#inputDonorName(name="NAME_DONOR", type="text")
         .form__row
           .form__cell_3
-            label.form__label(for="selectDonationCount") Donation Count
+            label.form__label(for="selectDonationCount") # of Phones
             .select-custom
               select.js-form-input#selectDonationCount(name="COUNT")
                 option(value="1") 1
@@ -85,38 +85,41 @@ block modals
             label.form__label(for="textareaDonorNotes") Donor Notes
             textarea.form__textarea.js-form-input#textareaDonorNotes(name="NOTE_DONOR", readonly)
         p.form__title
-          span Admin part
-          span.small (all address fields must be filled to save full address)
+          span Admin Supplied Info
         .form__row
-          .form__cell_3
+          .form__cell_6
             label.form__label(for="inputAdminName") Admin Name
             input.form__input.js-form-input#inputAdminName(name="NAME_ADMIN", type="text")
           .form__cell_3
-            label.form__label(for="inputValueUsd") Value USD
+            label.form__label(for="inputValueUsd") Donation Value (USD)
             input.form__input.js-form-input#inputValueUsd(name="VALUE_USD", type="text")
-          .form__cell_3
-            label.form__label(for="inputDonorStreet") Donor Address: Street
-            input.form__input.js-address-field#inputDonorStreet(type="text")
         .form__row
-          .form__cell_3
-            label.form__label(for="inputDonorCity") Donor Address: City
-            input.form__input.js-address-field#inputDonorCity(type="text")
-          .form__cell_3
-            label.form__label(for="inputDonorState") Donor Address: State
-            input.form__input.js-address-field#inputDonorState(type="text")
-          .form__cell_3
-            label.form__label(for="inputDonorZip") Donor Address: ZIP
-            input.form__input.js-address-field#inputDonorZip(type="text")
-        .form__row
-          .form__cell_3
-            label.form__label(for="inputDonorCountry") Donor Address: Coutry
-            input.form__input.js-address-field#inputDonorCountry(type="text")
           .form__cell_3
             label.form__label(for="inputDateReceived") Date Received
             input.form__input.js-form-input#inputDateReceived(name="RECEIVED", type="text")
         .form__row
+          p.form__label.
+            Donor Address <span class="small">(all address fields must be filled to save full address)</span>
+          .form__cell_12
+            label.form__label(for="inputDonorStreet") Street Address
+            input.form__input.js-address-field#inputDonorStreet(type="text")
+        .form__row
           .form__cell_6
-            label.form__label(for="textareaAdminNotes") Admin Notes
+            label.form__label(for="inputDonorCity") City
+            input.form__input.js-address-field#inputDonorCity(type="text")
+          .form__cell_3
+            label.form__label(for="inputDonorState") State
+            input.form__input.js-address-field#inputDonorState(type="text")
+        .form__row
+          .form__cell_3
+            label.form__label(for="inputDonorZip") Postal Code/ZIP
+            input.form__input.js-address-field#inputDonorZip(type="text")
+          .form__cell_3
+            label.form__label(for="inputDonorCountry") Coutry
+            input.form__input.js-address-field#inputDonorCountry(type="text")
+        .form__row
+          .form__cell_6
+            label.form__label(for="textareaAdminNotes") Notes
             textarea.form__textarea.js-form-input#textareaAdminNotes(name="NOTE_ADMIN")
           .form__cell_3#imgPreviewCell
             label.form__label Photo Preview
@@ -127,7 +130,7 @@ block modals
             label.form__label(for="inputPhoto") Photo
             input.form__input.form__input_photo.js-form-input#inputPhoto(name="PHOTO", type="filepicker",
             data-fp-apikey="#{filepicker_api}", data-fp-button-class="btn form__filepicker-btn", data-fp-mimetype="image/*")
-        .form__row
+        .form__row.form__row_controls
           button.btn.btn-large.btn-success(type="submit") Update
 
     //table#dataTable.stripe.admin-donatephone__table

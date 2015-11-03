@@ -67,10 +67,16 @@ $(function(){
           this.showStep(3);
         }
         else if (data.status == 'error') {
+          if (grecaptcha) {
+            grecaptcha.reset();
+          }
           return new rfcxNotification({type: 'error', message: data.message})
         }
       }.bind(this));
       res.error(function(data){
+        if (grecaptcha) {
+          grecaptcha.reset();
+        }
         new rfcxNotification({type: 'error', message: data.responseJSON.message})
       }.bind(this));
     },

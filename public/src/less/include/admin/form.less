@@ -110,10 +110,16 @@
 @media @tablet {
     .form {
         &__cell {
-            &_3 {
+            &_3,
+            &_6,
+            &_12 {
                 float: none;
                 width: 100%;
                 margin-right: 0;
+                margin-bottom: 15px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -122,10 +128,16 @@
 @media @mobile {
     .form {
         &__cell {
-            &_3 {
+            &_3,
+            &_6,
+            &_12{
                 float: none;
                 width: 100%;
                 margin-right: 0;
+                margin-bottom: 15px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }

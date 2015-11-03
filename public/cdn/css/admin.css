@@ -1327,16 +1327,32 @@ input::-webkit-input-placeholder {
   line-height: 1;
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .form__cell_3 {
+  .form__cell_3,
+  .form__cell_6,
+  .form__cell_12 {
     float: none;
     width: 100%;
     margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .form__cell_3:last-child,
+  .form__cell_6:last-child,
+  .form__cell_12:last-child {
+    margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 767px) {
-  .form__cell_3 {
+  .form__cell_3,
+  .form__cell_6,
+  .form__cell_12 {
     float: none;
     width: 100%;
     margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .form__cell_3:last-child,
+  .form__cell_6:last-child,
+  .form__cell_12:last-child {
+    margin-bottom: 0;
   }
 }

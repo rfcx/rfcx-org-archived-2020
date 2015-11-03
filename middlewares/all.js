@@ -11,7 +11,7 @@ exports.middlewares = {
     if (!userPassword) {
       return sendJson(res, 'error', 'Missing admin password field');
     }
-    if (userPassword !== process.env.ADMIN_MASTER_PASSWORD) {
+    if (userPassword !== process.env.PHONE_DONATION_ADMIN_PASSWORD) {
       return sendJson(res, 'error', 'Wrong password.');
     }
     else {

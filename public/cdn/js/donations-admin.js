@@ -167,10 +167,16 @@ $(function () {
     $imgPhoto: $('#imgPreview'),
     init: function() {
       this.bindEvents();
+      this.initDatePicker();
     },
     bindEvents: function() {
       this.$form.on('submit', this.onSubmit.bind(this));
       this.$form.on('keyup change', '.js-address-field', this.onAddressChanged.bind(this));
+    },
+    initDatePicker: function() {
+      $('#inputDateReceived').datepicker({
+        maxDate: '0'
+      });
     },
     setValues: function(data) {
       // fullfill all values from selected Donor except complex address field
@@ -180,11 +186,10 @@ $(function () {
         if (name !== 'ADDRESS') {
           $this.val(data[name] || data.merges[name] || '');
         }
-        // Email attribute has value such as 1231231423452@rfcx.org. We will show only numbers before @ letter
-        if (name.toLowerCase() === 'email') {
-          $this.val(data.email.split('@')[0]);
-        }
       });
+      // Email attribute has value such as 1231231423452@rfcx.org. We will show only numbers before @ letter
+      $('#inputEmailID').val(data.email.split('@')[0]);
+
       // Split address complex object into separate fields
       if (data.merges && data.merges.ADDRESS) {
         var address = data.merges.ADDRESS;

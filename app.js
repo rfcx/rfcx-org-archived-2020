@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "development") {
 
 
 app.get("/mailchimp/get", donatePhoneRoutes.getMailChimpListDetails);
-app.get("/mailchimp/search", donatePhoneRoutes.searchMailChimpList);
+app.get("/mailchimp/search", [middlewares.checkAdminPassword], donatePhoneRoutes.searchMailChimpList);
 app.post("/donate_phone/check_password", [middlewares.checkAdminPassword], donatePhoneRoutes.validateUser );
 app.post("/donate_phone/donor", [recaptcha.validate], donatePhoneRoutes.putMailChimpEntry );
 app.post("/donate_phone/donor/update", [middlewares.checkAdminPassword], donatePhoneRoutes.updateMailChimpEntry );

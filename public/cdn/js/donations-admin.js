@@ -53,7 +53,8 @@ $(function () {
       // hide check password section
       this.$el.addClass('hidden');
       // set hidden password input in Update Donor form to valid value to pass backend middleware
-      $('#inputAdminPassword').val($('#checkPasswordInput').val());
+      $('#inputAdminPasswordSearch').val($('#checkPasswordInput').val());
+      $('#inputAdminPasswordUpdate').val($('#checkPasswordInput').val());
       // init search form
       formSearch.init();
       // init update form

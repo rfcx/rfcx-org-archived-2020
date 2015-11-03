@@ -7,7 +7,7 @@ exports.middlewares = {
   },
 
   checkAdminPassword: function(req, res, next) {
-    var userPassword = req.body.adminpassword;
+    var userPassword = req.body.adminpassword || req.query.adminpassword;
     if (!userPassword) {
       return sendJson(res, 'error', 'Missing admin password field');
     }

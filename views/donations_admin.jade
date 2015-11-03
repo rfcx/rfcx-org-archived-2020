@@ -17,6 +17,7 @@ block content
         button.btn.btn-large.btn-success(type="submit") Send
   section.admin-donatephone
     form.form.form-admin-search.form-search#formSearchMailchimpId(method="GET", action="/mailchimp/search", data-parsley-validate)
+      input#inputAdminPasswordSearch(name="adminpassword", type="hidden")
       .form__row
         label.form__label(for="searchIdInput") Type the data you want to find:
         .input-append
@@ -53,7 +54,7 @@ block modals
     .modal-body
       form.form.form-donations-admin#formUpdate(method="POST", action="/donate_phone/donor/update")
         input#inputDonorAddress(name="ADDRESS", type="hidden")
-        input#inputAdminPassword(name="adminpassword", type="hidden")
+        input#inputAdminPasswordUpdate(name="adminpassword", type="hidden")
         p.form__title Customer part
         .form__row
           .form__cell_3

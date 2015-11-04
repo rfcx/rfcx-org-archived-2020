@@ -74,10 +74,10 @@ $(function(){
         }
       }.bind(this));
       res.error(function(data){
-        if (grecaptcha) {
-          grecaptcha.reset();
+        new rfcxNotification({type: 'error', message: data.responseJSON.message || 'Sever error.'});
+        if (window.grecaptcha) {
+          window.grecaptcha.reset();
         }
-        new rfcxNotification({type: 'error', message: data.responseJSON.message})
       }.bind(this));
     },
 

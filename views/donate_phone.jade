@@ -1,7 +1,7 @@
 extends layout
 block additionalfiles
   script(type='text/javascript', src='#{rfcx_cdn}/js/donatephone.js?v=#{app_version}')
-  script(src='https://www.google.com/recaptcha/api.js')
+  script(src='https://www.google.com/recaptcha/api.js', async)
 block content
   section.content
     .content__i

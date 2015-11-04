@@ -4,8 +4,8 @@ var gulp      = require('gulp'),
     rename    = require('gulp-rename');
 
 var paths = {
-    lessAllFiles: './public/src/less/**/*.less',
-    lessGeneralFiles: './public/src/less/*.less',
+    lessAllFiles: './developer/less/**/*.less',
+    lessGeneralFiles: './developer/less/*.less',
     cssAllFiles: './public/cdn/css/*.css',
     cssDestFiles: './public/cdn/css',
     cssMinDestFiles: './public/cdn/css/min'

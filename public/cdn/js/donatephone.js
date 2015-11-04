@@ -64,7 +64,7 @@ $(function(){
         }
         if (data.status == 'success') {
           console.log('email', data.email);
-          location.href = '/donation_instructions?token=' + data.email.substring(0,6);
+          location.href = '/donate/instructions?token=' + data.email.substring(0,6);
         }
         else if (data.status == 'error') {
           if (grecaptcha) {

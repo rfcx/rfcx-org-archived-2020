@@ -1,13 +1,9 @@
-extends layout_admin
+extends layout
 block additionalfiles
-  //link(rel='stylesheet', type='text/css', href='#{cdn_datatables}/1.10.9/css/jquery.dataTables.min.css')
-  //link(rel='stylesheet', type='text/css', href='/vendor/datatables/FixedColumns/css/fixedColumns.dataTables.min.css')
-  //script(type='text/javascript', src='#{cdn_datatables}/1.10.9/js/jquery.dataTables.min.js')
-  //script(type='text/javascript', src='/vendor/datatables/FixedColumns/js/dataTables.fixedColumns.min.js')
   link(rel='stylesheet', type='text/css', href='/vendor/jquery-ui/1.11.4-datepicker/css/jquery-ui.min.css')
   script(type='text/javascript', src='/vendor/jquery-ui/1.11.4-datepicker/js/jquery-ui.min.js')
   script(type='text/javascript', src="#{filepicker_cdn}/v2/filepicker.js")
-  script(type='text/javascript', src='#{rfcx_cdn}/js/donations-admin.js?v=#{app_version}')
+  script(type='text/javascript', src='#{rfcx_cdn}/js/admin/donations.js?v=#{app_version}')
 block content
   section.admin-password#adminPassword
     form.form.form-admin-password#formAdminPassword(method="POST", action="/donate_phone/check_password", data-parsley-validate)

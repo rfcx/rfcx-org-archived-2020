@@ -2606,12 +2606,10 @@ input::-webkit-input-placeholder {
 .donatephone__step:after {
   bottom: 0;
 }
-.donatephone__step_2,
-.donatephone__step_3 {
+.donatephone__step_2 {
   display: none;
 }
-.donatephone__step_2:before,
-.donatephone__step_3:before {
+.donatephone__step_2:before {
   display: none;
 }
 .donatephone__step_3 {

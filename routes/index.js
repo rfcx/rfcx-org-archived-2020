@@ -11,6 +11,7 @@ var navItems = [
     [ "media", "Media", "/media", "Media", true, false ],
 
     [ "donatephone", "Donate", "/donatephone", "Donate a Phone", false, false ],
+    [ "donation_instructions", "Donations", "/donation_instructions", "Donation Instructions", false, false ],
     [ "donations_admin", "Donations", "/donations_admin", "Donations", false, true ],
 
     [ "press", "Press", "/press", "Press Clippings", false, false ],
@@ -76,7 +77,8 @@ exports.page = function(req, res, process){
     res.setHeader("Access-Control-Allow-Origin","*");
     res.render(navItem[0], setJadeVars(process, {
       current_page: navItem,
-      http_headers: req.headers
+      http_headers: req.headers,
+      query       : req.query
     }));
   }
 };

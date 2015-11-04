@@ -63,8 +63,8 @@ $(function(){
           return new rfcxNotification({type: 'error', message: 'Server has not responded.'})
         }
         if (data.status == 'success') {
-          this.setToken(data.email);
-          this.showStep(3);
+          console.log('email', data.email);
+          location.href = '/donation_instructions?token=' + data.email.substring(0,6);
         }
         else if (data.status == 'error') {
           if (grecaptcha) {
@@ -79,11 +79,6 @@ $(function(){
         }
         new rfcxNotification({type: 'error', message: data.responseJSON.message})
       }.bind(this));
-    },
-
-    setToken: function(email) {
-      var token = email.substring(0,6);
-      $('#personalToken').text(token);
     },
 
     // Common method for ajax

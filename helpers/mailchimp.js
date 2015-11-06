@@ -38,6 +38,8 @@ exports.mailchimp = {
 
     merge_vars = stripHtml.stringObject(merge_vars);
 
+
+
     return new Promise(function(resolve,reject){
       mc.lists.subscribe({
           id: listId,

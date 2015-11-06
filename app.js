@@ -44,12 +44,27 @@ if (process.env.NODE_ENV === "development") {
   app.use(errorHandler());
 }
 
+// ===========================
+// FRONT-END REQUESTS
+// =========
 
-app.get("/mailchimp/get", donatePhoneRoutes.getMailChimpListDetails);
-app.get("/mailchimp/search", [middlewares.checkAdminPassword], donatePhoneRoutes.searchMailChimpList);
-app.post("/donate_phone/check_password", [middlewares.checkAdminPassword], donatePhoneRoutes.validateUser );
+// Create a donor when user submits form on /donate/phone page
 app.post("/donate_phone/donor", [recaptcha.validate], donatePhoneRoutes.putMailChimpEntry );
+
+// ===========================
+// ADMIN REQUESTS
+// =========
+
+// Get all entries of a mailchimp list
+app.get("/mailchimp/get", donatePhoneRoutes.getMailChimpListDetails);
+// Find entry by specified query
+app.get("/mailchimp/search", [middlewares.checkAdminPassword], donatePhoneRoutes.searchMailChimpList);
+// Simple password check for admin login. If passes through middleware then return success
+app.post("/donate_phone/check_password", [middlewares.checkAdminPassword], donatePhoneRoutes.validateUser );
+// Update existing donor info
 app.post("/donate_phone/donor/update", [middlewares.checkAdminPassword], donatePhoneRoutes.updateMailChimpEntry );
+// Crate new donor by Admin
+app.post("/donate_phone/donor/create", [middlewares.checkAdminPassword], donatePhoneRoutes.putMailChimpEntry );
 
 app.get("/ks", function(req,res){
   res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );

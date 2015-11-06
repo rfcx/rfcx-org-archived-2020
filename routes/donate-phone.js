@@ -29,11 +29,18 @@ exports.putMailChimpEntry = function(req,res) {
     COUNT: 1,
     REGISTERED: (new Date()).toISOString()
   };
-  
+
+  if (req.body.EMAIL      !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL; }
+  if (req.body.EMAIL_REAL !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL_REAL; }
+  if (req.body.ADDRESS    !== null) { merge_vars.ADDRESS    = req.body.ADDRESS; }
   if (req.body.NAME_DONOR !== null) { merge_vars.NAME_DONOR = req.body.NAME_DONOR; }
-  if (req.body.COUNT !== null) { merge_vars.COUNT = parseInt(req.body.COUNT); }
+  if (req.body.COUNT      !== null) { merge_vars.COUNT      = parseInt(req.body.COUNT); }
   if (req.body.NOTE_DONOR !== null) { merge_vars.NOTE_DONOR = req.body.NOTE_DONOR; }
-  if (req.body.EMAIL !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL; }
+  if (req.body.NAME_ADMIN !== null) { merge_vars.NAME_ADMIN = req.body.NAME_ADMIN; }
+  if (req.body.VALUE_USD  !== null) { merge_vars.VALUE_USD  = req.body.VALUE_USD; }
+  if (req.body.RECEIVED   !== null) { merge_vars.RECEIVED   = req.body.RECEIVED; }
+  if (req.body.NOTE_ADMIN !== null) { merge_vars.NOTE_ADMIN = req.body.NOTE_ADMIN; }
+  if (req.body.PHOTO      !== null) { merge_vars.PHOTO      = req.body.PHOTO; }
 
   var generatedEmail = Math.random().toString().substr(2) + "@rfcx.org";
 

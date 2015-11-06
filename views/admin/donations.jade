@@ -21,6 +21,9 @@ block content
         .input-append
           input.search-query#searchIdInput(type="text", name="id", placeholder="xxxxxx", data-parsley-trigger="change", required)
           button.btn.btn-large.btn-success(type="submit") Search
+      .form__row.admin-donatephone__create
+        p.form__label Or press button to create new donor:
+        button.btn.btn-large.btn-success#btnCreateDonor(type="button", href="#myModal", role="button", data-toggle="modal") Create
     .admin-donatephone-results#searchResults
       p.admin-donatephone-results__title
         span.admin-donatephone-results__count#searchResultsCount 0
@@ -50,7 +53,8 @@ block modals
       button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
       h3 Update Donor Info
     .modal-body
-      form.form.form-donations-admin#formUpdate(method="POST", action="/donate_phone/donor/update")
+      form.form.form-donations-admin#formUpdate(method="POST", action="/donate_phone/donor/update",
+        data-action-update="/donate_phone/donor/update", data-action-create="/donate_phone/donor/create")
         input#inputDonorAddress(name="ADDRESS", type="hidden")
         input#inputAdminPasswordUpdate(name="adminpassword", type="hidden")
         p.form__title Donor Supplied Info
@@ -61,15 +65,15 @@ block modals
             input.form__input.js-form-input#inputEmail(name="email", type="hidden", readonly)
           .form__cell_3
             label.form__label(for="inputEmailReal") Donor Email
-            input.form__input.js-form-input#inputEmailReal(name="EMAIL_REAL", type="email")
+            input.form__input.js-form-input#inputEmailReal(name="EMAIL_REAL", type="email", tabindex="1")
           .form__cell_3
             label.form__label(for="inputDonorName") Donor Name
-            input.form__input.js-form-input#inputDonorName(name="NAME_DONOR", type="text")
+            input.form__input.js-form-input#inputDonorName(name="NAME_DONOR", type="text", tabindex="2")
         .form__row
           .form__cell_3
             label.form__label(for="selectDonationCount") # of Phones
             .select-custom
-              select.js-form-input#selectDonationCount(name="COUNT")
+              select.js-form-input#selectDonationCount(name="COUNT", tabindex="3")
                 option(value="1") 1
                 option(value="2") 2
                 option(value="3") 3
@@ -88,39 +92,39 @@ block modals
         .form__row
           .form__cell_6
             label.form__label(for="inputAdminName") Admin Name
-            input.form__input.js-form-input#inputAdminName(name="NAME_ADMIN", type="text")
+            input.form__input.js-form-input#inputAdminName(name="NAME_ADMIN", type="text", tabindex="4")
           .form__cell_3
             label.form__label(for="inputValueUsd") Donation Value (USD)
-            input.form__input.js-form-input#inputValueUsd(name="VALUE_USD", type="text")
+            input.form__input.js-form-input#inputValueUsd(name="VALUE_USD", type="text", tabindex="5")
         .form__row
           .form__cell_3
             label.form__label(for="inputDateReceived") Date Received
-            input.form__input.js-form-input#inputDateReceived(name="RECEIVED", type="text")
+            input.form__input.js-form-input#inputDateReceived(name="RECEIVED", type="text", tabindex="6")
         .form__row
           p.form__label.
             Donor Address <span class="small">(all address fields must be filled to save full address)</span>
           .form__cell_12
             label.form__label(for="inputDonorStreet") Street Address
-            input.form__input.js-address-field#inputDonorStreet(type="text")
+            input.form__input.js-address-field#inputDonorStreet(type="text", tabindex="7")
         .form__row
           .form__cell_6
             label.form__label(for="inputDonorCity") City
-            input.form__input.js-address-field#inputDonorCity(type="text")
+            input.form__input.js-address-field#inputDonorCity(type="text", tabindex="8")
           .form__cell_3
             label.form__label(for="inputDonorState") State
-            input.form__input.js-address-field#inputDonorState(type="text")
+            input.form__input.js-address-field#inputDonorState(type="text", tabindex="9")
         .form__row
           .form__cell_3
             label.form__label(for="inputDonorZip") Postal Code/ZIP
-            input.form__input.js-address-field#inputDonorZip(type="text")
+            input.form__input.js-address-field#inputDonorZip(type="text", tabindex="10")
           .form__cell_3
             label.form__label(for="inputDonorCountry") Coutry
-            input.form__input.js-address-field#inputDonorCountry(type="text")
+            input.form__input.js-address-field#inputDonorCountry(type="text", tabindex="11")
         .form__row
           .form__cell_6
             label.form__label(for="textareaAdminNotes") Notes
-            textarea.form__textarea.js-form-input#textareaAdminNotes(name="NOTE_ADMIN")
-          .form__cell_3#imgPreviewCell
+            textarea.form__textarea.js-form-input#textareaAdminNotes(name="NOTE_ADMIN", tabindex="12")
+          .form__cell_3.form__img-preview-cell#imgPreviewCell
             label.form__label Photo Preview
             a.form__img-preview-link#imgPreviewLink(href="", target="_blank", title="Open Original Image in New Tab")
               img.form__img-preview#imgPreview(src="", alt="Photo Preview")
@@ -130,21 +134,4 @@ block modals
             input.form__input.form__input_photo.js-form-input#inputPhoto(name="PHOTO", type="filepicker",
             data-fp-apikey="#{filepicker_api}", data-fp-button-class="btn form__filepicker-btn", data-fp-mimetype="image/*")
         .form__row.form__row_controls
-          button.btn.btn-large.btn-success(type="submit") Update
-
-    //table#dataTable.stripe.admin-donatephone__table
-    //  thead
-    //    tr
-    //      th
-    //      th Email
-    //      th Donor Name
-    //      th Donation Count
-    //      th Donor Notes
-    //      th Admin Notes
-    //      th Donor Address
-    //      th Photo
-    //      th Email Real
-    //      th Date Registered
-    //      th Date Received
-    //      th Admin Name
-    //      th Estimated Value
+          button.btn.btn-large.btn-success(type="submit") Save

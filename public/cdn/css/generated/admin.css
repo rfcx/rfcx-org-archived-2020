@@ -1089,6 +1089,9 @@ input::-webkit-input-placeholder {
   position: relative;
   z-index: 1;
 }
+.admin-donatephone__create {
+  margin-top: 3rem;
+}
 .admin-donatephone .form-admin-search {
   width: 90%;
   max-width: 600px;
@@ -1312,6 +1315,9 @@ input::-webkit-input-placeholder {
   box-sizing: border-box;
   margin-bottom: 0 !important;
   resize: none;
+}
+.form__img-preview-cell {
+  display: none;
 }
 .form__img-preview-link {
   display: block;

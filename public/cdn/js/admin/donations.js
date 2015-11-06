@@ -23,8 +23,8 @@ $(function () {
   // ===================================================================================================================
 
   var formPassword = {
-    $el: $('#adminPassword'),
-    $form: $('#formAdminPassword'),
+    $el:    $('#adminPassword'),
+    $form:  $('#formAdminPassword'),
     $input: $('#checkPasswordInput'),
     init: function() {
       this.bindEvents();
@@ -67,12 +67,13 @@ $(function () {
   // ===================================================================================================================
 
   var formSearch = {
-    $form: $('#formSearchMailchimpId'),
-    $results: $('#searchResults'),
+    $form:         $('#formSearchMailchimpId'),
+    $input:        $('#searchIdInput'),
+    $results:      $('#searchResults'),
     $resultsCount: $('#searchResultsCount'),
-    $list: $('#searchResultsList'),
-    $tmpl: $('#donateSearchResultItemTmpl'),
-    $resetBtn: $('#searchClearBtn'),
+    $list:         $('#searchResultsList'),
+    $tmpl:         $('#donateSearchResultItemTmpl'),
+    $resetBtn:     $('#searchClearBtn'),
 
     init: function() {
       this.bindEvents();
@@ -97,7 +98,9 @@ $(function () {
     },
     onFormSubmit: function(ev) {
       ev.preventDefault();
-      this.sendAjax();
+      if (this.$input.val().length) {
+        this.sendAjax();
+      }
     },
     onEditClick: function(ev) {
       var $this = $(ev.currentTarget);
@@ -154,17 +157,18 @@ $(function () {
   // ===================================================================================================================
 
   var formUpdate = {
-    $modal: $('#myModal'),
-    $form: $('#formUpdate'),
+    $modal:        $('#myModal'),
+    $form:         $('#formUpdate'),
     $inputAddress: $('#inputDonorAddress'),
-    $inputStreet: $('#inputDonorStreet'),
-    $inputCity: $('#inputDonorCity'),
-    $inputState: $('#inputDonorState'),
-    $inputZip: $('#inputDonorZip'),
+    $inputStreet:  $('#inputDonorStreet'),
+    $inputCity:    $('#inputDonorCity'),
+    $inputState:   $('#inputDonorState'),
+    $inputZip:     $('#inputDonorZip'),
     $inputCountry: $('#inputDonorCountry'),
-    $cellPhoto: $('#imgPreviewCell'),
-    $linkPhoto: $('#imgPreviewLink'),
-    $imgPhoto: $('#imgPreview'),
+    $cellPhoto:    $('#imgPreviewCell'),
+    $linkPhoto:    $('#imgPreviewLink'),
+    $imgPhoto:     $('#imgPreview'),
+    $createBtn:    $('#btnCreateDonor'),
     init: function() {
       this.bindEvents();
       this.initDatePicker();
@@ -172,6 +176,8 @@ $(function () {
     bindEvents: function() {
       this.$form.on('submit', this.onSubmit.bind(this));
       this.$form.on('keyup change', '.js-address-field', this.onAddressChanged.bind(this));
+      this.$createBtn.on('click', this.onCreateClicked.bind(this));
+      this.$modal.on('hidden', this.onModalClosed.bind(this));
     },
     initDatePicker: function() {
       $('#inputDateReceived').datepicker({
@@ -179,6 +185,7 @@ $(function () {
       });
     },
     setValues: function(data) {
+      this.$form.attr('action', this.$form.attr('data-action-update'));
       // fullfill all values from selected Donor except complex address field
       this.$form.find('.js-form-input').each(function() {
         var $this = $(this);
@@ -238,6 +245,13 @@ $(function () {
       var fullAddress = $.trim([address.street, address.city, address.state, address.zip, address.country].join('  '));
       this.$inputAddress.val(fullAddress);
     },
+    onCreateClicked: function() {
+      this.$form.attr('action', this.$form.attr('data-action-create'));
+    },
+    onModalClosed: function() {
+      this.$form[0].reset();
+      this.resetImage();
+    },
     saveData: function() {
       var ajaxObj = sendAjax({
         type: this.$form.attr('method'),
@@ -246,8 +260,9 @@ $(function () {
       });
       ajaxObj.done(function(res) {
         if (res) {
-          new rfcxNotification({type: 'success', message: 'Successfully updated.'});
+          new rfcxNotification({type: 'success', message: 'Successfully saved.'});
           this.$modal.modal('hide');
+          // Refresh search results list with updated data
           formSearch.$form.trigger('submit');
         }
       }.bind(this));

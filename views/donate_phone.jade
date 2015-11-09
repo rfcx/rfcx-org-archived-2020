@@ -9,6 +9,7 @@ block content
         .donatephone__title
           include common/help-silence-title
         form#donateForm.form.donatephone__form(action="/donate_phone/donor", method="post", data-parsley-validate)
+          input(type="hidden", name="FRONTEND", value="true")
           .donatephone__step.donatephone__step_1#donatePhoneStep1
             .donatephone__left
               .donatephone__select-container
@@ -34,7 +35,7 @@ block content
             .donatephone__left
               .donatephone__text Please type your E-mail address here (optional):
               .form__row.donatephone__input-container
-                input.donatephone__input(type="email", name="EMAIL", placeholder="E-mail")
+                input.donatephone__input(type="email", name="EMAIL_REAL", placeholder="E-mail")
               .donatephone__text Please type your name (optional):
               .form__row.donatephone__input-container
                 input.donatephone__input(name="NAME_DONOR", placeholder="Your name", type="text")

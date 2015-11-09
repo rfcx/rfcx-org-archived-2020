@@ -19,6 +19,7 @@
     "express": "^4.4.3",
     "jade": "^1.9.2",
     "mailchimp-api": "^2.0.7",
+    "mandrill-api": "^1.0.45",
     "method-override": "^2.3.2",
     "morgan": "^1.5.2",
     "newrelic": "^1.18.5",

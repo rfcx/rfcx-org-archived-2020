@@ -30,6 +30,7 @@ exports.putMailChimpEntry = function(req,res) {
     REGISTERED: (new Date()).toISOString()
   };
 
+  if (req.body.FRONTEND   !== null) { merge_vars.FRONTEND   = req.body.FRONTEND; }
   if (req.body.EMAIL      !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL; }
   if (req.body.EMAIL_REAL !== null) { merge_vars.EMAIL_REAL = req.body.EMAIL_REAL; }
   if (req.body.ADDRESS    !== null) { merge_vars.ADDRESS    = req.body.ADDRESS; }

@@ -3,6 +3,8 @@ var mailchimp = require("../node_modules/mailchimp-api/mailchimp");
 var mc = new mailchimp.Mailchimp(process.env.MAILCHIMP_APP_KEY);
 var stripHtml = require("../helpers/striphtml.js");
 
+var mandrill_helpers = require("../helpers/mandrill");
+
 exports.mailchimp = {
 
   getLists: function() {
@@ -38,8 +40,6 @@ exports.mailchimp = {
 
     merge_vars = stripHtml.stringObject(merge_vars);
 
-
-
     return new Promise(function(resolve,reject){
       mc.lists.subscribe({
           id: listId,
@@ -47,6 +47,19 @@ exports.mailchimp = {
           merge_vars: merge_vars,
           double_optin: false
         }, function(data) {
+        // If Donor has specified his email address, then send instructions to that email
+        if (merge_vars.FRONTEND && merge_vars.EMAIL_REAL) {
+          var html =
+            "<div>Your personal token is <b>" + email_addr.substring(0,6) + "</b></div>" +
+            "<div>Please include it in the box with your phone</div>";
+          mandrill_helpers.sendEmail({
+            email:     merge_vars.EMAIL_REAL,
+            subject:   "Donation Instructions",
+            name:      merge_vars.NAME_DONOR,
+            html:      html,
+            important: false
+          });
+        }
         resolve(data);
       }, function(error) {
         reject(error);

@@ -6,26 +6,28 @@ block content
     .content__i
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
         div.span12
-          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= "Finally, trees that can talk."
+          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header
+            span= __("Finally, trees that can talk.")
           p.rfcx-body
             span
-              | <em>Rainforest Connection</em> uses upcycled mobile technology to monitor and protect remote forests, enabling real-time interventions.
+              span!= __("%sRainforest Connection%s uses upcycled mobile technology to monitor and protect remote forests, enabling real-time interventions.", '<em>', '</em>')
       div.row-fluid.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-2
         div.span5
           p.roadgeek.rfcx-header.italic
             span.rfcx-row-about-1-1__quote-first-line
-              | &ldquo;If a tree falls&nbsp;
+              span= __('"If a tree falls ')
             span.rfcx-row-about-1-1__quote-second-line
-              | in the forest...&rdquo;
+              span= __('in the forest..."')
           p.rfcx-body
             span.italic
-              | &ldquo;...and no one is there to hear it, does it make a sound?&rdquo;
+              span= __('"... and no one is there to hear it, does it make a sound?"')
           p.rfcx-body
             span
-              | These days, statistically speaking, when a tree falls in the forest, there's usually somebody there to hear it&#8212;the people that cut it down. With <em>Rainforest Connection</em> technology, we can finally rewrite this ancient adage to read:
+              span= __("These days, statistically speaking, when a tree falls in the forest, there's usually somebody there to hear it — the people that cut it down.")
+              span!= __("With %sRainforest Connection%s technology, we can finally rewrite this ancient adage to read:", '<em>', '</em>')
           p.rfcx-body
             span.italic
-              | &ldquo;If a tree falls in the forest, and no one is there to hear it, <b>you</b> still can. And so can the world. We're developing multi-tiered platforms for remote sensing of ecological data that can be used to monitor the health of forests and endangered species &rdquo;
+              span!= __('"If a tree falls in the forest, and no one is there to hear it, %syou%s still can. And so can the world. We\'re developing multi-tiered platforms for remote sensing of ecological data that can be used to monitor the health of forests and endangered species."', '<b>', '</b>')
         div.span7
           div.screen-container(onClick="showHelpBubbles();")
             img.screen-img(src="#{rfcx_cdn}/img/about/screen-trans.560.png?v=#{app_version}", alt="")
@@ -42,33 +44,37 @@ block content
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-2
         .rfcx-row-about-2__content
           p.roadgeek.rfcx-header
-            | Turning old phones
+            span= __('Turning old phones')
             br
-            | into forest guardians
+            span= __('into forest guardians')
           img.rfcx-row-about-2__img(src="#{rfcx_cdn}/img/about/phone-trash-side.380.png?v=#{app_version}", alt="")
           p.rfcx-body
             span
-              | Why use old, recycled smartphones to guard the rainforest?
+              span= __("Why use old, recycled smartphones to guard the rainforest?")
               br
-              | Because it could be the simplest, least expensive way to do it.
+              span= __("Because it could be the simplest, least expensive way to do it.")
           p.rfcx-body
             span
-              | Smartphones are arguably the most efficient, advanced, and well-understood computers available on the market today, and each year, more than 150 million phones are discarded <a target="_blank" href="http://www.electronicstakeback.com/wp-content/uploads/Facts_and_Figures_on_EWaste_and_Recycling.pdf">in the United States alone</a>.
+              span= __("Smartphones are arguably the most efficient, advanced, and well-understood computers available on the market today, and each year, more than 150 million phones are discarded")
+              a(target="_blank", href="http://www.electronicstakeback.com/wp-content/uploads/Facts_and_Figures_on_EWaste_and_Recycling.pdf")= __("in the United States alone")
+              | .
               br
-              | <span class="italic">Rainforest Connection</span> can take this "trash" and put it to use immediately.
+              span!= __('%sRainforest Connection%s can take this "trash" and put it to use immediately.', '<span class="italic">', '</span>')
           p.rfcx-body
             span
-              | Today, many of earth's endangered forests are being touched by wireless telecommunications infrastructure. Rather than start from scratch, <span class="italic">Rainforest Connection</span> is already able to leverage this infrastructure from the start to protect some the world's most threatened forests.
+              span!= __('Today, many of earth\'s endangered forests are being touched by wireless telecommunications infrastructure. Rather than start from scratch, %sRainforest Connection%s is already able to leverage this infrastructure from the start to protect some the world\'s most threatened forests.', '<span class="italic">', '</span>')
 
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-3
         div.span4
-          p.roadgeek.rfcx-header= "Where do we start?"
+          p.roadgeek.rfcx-header= __("Where do we start?")
           p.rfcx-body
-            | The <span class="italic">Rainforest Connection</span> system works, and we've now proven it in the field in Sumatra against actual illegal logging operations. Now we need to expand by putting the next generation of devices into <b>three more endangered areas</b> in the rainforests of Indonesia, the Amazon and Africa.
+            span!= __('The %sRainforest Connection%s system works, and we\'ve now proven it in the field in Sumatra against actual illegal logging operations. Now we need to expand by putting the next generation of devices into %sthree more endangered areas%s in the rainforests of Indonesia, the Amazon and Africa.', '<span class="italic">', '</span>', '<b>', '</b>')
           p.rfcx-body
-            | Why such different locations? Our goal is to demonstrate that our system can operate on <b>a global scale, in any forest, anywhere</b>.
+            span!= __('Why such different locations? Our goal is to demonstrate that our system can operate on %sa global scale, in any forest, anywhere%s.', '<b>', '</b>')
           p.rfcx-body.rfcx-body-full
-            | This requires funding and strong on-the-ground partnerships with local communities, indigenous partners and organizations that are committed to responding to real-time itervention. We know that <span class="italic">Rainforest Connection</span> can help turn the tide of environmental crisis, but <a href="get_involved">we need your help</a> to make it a reality.
+            span!= __('This requires funding and strong on-the-ground partnerships with local communities, indigenous partners and organizations that are committed to responding to real-time itervention. We know that %sRainforest Connection%s can help turn the tide of environmental crisis, but ', '<span class="italic">', '</span>')
+            a(href="#{locale_url}/get_involved")= __('we need your help')
+            span= __(' to make it a reality.')
         div.span8
           .iphone-container
             .iphone-container__phone(style="background: url(#{rfcx_cdn}/img/about/iphone5-black-bg.690.png?v=#{app_version}) no-repeat center center; background-size: contain;")

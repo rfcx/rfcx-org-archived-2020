@@ -6,25 +6,25 @@ block content
     .content__i
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-about-1.rfcx-row-about-1-1
         div.span12
-          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= "GREAT JOURNALISM DESERVES GREAT MATERIAL"
+          p.rfcx-row-about-1-1__title.roadgeek.rfcx-header= __("Great journalism deserves great material")
 
       div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-row-media-img_subtitle
         div.span12
           p.rfcx-body
-            span= "We're here to help you find what you're looking for."
+            span= __("We're here to help you find what you're looking for.")
 
       div.row-fluid.rfcx-row.rfcx-row-media-img.rfcx-row-media-img_contacts.rfcx-row-media-contacts
-        p.rfcx-row-media-contacts__text.roadgeek.rfcx-header= "CONTACT US:"
+        p.rfcx-row-media-contacts__text.roadgeek.rfcx-header= __("Contact Us:")
         .rfcx-row-media-contacts__links
           p.rfcx-body
             a.rfcx-row-media-contacts__link(href="mailto:contact@rfcx.org")= "contact@rfcx.org"
             br
             a.rfcx-row-media-contacts__link(href="tel:+14153359205")= "+1 (415) 335-9205"
 
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
-        p.roadgeek.rfcx-header= "THE DEVICE"
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-row-media-block
+        p.roadgeek.rfcx-header.rfcx-row-media-block__title= __("The device")
         p.rfcx-body
-          span= "NOTE: The following photos of RFCx hardware do not represent realistic placement locations, and are intended for display purposes only. In these photos, the devices are low-mounted on trees in order to enhance their visibility. When properly installed, RFCx devices are placed high in the tree canopy where they are virtually invisible."
+          span= __("NOTE: The following photos of RFCx hardware do not represent realistic placement locations, and are intended for display purposes only. In these photos, the devices are low-mounted on trees in order to enhance their visibility. When properly installed, RFCx devices are placed high in the tree canopy where they are virtually invisible.")
 
         .rfcx-media__thumbs
           for v,i in media_assets
@@ -43,8 +43,8 @@ block content
               if (v['type'] == 'video')
                 iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
-        p.roadgeek.rfcx-header= "INFOGRAPHICS"
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-row-media-block
+        p.roadgeek.rfcx-header.rfcx-row-media-block__title= __("Infographics")
 
         .rfcx-media__thumbs
           for v,i in media_assets
@@ -63,8 +63,8 @@ block content
               if (v['type'] == 'video')
                 iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-media
-        p.roadgeek.rfcx-header= "THE ONES WE HELP TO PROTECT"
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-media.rfcx-row-media-block
+        p.roadgeek.rfcx-header.rfcx-row-media-block__title= __("The ones we help to protect")
 
         .rfcx-media__thumbs
           for v,i in media_assets
@@ -84,8 +84,8 @@ block content
                 iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
 
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
-        p.roadgeek.rfcx-header= "RFCx IN THE FOREST"
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-row-media-block
+        p.roadgeek.rfcx-header.rfcx-row-media-block__title= __("RFCx in the forest")
 
         .rfcx-media__thumbs
           for v,i in media_assets
@@ -105,8 +105,8 @@ block content
               if (v['type'] == 'video')
                 iframe.rfcx-media__thumb-iframe.rfcx-video-media(src='#{v["thmb"]}')
 
-      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img
-        p.roadgeek.rfcx-header= "PUTTING IT ALL TOGETHER"
+      div.row-fluid.rfcx-row-gradient.rfcx-row.rfcx-row-media-img.rfcx-row-media-block
+        p.roadgeek.rfcx-header.rfcx-row-media-block__title= __("Putting it all together")
 
         .rfcx-media__thumbs
           for v,i in media_assets
@@ -136,4 +136,4 @@ block content
           div.modal-body(style="width:640px;")
             img.rfcx-view-media(src="#{v['thmb']}", alt="")
           div.modal-footer
-            button.btn(data-dismiss='modal',aria-hidden='true')= "Close"
+            button.btn(data-dismiss='modal',aria-hidden='true')= __("Close")

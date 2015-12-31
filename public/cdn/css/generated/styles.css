@@ -35,6 +35,17 @@
 .bold {
   font-weight: bold;
 }
+.lang-ru .roadgeek {
+  letter-spacing: 0;
+}
+.lang-ru .roadgeek span {
+  font-size: 0.6em;
+  line-height: 0.6em;
+}
+.lang-de .roadgeek span {
+  font-size: 0.9em;
+  line-height: 0.9em;
+}
 input.parsley-error,
 select.parsley-error,
 textarea.parsley-error {
@@ -1761,6 +1772,7 @@ input::-webkit-input-placeholder {
   z-index: 1;
   line-height: 48px;
   text-transform: uppercase;
+  width: 40%;
 }
 .banner-video .slogan p.roadgeek {
   font-size: 48px;
@@ -2479,6 +2491,9 @@ input::-webkit-input-placeholder {
 .rfcx-row-media-contacts {
   text-align: center;
 }
+.rfcx-row-media-contacts__text {
+  text-transform: uppercase;
+}
 .rfcx-row-media-contacts__text,
 .rfcx-row-media-contacts__links {
   display: inline-block;
@@ -2486,6 +2501,9 @@ input::-webkit-input-placeholder {
 }
 .rfcx-row-media-contacts__links {
   margin-left: 9%;
+}
+.rfcx-row-media-block__title {
+  text-transform: uppercase;
 }
 .rfcx-media__thumbs {
   font-size: 0;

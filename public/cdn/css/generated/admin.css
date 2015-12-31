@@ -39,6 +39,17 @@
 .bold {
   font-weight: bold;
 }
+.lang-ru .roadgeek {
+  letter-spacing: 0;
+}
+.lang-ru .roadgeek span {
+  font-size: 0.6em;
+  line-height: 0.6em;
+}
+.lang-de .roadgeek span {
+  font-size: 0.9em;
+  line-height: 0.9em;
+}
 input.parsley-error,
 select.parsley-error,
 textarea.parsley-error {

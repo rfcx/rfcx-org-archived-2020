@@ -39,7 +39,7 @@ function setJadeVars(process, jV) {
   jV.app_version = process.env.productionVersionId;
   jV.node_env = process.env.NODE_ENV;
   jV.title += (inProd ? "" : (" ("+process.env.NODE_ENV+")"));
-  jV.segment_analytics_client_id =  process.env.SEGMENT_ANALYTICS_CLIENT_ID;
+  jV.segment_write_key =  process.env.SEGMENT_WRITE_KEY;
   jV.addthis_pubid = process.env.ADDTHIS_PUBID;
   jV.bootstrap_cdn = inProd ? "//netdna.bootstrapcdn.com" : "/vendor";
   jV.googlelibs_cdn = inProd ? "//ajax.googleapis.com/ajax/libs" : "/vendor";
@@ -79,7 +79,9 @@ exports.page = function(req, res, process){
     res.render(navItem[0], setJadeVars(process, {
       current_page: navItem,
       http_headers: req.headers,
-      query       : req.query
+      query       : req.query,
+      locale: req.locale,
+      locale_url: req.locale_url
     }));
   }
 };

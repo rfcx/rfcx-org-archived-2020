@@ -22,10 +22,18 @@ var express = require("express"), routes = require("./routes"),
   morganLogger = require("morgan"), methodOverride = require("method-override"),
   favicon = require("serve-favicon"),
   compression = require("compression"), serveStatic = require("serve-static"),
-  middlewares = require("./middlewares/all.js").middlewares,
   bodyParser = require('body-parser'),
   donatePhoneRoutes = require('./routes/donate-phone.js');
+  i18n = require('i18n-2'),
+  middleware = require("./middlewares/all.js").middleware;
 var app = express();
+
+i18n.expressBind(app, {
+  //setup some locales - other locales default to en silently
+  locales: ['en', 'ru', 'de'],
+  defaultLocale: 'en',
+  extension: '.json',
+});
 
 app.set("title", "Rainforest Connection");
 app.set("port", process.env.PORT || 8080);
@@ -34,7 +42,8 @@ app.set("view engine", "jade");
 app.use(favicon("./public/cdn/img/logo/favicon.ico"));
 app.use(morganLogger("dev"));
 app.use(methodOverride());
-app.use(middlewares.allowCrossDomain);
+app.use(middleware.allowCrossDomain);
+app.use(middleware.getSetLocale);
 app.use(compression());
 app.use(serveStatic(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -58,13 +67,13 @@ app.post("/donate_phone/donor", [recaptcha.validate], donatePhoneRoutes.putMailC
 // Get all entries of a mailchimp list
 app.get("/mailchimp/get", donatePhoneRoutes.getMailChimpListDetails);
 // Find entry by specified query
-app.get("/mailchimp/search", [middlewares.checkAdminPassword], donatePhoneRoutes.searchMailChimpList);
+app.get("/mailchimp/search", [middleware.checkAdminPassword], donatePhoneRoutes.searchMailChimpList);
 // Simple password check for admin login. If passes through middleware then return success
-app.post("/donate_phone/check_password", [middlewares.checkAdminPassword], donatePhoneRoutes.validateUser );
+app.post("/donate_phone/check_password", [middleware.checkAdminPassword], donatePhoneRoutes.validateUser );
 // Update existing donor info
-app.post("/donate_phone/donor/update", [middlewares.checkAdminPassword], donatePhoneRoutes.updateMailChimpEntry );
+app.post("/donate_phone/donor/update", [middleware.checkAdminPassword], donatePhoneRoutes.updateMailChimpEntry );
 // Crate new donor by Admin
-app.post("/donate_phone/donor/create", [middlewares.checkAdminPassword], donatePhoneRoutes.putMailChimpEntry );
+app.post("/donate_phone/donor/create", [middleware.checkAdminPassword], donatePhoneRoutes.putMailChimpEntry );
 
 app.get("/ks", function(req,res){
   res.writeHead(302, { "Location": "http://r-f.cx/1zDaQ0L" } );

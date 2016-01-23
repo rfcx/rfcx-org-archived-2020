@@ -314,6 +314,18 @@
         font-size: 18px;
         text-align: right;
     }
+    &__donate-info {
+        text-shadow: none !important;
+        filter: none;
+        font-size: 14px;
+        color: #fff;
+        position: absolute;
+        left: 10px;
+        bottom: 0;
+        z-index: 1;
+        font-weight: 600;
+        max-width: 45%;
+    }
 }
 
 .rfcx-social-like {
@@ -411,12 +423,16 @@
         border-bottom: solid 40px #888888;
         &__i {
             padding-top: 10px;
+            padding-bottom: 40px;
         }
         &__video-wrapper {
             position: static;
             margin: 15px auto;
             width: 80%;
             max-width: 390px;
+        }
+        &__bg {
+            background-size: auto 100% !important;
         }
         .banner-bg {
             left: -63%;
@@ -475,6 +491,13 @@
             form {
                 margin-bottom: 0;
             }
+        }
+        &__donate-info {
+            font-size: 12px;
+            max-width: 100%;
+            right: 10px;
+            text-align: center;
+            line-height: 1.1;
         }
     }
 

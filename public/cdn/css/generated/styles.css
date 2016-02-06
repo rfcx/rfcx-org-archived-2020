@@ -1855,14 +1855,17 @@ input::-webkit-input-placeholder {
 .banner-video__donate-info {
   text-shadow: none !important;
   filter: none;
-  font-size: 14px;
+  font-size: 12px;
   color: #fff;
   position: absolute;
-  left: 10px;
-  bottom: 0;
+  left: 100px;
+  bottom: 7px;
   z-index: 1;
   font-weight: 600;
-  max-width: 45%;
+  max-width: 28%;
+  text-align: center;
+  line-height: 1.2;
+  opacity: 0.9;
 }
 .rfcx-social-like {
   position: absolute;
@@ -1902,6 +1905,12 @@ input::-webkit-input-placeholder {
   }
   .video-box-followup .rfcx-sub-header {
     font-size: 24px;
+  }
+}
+@media (max-width: 880px) and (min-width: 768px) {
+  .banner-video__donate-info {
+    left: 115px;
+    bottom: 3px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2014,6 +2023,7 @@ input::-webkit-input-placeholder {
   .banner-video__donate-info {
     font-size: 12px;
     max-width: 100%;
+    left: 10px;
     right: 10px;
     text-align: center;
     line-height: 1.1;

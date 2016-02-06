@@ -1546,6 +1546,17 @@ input::-webkit-input-placeholder {
   background: none;
   color: #ccc;
 }
+.help-silence__subtitle {
+  display: block;
+  margin-bottom: 10px;
+}
+.help-silence__org-info {
+  display: block;
+  opacity: 0.6;
+}
+.help-silence__org-info small {
+  display: block;
+}
 .video-box {
   position: absolute;
   z-index: 1;
@@ -2462,6 +2473,10 @@ input::-webkit-input-placeholder {
 }
 .rfcx-row-get_involved-2 .col-sign-up .rfcx-form {
   margin: 22px auto 0;
+}
+.rfcx-row-get_involved-2 .donate-phone-info address {
+  display: block;
+  margin: 5px auto;
 }
 @media (max-width: 950px) {
   .rfcx-row-get_involved-2 {

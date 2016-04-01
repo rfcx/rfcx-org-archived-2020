@@ -92,7 +92,12 @@ exports.redirectToHomePage = function(req,res) {
 };
 
 exports.returnHealthCheck = function(req,res) {
-  var sendString = "rfcx";
-  if (req.query.headers==="1") { sendString += "<br />"+JSON.stringify(req.headers); }
-  res.send(sendString);
+  var returnJson = { healthy: true };
+  if (req.query.headers==="1") {
+    returnJson.http_headers = {};
+    for (i in req.headers) {
+      returnJson.http_headers[i] = req.headers[i];
+    }
+  }
+  res.status(200).json(returnJson);
 };

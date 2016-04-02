@@ -46,10 +46,10 @@ function setJadeVars(process, jV) {
   jV.jsdelivr_cdn = inProd ? "//cdn.jsdelivr.net" : "/vendor";
   jV.videojs_cdn = inProd ? "//vjs.zencdn.net" : "/vendor/video.js";
   jV.cdnjs_cdn = inProd ? "//cdnjs.cloudflare.com/ajax/libs" : "/vendor";
-  jV.rfcx_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/cdn" : "/cdn";
+  jV.rfcx_cdn = inProd ? "//rfcx-org-cdn.rfcx.org/cdn" : "/cdn";
   jV.cdn_datatables = inProd ? "//cdn.datatables.net" : "/vendor/datatables";
-  jV.rfcx_vendor_cdn = inProd ? "//d265tty8j31r8c.cloudfront.net/vendor" : "/vendor";
-  jV.rfcx_static_cdn = inProd ? "//d1gbw6jvuihkp4.cloudfront.net" : "//rfcx-static.s3.amazonaws.com";
+  jV.rfcx_vendor_cdn = inProd ? "//rfcx-org-cdn.rfcx.org/vendor" : "/vendor";
+  jV.rfcx_static_cdn = inProd ? "//static.rfcx.org" : "//rfcx-web-static.s3.amazonaws.com";
   jV.filepicker_cdn = "//api.filepicker.io";
   jV.nav_items = navItems;
   jV.social_media = socialMedia;

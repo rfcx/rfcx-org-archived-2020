@@ -5,6 +5,7 @@
 
 var navItems = [
 //  [ page-id, nav-title, uri-path, page-title, show-in-nav, is-isolated ]
+    [ "login", "Login", "http://dashboard.rfcx.org", "Dashboard", true, false ],
     [ "intro", "Home", "/", "Protecting rainforests with real-time data", true, false ],
     [ "about", "About", "/about", "About", true, false ],
     [ "get_involved", "Get Involved", "/get_involved", "Get Involved", true, false ],

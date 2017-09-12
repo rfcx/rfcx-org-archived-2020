@@ -1,0 +1,38 @@
+* {
+    .box-sizing(border-box);
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover,
+    &:focus {
+        outline: none;
+        text-decoration: none;
+    }
+    @media @desktop {
+        .transition(color .3s);
+    }
+}
+
+html {
+    font-size: 10px;
+    touch-action: manipulation;
+}
+
+body {
+    // font-family: 'Open Sans', sans-serif;
+    // text-rendering: optimizeLegibility;
+    // -webkit-font-smoothing: subpixel-antialiased;
+    // -moz-font-smoothing: subpixel-antialiased;
+    // -ms-font-smoothing: subpixel-antialiased;
+    // -o-font-smoothing: subpixel-antialiased;
+    // -webkit-perspective-origin: top left;
+    // font-size: 62.5%;
+    // margin: 0 auto;
+}

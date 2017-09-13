@@ -402,6 +402,7 @@ a:focus {
 html {
   font-size: 10px;
   touch-action: manipulation;
+  background: #fff;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -413,4 +414,13 @@ body {
   -webkit-perspective-origin: top left;
   font-size: 62.5%;
   margin: 0 auto;
+  max-width: 2015px;
+}
+.forest {
+  background: url(/image/forest.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 801px;
 }

@@ -402,6 +402,7 @@ a:focus {
 html {
   font-size: 10px;
   touch-action: manipulation;
+  background: #fff;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -413,4 +414,5 @@ body {
   -webkit-perspective-origin: top left;
   font-size: 62.5%;
   margin: 0 auto;
+  max-width: 2015px;
 }

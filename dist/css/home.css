@@ -643,6 +643,10 @@ body {
 @media only screen and (max-width: 767px) {
   .forest {
     padding-top: 150px;
+    background: url(/image/forest-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 .forest__content {

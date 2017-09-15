@@ -1,3 +1,113 @@
 .why {
-    
+  background-color: #eef0e7;
+  width: 100%;
+  text-align: center;
+  padding: 63px 13% 58px;
+  @media screen and (max-width: 1400px) {
+    padding: 63px 8% 58px;
+  }
+  @media @tablet {
+    padding: 63px 4% 58px;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 63px 2% 58px;
+  }
+  @media @phone {
+    padding: 30px 2%;
+  }
+  &__title {
+    display: inline-block;
+    text-align: center;
+    list-style: none;
+    font-family: 'Roboto';
+    font-size: 4rem;
+    letter-spacing: -1px;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0 auto 69px;
+    @media @phone {
+      font-size: 2.8rem;
+      margin: 0 auto 30px;
+    }
+  }
+  &__columns {
+    display: block;
+    background-color: #eef0e7;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    &:extend(.clearfix all);
+  }
+  &__column {
+    float: left;
+    color: #3b434c;
+    text-align: center;
+    vertical-align: middle;
+    width: 30%;
+    margin: 0 2.5%;
+    box-sizing: border-box;
+    &_monkey {
+      padding-top: 15px;
+      @media @phone {
+        padding-top: 0;
+      }
+      .why__img {
+        margin-bottom: 58px;
+        @media @phone {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &:first-child {
+      margin-left: 0;
+      @media @phone {
+        margin: 0 auto 45px;
+      }
+    }
+    &:laSt-child {
+      margin-right: 0;
+      @media @phone {
+        margin: 0 auto;
+      }
+    }
+    @media @phone {
+      float: none;
+      width: 90%;
+      max-width: 320px;
+      margin: 0 auto 45px;
+    }
+  }
+  &__img {
+    margin-bottom: 35px;
+    @media @phone {
+      margin-bottom: 20px;
+    }
+  }
+  &__column-title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 auto 18px;
+    color: #3b434c;
+    @media @tablet {
+      font-size: 1.6rem;
+    }
+  }
+  &__descr {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    width: 60%;
+    margin: 0 auto;
+    @media screen and (max-width: 1500px) {
+      width: 80%;
+    }
+    @media @tablet {
+      font-size: 1.6rem;
+    }
+  }
+  &__link {
+    color: #fb773a;
+    text-decoration: none;
+  }
 }
+

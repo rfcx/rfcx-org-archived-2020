@@ -1,8 +1,13 @@
 "use strict";
 $( document ).ready(function() {
 
-  $('#menuBtn').on("click", function(e){
-    $('#mobileMenu').toggleClass('opened');
+  var menuTimeout;
+  $('#menuBtn').on('touchend click', function() {
+    clearTimeout(menuTimeout);
+    // wait for some short time to have better transition
+    menuTimeout = setTimeout(function() {
+      $('#mobileMenu').toggleClass('opened');
+    }, 300);
   });
 
 });

@@ -1,3 +1,9 @@
 "use strict";
+$( document ).ready(function() {
 
-// custom code goes here
+  $('#menuBtn').on("click", function(e){
+    $('#mobileMenu').toggleClass('opened');
+  });
+
+});
+

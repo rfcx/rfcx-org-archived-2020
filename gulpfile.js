@@ -86,22 +86,37 @@ function preprocessHtml(opts) {
         .pipe(gulp.dest('./dist/'))
 }
 
-// concat js files into one file
-// create normal and minified versions of js file
-gulp.task('scripts', function() {
-    return gulp.src([
-        './src/js/vendor/jquery-3.1.0.slim.js',
-        './src/js/app.js'
-    ])
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest(paths.jsDestPath))
-        .pipe(minify({
-            ext:{
-                min:'.min.js'
-            }
-        }))
-        .pipe(gulp.dest(paths.jsDestPath))
+// remove all html dist files before processing html sources
+gulp.task('script:clean', function() {
+    return del([
+        './dist/js/*.js'
+    ]);
 });
 
+// concat js files into one file
+// create normal and minified versions of js file
+gulp.task('script:app', function() {
+    return generateJs(
+        ['./src/js/vendor/jquery-3.1.0.slim.js', './src/js/app.js'],
+        'app.js'
+    );
+});
+// concat js files into one file
+// create normal and minified versions of js file
+gulp.task('script:player', function() {
+    return generateJs(
+        ['./src/js/vendor/wavesurfer.min.js', './src/js/player.js'],
+        'player.js'
+    );
+});
+
+function generateJs(files, name) {
+    return gulp.src(files)
+        .pipe(concat(name))
+        .pipe(minify({ ext: { min:'.min.js' } }))
+        .pipe(gulp.dest(paths.jsDestPath));
+}
+
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
+gulp.task('scripts', ['script:clean', 'script:app', 'script:player']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

@@ -1,0 +1,130 @@
+.video {
+  background-color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 100px 10%;
+  margin: 0;
+  box-sizing: border-box;
+  @media screen and (max-width: 1200px) {
+    padding: 70px 5%;
+  }
+  @media @tablet {
+    padding: 40px 3%;
+  }
+  @media @phone {
+    padding: 30px 3%;
+  }
+  &__content {
+    margin: 0;
+    display: block;
+    font-size: 0;
+    width: 100%;
+    padding-right: 37%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #eef0e7;
+    @media @phone {
+      padding-right: 0;
+      background-color: transparent;
+    }
+  }
+  &__area {
+    position: relative;
+    margin: 0;
+  }
+  &__img {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+  &__play-btn-icon {
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    z-index: 100;
+    text-decoration: none;
+    font-size: 4rem;
+    color: #ffffff;
+    .translate(-50%, -50%);
+  }
+  &__column {
+    position: absolute;
+    right: 18.5%;
+    top: 50%;
+    .translate(50%, -50%);
+    width: 37%;
+    margin: 0;
+    padding: 0 9%;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    @media screen and (max-width: 2000px) {
+      padding: 0 7%;
+    }
+    @media screen and (max-width: 1650px) {
+      padding: 0 5%;
+    }
+    @media screen and (max-width: 1400px) {
+      padding: 0 3%;
+    }
+    @media screen and (max-width: 1200px) {
+      padding: 0 1%;
+    }
+    @media @tabletAndPhone {
+      padding: 0;
+    }
+    @media @phone {
+      position: static;
+      top: auto;
+      right: auto;
+      .translate(0,0);
+      width: 100%;
+      padding: 20px 20%;
+      background-color: #eef0e7;
+    }
+    @media screen and (max-width: 560px) {
+      padding: 20px 10%;
+    }
+    @media screen and (max-width: 420px) {
+      padding: 20px 5%;
+    }
+    @media screen and (max-width: 360px) {
+      padding: 20px 2%;
+    }
+  }
+  &__category {
+    margin: 0 auto 48px;
+    @media screen and (max-width: 1400px) {
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    margin: 0 auto 45px;
+    padding: 0 8%;
+    @media screen and (max-width: 1400px) {
+      margin-bottom: 20px;
+    }
+    @media @phone {
+      padding: 0;
+    }
+  }
+  &__btn {
+    margin: 0;
+    border-radius: 5px;
+    border: 1px solid #ff4e00;
+    @media @tabletAndPhone {
+      width: 80%;
+    }
+  }
+  &__play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    padding: 6%;
+    border-radius: 58px;
+    border: 3px solid #fff;
+    background-color: #000;
+    opacity: 0.5;
+    .translate(-50%, -50%);
+  }
+}

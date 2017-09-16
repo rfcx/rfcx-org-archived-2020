@@ -946,6 +946,199 @@ body {
   color: #fb773a;
   text-decoration: none;
 }
+.map {
+  background-color: #050508;
+  width: 100%;
+  text-align: center;
+  padding: 5%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .map {
+    padding: 5% 1% 5% 5%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .map {
+    padding: 0 0 40px 0;
+  }
+}
+.map__content {
+  margin: 0;
+  display: block;
+  font-size: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.map__area {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 62%;
+  margin: 0 6% 0 0;
+}
+@media screen and (max-width: 1490px) {
+  .map__area {
+    margin: 0 5% 0 0;
+  }
+}
+@media screen and (max-width: 1340px) {
+  .map__area {
+    margin: 0 4% 0 0;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .map__area {
+    font-size: 2.0rem;
+    margin: 0 2% 0 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .map__area {
+    float: none;
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+.map__img {
+  margin: 0;
+  width: 100%;
+}
+.map__column {
+  display: none;
+  text-align: left;
+  vertical-align: middle;
+  width: 29%;
+  margin: 0;
+  padding: 1px 0 0 55px;
+  box-sizing: border-box;
+}
+.map__column.active {
+  display: inline-block;
+}
+@media screen and (max-width: 1620px) {
+  .map__column {
+    padding: 17px 0 0 20px;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .map__column {
+    padding: 7px 0 0 19px;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .map__column {
+    padding: 0 0 0 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .map__column {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    text-align: center;
+  }
+}
+.map__title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  padding: 0;
+  margin: 0 auto 6px;
+  color: #2fb14a;
+}
+@media screen and (max-width: 1620px) {
+  .map__title {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .map__title {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .map__title {
+    font-size: 2.0rem;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .map__title {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .map__title {
+    font-size: 1.8rem;
+  }
+}
+.map__descr {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #ffffff;
+}
+@media screen and (max-width: 1100px) {
+  .map__descr {
+    font-size: 1.9rem;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .map__descr {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .map__descr {
+    font-size: 1.8rem;
+  }
+}
+.map__point {
+  display: inline-block;
+  position: absolute;
+  z-index: 100;
+  text-decoration: none;
+  font-size: 8.5rem;
+  color: #ffffff;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.map__point.active {
+  color: #2fb14a;
+  z-index: 101;
+}
+@media screen and (max-width: 1620px) {
+  .map__point {
+    font-size: 7.5rem;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .map__point {
+    font-size: 6.5rem;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .map__point {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .map__point {
+    font-size: 4.5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .map__point {
+    font-size: 3.5rem;
+  }
+}
 .home .header {
   position: absolute;
   left: 50%;

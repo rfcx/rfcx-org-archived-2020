@@ -1,0 +1,141 @@
+.map {
+  background-color: #050508;
+  width: 100%;
+  text-align: center;
+  padding: 5%;
+  box-sizing: border-box;
+  @media @tablet {
+    padding: 5% 1% 5% 5%;
+  }
+  @media @phone {
+    padding: 0 0 40px 0;
+  }
+  &__content {
+    margin: 0;
+    display: block;
+    font-size: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  &__area {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 62%;
+    margin: 0 6% 0 0;
+    @media screen and (max-width: 1490px) {
+      margin: 0 5% 0 0;
+    }
+    @media screen and (max-width: 1340px) {
+      margin: 0 4% 0 0;
+    }
+    @media @tablet {
+      font-size: 2.0rem;
+      margin: 0 2% 0 0;
+    }
+    @media @phone {
+      float: none;
+      width: 90%;
+      margin: 20px auto;
+    }
+  }
+  &__img {
+    margin: 0;
+    width: 100%;
+  }
+
+  &__column {
+    display: none;
+    text-align: left;
+    vertical-align: middle;
+    width: 29%;
+    margin: 0;
+    padding: 1px 0 0 55px;
+    box-sizing: border-box;
+    &.active {
+      display: inline-block;
+    }
+    @media screen and (max-width: 1620px) {
+      padding: 17px 0 0 20px;
+    }
+    @media screen and (max-width: 1410px) {
+      padding: 7px 0 0 19px;
+    }
+    @media @tablet {
+      padding: 0 0 0 15px;
+    }
+    @media @phone {
+      float: none;
+      margin: 0 auto;
+      padding: 0;
+      width: 80%;
+      text-align: center;
+    }
+  }
+  &__title {
+    font-size: 2.3rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0 auto 6px;
+    color: #2fb14a;
+    @media screen and (max-width: 1620px) {
+      font-size: 2.3rem;
+    }
+    @media screen and (max-width: 1410px) {
+      font-size: 2.2rem;
+    }
+    @media screen and (max-width: 1140px) {
+      font-size: 2.0rem;
+    }
+    @media @tablet {
+      font-size: 1.8rem;
+    }
+    @media @phone {
+      font-size: 1.8rem;
+    }
+  }
+  &__descr {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #ffffff;
+    @media screen and (max-width: 1100px) {
+      font-size: 1.9rem;
+    }
+    @media @tablet {
+      font-size: 1.8rem;
+    }
+    @media @phone {
+      font-size: 1.8rem;
+    }
+  }
+  &__point {
+    display: inline-block;
+    position: absolute;
+    z-index: 100;
+    text-decoration: none;
+    font-size: 8.5rem;
+    color: #ffffff;
+    .translate(-50%, -50%);
+    .transition(all 1s);
+    &.active {
+      color: #2fb14a;
+      z-index: 101;
+    }
+    @media screen and (max-width: 1620px) {
+      font-size: 7.5rem;
+    }
+    @media screen and (max-width: 1410px) {
+      font-size: 6.5rem;
+    }
+    @media screen and (max-width: 1140px) {
+      font-size: 5.5rem;
+    }
+    @media @tablet {
+      font-size: 4.5rem;
+    }
+    @media @phone {
+      font-size: 3.5rem;
+    }
+  }
+}

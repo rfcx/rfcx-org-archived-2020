@@ -41,5 +41,11 @@ $( document ).ready(function() {
     }
   }
 
+  // Show and play youTube video
+  $('#youtubePlayBtn1, #youtubePlayBtn2').click(function() {
+    $('#youTubeIframe').attr('src', 'http://www.youtube.com/embed/xPK2Ch90xWo?rel=0&hd=1&autoplay=1');
+    $('#videoArea').removeClass('playing-video');
+  });
+
 });
 

@@ -11,7 +11,8 @@ $( document ).ready(function() {
     progressColor: '#fa4e00',
     barHeight: 30,
     barWidth: 5,
-    cursorColor: 'rgba(255,255,255,0)'
+    cursorColor: 'rgba(255,255,255,0)',
+    hideScrollbar: true,
   };
 
   var wavesurfer = WaveSurfer.create(wavesurferOpts);

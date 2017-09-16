@@ -1222,10 +1222,52 @@ body {
   position: relative;
   margin: 0;
 }
+.video__area.playing-video .video__img,
+.video__area.playing-video .video__play-btn {
+  display: none;
+}
+.video__area.playing-video .video__wrapper {
+  display: block;
+}
 .video__img {
   display: block;
   margin: 0;
   width: 100%;
+}
+.video__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  width: 84px;
+  height: 84px;
+  border-radius: 42px;
+  border: 3px solid #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+@media only screen and (min-width: 1025px) {
+  .video__play-btn {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .video__play-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+@media screen and (max-width: 400px) {
+  .video__play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border-width: 2px;
+  }
 }
 .video__play-btn-icon {
   position: absolute;
@@ -1239,6 +1281,11 @@ body {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 400px) {
+  .video__play-btn-icon {
+    font-size: 2.6rem;
+  }
 }
 .video__column {
   position: absolute;
@@ -1340,20 +1387,18 @@ body {
     width: 80%;
   }
 }
-.video__play-btn {
+.video__wrapper {
+  display: none;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+.video__wrapper iframe {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 99;
-  padding: 6%;
-  border-radius: 58px;
-  border: 3px solid #fff;
-  background-color: #000;
-  opacity: 0.5;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .home .header {
   position: absolute;

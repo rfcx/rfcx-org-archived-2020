@@ -905,13 +905,16 @@ body {
   width: 100%;
 }
 .map__column {
-  display: inline-block;
+  display: none;
   text-align: left;
   vertical-align: middle;
   width: 29%;
   margin: 0;
   padding: 1px 0 0 55px;
   box-sizing: border-box;
+}
+.map__column.active {
+  display: inline-block;
 }
 @media screen and (max-width: 1620px) {
   .map__column {
@@ -1001,6 +1004,15 @@ body {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.map__point.active {
+  color: #2fb14a;
+  z-index: 101;
 }
 @media screen and (max-width: 1620px) {
   .map__point {

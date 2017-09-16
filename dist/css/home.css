@@ -1033,7 +1033,7 @@ body {
     margin: 0 2% 0 0;
   }
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 930px) {
   .map__area {
     float: none;
     width: 90%;
@@ -1071,7 +1071,7 @@ body {
     padding: 0 0 0 15px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 930px) {
   .map__column {
     float: none;
     margin: 0 auto;

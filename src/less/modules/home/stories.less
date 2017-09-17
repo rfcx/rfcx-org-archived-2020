@@ -1,0 +1,117 @@
+.stories {
+  background-color: #000;
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+  margin: 0;
+  box-sizing: border-box;
+  &__content {
+    display: block;
+    margin: 0 auto;
+    font-size: 0;
+    width: 90%;
+    max-width: 1142px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  &__row {
+    display: block;
+    &:extend(.clearfix all);
+    margin: 0x;
+    font-size: 0;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  &__column {
+    &:extend(.clearfix all);
+    vertical-align: middle;
+    text-align: center;
+    float: left;
+    width: 50%;
+    margin: 0;
+    @media @phone {
+      float: none;
+      width: 90%;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  }
+  &__cell {
+    float: left;
+    width: 50%;
+    margin: 0;
+  }
+  &__story {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 67.19%;
+    margin: auto;
+    border: 2px solid #000;
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      opacity: 0;
+      z-index: 99;
+      @media @desktop {
+        .transition(opacity .7s);
+      }
+    }
+    @media @desktop {
+      &:hover {
+        &:after {
+          opacity: 0.5;
+        }
+      }
+    }
+    .stories__story-title {
+      right: 37%;
+    }
+    &_small {
+      padding-bottom: 134.24%;
+      .stories__story-title {
+        right: 3%;
+        left: 9%;
+      }
+    }
+  }
+  &__story-title {
+    position: absolute;
+    left: 5%;
+    bottom: 34px;
+    right: 3%;
+    z-index: 100;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 0 auto;
+    @media screen and (max-width: 1200px) {
+      font-size: 2.4rem;
+    }
+    @media @tablet {
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 850px) {
+      font-size: 1.8rem;
+    }
+    @media @phone {
+      font-size: 2.2rem;
+    }
+    @media screen and (max-width: 510px) {
+      font-size: 1.8rem;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 1.5rem;
+      bottom: 15px;
+    }
+  }
+}

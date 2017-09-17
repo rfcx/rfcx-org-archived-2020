@@ -1,0 +1,175 @@
+.iphone {
+  background-color: #eef0e7;;
+  width: 100%;
+  text-align: center;
+  padding: 28px 12% 10px;
+  margin: 0;
+  box-sizing: border-box;
+  @media screen and (max-width: 1600px) {
+    padding: 28px 8% 10px;
+  }
+  @media screen and (max-width: 1450px) {
+    padding: 28px 4% 10px;
+  }
+  @media screen and (max-width: 1321px) {
+    padding: 28px 2% 10px;
+  }
+  @media screen and (max-width: 1280px) {
+    padding: 28px 1% 10px;
+  }
+  @media @tablet {
+    padding: 20px 1% 10px;
+  }
+  @media @phone {
+    padding: 10px 1% 20px;
+  }
+  &__content {
+    margin: 0;
+    display: block;
+    font-size: 0;
+    width: 100%;
+    padding: 0 49% 0 129px;
+    position: relative;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1245px) {
+      padding: 0 53% 0 110px;
+    }
+    @media screen and (max-width: 1200px) {
+      padding: 0 53% 0 105px;
+    }
+    @media screen and (max-width: 1122px) {
+      padding: 0 53% 0 87px;
+    }
+    @media screen and (max-width: 1080px) {
+      padding: 0 53% 0 50px;
+    }
+    @media @tablet {
+      padding: 0 53% 0 34px;
+    }
+    @media @phone {
+      padding: 0 0 0 0;
+    }
+  }
+  &__area {
+    margin: 0;
+    padding: 18px 99px;
+    @media screen and (max-width: 1251px) {
+      padding: 18px 72px;
+    }
+    @media @tablet {
+      padding:  18px 53px;
+    }
+    @media @phone {
+      padding: 0 220px;
+    }
+    @media screen and (max-width: 710px) {
+      padding: 10px 199px 0;
+    }
+    @media screen and (max-width: 690px) {
+      padding: 10px 184px 0;
+    }
+    @media screen and (max-width: 655px) {
+      padding: 10px 160px 0;
+    }
+    @media screen and (max-width: 615px) {
+      padding: 10px 142px 0;
+    }
+    @media screen and (max-width: 550px) {
+      padding: 10px 120px 0;
+    }
+    @media screen and (max-width: 450px) {
+      padding: 10px 95px 0;
+    }
+    @media screen and (max-width: 380px) {
+      padding: 10px 68px 0;
+    }
+  }
+  &__img {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+  &__column {
+    position: absolute;
+    right: 30.5%;
+    top: 38%;
+    .translate(50%, -50%);
+    width: 39%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @media screen and (max-width: 1650px) {
+      padding: 0 5%;
+    }
+    @media screen and (max-width: 1400px) {
+      padding: 0 3%;
+    }
+    @media screen and (max-width: 1235px) {
+      top: 43%
+    }
+    @media @tabletAndPhone {
+      padding: 0;
+    }
+    @media @phone {
+      position: static;
+      top: auto;
+      right: auto;
+      .translate(0,0);
+      width: 100%;
+      padding: 0 20%;
+      background-color: #eef0e7;
+    }
+    @media screen and (max-width: 560px) {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    @media screen and (max-width: 420px) {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    @media screen and (max-width: 360px) {
+      padding-left: 2%;
+      padding-right: 2%;
+    }
+  }
+  &__category {
+    margin: 27px auto;
+    @media @phone {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    margin: 0 auto 20px;
+    padding: 0 8%;
+    letter-spacing: -4px!important;
+    @media @tablet {
+      letter-spacing: -2px!important;
+    }
+    @media @phone {
+       padding: 0;
+       margin-bottom: 10px;
+    }
+  }
+  &__title2 {
+    margin: 0 auto 56px;
+    @media screen and (max-width: 1235px) {
+      margin: 0 auto 27px;
+    }
+    @media @phone {
+      margin-bottom: 10px;
+    }
+  }
+  &__btn {
+    margin: 0 0 0 19px;
+    border-radius: 5px;
+    border: 1px solid #ff4e00;
+    @media @tabletAndPhone {
+      width: 80%;
+    }
+    @media @phone {
+      margin-left: 0;
+    }
+  }
+}

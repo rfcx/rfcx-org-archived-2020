@@ -33,6 +33,7 @@ body {
     -moz-font-smoothing: subpixel-antialiased;
     -ms-font-smoothing: subpixel-antialiased;
     -o-font-smoothing: subpixel-antialiased;
+    perspective-origin: top left;
     -webkit-perspective-origin: top left;
     font-size: 62.5%;
     margin: 0 auto;
@@ -61,7 +62,21 @@ body {
         font-size: 3rem;
     }
 }
+.article-title2 {
+    font-family: 'Roboto';
+    font-weight: 400;
+    line-height: 1.9;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2.2rem;
+    letter-spacing: 0;
+    color: #000;
+    @media @tablet {
+      font-size: 1.8rem;
+    }
+}
 .article-btn {
+    display: inline-block;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
@@ -77,4 +92,5 @@ body {
     padding-top: 13px;
     padding-bottom: 13px;
     text-align: center;
+    text-decoration: none;
 }

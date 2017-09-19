@@ -1,0 +1,297 @@
+.work-info {
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__area-img {
+    margin: 0;
+    width: 100%;
+    height: 696px;
+    @media @tablet {
+      height: 550px;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 970px) {
+      height: 500px;
+    }
+    @media screen and (max-width: 860px) {
+      height: 430px;
+    }
+    @media @phone {
+      height: 280px;
+    }
+    @media screen and (max-width: 520px) {
+      height: 200px;
+    }
+  }
+  &__img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    &_chainsaw {
+      background: url(/image/sawn-wood.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &_man {
+      background: url(/image/dead-animals.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &_monkey {
+      background: url(/image/pink-bird.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &.active {
+      display: block;
+    }
+  }
+  &__buttons {
+    &:extend(.clearfix all);
+  }
+  &__button {
+    float: left;
+    width: 33.33%;
+    position: relative;
+    border: none;
+    outline: none;
+    background: transparent;
+    @media @desktop {
+      .transition(background .5s);
+      &:hover {
+        background: rgba(238, 240, 231, 0.5);
+      }
+    }
+    &.active {
+      background: #eef0e7;
+    }
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-bottom: 52.92%;
+      position: relative;
+      z-index: 1;
+      @media @tablet {
+        padding-bottom: 48.92%;
+      }
+      @media @phone {
+        padding-bottom: 44.92%;
+      }
+    }
+    &:after {
+      display: block;
+      content: "";
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      .translate(-50%, -50%);
+      @media @tablet {
+        height: 107px;
+      }
+      @media screen and (max-width: 970px) {
+        height: 86px;
+      }
+      @media @phone {
+        height: 64px;
+      }
+      @media screen and (max-width: 520px) {
+        height: 34px;
+      }
+      @media screen and (max-width: 382px) {
+        height: 28px;
+      }
+    }
+    &_chainsaw {
+      &:after {
+        background: url(/image/why-chainsaw-grey.png) no-repeat center center;
+        background-size: contain;
+      }
+      &.active {
+        &:after {
+          background: url(/image/why-chainsaw.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+    &_man {
+      &:after {
+        background: url(/image/why-man-grey.png) no-repeat center center;
+        background-size: contain;
+      }
+      &.active {
+        &:after {
+          background: url(/image/why-man.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+    &_monkey {
+      &:after {
+        background: url(/image/why-monkey-grey.png) no-repeat center center;
+        background-size: contain;
+        @media @tablet {
+          height: 60px;
+        }
+      }
+      &.active {
+        &:after {
+          background: url(/image/why-monkey.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 146px 8%;
+    text-align: left;
+    &.active {
+      display: block;
+      background: #eef0e7;
+    }
+    @media @tablet {
+      padding: 72px 8%;
+    }
+    @media screen and (max-width: 860px) {
+      padding: 54px 7%;
+    }
+    @media @phone {
+      padding: 25px 4%;
+    }
+    @media screen and (max-width: 382px) {
+      padding: 20px 4%;
+    }
+  }
+  &__pdf {
+    position: absolute;
+    top: 134px;
+    right: 74px;
+    z-index: 201;
+    margin: 0;
+    @media @tablet {
+      top: 70px;
+      right: 30px;
+    }
+    @media screen and (max-width: 900px) {
+      top: 50px;
+    }
+    @media @phone {
+      top: 25px;
+      right: 25px;
+    }
+    @media screen and (max-width: 400px) {
+      top: 18px;
+      right: 18px;
+    }
+  }
+  &__icon {
+    margin: 0;
+    height: 68px;
+    width: 64px;
+    @media @tablet {
+      height: 51px;
+      width: 48px;
+    }
+    @media @phone {
+      height: 34px;
+      width: 32px;
+    }
+    @media screen and (max-width: 420px) {
+      height: 28px;
+      width: 26px;
+    }
+  }
+  &__title {
+    margin: 0 auto 53px;
+    padding: 0;
+    @media screen and (max-width: 970px) {
+      margin: 0 auto 40px;
+    }
+    @media @phone {
+      margin: 0 auto 20px;
+      padding-right: 35px;
+    }
+  }
+  &__descr {
+    margin: 0 auto;
+    padding: 0 0 70px;
+    &:last-child {
+      padding: 0;
+    }
+    @media @tablet {
+      padding: 0 0 50px;
+    }
+    @media screen and (max-width: 970px) {
+      padding: 0 0 30px;
+    }
+  }
+  &__area-last {
+    margin: 0;
+    width: 100%;
+    height: 790px;
+    @media @tablet {
+      height: 550px;
+    }
+    @media screen and (max-width: 970px) {
+      height: 500px;
+    }
+    @media screen and (max-width: 860px) {
+      height: 430px;
+    }
+    @media @phone {
+      height: 280px;
+    }
+    @media screen and (max-width: 520px) {
+      height: 200px;
+    }
+  }
+  &__last {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    &_river {
+      background: url(/image/river.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &_small {
+      background: url(/image/small.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &_forest {
+      background: url(/image/wild-forest.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &.active {
+      display: block;
+    }
+  }
+  &__banner-wrapper {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    .translate(-50%, -50%);
+  }
+  &__banner {
+    display: block;
+    margin: 0 auto;
+  }
+  &__banner-small {
+    display: block;
+    margin: 15px auto 0;
+    @media @phone {
+      margin-top: 10px;
+    }
+  }
+}

@@ -493,6 +493,177 @@ body {
   text-align: center;
   text-decoration: none;
 }
+.page-title {
+  font-family: 'Roboto';
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 7.5rem;
+  letter-spacing: -6.8px;
+  color: #000000;
+  margin: 0 auto 40px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .page-title {
+    font-size: 6rem;
+    letter-spacing: -4px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .page-title {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-title {
+    letter-spacing: -1.8px;
+    font-size: 4rem;
+    margin: 0 auto 20px;
+  }
+}
+.page-descr {
+  font-family: 'Roboto';
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  letter-spacing: 0;
+  color: #000;
+  margin: 0 auto 40px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .page-descr {
+    font-size: 2.6rem;
+  }
+}
+@media screen and (max-width: 860px) {
+  .page-descr {
+    margin: 0 auto 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-descr {
+    font-size: 2rem;
+  }
+}
+.work-title {
+  font-family: 'Roboto';
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 5.5rem;
+  letter-spacing: -2.8px;
+  color: #000000;
+  margin: 0 auto 40px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .work-title {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 860px) {
+  .work-title {
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .work-title {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 382px) {
+  .work-title {
+    font-size: 2.2rem;
+    letter-spacing: -0.8px;
+  }
+}
+.work-descr {
+  font-family: 'Roboto';
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 3rem;
+  letter-spacing: 0;
+  color: #000;
+  margin: 0 auto 40px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .work-descr {
+    font-size: 2.6rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .work-descr {
+    font-size: 1.8rem;
+  }
+}
+.banner {
+  font-family: 'Roboto';
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 5.5rem;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0 auto 40px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .banner {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .banner {
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .banner {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 382px) {
+  .banner {
+    font-size: 2rem;
+  }
+}
+.banner-small {
+  line-height: 1.2;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .banner-small {
+    font-size: 1.9rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .banner-small {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .banner-small {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 382px) {
+  .banner-small {
+    font-size: 1rem;
+  }
+}
 .footer {
   background-color: #ffffff;
   width: 100%;

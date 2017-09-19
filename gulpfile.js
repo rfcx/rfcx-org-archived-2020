@@ -109,6 +109,14 @@ gulp.task('script:player', function() {
         'player.js'
     );
 });
+// concat js files into one file
+// create normal and minified versions of js file
+gulp.task('script:modal', function() {
+    return generateJs(
+        ['./src/js/modal.js'],
+        'modal.js'
+    );
+});
 
 function generateJs(files, name) {
     return gulp.src(files)
@@ -118,5 +126,5 @@ function generateJs(files, name) {
 }
 
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
-gulp.task('scripts', ['script:clean', 'script:app', 'script:player']);
+gulp.task('scripts', ['script:clean', 'script:app', 'script:player', 'script:modal']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

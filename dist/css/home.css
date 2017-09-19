@@ -362,6 +362,7 @@ textarea {
 }
 .clearfix,
 .footer .footer-links,
+.subscribe__form,
 .why__columns,
 .stories__row,
 .stories__column,
@@ -372,6 +373,8 @@ textarea {
 .clearfix:after,
 .footer .footer-links:before,
 .footer .footer-links:after,
+.subscribe__form:before,
+.subscribe__form:after,
 .why__columns:before,
 .why__columns:after,
 .stories__row:before,
@@ -385,6 +388,7 @@ textarea {
 }
 .clearfix:after,
 .footer .footer-links:after,
+.subscribe__form:after,
 .why__columns:after,
 .stories__row:after,
 .stories__column:after,
@@ -815,6 +819,9 @@ body {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-cancel:before {
+  content: "\e904";
 }
 .icon-pause:before {
   content: "\e902";
@@ -3164,6 +3171,265 @@ body {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+.subscribe {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.5);
+}
+.subscribe.visible {
+  display: block;
+}
+.subscribe__modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 800px;
+  border: 16px solid #fff;
+  padding: 60px 2% 40px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  z-index: 100002;
+}
+.subscribe__modal:before,
+.subscribe__modal:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.subscribe__modal:before {
+  z-index: 100000;
+  background: url(/image/frog.jpg) no-repeat center center;
+  background-size: cover;
+}
+.subscribe__modal:after {
+  background: rgba(0, 0, 0, 0.38);
+  z-index: 100001;
+}
+@media only screen and (max-width: 767px) {
+  .subscribe__modal {
+    padding: 30px 2%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .subscribe__modal {
+    width: 90%;
+    border: 8px solid #fff;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__modal {
+    width: 95%;
+    border: 4px solid #fff;
+  }
+}
+.subscribe__content {
+  position: relative;
+  z-index: 100003;
+}
+.subscribe__title {
+  font-family: 'Roboto';
+  font-size: 7rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 auto 15px;
+  text-align: center;
+  letter-spacing: -4px;
+}
+@media only screen and (max-width: 767px) {
+  .subscribe__title {
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__title {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .subscribe__title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+  }
+}
+.subscribe__descr {
+  font-family: 'Source Sans Pro';
+  font-size: 3.2rem;
+  color: #fff;
+  margin: 0 auto 60px;
+  text-align: center;
+  padding: 0 15%;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .subscribe__descr {
+    padding: 0 10%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .subscribe__descr {
+    font-size: 2.6rem;
+    padding: 0 5%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__descr {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-height: 400px) {
+  .subscribe__descr {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+}
+.subscribe__form {
+  width: 70%;
+  margin: 0 auto 30px;
+}
+@media only screen and (max-width: 767px) {
+  .subscribe__form {
+    width: 90%;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__form {
+    width: 95%;
+  }
+}
+@media screen and (max-height: 400px) {
+  .subscribe__form {
+    margin-bottom: 10px;
+  }
+}
+.subscribe__input {
+  float: left;
+  width: 70%;
+  background: transparent;
+  color: #fff;
+  padding: 23px 5%;
+  border: 1px solid #fff;
+  border-right-width: 0;
+  font-family: 'Source Sans Pro';
+  font-size: 1.7rem;
+  border-radius: 0;
+}
+.subscribe__input::-webkit-input-placeholder {
+  color: #fff;
+  text-transform: uppercase;
+}
+.subscribe__input:-moz-placeholder {
+  color: #fff;
+  text-transform: uppercase;
+}
+.subscribe__input::-moz-placeholder {
+  color: #fff;
+  text-transform: uppercase;
+}
+.subscribe__input:-ms-input-placeholder {
+  color: #fff;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 767px) {
+  .subscribe__input {
+    padding: 15px 2%;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__input {
+    padding: 10px 2%;
+    font-size: 1.4rem;
+  }
+}
+.subscribe__btn {
+  float: left;
+  width: 30%;
+  background: #fff;
+  color: #000;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  font-family: 'Source Sans Pro';
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  padding: 24px 5px;
+}
+@media only screen and (min-width: 1025px) {
+  .subscribe__btn {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .subscribe__btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .subscribe__btn {
+    padding: 16px 3px;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__btn {
+    font-size: 1.4rem;
+    padding: 11px 3px;
+  }
+}
+.subscribe__notice {
+  font-family: 'Source Sans Pro';
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+}
+@media screen and (max-width: 400px) {
+  .subscribe__notice {
+    font-size: 1.4rem;
+  }
+}
+.subscribe__btn-close {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100003;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 3rem;
+  background: transparent;
+}
+@media only screen and (min-width: 1025px) {
+  .subscribe__btn-close {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .subscribe__btn-close:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 .forest {
   background: url(/image/forest.jpg);

@@ -2,13 +2,13 @@
   background-color: #050508;
   width: 100%;
   text-align: center;
-  padding: 5%;
+  padding: 63px 5% 50px;
   box-sizing: border-box;
   @media @tablet {
-    padding: 5% 1% 5% 5%;
+    padding: 63px 1% 50px;
   }
   @media @phone {
-    padding: 0 0 40px 0;
+    padding: 30px 0 40px;
   }
   &__content {
     margin: 0;
@@ -16,6 +16,41 @@
     font-size: 0;
     width: 100%;
     box-sizing: border-box;
+  }
+  &__main-title {
+    display: block;
+    text-align: center;
+    list-style: none;
+    font-family: 'Roboto';
+    font-size: 4rem;
+    letter-spacing: -1px;
+    color: #000000;
+    text-transform: uppercase;
+    width: 90%;
+    margin: 0 auto 30px;
+    color: #fff;
+    @media @phone {
+      font-size: 2.8rem;
+      margin: 0 auto 20px;
+    }
+  }
+  &__main-descr {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #ffffff;
+    width: 90%;
+    margin: 0 auto 40px;
+    @media screen and (max-width: 1100px) {
+      font-size: 1.9rem;
+    }
+    @media @tablet {
+      font-size: 1.8rem;
+    }
+    @media @phone {
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
   }
   &__area {
     position: relative;
@@ -33,10 +68,10 @@
       font-size: 2.0rem;
       margin: 0 2% 0 0;
     }
-    @media screen and (max-width: 930px) {
+    @media screen and (max-width: 1400px) {
       float: none;
       width: 90%;
-      margin: 20px auto;
+      margin: 20px auto 30px;
     }
   }
   &__img {
@@ -56,15 +91,15 @@
       display: inline-block;
     }
     @media screen and (max-width: 1620px) {
-      padding: 17px 0 0 20px;
+      padding: 0 0 0 20px;
     }
     @media screen and (max-width: 1410px) {
-      padding: 7px 0 0 19px;
+      padding: 0 0 0 19px;
     }
     @media @tablet {
       padding: 0 0 0 15px;
     }
-    @media screen and (max-width: 930px) {
+    @media screen and (max-width: 1400px) {
       float: none;
       margin: 0 auto;
       padding: 0;
@@ -99,14 +134,21 @@
     line-height: 1.5;
     margin: 0;
     color: #ffffff;
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1900px) {
+      font-size: 1.6rem;
+    }
+    @media screen and (max-width: 1700px) {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+    @media screen and (max-width: 1400px) {
       font-size: 1.9rem;
     }
     @media @tablet {
       font-size: 1.8rem;
     }
     @media @phone {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
   }
   &__point {
@@ -116,11 +158,51 @@
     text-decoration: none;
     font-size: 8.5rem;
     color: #ffffff;
+    cursor: pointer;
     .translate(-50%, -50%);
-    .transition(all 1s);
     &.active {
       color: #2fb14a;
       z-index: 101;
+    }
+    &_peru {
+      &:not(.active) {
+        animation: colorchange 5.5s;
+        -webkit-animation: colorchange 5.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+    &_ecuador {
+      &:not(.active) {
+        animation: colorchange 8.2s;
+        -webkit-animation: colorchange 8.2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+    &_brazil {
+      &:not(.active) {
+        animation: colorchange 7.3s;
+        -webkit-animation: colorchange 7.3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+    &_cameroon {
+      &:not(.active) {
+        animation: colorchange 10s;
+        -webkit-animation: colorchange 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+    &_sumatra {
+      &:not(.active) {
+        animation: colorchange 11.5s;
+        -webkit-animation: colorchange 11.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
     }
     @media screen and (max-width: 1620px) {
       font-size: 7.5rem;
@@ -138,4 +220,22 @@
       font-size: 3.5rem;
     }
   }
+}
+
+@keyframes colorchange
+{
+  0%   {color: #fff;}
+  40% {color: #fff;}
+  50% {color: #2fb14a;}
+  60% {color: #fff};
+  100%   {color: #fff;}
+}
+
+@-webkit-keyframes colorchange
+{
+  0%   {color: #fff;}
+  40% {color: #fff;}
+  50% {color: #2fb14a;}
+  60% {color: #fff};
+  100%   {color: #fff;}
 }

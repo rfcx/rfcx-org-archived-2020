@@ -486,7 +486,7 @@ body {
   vertical-align: middle;
   width: 100%;
   max-width: 302px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #ff4e00;
   background: transparent;
   outline: none;
@@ -3569,7 +3569,7 @@ body {
   font-family: 'Source Sans Pro';
   font-size: 1.5rem;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 5px;
   color: #fff;
 }
 @media screen and (max-width: 400px) {
@@ -3602,13 +3602,152 @@ body {
     color: rgba(255, 255, 255, 0.8);
   }
 }
+.subscribe__socials {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 15px 0 0;
+}
+@media screen and (max-width: 700px) {
+  .subscribe__socials {
+    text-align: center;
+  }
+}
+.subscribe__social {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 7px;
+}
+@media screen and (max-width: 700px) {
+  .subscribe__social {
+    margin: 0 5px 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__social {
+    margin: 0 11px 15px;
+  }
+}
+.subscribe__social:first-child {
+  margin-left: 0;
+}
+@media screen and (max-width: 700px) {
+  .subscribe__social:first-child {
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__social:first-child {
+    margin-left: 11px;
+  }
+}
+.subscribe__social:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 700px) {
+  .subscribe__social:last-child {
+    margin-right: 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subscribe__social:last-child {
+    margin-right: 11px;
+  }
+}
+.subscribe__social-link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  text-indent: -9999px;
+  position: relative;
+}
+.subscribe__social-link:before,
+.subscribe__social-link:after {
+  display: block;
+  content: "";
+  position: absolute;
+}
+.subscribe__social-link:before {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  background: #fff;
+  z-index: 0;
+  top: 1px;
+  left: 1px;
+}
+.subscribe__social-link:after {
+  width: 44px;
+  height: 44px;
+  background: url('/image/socials-sprite.png') no-repeat top left;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+@media only screen and (min-width: 1025px) {
+  .subscribe__social-link {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .subscribe__social-link:hover {
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+  }
+}
+.subscribe__social-link_facebook:after {
+  background-position: 0px 0px;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_twitter:after {
+  background-position: -308px 0;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_google:after {
+  background-position: -132px 0;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_linkedin:after {
+  background-position: -220px 0;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_flickr:after {
+  background-position: -44px 0;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_thumblr:after {
+  background-position: -264px 0;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_instagram:after {
+  background-position: -176px 0;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_youtube:after {
+  background-position: -396px 0;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_github:after {
+  background-position: -88px 0px;
+  background-size: 440px 100%;
+}
+.subscribe__social-link_vimeo:after {
+  background-position: -351px 0;
+  background-size: 440px 100%;
+}
 .forest {
   background: url(/image/forest.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 273px;
+  padding-top: 220px;
   padding-bottom: 75px;
   text-align: center;
 }
@@ -3636,12 +3775,12 @@ body {
   text-align: center;
   list-style: none;
   font-family: 'PT Sans';
-  font-size: 3.6rem;
+  font-size: 3rem;
   color: #ffffff;
   margin: 0;
   padding: 0 12%;
   margin: 0 auto 65px;
-  line-height: 6rem;
+  line-height: 5.5rem;
 }
 @media screen and (max-width: 1540px) {
   .forest__banner {
@@ -3916,17 +4055,17 @@ body {
   background-color: #050508;
   width: 100%;
   text-align: center;
-  padding: 5%;
+  padding: 63px 5% 50px;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .map {
-    padding: 5% 1% 5% 5%;
+    padding: 63px 1% 50px;
   }
 }
 @media only screen and (max-width: 767px) {
   .map {
-    padding: 0 0 40px 0;
+    padding: 30px 0 40px;
   }
 }
 .map__content {
@@ -3935,6 +4074,49 @@ body {
   font-size: 0;
   width: 100%;
   box-sizing: border-box;
+}
+.map__main-title {
+  display: block;
+  text-align: center;
+  list-style: none;
+  font-family: 'Roboto';
+  font-size: 4rem;
+  letter-spacing: -1px;
+  color: #000000;
+  text-transform: uppercase;
+  width: 90%;
+  margin: 0 auto 30px;
+  color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  .map__main-title {
+    font-size: 2.8rem;
+    margin: 0 auto 20px;
+  }
+}
+.map__main-descr {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #ffffff;
+  width: 90%;
+  margin: 0 auto 40px;
+}
+@media screen and (max-width: 1100px) {
+  .map__main-descr {
+    font-size: 1.9rem;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .map__main-descr {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .map__main-descr {
+    font-size: 1.8rem;
+    margin: 0 auto 20px;
+  }
 }
 .map__area {
   position: relative;
@@ -3959,11 +4141,11 @@ body {
     margin: 0 2% 0 0;
   }
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1400px) {
   .map__area {
     float: none;
     width: 90%;
-    margin: 20px auto;
+    margin: 20px auto 30px;
   }
 }
 .map__img {
@@ -3984,12 +4166,12 @@ body {
 }
 @media screen and (max-width: 1620px) {
   .map__column {
-    padding: 17px 0 0 20px;
+    padding: 0 0 0 20px;
   }
 }
 @media screen and (max-width: 1410px) {
   .map__column {
-    padding: 7px 0 0 19px;
+    padding: 0 0 0 19px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -3997,7 +4179,7 @@ body {
     padding: 0 0 0 15px;
   }
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1400px) {
   .map__column {
     float: none;
     margin: 0 auto;
@@ -4044,7 +4226,18 @@ body {
   margin: 0;
   color: #ffffff;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1900px) {
+  .map__descr {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .map__descr {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+}
+@media screen and (max-width: 1400px) {
   .map__descr {
     font-size: 1.9rem;
   }
@@ -4056,7 +4249,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .map__descr {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 .map__point {
@@ -4066,19 +4259,45 @@ body {
   text-decoration: none;
   font-size: 8.5rem;
   color: #ffffff;
+  cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
 }
 .map__point.active {
   color: #2fb14a;
   z-index: 101;
+}
+.map__point_peru:not(.active) {
+  animation: colorchange 5.5s;
+  -webkit-animation: colorchange 5.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.map__point_ecuador:not(.active) {
+  animation: colorchange 8.2s;
+  -webkit-animation: colorchange 8.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.map__point_brazil:not(.active) {
+  animation: colorchange 7.3s;
+  -webkit-animation: colorchange 7.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.map__point_cameroon:not(.active) {
+  animation: colorchange 10s;
+  -webkit-animation: colorchange 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.map__point_sumatra:not(.active) {
+  animation: colorchange 11.5s;
+  -webkit-animation: colorchange 11.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 @media screen and (max-width: 1620px) {
   .map__point {
@@ -4103,6 +4322,40 @@ body {
 @media only screen and (max-width: 767px) {
   .map__point {
     font-size: 3.5rem;
+  }
+}
+@keyframes colorchange {
+  0% {
+    color: #fff;
+  }
+  40% {
+    color: #fff;
+  }
+  50% {
+    color: #2fb14a;
+  }
+  60% {
+    color: #fff;
+  }
+  100% {
+    color: #fff;
+  }
+}
+@-webkit-keyframes colorchange {
+  0% {
+    color: #fff;
+  }
+  40% {
+    color: #fff;
+  }
+  50% {
+    color: #2fb14a;
+  }
+  60% {
+    color: #fff;
+  }
+  100% {
+    color: #fff;
   }
 }
 .video {
@@ -4583,6 +4836,10 @@ body {
   margin: 0 0 0 19px;
   border-radius: 5px;
   border: 1px solid #ff4e00;
+  margin: 0 auto 15px;
+}
+.iphone__btn:last-child {
+  margin-bottom: 0;
 }
 @media only screen and (max-width: 1024px) {
   .iphone__btn {

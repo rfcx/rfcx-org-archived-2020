@@ -3800,15 +3800,15 @@ body {
   text-align: center;
 }
 .work-info__img_chainsaw {
-  background: url(/image/sawn-wood.jpg) no-repeat center center;
+  background: url(../image/sawn-wood.jpg) no-repeat center center;
   background-size: cover;
 }
 .work-info__img_man {
-  background: url(/image/dead-animals.jpg) no-repeat center center;
+  background: url(../image/dead-animals.jpg) no-repeat center center;
   background-size: cover;
 }
 .work-info__img_monkey {
-  background: url(/image/pink-bird.jpg) no-repeat center center;
+  background: url(../image/pink-bird.jpg) no-repeat center center;
   background-size: cover;
 }
 .work-info__img.active {
@@ -3895,23 +3895,23 @@ body {
   }
 }
 .work-info__button_chainsaw:after {
-  background: url(/image/why-chainsaw-grey.png) no-repeat center center;
+  background: url(../image/why-chainsaw-grey.png) no-repeat center center;
   background-size: contain;
 }
 .work-info__button_chainsaw.active:after {
-  background: url(/image/why-chainsaw.png) no-repeat center center;
+  background: url(../image/why-chainsaw.png) no-repeat center center;
   background-size: contain;
 }
 .work-info__button_man:after {
-  background: url(/image/why-man-grey.png) no-repeat center center;
+  background: url(../image/why-man-grey.png) no-repeat center center;
   background-size: contain;
 }
 .work-info__button_man.active:after {
-  background: url(/image/why-man.png) no-repeat center center;
+  background: url(../image/why-man.png) no-repeat center center;
   background-size: contain;
 }
 .work-info__button_monkey:after {
-  background: url(/image/why-monkey-grey.png) no-repeat center center;
+  background: url(../image/why-monkey-grey.png) no-repeat center center;
   background-size: contain;
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -3920,7 +3920,7 @@ body {
   }
 }
 .work-info__button_monkey.active:after {
-  background: url(/image/why-monkey.png) no-repeat center center;
+  background: url(../image/why-monkey.png) no-repeat center center;
   background-size: contain;
 }
 .work-info__item {
@@ -4079,15 +4079,15 @@ body {
   position: relative;
 }
 .work-info__last_river {
-  background: url(/image/river.jpg) no-repeat center center;
+  background: url(../image/river.jpg) no-repeat center center;
   background-size: cover;
 }
 .work-info__last_small {
-  background: url(/image/small.jpg) no-repeat center center;
+  background: url(../image/small.jpg) no-repeat center center;
   background-size: cover;
 }
 .work-info__last_forest {
-  background: url(/image/wild-forest.jpg) no-repeat center center;
+  background: url(../image/wild-forest.jpg) no-repeat center center;
   background-size: cover;
 }
 .work-info__last.active {

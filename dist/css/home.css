@@ -3742,7 +3742,7 @@ body {
   background-size: 440px 100%;
 }
 .forest {
-  background: url(/image/forest.jpg);
+  background: url(../image/forest.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3759,7 +3759,7 @@ body {
 @media only screen and (max-width: 767px) {
   .forest {
     padding-top: 150px;
-    background: url(/image/forest-mobile.jpg);
+    background: url(../image/forest-mobile.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -4985,7 +4985,7 @@ body {
   }
 }
 .contact {
-  background: url(/image/frog.jpg);
+  background: url(../image/frog.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -5210,7 +5210,7 @@ body {
 .contact .contact-form__social-link:after {
   width: 44px;
   height: 44px;
-  background: url('/image/socials-sprite.png') no-repeat top left;
+  background: url('../image/socials-sprite.png') no-repeat top left;
   top: 0;
   left: 0;
   z-index: 1;

@@ -484,6 +484,12 @@ body {
   padding-bottom: 13px;
   text-align: center;
   text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #ff4e00;
+}
+.email-link {
+  color: #ff4e00;
+  text-decoration: none;
 }
 .page-title {
   font-family: 'Roboto';
@@ -4029,6 +4035,11 @@ body {
 }
 .work-info__descr:last-child {
   padding: 0;
+}
+@media screen and (max-width: 800px) {
+  .work-info__descr .iphone__btn {
+    margin: 7px auto;
+  }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .work-info__descr {

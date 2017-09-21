@@ -496,6 +496,12 @@ body {
   padding-bottom: 13px;
   text-align: center;
   text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #ff4e00;
+}
+.email-link {
+  color: #ff4e00;
+  text-decoration: none;
 }
 .page-title {
   font-family: 'Roboto';

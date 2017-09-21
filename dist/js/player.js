@@ -16,7 +16,7 @@ $( document ).ready(function() {
     waveColor: '#ffffff',
     progressColor: '#fa4e00',
     barHeight: 30,
-    barWidth: 5,
+    barWidth: 3,
     cursorColor: 'rgba(255,255,255,0)',
     hideScrollbar: true,
   };

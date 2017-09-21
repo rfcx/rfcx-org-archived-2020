@@ -656,6 +656,75 @@ body {
     font-size: 1rem;
   }
 }
+.people-title {
+  font-family: 'Roboto';
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 3.7rem;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0 auto 40px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .people-title {
+    font-size: 2.7rem;
+    letter-spacing: -1px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .people-title {
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+}
+.people-descr {
+  font-family: 'PT Sans';
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.2rem;
+  letter-spacing: -2px;
+  color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  .people-descr {
+    font-size: 1.7rem;
+    letter-spacing: -1px;
+  }
+}
+.donors-name {
+  font-family: 'Roboto';
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  color: #0c0b0b;
+  margin: 0 auto 40px;
+}
+@media only screen and (max-width: 767px) {
+  .donors-name {
+    font-size: 1.3rem;
+  }
+}
+.kickstarter-name {
+  font-family: 'Roboto';
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  color: #0c0b0b;
+}
+@media only screen and (max-width: 767px) {
+  .kickstarter-name {
+    font-size: 1.3rem;
+  }
+}
 .footer {
   background-color: #ffffff;
   width: 100%;

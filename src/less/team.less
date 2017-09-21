@@ -6,3 +6,39 @@
 @import "modules/common/common";
 @import "modules/common/foot";
 @import "modules/common/footer";
+@import "modules/common/header";
+@import "modules/common/icomoon";
+@import "modules/common/fontawesome";
+
+@import "modules/common/modal";
+
+@import "modules/team/about";
+@import "modules/team/people";
+@import "modules/team/partners-banner";
+@import "modules/team/partners";
+@import "modules/team/donors-banner";
+@import "modules/team/donors";
+@import "modules/team/kickstarter-banner";
+@import "modules/team/kickstarter";
+
+.team {
+  .header {
+    &__link {
+      color: #000;
+      @media @phone{
+        color: #fff;
+      }
+    }
+    &__logo {
+      .icon-logo {
+        color: #2fb24a;
+      }
+    }
+    &__title {
+      color: #000;
+    }
+    &__btn-menu {
+      color: #000;
+    }
+  }
+}

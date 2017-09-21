@@ -1,0 +1,43 @@
+.donors {
+  background-color: #eef0e7;
+  width: 100%;
+  height: 100%;
+  padding: 70px 10%;
+  margin: 0;
+  box-sizing: border-box;
+  &:extend(.clearfix all);
+  @media screen and (max-width: 1400px) {
+    padding: 70px 7%;
+  }
+  @media @tablet {
+    padding: 50px 5%;
+  }
+  @media @phone {
+    padding: 20px 7%;
+  }
+  &__content {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    &:extend(.clearfix all);
+  }
+  &__wrapper {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    &:extend(.clearfix all);
+  }
+  &__list {
+    float: left;
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 20%;
+    @media @phone {
+      width: 33.33%;
+    }
+    @media screen and (max-width: 480px) {
+      width: 50%;
+    }
+  }
+}

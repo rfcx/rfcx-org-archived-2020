@@ -10,36 +10,16 @@ $( document ).ready(function() {
     }, 300);
   });
 
-  // get all site names from html elements
-  var sites = getSitesNames();
-
-  function getSitesNames() {
-    var icons = $('.js-map-point');
-    return $.map(icons, function(icon){
-      return $(icon).attr('data-name');
-    });
-  }
+  $('.js-map-point').click(function(ev) {
+    var site = $(this).attr('data-name');
+    changeActiveSite(site);
+  });
 
   function changeActiveSite(site) {
+    console.log('changeActiveSite', site);
     $('.js-map-point.active, .js-map-column.active').removeClass('active');
-    $('[data-name="' + site +'"]').addClass('active');
+    $('.js-map-point[data-name="' + site +'"], .js-map-column[data-name="' + site +'"]').addClass('active');
   };
-
-  // function goes through all sites periodically and highlights one
-  function startChangeSiteInterval() {
-    var currentSiteIndex = 1;
-    setInterval(function(){
-      if (currentSiteIndex === sites.length) { currentSiteIndex = 0; }
-      changeActiveSite(sites[currentSiteIndex++]);
-    }, 5000);
-  }
-
-  if (sites.length) {
-    changeActiveSite(sites[0]);
-    if (sites.length > 1) {
-      startChangeSiteInterval();
-    }
-  }
 
   // Show and play youTube video
   $('#youtubePlayBtn1, #youtubePlayBtn2').click(function() {

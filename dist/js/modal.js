@@ -11,9 +11,4 @@ $( document ).ready(function() {
     $('#modalSubscribe').removeClass('visible');
   });
 
-  $('#formSubscribe').submit(function(ev) {
-    ev.preventDefault();
-    return false;
-  })
-
 });

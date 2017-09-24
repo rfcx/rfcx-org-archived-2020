@@ -67,6 +67,27 @@
       position: relative;
       padding-bottom: 40px;
     }
+    &.without-spectro {
+      .forest-player__left {
+        width: auto;
+        margin: 0 auto;
+      }
+      .forest-player__right {
+        display: none;
+      }
+      .forest-player__button {
+        &.icon-play {
+          .forest-player__button-label_play {
+            display: inline-block;
+          }
+        }
+        &.icon-pause {
+          .forest-player__button-label_pause {
+            display: inline-block;
+          }
+        }
+      }
+    }
     &__left,
     &__right {
       font-size: 1.6rem;

@@ -3905,6 +3905,19 @@ body {
     padding-bottom: 40px;
   }
 }
+.forest .forest-player.without-spectro .forest-player__left {
+  width: auto;
+  margin: 0 auto;
+}
+.forest .forest-player.without-spectro .forest-player__right {
+  display: none;
+}
+.forest .forest-player.without-spectro .forest-player__button.icon-play .forest-player__button-label_play {
+  display: inline-block;
+}
+.forest .forest-player.without-spectro .forest-player__button.icon-pause .forest-player__button-label_pause {
+  display: inline-block;
+}
 .forest .forest-player__left,
 .forest .forest-player__right {
   font-size: 1.6rem;

@@ -17,6 +17,10 @@ $( document ).ready(function() {
 
   var wavesurfer = WaveSurfer.create(wavesurferOpts);
 
+  if (!wavesurfer.backend.supportsWebAudio()) {
+    $('.forest-player').addClass('without-spectro');
+  }
+
   wavesurfer.on('play', showPauseBtn);
   wavesurfer.on('pause', showPlayBtn);
   wavesurfer.on('finish', showPlayBtn);

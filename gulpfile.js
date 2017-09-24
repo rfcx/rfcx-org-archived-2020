@@ -43,7 +43,12 @@ gulp.task('watch', function() {
 gulp.task('connect', function() {
     connect.server({
         port: process.env.PORT || 8084,
-        root: './dist/'
+        root: './dist/',
+        middleware: function() {
+        return [
+                require('connect-gzip').gzip()
+            ];
+        }
     });
 });
 

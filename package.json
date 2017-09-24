@@ -9,10 +9,9 @@
   "scripts": {
     "start": "./node_modules/.bin/gulp"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
+    "connect-gzip": "^0.1.6",
     "del": "2.2.0",
     "gulp": "3.9.1",
     "gulp-concat": "2.6.1",

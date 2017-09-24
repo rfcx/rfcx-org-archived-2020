@@ -95,28 +95,45 @@ gulp.task('script:clean', function() {
 
 // concat js files into one file
 // create normal and minified versions of js file
-gulp.task('script:app', function() {
+gulp.task('script:homepage', function() {
     return generateJs(
-        ['./src/js/vendor/jquery-3.1.0.slim.js', './src/js/app.js'],
-        'app.js'
+        ['./src/js/vendor/jquery-3.1.0.slim.js', './src/js/vendor/wavesurfer.min.js',
+         './src/js/home-common.js', './src/js/menu.js', './src/js/player.js', './src/js/modal.js'],
+        'home.js'
+    );
+});
+
+gulp.task('script:our-work', function() {
+    return generateJs(
+        ['./src/js/vendor/jquery-3.1.0.slim.js',
+         './src/js/menu.js', './src/js/modal.js', './src/js/work-info.js'],
+        'our-work.js'
+    );
+});
+
+gulp.task('script:common', function() {
+    return generateJs(
+        ['./src/js/vendor/jquery-3.1.0.slim.js',
+         './src/js/menu.js', './src/js/modal.js'],
+        'common.js'
     );
 });
 // concat js files into one file
 // create normal and minified versions of js file
-gulp.task('script:player', function() {
-    return generateJs(
-        ['./src/js/vendor/wavesurfer.min.js', './src/js/player.js'],
-        'player.js'
-    );
-});
+// gulp.task('script:player', function() {
+//     return generateJs(
+//         ['./src/js/vendor/wavesurfer.min.js', './src/js/player.js'],
+//         'player.js'
+//     );
+// });
 // concat js files into one file
 // create normal and minified versions of js file
-gulp.task('script:modal', function() {
-    return generateJs(
-        ['./src/js/modal.js'],
-        'modal.js'
-    );
-});
+// gulp.task('script:modal', function() {
+//     return generateJs(
+//         ['./src/js/modal.js'],
+//         'modal.js'
+//     );
+// });
 
 function generateJs(files, name) {
     return gulp.src(files)
@@ -126,5 +143,5 @@ function generateJs(files, name) {
 }
 
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
-gulp.task('scripts', ['script:clean', 'script:app', 'script:player', 'script:modal']);
+gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

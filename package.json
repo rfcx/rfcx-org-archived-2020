@@ -9,9 +9,7 @@
   "scripts": {
     "start": "./node_modules/.bin/gulp"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "del": "2.2.0",
     "gulp": "3.9.1",

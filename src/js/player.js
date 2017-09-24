@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
   if(!$('#waveform').length) return;
 
-  let wavesurferOpts = {
+  var wavesurferOpts = {
     container: '#waveform',
     waveColor: '#ffffff',
     progressColor: '#fa4e00',
@@ -16,6 +16,10 @@ $( document ).ready(function() {
   };
 
   var wavesurfer = WaveSurfer.create(wavesurferOpts);
+
+  if (!wavesurfer.backend.supportsWebAudio()) {
+    $('.forest-player').addClass('without-spectro');
+  }
 
   wavesurfer.on('play', showPauseBtn);
   wavesurfer.on('pause', showPlayBtn);

@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
   if(!$('#waveform').length) return;
 
-  let wavesurferOpts = {
+  var wavesurferOpts = {
     container: '#waveform',
     waveColor: '#ffffff',
     progressColor: '#fa4e00',

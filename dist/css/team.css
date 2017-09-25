@@ -838,6 +838,7 @@ body {
   box-sizing: border-box;
 }
 .footer .footer-links {
+  display: none;
   padding-left: 9.5%;
   padding-bottom: 56px;
   border-bottom: 2px solid #f0f0ec;
@@ -879,7 +880,7 @@ body {
   text-decoration: none;
 }
 .footer__info {
-  padding: 70px 0 15px;
+  padding: 15px 0;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {

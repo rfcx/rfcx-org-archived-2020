@@ -433,7 +433,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   color: #000000;
 }
@@ -448,6 +448,12 @@ body {
   letter-spacing: -2.8px;
   color: #000000;
 }
+@media screen and (max-width: 1470px) {
+  .article-title {
+    font-size: 3.6rem;
+    letter-spacing: -1.8px;
+  }
+}
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .article-title {
     font-size: 3rem;
@@ -459,7 +465,7 @@ body {
   line-height: 1.9;
   text-align: center;
   vertical-align: middle;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   letter-spacing: 0;
   color: #000;
 }
@@ -503,10 +509,22 @@ body {
   color: #000000;
   margin: 0 auto 40px;
 }
+@media screen and (max-width: 1800px) {
+  .page-title {
+    font-size: 6.6rem;
+    letter-spacing: -3.8px;
+  }
+}
+@media screen and (max-width: 1470px) {
+  .page-title {
+    font-size: 4rem;
+    letter-spacing: -0.6px;
+  }
+}
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .page-title {
-    font-size: 6rem;
-    letter-spacing: -4px;
+    font-size: 4.6rem;
+    letter-spacing: -2px;
   }
 }
 @media screen and (max-width: 970px) {
@@ -521,6 +539,11 @@ body {
     margin: 0 auto 20px;
   }
 }
+@media screen and (max-width: 400px) {
+  .page-title {
+    font-size: 3.2rem;
+  }
+}
 .page-descr {
   font-family: 'Roboto';
   font-weight: 400;
@@ -532,9 +555,14 @@ body {
   color: #000;
   margin: 0 auto 40px;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1470px) {
   .page-descr {
     font-size: 2.6rem;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .page-descr {
+    font-size: 2.4rem;
   }
 }
 @media screen and (max-width: 860px) {
@@ -545,6 +573,11 @@ body {
 @media only screen and (max-width: 767px) {
   .page-descr {
     font-size: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .page-descr {
+    font-size: 1.8rem;
   }
 }
 .work-title {
@@ -559,9 +592,10 @@ body {
   color: #000000;
   margin: 0 auto 40px;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1800px) {
   .work-title {
-    font-size: 4.5rem;
+    font-size: 4rem;
+    letter-spacing: -0.2px;
   }
 }
 @media screen and (max-width: 860px) {
@@ -572,6 +606,21 @@ body {
 @media only screen and (max-width: 767px) {
   .work-title {
     font-size: 3rem;
+  }
+}
+@media screen and (max-width: 736px) {
+  .work-title {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (max-width: 667px) {
+  .work-title {
+    font-size: 2.6rem;
+  }
+}
+@media screen and (max-width: 568px) {
+  .work-title {
+    font-size: 2.4rem;
   }
 }
 @media screen and (max-width: 382px) {
@@ -591,14 +640,20 @@ body {
   color: #000;
   margin: 0 auto 40px;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1800px) {
   .work-descr {
     font-size: 2.6rem;
+    letter-spacing: -0.2px;
   }
 }
 @media only screen and (max-width: 767px) {
   .work-descr {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .work-descr {
+    font-size: 1.6rem;
   }
 }
 .banner {
@@ -613,9 +668,15 @@ body {
   color: #fff;
   margin: 0 auto 40px;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1800px) {
   .banner {
     font-size: 4.5rem;
+    letter-spacing: 0;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .banner {
+    font-size: 4.2rem;
   }
 }
 @media screen and (max-width: 970px) {
@@ -673,6 +734,11 @@ body {
   letter-spacing: -2px;
   color: #fff;
   margin: 0 auto 40px;
+}
+@media screen and (max-width: 1400px) {
+  .people-title {
+    font-size: 3.2rem;
+  }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .people-title {
@@ -3813,14 +3879,14 @@ body {
   margin: 0 auto;
   padding: 140px 0 30px;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1800px) {
   .about {
-    padding: 120px 0 30px;
+    padding: 80px 0 30px;
   }
 }
-@media screen and (max-width: 860px) {
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
   .about {
-    padding: 100px 0 30px;
+    padding: 40px 0 30px;
   }
 }
 .about__wrapper {
@@ -3844,30 +3910,9 @@ body {
   width: 100%;
   height: 696px;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1800px) {
   .work-info__area-img {
-    height: 550px;
-    margin: 0 auto;
-  }
-}
-@media screen and (max-width: 970px) {
-  .work-info__area-img {
-    height: 500px;
-  }
-}
-@media screen and (max-width: 860px) {
-  .work-info__area-img {
-    height: 430px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .work-info__area-img {
-    height: 280px;
-  }
-}
-@media screen and (max-width: 520px) {
-  .work-info__area-img {
-    height: 200px;
+    height: 407px;
   }
 }
 .work-info__img {
@@ -3881,9 +3926,19 @@ body {
   background: url(../image/sawn-wood.jpg) no-repeat center center;
   background-size: cover;
 }
+@media only screen and (max-width: 767px) {
+  .work-info__img_chainsaw {
+    background-position: 15% center;
+  }
+}
 .work-info__img_man {
   background: url(../image/dead-animals.jpg) no-repeat center center;
   background-size: cover;
+}
+@media only screen and (max-width: 767px) {
+  .work-info__img_man {
+    background-position: 82% center;
+  }
 }
 .work-info__img_monkey {
   background: url(../image/pink-bird.jpg) no-repeat center center;
@@ -3923,14 +3978,9 @@ body {
   position: relative;
   z-index: 1;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .work-info__button:before {
-    padding-bottom: 48.92%;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .work-info__button:before {
-    padding-bottom: 44.92%;
+    padding-bottom: 88%;
   }
 }
 .work-info__button:after {
@@ -3964,12 +4014,7 @@ body {
 }
 @media screen and (max-width: 520px) {
   .work-info__button:after {
-    height: 34px;
-  }
-}
-@media screen and (max-width: 382px) {
-  .work-info__button:after {
-    height: 28px;
+    height: 54px;
   }
 }
 .work-info__button_chainsaw:after {
@@ -3997,6 +4042,11 @@ body {
     height: 60px;
   }
 }
+@media screen and (max-width: 382px) {
+  .work-info__button_monkey:after {
+    height: 40px;
+  }
+}
 .work-info__button_monkey.active:after {
   background: url(../image/why-monkey.png) no-repeat center center;
   background-size: contain;
@@ -4012,6 +4062,11 @@ body {
 .work-info__item.active {
   display: block;
   background: #eef0e7;
+}
+@media screen and (max-width: 1800px) {
+  .work-info__item {
+    padding: 100px 8%;
+  }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .work-info__item {
@@ -4040,6 +4095,11 @@ body {
   z-index: 201;
   margin: 0;
 }
+@media screen and (max-width: 1800px) {
+  .work-info__pdf {
+    top: 80px;
+  }
+}
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .work-info__pdf {
     top: 70px;
@@ -4057,10 +4117,10 @@ body {
     right: 25px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 414px) {
   .work-info__pdf {
-    top: 18px;
-    right: 18px;
+    top: 22px;
+    right: 12px;
   }
 }
 .work-info__icon {
@@ -4090,6 +4150,11 @@ body {
   margin: 0 auto 53px;
   padding: 0;
 }
+@media screen and (max-width: 1800px) {
+  .work-info__title {
+    margin: 0 auto 50px;
+  }
+}
 @media screen and (max-width: 970px) {
   .work-info__title {
     margin: 0 auto 40px;
@@ -4104,6 +4169,11 @@ body {
 .work-info__descr {
   margin: 0 auto;
   padding: 0 0 70px;
+}
+@media screen and (max-width: 1800px) {
+  .work-info__descr {
+    padding: 0 0 50px;
+  }
 }
 .work-info__descr:last-child {
   padding: 0;
@@ -4124,33 +4194,18 @@ body {
   }
 }
 .work-info__area-last {
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
   height: 790px;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1800px) {
   .work-info__area-last {
-    height: 550px;
+    height: 474px;
   }
 }
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 950px) {
   .work-info__area-last {
-    height: 500px;
-  }
-}
-@media screen and (max-width: 860px) {
-  .work-info__area-last {
-    height: 430px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .work-info__area-last {
-    height: 280px;
-  }
-}
-@media screen and (max-width: 520px) {
-  .work-info__area-last {
-    height: 200px;
+    height: 400px;
   }
 }
 .work-info__last {

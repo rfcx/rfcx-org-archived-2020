@@ -5425,5 +5425,5 @@ body {
   -moz-transform: translate(50%, 0);
   -ms-transform: translate(50%, 0);
   -o-transform: translate(50%, 0);
-  z-index: 1;
+  z-index: 10;
 }

@@ -56,23 +56,25 @@
     z-index: 100003;
   }
   &__title {
-    font-family: 'Roboto';
-    font-size: 7rem;
+    font-family: 'roadgeek';
+    font-size: 9rem;
     text-transform: uppercase;
     color: #fff;
     margin: 0 auto 15px;
     text-align: center;
-    letter-spacing: -4px;
+    letter-spacing: 1px;
+    line-height: 1;
+    @media @tablet {
+      font-size: 7rem;
+    }
     @media @phone {
       font-size: 5rem;
     }
     @media screen and (max-width: 400px) {
       font-size: 4rem;
-      letter-spacing: -2px;
     }
     @media screen and (max-height: 400px) {
       font-size: 3rem;
-      letter-spacing: -1px;
       margin-bottom: 10px;
     }
   }

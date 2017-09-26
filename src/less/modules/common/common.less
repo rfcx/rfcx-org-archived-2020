@@ -1,3 +1,14 @@
+@font-face {
+    font-family:'roadgeek';
+    src: url('../fonts/roadgeek.eot');
+    src: local('☺'),
+            url('../fonts/roadgeek.woff') format('woff'),
+            url('../fonts/roadgeek.ttf') format('truetype'),
+            url('../fonts/roadgeek.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     .box-sizing(border-box);
     outline: none;
@@ -49,34 +60,32 @@ body {
     color: #000000;
 }
 .article-title {
-    font-family: 'Roboto';
-    font-weight: 600;
+    font-family: 'roadgeek';
     line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
-    font-size: 4rem;
-    letter-spacing: -2.8px;
+    font-size: 4.4rem;
+    letter-spacing: -1px;
     color: #000000;
     @media screen and (max-width: 1470px) {
-        font-size: 3.6rem;
-        letter-spacing: -1.8px;
+        font-size: 4.2rem;
     }
     @media @tablet {
-        font-size: 3rem;
+        font-size: 3.6rem;
     }
 }
 .article-title2 {
-    font-family: 'Roboto';
+    font-family: 'Open Sans';
     font-weight: 400;
     line-height: 1.9;
     text-align: center;
     vertical-align: middle;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     letter-spacing: 0;
     color: #000;
     @media @tablet {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
 }
 .article-btn {
@@ -105,80 +114,69 @@ body {
     text-decoration: none;
 }
 .page-title {
-    font-family: 'Roboto';
-    font-weight: 600;
+    font-family: 'roadgeek';
+    font-weight: 400;
     line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
-    font-size: 7.5rem;
-    letter-spacing: -6.8px;
+    font-size: 10rem;
     color: #000000;
     margin: 0 auto 40px;
     @media screen and (max-width: 1800px) {
-        font-size: 6.6rem;
-        letter-spacing: -3.8px;
+        font-size: 7rem;
     }
     @media screen and (max-width: 1470px) {
-        font-size: 4rem;
-        letter-spacing: -0.6px;
+        font-size: 6rem;
     }
     @media @tablet {
-        font-size: 4.6rem;
-        letter-spacing: -2px;
-    }
-    @media screen and (max-width: 970px) {
         font-size: 5rem;
     }
-    @media @phone {
-        letter-spacing: -1.8px;
+    @media screen and (max-width: 970px) {
         font-size: 4rem;
-        margin: 0 auto 20px;
     }
-    @media screen and (max-width: 400px) {
-        font-size: 3.2rem;
+    @media @phone {
+        font-size: 3rem;
+        margin: 0 auto 20px;
     }
 }
 .page-descr {
-    font-family: 'Roboto';
+    font-family: 'Open Sans';
     font-weight: 400;
     line-height: 1.65;
     text-align: center;
     vertical-align: middle;
-    font-size: 3rem;
+    font-size: 2.6rem;
     letter-spacing: 0;
     color: #000;
     margin: 0 auto 40px;
     @media screen and (max-width: 1470px) {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
       }
     @media @tablet {
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
     @media screen and (max-width: 860px) {
       margin: 0 auto 20px;
     }
     @media @phone {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
     @media screen and (max-width: 400px) {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 }
 .work-title {
-    font-family: 'Roboto';
-    font-weight: 600;
+    font-family: 'roadgeek';
     line-height: 1.2;
     text-align: left;
     text-transform: uppercase;
     vertical-align: middle;
-    font-size: 5.5rem;
-    letter-spacing: -2.8px;
+    font-size: 8rem;
     color: #000000;
     margin: 0 auto 40px;
     @media screen and (max-width: 1800px) {
-        font-size: 4rem;
-        letter-spacing: -0.2px;
+        font-size: 5rem;
     }
     @media screen and (max-width: 860px) {
       font-size: 4rem;
@@ -186,22 +184,9 @@ body {
     @media @phone {
       font-size: 3rem;
     }
-    @media screen and (max-width: 736px) {
-        font-size: 2.8rem;
-    }
-    @media screen and (max-width: 667px) {
-        font-size: 2.6rem;
-    }
-    @media screen and (max-width: 568px) {
-        font-size: 2.4rem;
-    }
-    @media screen and (max-width: 382px) {
-      font-size: 2.2rem;
-      letter-spacing: -0.8px;
-    }
 }
 .work-descr {
-    font-family: 'Roboto';
+    font-family: 'Open Sans';
     font-weight: 400;
     line-height: 1.65;
     text-align: left;
@@ -211,30 +196,30 @@ body {
     color: #000;
     margin: 0 auto 40px;
     @media screen and (max-width: 1800px) {
-        font-size: 2.6rem;
-        letter-spacing: -0.2px;
+        font-size: 2.4rem;
       }
     @media @phone {
         font-size: 2rem;
     }
     @media screen and (max-width: 400px) {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 }
 .banner {
-    font-family: 'Roboto';
-    font-weight: 600;
+    font-family: 'roadgeek';
+    font-weight: 400;
     line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
-    font-size: 5.5rem;
-    letter-spacing: -2px;
+    font-size: 8rem;
     color: #fff;
     margin: 0 auto 40px;
     @media screen and (max-width: 1800px) {
-        font-size: 4.5rem;
-        letter-spacing: 0;
+        font-size: 6rem;
+    }
+    @media screen and (max-width: 1500px) {
+        font-size: 5rem;
     }
     @media @tablet {
         font-size: 4.2rem;
@@ -243,11 +228,11 @@ body {
         font-size: 4rem;
     }
     @media @phone {
-        font-size: 2.2rem;
+        font-size: 3.4rem;
     }
-    @media screen and (max-width: 382px) {
-        font-size: 2rem;
-      }
+    @media screen and (max-width: 360px) {
+        font-size: 3.2rem;
+    }
 }
 .banner-small {
     line-height: 1.2;
@@ -271,26 +256,29 @@ body {
     }
 }
 .people-title {
-    font-family: 'Roboto';
-    font-weight: 600;
+    font-family: 'roadgeek';
+    font-weight: 400;
     line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
-    font-size: 3.7rem;
-    letter-spacing: -2px;
+    font-size: 4rem;
     color: #fff;
     margin: 0 auto 40px;
     @media screen and (max-width: 1400px) {
-        font-size: 3.2rem;
+        font-size: 3.8rem;
       }
     @media @tablet {
-        font-size: 2.7rem;
-        letter-spacing: -1px;
+        font-size: 3.4rem;
     }
     @media @phone {
-        font-size: 2rem;
-        letter-spacing: -1px;
+        font-size: 3rem;
+    }
+    @media screen and (max-width: 620px) {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 3.2rem;
     }
 }
 .people-descr {
@@ -307,7 +295,7 @@ body {
     }
 }
 .donors-name {
-    font-family: 'Roboto';
+    font-family: 'Open Sans';
     font-weight: 400;
     line-height: 1.4;
     text-align: center;
@@ -321,7 +309,7 @@ body {
     }
 }
 .kickstarter-name {
-    font-family: 'Roboto';
+    font-family: 'Open Sans';
     font-weight: 400;
     line-height: 1.4;
     text-align: center;
@@ -335,4 +323,8 @@ body {
 
 .atlwdg-trigger {
     z-index: 99998;
+    &.atlwdg-TOP {
+        left: 50%;
+        .translate(-50%, 0);
+    }
 }

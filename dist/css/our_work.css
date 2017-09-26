@@ -781,7 +781,7 @@ body {
   z-index: 99998;
 }
 .atlwdg-trigger.atlwdg-TOP {
-  left: 50% !important;
+  left: 50%;
   -webkit-transform: translate(-50%, 0);
   -moz-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);

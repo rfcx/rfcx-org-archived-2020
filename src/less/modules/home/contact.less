@@ -42,9 +42,15 @@
     text-align: left;
     text-decoration: none;
     font-size: 1.6rem;
+    &.loading {
+      .contact-form__spinner {
+        display: block;
+      }
+    }
     &__row {
       &:extend(.clearfix all);
       margin: 0 auto 25px;
+      position: relative;
       @media screen and (max-width: 700px) {
         margin-bottom: 15px;
       }
@@ -123,6 +129,14 @@
       background-color:#f7600e;
       color: #fff;
       text-transform: uppercase;
+    }
+    &__spinner {
+      display: none;
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      width: 32px;
+      height: auto;
     }
     &__socials {
       padding: 0;

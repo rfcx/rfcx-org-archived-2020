@@ -97,7 +97,7 @@ gulp.task('script:clean', function() {
 // create normal and minified versions of js file
 gulp.task('script:homepage', function() {
     return generateJs(
-        ['./src/js/vendor/jquery-3.1.0.slim.js', './src/js/vendor/wavesurfer.min.js',
+        ['./src/js/vendor/jquery-3.2.1.js', './src/js/vendor/noty.js', './src/js/vendor/wavesurfer.min.js',
          './src/js/home-common.js', './src/js/menu.js', './src/js/player.js', './src/js/modal.js'],
         'home.js'
     );
@@ -105,7 +105,7 @@ gulp.task('script:homepage', function() {
 
 gulp.task('script:our-work', function() {
     return generateJs(
-        ['./src/js/vendor/jquery-3.1.0.slim.js',
+        ['./src/js/vendor/jquery-3.2.1.js',
          './src/js/menu.js', './src/js/modal.js', './src/js/work-info.js'],
         'our-work.js'
     );
@@ -113,7 +113,7 @@ gulp.task('script:our-work', function() {
 
 gulp.task('script:common', function() {
     return generateJs(
-        ['./src/js/vendor/jquery-3.1.0.slim.js',
+        ['./src/js/vendor/jquery-3.2.1.js',
          './src/js/menu.js', './src/js/modal.js'],
         'common.js'
     );

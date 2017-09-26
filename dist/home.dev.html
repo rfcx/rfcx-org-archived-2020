@@ -34,8 +34,7 @@
 <section class="forest">
   <div class="forest__content">
     <h1 class="forest__banner">
-      Rainforest Connection: A tech social enterprise that builds acoustic monitoring systems
-      to help partners stop illegal deforestation in real time.
+      The most impactful way to stop climate change? Save rainforests.
     </h1>
     <div class="forest-player">
       <div class="forest-player__left">
@@ -253,7 +252,7 @@
     <p class="article-title2 contact__descr">
       Drop us a line and let us know how we can help your cause
     </p>
-    <form class="contact-form" action="https://formspree.io/contact@rfcx.org" method="POST" target="_blank">
+    <form id="contactForm" class="contact-form" action="https://formspree.io/contact@rfcx.org" method="POST" target="_blank">
       <input type="hidden" name="_gotcha">
       <div class="contact-form__row">
         <input type="email" name="_replyto" placeholder="Your Email" class="contact-form__input" required>
@@ -261,6 +260,7 @@
       </div>
       <div class="contact-form__row contact-form__row_textarea">
         <textarea class="contact-form__message" name="message" placeholder="Your Message" required></textarea>
+        <img src="image/ajax-loader.gif" alt="" class="contact-form__spinner">
       </div>
       <div class="contact-form__row">
         <div class="contact-form__cell contact-form__cell_left">

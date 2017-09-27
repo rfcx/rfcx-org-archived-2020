@@ -4296,8 +4296,7 @@ body {
   }
 }
 .stories__content {
-  float: left;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 @media screen and (max-width: 1400px) {

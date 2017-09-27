@@ -15,39 +15,47 @@
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 4px;
+    margin: 0 auto;
     @media screen and (max-width: 1800px) {
       font-size: 1.8rem;
       letter-spacing: 3px;
     }
-    @media screen and (max-width: 700px) {
-      margin: 0 auto;
-      font-size: 1.6rem;
+    @media @phone {
+      font-size: 1.4rem;
       padding: 12px 5px;
     }
   }
   .donate-section {
     &:extend(.clearfix all);
-    border-bottom: 5px solid #e6e6e6;
     font-size: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+    @media screen and (max-width: 1800px) {
+      max-width: 940px;
+    }
     &_donate {
-      padding: 100px 13%;
+      padding: 100px 2%;
+      border-bottom: 5px solid #e6e6e6;
       @media screen and (max-width: 1800px) {
-        padding: 72px 13%;
+        padding: 72px 2%;
       }
       @media @tablet {
-        padding: 60px 8%;
+        padding: 60px 5%;
       }
       @media @phone {
-        padding: 30px 5%;
+        padding: 20px 5%;
       }
     }
     &_phone {
-      padding: 80px 13%;
+      padding: 80px 2%;
       @media screen and (max-width: 1800px) {
-        padding: 40px 13%;
+        padding: 40px 2%;
       }
-      @media screen and (max-width: 950px) {
-        padding: 40px 5%;
+      @media @tablet {
+        padding: 60px 5%;
+      }
+      @media @phone {
+        padding: 20px 5%;
       }
       .donate-page-btn {
         margin-top: 15px;
@@ -57,90 +65,31 @@
     &__column {
       font-size: 1.4rem;
       display: inline-block;
-      vertical-align: top;
-      &_donate-left {
-        width: 53%;
-        padding-right: 12%;
-        @media @tablet {
-          width: 50%;
-          padding-left: 6%;
-          padding-right: 6%;
-        }
-        @media screen and (max-width: 950px) {
-          width: 50%;
-          padding-left: 0%;
-          padding-right: 4%;
-        }
-        @media screen and (max-width: 700px) {
-          display: block;
-          text-align: center;
-          width: 100%;
-          padding-left: 0;
-          padding-right: 0;
-          margin-bottom: 20px;
-        }
-      }
-      &_donate-right {
-        width: 47%;
-        padding-right: 12.8%;
-        @media @tablet {
-          width: 50%;
-          padding-left: 6.4%;
-          padding-right: 6.4%;
-        }
-        @media screen and (max-width: 950px) {
-          width: 50%;
-          padding-left: 2%;
-          padding-right: 0;
-        }
-        @media screen and (max-width: 700px) {
-          display: block;
-          text-align: center;
-          width: 100%;
-          max-width: 509px;
-          padding-left: 0;
-          padding-right: 0;
-          margin: 0 auto;
-        }
-      }
+      vertical-align: middle;
+      width: 50%;
+      &_donate-left,
       &_phone-left {
-        width: 53%;
-        padding: 0 18.2% 0 10.5%;
-        @media @tablet {
-          width: 50%;
-          padding: 0 9.1% 0 5.25%;
-        }
-        @media screen and (max-width: 950px) {
-          width: 50%;
-          padding: 0 9.1% 0 5.25%;
-        }
-        @media screen and (max-width: 700px) {
-          display: block;
-          text-align: center;
-          width: 100%;
-          padding-left: 5%;
-          padding-right: 5%;
-        }
+        padding-right: 2%;
+      }
+      &_donate-right,
+      &_phone-right {
+        padding-left: 2%;
       }
       &_phone-right {
-        width: 47%;
-        padding-right: 5%;
-        @media @tablet {
-          width: 50%;
-          padding-left: 6.4%;
-          padding-right: 0;
+        padding-bottom: 40px;
+        @media @phone {
+          padding-bottom: 20px;
         }
-        @media screen and (max-width: 950px) {
-          width: 50%;
-          padding-left: 2%;
-          padding-right: 0;
-        }
-        @media screen and (max-width: 700px) {
-          display: block;
-          text-align: center;
-          width: 100%;
-          padding-left: 0;
-          padding-right: 0;
+      }
+      @media @phone {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
@@ -156,12 +105,21 @@
       }
     }
     &__text {
-      font-size: 3rem;
+      font-size: 2.2rem;
       color: #797979;
-      margin: 0 auto;
+      margin: 10px auto;
       line-height: 1.5;
+      &:last-child {
+        margin-bottom: 0;
+      }
       @media screen and (max-width: 1800px) {
+        font-size: 2rem;
+      }
+      @media @tablet {
         font-size: 1.8rem;
+      }
+      @media @phone {
+        font-size: 1.6rem;
       }
     }
     &__img-phone {
@@ -270,7 +228,7 @@
   &__ideas {
     margin: 0 auto;
     background: #eef0e7;
-    font-size: 3rem;
+    font-size: 2.4rem;
     padding: 65px 13.5% 70px;
     line-height: 1.75;
     a {
@@ -285,7 +243,7 @@
       font-size: 2rem;
       line-height: 1.5;
     }
-    @media screen and (max-width: 700px) {
+    @media @phone {
       padding: 30px 5%;
       font-size: 1.8rem;
       line-height: 1.5;

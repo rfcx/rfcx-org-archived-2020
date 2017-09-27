@@ -24,7 +24,6 @@
     font-family: 'roadgeek';
     font-size: 4rem;
     font-weight: 400;
-    // letter-spacing: 1px;
     color: #000000;
     text-transform: uppercase;
     width: 90%;
@@ -36,14 +35,19 @@
     }
   }
   &__main-descr {
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.5;
     margin: 0;
     color: #ffffff;
     width: 90%;
     margin: 0 auto 40px;
+    max-width: 1200px;
+    @media screen and (max-width: 1800px) {
+      max-width: 940px;
+      font-size: 1.8rem;
+    }
     @media screen and (max-width: 1100px) {
-      font-size: 1.9rem;
+      font-size: 1.6rem;
     }
     @media @tablet {
       font-size: 1.8rem;

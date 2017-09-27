@@ -513,28 +513,28 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 10rem;
+  font-size: 7rem;
   color: #000000;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
 }
 @media screen and (max-width: 1800px) {
-  .page-title {
-    font-size: 7rem;
-  }
-}
-@media screen and (max-width: 1470px) {
   .page-title {
     font-size: 6rem;
   }
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1470px) {
   .page-title {
     font-size: 5rem;
   }
 }
-@media screen and (max-width: 970px) {
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
   .page-title {
     font-size: 4rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .page-title {
+    font-size: 3rem;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -549,19 +549,14 @@ body {
   line-height: 1.65;
   text-align: center;
   vertical-align: middle;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   letter-spacing: 0;
   color: #000;
   margin: 0 auto 40px;
 }
-@media screen and (max-width: 1470px) {
+@media screen and (max-width: 1800px) {
   .page-descr {
-    font-size: 2.2rem;
-  }
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .page-descr {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 860px) {
@@ -585,13 +580,13 @@ body {
   text-align: left;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 8rem;
+  font-size: 6rem;
   color: #000000;
   margin: 0 auto 40px;
 }
 @media screen and (max-width: 1800px) {
   .work-title {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 }
 @media screen and (max-width: 860px) {
@@ -610,19 +605,19 @@ body {
   line-height: 1.65;
   text-align: left;
   vertical-align: middle;
-  font-size: 3rem;
+  font-size: 2.6rem;
   letter-spacing: 0;
   color: #000;
   margin: 0 auto 40px;
 }
 @media screen and (max-width: 1800px) {
   .work-descr {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .work-descr {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -637,7 +632,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 8rem;
+  font-size: 7rem;
   color: #fff;
   margin: 0 auto 40px;
 }
@@ -646,29 +641,24 @@ body {
     font-size: 6rem;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1470px) {
   .banner {
     font-size: 5rem;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .banner {
-    font-size: 4.2rem;
+    font-size: 4rem;
   }
 }
 @media screen and (max-width: 970px) {
   .banner {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .banner {
-    font-size: 3.4rem;
-  }
-}
-@media screen and (max-width: 360px) {
-  .banner {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 }
 .banner-small {
@@ -707,9 +697,14 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 4rem;
+  font-size: 3.8rem;
   color: #fff;
-  margin: 0 auto 40px;
+  margin: 0 auto 5px;
+}
+@media screen and (max-width: 1800px) {
+  .people-title {
+    font-size: 3.6rem;
+  }
 }
 @media screen and (max-width: 1400px) {
   .people-title {
@@ -742,7 +737,7 @@ body {
   text-align: center;
   vertical-align: middle;
   font-size: 2.2rem;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   color: #fff;
 }
 @media only screen and (max-width: 767px) {
@@ -3893,6 +3888,12 @@ body {
 .about__wrapper {
   width: 90%;
   margin: 0 auto;
+  max-width: 1200px;
+}
+@media screen and (max-width: 1800px) {
+  .about__wrapper {
+    max-width: 940px;
+  }
 }
 .about__page-descr {
   padding: 0 7%;
@@ -3921,13 +3922,18 @@ body {
   line-height: 1.7;
   text-align: center;
   vertical-align: middle;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   letter-spacing: 1.8px;
   color: #fff;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1800px) {
   .press-title {
     font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .press-title {
+    font-size: 1.8rem;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -4115,15 +4121,20 @@ body {
 .press-menu {
   text-align: left;
   vertical-align: middle;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   letter-spacing: 0;
   font-weight: 600;
   color: #797979;
   line-height: 1.7;
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1800px) {
   .press-menu {
     font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 1570px) {
+  .press-menu {
+    font-size: 1.8rem;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -4152,7 +4163,7 @@ body {
 .press-descr2 {
   text-align: left;
   vertical-align: middle;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   letter-spacing: 0;
   color: #000;
   line-height: 1.7;
@@ -4160,12 +4171,12 @@ body {
 }
 @media screen and (max-width: 1570px) {
   .press-descr2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 930px) {
   .press-descr2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 @media screen and (max-width: 350px) {

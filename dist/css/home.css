@@ -521,28 +521,28 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 10rem;
+  font-size: 7rem;
   color: #000000;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
 }
 @media screen and (max-width: 1800px) {
-  .page-title {
-    font-size: 7rem;
-  }
-}
-@media screen and (max-width: 1470px) {
   .page-title {
     font-size: 6rem;
   }
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1470px) {
   .page-title {
     font-size: 5rem;
   }
 }
-@media screen and (max-width: 970px) {
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
   .page-title {
     font-size: 4rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .page-title {
+    font-size: 3rem;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -557,19 +557,14 @@ body {
   line-height: 1.65;
   text-align: center;
   vertical-align: middle;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   letter-spacing: 0;
   color: #000;
   margin: 0 auto 40px;
 }
-@media screen and (max-width: 1470px) {
+@media screen and (max-width: 1800px) {
   .page-descr {
-    font-size: 2.2rem;
-  }
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .page-descr {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 860px) {
@@ -593,13 +588,13 @@ body {
   text-align: left;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 8rem;
+  font-size: 6rem;
   color: #000000;
   margin: 0 auto 40px;
 }
 @media screen and (max-width: 1800px) {
   .work-title {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 }
 @media screen and (max-width: 860px) {
@@ -618,19 +613,19 @@ body {
   line-height: 1.65;
   text-align: left;
   vertical-align: middle;
-  font-size: 3rem;
+  font-size: 2.6rem;
   letter-spacing: 0;
   color: #000;
   margin: 0 auto 40px;
 }
 @media screen and (max-width: 1800px) {
   .work-descr {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .work-descr {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -645,7 +640,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 8rem;
+  font-size: 7rem;
   color: #fff;
   margin: 0 auto 40px;
 }
@@ -654,29 +649,24 @@ body {
     font-size: 6rem;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1470px) {
   .banner {
     font-size: 5rem;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .banner {
-    font-size: 4.2rem;
+    font-size: 4rem;
   }
 }
 @media screen and (max-width: 970px) {
   .banner {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .banner {
-    font-size: 3.4rem;
-  }
-}
-@media screen and (max-width: 360px) {
-  .banner {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 }
 .banner-small {
@@ -715,9 +705,14 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 4rem;
+  font-size: 3.8rem;
   color: #fff;
-  margin: 0 auto 40px;
+  margin: 0 auto 5px;
+}
+@media screen and (max-width: 1800px) {
+  .people-title {
+    font-size: 3.6rem;
+  }
 }
 @media screen and (max-width: 1400px) {
   .people-title {
@@ -750,7 +745,7 @@ body {
   text-align: center;
   vertical-align: middle;
   font-size: 2.2rem;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   color: #fff;
 }
 @media only screen and (max-width: 767px) {
@@ -4621,14 +4616,13 @@ body {
   font-size: 2.8rem;
   color: #ffffff;
   margin: 0;
-  padding: 0 12%;
   margin: 0 auto 65px;
   line-height: 5.5rem;
+  max-width: 1200px;
 }
-@media screen and (max-width: 1540px) {
+@media screen and (max-width: 1800px) {
   .forest__banner {
-    padding-left: 5%;
-    padding-right: 5%;
+    max-width: 940px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -4639,8 +4633,6 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .forest__banner {
-    padding-left: 0;
-    padding-right: 0;
     font-size: 2rem;
     line-height: 3.8rem;
     margin-bottom: 20px;
@@ -4834,6 +4826,11 @@ body {
 .why__column:first-child {
   margin-left: 0;
 }
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .why__column:first-child {
+    margin-left: 0;
+  }
+}
 @media only screen and (max-width: 767px) {
   .why__column:first-child {
     margin: 0 auto 45px;
@@ -4842,9 +4839,20 @@ body {
 .why__column:laSt-child {
   margin-right: 0;
 }
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .why__column:laSt-child {
+    margin-right: 0;
+  }
+}
 @media only screen and (max-width: 767px) {
   .why__column:laSt-child {
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .why__column {
+    width: 32%;
+    margin: 1%;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -4881,6 +4889,11 @@ body {
   line-height: 1.5;
   width: 60%;
   margin: 0 auto;
+}
+@media screen and (max-width: 1800px) {
+  .why__descr {
+    font-size: 1.6rem;
+  }
 }
 @media screen and (max-width: 1500px) {
   .why__descr {
@@ -4940,16 +4953,23 @@ body {
   }
 }
 .map__main-descr {
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 1.5;
   margin: 0;
   color: #ffffff;
   width: 90%;
   margin: 0 auto 40px;
+  max-width: 1200px;
+}
+@media screen and (max-width: 1800px) {
+  .map__main-descr {
+    max-width: 940px;
+    font-size: 1.8rem;
+  }
 }
 @media screen and (max-width: 1100px) {
   .map__main-descr {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -5500,7 +5520,7 @@ body {
     display: block;
     width: 90%;
     max-width: 230px;
-    padding: 0;
+    padding-left: 0;
     margin: 0 auto 10px;
   }
 }

@@ -22,7 +22,6 @@
     font-family: 'roadgeek';
     font-size: 4rem;
     font-weight: 400;
-    // letter-spacing: -1px;
     color: #000000;
     text-transform: uppercase;
     margin: 0 auto 69px;
@@ -61,15 +60,25 @@
     }
     &:first-child {
       margin-left: 0;
+      @media @tablet {
+        margin-left: 0;
+      }
       @media @phone {
         margin: 0 auto 45px;
       }
     }
     &:laSt-child {
       margin-right: 0;
+      @media @tablet {
+        margin-right: 0;
+      }
       @media @phone {
         margin: 0 auto;
       }
+    }
+    @media @tablet {
+      width: 32%;
+      margin: 1%
     }
     @media @phone {
       float: none;
@@ -100,6 +109,9 @@
     line-height: 1.5;
     width: 60%;
     margin: 0 auto;
+    @media screen and (max-width: 1800px) {
+      font-size: 1.6rem;
+    }
     @media screen and (max-width: 1500px) {
       width: 80%;
     }

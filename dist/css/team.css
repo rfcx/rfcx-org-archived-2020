@@ -525,28 +525,28 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 10rem;
+  font-size: 7rem;
   color: #000000;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
 }
 @media screen and (max-width: 1800px) {
-  .page-title {
-    font-size: 7rem;
-  }
-}
-@media screen and (max-width: 1470px) {
   .page-title {
     font-size: 6rem;
   }
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1470px) {
   .page-title {
     font-size: 5rem;
   }
 }
-@media screen and (max-width: 970px) {
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
   .page-title {
     font-size: 4rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .page-title {
+    font-size: 3rem;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -561,19 +561,14 @@ body {
   line-height: 1.65;
   text-align: center;
   vertical-align: middle;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   letter-spacing: 0;
   color: #000;
   margin: 0 auto 40px;
 }
-@media screen and (max-width: 1470px) {
+@media screen and (max-width: 1800px) {
   .page-descr {
-    font-size: 2.2rem;
-  }
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .page-descr {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 860px) {
@@ -597,13 +592,13 @@ body {
   text-align: left;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 8rem;
+  font-size: 6rem;
   color: #000000;
   margin: 0 auto 40px;
 }
 @media screen and (max-width: 1800px) {
   .work-title {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 }
 @media screen and (max-width: 860px) {
@@ -622,19 +617,19 @@ body {
   line-height: 1.65;
   text-align: left;
   vertical-align: middle;
-  font-size: 3rem;
+  font-size: 2.6rem;
   letter-spacing: 0;
   color: #000;
   margin: 0 auto 40px;
 }
 @media screen and (max-width: 1800px) {
   .work-descr {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .work-descr {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -649,7 +644,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 8rem;
+  font-size: 7rem;
   color: #fff;
   margin: 0 auto 40px;
 }
@@ -658,29 +653,24 @@ body {
     font-size: 6rem;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1470px) {
   .banner {
     font-size: 5rem;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .banner {
-    font-size: 4.2rem;
+    font-size: 4rem;
   }
 }
 @media screen and (max-width: 970px) {
   .banner {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .banner {
-    font-size: 3.4rem;
-  }
-}
-@media screen and (max-width: 360px) {
-  .banner {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 }
 .banner-small {
@@ -719,9 +709,14 @@ body {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 4rem;
+  font-size: 3.8rem;
   color: #fff;
-  margin: 0 auto 40px;
+  margin: 0 auto 5px;
+}
+@media screen and (max-width: 1800px) {
+  .people-title {
+    font-size: 3.6rem;
+  }
 }
 @media screen and (max-width: 1400px) {
   .people-title {
@@ -754,7 +749,7 @@ body {
   text-align: center;
   vertical-align: middle;
   font-size: 2.2rem;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   color: #fff;
 }
 @media only screen and (max-width: 767px) {
@@ -3905,6 +3900,12 @@ body {
 .about__wrapper {
   width: 90%;
   margin: 0 auto;
+  max-width: 1200px;
+}
+@media screen and (max-width: 1800px) {
+  .about__wrapper {
+    max-width: 940px;
+  }
 }
 .about__page-descr {
   padding: 0 7%;
@@ -3913,6 +3914,9 @@ body {
   .about__page-descr {
     padding: 0 3%;
   }
+}
+.about .page-title {
+  margin-bottom: 70px;
 }
 .people {
   background-color: #e1e3d9;
@@ -3925,8 +3929,13 @@ body {
 .people__content {
   margin: 0 auto;
   width: 90%;
-  max-width: 1462px;
   text-align: center;
+  max-width: 1200px;
+}
+@media screen and (max-width: 1800px) {
+  .people__content {
+    max-width: 940px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .people__content {
@@ -3981,7 +3990,6 @@ body {
 @media only screen and (max-width: 767px) {
   .people .person {
     padding-bottom: 40%;
-    margin: 0 auto 15px;
   }
 }
 @media screen and (max-width: 620px) {
@@ -4007,11 +4015,10 @@ body {
 }
 .people .person__name {
   display: block;
-  margin: 0 auto;
 }
 .people .person__position {
   display: block;
-  margin: 15px auto 0;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
   .people .person__position {

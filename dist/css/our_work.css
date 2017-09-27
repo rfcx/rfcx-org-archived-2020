@@ -4175,11 +4175,6 @@ body {
 .work-info__descr:last-child {
   padding: 0;
 }
-@media screen and (max-width: 800px) {
-  .work-info__descr .iphone__btn {
-    margin: 7px auto;
-  }
-}
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .work-info__descr {
     padding: 0 0 50px;
@@ -4250,6 +4245,151 @@ body {
 @media only screen and (max-width: 767px) {
   .work-info__banner-small {
     margin-top: 10px;
+  }
+}
+.iphone {
+  background-color: #eef0e7;
+  width: 100%;
+  text-align: center;
+  padding: 28px 12% 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1600px) {
+  .iphone {
+    padding: 28px 8% 10px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .iphone {
+    padding: 28px 4% 10px;
+  }
+}
+@media screen and (max-width: 1321px) {
+  .iphone {
+    padding: 28px 2% 10px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .iphone {
+    padding: 28px 1% 10px;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .iphone {
+    padding: 20px 1% 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .iphone {
+    padding: 20px 1% 20px;
+  }
+}
+.iphone__content {
+  margin: 0;
+  display: block;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 0;
+}
+.iphone__area {
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
+  font-size: 14px;
+  padding: 0 0 0 19%;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .iphone__area {
+    padding-left: 15%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .iphone__area {
+    padding-left: 12%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .iphone__area {
+    display: block;
+    width: 90%;
+    max-width: 230px;
+    padding: 0;
+    margin: 0 auto 10px;
+  }
+}
+.iphone__img {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+.iphone__column {
+  display: inline-block;
+  vertical-align: middle;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0 13% 30px 3%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+@media only screen and (max-width: 767px) {
+  .iphone__column {
+    display: block;
+    width: 90%;
+    padding: 0;
+  }
+}
+.iphone__category {
+  margin: 0 auto 27px;
+}
+@media only screen and (max-width: 767px) {
+  .iphone__category {
+    margin-bottom: 20px;
+  }
+}
+.iphone__title {
+  margin: 0 auto 20px;
+  padding: 0 8%;
+}
+@media only screen and (max-width: 767px) {
+  .iphone__title {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+}
+.iphone__title2 {
+  margin: 0 auto 56px;
+}
+@media screen and (max-width: 1235px) {
+  .iphone__title2 {
+    margin: 0 auto 27px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .iphone__title2 {
+    margin-bottom: 10px;
+  }
+}
+.iphone__btn-wrapper {
+  margin: 0 auto 15px;
+}
+.iphone__btn-wrapper:last-child {
+  margin-bottom: 0;
+}
+.iphone__btn {
+  border-radius: 5px;
+  border: 1px solid #ff4e00;
+}
+@media only screen and (max-width: 1024px) {
+  .iphone__btn {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .iphone__btn {
+    margin-left: 0;
   }
 }
 .our_work .header__link {

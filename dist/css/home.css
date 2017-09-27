@@ -364,7 +364,6 @@ textarea {
 .footer .footer-links,
 .subscribe__form,
 .why__columns,
-.iphone__content,
 .stories__row,
 .stories__column,
 .contact .contact-form__row {
@@ -378,8 +377,6 @@ textarea {
 .subscribe__form:after,
 .why__columns:before,
 .why__columns:after,
-.iphone__content:before,
-.iphone__content:after,
 .stories__row:before,
 .stories__row:after,
 .stories__column:before,
@@ -393,7 +390,6 @@ textarea {
 .footer .footer-links:after,
 .subscribe__form:after,
 .why__columns:after,
-.iphone__content:after,
 .stories__row:after,
 .stories__column:after,
 .contact .contact-form__row:after {
@@ -5476,15 +5472,17 @@ body {
 .iphone__content {
   margin: 0;
   display: block;
-  font-size: 0;
   width: 100%;
   position: relative;
   box-sizing: border-box;
+  font-size: 0;
 }
 .iphone__area {
   margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
   width: 40%;
-  float: left;
+  font-size: 14px;
   padding: 0 0 0 19%;
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -5499,10 +5497,11 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .iphone__area {
-    float: none;
+    display: block;
     width: 90%;
     max-width: 230px;
     padding: 0;
+    margin: 0 auto 10px;
   }
 }
 .iphone__img {
@@ -5511,25 +5510,26 @@ body {
   width: 100%;
 }
 .iphone__column {
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
   width: 60%;
   margin: 0 auto;
   padding: 0 13% 30px 3%;
   box-sizing: border-box;
+  font-size: 14px;
 }
 @media only screen and (max-width: 767px) {
   .iphone__column {
-    float: none;
+    display: block;
     width: 90%;
     padding: 0;
   }
 }
 .iphone__category {
-  margin: 27px auto;
+  margin: 0 auto 27px;
 }
 @media only screen and (max-width: 767px) {
   .iphone__category {
-    margin-top: 0;
     margin-bottom: 20px;
   }
 }

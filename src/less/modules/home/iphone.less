@@ -24,18 +24,20 @@
     padding: 20px 1% 20px;
   }
   &__content {
-    &:extend(.clearfix all);
     margin: 0;
     display: block;
     font-size: 0;
     width: 100%;
     position: relative;
     box-sizing: border-box;
+    font-size: 0;
   }
   &__area {
     margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
     width: 40%;
-    float: left;
+    font-size: 14px;
     padding: 0 0 0 19%;
     @media @tablet {
       padding-left: 15%;
@@ -44,10 +46,11 @@
       padding-left: 12%;
     }
     @media @phone {
-      float: none;
+      display: block;
       width: 90%;
       max-width: 230px;
       padding: 0;
+      margin: 0 auto 10px;
     }
   }
   &__img {
@@ -56,21 +59,22 @@
     width: 100%;
   }
   &__column {
-    float: left;
+    display: inline-block;
+    vertical-align: middle;
     width: 60%;
     margin: 0 auto;
     padding: 0 13% 30px 3%;
     box-sizing: border-box;
+    font-size: 14px;
     @media @phone {
-      float: none;
+      display: block;
       width: 90%;
       padding: 0;
     }
   }
   &__category {
-    margin: 27px auto;
+    margin: 0 auto 27px;
     @media @phone {
-      margin-top: 0;
       margin-bottom: 20px;
     }
   }

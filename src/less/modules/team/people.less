@@ -27,28 +27,6 @@
     width: 33.33%;
     margin: 0 auto;
     padding-bottom: 28%;
-    &:after {
-      display: block;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #000;
-      opacity: 0;
-      z-index: 100;
-      @media @desktop {
-        .transition(opacity .7s);
-      }
-    }
-    @media @desktop {
-      &:hover {
-        &:after {
-          opacity: 0.5;
-        }
-      }
-    }
     @media screen and (max-width: 1200px) {
       display: inline-block;
       text-align: center;

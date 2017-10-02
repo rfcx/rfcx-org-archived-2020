@@ -13413,7 +13413,7 @@ $( document ).ready(function() {
     container: '#waveform',
     waveColor: '#ffffff',
     progressColor: '#fa4e00',
-    barHeight: 30,
+    barHeight: 28,
     barWidth: 3,
     cursorColor: 'rgba(255,255,255,0)',
     hideScrollbar: true,
@@ -13454,7 +13454,7 @@ $( document ).ready(function() {
     }
   }
 
-  wavesurfer.load('audio/demo.mp3');
+  wavesurfer.load('audio/tedx.mp3');
 
 });
 

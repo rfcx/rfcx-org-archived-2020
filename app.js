@@ -1,3 +1,4 @@
+"use strict"; // should allow for variables and req statements to use let, const, etc.
 // check for environmental variable file and load if present
 const fs        = require("fs"),
     extend    = require('util')._extend,

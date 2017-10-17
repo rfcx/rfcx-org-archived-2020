@@ -2,9 +2,8 @@
 // check for environmental variable file and load if present
 const fs        = require("fs"),
     extend    = require('util')._extend,
-    recaptcha = require("./helpers/recaptcha.js");
-
-const i18n;
+    recaptcha = require("./helpers/recaptcha.js"),
+    i18n = require('i18n-2');
 
 let env, app;
 
@@ -29,7 +28,6 @@ let express = require("express"), routes = require("./routes"),
   compression = require("compression"), serveStatic = require("serve-static"),
   bodyParser = require('body-parser'),
   donatePhoneRoutes = require('./routes/donate-phone.js');
-  i18n = require('i18n-2'),
   middleware = require("./middlewares/all.js").middleware;
 app = express();
 

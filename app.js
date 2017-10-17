@@ -4,6 +4,8 @@ const fs        = require("fs"),
     extend    = require('util')._extend,
     recaptcha = require("./helpers/recaptcha.js");
 
+const i18n;
+
 let env, app;
 
 if (fs.existsSync("./config/env_vars.js")) {

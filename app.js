@@ -27,7 +27,7 @@ let express = require("express"), routes = require("./routes"),
   favicon = require("serve-favicon"),
   compression = require("compression"), serveStatic = require("serve-static"),
   bodyParser = require('body-parser'),
-  donatePhoneRoutes = require('./routes/donate-phone.js');
+  donatePhoneRoutes = require('./routes/donate-phone.js'),
   middleware = require("./middlewares/all.js").middleware;
 app = express();
 

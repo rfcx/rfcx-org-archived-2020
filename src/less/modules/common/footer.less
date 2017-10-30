@@ -59,6 +59,9 @@
     // padding: 70px 0 15px;
     padding: 15px 0; // temporary for launch
     text-align: center;
+    &:last-child {
+      padding-bottom: 0;
+    }
     @media @phone {
       padding: 20px 0 0;
     }
@@ -83,7 +86,7 @@
   }
   &__social {
     text-align: center;
-    padding: 20px 0 0;
+    padding: 20px 0;
   }
   &__social-link {
     display: inline-block;
@@ -101,5 +104,8 @@
     @media @phone {
       margin: 0 10px;
     }
+  }
+  &__address {
+    font-size: 1.2rem;
   }
 }

@@ -498,7 +498,8 @@ body {
   border-radius: 5px;
   border: 1px solid #ff4e00;
 }
-.email-link {
+.email-link,
+.link {
   color: #ff4e00;
   text-decoration: none;
 }
@@ -849,6 +850,9 @@ body {
   padding: 15px 0;
   text-align: center;
 }
+.footer__info:last-child {
+  padding-bottom: 0;
+}
 @media only screen and (max-width: 767px) {
   .footer__info {
     padding: 20px 0 0;
@@ -874,7 +878,7 @@ body {
 }
 .footer__social {
   text-align: center;
-  padding: 20px 0 0;
+  padding: 20px 0;
 }
 .footer__social-link {
   display: inline-block;
@@ -900,6 +904,9 @@ body {
   .footer__social-link {
     margin: 0 10px;
   }
+}
+.footer__address {
+  font-size: 1.2rem;
 }
 .header {
   position: relative;
@@ -4274,6 +4281,22 @@ body {
   .work-info__banner-small {
     margin-top: 10px;
   }
+}
+.work-info__footnotes hr {
+  max-width: 150px;
+  margin: 0 0 15px;
+}
+.work-info__footnote-label,
+.work-info__footnote-label a {
+  color: #ff4e00;
+  text-decoration: none;
+}
+.work-info__footnote {
+  font-size: 1.2rem;
+  display: block;
+  margin: 0 auto 0.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .iphone {
   background-color: #eef0e7;

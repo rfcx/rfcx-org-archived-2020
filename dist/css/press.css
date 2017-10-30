@@ -502,7 +502,8 @@ body {
   border-radius: 5px;
   border: 1px solid #ff4e00;
 }
-.email-link {
+.email-link,
+.link {
   color: #ff4e00;
   text-decoration: none;
 }
@@ -853,6 +854,9 @@ body {
   padding: 15px 0;
   text-align: center;
 }
+.footer__info:last-child {
+  padding-bottom: 0;
+}
 @media only screen and (max-width: 767px) {
   .footer__info {
     padding: 20px 0 0;
@@ -878,7 +882,7 @@ body {
 }
 .footer__social {
   text-align: center;
-  padding: 20px 0 0;
+  padding: 20px 0;
 }
 .footer__social-link {
   display: inline-block;
@@ -904,6 +908,9 @@ body {
   .footer__social-link {
     margin: 0 10px;
   }
+}
+.footer__address {
+  font-size: 1.2rem;
 }
 .header {
   position: relative;

@@ -15,7 +15,10 @@ $( document ).ready(function() {
   });
 
   function changeActiveHash(name) {
-    $('.js-variable-content.active').removeClass('active');
-    $('.js-variable-content[data-name="' + name + '"]').addClass('active');
+    var $target = $('.js-variable-content[data-name="' + name + '"]');
+    if ($target.length) {
+      $('.js-variable-content.active').removeClass('active');
+      $target.addClass('active');
+    }
   }
 });

@@ -3738,3 +3738,8 @@ body {
   padding-top: 20px;
   padding-bottom: 40px;
 }
+@media only screen and (max-width: 767px) {
+  .donate-page {
+    padding-bottom: 20px;
+  }
+}

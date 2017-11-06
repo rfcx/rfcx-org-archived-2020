@@ -3352,11 +3352,6 @@ body {
 .donate-header .header__title-delimiter {
   display: none;
 }
-@media only screen and (max-width: 767px) {
-  .donate-header .header__title-delimiter {
-    display: block;
-  }
-}
 .donate .donate-page-btn {
   display: block;
   color: #fff;
@@ -3709,6 +3704,9 @@ body {
 .donate-section {
   width: 90%;
   max-width: 940px;
+}
+.donate-section .donate-page-btn {
+  font-family: inherit;
 }
 .donate-section_app {
   text-align: center;

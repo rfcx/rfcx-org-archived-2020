@@ -5590,18 +5590,15 @@ body {
   margin-bottom: 0;
 }
 .iphone__btn {
-  border-radius: 5px;
-  border: 1px solid #ff4e00;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  border: none;
+  padding: 0;
 }
-@media only screen and (max-width: 1024px) {
-  .iphone__btn {
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .iphone__btn {
-    margin-left: 0;
-  }
+.iphone__btn-img {
+  display: block;
+  max-width: 200px;
 }
 .stories {
   background-color: #000;

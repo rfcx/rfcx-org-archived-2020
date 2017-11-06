@@ -3947,6 +3947,19 @@ body {
     padding: 12px 5px;
   }
 }
+.donate .app-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+.donate .app-btn__img {
+  display: block;
+  max-width: 200px;
+}
 .donate .donate-section {
   font-size: 0;
   margin: 0 auto;

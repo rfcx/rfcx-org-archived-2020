@@ -4755,6 +4755,138 @@ body {
 .forest .forest-player__waveform canvas {
   cursor: pointer;
 }
+.metrics {
+  background: #fff;
+  padding: 63px 2% 58px;
+  text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .metrics {
+    padding: 63px 8% 58px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .metrics {
+    padding: 30px 2%;
+  }
+}
+.metrics__title {
+  display: inline-block;
+  text-align: center;
+  list-style: none;
+  font-family: 'roadgeek';
+  font-size: 4rem;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0 auto 48px;
+}
+@media only screen and (max-width: 767px) {
+  .metrics__title {
+    font-size: 2.8rem;
+    margin: 0 auto 30px;
+  }
+}
+.metrics__list {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.metrics .metrics-item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 20px;
+}
+.metrics .metrics-item .metrics-item-label {
+  position: relative;
+  z-index: 1;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto 2rem;
+  background: transparent;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+.metrics .metrics-item .metrics-item-label:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  border: 1px solid #a9b4a3;
+  border-radius: 105px;
+}
+@media screen and (max-width: 1800px) {
+  .metrics .metrics-item .metrics-item-label:after {
+    border-radius: 90px;
+  }
+}
+@media screen and (max-width: 1800px) {
+  .metrics .metrics-item .metrics-item-label {
+    height: 180px;
+    width: 180px;
+    margin-bottom: 1.5rem;
+  }
+}
+.metrics .metrics-item .metrics-item-label__content {
+  display: block;
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background: transparent;
+  z-index: 1;
+}
+.metrics .metrics-item .metrics-item-label__number,
+.metrics .metrics-item .metrics-item-label__text {
+  display: block;
+  margin: 0 auto 1rem;
+  text-transform: uppercase;
+}
+.metrics .metrics-item .metrics-item-label__number {
+  font-family: 'roadgeek';
+  font-size: 10rem;
+  color: #a9b4a3;
+  line-height: 7rem;
+}
+@media screen and (max-width: 1800px) {
+  .metrics .metrics-item .metrics-item-label__number {
+    font-size: 8.4rem;
+    line-height: 6.4rem;
+  }
+}
+.metrics .metrics-item .metrics-item-label__text {
+  font-family: 'Source Sans Pro';
+  font-size: 2.4rem;
+  margin-bottom: 0;
+  color: #a4b797;
+}
+@media screen and (max-width: 1800px) {
+  .metrics .metrics-item .metrics-item-label__text {
+    font-size: 1.5rem;
+  }
+}
+.metrics .metrics-item__text {
+  font-family: 'Source Sans Pro';
+  font-size: 2rem;
+  color: #fd4f22;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1800px) {
+  .metrics .metrics-item__text {
+    font-size: 1.6rem;
+  }
+}
 .why {
   background-color: #eef0e7;
   width: 100%;

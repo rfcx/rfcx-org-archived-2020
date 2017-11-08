@@ -97,8 +97,9 @@ gulp.task('script:clean', function() {
 // create normal and minified versions of js file
 gulp.task('script:homepage', function() {
     return generateJs(
-        ['./src/js/vendor/jquery-3.2.1.js', './src/js/vendor/noty.js', './src/js/vendor/wavesurfer.min.js',
-         './src/js/home-common.js', './src/js/menu.js', './src/js/player.js', './src/js/modal.js'],
+        ['./src/js/vendor/jquery-3.2.1.js', './src/js/vendor/jquery.animateNumber.js', './src/js/vendor/noty.js',
+         './src/js/vendor/wavesurfer.min.js', './src/js/home-common.js', './src/js/menu.js', './src/js/player.js',
+         './src/js/modal.js', './src/js/metrics.js'],
         'home.js'
     );
 });

@@ -17,6 +17,8 @@ var navItems = [
     [ "donate", "Donate", "/donate", "Donate", false, true ],
     [ "ecuador", "Ecuador", "/ecuador", "Ecuador", false, false ],
     [ "tumblr", "Tumblr", "http://tumblr.rfcx.org/", "", false, false ],
+
+    [ "info", "Information", "/info.html", "Information", false, false ],
     // Admin pages
     [ "admin/donations", "Donations", "/admin/donations", "Donations", false, true ]
   ];

@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+  head
+    // Google Tag Manager
+    script.
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5QT6X8W');
+    // End Google Tag Manager
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Rainforest Connection
+    meta(name='description', content='You can donate to Rainforest Connection and help save rainforests worldwide. Also be sure to get our free Rainforest Connection app!')
+    meta(name='keywords', content='donate to Rainforest Connection, help save rainforests, get Rainforest Connection app')
+    meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1')
+    link(rel='icon', href='favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', type='text/css', href='#{rfcx_cdn}/css/generated/info.css?v=#{app_version}')
+  body.about-us
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-5QT6X8W', height='0', width='0', style='display:none;visibility:hidden')
+    // End Google Tag Manager (noscript)
+    section.donate-header
+      a.header__logo(href='/about_us.html')
+        span.icon-logo
+        span.header__title
+          span RAINFOREST
+          br.header__title-delimiter
+          span CONNECTION
+    .donate
+      .donate-section.donate-section_donate
+        .donate-section__column.donate-section__column_donate-left
+          p.donate-section__text
+            | Rainforest Connection (RFCx) is a 501c3 non-profit tech startup building and deploying scalable, open-source solutions to poaching and illegal logging. Join us today! For donors: USA Tax ID 46-2022575
+        .donate-section__column.donate-section__column_donate-right
+          .donate-form
+            .donate-form__row
+              a.donate-page-btn(href='https://www.paypal.me/rfcx', target='_blank') Donate
+      .donate-section.donate-section_app
+        p.donate-section__text Listen to a rainforest in real time. Get the Rainforest Connection app
+        p.donate-section__text
+          a.app-btn(href='http://bit.ly/RFCx-iOS', target='_blank')
+            img.app-btn__img(src="#{rfcx_cdn}/img/info/ios.png?v=#{app_version}", alt='')
+          a.app-btn(href='http://bit.ly/RFCx-Android', target='_blank')
+            img.app-btn__img(src="#{rfcx_cdn}/img/info/android.png?v=#{app_version}", alt='')
+    section.video
+      .video__wrapper
+        iframe(width='560', height='349', src='http://www.youtube.com/embed/L0UK1GMtjig?rel=0&hd=1', frameborder='0', allowfullscreen='')

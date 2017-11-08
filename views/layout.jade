@@ -1,7 +1,15 @@
 doctype html
 html(lang="en")
-  
+
   head
+    // Google Tag Manager
+    script.
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5QT6X8W');
+    // End Google Tag Manager
     title= current_page[3]
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -13,10 +21,10 @@ html(lang="en")
 
       meta(property="og:title", content="Rainforest Connection (RFCx): Phones Turned into Forest Guardians")
       meta(property="og:description", content="Rainforest Connection — Technology that stops illegal loggers in-the-act. Our answer to climate change & global mass extinctions.")
-      
+
       meta(property="og:url", content="#{(http_headers['x-forwarded-proto']==='https') ? 'https' : 'http'}://#{http_headers['host']}/")
       meta(property="og:image", content="https://rfcx.org/cdn/img/intro/open-graph-v01.640.jpg")
-      
+
       meta(property="og:video", content="https://static.rfcx.org/video/jwplayer/5.7/jwplayer.flash.swf?file=..%2f..%2fvid03%2fv5%2fvid03-v5.720.mp4&autostart=true")
       meta(property="og:video:type", content="application/x-shockwave-flash")
       meta(property="og:video:width", content="486")
@@ -27,6 +35,10 @@ html(lang="en")
     | <!--[if lt IE 9]> <script type="text/javascript" src="#{bootstrap_cdn}/html5shiv/3.6.1/html5shiv.js"></script> <![endif]-->
     | <!--[if lt IE 9]> <link rel="stylesheet" type="text/css" href="#{rfcx_cdn}/css/gradient-ie9.css" /> <![endif]-->
   body(class="helvetica lang-#{locale}")
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-5QT6X8W', height='0', width='0', style='display:none;visibility:hidden')
+    // End Google Tag Manager (noscript)
     #loadingContainer.loading-container(style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: #fff;")
     #phoneDeviceContainer
     #tabletDeviceContainer

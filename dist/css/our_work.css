@@ -1118,6 +1118,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-spectrogram:before {
+  content: "\e905";
+}
+.icon-elephant:before {
+  content: "\e906";
+}
+.icon-chainsaw:before {
+  content: "\e907";
+}
 .icon-cancel:before {
   content: "\e904";
 }
@@ -3965,6 +3974,9 @@ body {
   border: none;
   outline: none;
   background: transparent;
+  color: #c6c6c6;
+  font-size: 6rem;
+  padding: 50px 0;
 }
 @media only screen and (min-width: 1025px) {
   .work-info__button {
@@ -3978,96 +3990,40 @@ body {
     background: rgba(238, 240, 231, 0.5);
   }
 }
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .work-info__button {
+    font-size: 5.5rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .work-info__button {
+    font-size: 5rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .work-info__button {
+    font-size: 4rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .work-info__button {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .work-info__button {
+    font-size: 3rem;
+  }
+}
 .work-info__button.active {
   background: #eef0e7;
-}
-.work-info__button:before {
-  display: block;
-  content: "";
-  width: 100%;
-  padding-bottom: 52.92%;
-  position: relative;
-  z-index: 1;
-}
-@media only screen and (max-width: 767px) {
-  .work-info__button:before {
-    padding-bottom: 70%;
-  }
-}
-.work-info__button:after {
-  display: block;
-  content: "";
-  z-index: 2;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-}
-@media screen and (max-width: 1800px) {
-  .work-info__button:after {
-    width: 100px;
-    height: 100px;
-  }
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .work-info__button:after {
-    width: 90px;
-    height: 90px;
-  }
-}
-@media screen and (max-width: 970px) {
-  .work-info__button:after {
-    height: 86px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .work-info__button:after {
-    height: 64px;
-  }
-}
-@media screen and (max-width: 520px) {
-  .work-info__button:after {
-    height: 54px;
-  }
-}
-.work-info__button_chainsaw:after {
-  background: url(../image/why-chainsaw-grey.png) no-repeat center center;
-  background-size: contain;
-}
-.work-info__button_chainsaw.active:after {
-  background: url(../image/why-chainsaw.png) no-repeat center center;
-  background-size: contain;
-}
-.work-info__button_man:after {
-  background: url(../image/why-man-grey.png) no-repeat center center;
-  background-size: contain;
-}
-.work-info__button_man.active:after {
-  background: url(../image/why-man.png) no-repeat center center;
-  background-size: contain;
-}
-.work-info__button_monkey:after {
-  background: url(../image/why-monkey-grey.png) no-repeat center center;
-  background-size: contain;
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .work-info__button_monkey:after {
-    height: 60px;
-  }
-}
-@media screen and (max-width: 382px) {
-  .work-info__button_monkey:after {
-    height: 40px;
-  }
-}
-.work-info__button_monkey.active:after {
-  background: url(../image/why-monkey.png) no-repeat center center;
-  background-size: contain;
+  color: #6e7f66;
 }
 .work-info__item {
   position: relative;

@@ -46,18 +46,6 @@
     width: 30%;
     margin: 0 2.5%;
     box-sizing: border-box;
-    &_monkey {
-      padding-top: 15px;
-      @media @phone {
-        padding-top: 0;
-      }
-      .why__img {
-        margin-bottom: 58px;
-        @media @phone {
-          margin-bottom: 20px;
-        }
-      }
-    }
     &:first-child {
       margin-left: 0;
       @media @tablet {
@@ -88,7 +76,12 @@
     }
   }
   &__img {
+    display: inline-block;
+    font-size: 6rem;
+    color: #6e7f66;
     margin-bottom: 35px;
+    height: 85px;
+    line-height: 85px;
     @media @phone {
       margin-bottom: 20px;
     }

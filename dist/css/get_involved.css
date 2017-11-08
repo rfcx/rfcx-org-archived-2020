@@ -1118,6 +1118,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-spectrogram:before {
+  content: "\e905";
+}
+.icon-elephant:before {
+  content: "\e906";
+}
+.icon-chainsaw:before {
+  content: "\e907";
+}
 .icon-cancel:before {
   content: "\e904";
 }

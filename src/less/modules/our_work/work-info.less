@@ -53,96 +53,121 @@
     border: none;
     outline: none;
     background: transparent;
+    color: #c6c6c6;
+    font-size: 6rem;
+    padding: 50px 0;
     @media @desktop {
       .transition(background .5s);
       &:hover {
         background: rgba(238, 240, 231, 0.5);
       }
     }
+    @media @tablet {
+      font-size: 5.5rem;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media @phone {
+      font-size: 5rem;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 4rem;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media screen and (max-width: 400px) {
+      font-size: 3.6rem;
+    }
+    @media screen and (max-width: 360px) {
+      font-size: 3rem;
+    }
     &.active {
       background: #eef0e7;
+      color: #6e7f66;
     }
-    &:before {
-      display: block;
-      content: "";
-      width: 100%;
-      padding-bottom: 52.92%;
-      position: relative;
-      z-index: 1;
-      @media @phone {
-        padding-bottom: 70%;
-      }
-    }
-    &:after {
-      display: block;
-      content: "";
-      z-index: 2;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 120px;
-      height: 120px;
-      .translate(-50%, -50%);
-      @media screen and (max-width: 1800px) {
-        width: 100px;
-        height: 100px;
-      }
-      @media @tablet {
-        width: 90px;
-        height: 90px;
-      }
-      @media screen and (max-width: 970px) {
-        height: 86px;
-      }
-      @media @phone {
-        height: 64px;
-      }
-      @media screen and (max-width: 520px) {
-        height: 54px;
-      }
-    }
-    &_chainsaw {
-      &:after {
-        background: url(../image/why-chainsaw-grey.png) no-repeat center center;
-        background-size: contain;
-      }
-      &.active {
-        &:after {
-          background: url(../image/why-chainsaw.png) no-repeat center center;
-          background-size: contain;
-        }
-      }
-    }
-    &_man {
-      &:after {
-        background: url(../image/why-man-grey.png) no-repeat center center;
-        background-size: contain;
-      }
-      &.active {
-        &:after {
-          background: url(../image/why-man.png) no-repeat center center;
-          background-size: contain;
-        }
-      }
-    }
-    &_monkey {
-      &:after {
-        background: url(../image/why-monkey-grey.png) no-repeat center center;
-        background-size: contain;
-        @media @tablet {
-          height: 60px;
-        }
-        @media screen and (max-width: 382px) {
-          height: 40px;
-        }
-      }
-      &.active {
-        &:after {
-          background: url(../image/why-monkey.png) no-repeat center center;
-          background-size: contain;
-        }
-      }
-    }
+    // &:before {
+    //   display: block;
+    //   content: "";
+    //   width: 100%;
+    //   padding-bottom: 52.92%;
+    //   position: relative;
+    //   z-index: 1;
+    //   @media @phone {
+    //     padding-bottom: 70%;
+    //   }
+    // }
+    // &:after {
+    //   display: block;
+    //   content: "";
+    //   z-index: 2;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   width: 120px;
+    //   height: 120px;
+    //   .translate(-50%, -50%);
+    //   @media screen and (max-width: 1800px) {
+    //     width: 100px;
+    //     height: 100px;
+    //   }
+    //   @media @tablet {
+    //     width: 90px;
+    //     height: 90px;
+    //   }
+    //   @media screen and (max-width: 970px) {
+    //     height: 86px;
+    //   }
+    //   @media @phone {
+    //     height: 64px;
+    //   }
+    //   @media screen and (max-width: 520px) {
+    //     height: 54px;
+    //   }
+    // }
+    // &_chainsaw {
+    //   &:after {
+    //     background: url(../image/why-chainsaw-grey.png) no-repeat center center;
+    //     background-size: contain;
+    //   }
+    //   &.active {
+    //     &:after {
+    //       background: url(../image/why-chainsaw.png) no-repeat center center;
+    //       background-size: contain;
+    //     }
+    //   }
+    // }
+    // &_man {
+    //   &:after {
+    //     background: url(../image/why-man-grey.png) no-repeat center center;
+    //     background-size: contain;
+    //   }
+    //   &.active {
+    //     &:after {
+    //       background: url(../image/why-man.png) no-repeat center center;
+    //       background-size: contain;
+    //     }
+    //   }
+    // }
+    // &_monkey {
+    //   &:after {
+    //     background: url(../image/why-monkey-grey.png) no-repeat center center;
+    //     background-size: contain;
+    //     @media @tablet {
+    //       height: 60px;
+    //     }
+    //     @media screen and (max-width: 382px) {
+    //       height: 40px;
+    //     }
+    //   }
+    //   &.active {
+    //     &:after {
+    //       background: url(../image/why-monkey.png) no-repeat center center;
+    //       background-size: contain;
+    //     }
+    //   }
+    // }
   }
   &__item {
     position: relative;

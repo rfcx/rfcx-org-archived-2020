@@ -1130,6 +1130,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-spectrogram:before {
+  content: "\e905";
+}
+.icon-elephant:before {
+  content: "\e906";
+}
+.icon-chainsaw:before {
+  content: "\e907";
+}
 .icon-cancel:before {
   content: "\e904";
 }
@@ -4946,22 +4955,6 @@ body {
   margin: 0 2.5%;
   box-sizing: border-box;
 }
-.why__column_monkey {
-  padding-top: 15px;
-}
-@media only screen and (max-width: 767px) {
-  .why__column_monkey {
-    padding-top: 0;
-  }
-}
-.why__column_monkey .why__img {
-  margin-bottom: 58px;
-}
-@media only screen and (max-width: 767px) {
-  .why__column_monkey .why__img {
-    margin-bottom: 20px;
-  }
-}
 .why__column:first-child {
   margin-left: 0;
 }
@@ -5003,7 +4996,12 @@ body {
   }
 }
 .why__img {
+  display: inline-block;
+  font-size: 6rem;
+  color: #6e7f66;
   margin-bottom: 35px;
+  height: 85px;
+  line-height: 85px;
 }
 @media only screen and (max-width: 767px) {
   .why__img {

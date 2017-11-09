@@ -13653,6 +13653,7 @@ $( document ).ready(function() {
 
   var $metricsEl = $('#metricsSection');
   var metricsOffsetTop = 0;
+  var metricsHeight = 0;
   var windowHeight = $(window).height();
   var duration = 4000;
   var decimal_places = 1;
@@ -13686,6 +13687,7 @@ $( document ).ready(function() {
 
   function calculateDimensions() {
     metricsOffsetTop = $metricsEl.offset().top;
+    metricsHeight = $metricsEl.height();
     windowHeight = $(window).height();
   }
 
@@ -13699,7 +13701,7 @@ $( document ).ready(function() {
   }
 
   function checkForStart() {
-    if ((scrollTop + windowHeight / 2) > (metricsOffsetTop)){
+    if ((scrollTop + windowHeight / 2) > metricsOffsetTop || (scrollTop + windowHeight) > (metricsOffsetTop + metricsHeight)){
       startAnimation();
     }
   }

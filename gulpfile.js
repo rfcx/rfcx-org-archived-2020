@@ -129,4 +129,5 @@ function generateJs(files, name) {
 
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
 gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common']);
+gulp.task('build', ['less', 'html', 'scripts']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

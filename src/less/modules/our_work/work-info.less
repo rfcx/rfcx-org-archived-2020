@@ -1,0 +1,358 @@
+.work-info {
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    @media screen and (max-width: 1800px) {
+      max-width: 940px;
+    }
+  }
+  &__area-img {
+    margin: 0;
+    width: 100%;
+    height: 696px;
+    @media screen and (max-width: 1800px) {
+      height: 407px;
+    }
+  }
+  &__img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    &_chainsaw {
+      background: url(../image/sawn-wood.jpg) no-repeat center center;
+      background-size: cover;
+      @media @phone {
+        background-position: 15% center;
+      }
+    }
+    &_man {
+      background: url(../image/dead-animals.jpg) no-repeat center center;
+      background-size: cover;
+      @media @phone {
+        background-position: 82% center;
+      }
+    }
+    &_monkey {
+      background: url(../image/pink-bird.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &.active {
+      display: block;
+    }
+  }
+  &__buttons {
+    &:extend(.clearfix all);
+  }
+  &__button {
+    float: left;
+    width: 33.33%;
+    position: relative;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #c6c6c6;
+    font-size: 6rem;
+    padding: 50px 0;
+    @media @desktop {
+      .transition(background .5s);
+      &:hover {
+        background: rgba(238, 240, 231, 0.5);
+      }
+    }
+    @media @tablet {
+      font-size: 5.5rem;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media @phone {
+      font-size: 5rem;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 4rem;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media screen and (max-width: 400px) {
+      font-size: 3.6rem;
+    }
+    @media screen and (max-width: 360px) {
+      font-size: 3rem;
+    }
+    &.active {
+      background: #eef0e7;
+      color: #6e7f66;
+    }
+    // &:before {
+    //   display: block;
+    //   content: "";
+    //   width: 100%;
+    //   padding-bottom: 52.92%;
+    //   position: relative;
+    //   z-index: 1;
+    //   @media @phone {
+    //     padding-bottom: 70%;
+    //   }
+    // }
+    // &:after {
+    //   display: block;
+    //   content: "";
+    //   z-index: 2;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   width: 120px;
+    //   height: 120px;
+    //   .translate(-50%, -50%);
+    //   @media screen and (max-width: 1800px) {
+    //     width: 100px;
+    //     height: 100px;
+    //   }
+    //   @media @tablet {
+    //     width: 90px;
+    //     height: 90px;
+    //   }
+    //   @media screen and (max-width: 970px) {
+    //     height: 86px;
+    //   }
+    //   @media @phone {
+    //     height: 64px;
+    //   }
+    //   @media screen and (max-width: 520px) {
+    //     height: 54px;
+    //   }
+    // }
+    // &_chainsaw {
+    //   &:after {
+    //     background: url(../image/why-chainsaw-grey.png) no-repeat center center;
+    //     background-size: contain;
+    //   }
+    //   &.active {
+    //     &:after {
+    //       background: url(../image/why-chainsaw.png) no-repeat center center;
+    //       background-size: contain;
+    //     }
+    //   }
+    // }
+    // &_man {
+    //   &:after {
+    //     background: url(../image/why-man-grey.png) no-repeat center center;
+    //     background-size: contain;
+    //   }
+    //   &.active {
+    //     &:after {
+    //       background: url(../image/why-man.png) no-repeat center center;
+    //       background-size: contain;
+    //     }
+    //   }
+    // }
+    // &_monkey {
+    //   &:after {
+    //     background: url(../image/why-monkey-grey.png) no-repeat center center;
+    //     background-size: contain;
+    //     @media @tablet {
+    //       height: 60px;
+    //     }
+    //     @media screen and (max-width: 382px) {
+    //       height: 40px;
+    //     }
+    //   }
+    //   &.active {
+    //     &:after {
+    //       background: url(../image/why-monkey.png) no-repeat center center;
+    //       background-size: contain;
+    //     }
+    //   }
+    // }
+  }
+  &__item {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 100px 8%;
+    text-align: left;
+    &.active {
+      display: block;
+      background: #eef0e7;
+    }
+    @media screen and (max-width: 1800px) {
+      padding: 60px 8%;
+    }
+    @media @tablet {
+      padding: 52px 8%;
+    }
+    @media screen and (max-width: 860px) {
+      padding: 44px 7%;
+    }
+    @media @phone {
+      padding: 25px 4%;
+    }
+    @media screen and (max-width: 382px) {
+      padding: 20px 4%;
+    }
+  }
+  &__pdf {
+    position: absolute;
+    top: 134px;
+    right: 74px;
+    z-index: 201;
+    margin: 0;
+    @media screen and (max-width: 1800px) {
+      top: 80px;
+    }
+    @media @tablet {
+      top: 70px;
+      right: 30px;
+    }
+    @media screen and (max-width: 900px) {
+      top: 50px;
+    }
+    @media @phone {
+      top: 25px;
+      right: 25px;
+    }
+    @media screen and (max-width: 414px) {
+      top: 22px;
+      right: 12px;
+    }
+  }
+  &__icon {
+    margin: 0;
+    height: 68px;
+    width: 64px;
+    @media @tablet {
+      height: 51px;
+      width: 48px;
+    }
+    @media @phone {
+      height: 34px;
+      width: 32px;
+    }
+    @media screen and (max-width: 420px) {
+      height: 28px;
+      width: 26px;
+    }
+  }
+  &__title {
+    margin: 0 auto 53px;
+    padding: 0;
+    @media screen and (max-width: 1800px) {
+      margin: 0 auto 50px;
+    }
+    @media screen and (max-width: 970px) {
+      margin: 0 auto 40px;
+    }
+    @media @phone {
+      margin: 0 auto 20px;
+      padding-right: 35px;
+    }
+  }
+  &__descr {
+    margin: 0 auto 70px;
+    @media screen and (max-width: 1800px) {
+      margin-bottom: 30px;
+    }
+    &:last-child {
+      margin-bottom: 0
+    }
+    @media screen and (max-width: 970px) {
+      margin-bottom: 20px;
+    }
+    .iphone {
+      padding-left: 0;
+      padding-right: 0;
+      &__area {
+        padding-left: 5%;
+        @media @phone {
+          padding-left: 0;
+        }
+      }
+      &__column {
+        padding-right: 5%;
+        @media @phone {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &__area-last {
+    margin: 0 auto;
+    width: 100%;
+    height: 790px;
+    @media screen and (max-width: 1800px) {
+      height: 474px;
+    }
+    @media screen and (max-width: 950px) {
+      height: 400px;
+    }
+  }
+  &__last {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    &_river {
+      background: url(../image/river.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &_small {
+      background: url(../image/small.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &_forest {
+      background: url(../image/wild-forest.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    &.active {
+      display: block;
+    }
+  }
+  &__banner-wrapper {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    .translate(-50%, -50%);
+  }
+  &__banner {
+    display: block;
+    margin: 0 auto;
+  }
+  &__banner-small {
+    display: block;
+    margin: 15px auto 0;
+    @media @phone {
+      margin-top: 10px;
+    }
+  }
+  &__footnotes {
+    hr {
+      max-width: 150px;
+      margin: 0 0 15px;
+    }
+  }
+  &__footnote-label,
+  &__footnote-label a {
+    color: #ff4e00;
+    text-decoration: none;
+  }
+  &__footnote {
+    font-size: 1.2rem;
+    display: block;
+    margin: 0 auto 0.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    a, span {
+      // display: inline-block;
+      // white-space: nowrap;
+    }
+  }
+}

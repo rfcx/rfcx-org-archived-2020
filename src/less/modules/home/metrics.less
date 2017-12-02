@@ -1,0 +1,113 @@
+.metrics {
+  background: #fff;
+  padding: 63px 2% 58px;
+  text-align: center;
+  @media screen and (max-width: 900px) {
+    padding: 63px 8% 58px;
+  }
+  @media @phone {
+    padding: 30px 2%;
+  }
+  &__title {
+    display: inline-block;
+    text-align: center;
+    list-style: none;
+    font-family: 'roadgeek';
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0 auto 48px;
+    @media @phone {
+      font-size: 2.8rem;
+      margin: 0 auto 30px;
+    }
+  }
+  &__list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .metrics-item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    .metrics-item-label {
+      position: relative;
+      z-index: 1;
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 2rem;
+      background: transparent;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      &:after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        border: 1px solid #a9b4a3;
+        border-radius: 105px;
+        @media screen and (max-width: 1800px) {
+          border-radius: 90px;
+        }
+      }
+      @media screen and (max-width: 1800px) {
+        height: 180px;
+        width: 180px;
+        margin-bottom: 1.5rem;
+      }
+      &__content {
+        display: block;
+        position: absolute;
+        top: 54%;
+        left: 50%;
+        .translate(-50%, -50%);
+        background: transparent;
+        z-index: 1;
+      }
+      &__number,
+      &__text {
+        display: block;
+        margin: 0 auto 1rem;
+        text-transform: uppercase;
+      }
+      &__number {
+        font-family: 'roadgeek';
+        font-size: 10rem;
+        color: #a9b4a3;
+        line-height: 7rem;
+        @media screen and (max-width: 1800px) {
+          font-size: 8.4rem;
+          line-height: 6.4rem;
+        }
+      }
+      &__text {
+        font-family: 'Source Sans Pro';
+        font-size: 2.4rem;
+        margin-bottom: 0;
+        color: #a4b797;
+        @media screen and (max-width: 1800px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    &__text {
+      font-family: 'Source Sans Pro';
+      font-size: 2rem;
+      color: #fd4f22;
+      margin: 0 auto;
+      @media screen and (max-width: 1800px) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

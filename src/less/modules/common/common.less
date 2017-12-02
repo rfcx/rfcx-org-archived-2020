@@ -1,0 +1,328 @@
+@font-face {
+    font-family:'roadgeek';
+    src: url('../fonts/roadgeek.eot');
+    src: local('☺'),
+            url('../fonts/roadgeek.woff') format('woff'),
+            url('../fonts/roadgeek.ttf') format('truetype'),
+            url('../fonts/roadgeek.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    .box-sizing(border-box);
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover,
+    &:focus {
+        outline: none;
+        text-decoration: none;
+    }
+    @media @desktop {
+        .transition(color .3s);
+    }
+}
+
+html {
+    font-size: 10px;
+    touch-action: manipulation;
+    background:  #fff;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-font-smoothing: subpixel-antialiased;
+    -ms-font-smoothing: subpixel-antialiased;
+    -o-font-smoothing: subpixel-antialiased;
+    perspective-origin: top left;
+    -webkit-perspective-origin: top left;
+    font-size: 62.5%;
+    margin: 0 auto;
+    max-width: 2015px;
+}
+
+.article-category {
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: #000000;
+}
+.article-title {
+    font-family: 'roadgeek';
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 4.4rem;
+    letter-spacing: -1px;
+    color: #000000;
+    @media screen and (max-width: 1470px) {
+        font-size: 4.2rem;
+    }
+    @media @tablet {
+        font-size: 3.6rem;
+    }
+}
+.article-title2 {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    line-height: 1.9;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    color: #000;
+    @media @tablet {
+      font-size: 1.4rem;
+    }
+}
+.article-btn {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 302px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #ff4e00;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ff4e00;
+}
+.email-link,
+.link {
+    color: #ff4e00;
+    text-decoration: none;
+}
+.page-title {
+    font-family: 'roadgeek';
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 7rem;
+    color: #000000;
+    margin: 0 auto 30px;
+    @media screen and (max-width: 1800px) {
+        font-size: 6rem;
+    }
+    @media screen and (max-width: 1470px) {
+        font-size: 5rem;
+    }
+    @media @tablet {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 970px) {
+        font-size: 3rem;
+    }
+    @media @phone {
+        font-size: 3rem;
+        margin: 0 auto 20px;
+    }
+}
+.page-descr {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    line-height: 1.65;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2.2rem;
+    letter-spacing: 0;
+    color: #000;
+    margin: 0 auto 40px;
+    @media screen and (max-width: 1800px) {
+        font-size: 1.8rem;
+    }
+    @media screen and (max-width: 860px) {
+      margin: 0 auto 20px;
+    }
+    @media @phone {
+      font-size: 1.8rem;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 1.6rem;
+    }
+}
+.work-title {
+    font-family: 'roadgeek';
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 6rem;
+    color: #000000;
+    margin: 0 auto 40px;
+    @media screen and (max-width: 1800px) {
+        font-size: 4.5rem;
+    }
+    @media screen and (max-width: 860px) {
+      font-size: 4rem;
+    }
+    @media @phone {
+      font-size: 3rem;
+    }
+}
+.work-descr {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    line-height: 1.65;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 2.6rem;
+    letter-spacing: 0;
+    color: #000;
+    margin: 0 auto 40px;
+    @media screen and (max-width: 1800px) {
+        font-size: 1.8rem;
+      }
+    @media @phone {
+        font-size: 1.8rem;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 1.4rem;
+    }
+}
+.banner {
+    font-family: 'roadgeek';
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 7rem;
+    color: #fff;
+    margin: 0 auto 40px;
+    @media screen and (max-width: 1800px) {
+        font-size: 6rem;
+    }
+    @media screen and (max-width: 1470px) {
+        font-size: 5rem;
+    }
+    @media @tablet {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 970px) {
+        font-size: 3rem;
+    }
+    @media @phone {
+        font-size: 3rem;
+    }
+}
+.banner-small {
+    line-height: 1.2;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #fff;
+    @media @tablet {
+        font-size: 1.9rem;
+    }
+    @media screen and (max-width: 970px) {
+        font-size: 1.4rem;
+    }
+    @media @phone {
+        font-size: 1.2rem;
+    }
+    @media screen and (max-width: 382px) {
+        font-size: 1rem;
+    }
+}
+.people-title {
+    font-family: 'roadgeek';
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 3.8rem;
+    color: #fff;
+    margin: 0 auto 5px;
+    @media screen and (max-width: 1800px) {
+        font-size: 3.6rem;
+    }
+    @media screen and (max-width: 1400px) {
+        font-size: 3.8rem;
+    }
+    @media @tablet {
+        font-size: 3.4rem;
+    }
+    @media @phone {
+        font-size: 3rem;
+    }
+    @media screen and (max-width: 620px) {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 3.2rem;
+    }
+}
+.people-descr {
+    font-family: 'PT Sans';
+    line-height: 1.2;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    color: #fff;
+    @media @phone {
+        font-size: 1.7rem;
+        letter-spacing: -1px;
+    }
+}
+.donors-name {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    color: #0c0b0b;
+    margin: 0 auto 40px;
+    @media @phone {
+        font-size: 1.3rem;
+    }
+}
+.kickstarter-name {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    color: #0c0b0b;
+    @media @phone {
+        font-size: 1.3rem;
+    }
+}
+
+.atlwdg-trigger {
+    z-index: 99998;
+    &.atlwdg-TOP {
+        left: 50% !important;
+        .translate(-50%, 0);
+    }
+}

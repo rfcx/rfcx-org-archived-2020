@@ -1,0 +1,159 @@
+.press-category {
+  font-family: 'PT Sans';
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 2rem;
+  letter-spacing: 2.8px;
+  color: #fff;
+  @media @phone {
+      font-size: 1.6rem;
+  }
+}
+.press-title {
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.2rem;
+  letter-spacing: 1.8px;
+  color: #fff;
+  @media screen and (max-width: 1800px) {
+    font-size: 2rem;
+  }
+  @media @tablet {
+      font-size: 1.8rem;
+  }
+  @media @phone {
+      font-size: 1.8rem;
+  }
+  @media screen and (max-width: 360px) {
+      line-height: 1.4;
+  }
+}
+.press-btn {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 212px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #fff;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  @media @desktop {
+      .transition(all .2s);
+      &:hover {
+          background: rgba(255,255,255,0.3);
+      }
+  }
+  @media screen and (max-width: 390px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      max-width: 200px;
+  }
+}
+.news-banner {
+  width: 100%;
+  margin: 0 auto;
+  &__area {
+    margin: 0;
+    width: 100%;
+    height: 676px;
+    position: relative;
+    @media @tablet {
+      height: 550px;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 1400px) {
+      height: 500px;
+    }
+    @media screen and (max-width: 1060px) {
+      height: 430px;
+    }
+    @media screen and (max-width: 860px) {
+      height: 380px;
+    }
+    @media @phone {
+      height: 280px;
+    }
+    @media screen and (max-width: 580px) {
+      height: 250px;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    background: url(../image/press-banner.jpg) no-repeat center center;
+    background-size: cover;
+  }
+  &__content {
+    text-align: center;
+    position: absolute;
+    right: 24%;
+    top: 52%;
+    .translate(50%, -50%);
+    width: 37%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @media screen and (max-width: 1260px) {
+      width: 45%;
+      right: 26%;
+    }
+    @media screen and (max-width: 1000px) {
+      right: 28%;
+    }
+    @media screen and (max-width: 600px) {
+      right: 50%;
+      width: 90%;
+    }
+  }
+  &__category {
+    margin: 0 auto 50px;
+    @media @tablet {
+      margin: 0 auto 25px;
+    }
+    @media @phone {
+      margin: 0 auto 10px;
+    }
+    @media screen and (max-width: 600px) {
+      margin: 0 auto 15px;
+    }
+    @media screen and (max-width: 450px) {
+      margin: 0 auto 10px;
+    }
+  }
+  &__title {
+    margin: 0 auto 50px;
+    padding: 0;
+    @media @tablet {
+      margin: 0 auto 25px;
+    }
+    @media @phone {
+      margin: 0 auto 10px;
+    }
+    @media screen and (max-width: 600px) {
+      margin: 0 auto 15px;
+    }
+    @media screen and (max-width: 450px) {
+      margin: 0 auto 10px;
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+    @media @tabletAndPhone {
+      width: 80%;
+    }
+  }
+}

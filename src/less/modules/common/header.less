@@ -1,0 +1,154 @@
+.header {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  max-width: 1135px;
+  width: 90%;
+  @media @phone {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 1000;
+  }
+  &__nav {
+    @media @phone {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left:0;
+    }
+  }
+  &__btn-menu {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    display: none;
+    z-index: 100;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 2.0rem;
+    font-weight: bold!important;
+    box-sizing: border-box;
+    @media @phone {
+      display: block;
+    }
+  }
+  &__links {
+    text-align: right;
+    list-style: none;
+    margin: 0;
+    padding-top: 33px;
+    box-sizing: border-box;
+    @media @phone {
+      position: absolute;
+      z-index: 100;
+      left: -1px;
+      height: 1000px;
+      width: 80%;
+      top: 0;
+      background: #393939;
+      overflow: hidden;
+      padding: 2rem 2%;
+      .transition(all 0.7s);
+      .translate3d(-100%,0,0);
+      &.opened {
+        .translate3d(0,0,0);
+      }
+    }
+  }
+  &__link-item {
+    display: inline-block;
+    margin-right: 33px;
+    @media @tablet {
+      margin-right: 15px;
+    }
+    @media @phone {
+      display: block;
+      margin-right: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      @media @phone {
+        .header__link {
+          border: none;
+        }
+      }
+    }
+  }
+  &__link {
+    display: block;
+    font-size: 2.3rem;
+    color: #ffffff;
+    text-decoration: none;
+    @media screen and (max-width: 1800px) {
+      font-size: 2rem;
+    }
+    @media @tablet {
+      font-size: 1.8rem;
+    }
+    @media @phone {
+      font-size: 2.0rem;
+      text-align: left;
+      margin: 0;
+      border-bottom: 1px solid #32353a;
+      padding: 1.5rem 2rem;
+      color: #aaa;
+    }
+  }
+  &__logo-item {
+    position: absolute;
+    left: 0;
+    top: 27px;
+    @media @phone {
+      left: 20px;
+    }
+  }
+  &__logo {
+    display: inline-block;
+    text-decoration: none;
+    .icon-logo {
+      display: inline-block;
+      font-size: 8.5rem;
+      color: #ffffff;
+      text-align: center;
+      vertical-align: top;
+    }
+  }
+  &__title {
+    display: inline-block;
+    font-size: 2.9rem;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 14px;
+    padding-left: 18px;
+    font-family: 'roadgeek';
+    letter-spacing: 1px;
+    @media @tablet {
+      font-size: 2.4rem;
+    }
+    @media @phone {
+      font-size: 2.2rem;
+      text-align: left;
+      padding-top: 10px;
+    }
+    @media screen and (max-width: 380px) {
+      padding-top: 5px;
+    }
+  }
+  &__title-delimiter {
+    display: none;
+    @media screen and (max-width: 380px) {
+      display: block;
+    }
+  }
+
+}

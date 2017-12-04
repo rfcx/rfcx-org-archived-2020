@@ -4143,6 +4143,7 @@ body {
 }
 .work-info__descr {
   margin: 0 auto 70px;
+  text-align: justify;
 }
 @media screen and (max-width: 1800px) {
   .work-info__descr {

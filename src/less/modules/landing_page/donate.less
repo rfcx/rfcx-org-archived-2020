@@ -1,0 +1,302 @@
+.donate {
+  .donate-page-btn {
+    display: block;
+    color: #fff;
+    background: #36a0f4;
+    width: 100%;
+    max-width: 509px;
+    padding: 19px 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'PT Sans';
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin: 0 auto;
+    @media screen and (max-width: 1800px) {
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+    }
+    @media @phone {
+      font-size: 1.4rem;
+      padding: 12px 5px;
+    }
+  }
+  .app-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    &__img {
+      display: block;
+      max-width: 200px;
+    }
+  }
+  .donate-section {
+    width: 90%;
+    max-width: 940px;
+    .donate-page-btn {
+      font-family: inherit;
+    }
+    &_app {
+      text-align: center;
+      padding: 72px 2%;
+      @media @phone {
+        padding: 10px 2% 30px;
+      }
+    }
+  }  
+  .donate-section {
+    &:extend(.clearfix all);
+    font-size: 0;
+    margin: 0 auto;
+    max-width: 800px;
+    @media screen and (max-width: 1800px) {
+      max-width: 720px;
+    }
+    &_donate {
+      padding: 100px 2%;
+      @media screen and (max-width: 1800px) {
+        padding: 72px 2%;
+      }
+      @media @tablet {
+        padding: 60px 5%;
+      }
+      @media @phone {
+        padding: 20px 5%;
+      }
+    }
+    &_phone {
+      padding: 80px 2%;
+      @media screen and (max-width: 1800px) {
+        padding: 40px 2%;
+      }
+      @media @tablet {
+        padding: 60px 5%;
+      }
+      @media @phone {
+        padding: 20px 5%;
+      }
+      .donate-page-btn {
+        margin-top: 15px;
+        letter-spacing: 1px;
+      }
+    }
+    &__column {
+      font-size: 1.4rem;
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      &_donate-left,
+      &_phone-left {
+        padding-right: 2%;
+      }
+      &_donate-right,
+      &_phone-right {
+        padding-left: 2%;
+      }
+      &_phone-right {
+        padding-bottom: 40px;
+        @media @phone {
+          padding-bottom: 20px;
+        }
+      }
+      @media @phone {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__title,
+    &__subtitle {
+      font-size: 3rem;
+      color: #000;
+      font-weight: 600;
+      margin: 0 auto;
+      line-height: 1.5;
+      @media screen and (max-width: 1800px) {
+        font-size: 1.8rem;
+      }
+    }
+    &__text {
+      font-size: 2.2rem;
+      color: #797979;
+      margin: 10px auto;
+      line-height: 1.5;
+      text-align: center;
+      @media screen and (max-width: 1800px) {
+        font-size: 2rem;
+      }
+      @media @tablet {
+        font-size: 1.8rem;
+      }
+      @media @phone {
+        font-size: 1.6rem;
+      }
+    }
+    &__img-phone {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+  .donate-form {
+    padding-top: 2%;
+    &__hidden-img {
+      display: none;
+    }
+    &__row {
+      margin: 0 auto 20px;
+      &_labels {
+        font-size: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media screen and (max-width: 700px) {
+        margin-bottom: 15px;
+      }
+    }
+    &__text {
+      font-family: 'PT Sans';
+      font-size: 3rem;
+      text-align: left;
+      margin: 0 auto;
+      @media screen and (max-width: 1800px) {
+        font-size: 1.8rem;
+      }
+    }
+    &__type-selector-label {
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid #36a0f4;
+      background: transparent;
+      color: #36a0f4;
+      font-family: 'PT Sans';
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 5px 3px;
+      width: 50%;
+      text-align: center;
+      cursor: pointer;
+      .transition(all .3s);
+      &:first-child {
+        border-right: none;
+      }
+      @media screen and (max-width: 1800px) {
+        font-size: 1.4rem;
+      }
+    }
+    &__input-checkbox {
+      display: none;
+      &:checked + label {
+        background: #36a0f4;
+        color: #fff;
+      }
+    }
+    &__input-wrapper {
+      position: relative;
+      &:before,
+      &:after {
+        display: inline-block;
+        font-family: 'PT Sans';
+        font-size: 2rem;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        .translate(0, -50%);
+        @media screen and (max-width: 1800px) {
+          font-size: 1.8rem;
+        }
+      }
+      &:before {
+        content: "$";
+        left: 11px;
+      }
+      &:after {
+        content: "USD";
+        right: 13px;
+      }
+    }
+    &__input-amount {
+      padding: 17px 55px 16px 31px;
+      font-family: 'PT Sans';
+      font-size: 2rem;
+      font-weight: bold;
+      color: #36a0f4;
+      border: 1px solid #c9c9c2;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      @media screen and (max-width: 1800px) {
+        font-size: 1.8rem;
+      }
+      @media screen and (max-width: 700px) {
+        padding: 12px 55px 12px 31px;
+      }
+    }
+  }
+  &__ideas {
+    margin: 0 auto;
+    background: #eef0e7;
+    font-size: 2.4rem;
+    padding: 65px 13.5% 70px;
+    line-height: 1.75;
+    a {
+      text-decoration: none;
+      color: #369ff4;
+    }
+    @media screen and (max-width: 1800px) {
+      font-size: 1.8rem;
+    }
+    @media screen and (max-width: 950px) {
+      padding: 40px 10%;
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+    @media @phone {
+      padding: 30px 5%;
+      font-size: 1.8rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+  &__banner {
+    height: 790px;
+    background: url(../image/get-involved-banner-2.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+    @media screen and (max-width: 1800px) {
+      height: 474px;
+    }
+    @media screen and (max-width: 950px) {
+      height: 400px;
+    }
+  }
+  &__banner-text {
+    display: block;
+    max-width: 90%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    color: #fff;
+    .translate(-50%, -50%);
+  }
+}

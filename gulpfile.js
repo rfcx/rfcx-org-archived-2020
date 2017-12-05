@@ -55,7 +55,7 @@ gulp.task('html:clean', function() {
 });
 
 // create normal non-minified html with non-minified js and css
-gulp.task('html:dev', function() {
+gulp.task('html:dev',['html:clean'], function() {
     preprocessHtml({
         minifyHtml: false,
         context: {
@@ -65,7 +65,7 @@ gulp.task('html:dev', function() {
 });
 
 // create minified html with minified js and css
-gulp.task('html:prod', function() {
+gulp.task('html:prod', ['html:dev'], function() {
     preprocessHtml({
         minifyHtml: true,
         context: {
@@ -86,7 +86,7 @@ function preprocessHtml(opts) {
         .pipe(gulp.dest('./dist/'))
 }
 
-// remove all html dist files before processing html sources
+// remove all javascript dist files before processing javascript sources
 gulp.task('script:clean', function() {
     return del([
         './dist/js/*.js'

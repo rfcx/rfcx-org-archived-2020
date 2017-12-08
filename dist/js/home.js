@@ -13685,7 +13685,7 @@ $( document ).ready(function() {
   }
 
   function calculateDimensions() {
-    metricsOffsetTop = $metricsEl.offset().top;
+    metricsOffsetTop = $metricsEl.offset().top; // remove .top to avoid console error on landing page
     metricsHeight = $metricsEl.height();
     windowHeight = $(window).height();
   }

@@ -4979,7 +4979,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: block;
+  display: none;
   z-index: 10;
 }
 .overlay__close {

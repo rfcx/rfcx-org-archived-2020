@@ -1,8 +1,8 @@
 <section class="forest">
   <div class="forest__content">
     <div class="video__area playing-video" id="videoArea">
-        <div class="overlay">
-          <span class="overlay__close">&times;</span>
+        <div class="overlay" id="overlay">
+          <span class="overlay__close" id="overlay__close">&times;</span>
           <p class="overlay__head">PLEASE HELP SPREAD THE WORD</p>
           <p class="overlay__body">We neet your help today. Join us and save the forest. Please share this video with your friends</p>
          <!--  <ul>
@@ -44,7 +44,7 @@
           </ul> -->
         </div>
         <div class="video__wrapper">
-          <iframe width="560" height="349" src="https://www.youtube.com/embed/L0UK1GMtjig?rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
+          <div id="player"></div>
         </div>
         <button class="video__play-btn" id="youtubePlayBtn1">
           <span class="icon-play video__play-btn-icon"></span>

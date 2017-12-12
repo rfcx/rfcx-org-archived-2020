@@ -4979,8 +4979,29 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
   z-index: 10;
+  line-height: 5.5rem;
+  max-width: 1200px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .overlay {
+    font-size: 2.2rem;
+    line-height: 4rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .overlay {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .overlay {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 0px;
+  }
 }
 .overlay__close {
   display: block;
@@ -4990,12 +5011,33 @@ body {
   float: right;
   cursor: pointer;
 }
-.overlay__head {
-  font-size: 8em;
+@media screen and (max-width: 1800px) {
+  .overlay__close {
+    font-size: 4em;
+  }
 }
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .overlay__close {
+    font-size: 3em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .overlay__close {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .overlay__close {
+    font-size: 1em;
+  }
+}
+/* .overlay__head {
+    font-size: 8em;
+}
+
 .overlay__body {
-  font-size: 5em;
-}
+    font-size: 5em;
+} */
 .overlay__close,
 .overlay__head,
 .overlay__body {
@@ -5003,7 +5045,41 @@ body {
 }
 .overlay__head,
 .overlay__body {
-  margin: 2em auto;
+  font-size: 5rem;
+  line-height: 6rem;
+  margin: 4rem auto;
+}
+@media screen and (max-width: 1800px) {
+  .overlay__head,
+  .overlay__body {
+    font-size: 4rem;
+    line-height: 5rem;
+    margin: 3rem auto;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .overlay__head,
+  .overlay__body {
+    font-size: 2.2rem;
+    line-height: 4rem;
+    margin: 2em auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .overlay__head,
+  .overlay__body {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: 2em auto;
+  }
+}
+@media screen and (max-width: 400px) {
+  .overlay__head,
+  .overlay__body {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin: 2em auto;
+  }
 }
 /* Social Buttons as list elements*/
 .iphone {

@@ -4979,109 +4979,95 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: block;
+  display: none;
+  align: center;
   z-index: 10;
-  line-height: 5.5rem;
   max-width: 1200px;
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .overlay {
-    font-size: 2.2rem;
-    line-height: 4rem;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .overlay {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .overlay {
-    font-size: 1rem;
-    line-height: 1rem;
-    margin-bottom: 0px;
-  }
 }
 .overlay__close {
   display: block;
-  padding: 10px;
-  font-size: 5em;
+  padding: 0 10px 10px 0;
   font-weight: 900;
   float: right;
   cursor: pointer;
 }
+.overlay__head,
+.overlay__body,
+.overlay__close {
+  font-size: 5.5em;
+  line-height: 3.3em;
+}
 @media screen and (max-width: 1800px) {
+  .overlay__head,
+  .overlay__body,
   .overlay__close {
-    font-size: 4em;
+    font-size: 5em;
+    line-height: 3em;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .overlay__head,
+  .overlay__body,
   .overlay__close {
-    font-size: 3em;
+    font-size: 4.5em;
+    line-height: 2em;
   }
 }
 @media only screen and (max-width: 767px) {
+  .overlay__head,
+  .overlay__body,
   .overlay__close {
-    font-size: 2em;
+    font-size: 2.5em;
+    line-height: 1.5em;
   }
 }
 @media screen and (max-width: 400px) {
+  .overlay__head,
+  .overlay__body,
   .overlay__close {
-    font-size: 1em;
+    font-size: 2em;
+    line-height: 1.5em;
   }
 }
-/* .overlay__head {
-    font-size: 8em;
-}
-
-.overlay__body {
-    font-size: 5em;
-} */
 .overlay__close,
 .overlay__head,
 .overlay__body {
   color: #fff;
 }
-.overlay__head,
-.overlay__body {
-  font-size: 5rem;
-  line-height: 6rem;
-  margin: 4rem auto;
+/* Social Buttons as list elements*/
+.social li {
+  display: inline-block;
+  padding: 2.2em;
+  margin: 3.3em;
+  line-height: 1em;
 }
 @media screen and (max-width: 1800px) {
-  .overlay__head,
-  .overlay__body {
-    font-size: 4rem;
-    line-height: 5rem;
-    margin: 3rem auto;
+  .social li {
+    display: inline-block;
+    padding: 2em;
+    margin: 3em;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
-  .overlay__head,
-  .overlay__body {
-    font-size: 2.2rem;
-    line-height: 4rem;
-    margin: 2em auto;
+  .social li {
+    display: inline-block;
+    padding: 1em;
+    margin: 2em;
   }
 }
 @media only screen and (max-width: 767px) {
-  .overlay__head,
-  .overlay__body {
-    font-size: 2rem;
-    line-height: 3rem;
-    margin: 2em auto;
+  .social li {
+    display: inline-block;
+    padding: 0.5em;
+    margin: 1em;
   }
 }
 @media screen and (max-width: 400px) {
-  .overlay__head,
-  .overlay__body {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    margin: 2em auto;
+  .social li {
+    display: block;
+    padding: 0.5em;
   }
 }
-/* Social Buttons as list elements*/
 .iphone {
   background-color: #eef0e7;
   width: 100%;

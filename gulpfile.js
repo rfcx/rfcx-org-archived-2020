@@ -55,7 +55,7 @@ gulp.task('html:clean', function() {
 });
 
 // create normal non-minified html with non-minified js and css
-gulp.task('html:dev', function() {
+gulp.task('html:dev',['html:clean'], function() {
     preprocessHtml({
         minifyHtml: false,
         context: {
@@ -65,7 +65,7 @@ gulp.task('html:dev', function() {
 });
 
 // create minified html with minified js and css
-gulp.task('html:prod', function() {
+gulp.task('html:prod', ['html:dev'], function() {
     preprocessHtml({
         minifyHtml: true,
         context: {
@@ -86,7 +86,7 @@ function preprocessHtml(opts) {
         .pipe(gulp.dest('./dist/'))
 }
 
-// remove all html dist files before processing html sources
+// remove all javascript dist files before processing javascript sources
 gulp.task('script:clean', function() {
     return del([
         './dist/js/*.js'
@@ -120,6 +120,15 @@ gulp.task('script:common', function() {
     );
 });
 
+gulp.task('script:info', function() {
+    return generateJs(
+        ['./src/js/vendor/jquery-3.2.1.js',
+        './src/js/menu.js', './src/js/modal.js',
+         './src/js/overlay.js'],
+        'info.js'
+    );
+});
+
 function generateJs(files, name) {
     return gulp.src(files)
         .pipe(concat(name))
@@ -128,6 +137,6 @@ function generateJs(files, name) {
 }
 
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
-gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common']);
+gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info']);
 gulp.task('build', ['less', 'html', 'scripts']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

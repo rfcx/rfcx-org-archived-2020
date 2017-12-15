@@ -4,19 +4,28 @@
 @import "modules/common/mixins";
 
 @import "modules/common/common";
-@import "modules/common/icomoon";
+@import "modules/common/foot";
+@import "modules/common/footer";
 @import "modules/common/header";
+@import "modules/common/icomoon";
 @import "modules/common/fontawesome";
+@import "modules/common/noty";
 
-@import "modules/info/header";
-@import "modules/get_involved/donate";
-@import "modules/info/donate";
+@import "modules/common/modal";
+
+@import "modules/info/forest";
 @import "modules/info/video";
+@import "modules/info/overlay";
+@import "modules/info/iphone";
+@import "modules/info/donate";
 
-.about-us {
-  padding-top: 20px;
-  padding-bottom: 40px;
-  @media @phone {
-    padding-bottom: 20px;
+.home {
+  .header {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    .translate(50%, 0);
+    z-index: 10;
   }
+
 }

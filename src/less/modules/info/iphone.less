@@ -1,0 +1,115 @@
+.iphone {
+  background-color: #eef0e7;;
+  width: 100%;
+  text-align: center;
+  padding: 28px 12% 10px;
+  margin: 0;
+  box-sizing: border-box;
+  @media screen and (max-width: 1600px) {
+    padding: 28px 8% 10px;
+  }
+  @media screen and (max-width: 1450px) {
+    padding: 28px 4% 10px;
+  }
+  @media screen and (max-width: 1321px) {
+    padding: 28px 2% 10px;
+  }
+  @media screen and (max-width: 1280px) {
+    padding: 28px 1% 10px;
+  }
+  @media @tablet {
+    padding: 20px 1% 10px;
+  }
+  @media @phone {
+    padding: 20px 1% 20px;
+  }
+  &__content {
+    margin: 0;
+    display: block;
+    font-size: 0;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 0;
+  }
+  &__area {
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 40%;
+    font-size: 14px;
+    padding: 0 0 0 19%;
+    @media @tablet {
+      padding-left: 15%;
+    }
+    @media screen and (max-width: 850px) {
+      padding-left: 12%;
+    }
+    @media @phone {
+      display: block;
+      width: 90%;
+      max-width: 230px;
+      padding-left: 0;
+      margin: 0 auto 10px;
+    }
+  }
+  &__img {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+  &__column {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    margin: 0 auto;
+    padding: 0 13% 30px 3%;
+    box-sizing: border-box;
+    font-size: 14px;
+    @media @phone {
+      display: block;
+      width: 90%;
+      padding: 0;
+    }
+  }
+  &__category {
+    margin: 0 auto 27px;
+    @media @phone {
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    margin: 0 auto 20px;
+    padding: 0 8%;
+    @media @phone {
+       padding: 0;
+       margin-bottom: 10px;
+    }
+  }
+  &__title2 {
+    margin: 0 auto 56px;
+    @media screen and (max-width: 1235px) {
+      margin: 0 auto 27px;
+    }
+    @media @phone {
+      margin-bottom: 10px;
+    }
+  }
+  &__btn-wrapper {
+    margin: 0 auto 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    border: none;
+    padding: 0;
+  }
+  &__btn-img {
+    display: block;
+    max-width: 200px;
+  }
+}

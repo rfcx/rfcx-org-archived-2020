@@ -120,11 +120,11 @@ gulp.task('script:common', function() {
     );
 });
 
-gulp.task('script:landing-page', function() {
+gulp.task('script:info', function() {
     return generateJs(
         ['./src/js/vendor/jquery-3.2.1.js',
          './src/js/overlay.js'],
-        'landing-page.js'
+        'info.js'
     );
 });
 
@@ -136,6 +136,6 @@ function generateJs(files, name) {
 }
 
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
-gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:landing-page']);
+gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info']);
 gulp.task('build', ['less', 'html', 'scripts']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

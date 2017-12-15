@@ -10253,6 +10253,35 @@
 	} );
 
 "use strict";
+$( document ).ready(function() {
+
+  var menuTimeout;
+  $('#menuBtn').on('touchend click', function() {
+    clearTimeout(menuTimeout);
+    // wait for some short time to have better transition
+    menuTimeout = setTimeout(function() {
+      $('#mobileMenu').toggleClass('opened');
+    }, 300);
+  });
+
+});
+
+"use strict";
+$( document ).ready(function() {
+
+  $('.js-show-subscr-modal').click(function(ev) {
+    ev.preventDefault();
+    $('#modalSubscribe').addClass('visible');
+    return false;
+  });
+
+  $('#btnCloseModal').click(function() {
+    $('#modalSubscribe').removeClass('visible');
+  });
+
+});
+
+"use strict";
 
 var video = $('#ytplayer');
 var closeBtn = $('#overlay__close');

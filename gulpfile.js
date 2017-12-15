@@ -123,6 +123,7 @@ gulp.task('script:common', function() {
 gulp.task('script:info', function() {
     return generateJs(
         ['./src/js/vendor/jquery-3.2.1.js',
+        './src/js/menu.js', './src/js/modal.js',
          './src/js/overlay.js'],
         'info.js'
     );

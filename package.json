@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/gulp",
-    "build": "./node_modules/.bin/gulp build"
+    "build": "./node_modules/.bin/gulp build",
+    "build:prod": "./node_modules/.bin/gulp build:prod"
   },
   "dependencies": {},
   "devDependencies": {

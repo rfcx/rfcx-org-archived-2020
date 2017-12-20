@@ -19,6 +19,12 @@ var paths = {
     jsAllFiles: './src/js/**/*.js'
 };
 
+var env = {};
+
+gulp.task('prod-env', function() {
+    env.NODE_ENV = 'production';
+});
+
 // generates css files from less
 // create normal and minified versions of css files
 gulp.task('less', function () {
@@ -55,22 +61,20 @@ gulp.task('html:clean', function() {
 });
 
 // create normal non-minified html with non-minified js and css
-gulp.task('html:dev',['html:clean'], function() {
+gulp.task('html:dev', ['html:clean'], function() {
+    let context = Object.assign({ partialsSuffix: '' }, env);
     preprocessHtml({
         minifyHtml: false,
-        context: {
-            partialsSuffix: ''
-        }
+        context: context
     })
 });
 
 // create minified html with minified js and css
 gulp.task('html:prod', ['html:dev'], function() {
+    let context = Object.assign({ partialsSuffix: '.min' }, env);
     preprocessHtml({
         minifyHtml: true,
-        context: {
-            partialsSuffix: '.min'
-        }
+        context: context
     })
 });
 
@@ -139,4 +143,5 @@ function generateJs(files, name) {
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
 gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info']);
 gulp.task('build', ['less', 'html', 'scripts']);
+gulp.task('build:prod', ['prod-env', 'less', 'html', 'scripts']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

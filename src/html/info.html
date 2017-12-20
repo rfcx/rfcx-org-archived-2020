@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- @include modules/common/gtm-head.html -->
+    <!-- @if NODE_ENV='production' -->
+        <!-- @include modules/common/gtm-head.html -->
+    <!-- @endif -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Rainforest Connection</title>
@@ -12,9 +14,10 @@
     <link rel="stylesheet" href="css/info<!-- @echo partialsSuffix -->.css">
 </head>
 <body class="home">
-        <div id="fb-root"></div>
-
-<!-- @include modules/common/gtm-body.html -->
+    <div id="fb-root"></div>
+<!-- @if NODE_ENV='production' -->
+    <!-- @include modules/common/gtm-body.html -->
+<!-- @endif -->
 <!-- @include modules/common/header.html -->
 <!-- @include modules/info/forest.html -->
 <!-- @include modules/info/donate.html -->
@@ -22,6 +25,8 @@
 <!-- @include modules/common/footer.html -->
 <!-- @include modules/common/modal.html -->
 <!-- @include modules/info/foot.html -->
-<!-- @include modules/common/ga.html -->
+<!-- @if NODE_ENV='production' -->
+    <!-- @include modules/common/gtag.html -->
+<!-- @endif -->
 </body>
 </html>

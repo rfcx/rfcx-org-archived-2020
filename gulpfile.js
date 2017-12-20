@@ -133,6 +133,15 @@ gulp.task('script:info', function() {
     );
 });
 
+gulp.task('script:thank-you', function() {
+    return generateJs(
+        ['./src/js/vendor/jquery-3.2.1.js',
+        './src/js/menu.js', './src/js/modal.js',
+         './src/js/thank-you.js'],
+        'thank-you.js'
+    );
+});
+
 function generateJs(files, name) {
     return gulp.src(files)
         .pipe(concat(name))
@@ -141,7 +150,7 @@ function generateJs(files, name) {
 }
 
 gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
-gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info']);
+gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info', 'script:thank-you']);
 gulp.task('build', ['less', 'html', 'scripts']);
 gulp.task('build:prod', ['prod-env', 'less', 'html', 'scripts']);
 gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);

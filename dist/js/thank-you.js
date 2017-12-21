@@ -10300,7 +10300,7 @@ function timer() {
     setTimeout(timer, 1000);
   }
   else {
-    console.log('redirect');
+    redirect();
   }
 }
 

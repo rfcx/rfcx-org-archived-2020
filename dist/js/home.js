@@ -13530,7 +13530,7 @@ $( document ).ready(function() {
   $('#contactForm').submit(function(ev) {
     ev.preventDefault();
     jQuery.ajax({
-      url: "https://formspree.io/sr.rassokhin@gmail.com",
+      url: $contactForm.attr('action'),
       method: $contactForm.attr('method'),
       data: $contactForm.serialize(),
       dataType: "json",

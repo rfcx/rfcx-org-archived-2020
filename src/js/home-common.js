@@ -11,6 +11,21 @@ $( document ).ready(function() {
     $('.js-map-point[data-name="' + site +'"], .js-map-column[data-name="' + site +'"]').addClass('active');
   };
 
+  function validateFormAttrs() {
+    var replyTo = $('#_replyto').val().trim(),
+        subject = $('#_subject').val().trim(),
+        message = $('#message').val().trim(),
+        gotcha  = $('#_gotcha').val();
+    var flag = true;
+    if (!!gotcha.length || !replyTo.length || !subject.length || !message.length) {
+      flag = false;
+    }
+    $('#_replyto').toggleClass('invalid', !replyTo.length);
+    $('#_subject').toggleClass('invalid', !subject.length);
+    $('#message').toggleClass('invalid', !message.length);
+    return flag;
+  }
+
   // Show and play youTube video
   $('#youtubePlayBtn1, #youtubePlayBtn2').click(function() {
     $('#youTubeIframe').attr('src', 'https://www.youtube.com/embed/xPK2Ch90xWo?rel=0&hd=1&autoplay=1');
@@ -20,6 +35,9 @@ $( document ).ready(function() {
   var $contactForm = $('#contactForm');
   $('#contactForm').submit(function(ev) {
     ev.preventDefault();
+    if (!validateFormAttrs()) {
+      return false;
+    }
     jQuery.ajax({
       url: $contactForm.attr('action'),
       method: $contactForm.attr('method'),

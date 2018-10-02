@@ -88,12 +88,15 @@
       margin: 0 auto;
       width: 48%;
       height: 50px;
+      border: 1px solid transparent;
       border-radius: 8px;
       box-shadow: none;
-      border: none;
       overflow: auto;
       outline: none;
       padding: 2px 3%;
+      &.invalid {
+        border-color: #ff4155;
+      }
       &:first-child {
         margin-right: 4%;
         @media screen and (max-width: 550px) {
@@ -111,12 +114,15 @@
       height: 203px;
       margin: 0 auto;
       padding: 19px 3%;
+      border: 1px solid transparent;
       border-radius: 8px;
       box-shadow: none;
-      border: none;
       overflow: auto;
       outline: none;
       resize: none;
+      &.invalid {
+        border-color: #ff4155;
+      }
     }
     &__submit-btn {
       margin: 0 auto;

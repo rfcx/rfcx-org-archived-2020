@@ -5,13 +5,13 @@
       Drop us a line and let us know how we can help your cause
     </p>
     <form id="contactForm" class="contact-form" action="https://api.rfcx.org/v1/forms/contact" method="POST" target="_blank">
-      <input type="hidden" name="_gotcha">
+      <input type="hidden" name="_gotcha" id="_gotcha">
       <div class="contact-form__row">
-        <input type="email" name="_replyto" placeholder="Your Email" class="contact-form__input" required>
-        <input type="text" name="_subject" placeholder="Subject" class="contact-form__input" required>
+        <input type="email" name="_replyto" id="_replyto" placeholder="Your Email" class="contact-form__input" required>
+        <input type="text" name="_subject" id="_subject" placeholder="Subject" class="contact-form__input" required>
       </div>
       <div class="contact-form__row contact-form__row_textarea">
-        <textarea class="contact-form__message" name="message" placeholder="Your Message" required></textarea>
+        <textarea class="contact-form__message" id="message" name="message" placeholder="Your Message" required></textarea>
         <img src="image/ajax-loader.gif" alt="" class="contact-form__spinner">
       </div>
       <div class="contact-form__row">

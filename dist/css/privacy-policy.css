@@ -3915,6 +3915,13 @@ body {
 .privacy-policy-text .page-descr {
   text-align: justify;
 }
+.privacy-policy-text .page-descr_links {
+  margin: 0 auto;
+}
+.privacy-policy-text .paragraph-title {
+  display: block;
+  font-weight: 900;
+}
 .privacy-policy .header__link {
   color: #000;
 }

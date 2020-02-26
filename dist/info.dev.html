@@ -3,14 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Rainforest Connection | Get Involved</title>
-    <meta name="description" content="You can donate to Rainforest Connection and help save rainforests worldwide. Also be sure to get our free Rainforest Connection app!">
-    <meta name="keywords" content="donate to Rainforest Connection, help save rainforests, get Rainforest Connection app">
+    <title>Rainforest Connection | Protecting rainforests with real-time data</title>
+    <meta name="description" content="The most impactful way to stop climate change? Save rainforests.">
+    <meta name="keywords" content="acoustic monitoring, Rainforest Connection technology, Rainforest Connection pilot projects, Rainforest Connection app">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/get_involved.css">
+    <link rel="stylesheet" href="css/info.css">
 </head>
-<body class="get-involved">
+<body class="home">
+    <div id="fb-root"></div>
 <header class="header" id="header">
   <button class="icon-menu header__btn-menu" id="menuBtn"></button>
   <div class="header__logo-item">
@@ -32,26 +33,44 @@
   </nav>
 </header>
 
-<section class="about">
-  <div class="about__wrapper">
-    <h1 class="page-title">Connect with a global movement - and help change our world.</h1>
-    <p class="page-descr about__page-descr">
-      Climate change is the biggest collective challenge we face in our lifetimes. Isn’t it time we worked together
-      not only to lessen its effects – but to actually stop it from happening? If that sounds like an ambitious goal,
-      well, it is. But we believe it’s the only way if we want to keep our planet healthy into the next century – and long beyond.
-    </p>
+<section class="forest">
+  <div class="forest__content">
+    <div class="video__area playing-video" id="videoArea">
+        <div class="overlay" id="overlay">
+          <span class="overlay__close" id="overlay__close">&times;</span>
+          <p class="overlay__head">PLEASE HELP SPREAD THE WORD</p>
+          <p class="overlay__body">We neet your help today. Join us and save the forest.<br>
+            Share this video with your friends</p>
+          <ul class="social">
+            <li class="t-follow">
+            <a href="https://twitter.com/rainforestcx?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @rainforestcx</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </li>
+            <li class="fb-like" data-href="https://www.facebook.com/RainforestCx/" data-width="273" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></li>
+            <li class="g-follow" data-annotation="none" data-height="20" data-href="https://plus.google.com/110790947035627675960" data-rel="publisher"></li>
+          </ul>
+        </div>
+        <div class="video__wrapper">
+          <div id="player"></div>
+        </div>
+        <button class="video__play-btn" id="youtubePlayBtn1">
+          <span class="icon-play video__play-btn-icon"></span>
+        </button>
+      </div>
+      <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="right:0px; top:150px;">
+        <a class="a2a_button_facebook" href="https://www.facebook.com/RainforestCx/"></a>
+        <a class="a2a_button_twitter" href="https://twitter.com/rainforestcx?ref_src=twsrc%5Etfw"></a>
+        <a class="a2a_button_google_plus" href="https://plus.google.com/110790947035627675960"></a>
+    </div>
   </div>
-  <div class="about__banner"></div>
 </section>
 
-
-<section class="donate">
+<div class="donate">
   <div class="donate-section donate-section_donate">
     <div class="donate-section__column donate-section__column_donate-left">
-      <h1 class="donate-section__title">Donate to Rainforest Connection</h1>
       <p class="donate-section__text">
-        Every contribution increases our ability to help others monitor rainforests and wilderness areas using our
-        bio-acoustic technology.
+        <strong>Rainforest Connection</strong> (RFCx) is a 501c3 non-profit tech startup building and deploying scalable,
+        open-source solutions to poaching and illegal logging. Join us today! For donors: USA Tax ID 46-2022575
       </p>
     </div>
     <div class="donate-section__column donate-section__column_donate-right">
@@ -62,33 +81,30 @@
       </div>
     </div>
   </div>
-  <div class="donate-section donate-section_phone">
-    <div class="donate-section__column donate-section__column_phone-left">
-      <img src="image/iphone.png" alt="" class="donate-section__img-phone">
+</div>
+
+<section class="iphone">
+  <div class="iphone__content">
+    <div class="iphone__area">
+      <img class="iphone__img" src="image/iphone.png" alt="">
     </div>
-    <div class="donate-section__column donate-section__column_phone-right">
-      <h1 class="donate-section__title">Listen to rainforest in real-time</h1>
-      <h2 class="donate-section__subtitle">Get the Rainforest Connection app</h2>
-      <p class="donate-section__text">
-        The howl of a black-mantled tamarin at sunrise in Peru. The distinctive cry of an undiscovered species
-        of bird in Brazil. Ever wanted to listen to the sounds of a rainforest right while they’re happening? Now you can.
-        Using the free RFCx app, you can now livestream sounds of rainforests from all over the world in near-real-time.
+    <div class="iphone__column">
+      <p class="article-title iphone__title">
+        Listen to a rainforest in real time
       </p>
-      <a class="app-btn" href="http://bit.ly/RFCx-iOS" target="_blank">
-        <img src="image/ios.png" alt="" class="app-btn__img">
-      </a>
-      <a class="app-btn" href="http://bit.ly/RFCx-Android" target="_blank">
-        <img src="image/android.png" alt="" class="app-btn__img">
-      </a>
+      <p class="article-title2 iphone__title2">
+        Get the Rainforest Connection app
+      </p>
+      <div class="iphone__btn-wrapper">
+        <a class="article-btn iphone__btn" href="http://bit.ly/RFCx-iOS" target="_blank">
+          <img src="image/ios.png" alt="" class="iphone__btn-img">
+        </a>
+        <a class="article-btn iphone__btn" href="http://bit.ly/RFCx-Android" target="_blank">
+          <img src="image/android.png" alt="" class="iphone__btn-img">
+        </a>
+      </div>
     </div>
   </div>
-  <p class="donate__ideas">
-    If you have other ideas on how to help – or if you have a project you’re looking for assistance on –
-    feel free to contact us, anytime, at <a href="mailto:contact@rfcx.org">contact@rfcx.org</a>
-  </p>
-  <p class="donate__banner">
-    <span class="banner donate__banner-text">THANK YOU FOR SUPPORTING RAINFORESTS AND RFCx!</span>
-  </p>
 </section>
 
 <footer class="footer">
@@ -206,7 +222,24 @@
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Source+Sans+Pro:400,600,700|PT+Sans" rel="stylesheet">
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/info.js"></script>
+
+<!-- Socical Buttons Floating Bar from addtoany.com -->
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+<!-- Facebook Follow Button -->
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Google+ Follow Button -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
 
 </body>
 </html>

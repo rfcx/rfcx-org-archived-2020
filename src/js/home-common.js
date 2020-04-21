@@ -32,6 +32,15 @@ $( document ).ready(function() {
     $('#videoArea').addClass('playing-video');
   });
 
+  var recaptchaToken;
+
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6Lcu2usUAAAAANcggkEjIUX96CJPSKBzjSSlOaV-', { action: 'contactform' })
+      .then(function(token) {
+        recaptchaToken = token;
+    });
+  });
+
   var $contactForm = $('#contactForm');
   $('#contactForm').submit(function(ev) {
     ev.preventDefault();
@@ -41,7 +50,7 @@ $( document ).ready(function() {
     jQuery.ajax({
       url: $contactForm.attr('action'),
       method: $contactForm.attr('method'),
-      data: $contactForm.serialize(),
+      data: $contactForm.serialize() + "&token=" + recaptchaToken,
       dataType: "json",
       beforeSend: function() {
         $contactForm.addClass('loading');

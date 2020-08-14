@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/backend-protocol: "http"
+    nginx.ingress.kubernetes.io/use-proxy-protocol: "true"
+    nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+  name: rfcx-ingress
+  namespace: production
+  labels:
+      app: "rfcx"
+spec:
+  rules:
+  - host: rfcx.org
+    http:
+      paths:
+      - backend:
+          serviceName: rfcx-service
+          servicePort: 80
+  - host: www.rfcx.org
+    http:
+      paths:
+      - backend:
+          serviceName: rfcx-service
+          servicePort: 80

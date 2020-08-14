@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rfcx-service
+  namespace: production
+spec:
+  selector:
+    app: rfcx
+  type: ClusterIP 
+  ports:
+  - name: node
+    port: 80
+    targetPort: 80

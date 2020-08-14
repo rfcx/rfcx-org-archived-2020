@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rfcx
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: rfcx
+  template:
+    metadata:
+      labels:
+        app: rfcx
+    spec:
+      containers:
+      - name: rfcx
+        image: nginx
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "1000m"
+          limits:
+            memory: "2000Mi"
+            cpu: "2000m"
+      terminationGracePeriodSeconds: 600

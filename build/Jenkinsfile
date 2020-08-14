@@ -17,7 +17,7 @@ pipeline {
             steps {
             slackSend (color: '#FF9800', message: "STARTED: ${env.BUILD_NUMBER} Application ${APP} Branch ${PHASE} \nCommit ${GIT_COMMIT} by ${env.GIT_COMMITTER_NAME} (${env.BUILD_URL})")
             sh "aws ecr get-login --no-include-email --region eu-west-1 | bash"
-            sh "docker build -t ${APP}_${PHASE}:${BUILD_NUMBER} ."
+            sh "docker build -f build/Dockerfile -t ${APP}_${PHASE}:${BUILD_NUMBER} ."
             sh "docker tag ${APP}_${PHASE}:${BUILD_NUMBER} ${ECR}/${APP}_${PHASE}:${BUILD_NUMBER}"
             sh "docker push ${ECR}/${APP}_${PHASE}:${BUILD_NUMBER}"
             sh "docker rmi ${ECR}/${APP}_${PHASE}:${BUILD_NUMBER}"

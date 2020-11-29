@@ -1,20 +1,30 @@
 # rfcx.org
 
 ## Development server
-Use following commands to run local server:
+
+Install the dependencies:
 
 ```sh
-$ npm start
+npm install
 ```
+
+Run local server:
+
+```sh
+npm start
+```
+
 Navigate to http://localhost:8084/
 
 ## Build
-Use following commands to build the project:
+
+To build the project in development:
 
 ```sh
-$ npm build
+npm build
 ```
-Use the :prod flag for a production build.
+
+Use `npm build:prod` for a production build.
 
 ## Code scaffolding
 For creating a new page you should add a new one to `src/html/*new-page*.html` with the following structure:

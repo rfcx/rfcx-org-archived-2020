@@ -4,14 +4,11 @@
     <!-- @if NODE_ENV='production' -->
         <!-- @include modules/common/gtm-head.html -->
     <!-- @endif -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Rainforest Connection | Our team</title>
     <meta name="description" content="Meet the RFCx team. Also check out Rainforest Connection partners and Rainforest Connection donors.">
     <meta name="keywords" content="Topher White, RFCx team, Rainforest Connection partners, Rainforest Connection donors">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/team<!-- @echo partialsSuffix -->.css">
+    <!-- @include modules/common/head.html -->
+    <link rel="stylesheet" href="css/team.min.css">
     <!-- @if NODE_ENV='production' -->
         <!-- @include modules/common/fb-pixel.html -->
     <!-- @endif -->
@@ -29,7 +26,7 @@
 <!-- @include modules/team/people-volunteer.html -->
 <!-- @include modules/common/footer.html -->
 <!-- @include modules/common/modal.html -->
-<!-- @include modules/our_work/foot.html -->
+<script type="text/javascript" src="js/our-work.min.js"></script>
 <!-- @if NODE_ENV='production' -->
     <!-- @include modules/common/gtag.html -->
     <!-- @include modules/common/hubspot.html -->

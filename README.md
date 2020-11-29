@@ -43,7 +43,7 @@ For creating a new page you should add a new one to `src/html/*new-page*.html` w
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/*new-page*<!-- @echo partialsSuffix -->.css">
+    <link rel="stylesheet" href="css/*new-page*.min.css">
     <!-- @if NODE_ENV='production' -->
         <!-- @include modules/common/fb-pixel.html -->
     <!-- @endif -->

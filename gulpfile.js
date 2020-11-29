@@ -61,25 +61,25 @@ gulp.task('html:clean', function() {
 });
 
 // create normal non-minified html with non-minified js and css
-gulp.task('html:dev', ['html:clean'], function() {
+gulp.task('html:dev', gulp.series('html:clean', function() {
     let context = Object.assign({ partialsSuffix: '' }, env);
-    preprocessHtml({
+    return preprocessHtml({
         minifyHtml: false,
         context: context
     })
-});
+}));
 
 // create minified html with minified js and css
-gulp.task('html:prod', ['html:dev'], function() {
+gulp.task('html:prod', gulp.series('html:dev', function() {
     let context = Object.assign({ partialsSuffix: '.min' }, env);
-    preprocessHtml({
+    return preprocessHtml({
         minifyHtml: true,
         context: context
     })
-});
+}));
 
 function preprocessHtml(opts) {
-    gulp.src('./src/html/*.html')
+    return gulp.src('./src/html/*.html')
         // insert variables into html
         // include partials
         .pipe(preprocess({context: opts.context}))
@@ -149,8 +149,8 @@ function generateJs(files, name) {
         .pipe(gulp.dest(paths.jsDestPath));
 }
 
-gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
-gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info', 'script:thank-you']);
-gulp.task('build', ['less', 'html', 'scripts']);
-gulp.task('build:prod', ['prod-env', 'less', 'html', 'scripts']);
-gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);
+gulp.task('html', gulp.series('html:clean', 'html:dev', 'html:prod'));
+gulp.task('scripts', gulp.series('script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info', 'script:thank-you'));
+gulp.task('build', gulp.series('less', 'html', 'scripts'));
+gulp.task('build:prod', gulp.series('prod-env', 'less', 'html', 'scripts'));
+gulp.task('default', gulp.series('less', 'html', 'scripts', 'connect', 'watch'));

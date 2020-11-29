@@ -1,25 +1,8 @@
 .DS_Store
 
-ib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-
-pids
-logs
-results
-
 cache/
 node_modules/
-.gitignore
-.elasticbeanstalk/
-
-.ebextensions/env_vars.config
-config/env_vars.js
+dist/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

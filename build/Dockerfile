@@ -1,11 +1,11 @@
-FROM node:6.10.0 AS builder
+FROM node:12 AS builder
 
 WORKDIR /home/node/app
 
 ADD . .
 
 RUN npm install && \
-    npm run build:prod
+    npm run build
 
 WORKDIR /home/node/app/dist
 RUN rm -f *.dev.html && \

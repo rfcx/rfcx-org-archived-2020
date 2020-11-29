@@ -23,7 +23,9 @@ const htmlmin = require('gulp-htmlmin');
 const browsersync = require('browser-sync').create();
 
 const srcLess = './src/less/*.less';
+const srcLessModules = './src/less/modules/**/*.less';
 const srcHtml = './src/html/*.html';
+const srcHtmlModules = './src/html/modules/**/*.html';
 const srcImages = './src/images/**';
 const srcAudio = './src/audio/*';
 const srcFonts = './src/fonts/*';
@@ -127,10 +129,10 @@ function audio () {
 // Watch files
 
 function watchFiles() {
-    watch(srcLess, css);
+    watch([srcLess, srcLessModules], css);
     watch([srcJs, srcJsStatic], js);
     watch(srcImages, images);
-    watch(srcHtml, html);
+    watch([srcHtml, srcHtmlModules], html);
     watch(srcAudio, audio);
     watch(srcFonts, fonts);
 }

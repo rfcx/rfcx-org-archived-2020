@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- @if NODE_ENV='production' -->
-        <!-- @include modules/common/gtm-head.html -->
-    <!-- @endif -->
     <title>Rainforest Connection | Press Clippings</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <!-- @include modules/common/head.html -->
     <link rel="stylesheet" href="css/press.min.css">
-    <!-- @if NODE_ENV='production' -->
-        <!-- @include modules/common/fb-pixel.html -->
-    <!-- @endif -->
 </head>
 <body class="press">
-<!-- @if NODE_ENV='production' -->
-    <!-- @include modules/common/gtm-body.html -->
-<!-- @endif -->
+<!-- @include modules/common/body-start.html -->
 <!-- @include modules/common/header.html -->
 <!-- @include modules/press/about.html -->
 <!-- @include modules/press/news-banner.html -->
@@ -25,9 +17,6 @@
 <!-- @include modules/common/modal.html -->
 <!-- @include modules/common/foot.html -->
 <script type="text/javascript" src="js/our-work.min.js"></script>
-<!-- @if NODE_ENV='production' -->
-    <!-- @include modules/common/gtag.html -->
-    <!-- @include modules/common/hubspot.html -->
-<!-- @endif -->
+<!-- @include modules/common/body-end.html -->
 </body>
 </html>

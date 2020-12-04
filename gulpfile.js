@@ -113,7 +113,7 @@ function html() {
 function images() {
     return src(srcImages)
         .pipe(imagemin())
-        .pipe(dest('./dist/image'));
+        .pipe(dest('./dist/images'));
 }
 
 // Static assets

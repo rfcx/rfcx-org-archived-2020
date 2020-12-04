@@ -3,7 +3,8 @@ const {
     dest,
     parallel,
     series,
-    watch
+    watch,
+    lastRun
 } = require('gulp');
 
 // Load plugins
@@ -23,9 +24,9 @@ const htmlmin = require('gulp-htmlmin');
 const browsersync = require('browser-sync').create();
 
 const srcLess = './src/less/*.less';
-const srcLessModules = './src/less/modules/**/*.less';
+const srcLessAndModules = './src/less/**';
 const srcHtml = './src/html/*.html';
-const srcHtmlModules = './src/html/modules/**/*.html';
+const srcHtmlAndModules = './src/html/**';
 const srcImages = './src/images/**';
 const srcAudio = './src/audio/*';
 const srcFonts = './src/fonts/*';
@@ -111,7 +112,7 @@ function html() {
 // Optimize images
 
 function images() {
-    return src(srcImages)
+    return src(srcImages, {since: lastRun(images)})
         .pipe(imagemin())
         .pipe(dest('./dist/images'));
 }
@@ -119,20 +120,22 @@ function images() {
 // Static assets
 
 function fonts () {
-    return src(srcFonts).pipe(dest('./dist/fonts'));
+    return src(srcFonts, { since: lastRun(fonts) })
+        .pipe(dest('./dist/fonts'));
 }
 
 function audio () {
-    return src(srcAudio).pipe(dest('./dist/audio'));
+    return src(srcAudio, { since: lastRun(audio) })
+        .pipe(dest('./dist/audio'));
 }
 
 // Watch files
 
 function watchFiles() {
-    watch([srcLess, srcLessModules], css);
-    watch([srcJs, srcJsStatic], js);
+    watch(srcLessAndModules, css);
+    watch(srcJs, js);
     watch(srcImages, images);
-    watch([srcHtml, srcHtmlModules], html);
+    watch(srcHtmlAndModules, html);
     watch(srcAudio, audio);
     watch(srcFonts, fonts);
 }

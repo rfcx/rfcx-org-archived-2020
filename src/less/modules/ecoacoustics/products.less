@@ -1,6 +1,6 @@
 .products {
   .product-page-btn {
-    display: block;
+    display: inline-block;
     color: #fff;
     background: #36a0f4;
     width: 100%;
@@ -22,11 +22,13 @@
     @media @phone {
       font-size: 1.4rem;
       padding: 12px 5px;
+      margin: 0 auto;
     }
-    &.download {
+    &.fit {
       display: inline;
       padding: 19px;
       margin-left: 10px;
+      margin-right: 10px;
     }
   }
   .app-btn {
@@ -81,7 +83,6 @@
       }
       @media @phone {
         display: block;
-        text-align: center;
         width: 100%;
         padding-left: 0;
         padding-right: 0;
@@ -118,16 +119,29 @@
     }
     &__text {
       font-size: 1.75rem;
+      color: #797979;
       margin: 20px auto;
       line-height: 1.5;
       &:last-child {
         margin-bottom: 0;
+      }
+      a {
+        color: #ff4e00;
       }
     }
     &__img {
       display: block;
       margin: 28px auto;
       max-width: 100%;
+    }
+    &__button {
+      margin: 40px auto; 
+      text-align: center;
+      @media @phone {
+        a {
+          margin-bottom: 5px;
+        }
+      }
     }
   }
   &__support {
@@ -143,13 +157,11 @@
     @media screen and (max-width: 950px) {
       padding: 40px 10%;
       font-size: 2rem;
-      line-height: 1.5;
     }
     @media @phone {
+      margin: 0;
       padding: 30px 5%;
       font-size: 1.8rem;
-      line-height: 1.5;
-      text-align: center;
     }
     &_text {
       margin-bottom: 20px;

@@ -34,7 +34,7 @@ const srcJs = './src/js/*.js';
 const srcJsStatic = './src/js/vendor/*.js';
 
 const srcJsMapping = [
-    { inputs: ['./src/js/home-common.js', './src/js/menu.js', './src/js/player.js', './src/js/modal.js', './src/js/metrics.js'], output: 'home.js' },
+    { inputs: ['./src/js/home-common.js', './src/js/menu.js', './src/js/player.js', './src/js/modal.js'], output: 'home.js' },
     { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/work-info.js'], output: 'our-work.js' },
     { inputs: ['./src/js/menu.js', './src/js/modal.js'], output: 'common.js' },
     { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/overlay.js'], output: 'info.js' },
@@ -48,7 +48,7 @@ function clear() {
         .pipe(clean());
 }
 
-// JS function 
+// JS function
 
 function js (done) {
     const combine = (inputs, output) => {
@@ -82,7 +82,7 @@ function js (done) {
     })();
 }
 
-// CSS function 
+// CSS function
 
 function css() {
     return src(srcLess)

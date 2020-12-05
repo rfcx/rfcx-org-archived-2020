@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- @if NODE_ENV='production' -->
-        <!-- @include modules/common/gtm-head.html -->
-    <!-- @endif -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Rainforest Connection | Terms of Service</title>
     <meta name="description" content="Rainforest Connection Terms of Service.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/terms-of-service<!-- @echo partialsSuffix -->.css">
-    <!-- @if NODE_ENV='production' -->
-        <!-- @include modules/common/fb-pixel.html -->
-    <!-- @endif -->
+    <!-- @include modules/common/head.html -->
+    <link rel="stylesheet" href="css/terms-of-service.min.css">
 </head>
 <body class="terms-of-service">
-<!-- @if NODE_ENV='production' -->
-    <!-- @include modules/common/gtm-body.html -->
-<!-- @endif -->
+<!-- @include modules/common/body-start.html -->
 <!-- @include modules/common/header.html -->
 <!-- @include modules/terms-of-service/text.html -->
 <!-- @include modules/common/footer.html -->
 <!-- @include modules/common/modal.html -->
-<!-- @include modules/terms-of-service/foot.html -->
-<!-- @if NODE_ENV='production' -->
-    <!-- @include modules/common/gtag.html -->
-    <!-- @include modules/common/hubspot.html -->
-<!-- @endif -->
+<!-- @include modules/common/foot.html -->
+<script type="text/javascript" src="js/common.min.js"></script>
+<!-- @include modules/common/body-end.html -->
 </body>
 </html>

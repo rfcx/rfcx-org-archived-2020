@@ -1,156 +1,167 @@
-var gulp       = require('gulp'),
-    gulpif     = require('gulp-if'),
-    connect    = require('gulp-connect'),
-    less       = require('gulp-less'),
-    minifyCSS  = require('gulp-minify-css'),
-    rename     = require('gulp-rename'),
-    del        = require('del'),
-    concat     = require('gulp-concat'),
-    minify     = require('gulp-minify'),
-    preprocess = require('gulp-preprocess'),
-    htmlmin    = require('gulp-htmlmin');
+const {
+    src,
+    dest,
+    parallel,
+    series,
+    watch,
+    lastRun
+} = require('gulp');
 
-var paths = {
-    lessAllFiles: './src/less/**/*.less',
-    lessGeneralFiles: './src/less/*.less',
-    cssDestPath: './dist/css/',
-    htmlSrcAllFiles: './src/html/**/*.html',
-    jsDestPath: './dist/js/',
-    jsAllFiles: './src/js/**/*.js'
-};
+// Load plugins
 
-var env = {};
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const less = require('gulp-less');
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const concat = require('gulp-concat');
+const clean = require('gulp-clean');
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+const gulpif = require('gulp-if');
+const preprocess = require('gulp-preprocess');
+const htmlmin = require('gulp-htmlmin');
+const browsersync = require('browser-sync').create();
 
-gulp.task('prod-env', function() {
-    env.NODE_ENV = 'production';
-});
+const srcLess = './src/less/*.less';
+const srcLessAndModules = './src/less/**';
+const srcHtml = './src/html/*.html';
+const srcHtmlAndModules = './src/html/**';
+const srcImages = './src/images/**';
+const srcAudio = './src/audio/*';
+const srcFonts = './src/fonts/*';
+const srcJs = './src/js/*.js';
+const srcJsStatic = './src/js/vendor/*.js';
 
-// generates css files from less
-// create normal and minified versions of css files
-gulp.task('less', function () {
-    return gulp.src(paths.lessGeneralFiles)
-        .pipe(less())
-        .pipe(gulp.dest(paths.cssDestPath))
-        .pipe(minifyCSS())
+const srcJsMapping = [
+    { inputs: ['./src/js/home-common.js', './src/js/menu.js', './src/js/player.js', './src/js/modal.js'], output: 'home.js' },
+    { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/work-info.js'], output: 'our-work.js' },
+    { inputs: ['./src/js/menu.js', './src/js/modal.js'], output: 'common.js' },
+    { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/overlay.js'], output: 'info.js' },
+    { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/thank-you.js'], output: 'thank-you.js' },
+];
+
+// Clean assets
+
+function clear() {
+    return src('./dist/*', { read: false })
+        .pipe(clean());
+}
+
+// JS function
+
+function js (done) {
+    const combine = (inputs, output) => {
+    return src(inputs)
+        //.pipe(changed(inputs))
+        .pipe(concat(output))
+        .pipe(dest('./dist/js/'))
+        .pipe(uglify())
         .pipe(rename({
-            suffix: '.min'
+            extname: '.min.js'
         }))
-        .pipe(gulp.dest(paths.cssDestPath));
-});
+        .pipe(dest('./dist/js/'))
+        //.pipe(browsersync.stream());
+    }
 
-// watches for changes in files
-gulp.task('watch', function() {
-    gulp.watch(paths.lessAllFiles, ['less']);
-    gulp.watch(paths.htmlSrcAllFiles, ['html']);
-    gulp.watch(paths.jsAllFiles, ['scripts']);
-});
-
-// create node server to open page locally
-gulp.task('connect', function() {
-    connect.server({
-        port: process.env.PORT || 8084,
-        root: './dist/',
+    const combineTasks = srcJsMapping.map(obj => {
+        return taskDone => {
+            combine(obj.inputs, obj.output)
+            taskDone()
+        }
     });
-});
 
-// remove all html dist files before processing html sources
-gulp.task('html:clean', function() {
-    return del([
-        './dist/**/*.html'
-    ]);
-});
+    const vendorTask = taskDone => {
+        src(srcJsStatic).pipe(uglify()).pipe(rename({ extname: '.min.js' })).pipe(dest('./dist/js/vendor/'))
+        taskDone();
+    };
 
-// create normal non-minified html with non-minified js and css
-gulp.task('html:dev', ['html:clean'], function() {
-    let context = Object.assign({ partialsSuffix: '' }, env);
-    preprocessHtml({
-        minifyHtml: false,
-        context: context
-    })
-});
-
-// create minified html with minified js and css
-gulp.task('html:prod', ['html:dev'], function() {
-    let context = Object.assign({ partialsSuffix: '.min' }, env);
-    preprocessHtml({
-        minifyHtml: true,
-        context: context
-    })
-});
-
-function preprocessHtml(opts) {
-    gulp.src('./src/html/*.html')
-        // insert variables into html
-        // include partials
-        .pipe(preprocess({context: opts.context}))
-        // create dev and prod versions of html files
-        .pipe(rename({suffix: opts.minifyHtml? '' : '.dev'}))
-        // minify prod versions of html files
-        .pipe(gulpif(opts.minifyHtml, htmlmin({collapseWhitespace: true})))
-        .pipe(gulp.dest('./dist/'))
+    return series(...combineTasks, vendorTask, seriesDone => {
+        seriesDone();
+        done();
+    })();
 }
 
-// remove all javascript dist files before processing javascript sources
-gulp.task('script:clean', function() {
-    return del([
-        './dist/js/*.js'
-    ]);
-});
+// CSS function
 
-// concat js files into one file
-// create normal and minified versions of js file
-gulp.task('script:homepage', function() {
-    return generateJs(
-        ['./src/js/vendor/jquery-3.2.1.js', './src/js/vendor/jquery.animateNumber.js', './src/js/vendor/noty.js',
-         './src/js/vendor/wavesurfer.min.js', './src/js/home-common.js', './src/js/menu.js', './src/js/player.js',
-         './src/js/modal.js', './src/js/metrics.js'],
-        'home.js'
-    );
-});
-
-gulp.task('script:our-work', function() {
-    return generateJs(
-        ['./src/js/vendor/jquery-3.2.1.js',
-         './src/js/menu.js', './src/js/modal.js', './src/js/work-info.js'],
-        'our-work.js'
-    );
-});
-
-gulp.task('script:common', function() {
-    return generateJs(
-        ['./src/js/vendor/jquery-3.2.1.js',
-         './src/js/menu.js', './src/js/modal.js'],
-        'common.js'
-    );
-});
-
-gulp.task('script:info', function() {
-    return generateJs(
-        ['./src/js/vendor/jquery-3.2.1.js',
-        './src/js/menu.js', './src/js/modal.js',
-         './src/js/overlay.js'],
-        'info.js'
-    );
-});
-
-gulp.task('script:thank-you', function() {
-    return generateJs(
-        ['./src/js/vendor/jquery-3.2.1.js',
-        './src/js/menu.js', './src/js/modal.js',
-         './src/js/thank-you.js'],
-        'thank-you.js'
-    );
-});
-
-function generateJs(files, name) {
-    return gulp.src(files)
-        .pipe(concat(name))
-        .pipe(minify({ ext: { min:'.min.js' } }))
-        .pipe(gulp.dest(paths.jsDestPath));
+function css() {
+    return src(srcLess)
+        .pipe(changed(srcLess))
+        .pipe(less())
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(rename({
+            extname: '.min.css'
+        }))
+        .pipe(cssnano())
+        .pipe(dest('./dist/css/'))
+        .pipe(browsersync.stream());
 }
 
-gulp.task('html', ['html:clean', 'html:dev', 'html:prod']);
-gulp.task('scripts', ['script:clean', 'script:homepage', 'script:our-work', 'script:common', 'script:info', 'script:thank-you']);
-gulp.task('build', ['less', 'html', 'scripts']);
-gulp.task('build:prod', ['prod-env', 'less', 'html', 'scripts']);
-gulp.task('default', ['less', 'html', 'scripts', 'connect', 'watch']);
+// HTML function
+
+function html() {
+    return src(srcHtml)
+        .pipe(preprocess())
+        //.pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(dest('./dist/'))
+}
+
+// Optimize images
+
+function images() {
+    return src(srcImages, {since: lastRun(images)})
+        .pipe(imagemin())
+        .pipe(dest('./dist/images'));
+}
+
+// Static assets
+
+function fonts () {
+    return src(srcFonts, { since: lastRun(fonts) })
+        .pipe(dest('./dist/fonts'));
+}
+
+function audio () {
+    return src(srcAudio, { since: lastRun(audio) })
+        .pipe(dest('./dist/audio'));
+}
+
+// Watch files
+
+function watchFiles() {
+    watch(srcLessAndModules, css);
+    watch(srcJs, js);
+    watch(srcImages, images);
+    watch(srcHtmlAndModules, html);
+    watch(srcAudio, audio);
+    watch(srcFonts, fonts);
+}
+
+// BrowserSync
+
+function browserSync() {
+    browsersync.init({
+        server: {
+            baseDir: './dist/',
+            index: "home.html",
+            serveStaticOptions: {
+                extensions: ["html"]
+            }
+        },
+        port: process.env.PORT || 8084,
+        open: false,
+        rewriteRules: [
+            {
+                match: /src=\"js\/([a-zA-Z0-9\-]+).min.js\"/g,
+                replace: "src=\"js/$1.js\""
+            }
+        ]
+    });
+}
+
+const build = series(clear, parallel(js, css, images, html, audio, fonts));
+exports.watch = series(build, parallel(watchFiles, browserSync));
+exports.default = build;

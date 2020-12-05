@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- @if NODE_ENV='production' -->
-        <!-- @include modules/common/gtm-head.html -->
-    <!-- @endif -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Rainforest Connection | Press Clippings</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/press<!-- @echo partialsSuffix -->.css">
-    <!-- @if NODE_ENV='production' -->
-        <!-- @include modules/common/fb-pixel.html -->
-    <!-- @endif -->
+    <!-- @include modules/common/head.html -->
+    <link rel="stylesheet" href="css/press.min.css">
 </head>
 <body class="press">
-<!-- @if NODE_ENV='production' -->
-    <!-- @include modules/common/gtm-body.html -->
-<!-- @endif -->
+<!-- @include modules/common/body-start.html -->
 <!-- @include modules/common/header.html -->
 <!-- @include modules/press/about.html -->
 <!-- @include modules/press/news-banner.html -->
 <!-- @include modules/press/stories.html -->
 <!-- @include modules/common/footer.html -->
 <!-- @include modules/common/modal.html -->
-<!-- @include modules/our_work/foot.html -->
-<!-- @if NODE_ENV='production' -->
-    <!-- @include modules/common/gtag.html -->
-    <!-- @include modules/common/hubspot.html -->
-<!-- @endif -->
+<!-- @include modules/common/foot.html -->
+<script type="text/javascript" src="js/our-work.min.js"></script>
+<!-- @include modules/common/body-end.html -->
 </body>
 </html>

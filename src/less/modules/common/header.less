@@ -47,6 +47,9 @@
     margin: 0;
     padding-top: 33px;
     box-sizing: border-box;
+    @media @desktop {
+      padding-top: 38px;
+    }
     @media @phone {
       position: absolute;
       z-index: 100;
@@ -66,9 +69,9 @@
   }
   &__link-item {
     display: inline-block;
-    margin-right: 33px;
+    margin-right: 20px;
     @media @tablet {
-      margin-right: 15px;
+      margin-right: 10px;
     }
     @media @phone {
       display: block;
@@ -89,10 +92,10 @@
     color: #ffffff;
     text-decoration: none;
     @media screen and (max-width: 1800px) {
-      font-size: 2rem;
+      font-size: 1.9rem;
     }
     @media @tablet {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
     @media screen and (max-width: 900px) {
       font-size: 1.6rem;
@@ -123,6 +126,12 @@
       color: #ffffff;
       text-align: center;
       vertical-align: top;
+      @media @tablet {
+        font-size: 6.5rem;
+      }
+      @media @phone {
+        font-size: 4.5rem;
+      }
     }
   }
   &__title {
@@ -137,11 +146,14 @@
     letter-spacing: 1px;
     @media @tablet {
       font-size: 2.4rem;
+      padding-top: 12px;
+      padding-left: 12px;
     }
     @media @phone {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       text-align: left;
-      padding-top: 10px;
+      padding-top: 7px;
+      padding-left: 10px;
     }
     @media screen and (max-width: 380px) {
       padding-top: 5px;

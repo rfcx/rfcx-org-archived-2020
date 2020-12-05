@@ -2,13 +2,24 @@
 
 ## Development server
 
-Install the dependencies:
+### Node version
+Required Nodejs version is specified in `.nvmrc` file. If you use [nvm](https://github.com/nvm-sh/nvm), you can run the following commands in the project's root:
+If required node version is not yet installed on your machine:
+```
+nvm install
+```
+If required node version is installed on your machine:
+```
+nvm use
+```
+
+### Install the dependencies:
 
 ```sh
 npm install
 ```
 
-Run local server:
+### Run local server:
 
 ```sh
 npm run dev
@@ -21,7 +32,7 @@ Navigate to http://localhost:8084/
 To build the project for production:
 
 ```sh
-npm build
+npm run build
 ```
 
 

@@ -34,11 +34,11 @@ const srcJs = './src/js/*.js';
 const srcJsStatic = './src/js/vendor/*.js';
 
 const srcJsMapping = [
-    { inputs: ['./src/js/home-common.js', './src/js/menu.js', './src/js/player.js', './src/js/modal.js'], output: 'home.js' },
-    { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/work-info.js'], output: 'our-work.js' },
     { inputs: ['./src/js/menu.js', './src/js/modal.js'], output: 'common.js' },
-    { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/overlay.js'], output: 'info.js' },
-    { inputs: ['./src/js/menu.js', './src/js/modal.js', './src/js/thank-you.js'], output: 'thank-you.js' },
+    { inputs: ['./src/js/home-common.js', './src/js/player.js'], output: 'home.js' },
+    { inputs: ['./src/js/work-info.js'], output: 'our-work.js' },
+    { inputs: ['./src/js/overlay.js'], output: 'info.js' },
+    { inputs: ['./src/js/thank-you.js'], output: 'thank-you.js' },
 ];
 
 // Clean assets

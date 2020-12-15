@@ -39,6 +39,7 @@ const srcJsMapping = [
     { inputs: ['./src/js/work-info.js'], output: 'our-work.js' },
     { inputs: ['./src/js/overlay.js'], output: 'info.js' },
     { inputs: ['./src/js/thank-you.js'], output: 'thank-you.js' },
+    { inputs: ['./src/js/map.js'], output: 'map.js' },
 ];
 
 // Clean assets

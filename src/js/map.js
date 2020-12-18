@@ -78,9 +78,7 @@ geojson.features.forEach(function (marker) {
   // make a marker for each feature and add to the map
   new mapboxgl.Marker(el)
     .setLngLat(marker.geometry.coordinates)
-    .setPopup(new mapboxgl.Popup({
-        offset: 25
-      }) // add popups
-      .setHTML('<h3>' + marker.properties.title + '</h3>'))
+    .setPopup(new mapboxgl.Popup({ offset: 25 })
+    .setHTML('<h3>' + marker.properties.title + '</h3>'))
     .addTo(map);
 });

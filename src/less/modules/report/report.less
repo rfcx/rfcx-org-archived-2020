@@ -1,57 +1,62 @@
-.container {
+.report {
   position: relative;
   display: block;
   margin: auto;
-  padding-top: 20 px;
-  padding-bottom: 30px;
+  padding: 80px 0 30px;
   max-width: 1135px;
   width: 90%;
+  font-size: 18px;
 
-  &_h1 {
-    font-family: roadgeek;
-    font-weight: 400;
-    line-height: 1.2;
-    text-transform: uppercase;
-    vertical-align: middle;
-    font-size: 2.9rem;
-    color: #000;
-    padding-top: 30px;
-  }
+  .form {
+    &__column {
+      float: left;
+      margin-top: 10px;
 
-  &_form-font-size {
-    font-size: 18px;
-  }
+      &_20 {
+        width: 20%;
+      }
 
-  &_column_20 {
-    float: left;
-    width: 20%;
-    margin-top: 10px;
-  }
+      &_25 {
+        width: 25%;
+      }
 
-  &_column_25 {
-    float: left;
-    width: 25%;
-    margin-top: 10px;
-  }
+      &_40 {
+        width: 40%;
+      }
 
-  &_column_40 {
-    float: left;
-    width: 40%;
-    margin-top: 10px;
-  }
+      &_75 {
+        width: 75%;
+      }
 
-  &_column_75 {
-    float: left;
-    width: 75%;
-    margin-top: 10px;
-  }
+    }
 
-  &_row::after {
-    content: "";
-    display: table;
-    clear: both;
+    &__input {
+
+     
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+
+      &_url {}
+
+      &_time {}
+
+      &_date {}
+
+      &_submit {}
+    }
+
+    &__select {
+      
+    }
+
+    &__label {}
+
+    &__textarea {}
   }
 }
+
 
 label {
   padding: 12px 12px 12px 0;
@@ -114,16 +119,16 @@ textarea {
 
 @media screen and (max-width: 1200px) {
 
-  .container_column_10,
-  .container_column_20,
-  .container_column_25,
-  .container_column_40,
-  .container_column_75 {
+
+  .form__column_20,
+  .form__column_25,
+  .form__column_40,
+  .form__column_75 {
     width: 100%;
     margin-top: 0;
   }
 
-  input[type=submit] {
+  .form__input_submit {
     width: 100%;
     margin-top: 20px;
   }

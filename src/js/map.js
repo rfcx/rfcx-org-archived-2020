@@ -7,6 +7,9 @@ var map = new mapboxgl.Map({
   attributionControl: false
 });
 
+map.scrollZoom.disable();
+map.addControl(new mapboxgl.NavigationControl(),'top-right');
+
 var geojson = {
   type: 'FeatureCollection',
   features: [{

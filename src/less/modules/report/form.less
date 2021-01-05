@@ -1,0 +1,150 @@
+.form {
+  margin: auto;
+  padding: 80px 0 30px;
+  max-width: 1135px;
+  width: 90%;
+  font-size: 18px;
+
+  &__column {
+    &_20 {
+      width: 20%;
+      float: left;
+      margin-top: 10px;
+    }
+
+    &_25 {
+      width: 25%;
+      float: left;
+      margin-top: 10px;
+    }
+
+    &_40 {
+      width: 40%;
+      float: left;
+      margin-top: 10px;
+    }
+
+    &_75 {
+      width: 75%;
+      float: left;
+      margin-top: 10px;
+    }
+  }
+
+  &__input {
+    &_url {
+      width: 100%;
+      padding: 12px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    &_time {
+      width: 40%;
+      padding: 12px;
+      display: inline-block;
+      border: 1px solid #ccc;
+    }
+
+    &_date {
+      width: 100%;
+      padding: 12px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    &_submit {
+      background-color: #4CAF40;
+      color: white;
+      font-size: large;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    &_submit:hover {
+      background-color: #45a049;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+  }
+
+  &__label {
+    padding: 12px;
+    display: inline-block;
+  }
+
+  &__textarea {
+    height: 150px;
+    width: 100%;
+    resize: none;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+
+.to-time {
+  display: inline-block;
+  margin: 5px;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: transparent;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.custom-arrow::before,
+.custom-arrow::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before {
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid rgb(32, 32, 32);
+}
+
+@media screen and (max-width: 1200px) {
+
+  .form__column_20,
+  .form__column_25,
+  .form__column_40,
+  .form__column_75 {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .form__input_submit {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

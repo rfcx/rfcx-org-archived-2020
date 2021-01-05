@@ -1,4 +1,4 @@
-<div class="report">
+<div class="form">
   <h1 class="page-title">Incident Report</h1>
   <form>
     <!-- Organization -->
@@ -6,12 +6,13 @@
       <div class="form__column_25">
         <label class="form__label" for="organization">Organization</label>
       </div>
-      <div class="form__column_40">
+      <div class="form__column_40 custom-select">
         <select class="form__select" id="organization" name="organization">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
+        <span class="custom-arrow"></span>
       </div>
     </div>
     <!-- Project -->
@@ -19,12 +20,13 @@
       <div class="form__column_25">
         <label class="form__label" for="project">Project</label>
       </div>
-      <div class="form__column_40">
-        <select class="form__select"  id="project" name="project">
+      <div class="form__column_40 custom-select">
+        <select class="form__select" id="project" name="project">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
+        <span class="custom-arrow"></span>
       </div>
     </div>
     <!-- Site/Guardion -->
@@ -32,12 +34,13 @@
       <div class="form__column_25">
         <label class="form__label" for="site-guardion">Site/Guardion</label>
       </div>
-      <div class="form__column_40">
+      <div class="form__column_40 custom-select">
         <select class="form__select" id="site-guardion" name="site-guardion">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
+        <span class="custom-arrow"></span>
       </div>
     </div>
     <!-- Incident Date -->
@@ -55,9 +58,9 @@
         <label class="form__label" for="incident-time">Incident Time</label>
       </div>
       <div class="form__column_75">
-        <input class="form__input" type="time" id="time-report" name="time-report">
+        <input class="form__input_time" type="time" id="time-report" name="time-report">
         <p class="to-time">-</p>
-        <input class="form__input" type="time" id="time-report" name="time-report">
+        <input class="form__input_time" type="time" id="time-report" name="time-report">
       </div>
     </div>
     <!-- Incident Type -->
@@ -65,12 +68,13 @@
       <div class="form__column_25">
         <label class="form__label" for="incident-type">Incident Type</label>
       </div>
-      <div class="form__column_25">
+      <div class="form__column_25 custom-select">
         <select class="form__select" id="incident-type" name="incident-type">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
+        <span class="custom-arrow"></span>
       </div>
     </div>
     <!-- Link (to Dashboard) -->
@@ -87,12 +91,13 @@
       <div class="form__column_25">
         <label class="form__label" for="status">Status</label>
       </div>
-      <div class="form__column_20">
+      <div class="form__column_20 custom-select">
         <select class="form__select" id="status" name="status">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
+        <span class="custom-arrow"></span>
       </div>
     </div>
     <!-- Comments -->

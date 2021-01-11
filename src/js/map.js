@@ -21,18 +21,27 @@ $.ajaxSetup({
 
 $.getJSON(url, function (data) {
 
-  var locations = data.filter(function(x){ return x.latitude !== null && x.longitude != null});
+  var locations = data.filter(function (x) {
+    return x.latitude !== null && x.longitude != null
+  });
 
-  $.each( locations, function (key, value) {
+  $.each(locations, function (key, value) {
     var el = document.createElement('div');
     el.className = 'marker';
 
+    var coordinates = [value.longitude, value.latitude]
+
     new mapboxgl.Marker(el)
-      .setLngLat([value.longitude,value.latitude])
+      .setLngLat([value.longitude, value.latitude])
       .setPopup(new mapboxgl.Popup({offset: 25})
-      .setHTML('<h3>' + value.country_name + '</h3>'))
+      .setHTML('<h3>' + value.name + '</h3>' + '<p>' + 'country: '+value.country_name + '</p>'))
       .addTo(map);
 
-      console.log(value);
+    el.addEventListener('click', function () {
+      map.flyTo({
+        center: coordinates,
+        zoom: 8
+      });
+    });
   });
 });

@@ -7,7 +7,6 @@ RUN npm ci && npm run build
 
 WORKDIR /app/dist
 RUN cp our_work.html about && \
-    cp press.html media && \
     for i in `find . -name \*.html | cut -d/ -f2`; do name=`echo $i | cut -d'.' -f1`; cp $i $name; done
 
 FROM 887044485231.dkr.ecr.eu-west-1.amazonaws.com/rfcx/nginx/base:latest

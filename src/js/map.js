@@ -1,5 +1,4 @@
-var url = "https://staging-api.rfcx.org/streams"
-var token = "" // RFCx token
+var url = "https://api.rfcx.org/public/projects?include_location=true"
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmZjeCIsImEiOiJoMEptMnlJIn0.LPKrjG_3AeYB5cqsyLpcrg';
 var map = new mapboxgl.Map({
@@ -12,12 +11,6 @@ var map = new mapboxgl.Map({
 
 map.scrollZoom.disable();
 map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-$.ajaxSetup({
-  headers: {
-    'Authorization': 'Bearer ' + token
-  }
-});
 
 $.getJSON(url, function (data) {
 
@@ -34,7 +27,7 @@ $.getJSON(url, function (data) {
     new mapboxgl.Marker(el)
       .setLngLat([value.longitude, value.latitude])
       .setPopup(new mapboxgl.Popup({offset: 25})
-      .setHTML('<h3>' + value.name + '</h3>' + '<p>' + 'country: '+value.country_name + '</p>'))
+      .setHTML('<h3>' + value.name + '</h3>' + '<p>' +value.description+ '</p>'))
       .addTo(map);
 
     el.addEventListener('click', function () {

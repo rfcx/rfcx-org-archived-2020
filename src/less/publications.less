@@ -16,4 +16,24 @@
 @import "modules/publications/demo";
 
 
-//todo
+body {
+  .header {
+    &__link {
+      color: #000;
+      @media @phone{
+        color: #fff;
+      }
+    }
+    &__logo {
+      .icon-logo {
+        color: #2fb24a;
+      }
+    }
+    &__title {
+      color: #000;
+    }
+    &__btn-menu {
+      color: #000;
+    }
+  }
+}

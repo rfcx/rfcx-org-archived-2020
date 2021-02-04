@@ -3,7 +3,9 @@ FROM node:12 AS builder
 WORKDIR /app
 ADD src src
 COPY gulpfile.js package.json package-lock.json ./
-RUN npm ci && npm run build
+
+ENV NODE_ENV=production 
+RUN npm ci --also=dev && npm run build
 
 WORKDIR /app/dist
 RUN cp our_work.html about && \

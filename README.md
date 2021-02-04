@@ -32,7 +32,7 @@ Navigate to http://localhost:8084/
 To build the project for production:
 
 ```sh
-npm run build
+NODE_ENV=production npm run build
 ```
 
 

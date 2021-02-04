@@ -1,3 +1,5 @@
+var url = "https://api.rfcx.org/public/projects?include_location=true"
+
 mapboxgl.accessToken = 'pk.eyJ1IjoicmZjeCIsImEiOiJoMEptMnlJIn0.LPKrjG_3AeYB5cqsyLpcrg';
 var map = new mapboxgl.Map({
   container: 'map',
@@ -8,80 +10,31 @@ var map = new mapboxgl.Map({
 });
 
 map.scrollZoom.disable();
-map.addControl(new mapboxgl.NavigationControl(),'top-right');
+map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
-var geojson = {
-  type: 'FeatureCollection',
-  features: [{
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [101.343109, -0.589724]
-      },
-      properties: {
-        title: 'Sumatra',
-        description: 'Washington, D.C.'
-      }
-    },
-    {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [13.1535811, 4.6125522]
-      },
-      properties: {
-        title: 'Cameroon',
-        description: 'San Francisco, California'
-      }
-    },
-    {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [-78.333000, 0.217000]
-      },
-      properties: {
-        title: 'Cerro Blanco, Ecuador',
-        description: 'San Francisco, California'
-      }
-    },
-    {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [-77.471400, -5.697800]
-      },
-      properties: {
-        title: 'Alto Mayo, Peru',
-        description: 'San Francisco, California'
-      }
-    },
-    {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [-58.873399, 0.303640]
-      },
-      properties: {
-        title: 'Tembé Tribal Reserve, Northern Brazil',
-        description: 'San Francisco, California'
-      }
-    }
-  ]
-};
+$.getJSON(url, function (data) {
 
+  var locations = data.filter(function (x) {
+    return x.latitude !== null && x.longitude != null
+  });
 
-// add markers to map
-geojson.features.forEach(function (marker) {
+  $.each(locations, function (key, value) {
+    var el = document.createElement('div');
+    el.className = 'marker';
 
-  // create a HTML element for each feature
-  var el = document.createElement('div');
-  el.className = 'marker';
+    var coordinates = [value.longitude, value.latitude]
 
-  // make a marker for each feature and add to the map
-  new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
-    .setPopup(new mapboxgl.Popup({ offset: 25 })
-    .setHTML('<h3>' + marker.properties.title + '</h3>'))
-    .addTo(map);
+    new mapboxgl.Marker(el)
+      .setLngLat([value.longitude, value.latitude])
+      .setPopup(new mapboxgl.Popup({offset: 25})
+      .setHTML('<h3>' + value.name + '</h3>' + '<p>' +value.description+ '</p>'))
+      .addTo(map);
+
+    el.addEventListener('click', function () {
+      map.flyTo({
+        center: coordinates,
+        zoom: 8
+      });
+    });
+  });
 });

@@ -38,10 +38,18 @@
   &__title {
     display: block;
     width: 100%;
-    margin: 20px auto;
+    margin: 0 auto;
     float: left;
     font-size: 18px;
     text-transform: uppercase;
+  }
+
+  &__date {
+    width: 100%;
+    margin: 10px auto;
+    float: left;
+    font-size: 10px;
+    font-weight: normal;
   }
 
   .article-image-custom {
@@ -69,6 +77,7 @@
     text-align: left;
     letter-spacing: 0;
     color: #000;
+    text-align: left;
 
     @media @phone {
       display: block;
@@ -77,15 +86,6 @@
   }
 
   .article-download {
-    display: inline-block;
-    width: 55%;
-    margin: 5px auto;
-
-    @media @phone {
-      display: block;
-      width: 100%;
-    }
-
     &__link {
       color: #ff4e00;
       text-decoration: none;
